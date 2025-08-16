@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "ventedlabs/enhance-api-laravel",
+    "description": "An Enhance API SDK tailored for usage within Laravel",
     "keywords": [
-        ":vendor_name",
+        "Vented Labs",
         "laravel",
-        ":package_slug"
+        "enhance-api-laravel"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/ventedlabs/enhance-api-laravel",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Vented Labs",
+            "email": "packages@vented.dev",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Vented\\EnhanceApiLaravel\\": "src/",
+            "Vented\\EnhanceApiLaravel\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Vented\\EnhanceApiLaravel\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Vented\\EnhanceApiLaravel\\EnhanceApiLaravelServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "EnhanceApiLaravel": "Vented\\EnhanceApiLaravel\\Facades\\EnhanceApiLaravel"
             }
         }
     },

@@ -12,3 +12,9 @@ cp -R ./generated/lib src/Client
 rm -rf ./generated
 
 composer dump-autoload
+
+# Generate service class
+php scripts/generate-service-class.php
+
+# Generate facade documentation
+php scripts/generate-facade-docs.php

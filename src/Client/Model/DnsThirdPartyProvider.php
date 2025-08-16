@@ -1,12 +1,14 @@
 <?php
+
 /**
  * DnsThirdPartyProvider
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,69 +30,73 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * DnsThirdPartyProvider Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSerializable
+class DnsThirdPartyProvider implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'DnsThirdPartyProvider';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'id' => 'int',
         'url' => 'string',
-        'headers' => 'array<string,string>'
+        'headers' => 'array<string,string>',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'id' => null,
         'url' => null,
-        'headers' => null
+        'headers' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'id' => false,
         'url' => false,
-        'headers' => false
+        'headers' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -115,8 +121,6 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -126,7 +130,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -136,7 +140,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -145,9 +149,6 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -156,9 +157,6 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -174,7 +172,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $attributeMap = [
         'id' => 'id',
         'url' => 'url',
-        'headers' => 'headers'
+        'headers' => 'headers',
     ];
 
     /**
@@ -185,7 +183,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $setters = [
         'id' => 'setId',
         'url' => 'setUrl',
-        'headers' => 'setHeaders'
+        'headers' => 'setHeaders',
     ];
 
     /**
@@ -196,7 +194,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $getters = [
         'id' => 'getId',
         'url' => 'getUrl',
-        'headers' => 'getHeaders'
+        'headers' => 'getHeaders',
     ];
 
     /**
@@ -240,7 +238,6 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -251,8 +248,8 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -262,14 +259,12 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -294,6 +289,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['url'] === null) {
             $invalidProperties[] = "'url' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -308,7 +304,6 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets id
      *
@@ -322,8 +317,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets id
      *
-     * @param int $id id
-     *
+     * @param  int  $id  id
      * @return self
      */
     public function setId($id)
@@ -349,8 +343,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets url
      *
-     * @param string $url url
-     *
+     * @param  string  $url  url
      * @return self
      */
     public function setUrl($url)
@@ -376,8 +369,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets headers
      *
-     * @param array<string,string>|null $headers Map of string keys to string values.
-     *
+     * @param  array<string,string>|null  $headers  Map of string keys to string values.
      * @return self
      */
     public function setHeaders($headers)
@@ -389,12 +381,11 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -404,8 +395,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -417,10 +407,8 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -434,9 +422,7 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -445,15 +431,16 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -479,5 +466,3 @@ class DnsThirdPartyProvider implements ModelInterface, ArrayAccess, \JsonSeriali
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

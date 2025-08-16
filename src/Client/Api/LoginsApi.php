@@ -1,11 +1,13 @@
 <?php
+
 /**
  * LoginsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -46,8 +48,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * LoginsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class LoginsApi
@@ -72,7 +75,7 @@ class LoginsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createLogin' => [
             'application/json',
@@ -149,10 +152,7 @@ class LoginsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -160,16 +160,16 @@ class LoginsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -199,17 +199,18 @@ class LoginsApi
      *
      * Create a new login
      *
-     * @param  string $org_id The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo $login_info login_info (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo  $login_info  login_info (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createLogin($org_id, $login_info, string $contentType = self::contentTypes['createLogin'][0])
     {
-        list($response) = $this->createLoginWithHttpInfo($org_id, $login_info, $contentType);
+        [$response] = $this->createLoginWithHttpInfo($org_id, $login_info, $contentType);
+
         return $response;
     }
 
@@ -218,13 +219,13 @@ class LoginsApi
      *
      * Create a new login
      *
-     * @param  string $org_id The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo $login_info (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo  $login_info  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createLoginWithHttpInfo($org_id, $login_info, string $contentType = self::contentTypes['createLogin'][0])
     {
@@ -252,8 +253,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -261,8 +261,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -293,7 +291,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -304,12 +301,12 @@ class LoginsApi
      *
      * Create a new login
      *
-     * @param  string $org_id The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo $login_info (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo  $login_info  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createLoginAsync($org_id, $login_info, string $contentType = self::contentTypes['createLogin'][0])
     {
@@ -326,12 +323,12 @@ class LoginsApi
      *
      * Create a new login
      *
-     * @param  string $org_id The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo $login_info (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo  $login_info  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createLoginAsyncWithHttpInfo($org_id, $login_info, string $contentType = self::contentTypes['createLogin'][0])
     {
@@ -343,7 +340,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -354,7 +351,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -377,12 +374,12 @@ class LoginsApi
     /**
      * Create request for operation 'createLogin'
      *
-     * @param  string $org_id The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo $login_info (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The mandatory organization id to denote in which realm to create the login in. The login will be created in the same realm that the organization is in. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginInfo  $login_info  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createLogin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createLoginRequest($org_id, $login_info, string $contentType = self::contentTypes['createLogin'][0])
     {
@@ -401,7 +398,6 @@ class LoginsApi
             );
         }
 
-
         $resourcePath = '/logins';
         $formParams = [];
         $queryParams = [];
@@ -419,11 +415,8 @@ class LoginsApi
             true // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -431,7 +424,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($login_info)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($login_info));
             } else {
                 $httpBody = $login_info;
@@ -444,7 +437,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -452,7 +445,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -463,11 +456,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -483,9 +476,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -496,16 +490,17 @@ class LoginsApi
      *
      * Create a new session for login with a one-time-password
      *
-     * @param  string $otp Contains a short lived otp for direct login bypassing any 2FA. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @param  string  $otp  Contains a short lived otp for direct login bypassing any 2FA. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships
      */
     public function createOtpSession($otp, string $contentType = self::contentTypes['createOtpSession'][0])
     {
-        list($response) = $this->createOtpSessionWithHttpInfo($otp, $contentType);
+        [$response] = $this->createOtpSessionWithHttpInfo($otp, $contentType);
+
         return $response;
     }
 
@@ -514,12 +509,12 @@ class LoginsApi
      *
      * Create a new session for login with a one-time-password
      *
-     * @param  string $otp Contains a short lived otp for direct login bypassing any 2FA. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @param  string  $otp  Contains a short lived otp for direct login bypassing any 2FA. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships, HTTP status code, HTTP response headers (array of strings)
      */
     public function createOtpSessionWithHttpInfo($otp, string $contentType = self::contentTypes['createOtpSession'][0])
     {
@@ -547,8 +542,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LoginMemberships',
@@ -556,8 +550,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -588,7 +580,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -599,11 +590,11 @@ class LoginsApi
      *
      * Create a new session for login with a one-time-password
      *
-     * @param  string $otp Contains a short lived otp for direct login bypassing any 2FA. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @param  string  $otp  Contains a short lived otp for direct login bypassing any 2FA. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createOtpSessionAsync($otp, string $contentType = self::contentTypes['createOtpSession'][0])
     {
@@ -620,11 +611,11 @@ class LoginsApi
      *
      * Create a new session for login with a one-time-password
      *
-     * @param  string $otp Contains a short lived otp for direct login bypassing any 2FA. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @param  string  $otp  Contains a short lived otp for direct login bypassing any 2FA. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createOtpSessionAsyncWithHttpInfo($otp, string $contentType = self::contentTypes['createOtpSession'][0])
     {
@@ -636,7 +627,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -647,7 +638,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -670,11 +661,11 @@ class LoginsApi
     /**
      * Create request for operation 'createOtpSession'
      *
-     * @param  string $otp Contains a short lived otp for direct login bypassing any 2FA. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @param  string  $otp  Contains a short lived otp for direct login bypassing any 2FA. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createOtpSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createOtpSessionRequest($otp, string $contentType = self::contentTypes['createOtpSession'][0])
     {
@@ -685,7 +676,6 @@ class LoginsApi
                 'Missing the required parameter $otp when calling createOtpSession'
             );
         }
-
 
         $resourcePath = '/login/sessions/sso';
         $formParams = [];
@@ -704,11 +694,8 @@ class LoginsApi
             true // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -722,7 +709,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -730,14 +717,13 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -752,9 +738,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -765,17 +752,18 @@ class LoginsApi
      *
      * Create a new session for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds $login_creds Login credentials. (required)
-     * @param  string|null $realm_id If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds  $login_creds  Login credentials. (required)
+     * @param  string|null  $realm_id  If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships|\Vented\EnhanceApiLaravel\Client\Model\SessionResult
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships|\Vented\EnhanceApiLaravel\Client\Model\SessionResult
      */
     public function createSession($login_creds, $realm_id = null, string $contentType = self::contentTypes['createSession'][0])
     {
-        list($response) = $this->createSessionWithHttpInfo($login_creds, $realm_id, $contentType);
+        [$response] = $this->createSessionWithHttpInfo($login_creds, $realm_id, $contentType);
+
         return $response;
     }
 
@@ -784,13 +772,13 @@ class LoginsApi
      *
      * Create a new session for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds $login_creds Login credentials. (required)
-     * @param  string|null $realm_id If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds  $login_creds  Login credentials. (required)
+     * @param  string|null  $realm_id  If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships|\Vented\EnhanceApiLaravel\Client\Model\SessionResult, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships|\Vented\EnhanceApiLaravel\Client\Model\SessionResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSessionWithHttpInfo($login_creds, $realm_id = null, string $contentType = self::contentTypes['createSession'][0])
     {
@@ -818,8 +806,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LoginMemberships',
@@ -833,8 +820,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -873,7 +858,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -884,12 +868,12 @@ class LoginsApi
      *
      * Create a new session for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds $login_creds Login credentials. (required)
-     * @param  string|null $realm_id If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds  $login_creds  Login credentials. (required)
+     * @param  string|null  $realm_id  If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSessionAsync($login_creds, $realm_id = null, string $contentType = self::contentTypes['createSession'][0])
     {
@@ -906,12 +890,12 @@ class LoginsApi
      *
      * Create a new session for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds $login_creds Login credentials. (required)
-     * @param  string|null $realm_id If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds  $login_creds  Login credentials. (required)
+     * @param  string|null  $realm_id  If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSessionAsyncWithHttpInfo($login_creds, $realm_id = null, string $contentType = self::contentTypes['createSession'][0])
     {
@@ -923,7 +907,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -934,7 +918,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -957,12 +941,12 @@ class LoginsApi
     /**
      * Create request for operation 'createSession'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds $login_creds Login credentials. (required)
-     * @param  string|null $realm_id If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LoginCreds  $login_creds  Login credentials. (required)
+     * @param  string|null  $realm_id  If set with the given realm&#39;s id (the parent id of an organization), then the login is authenticated in this realm. See the endpoint description for more info. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createSessionRequest($login_creds, $realm_id = null, string $contentType = self::contentTypes['createSession'][0])
     {
@@ -973,8 +957,6 @@ class LoginsApi
                 'Missing the required parameter $login_creds when calling createSession'
             );
         }
-
-
 
         $resourcePath = '/login/sessions';
         $formParams = [];
@@ -993,11 +975,8 @@ class LoginsApi
             false // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1005,7 +984,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($login_creds)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($login_creds));
             } else {
                 $httpBody = $login_creds;
@@ -1018,7 +997,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1026,14 +1005,13 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1048,9 +1026,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1061,11 +1040,11 @@ class LoginsApi
      *
      * Delete current session
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteCurrentSession(string $contentType = self::contentTypes['deleteCurrentSession'][0])
     {
@@ -1077,11 +1056,11 @@ class LoginsApi
      *
      * Delete current session
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteCurrentSessionWithHttpInfo(string $contentType = self::contentTypes['deleteCurrentSession'][0])
     {
@@ -1109,12 +1088,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1125,10 +1102,10 @@ class LoginsApi
      *
      * Delete current session
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteCurrentSessionAsync(string $contentType = self::contentTypes['deleteCurrentSession'][0])
     {
@@ -1145,10 +1122,10 @@ class LoginsApi
      *
      * Delete current session
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteCurrentSessionAsyncWithHttpInfo(string $contentType = self::contentTypes['deleteCurrentSession'][0])
     {
@@ -1158,7 +1135,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1181,14 +1158,13 @@ class LoginsApi
     /**
      * Create request for operation 'deleteCurrentSession'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteCurrentSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteCurrentSessionRequest(string $contentType = self::contentTypes['deleteCurrentSession'][0])
     {
-
 
         $resourcePath = '/login/sessions/current';
         $formParams = [];
@@ -1196,10 +1172,6 @@ class LoginsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1216,7 +1188,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1224,7 +1196,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1235,11 +1207,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1255,9 +1227,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1268,11 +1241,11 @@ class LoginsApi
      *
      * Remove login avatar
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteLoginAvatar(string $contentType = self::contentTypes['deleteLoginAvatar'][0])
     {
@@ -1284,11 +1257,11 @@ class LoginsApi
      *
      * Remove login avatar
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteLoginAvatarWithHttpInfo(string $contentType = self::contentTypes['deleteLoginAvatar'][0])
     {
@@ -1316,12 +1289,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1332,10 +1303,10 @@ class LoginsApi
      *
      * Remove login avatar
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteLoginAvatarAsync(string $contentType = self::contentTypes['deleteLoginAvatar'][0])
     {
@@ -1352,10 +1323,10 @@ class LoginsApi
      *
      * Remove login avatar
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteLoginAvatarAsyncWithHttpInfo(string $contentType = self::contentTypes['deleteLoginAvatar'][0])
     {
@@ -1365,7 +1336,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1388,14 +1359,13 @@ class LoginsApi
     /**
      * Create request for operation 'deleteLoginAvatar'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteLoginAvatar'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteLoginAvatarRequest(string $contentType = self::contentTypes['deleteLoginAvatar'][0])
     {
-
 
         $resourcePath = '/login/avatar';
         $formParams = [];
@@ -1403,10 +1373,6 @@ class LoginsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1423,7 +1389,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1431,7 +1397,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1442,11 +1408,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1462,9 +1428,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1475,12 +1442,12 @@ class LoginsApi
      *
      * Delete current session
      *
-     * @param  string $session_id The id of the login session. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @param  string  $session_id  The id of the login session. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteSession($session_id, string $contentType = self::contentTypes['deleteSession'][0])
     {
@@ -1492,12 +1459,12 @@ class LoginsApi
      *
      * Delete current session
      *
-     * @param  string $session_id The id of the login session. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @param  string  $session_id  The id of the login session. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSessionWithHttpInfo($session_id, string $contentType = self::contentTypes['deleteSession'][0])
     {
@@ -1525,12 +1492,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1541,11 +1506,11 @@ class LoginsApi
      *
      * Delete current session
      *
-     * @param  string $session_id The id of the login session. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @param  string  $session_id  The id of the login session. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSessionAsync($session_id, string $contentType = self::contentTypes['deleteSession'][0])
     {
@@ -1562,11 +1527,11 @@ class LoginsApi
      *
      * Delete current session
      *
-     * @param  string $session_id The id of the login session. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @param  string  $session_id  The id of the login session. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSessionAsyncWithHttpInfo($session_id, string $contentType = self::contentTypes['deleteSession'][0])
     {
@@ -1576,7 +1541,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1599,11 +1564,11 @@ class LoginsApi
     /**
      * Create request for operation 'deleteSession'
      *
-     * @param  string $session_id The id of the login session. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @param  string  $session_id  The id of the login session. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteSessionRequest($session_id, string $contentType = self::contentTypes['deleteSession'][0])
     {
@@ -1615,7 +1580,6 @@ class LoginsApi
             );
         }
 
-
         $resourcePath = '/login/sessions/{session_id}';
         $formParams = [];
         $queryParams = [];
@@ -1623,17 +1587,14 @@ class LoginsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($session_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'session_id' . '}',
+                '{'.'session_id'.'}',
                 ObjectSerializer::toPathValue($session_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1650,7 +1611,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1658,7 +1619,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1669,11 +1630,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1689,9 +1650,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1702,11 +1664,11 @@ class LoginsApi
      *
      * Delete sessions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteSessions(string $contentType = self::contentTypes['deleteSessions'][0])
     {
@@ -1718,11 +1680,11 @@ class LoginsApi
      *
      * Delete sessions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSessionsWithHttpInfo(string $contentType = self::contentTypes['deleteSessions'][0])
     {
@@ -1750,12 +1712,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1766,10 +1726,10 @@ class LoginsApi
      *
      * Delete sessions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSessionsAsync(string $contentType = self::contentTypes['deleteSessions'][0])
     {
@@ -1786,10 +1746,10 @@ class LoginsApi
      *
      * Delete sessions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSessionsAsyncWithHttpInfo(string $contentType = self::contentTypes['deleteSessions'][0])
     {
@@ -1799,7 +1759,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1822,14 +1782,13 @@ class LoginsApi
     /**
      * Create request for operation 'deleteSessions'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSessions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteSessionsRequest(string $contentType = self::contentTypes['deleteSessions'][0])
     {
-
 
         $resourcePath = '/login/sessions';
         $formParams = [];
@@ -1837,10 +1796,6 @@ class LoginsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1857,7 +1812,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1865,7 +1820,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1876,11 +1831,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1896,9 +1851,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1909,13 +1865,13 @@ class LoginsApi
      *
      * Finish a password recovery
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password Login&#39;s new password. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  Login&#39;s new password. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function finishPasswordRecovery($secret, $new_password, string $contentType = self::contentTypes['finishPasswordRecovery'][0])
     {
@@ -1927,13 +1883,13 @@ class LoginsApi
      *
      * Finish a password recovery
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password Login&#39;s new password. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  Login&#39;s new password. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function finishPasswordRecoveryWithHttpInfo($secret, $new_password, string $contentType = self::contentTypes['finishPasswordRecovery'][0])
     {
@@ -1961,12 +1917,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1977,12 +1931,12 @@ class LoginsApi
      *
      * Finish a password recovery
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password Login&#39;s new password. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  Login&#39;s new password. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function finishPasswordRecoveryAsync($secret, $new_password, string $contentType = self::contentTypes['finishPasswordRecovery'][0])
     {
@@ -1999,12 +1953,12 @@ class LoginsApi
      *
      * Finish a password recovery
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password Login&#39;s new password. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  Login&#39;s new password. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function finishPasswordRecoveryAsyncWithHttpInfo($secret, $new_password, string $contentType = self::contentTypes['finishPasswordRecovery'][0])
     {
@@ -2014,7 +1968,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2037,12 +1991,12 @@ class LoginsApi
     /**
      * Create request for operation 'finishPasswordRecovery'
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password Login&#39;s new password. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  Login&#39;s new password. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['finishPasswordRecovery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function finishPasswordRecoveryRequest($secret, $new_password, string $contentType = self::contentTypes['finishPasswordRecovery'][0])
     {
@@ -2061,7 +2015,6 @@ class LoginsApi
             );
         }
 
-
         $resourcePath = '/login/password-recovery';
         $formParams = [];
         $queryParams = [];
@@ -2079,9 +2032,6 @@ class LoginsApi
             true // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
             [],
             $contentType,
@@ -2091,7 +2041,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($new_password)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_password));
             } else {
                 $httpBody = $new_password;
@@ -2104,7 +2054,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2112,14 +2062,13 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2134,9 +2083,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2147,20 +2097,21 @@ class LoginsApi
      *
      * List customer logins for org
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginsListing
      */
     public function getCustomerLogins($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getCustomerLogins'][0])
     {
-        list($response) = $this->getCustomerLoginsWithHttpInfo($org_id, $offset, $limit, $sort_order, $sort_by, $contentType);
+        [$response] = $this->getCustomerLoginsWithHttpInfo($org_id, $offset, $limit, $sort_order, $sort_by, $contentType);
+
         return $response;
     }
 
@@ -2169,16 +2120,16 @@ class LoginsApi
      *
      * List customer logins for org
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCustomerLoginsWithHttpInfo($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getCustomerLogins'][0])
     {
@@ -2206,8 +2157,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LoginsListing',
@@ -2215,8 +2165,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2247,7 +2195,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2258,15 +2205,15 @@ class LoginsApi
      *
      * List customer logins for org
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getCustomerLoginsAsync($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getCustomerLogins'][0])
     {
@@ -2283,15 +2230,15 @@ class LoginsApi
      *
      * List customer logins for org
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getCustomerLoginsAsyncWithHttpInfo($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getCustomerLogins'][0])
     {
@@ -2303,7 +2250,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2314,7 +2261,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2337,15 +2284,15 @@ class LoginsApi
     /**
      * Create request for operation 'getCustomerLogins'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getCustomerLoginsRequest($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getCustomerLogins'][0])
     {
@@ -2356,11 +2303,6 @@ class LoginsApi
                 'Missing the required parameter $org_id when calling getCustomerLogins'
             );
         }
-
-
-
-
-
 
         $resourcePath = '/v2/orgs/{org_id}/customers/logins';
         $formParams = [];
@@ -2406,19 +2348,17 @@ class LoginsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2432,7 +2372,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2440,7 +2380,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2451,11 +2391,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2471,9 +2411,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2484,15 +2425,16 @@ class LoginsApi
      *
      * Get login info
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Login
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Login
      */
     public function getLogin(string $contentType = self::contentTypes['getLogin'][0])
     {
-        list($response) = $this->getLoginWithHttpInfo($contentType);
+        [$response] = $this->getLoginWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -2501,11 +2443,11 @@ class LoginsApi
      *
      * Get login info
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Login, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Login, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLoginWithHttpInfo(string $contentType = self::contentTypes['getLogin'][0])
     {
@@ -2533,8 +2475,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Login',
@@ -2542,8 +2483,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2574,7 +2513,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2585,10 +2523,10 @@ class LoginsApi
      *
      * Get login info
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginAsync(string $contentType = self::contentTypes['getLogin'][0])
     {
@@ -2605,10 +2543,10 @@ class LoginsApi
      *
      * Get login info
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginAsyncWithHttpInfo(string $contentType = self::contentTypes['getLogin'][0])
     {
@@ -2620,7 +2558,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2631,7 +2569,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2654,14 +2592,13 @@ class LoginsApi
     /**
      * Create request for operation 'getLogin'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getLoginRequest(string $contentType = self::contentTypes['getLogin'][0])
     {
-
 
         $resourcePath = '/login';
         $formParams = [];
@@ -2670,12 +2607,8 @@ class LoginsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2689,7 +2622,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2697,7 +2630,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2708,11 +2641,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2728,9 +2661,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2741,15 +2675,16 @@ class LoginsApi
      *
      * Get login memberships
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships
      */
     public function getLoginMemberships(string $contentType = self::contentTypes['getLoginMemberships'][0])
     {
-        list($response) = $this->getLoginMembershipsWithHttpInfo($contentType);
+        [$response] = $this->getLoginMembershipsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -2758,11 +2693,11 @@ class LoginsApi
      *
      * Get login memberships
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginMemberships, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLoginMembershipsWithHttpInfo(string $contentType = self::contentTypes['getLoginMemberships'][0])
     {
@@ -2790,8 +2725,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LoginMemberships',
@@ -2799,8 +2733,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2831,7 +2763,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2842,10 +2773,10 @@ class LoginsApi
      *
      * Get login memberships
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginMembershipsAsync(string $contentType = self::contentTypes['getLoginMemberships'][0])
     {
@@ -2862,10 +2793,10 @@ class LoginsApi
      *
      * Get login memberships
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginMembershipsAsyncWithHttpInfo(string $contentType = self::contentTypes['getLoginMemberships'][0])
     {
@@ -2877,7 +2808,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2888,7 +2819,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2911,14 +2842,13 @@ class LoginsApi
     /**
      * Create request for operation 'getLoginMemberships'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginMemberships'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getLoginMembershipsRequest(string $contentType = self::contentTypes['getLoginMemberships'][0])
     {
-
 
         $resourcePath = '/login/memberships';
         $formParams = [];
@@ -2927,12 +2857,8 @@ class LoginsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2946,7 +2872,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2954,7 +2880,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2965,11 +2891,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2985,9 +2911,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2998,20 +2925,21 @@ class LoginsApi
      *
      * Query all logins
      *
-     * @param  string|null $realm_id The id of the realm to query. Realm ids map to org ids. (optional)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @param  string|null  $realm_id  The id of the realm to query. Realm ids map to org ids. (optional)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginsListing
      */
     public function getLogins($realm_id = null, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getLogins'][0])
     {
-        list($response) = $this->getLoginsWithHttpInfo($realm_id, $offset, $limit, $sort_order, $sort_by, $contentType);
+        [$response] = $this->getLoginsWithHttpInfo($realm_id, $offset, $limit, $sort_order, $sort_by, $contentType);
+
         return $response;
     }
 
@@ -3020,16 +2948,16 @@ class LoginsApi
      *
      * Query all logins
      *
-     * @param  string|null $realm_id The id of the realm to query. Realm ids map to org ids. (optional)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @param  string|null  $realm_id  The id of the realm to query. Realm ids map to org ids. (optional)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLoginsWithHttpInfo($realm_id = null, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getLogins'][0])
     {
@@ -3057,8 +2985,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LoginsListing',
@@ -3066,8 +2993,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3098,7 +3023,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3109,15 +3033,15 @@ class LoginsApi
      *
      * Query all logins
      *
-     * @param  string|null $realm_id The id of the realm to query. Realm ids map to org ids. (optional)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @param  string|null  $realm_id  The id of the realm to query. Realm ids map to org ids. (optional)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginsAsync($realm_id = null, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getLogins'][0])
     {
@@ -3134,15 +3058,15 @@ class LoginsApi
      *
      * Query all logins
      *
-     * @param  string|null $realm_id The id of the realm to query. Realm ids map to org ids. (optional)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @param  string|null  $realm_id  The id of the realm to query. Realm ids map to org ids. (optional)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginsAsyncWithHttpInfo($realm_id = null, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getLogins'][0])
     {
@@ -3154,7 +3078,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3165,7 +3089,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3188,24 +3112,18 @@ class LoginsApi
     /**
      * Create request for operation 'getLogins'
      *
-     * @param  string|null $realm_id The id of the realm to query. Realm ids map to org ids. (optional)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @param  string|null  $realm_id  The id of the realm to query. Realm ids map to org ids. (optional)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getLoginsRequest($realm_id = null, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getLogins'][0])
     {
-
-
-
-
-
-
 
         $resourcePath = '/logins';
         $formParams = [];
@@ -3260,11 +3178,8 @@ class LoginsApi
             false // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3278,7 +3193,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3286,7 +3201,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3297,11 +3212,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3317,9 +3232,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3330,20 +3246,21 @@ class LoginsApi
      *
      * Query logins belonging to organization
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LoginsListing
      */
     public function getOrgLogins($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getOrgLogins'][0])
     {
-        list($response) = $this->getOrgLoginsWithHttpInfo($org_id, $offset, $limit, $sort_order, $sort_by, $contentType);
+        [$response] = $this->getOrgLoginsWithHttpInfo($org_id, $offset, $limit, $sort_order, $sort_by, $contentType);
+
         return $response;
     }
 
@@ -3352,16 +3269,16 @@ class LoginsApi
      *
      * Query logins belonging to organization
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LoginsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrgLoginsWithHttpInfo($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getOrgLogins'][0])
     {
@@ -3389,8 +3306,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LoginsListing',
@@ -3398,8 +3314,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3430,7 +3344,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3441,15 +3354,15 @@ class LoginsApi
      *
      * Query logins belonging to organization
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrgLoginsAsync($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getOrgLogins'][0])
     {
@@ -3466,15 +3379,15 @@ class LoginsApi
      *
      * Query logins belonging to organization
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrgLoginsAsyncWithHttpInfo($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getOrgLogins'][0])
     {
@@ -3486,7 +3399,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3497,7 +3410,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3520,15 +3433,15 @@ class LoginsApi
     /**
      * Create request for operation 'getOrgLogins'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOrgLoginsRequest($org_id, $offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getOrgLogins'][0])
     {
@@ -3539,11 +3452,6 @@ class LoginsApi
                 'Missing the required parameter $org_id when calling getOrgLogins'
             );
         }
-
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/logins';
         $formParams = [];
@@ -3589,19 +3497,17 @@ class LoginsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3615,7 +3521,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3623,7 +3529,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3634,11 +3540,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3654,9 +3560,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3667,15 +3574,16 @@ class LoginsApi
      *
      * Get all login sessions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\SessionsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\SessionsFullListing
      */
     public function getSessions(string $contentType = self::contentTypes['getSessions'][0])
     {
-        list($response) = $this->getSessionsWithHttpInfo($contentType);
+        [$response] = $this->getSessionsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -3684,11 +3592,11 @@ class LoginsApi
      *
      * Get all login sessions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SessionsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SessionsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionsWithHttpInfo(string $contentType = self::contentTypes['getSessions'][0])
     {
@@ -3716,8 +3624,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\SessionsFullListing',
@@ -3725,8 +3632,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3757,7 +3662,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3768,10 +3672,10 @@ class LoginsApi
      *
      * Get all login sessions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSessionsAsync(string $contentType = self::contentTypes['getSessions'][0])
     {
@@ -3788,10 +3692,10 @@ class LoginsApi
      *
      * Get all login sessions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSessionsAsyncWithHttpInfo(string $contentType = self::contentTypes['getSessions'][0])
     {
@@ -3803,7 +3707,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3814,7 +3718,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3837,14 +3741,13 @@ class LoginsApi
     /**
      * Create request for operation 'getSessions'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSessionsRequest(string $contentType = self::contentTypes['getSessions'][0])
     {
-
 
         $resourcePath = '/login/sessions';
         $formParams = [];
@@ -3853,12 +3756,8 @@ class LoginsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3872,7 +3771,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3880,14 +3779,13 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3902,9 +3800,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3915,15 +3814,16 @@ class LoginsApi
      *
      * Get UI prefereces for login
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\UiPreferences
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\UiPreferences
      */
     public function getUiPreferences(string $contentType = self::contentTypes['getUiPreferences'][0])
     {
-        list($response) = $this->getUiPreferencesWithHttpInfo($contentType);
+        [$response] = $this->getUiPreferencesWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -3932,11 +3832,11 @@ class LoginsApi
      *
      * Get UI prefereces for login
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UiPreferences, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UiPreferences, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUiPreferencesWithHttpInfo(string $contentType = self::contentTypes['getUiPreferences'][0])
     {
@@ -3964,8 +3864,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\UiPreferences',
@@ -3973,8 +3872,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4005,7 +3902,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4016,10 +3912,10 @@ class LoginsApi
      *
      * Get UI prefereces for login
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getUiPreferencesAsync(string $contentType = self::contentTypes['getUiPreferences'][0])
     {
@@ -4036,10 +3932,10 @@ class LoginsApi
      *
      * Get UI prefereces for login
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getUiPreferencesAsyncWithHttpInfo(string $contentType = self::contentTypes['getUiPreferences'][0])
     {
@@ -4051,7 +3947,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4062,7 +3958,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4085,14 +3981,13 @@ class LoginsApi
     /**
      * Create request for operation 'getUiPreferences'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUiPreferences'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getUiPreferencesRequest(string $contentType = self::contentTypes['getUiPreferences'][0])
     {
-
 
         $resourcePath = '/logins/ui-preferences';
         $formParams = [];
@@ -4101,12 +3996,8 @@ class LoginsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4120,7 +4011,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4128,7 +4019,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4139,11 +4030,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4159,9 +4050,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4172,12 +4064,12 @@ class LoginsApi
      *
      * Resends 2FA sign-in code.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin $resend_pin Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin  $resend_pin  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function resendPin($resend_pin, string $contentType = self::contentTypes['resendPin'][0])
     {
@@ -4189,12 +4081,12 @@ class LoginsApi
      *
      * Resends 2FA sign-in code.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin $resend_pin Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin  $resend_pin  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function resendPinWithHttpInfo($resend_pin, string $contentType = self::contentTypes['resendPin'][0])
     {
@@ -4222,12 +4114,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4238,11 +4128,11 @@ class LoginsApi
      *
      * Resends 2FA sign-in code.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin $resend_pin Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin  $resend_pin  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function resendPinAsync($resend_pin, string $contentType = self::contentTypes['resendPin'][0])
     {
@@ -4259,11 +4149,11 @@ class LoginsApi
      *
      * Resends 2FA sign-in code.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin $resend_pin Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin  $resend_pin  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function resendPinAsyncWithHttpInfo($resend_pin, string $contentType = self::contentTypes['resendPin'][0])
     {
@@ -4273,7 +4163,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4296,11 +4186,11 @@ class LoginsApi
     /**
      * Create request for operation 'resendPin'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin $resend_pin Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ResendPin  $resend_pin  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resendPin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function resendPinRequest($resend_pin, string $contentType = self::contentTypes['resendPin'][0])
     {
@@ -4312,17 +4202,12 @@ class LoginsApi
             );
         }
 
-
         $resourcePath = '/login/2fa/resend-pin';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4333,7 +4218,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($resend_pin)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($resend_pin));
             } else {
                 $httpBody = $resend_pin;
@@ -4346,7 +4231,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4354,7 +4239,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4365,7 +4250,7 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
 
         $defaultHeaders = [];
@@ -4381,9 +4266,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4394,13 +4280,13 @@ class LoginsApi
      *
      * Set password for login
      *
-     * @param  string $login_id The id of a login. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The new unhashed password to set for the login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @param  string  $login_id  The id of a login. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The new unhashed password to set for the login (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setCustomerLoginPassword($login_id, $new_password, string $contentType = self::contentTypes['setCustomerLoginPassword'][0])
     {
@@ -4412,13 +4298,13 @@ class LoginsApi
      *
      * Set password for login
      *
-     * @param  string $login_id The id of a login. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The new unhashed password to set for the login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @param  string  $login_id  The id of a login. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The new unhashed password to set for the login (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setCustomerLoginPasswordWithHttpInfo($login_id, $new_password, string $contentType = self::contentTypes['setCustomerLoginPassword'][0])
     {
@@ -4446,12 +4332,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4462,12 +4346,12 @@ class LoginsApi
      *
      * Set password for login
      *
-     * @param  string $login_id The id of a login. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The new unhashed password to set for the login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @param  string  $login_id  The id of a login. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The new unhashed password to set for the login (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setCustomerLoginPasswordAsync($login_id, $new_password, string $contentType = self::contentTypes['setCustomerLoginPassword'][0])
     {
@@ -4484,12 +4368,12 @@ class LoginsApi
      *
      * Set password for login
      *
-     * @param  string $login_id The id of a login. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The new unhashed password to set for the login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @param  string  $login_id  The id of a login. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The new unhashed password to set for the login (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setCustomerLoginPasswordAsyncWithHttpInfo($login_id, $new_password, string $contentType = self::contentTypes['setCustomerLoginPassword'][0])
     {
@@ -4499,7 +4383,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4522,12 +4406,12 @@ class LoginsApi
     /**
      * Create request for operation 'setCustomerLoginPassword'
      *
-     * @param  string $login_id The id of a login. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The new unhashed password to set for the login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @param  string  $login_id  The id of a login. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The new unhashed password to set for the login (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setCustomerLoginPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setCustomerLoginPasswordRequest($login_id, $new_password, string $contentType = self::contentTypes['setCustomerLoginPassword'][0])
     {
@@ -4546,7 +4430,6 @@ class LoginsApi
             );
         }
 
-
         $resourcePath = '/v2/logins/{login_id}/password';
         $formParams = [];
         $queryParams = [];
@@ -4554,17 +4437,14 @@ class LoginsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($login_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'login_id' . '}',
+                '{'.'login_id'.'}',
                 ObjectSerializer::toPathValue($login_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4575,7 +4455,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($new_password)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_password));
             } else {
                 $httpBody = $new_password;
@@ -4588,7 +4468,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4596,7 +4476,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4607,11 +4487,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4627,9 +4507,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4640,12 +4521,12 @@ class LoginsApi
      *
      * Set login avatar
      *
-     * @param  \SplFileObject|null $avatar avatar (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @param  \SplFileObject|null  $avatar  avatar (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setLoginAvatar($avatar = null, string $contentType = self::contentTypes['setLoginAvatar'][0])
     {
@@ -4657,12 +4538,12 @@ class LoginsApi
      *
      * Set login avatar
      *
-     * @param  \SplFileObject|null $avatar (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @param  \SplFileObject|null  $avatar  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setLoginAvatarWithHttpInfo($avatar = null, string $contentType = self::contentTypes['setLoginAvatar'][0])
     {
@@ -4690,12 +4571,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4706,11 +4585,11 @@ class LoginsApi
      *
      * Set login avatar
      *
-     * @param  \SplFileObject|null $avatar (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @param  \SplFileObject|null  $avatar  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setLoginAvatarAsync($avatar = null, string $contentType = self::contentTypes['setLoginAvatar'][0])
     {
@@ -4727,11 +4606,11 @@ class LoginsApi
      *
      * Set login avatar
      *
-     * @param  \SplFileObject|null $avatar (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @param  \SplFileObject|null  $avatar  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setLoginAvatarAsyncWithHttpInfo($avatar = null, string $contentType = self::contentTypes['setLoginAvatar'][0])
     {
@@ -4741,7 +4620,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4764,16 +4643,14 @@ class LoginsApi
     /**
      * Create request for operation 'setLoginAvatar'
      *
-     * @param  \SplFileObject|null $avatar (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @param  \SplFileObject|null  $avatar  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLoginAvatar'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setLoginAvatarRequest($avatar = null, string $contentType = self::contentTypes['setLoginAvatar'][0])
     {
-
-
 
         $resourcePath = '/login/avatar';
         $formParams = [];
@@ -4782,11 +4659,8 @@ class LoginsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
         // form params
-        $formDataProcessor = new FormDataProcessor();
+        $formDataProcessor = new FormDataProcessor;
 
         $formData = $formDataProcessor->prepare([
             'avatar' => $avatar,
@@ -4811,7 +4685,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4819,7 +4693,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4830,11 +4704,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4850,9 +4724,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4863,12 +4738,12 @@ class LoginsApi
      *
      * Set new UI prefereces for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences $new_ui_preferences new_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences  $new_ui_preferences  new_ui_preferences (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setUiPreferences($new_ui_preferences, string $contentType = self::contentTypes['setUiPreferences'][0])
     {
@@ -4880,12 +4755,12 @@ class LoginsApi
      *
      * Set new UI prefereces for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences $new_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences  $new_ui_preferences  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setUiPreferencesWithHttpInfo($new_ui_preferences, string $contentType = self::contentTypes['setUiPreferences'][0])
     {
@@ -4913,12 +4788,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4929,11 +4802,11 @@ class LoginsApi
      *
      * Set new UI prefereces for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences $new_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences  $new_ui_preferences  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setUiPreferencesAsync($new_ui_preferences, string $contentType = self::contentTypes['setUiPreferences'][0])
     {
@@ -4950,11 +4823,11 @@ class LoginsApi
      *
      * Set new UI prefereces for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences $new_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences  $new_ui_preferences  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setUiPreferencesAsyncWithHttpInfo($new_ui_preferences, string $contentType = self::contentTypes['setUiPreferences'][0])
     {
@@ -4964,7 +4837,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4987,11 +4860,11 @@ class LoginsApi
     /**
      * Create request for operation 'setUiPreferences'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences $new_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewUiPreferences  $new_ui_preferences  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setUiPreferences'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setUiPreferencesRequest($new_ui_preferences, string $contentType = self::contentTypes['setUiPreferences'][0])
     {
@@ -5003,17 +4876,12 @@ class LoginsApi
             );
         }
 
-
         $resourcePath = '/logins/ui-preferences';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5024,7 +4892,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($new_ui_preferences)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_ui_preferences));
             } else {
                 $httpBody = $new_ui_preferences;
@@ -5037,7 +4905,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5045,7 +4913,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5056,11 +4924,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5076,9 +4944,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5089,13 +4958,13 @@ class LoginsApi
      *
      * Start a new password recovery for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress $email_address Login&#39;s email address. (required)
-     * @param  string|null $realm_id If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress  $email_address  Login&#39;s email address. (required)
+     * @param  string|null  $realm_id  If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function startPasswordRecovery($email_address, $realm_id = null, string $contentType = self::contentTypes['startPasswordRecovery'][0])
     {
@@ -5107,13 +4976,13 @@ class LoginsApi
      *
      * Start a new password recovery for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress $email_address Login&#39;s email address. (required)
-     * @param  string|null $realm_id If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress  $email_address  Login&#39;s email address. (required)
+     * @param  string|null  $realm_id  If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function startPasswordRecoveryWithHttpInfo($email_address, $realm_id = null, string $contentType = self::contentTypes['startPasswordRecovery'][0])
     {
@@ -5141,12 +5010,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5157,12 +5024,12 @@ class LoginsApi
      *
      * Start a new password recovery for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress $email_address Login&#39;s email address. (required)
-     * @param  string|null $realm_id If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress  $email_address  Login&#39;s email address. (required)
+     * @param  string|null  $realm_id  If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function startPasswordRecoveryAsync($email_address, $realm_id = null, string $contentType = self::contentTypes['startPasswordRecovery'][0])
     {
@@ -5179,12 +5046,12 @@ class LoginsApi
      *
      * Start a new password recovery for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress $email_address Login&#39;s email address. (required)
-     * @param  string|null $realm_id If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress  $email_address  Login&#39;s email address. (required)
+     * @param  string|null  $realm_id  If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function startPasswordRecoveryAsyncWithHttpInfo($email_address, $realm_id = null, string $contentType = self::contentTypes['startPasswordRecovery'][0])
     {
@@ -5194,7 +5061,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5217,12 +5084,12 @@ class LoginsApi
     /**
      * Create request for operation 'startPasswordRecovery'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress $email_address Login&#39;s email address. (required)
-     * @param  string|null $realm_id If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAddress  $email_address  Login&#39;s email address. (required)
+     * @param  string|null  $realm_id  If set, the login is looked up in the specified realm. If unset then the chosen realm will be based on the control panel hostname. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['startPasswordRecovery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function startPasswordRecoveryRequest($email_address, $realm_id = null, string $contentType = self::contentTypes['startPasswordRecovery'][0])
     {
@@ -5233,8 +5100,6 @@ class LoginsApi
                 'Missing the required parameter $email_address when calling startPasswordRecovery'
             );
         }
-
-
 
         $resourcePath = '/login/password-recovery';
         $formParams = [];
@@ -5253,9 +5118,6 @@ class LoginsApi
             false // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
             [],
             $contentType,
@@ -5265,7 +5127,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($email_address)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($email_address));
             } else {
                 $httpBody = $email_address;
@@ -5278,7 +5140,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5286,14 +5148,13 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5308,9 +5169,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5321,16 +5183,17 @@ class LoginsApi
      *
      * Update login info
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin $update_login update_login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin  $update_login  update_login (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\UpdateLoginResult
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\UpdateLoginResult
      */
     public function updateLoginInfo($update_login, string $contentType = self::contentTypes['updateLoginInfo'][0])
     {
-        list($response) = $this->updateLoginInfoWithHttpInfo($update_login, $contentType);
+        [$response] = $this->updateLoginInfoWithHttpInfo($update_login, $contentType);
+
         return $response;
     }
 
@@ -5339,12 +5202,12 @@ class LoginsApi
      *
      * Update login info
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin $update_login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin  $update_login  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UpdateLoginResult, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UpdateLoginResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateLoginInfoWithHttpInfo($update_login, string $contentType = self::contentTypes['updateLoginInfo'][0])
     {
@@ -5372,8 +5235,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\UpdateLoginResult',
@@ -5381,8 +5243,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5413,7 +5273,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5424,11 +5283,11 @@ class LoginsApi
      *
      * Update login info
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin $update_login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin  $update_login  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateLoginInfoAsync($update_login, string $contentType = self::contentTypes['updateLoginInfo'][0])
     {
@@ -5445,11 +5304,11 @@ class LoginsApi
      *
      * Update login info
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin $update_login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin  $update_login  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateLoginInfoAsyncWithHttpInfo($update_login, string $contentType = self::contentTypes['updateLoginInfo'][0])
     {
@@ -5461,7 +5320,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5472,7 +5331,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5495,11 +5354,11 @@ class LoginsApi
     /**
      * Create request for operation 'updateLoginInfo'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin $update_login (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateLogin  $update_login  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateLoginInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateLoginInfoRequest($update_login, string $contentType = self::contentTypes['updateLoginInfo'][0])
     {
@@ -5511,7 +5370,6 @@ class LoginsApi
             );
         }
 
-
         $resourcePath = '/login';
         $formParams = [];
         $queryParams = [];
@@ -5519,12 +5377,8 @@ class LoginsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5532,7 +5386,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($update_login)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_login));
             } else {
                 $httpBody = $update_login;
@@ -5545,7 +5399,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5553,7 +5407,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5564,11 +5418,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5584,9 +5438,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5597,12 +5452,12 @@ class LoginsApi
      *
      * Update UI prefereces for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences $update_ui_preferences update_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences  $update_ui_preferences  update_ui_preferences (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateUiPreferences($update_ui_preferences, string $contentType = self::contentTypes['updateUiPreferences'][0])
     {
@@ -5614,12 +5469,12 @@ class LoginsApi
      *
      * Update UI prefereces for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences $update_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences  $update_ui_preferences  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateUiPreferencesWithHttpInfo($update_ui_preferences, string $contentType = self::contentTypes['updateUiPreferences'][0])
     {
@@ -5647,12 +5502,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5663,11 +5516,11 @@ class LoginsApi
      *
      * Update UI prefereces for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences $update_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences  $update_ui_preferences  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateUiPreferencesAsync($update_ui_preferences, string $contentType = self::contentTypes['updateUiPreferences'][0])
     {
@@ -5684,11 +5537,11 @@ class LoginsApi
      *
      * Update UI prefereces for login
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences $update_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences  $update_ui_preferences  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateUiPreferencesAsyncWithHttpInfo($update_ui_preferences, string $contentType = self::contentTypes['updateUiPreferences'][0])
     {
@@ -5698,7 +5551,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5721,11 +5574,11 @@ class LoginsApi
     /**
      * Create request for operation 'updateUiPreferences'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences $update_ui_preferences (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateUiPreferences  $update_ui_preferences  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUiPreferences'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateUiPreferencesRequest($update_ui_preferences, string $contentType = self::contentTypes['updateUiPreferences'][0])
     {
@@ -5737,17 +5590,12 @@ class LoginsApi
             );
         }
 
-
         $resourcePath = '/logins/ui-preferences';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5758,7 +5606,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($update_ui_preferences)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_ui_preferences));
             } else {
                 $httpBody = $update_ui_preferences;
@@ -5771,7 +5619,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5779,7 +5627,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5790,11 +5638,11 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5810,9 +5658,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5823,16 +5672,17 @@ class LoginsApi
      *
      * Validate a password recovery secret
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ValidatedPasswordRecovery
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ValidatedPasswordRecovery
      */
     public function validatePasswordRecovery($secret, string $contentType = self::contentTypes['validatePasswordRecovery'][0])
     {
-        list($response) = $this->validatePasswordRecoveryWithHttpInfo($secret, $contentType);
+        [$response] = $this->validatePasswordRecoveryWithHttpInfo($secret, $contentType);
+
         return $response;
     }
 
@@ -5841,12 +5691,12 @@ class LoginsApi
      *
      * Validate a password recovery secret
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ValidatedPasswordRecovery, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ValidatedPasswordRecovery, HTTP status code, HTTP response headers (array of strings)
      */
     public function validatePasswordRecoveryWithHttpInfo($secret, string $contentType = self::contentTypes['validatePasswordRecovery'][0])
     {
@@ -5874,8 +5724,7 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ValidatedPasswordRecovery',
@@ -5883,8 +5732,6 @@ class LoginsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5915,7 +5762,6 @@ class LoginsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5926,11 +5772,11 @@ class LoginsApi
      *
      * Validate a password recovery secret
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validatePasswordRecoveryAsync($secret, string $contentType = self::contentTypes['validatePasswordRecovery'][0])
     {
@@ -5947,11 +5793,11 @@ class LoginsApi
      *
      * Validate a password recovery secret
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validatePasswordRecoveryAsyncWithHttpInfo($secret, string $contentType = self::contentTypes['validatePasswordRecovery'][0])
     {
@@ -5963,7 +5809,7 @@ class LoginsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5974,7 +5820,7 @@ class LoginsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5997,11 +5843,11 @@ class LoginsApi
     /**
      * Create request for operation 'validatePasswordRecovery'
      *
-     * @param  string $secret The secret key for the password recovery. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @param  string  $secret  The secret key for the password recovery. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validatePasswordRecovery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function validatePasswordRecoveryRequest($secret, string $contentType = self::contentTypes['validatePasswordRecovery'][0])
     {
@@ -6012,7 +5858,6 @@ class LoginsApi
                 'Missing the required parameter $secret when calling validatePasswordRecovery'
             );
         }
-
 
         $resourcePath = '/login/password-recovery/validate';
         $formParams = [];
@@ -6031,11 +5876,8 @@ class LoginsApi
             true // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -6049,7 +5891,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6057,14 +5899,13 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6079,9 +5920,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6092,12 +5934,12 @@ class LoginsApi
      *
      * Verifies 2FA sign-in code.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA $login2_fa Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA  $login2_fa  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function verify2FA($login2_fa, string $contentType = self::contentTypes['verify2FA'][0])
     {
@@ -6109,12 +5951,12 @@ class LoginsApi
      *
      * Verifies 2FA sign-in code.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA $login2_fa Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA  $login2_fa  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function verify2FAWithHttpInfo($login2_fa, string $contentType = self::contentTypes['verify2FA'][0])
     {
@@ -6142,12 +5984,10 @@ class LoginsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -6158,11 +5998,11 @@ class LoginsApi
      *
      * Verifies 2FA sign-in code.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA $login2_fa Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA  $login2_fa  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function verify2FAAsync($login2_fa, string $contentType = self::contentTypes['verify2FA'][0])
     {
@@ -6179,11 +6019,11 @@ class LoginsApi
      *
      * Verifies 2FA sign-in code.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA $login2_fa Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA  $login2_fa  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function verify2FAAsyncWithHttpInfo($login2_fa, string $contentType = self::contentTypes['verify2FA'][0])
     {
@@ -6193,7 +6033,7 @@ class LoginsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -6216,11 +6056,11 @@ class LoginsApi
     /**
      * Create request for operation 'verify2FA'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA $login2_fa Verification details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Login2FA  $login2_fa  Verification details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['verify2FA'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function verify2FARequest($login2_fa, string $contentType = self::contentTypes['verify2FA'][0])
     {
@@ -6232,17 +6072,12 @@ class LoginsApi
             );
         }
 
-
         $resourcePath = '/login/2fa';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -6253,7 +6088,7 @@ class LoginsApi
         // for model (json/xml)
         if (isset($login2_fa)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($login2_fa));
             } else {
                 $httpBody = $login2_fa;
@@ -6266,7 +6101,7 @@ class LoginsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6274,7 +6109,7 @@ class LoginsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6285,7 +6120,7 @@ class LoginsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
 
         $defaultHeaders = [];
@@ -6301,9 +6136,10 @@ class LoginsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6312,16 +6148,17 @@ class LoginsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -6334,7 +6171,7 @@ class LoginsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -6357,7 +6194,7 @@ class LoginsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

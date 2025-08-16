@@ -1,12 +1,14 @@
 <?php
+
 /**
  * UpdateDnsZone
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,78 +30,82 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * UpdateDnsZone Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateDnsZone implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'UpdateDnsZone';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'name_server' => 'string',
         'admin_email' => 'string',
         'expire' => 'int',
         'refresh' => 'int',
         'retry' => 'int',
-        'ttl' => 'int'
+        'ttl' => 'int',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'name_server' => null,
         'admin_email' => null,
         'expire' => null,
         'refresh' => null,
         'retry' => null,
-        'ttl' => null
+        'ttl' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'name_server' => false,
         'admin_email' => false,
         'expire' => false,
         'refresh' => false,
         'retry' => false,
-        'ttl' => false
+        'ttl' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -124,8 +130,6 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -135,7 +139,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -145,7 +149,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -154,9 +158,6 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -165,9 +166,6 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -186,7 +184,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
         'expire' => 'expire',
         'refresh' => 'refresh',
         'retry' => 'retry',
-        'ttl' => 'ttl'
+        'ttl' => 'ttl',
     ];
 
     /**
@@ -200,7 +198,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
         'expire' => 'setExpire',
         'refresh' => 'setRefresh',
         'retry' => 'setRetry',
-        'ttl' => 'setTtl'
+        'ttl' => 'setTtl',
     ];
 
     /**
@@ -214,7 +212,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
         'expire' => 'getExpire',
         'refresh' => 'getRefresh',
         'retry' => 'getRetry',
-        'ttl' => 'getTtl'
+        'ttl' => 'getTtl',
     ];
 
     /**
@@ -258,7 +256,6 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -269,8 +266,8 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -283,14 +280,12 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -323,7 +318,6 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets name_server
      *
@@ -337,8 +331,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name_server
      *
-     * @param string|null $name_server name_server
-     *
+     * @param  string|null  $name_server  name_server
      * @return self
      */
     public function setNameServer($name_server)
@@ -364,8 +357,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets admin_email
      *
-     * @param string|null $admin_email admin_email
-     *
+     * @param  string|null  $admin_email  admin_email
      * @return self
      */
     public function setAdminEmail($admin_email)
@@ -391,8 +383,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expire
      *
-     * @param int|null $expire expire
-     *
+     * @param  int|null  $expire  expire
      * @return self
      */
     public function setExpire($expire)
@@ -418,8 +409,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets refresh
      *
-     * @param int|null $refresh refresh
-     *
+     * @param  int|null  $refresh  refresh
      * @return self
      */
     public function setRefresh($refresh)
@@ -445,8 +435,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets retry
      *
-     * @param int|null $retry retry
-     *
+     * @param  int|null  $retry  retry
      * @return self
      */
     public function setRetry($retry)
@@ -472,8 +461,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ttl
      *
-     * @param int|null $ttl In seconds
-     *
+     * @param  int|null  $ttl  In seconds
      * @return self
      */
     public function setTtl($ttl)
@@ -485,12 +473,11 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -500,8 +487,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -513,10 +499,8 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -530,9 +514,7 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -541,15 +523,16 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -575,5 +558,3 @@ class UpdateDnsZone implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

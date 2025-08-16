@@ -1,12 +1,14 @@
 <?php
+
 /**
  * UpdateImportServerSettings
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * UpdateImportServerSettings Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateImportServerSettings implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'UpdateImportServerSettings';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'hostname' => 'string',
         'friendly_name' => 'string',
@@ -67,16 +71,18 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
         'ssh_port' => 'float',
         'api_port' => 'float',
         'allow_partial_sync' => 'bool',
-        'as_user_root' => 'bool'
+        'as_user_root' => 'bool',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'hostname' => null,
         'friendly_name' => null,
@@ -88,14 +94,14 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
         'ssh_port' => null,
         'api_port' => null,
         'allow_partial_sync' => null,
-        'as_user_root' => null
+        'as_user_root' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'hostname' => false,
         'friendly_name' => false,
@@ -107,14 +113,14 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
         'ssh_port' => false,
         'api_port' => false,
         'allow_partial_sync' => false,
-        'as_user_root' => false
+        'as_user_root' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -139,8 +145,6 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -150,7 +154,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -160,7 +164,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -169,9 +173,6 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -180,9 +181,6 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -206,7 +204,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
         'ssh_port' => 'sshPort',
         'api_port' => 'apiPort',
         'allow_partial_sync' => 'allowPartialSync',
-        'as_user_root' => 'asUserRoot'
+        'as_user_root' => 'asUserRoot',
     ];
 
     /**
@@ -225,7 +223,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
         'ssh_port' => 'setSshPort',
         'api_port' => 'setApiPort',
         'allow_partial_sync' => 'setAllowPartialSync',
-        'as_user_root' => 'setAsUserRoot'
+        'as_user_root' => 'setAsUserRoot',
     ];
 
     /**
@@ -244,7 +242,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
         'ssh_port' => 'getSshPort',
         'api_port' => 'getApiPort',
         'allow_partial_sync' => 'getAllowPartialSync',
-        'as_user_root' => 'getAsUserRoot'
+        'as_user_root' => 'getAsUserRoot',
     ];
 
     /**
@@ -288,7 +286,6 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -299,8 +296,8 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -318,14 +315,12 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -358,7 +353,6 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets hostname
      *
@@ -372,8 +366,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets hostname
      *
-     * @param string|null $hostname hostname
-     *
+     * @param  string|null  $hostname  hostname
      * @return self
      */
     public function setHostname($hostname)
@@ -399,8 +392,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets friendly_name
      *
-     * @param string|null $friendly_name friendly_name
-     *
+     * @param  string|null  $friendly_name  friendly_name
      * @return self
      */
     public function setFriendlyName($friendly_name)
@@ -426,8 +418,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets ssh_user
      *
-     * @param string|null $ssh_user ssh_user
-     *
+     * @param  string|null  $ssh_user  ssh_user
      * @return self
      */
     public function setSshUser($ssh_user)
@@ -453,8 +444,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets ssh_public_key
      *
-     * @param string|null $ssh_public_key ssh_public_key
-     *
+     * @param  string|null  $ssh_public_key  ssh_public_key
      * @return self
      */
     public function setSshPublicKey($ssh_public_key)
@@ -480,8 +470,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets ssh_private_key
      *
-     * @param string|null $ssh_private_key ssh_private_key
-     *
+     * @param  string|null  $ssh_private_key  ssh_private_key
      * @return self
      */
     public function setSshPrivateKey($ssh_private_key)
@@ -507,8 +496,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets auth_kind
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServerMigrationSettingsAuthType|null $auth_kind auth_kind
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerMigrationSettingsAuthType|null  $auth_kind  auth_kind
      * @return self
      */
     public function setAuthKind($auth_kind)
@@ -534,8 +522,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets auth_user
      *
-     * @param string|null $auth_user auth_user
-     *
+     * @param  string|null  $auth_user  auth_user
      * @return self
      */
     public function setAuthUser($auth_user)
@@ -561,8 +548,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets ssh_port
      *
-     * @param float|null $ssh_port ssh_port
-     *
+     * @param  float|null  $ssh_port  ssh_port
      * @return self
      */
     public function setSshPort($ssh_port)
@@ -588,8 +574,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets api_port
      *
-     * @param float|null $api_port api_port
-     *
+     * @param  float|null  $api_port  api_port
      * @return self
      */
     public function setApiPort($api_port)
@@ -615,8 +600,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets allow_partial_sync
      *
-     * @param bool|null $allow_partial_sync allow_partial_sync
-     *
+     * @param  bool|null  $allow_partial_sync  allow_partial_sync
      * @return self
      */
     public function setAllowPartialSync($allow_partial_sync)
@@ -642,8 +626,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets as_user_root
      *
-     * @param bool|null $as_user_root as_user_root
-     *
+     * @param  bool|null  $as_user_root  as_user_root
      * @return self
      */
     public function setAsUserRoot($as_user_root)
@@ -655,12 +638,11 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -670,8 +652,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -683,10 +664,8 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -700,9 +679,7 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -711,15 +688,16 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -745,5 +723,3 @@ class UpdateImportServerSettings implements ModelInterface, ArrayAccess, \JsonSe
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

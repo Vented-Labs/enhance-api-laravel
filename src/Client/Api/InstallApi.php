@@ -1,11 +1,13 @@
 <?php
+
 /**
  * InstallApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * InstallApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class InstallApi
@@ -72,7 +74,7 @@ class InstallApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'orchdStatus' => [
             'application/json',
@@ -83,10 +85,7 @@ class InstallApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -94,16 +93,16 @@ class InstallApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -133,15 +132,16 @@ class InstallApi
      *
      * Get the readiness status of the orchd service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function orchdStatus(string $contentType = self::contentTypes['orchdStatus'][0])
     {
-        list($response) = $this->orchdStatusWithHttpInfo($contentType);
+        [$response] = $this->orchdStatusWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -150,11 +150,11 @@ class InstallApi
      *
      * Get the readiness status of the orchd service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function orchdStatusWithHttpInfo(string $contentType = self::contentTypes['orchdStatus'][0])
     {
@@ -182,8 +182,7 @@ class InstallApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -191,8 +190,6 @@ class InstallApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -223,7 +220,6 @@ class InstallApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -234,10 +230,10 @@ class InstallApi
      *
      * Get the readiness status of the orchd service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function orchdStatusAsync(string $contentType = self::contentTypes['orchdStatus'][0])
     {
@@ -254,10 +250,10 @@ class InstallApi
      *
      * Get the readiness status of the orchd service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function orchdStatusAsyncWithHttpInfo(string $contentType = self::contentTypes['orchdStatus'][0])
     {
@@ -269,7 +265,7 @@ class InstallApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -280,7 +276,7 @@ class InstallApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -303,14 +299,13 @@ class InstallApi
     /**
      * Create request for operation 'orchdStatus'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function orchdStatusRequest(string $contentType = self::contentTypes['orchdStatus'][0])
     {
-
 
         $resourcePath = '/status';
         $formParams = [];
@@ -319,12 +314,8 @@ class InstallApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -338,7 +329,7 @@ class InstallApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -346,14 +337,13 @@ class InstallApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -368,9 +358,10 @@ class InstallApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -381,15 +372,16 @@ class InstallApi
      *
      * Get the SemVer of the API service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function orchdVersion(string $contentType = self::contentTypes['orchdVersion'][0])
     {
-        list($response) = $this->orchdVersionWithHttpInfo($contentType);
+        [$response] = $this->orchdVersionWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -398,11 +390,11 @@ class InstallApi
      *
      * Get the SemVer of the API service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function orchdVersionWithHttpInfo(string $contentType = self::contentTypes['orchdVersion'][0])
     {
@@ -430,8 +422,7 @@ class InstallApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -439,8 +430,6 @@ class InstallApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -471,7 +460,6 @@ class InstallApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -482,10 +470,10 @@ class InstallApi
      *
      * Get the SemVer of the API service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function orchdVersionAsync(string $contentType = self::contentTypes['orchdVersion'][0])
     {
@@ -502,10 +490,10 @@ class InstallApi
      *
      * Get the SemVer of the API service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function orchdVersionAsyncWithHttpInfo(string $contentType = self::contentTypes['orchdVersion'][0])
     {
@@ -517,7 +505,7 @@ class InstallApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -528,7 +516,7 @@ class InstallApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -551,14 +539,13 @@ class InstallApi
     /**
      * Create request for operation 'orchdVersion'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['orchdVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function orchdVersionRequest(string $contentType = self::contentTypes['orchdVersion'][0])
     {
-
 
         $resourcePath = '/version';
         $formParams = [];
@@ -567,12 +554,8 @@ class InstallApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -586,7 +569,7 @@ class InstallApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -594,14 +577,13 @@ class InstallApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -616,9 +598,10 @@ class InstallApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -627,16 +610,17 @@ class InstallApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -649,7 +633,7 @@ class InstallApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -672,7 +656,7 @@ class InstallApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

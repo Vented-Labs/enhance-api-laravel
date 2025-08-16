@@ -1,12 +1,14 @@
 <?php
+
 /**
  * CloudFlareNameServers
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,66 +30,70 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * CloudFlareNameServers Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSerializable
+class CloudFlareNameServers implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'CloudFlareNameServers';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'name_servers' => 'string[]',
-        'status' => 'string'
+        'status' => 'string',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'name_servers' => null,
-        'status' => 'string'
+        'status' => 'string',
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'name_servers' => false,
-        'status' => false
+        'status' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -112,8 +118,6 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -123,7 +127,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -133,7 +137,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -142,9 +146,6 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -153,9 +154,6 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -170,7 +168,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'name_servers' => 'nameServers',
-        'status' => 'status'
+        'status' => 'status',
     ];
 
     /**
@@ -180,7 +178,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'name_servers' => 'setNameServers',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
     ];
 
     /**
@@ -190,7 +188,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'name_servers' => 'getNameServers',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
     ];
 
     /**
@@ -235,6 +233,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     public const STATUS_ACTIVE = 'active';
+
     public const STATUS_PENDING = 'pending';
 
     /**
@@ -260,8 +259,8 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -270,14 +269,12 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -303,7 +300,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "'status' can't be null";
         }
         $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+        if (! is_null($this->container['status']) && ! in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'status', must be one of '%s'",
                 $this->container['status'],
@@ -325,7 +322,6 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets name_servers
      *
@@ -339,8 +335,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets name_servers
      *
-     * @param string[] $name_servers name_servers
-     *
+     * @param  string[]  $name_servers  name_servers
      * @return self
      */
     public function setNameServers($name_servers)
@@ -366,8 +361,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets status
      *
-     * @param string $status status
-     *
+     * @param  string  $status  status
      * @return self
      */
     public function setStatus($status)
@@ -376,7 +370,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
+        if (! in_array($status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'status', must be one of '%s'",
@@ -389,12 +383,11 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -404,8 +397,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -417,10 +409,8 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -434,9 +424,7 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -445,15 +433,16 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -479,5 +468,3 @@ class CloudFlareNameServers implements ModelInterface, ArrayAccess, \JsonSeriali
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

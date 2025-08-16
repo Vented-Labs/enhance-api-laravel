@@ -1,12 +1,14 @@
 <?php
+
 /**
  * LogKind
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * LogKind Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class LogKind
@@ -78,6 +80,7 @@ class LogKind
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -99,9 +102,7 @@ class LogKind
             self::EMAIL_FORWARDER,
             self::EMAIL_ACCOUNT,
             self::EMAIL_DATA,
-            self::EMAIL_DATA_TRANSFER
+            self::EMAIL_DATA_TRANSFER,
         ];
     }
 }
-
-

@@ -1,12 +1,14 @@
 <?php
+
 /**
  * WpPlugin
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,35 +30,38 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * WpPlugin Class Doc Comment
  *
  * @category Class
+ *
  * @description Describes the filename and additional plugin information. The filename is the name of the plugin php file, e.g. \&quot;bbpress.php\&quot;. If the plugin kind is \&quot;file\&quot;, then the file name refers to e.g. \&quot;wp-content/plugins/bbpress.php\&quot;. If the kind is \&quot;dir\&quot;, then the name refers to \&quot;wp-content/plugins/bbpress/bbpress.php\&quot;. The name of the dir is always the same as the name of the file without the php suffix. https://developer.wordpress.org/plugins/plugin-basics/header-requirements/#header-fields
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
+class WpPlugin implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'WpPlugin';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'name' => 'string',
         'uri' => 'string',
@@ -65,16 +70,18 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         'update' => '\Vented\EnhanceApiLaravel\Client\Model\WPPluginUpdateAvailable',
         'auto_update' => '\Vented\EnhanceApiLaravel\Client\Model\WPPluginAutoUpdateStatus',
         'status' => '\Vented\EnhanceApiLaravel\Client\Model\WPPluginStatus',
-        'author' => 'string'
+        'author' => 'string',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'name' => null,
         'uri' => 'url',
@@ -83,14 +90,14 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         'update' => null,
         'auto_update' => null,
         'status' => null,
-        'author' => null
+        'author' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'name' => false,
         'uri' => false,
@@ -99,14 +106,14 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         'update' => false,
         'auto_update' => false,
         'status' => false,
-        'author' => false
+        'author' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -131,8 +138,6 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -142,7 +147,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -152,7 +157,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -161,9 +166,6 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -172,9 +174,6 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -195,7 +194,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         'update' => 'update',
         'auto_update' => 'autoUpdate',
         'status' => 'status',
-        'author' => 'author'
+        'author' => 'author',
     ];
 
     /**
@@ -211,7 +210,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         'update' => 'setUpdate',
         'auto_update' => 'setAutoUpdate',
         'status' => 'setStatus',
-        'author' => 'setAuthor'
+        'author' => 'setAuthor',
     ];
 
     /**
@@ -227,7 +226,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         'update' => 'getUpdate',
         'auto_update' => 'getAutoUpdate',
         'status' => 'getStatus',
-        'author' => 'getAuthor'
+        'author' => 'getAuthor',
     ];
 
     /**
@@ -271,7 +270,6 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -282,8 +280,8 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -298,14 +296,12 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -333,6 +329,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['author'] === null) {
             $invalidProperties[] = "'author' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -347,7 +344,6 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets name
      *
@@ -361,8 +357,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name name
-     *
+     * @param  string  $name  name
      * @return self
      */
     public function setName($name)
@@ -388,8 +383,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets uri
      *
-     * @param string|null $uri uri
-     *
+     * @param  string|null  $uri  uri
      * @return self
      */
     public function setUri($uri)
@@ -415,8 +409,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets description
      *
-     * @param string|null $description description
-     *
+     * @param  string|null  $description  description
      * @return self
      */
     public function setDescription($description)
@@ -442,8 +435,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets version
      *
-     * @param string $version version
-     *
+     * @param  string  $version  version
      * @return self
      */
     public function setVersion($version)
@@ -469,8 +461,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets update
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\WPPluginUpdateAvailable|null $update update
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WPPluginUpdateAvailable|null  $update  update
      * @return self
      */
     public function setUpdate($update)
@@ -496,8 +487,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets auto_update
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\WPPluginAutoUpdateStatus|null $auto_update auto_update
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WPPluginAutoUpdateStatus|null  $auto_update  auto_update
      * @return self
      */
     public function setAutoUpdate($auto_update)
@@ -523,8 +513,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\WPPluginStatus|null $status status
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WPPluginStatus|null  $status  status
      * @return self
      */
     public function setStatus($status)
@@ -550,8 +539,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets author
      *
-     * @param string $author author
-     *
+     * @param  string  $author  author
      * @return self
      */
     public function setAuthor($author)
@@ -563,12 +551,11 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -578,8 +565,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -591,10 +577,8 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -608,9 +592,7 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -619,15 +601,16 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -653,5 +636,3 @@ class WpPlugin implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

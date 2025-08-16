@@ -1,12 +1,14 @@
 <?php
+
 /**
  * OrchdLoginPolicyEmailList
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,64 +30,69 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * OrchdLoginPolicyEmailList Class Doc Comment
  *
  * @category Class
+ *
  * @description Email white or black list for orchd login policy
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSerializable
+class OrchdLoginPolicyEmailList implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'OrchdLoginPolicyEmailList';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
-        'email_list' => 'string[]'
+        'email_list' => 'string[]',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
-        'email_list' => null
+        'email_list' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
-        'email_list' => false
+        'email_list' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -110,8 +117,6 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -121,7 +126,7 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -131,7 +136,7 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -140,9 +145,6 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -151,9 +153,6 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -167,7 +166,7 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'email_list' => 'emailList'
+        'email_list' => 'emailList',
     ];
 
     /**
@@ -176,7 +175,7 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'email_list' => 'setEmailList'
+        'email_list' => 'setEmailList',
     ];
 
     /**
@@ -185,7 +184,7 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'email_list' => 'getEmailList'
+        'email_list' => 'getEmailList',
     ];
 
     /**
@@ -229,7 +228,6 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -240,8 +238,8 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -249,14 +247,12 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -289,7 +285,6 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets email_list
      *
@@ -303,8 +298,7 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets email_list
      *
-     * @param string[]|null $email_list email_list
-     *
+     * @param  string[]|null  $email_list  email_list
      * @return self
      */
     public function setEmailList($email_list)
@@ -316,12 +310,11 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -331,8 +324,7 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -344,10 +336,8 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -361,9 +351,7 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -372,15 +360,16 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -406,5 +395,3 @@ class OrchdLoginPolicyEmailList implements ModelInterface, ArrayAccess, \JsonSer
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

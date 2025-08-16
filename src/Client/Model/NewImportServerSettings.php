@@ -1,12 +1,14 @@
 <?php
+
 /**
  * NewImportServerSettings
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * NewImportServerSettings Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSerializable
+class NewImportServerSettings implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'NewImportServerSettings';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'ssh_private_key' => 'string',
         'ssh_public_key' => 'string',
@@ -69,16 +73,18 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         'auth_user' => 'string',
         'auth_pass' => 'string',
         'ssh_port' => 'float',
-        'api_port' => 'float'
+        'api_port' => 'float',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'ssh_private_key' => null,
         'ssh_public_key' => null,
@@ -92,14 +98,14 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         'auth_user' => null,
         'auth_pass' => null,
         'ssh_port' => null,
-        'api_port' => null
+        'api_port' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'ssh_private_key' => false,
         'ssh_public_key' => false,
@@ -113,14 +119,14 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         'auth_user' => false,
         'auth_pass' => false,
         'ssh_port' => false,
-        'api_port' => false
+        'api_port' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -145,8 +151,6 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -156,7 +160,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -166,7 +170,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -175,9 +179,6 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -186,9 +187,6 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -214,7 +212,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         'auth_user' => 'authUser',
         'auth_pass' => 'authPass',
         'ssh_port' => 'sshPort',
-        'api_port' => 'apiPort'
+        'api_port' => 'apiPort',
     ];
 
     /**
@@ -235,7 +233,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         'auth_user' => 'setAuthUser',
         'auth_pass' => 'setAuthPass',
         'ssh_port' => 'setSshPort',
-        'api_port' => 'setApiPort'
+        'api_port' => 'setApiPort',
     ];
 
     /**
@@ -256,7 +254,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         'auth_user' => 'getAuthUser',
         'auth_pass' => 'getAuthPass',
         'ssh_port' => 'getSshPort',
-        'api_port' => 'getApiPort'
+        'api_port' => 'getApiPort',
     ];
 
     /**
@@ -300,7 +298,6 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -311,8 +308,8 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -332,14 +329,12 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -385,6 +380,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['api_port'] === null) {
             $invalidProperties[] = "'api_port' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -399,7 +395,6 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets ssh_private_key
      *
@@ -413,8 +408,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ssh_private_key
      *
-     * @param string|null $ssh_private_key ssh_private_key
-     *
+     * @param  string|null  $ssh_private_key  ssh_private_key
      * @return self
      */
     public function setSshPrivateKey($ssh_private_key)
@@ -440,8 +434,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ssh_public_key
      *
-     * @param string|null $ssh_public_key ssh_public_key
-     *
+     * @param  string|null  $ssh_public_key  ssh_public_key
      * @return self
      */
     public function setSshPublicKey($ssh_public_key)
@@ -467,8 +460,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets allow_partial_sync
      *
-     * @param bool|null $allow_partial_sync allow_partial_sync
-     *
+     * @param  bool|null  $allow_partial_sync  allow_partial_sync
      * @return self
      */
     public function setAllowPartialSync($allow_partial_sync)
@@ -494,8 +486,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets as_user_root
      *
-     * @param bool|null $as_user_root as_user_root
-     *
+     * @param  bool|null  $as_user_root  as_user_root
      * @return self
      */
     public function setAsUserRoot($as_user_root)
@@ -521,8 +512,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets hostname
      *
-     * @param string $hostname hostname
-     *
+     * @param  string  $hostname  hostname
      * @return self
      */
     public function setHostname($hostname)
@@ -548,8 +538,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets friendly_name
      *
-     * @param string $friendly_name friendly_name
-     *
+     * @param  string  $friendly_name  friendly_name
      * @return self
      */
     public function setFriendlyName($friendly_name)
@@ -575,8 +564,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ssh_user
      *
-     * @param string $ssh_user ssh_user
-     *
+     * @param  string  $ssh_user  ssh_user
      * @return self
      */
     public function setSshUser($ssh_user)
@@ -602,8 +590,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets import_type
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ImportKind $import_type import_type
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImportKind  $import_type  import_type
      * @return self
      */
     public function setImportType($import_type)
@@ -629,8 +616,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets auth_kind
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServerMigrationSettingsAuthType $auth_kind auth_kind
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerMigrationSettingsAuthType  $auth_kind  auth_kind
      * @return self
      */
     public function setAuthKind($auth_kind)
@@ -656,8 +642,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets auth_user
      *
-     * @param string $auth_user auth_user
-     *
+     * @param  string  $auth_user  auth_user
      * @return self
      */
     public function setAuthUser($auth_user)
@@ -683,8 +668,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets auth_pass
      *
-     * @param string $auth_pass auth_pass
-     *
+     * @param  string  $auth_pass  auth_pass
      * @return self
      */
     public function setAuthPass($auth_pass)
@@ -710,8 +694,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ssh_port
      *
-     * @param float $ssh_port ssh_port
-     *
+     * @param  float  $ssh_port  ssh_port
      * @return self
      */
     public function setSshPort($ssh_port)
@@ -737,8 +720,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets api_port
      *
-     * @param float $api_port api_port
-     *
+     * @param  float  $api_port  api_port
      * @return self
      */
     public function setApiPort($api_port)
@@ -750,12 +732,11 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -765,8 +746,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -778,10 +758,8 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -795,9 +773,7 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -806,15 +782,16 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -840,5 +817,3 @@ class NewImportServerSettings implements ModelInterface, ArrayAccess, \JsonSeria
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

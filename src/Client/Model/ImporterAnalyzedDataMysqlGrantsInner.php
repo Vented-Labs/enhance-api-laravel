@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ImporterAnalyzedDataMysqlGrantsInner
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,72 +30,76 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ImporterAnalyzedDataMysqlGrantsInner Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ImporterAnalyzedDataMysqlGrantsInner implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ImporterAnalyzedData_mysqlGrants_inner';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'db_name' => 'string',
         'username' => 'string',
         'table_name' => 'string',
-        'privilege' => 'string[]'
+        'privilege' => 'string[]',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'db_name' => null,
         'username' => null,
         'table_name' => null,
-        'privilege' => null
+        'privilege' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'db_name' => false,
         'username' => false,
         'table_name' => false,
-        'privilege' => false
+        'privilege' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -118,8 +124,6 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -129,7 +133,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -139,7 +143,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -148,9 +152,6 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -159,9 +160,6 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -178,7 +176,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
         'db_name' => 'dbName',
         'username' => 'username',
         'table_name' => 'tableName',
-        'privilege' => 'privilege'
+        'privilege' => 'privilege',
     ];
 
     /**
@@ -190,7 +188,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
         'db_name' => 'setDbName',
         'username' => 'setUsername',
         'table_name' => 'setTableName',
-        'privilege' => 'setPrivilege'
+        'privilege' => 'setPrivilege',
     ];
 
     /**
@@ -202,7 +200,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
         'db_name' => 'getDbName',
         'username' => 'getUsername',
         'table_name' => 'getTableName',
-        'privilege' => 'getPrivilege'
+        'privilege' => 'getPrivilege',
     ];
 
     /**
@@ -246,7 +244,6 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -257,8 +254,8 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -269,14 +266,12 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -304,6 +299,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
         if ($this->container['table_name'] === null) {
             $invalidProperties[] = "'table_name' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -318,7 +314,6 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets db_name
      *
@@ -332,8 +327,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Sets db_name
      *
-     * @param string $db_name db_name
-     *
+     * @param  string  $db_name  db_name
      * @return self
      */
     public function setDbName($db_name)
@@ -359,8 +353,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Sets username
      *
-     * @param string $username username
-     *
+     * @param  string  $username  username
      * @return self
      */
     public function setUsername($username)
@@ -386,8 +379,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Sets table_name
      *
-     * @param string $table_name table_name
-     *
+     * @param  string  $table_name  table_name
      * @return self
      */
     public function setTableName($table_name)
@@ -413,8 +405,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Sets privilege
      *
-     * @param string[]|null $privilege privilege
-     *
+     * @param  string[]|null  $privilege  privilege
      * @return self
      */
     public function setPrivilege($privilege)
@@ -426,12 +417,11 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -441,8 +431,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -454,10 +443,8 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -471,9 +458,7 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -482,15 +467,16 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -516,5 +502,3 @@ class ImporterAnalyzedDataMysqlGrantsInner implements ModelInterface, ArrayAcces
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

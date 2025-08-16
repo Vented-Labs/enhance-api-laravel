@@ -1,11 +1,13 @@
 <?php
+
 /**
  * OwnerApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * OwnerApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class OwnerApi
@@ -72,7 +74,7 @@ class OwnerApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'deleteOwner' => [
             'application/json',
@@ -83,10 +85,7 @@ class OwnerApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -94,16 +93,16 @@ class OwnerApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -133,12 +132,12 @@ class OwnerApi
      *
      * Delete organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteOwner($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -150,12 +149,12 @@ class OwnerApi
      *
      * Delete organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteOwnerWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -183,12 +182,10 @@ class OwnerApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -199,11 +196,11 @@ class OwnerApi
      *
      * Delete organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOwnerAsync($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -220,11 +217,11 @@ class OwnerApi
      *
      * Delete organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOwnerAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -234,7 +231,7 @@ class OwnerApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -257,11 +254,11 @@ class OwnerApi
     /**
      * Create request for operation 'deleteOwner'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteOwnerRequest($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -273,7 +270,6 @@ class OwnerApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/owner';
         $formParams = [];
         $queryParams = [];
@@ -281,17 +277,14 @@ class OwnerApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -308,7 +301,7 @@ class OwnerApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -316,7 +309,7 @@ class OwnerApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -327,11 +320,11 @@ class OwnerApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -347,9 +340,10 @@ class OwnerApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -360,13 +354,13 @@ class OwnerApi
      *
      * Update organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateOwner($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -378,13 +372,13 @@ class OwnerApi
      *
      * Update organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateOwnerWithHttpInfo($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -412,12 +406,10 @@ class OwnerApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -428,12 +420,12 @@ class OwnerApi
      *
      * Update organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateOwnerAsync($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -450,12 +442,12 @@ class OwnerApi
      *
      * Update organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateOwnerAsyncWithHttpInfo($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -465,7 +457,7 @@ class OwnerApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -488,12 +480,12 @@ class OwnerApi
     /**
      * Create request for operation 'updateOwner'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateOwnerRequest($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -512,7 +504,6 @@ class OwnerApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/owner';
         $formParams = [];
         $queryParams = [];
@@ -520,17 +511,14 @@ class OwnerApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -541,7 +529,7 @@ class OwnerApi
         // for model (json/xml)
         if (isset($org_owner_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($org_owner_update));
             } else {
                 $httpBody = $org_owner_update;
@@ -554,7 +542,7 @@ class OwnerApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -562,7 +550,7 @@ class OwnerApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -573,11 +561,11 @@ class OwnerApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -593,9 +581,10 @@ class OwnerApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -604,16 +593,17 @@ class OwnerApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -626,7 +616,7 @@ class OwnerApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -649,7 +639,7 @@ class OwnerApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

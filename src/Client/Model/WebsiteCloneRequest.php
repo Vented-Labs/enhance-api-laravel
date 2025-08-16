@@ -1,12 +1,14 @@
 <?php
+
 /**
  * WebsiteCloneRequest
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * WebsiteCloneRequest Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class WebsiteCloneRequest implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'WebsiteCloneRequest';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'run_wp_search_replace' => 'bool',
         'source_website_id' => 'string',
@@ -65,16 +69,18 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'include_database_users' => 'string[]',
         'delete_files_from_destination' => 'bool',
         'sync_php_version' => 'bool',
-        'new_website' => '\Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneNewWebsite'
+        'new_website' => '\Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneNewWebsite',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'run_wp_search_replace' => null,
         'source_website_id' => 'uuid',
@@ -84,14 +90,14 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'include_database_users' => null,
         'delete_files_from_destination' => null,
         'sync_php_version' => null,
-        'new_website' => null
+        'new_website' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'run_wp_search_replace' => false,
         'source_website_id' => false,
@@ -101,14 +107,14 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'include_database_users' => false,
         'delete_files_from_destination' => false,
         'sync_php_version' => false,
-        'new_website' => false
+        'new_website' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -133,8 +139,6 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -144,7 +148,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -154,7 +158,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -163,9 +167,6 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -174,9 +175,6 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -198,7 +196,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'include_database_users' => 'includeDatabaseUsers',
         'delete_files_from_destination' => 'deleteFilesFromDestination',
         'sync_php_version' => 'syncPhpVersion',
-        'new_website' => 'newWebsite'
+        'new_website' => 'newWebsite',
     ];
 
     /**
@@ -215,7 +213,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'include_database_users' => 'setIncludeDatabaseUsers',
         'delete_files_from_destination' => 'setDeleteFilesFromDestination',
         'sync_php_version' => 'setSyncPhpVersion',
-        'new_website' => 'setNewWebsite'
+        'new_website' => 'setNewWebsite',
     ];
 
     /**
@@ -232,7 +230,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'include_database_users' => 'getIncludeDatabaseUsers',
         'delete_files_from_destination' => 'getDeleteFilesFromDestination',
         'sync_php_version' => 'getSyncPhpVersion',
-        'new_website' => 'getNewWebsite'
+        'new_website' => 'getNewWebsite',
     ];
 
     /**
@@ -276,7 +274,6 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -287,8 +284,8 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -304,14 +301,12 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -342,6 +337,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['sync_php_version'] === null) {
             $invalidProperties[] = "'sync_php_version' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -356,7 +352,6 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets run_wp_search_replace
      *
@@ -370,8 +365,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets run_wp_search_replace
      *
-     * @param bool|null $run_wp_search_replace run_wp_search_replace
-     *
+     * @param  bool|null  $run_wp_search_replace  run_wp_search_replace
      * @return self
      */
     public function setRunWpSearchReplace($run_wp_search_replace)
@@ -397,8 +391,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets source_website_id
      *
-     * @param string $source_website_id source_website_id
-     *
+     * @param  string  $source_website_id  source_website_id
      * @return self
      */
     public function setSourceWebsiteId($source_website_id)
@@ -424,8 +417,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets dest_website_id
      *
-     * @param string|null $dest_website_id dest_website_id
-     *
+     * @param  string|null  $dest_website_id  dest_website_id
      * @return self
      */
     public function setDestWebsiteId($dest_website_id)
@@ -451,8 +443,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets exclude_paths
      *
-     * @param string[] $exclude_paths exclude_paths
-     *
+     * @param  string[]  $exclude_paths  exclude_paths
      * @return self
      */
     public function setExcludePaths($exclude_paths)
@@ -478,8 +469,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets include_databases
      *
-     * @param string[]|null $include_databases include_databases
-     *
+     * @param  string[]|null  $include_databases  include_databases
      * @return self
      */
     public function setIncludeDatabases($include_databases)
@@ -505,8 +495,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets include_database_users
      *
-     * @param string[]|null $include_database_users include_database_users
-     *
+     * @param  string[]|null  $include_database_users  include_database_users
      * @return self
      */
     public function setIncludeDatabaseUsers($include_database_users)
@@ -532,8 +521,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets delete_files_from_destination
      *
-     * @param bool $delete_files_from_destination delete_files_from_destination
-     *
+     * @param  bool  $delete_files_from_destination  delete_files_from_destination
      * @return self
      */
     public function setDeleteFilesFromDestination($delete_files_from_destination)
@@ -559,8 +547,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sync_php_version
      *
-     * @param bool $sync_php_version sync_php_version
-     *
+     * @param  bool  $sync_php_version  sync_php_version
      * @return self
      */
     public function setSyncPhpVersion($sync_php_version)
@@ -586,8 +573,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets new_website
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneNewWebsite|null $new_website new_website
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneNewWebsite|null  $new_website  new_website
      * @return self
      */
     public function setNewWebsite($new_website)
@@ -599,12 +585,11 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -614,8 +599,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -627,10 +611,8 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -644,9 +626,7 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -655,15 +635,16 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -689,5 +670,3 @@ class WebsiteCloneRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

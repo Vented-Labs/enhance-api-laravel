@@ -1,12 +1,14 @@
 <?php
+
 /**
  * CloudFlareStatus
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * CloudFlareStatus Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class CloudFlareStatus
@@ -50,6 +52,7 @@ class CloudFlareStatus
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -57,9 +60,7 @@ class CloudFlareStatus
         return [
             self::CONNECTED,
             self::DISCONNECTED,
-            self::ERROR
+            self::ERROR,
         ];
     }
 }
-
-

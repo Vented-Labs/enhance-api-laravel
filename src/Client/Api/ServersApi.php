@@ -1,11 +1,13 @@
 <?php
+
 /**
  * ServersApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * ServersApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ServersApi
@@ -72,7 +74,7 @@ class ServersApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'addSpamIpWhitelist' => [
             'application/json',
@@ -314,10 +316,7 @@ class ServersApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -325,16 +324,16 @@ class ServersApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -364,13 +363,13 @@ class ServersApi
      *
      * Add to the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function addSpamIpWhitelist($server_id, $body = null, string $contentType = self::contentTypes['addSpamIpWhitelist'][0])
     {
@@ -382,13 +381,13 @@ class ServersApi
      *
      * Add to the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function addSpamIpWhitelistWithHttpInfo($server_id, $body = null, string $contentType = self::contentTypes['addSpamIpWhitelist'][0])
     {
@@ -416,12 +415,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -432,12 +429,12 @@ class ServersApi
      *
      * Add to the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addSpamIpWhitelistAsync($server_id, $body = null, string $contentType = self::contentTypes['addSpamIpWhitelist'][0])
     {
@@ -454,12 +451,12 @@ class ServersApi
      *
      * Add to the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addSpamIpWhitelistAsyncWithHttpInfo($server_id, $body = null, string $contentType = self::contentTypes['addSpamIpWhitelist'][0])
     {
@@ -469,7 +466,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -492,12 +489,12 @@ class ServersApi
     /**
      * Create request for operation 'addSpamIpWhitelist'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addSpamIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function addSpamIpWhitelistRequest($server_id, $body = null, string $contentType = self::contentTypes['addSpamIpWhitelist'][0])
     {
@@ -509,8 +506,6 @@ class ServersApi
             );
         }
 
-
-
         $resourcePath = '/servers/{server_id}/spam/ip_whitelist';
         $formParams = [];
         $queryParams = [];
@@ -518,17 +513,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -539,7 +531,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -552,7 +544,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -560,7 +552,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -571,11 +563,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -591,9 +583,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -604,13 +597,13 @@ class ServersApi
      *
      * Configure a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf $server_conf server_conf (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf  $server_conf  server_conf (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function configureServer($server_id, $server_conf, string $contentType = self::contentTypes['configureServer'][0])
     {
@@ -622,13 +615,13 @@ class ServersApi
      *
      * Configure a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf $server_conf (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf  $server_conf  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function configureServerWithHttpInfo($server_id, $server_conf, string $contentType = self::contentTypes['configureServer'][0])
     {
@@ -656,12 +649,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -672,12 +663,12 @@ class ServersApi
      *
      * Configure a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf $server_conf (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf  $server_conf  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function configureServerAsync($server_id, $server_conf, string $contentType = self::contentTypes['configureServer'][0])
     {
@@ -694,12 +685,12 @@ class ServersApi
      *
      * Configure a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf $server_conf (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf  $server_conf  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function configureServerAsyncWithHttpInfo($server_id, $server_conf, string $contentType = self::contentTypes['configureServer'][0])
     {
@@ -709,7 +700,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -732,12 +723,12 @@ class ServersApi
     /**
      * Create request for operation 'configureServer'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf $server_conf (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerConf  $server_conf  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['configureServer'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function configureServerRequest($server_id, $server_conf, string $contentType = self::contentTypes['configureServer'][0])
     {
@@ -756,7 +747,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}';
         $formParams = [];
         $queryParams = [];
@@ -764,17 +754,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -785,7 +772,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($server_conf)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($server_conf));
             } else {
                 $httpBody = $server_conf;
@@ -798,7 +785,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -806,7 +793,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -817,11 +804,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -837,9 +824,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -850,17 +838,18 @@ class ServersApi
      *
      * Create a domain which is mapped to a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteAndDomainUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteAndDomainUuid
      */
     public function createServerDomain($server_id, $body, string $contentType = self::contentTypes['createServerDomain'][0])
     {
-        list($response) = $this->createServerDomainWithHttpInfo($server_id, $body, $contentType);
+        [$response] = $this->createServerDomainWithHttpInfo($server_id, $body, $contentType);
+
         return $response;
     }
 
@@ -869,13 +858,13 @@ class ServersApi
      *
      * Create a domain which is mapped to a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteAndDomainUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteAndDomainUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createServerDomainWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['createServerDomain'][0])
     {
@@ -903,8 +892,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsiteAndDomainUuid',
@@ -912,8 +900,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -944,7 +930,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -955,12 +940,12 @@ class ServersApi
      *
      * Create a domain which is mapped to a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createServerDomainAsync($server_id, $body, string $contentType = self::contentTypes['createServerDomain'][0])
     {
@@ -977,12 +962,12 @@ class ServersApi
      *
      * Create a domain which is mapped to a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createServerDomainAsyncWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['createServerDomain'][0])
     {
@@ -994,7 +979,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1005,7 +990,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1028,12 +1013,12 @@ class ServersApi
     /**
      * Create request for operation 'createServerDomain'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createServerDomainRequest($server_id, $body, string $contentType = self::contentTypes['createServerDomain'][0])
     {
@@ -1052,7 +1037,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/domains';
         $formParams = [];
         $queryParams = [];
@@ -1060,20 +1044,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1081,7 +1062,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -1094,7 +1075,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1102,7 +1083,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1113,11 +1094,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1133,9 +1114,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1146,16 +1128,17 @@ class ServersApi
      *
      * Creates a new server group
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup $new_server_group The name of the new server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup  $new_server_group  The name of the new server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createServerGroup($new_server_group, string $contentType = self::contentTypes['createServerGroup'][0])
     {
-        list($response) = $this->createServerGroupWithHttpInfo($new_server_group, $contentType);
+        [$response] = $this->createServerGroupWithHttpInfo($new_server_group, $contentType);
+
         return $response;
     }
 
@@ -1164,12 +1147,12 @@ class ServersApi
      *
      * Creates a new server group
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup $new_server_group The name of the new server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup  $new_server_group  The name of the new server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createServerGroupWithHttpInfo($new_server_group, string $contentType = self::contentTypes['createServerGroup'][0])
     {
@@ -1197,8 +1180,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -1206,8 +1188,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1238,7 +1218,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1249,11 +1228,11 @@ class ServersApi
      *
      * Creates a new server group
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup $new_server_group The name of the new server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup  $new_server_group  The name of the new server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createServerGroupAsync($new_server_group, string $contentType = self::contentTypes['createServerGroup'][0])
     {
@@ -1270,11 +1249,11 @@ class ServersApi
      *
      * Creates a new server group
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup $new_server_group The name of the new server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup  $new_server_group  The name of the new server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createServerGroupAsyncWithHttpInfo($new_server_group, string $contentType = self::contentTypes['createServerGroup'][0])
     {
@@ -1286,7 +1265,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1297,7 +1276,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1320,11 +1299,11 @@ class ServersApi
     /**
      * Create request for operation 'createServerGroup'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup $new_server_group The name of the new server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerGroup  $new_server_group  The name of the new server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createServerGroupRequest($new_server_group, string $contentType = self::contentTypes['createServerGroup'][0])
     {
@@ -1336,7 +1315,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/groups';
         $formParams = [];
         $queryParams = [];
@@ -1344,12 +1322,8 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1357,7 +1331,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($new_server_group)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_server_group));
             } else {
                 $httpBody = $new_server_group;
@@ -1370,7 +1344,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1378,7 +1352,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1389,11 +1363,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1409,9 +1383,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1422,14 +1397,14 @@ class ServersApi
      *
      * Create server network interface secondary IP
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp $new_server_ip new_server_ip (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp  $new_server_ip  new_server_ip (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createServerNetworkInterfaceIp($server_id, $interface, $new_server_ip, string $contentType = self::contentTypes['createServerNetworkInterfaceIp'][0])
     {
@@ -1441,14 +1416,14 @@ class ServersApi
      *
      * Create server network interface secondary IP
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp $new_server_ip (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp  $new_server_ip  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createServerNetworkInterfaceIpWithHttpInfo($server_id, $interface, $new_server_ip, string $contentType = self::contentTypes['createServerNetworkInterfaceIp'][0])
     {
@@ -1476,12 +1451,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1492,13 +1465,13 @@ class ServersApi
      *
      * Create server network interface secondary IP
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp $new_server_ip (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp  $new_server_ip  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createServerNetworkInterfaceIpAsync($server_id, $interface, $new_server_ip, string $contentType = self::contentTypes['createServerNetworkInterfaceIp'][0])
     {
@@ -1515,13 +1488,13 @@ class ServersApi
      *
      * Create server network interface secondary IP
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp $new_server_ip (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp  $new_server_ip  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createServerNetworkInterfaceIpAsyncWithHttpInfo($server_id, $interface, $new_server_ip, string $contentType = self::contentTypes['createServerNetworkInterfaceIp'][0])
     {
@@ -1531,7 +1504,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1554,13 +1527,13 @@ class ServersApi
     /**
      * Create request for operation 'createServerNetworkInterfaceIp'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp $new_server_ip (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewServerIp  $new_server_ip  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createServerNetworkInterfaceIpRequest($server_id, $interface, $new_server_ip, string $contentType = self::contentTypes['createServerNetworkInterfaceIp'][0])
     {
@@ -1586,7 +1559,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/interfaces/{interface}/ips';
         $formParams = [];
         $queryParams = [];
@@ -1594,12 +1566,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -1607,12 +1577,11 @@ class ServersApi
         // path params
         if ($interface !== null) {
             $resourcePath = str_replace(
-                '{' . 'interface' . '}',
+                '{'.'interface'.'}',
                 ObjectSerializer::toPathValue($interface),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1623,7 +1592,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($new_server_ip)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_server_ip));
             } else {
                 $httpBody = $new_server_ip;
@@ -1636,7 +1605,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1644,7 +1613,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1655,11 +1624,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1675,9 +1644,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1688,13 +1658,13 @@ class ServersApi
      *
      * Create a slave node
      *
-     * @param  string $key The secret registration key (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration $slave_registration slave_registration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration  $slave_registration  slave_registration (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createSlave($key, $slave_registration, string $contentType = self::contentTypes['createSlave'][0])
     {
@@ -1706,13 +1676,13 @@ class ServersApi
      *
      * Create a slave node
      *
-     * @param  string $key The secret registration key (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration $slave_registration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration  $slave_registration  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSlaveWithHttpInfo($key, $slave_registration, string $contentType = self::contentTypes['createSlave'][0])
     {
@@ -1740,12 +1710,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1756,12 +1724,12 @@ class ServersApi
      *
      * Create a slave node
      *
-     * @param  string $key The secret registration key (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration $slave_registration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration  $slave_registration  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSlaveAsync($key, $slave_registration, string $contentType = self::contentTypes['createSlave'][0])
     {
@@ -1778,12 +1746,12 @@ class ServersApi
      *
      * Create a slave node
      *
-     * @param  string $key The secret registration key (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration $slave_registration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration  $slave_registration  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSlaveAsyncWithHttpInfo($key, $slave_registration, string $contentType = self::contentTypes['createSlave'][0])
     {
@@ -1793,7 +1761,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1816,12 +1784,12 @@ class ServersApi
     /**
      * Create request for operation 'createSlave'
      *
-     * @param  string $key The secret registration key (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration $slave_registration (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SlaveRegistration  $slave_registration  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSlave'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createSlaveRequest($key, $slave_registration, string $contentType = self::contentTypes['createSlave'][0])
     {
@@ -1840,7 +1808,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/slaves';
         $formParams = [];
         $queryParams = [];
@@ -1858,9 +1825,6 @@ class ServersApi
             true // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
             [],
             $contentType,
@@ -1870,7 +1834,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($slave_registration)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($slave_registration));
             } else {
                 $httpBody = $slave_registration;
@@ -1883,7 +1847,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1891,14 +1855,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1913,9 +1876,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1926,13 +1890,13 @@ class ServersApi
      *
      * Delete from the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteFromSpamIpWhitelist($server_id, $body = null, string $contentType = self::contentTypes['deleteFromSpamIpWhitelist'][0])
     {
@@ -1944,13 +1908,13 @@ class ServersApi
      *
      * Delete from the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteFromSpamIpWhitelistWithHttpInfo($server_id, $body = null, string $contentType = self::contentTypes['deleteFromSpamIpWhitelist'][0])
     {
@@ -1978,12 +1942,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1994,12 +1956,12 @@ class ServersApi
      *
      * Delete from the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFromSpamIpWhitelistAsync($server_id, $body = null, string $contentType = self::contentTypes['deleteFromSpamIpWhitelist'][0])
     {
@@ -2016,12 +1978,12 @@ class ServersApi
      *
      * Delete from the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFromSpamIpWhitelistAsyncWithHttpInfo($server_id, $body = null, string $contentType = self::contentTypes['deleteFromSpamIpWhitelist'][0])
     {
@@ -2031,7 +1993,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2054,12 +2016,12 @@ class ServersApi
     /**
      * Create request for operation 'deleteFromSpamIpWhitelist'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFromSpamIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteFromSpamIpWhitelistRequest($server_id, $body = null, string $contentType = self::contentTypes['deleteFromSpamIpWhitelist'][0])
     {
@@ -2071,8 +2033,6 @@ class ServersApi
             );
         }
 
-
-
         $resourcePath = '/servers/{server_id}/spam/ip_whitelist';
         $formParams = [];
         $queryParams = [];
@@ -2080,17 +2040,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2101,7 +2058,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -2114,7 +2071,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2122,7 +2079,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2133,11 +2090,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2153,9 +2110,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2166,13 +2124,13 @@ class ServersApi
      *
      * Delete a mapped server domain
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteServerDomain($server_id, $domain_id, string $contentType = self::contentTypes['deleteServerDomain'][0])
     {
@@ -2184,13 +2142,13 @@ class ServersApi
      *
      * Delete a mapped server domain
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteServerDomainWithHttpInfo($server_id, $domain_id, string $contentType = self::contentTypes['deleteServerDomain'][0])
     {
@@ -2218,12 +2176,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2234,12 +2190,12 @@ class ServersApi
      *
      * Delete a mapped server domain
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerDomainAsync($server_id, $domain_id, string $contentType = self::contentTypes['deleteServerDomain'][0])
     {
@@ -2256,12 +2212,12 @@ class ServersApi
      *
      * Delete a mapped server domain
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerDomainAsyncWithHttpInfo($server_id, $domain_id, string $contentType = self::contentTypes['deleteServerDomain'][0])
     {
@@ -2271,7 +2227,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2294,12 +2250,12 @@ class ServersApi
     /**
      * Create request for operation 'deleteServerDomain'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteServerDomainRequest($server_id, $domain_id, string $contentType = self::contentTypes['deleteServerDomain'][0])
     {
@@ -2318,7 +2274,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/domains/{domain_id}';
         $formParams = [];
         $queryParams = [];
@@ -2326,12 +2281,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -2339,12 +2292,11 @@ class ServersApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2361,7 +2313,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2369,7 +2321,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2380,11 +2332,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2400,9 +2352,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2413,12 +2366,12 @@ class ServersApi
      *
      * Delete server from group
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteServerFromGroup($server_id, string $contentType = self::contentTypes['deleteServerFromGroup'][0])
     {
@@ -2430,12 +2383,12 @@ class ServersApi
      *
      * Delete server from group
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteServerFromGroupWithHttpInfo($server_id, string $contentType = self::contentTypes['deleteServerFromGroup'][0])
     {
@@ -2463,12 +2416,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2479,11 +2430,11 @@ class ServersApi
      *
      * Delete server from group
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerFromGroupAsync($server_id, string $contentType = self::contentTypes['deleteServerFromGroup'][0])
     {
@@ -2500,11 +2451,11 @@ class ServersApi
      *
      * Delete server from group
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerFromGroupAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['deleteServerFromGroup'][0])
     {
@@ -2514,7 +2465,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2537,11 +2488,11 @@ class ServersApi
     /**
      * Create request for operation 'deleteServerFromGroup'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerFromGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteServerFromGroupRequest($server_id, string $contentType = self::contentTypes['deleteServerFromGroup'][0])
     {
@@ -2553,7 +2504,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/group';
         $formParams = [];
         $queryParams = [];
@@ -2561,17 +2511,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2588,7 +2535,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2596,7 +2543,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2607,11 +2554,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2627,9 +2574,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2640,12 +2588,12 @@ class ServersApi
      *
      * Deletes an existing server group
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteServerGroup($group_id, string $contentType = self::contentTypes['deleteServerGroup'][0])
     {
@@ -2657,12 +2605,12 @@ class ServersApi
      *
      * Deletes an existing server group
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteServerGroupWithHttpInfo($group_id, string $contentType = self::contentTypes['deleteServerGroup'][0])
     {
@@ -2690,12 +2638,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2706,11 +2652,11 @@ class ServersApi
      *
      * Deletes an existing server group
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerGroupAsync($group_id, string $contentType = self::contentTypes['deleteServerGroup'][0])
     {
@@ -2727,11 +2673,11 @@ class ServersApi
      *
      * Deletes an existing server group
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerGroupAsyncWithHttpInfo($group_id, string $contentType = self::contentTypes['deleteServerGroup'][0])
     {
@@ -2741,7 +2687,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2764,11 +2710,11 @@ class ServersApi
     /**
      * Create request for operation 'deleteServerGroup'
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteServerGroupRequest($group_id, string $contentType = self::contentTypes['deleteServerGroup'][0])
     {
@@ -2780,7 +2726,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/groups/{group_id}';
         $formParams = [];
         $queryParams = [];
@@ -2788,17 +2733,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($group_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'group_id' . '}',
+                '{'.'group_id'.'}',
                 ObjectSerializer::toPathValue($group_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2815,7 +2757,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2823,7 +2765,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2834,11 +2776,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2854,9 +2796,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2867,14 +2810,14 @@ class ServersApi
      *
      * Delete server network interface secondary IP
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  string $ip The IP address in quad dot notation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  string  $ip  The IP address in quad dot notation (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteServerNetworkInterfaceIp($server_id, $interface, $ip, string $contentType = self::contentTypes['deleteServerNetworkInterfaceIp'][0])
     {
@@ -2886,14 +2829,14 @@ class ServersApi
      *
      * Delete server network interface secondary IP
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  string $ip The IP address in quad dot notation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  string  $ip  The IP address in quad dot notation (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteServerNetworkInterfaceIpWithHttpInfo($server_id, $interface, $ip, string $contentType = self::contentTypes['deleteServerNetworkInterfaceIp'][0])
     {
@@ -2921,12 +2864,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2937,13 +2878,13 @@ class ServersApi
      *
      * Delete server network interface secondary IP
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  string $ip The IP address in quad dot notation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  string  $ip  The IP address in quad dot notation (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerNetworkInterfaceIpAsync($server_id, $interface, $ip, string $contentType = self::contentTypes['deleteServerNetworkInterfaceIp'][0])
     {
@@ -2960,13 +2901,13 @@ class ServersApi
      *
      * Delete server network interface secondary IP
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  string $ip The IP address in quad dot notation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  string  $ip  The IP address in quad dot notation (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerNetworkInterfaceIpAsyncWithHttpInfo($server_id, $interface, $ip, string $contentType = self::contentTypes['deleteServerNetworkInterfaceIp'][0])
     {
@@ -2976,7 +2917,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2999,13 +2940,13 @@ class ServersApi
     /**
      * Create request for operation 'deleteServerNetworkInterfaceIp'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $interface The name of the network interface (required)
-     * @param  string $ip The IP address in quad dot notation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $interface  The name of the network interface (required)
+     * @param  string  $ip  The IP address in quad dot notation (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerNetworkInterfaceIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteServerNetworkInterfaceIpRequest($server_id, $interface, $ip, string $contentType = self::contentTypes['deleteServerNetworkInterfaceIp'][0])
     {
@@ -3031,7 +2972,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/interfaces/{interface}/ips/{ip}';
         $formParams = [];
         $queryParams = [];
@@ -3039,12 +2979,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -3052,7 +2990,7 @@ class ServersApi
         // path params
         if ($interface !== null) {
             $resourcePath = str_replace(
-                '{' . 'interface' . '}',
+                '{'.'interface'.'}',
                 ObjectSerializer::toPathValue($interface),
                 $resourcePath
             );
@@ -3060,12 +2998,11 @@ class ServersApi
         // path params
         if ($ip !== null) {
             $resourcePath = str_replace(
-                '{' . 'ip' . '}',
+                '{'.'ip'.'}',
                 ObjectSerializer::toPathValue($ip),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3082,7 +3019,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3090,7 +3027,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3101,11 +3038,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3121,9 +3058,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3134,12 +3072,12 @@ class ServersApi
      *
      * Deletes/unsets the primary IPv6 address for a server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteServerPrimaryIpv6($server_id, string $contentType = self::contentTypes['deleteServerPrimaryIpv6'][0])
     {
@@ -3151,12 +3089,12 @@ class ServersApi
      *
      * Deletes/unsets the primary IPv6 address for a server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteServerPrimaryIpv6WithHttpInfo($server_id, string $contentType = self::contentTypes['deleteServerPrimaryIpv6'][0])
     {
@@ -3184,12 +3122,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3200,11 +3136,11 @@ class ServersApi
      *
      * Deletes/unsets the primary IPv6 address for a server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerPrimaryIpv6Async($server_id, string $contentType = self::contentTypes['deleteServerPrimaryIpv6'][0])
     {
@@ -3221,11 +3157,11 @@ class ServersApi
      *
      * Deletes/unsets the primary IPv6 address for a server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServerPrimaryIpv6AsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['deleteServerPrimaryIpv6'][0])
     {
@@ -3235,7 +3171,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3258,11 +3194,11 @@ class ServersApi
     /**
      * Create request for operation 'deleteServerPrimaryIpv6'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServerPrimaryIpv6'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteServerPrimaryIpv6Request($server_id, string $contentType = self::contentTypes['deleteServerPrimaryIpv6'][0])
     {
@@ -3274,7 +3210,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/primary-ipv6';
         $formParams = [];
         $queryParams = [];
@@ -3282,17 +3217,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3309,7 +3241,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3317,14 +3249,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3339,9 +3270,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3352,18 +3284,19 @@ class ServersApi
      *
      * Delete a single override setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome
      */
     public function deleteServiceSetting($server_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteServiceSetting'][0])
     {
-        list($response) = $this->deleteServiceSettingWithHttpInfo($server_id, $setting_kind, $setting_key, $contentType);
+        [$response] = $this->deleteServiceSettingWithHttpInfo($server_id, $setting_kind, $setting_key, $contentType);
+
         return $response;
     }
 
@@ -3372,14 +3305,14 @@ class ServersApi
      *
      * Delete a single override setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteServiceSettingWithHttpInfo($server_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteServiceSetting'][0])
     {
@@ -3407,8 +3340,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Outcome',
@@ -3422,8 +3354,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3462,7 +3392,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3473,13 +3402,13 @@ class ServersApi
      *
      * Delete a single override setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServiceSettingAsync($server_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteServiceSetting'][0])
     {
@@ -3496,13 +3425,13 @@ class ServersApi
      *
      * Delete a single override setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteServiceSettingAsyncWithHttpInfo($server_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteServiceSetting'][0])
     {
@@ -3514,7 +3443,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3525,7 +3454,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3548,13 +3477,13 @@ class ServersApi
     /**
      * Create request for operation 'deleteServiceSetting'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteServiceSettingRequest($server_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteServiceSetting'][0])
     {
@@ -3580,7 +3509,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/settings/{setting_kind}/{setting_key}';
         $formParams = [];
         $queryParams = [];
@@ -3588,12 +3516,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -3601,7 +3527,7 @@ class ServersApi
         // path params
         if ($setting_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_kind' . '}',
+                '{'.'setting_kind'.'}',
                 ObjectSerializer::toPathValue($setting_kind),
                 $resourcePath
             );
@@ -3609,15 +3535,14 @@ class ServersApi
         // path params
         if ($setting_key !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_key' . '}',
+                '{'.'setting_key'.'}',
                 ObjectSerializer::toPathValue($setting_key),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3631,7 +3556,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3639,7 +3564,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3650,11 +3575,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3670,9 +3595,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3683,12 +3609,12 @@ class ServersApi
      *
      * Delete a (slave) server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteSlave($server_id, string $contentType = self::contentTypes['deleteSlave'][0])
     {
@@ -3700,12 +3626,12 @@ class ServersApi
      *
      * Delete a (slave) server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSlaveWithHttpInfo($server_id, string $contentType = self::contentTypes['deleteSlave'][0])
     {
@@ -3733,12 +3659,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3749,11 +3673,11 @@ class ServersApi
      *
      * Delete a (slave) server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSlaveAsync($server_id, string $contentType = self::contentTypes['deleteSlave'][0])
     {
@@ -3770,11 +3694,11 @@ class ServersApi
      *
      * Delete a (slave) server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSlaveAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['deleteSlave'][0])
     {
@@ -3784,7 +3708,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3807,11 +3731,11 @@ class ServersApi
     /**
      * Create request for operation 'deleteSlave'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSlave'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteSlaveRequest($server_id, string $contentType = self::contentTypes['deleteSlave'][0])
     {
@@ -3823,7 +3747,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}';
         $formParams = [];
         $queryParams = [];
@@ -3831,17 +3754,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3858,7 +3778,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3866,7 +3786,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3877,11 +3797,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3897,9 +3817,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3910,12 +3831,12 @@ class ServersApi
      *
      * Enable FS quota limits on the server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function enableFsQuotaLimits($server_id, string $contentType = self::contentTypes['enableFsQuotaLimits'][0])
     {
@@ -3927,12 +3848,12 @@ class ServersApi
      *
      * Enable FS quota limits on the server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function enableFsQuotaLimitsWithHttpInfo($server_id, string $contentType = self::contentTypes['enableFsQuotaLimits'][0])
     {
@@ -3960,12 +3881,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3976,11 +3895,11 @@ class ServersApi
      *
      * Enable FS quota limits on the server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function enableFsQuotaLimitsAsync($server_id, string $contentType = self::contentTypes['enableFsQuotaLimits'][0])
     {
@@ -3997,11 +3916,11 @@ class ServersApi
      *
      * Enable FS quota limits on the server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function enableFsQuotaLimitsAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['enableFsQuotaLimits'][0])
     {
@@ -4011,7 +3930,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4034,11 +3953,11 @@ class ServersApi
     /**
      * Create request for operation 'enableFsQuotaLimits'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableFsQuotaLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function enableFsQuotaLimitsRequest($server_id, string $contentType = self::contentTypes['enableFsQuotaLimits'][0])
     {
@@ -4050,7 +3969,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/fs-quota-limits';
         $formParams = [];
         $queryParams = [];
@@ -4058,17 +3976,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4085,7 +4000,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4093,7 +4008,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4104,11 +4019,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4124,9 +4039,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4137,16 +4053,17 @@ class ServersApi
      *
      * Get the screenshot config of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfig
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfig
      */
     public function getAppcdScreenshotConfig($server_id, string $contentType = self::contentTypes['getAppcdScreenshotConfig'][0])
     {
-        list($response) = $this->getAppcdScreenshotConfigWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getAppcdScreenshotConfigWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -4155,12 +4072,12 @@ class ServersApi
      *
      * Get the screenshot config of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfig, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfig, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAppcdScreenshotConfigWithHttpInfo($server_id, string $contentType = self::contentTypes['getAppcdScreenshotConfig'][0])
     {
@@ -4188,8 +4105,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfig',
@@ -4197,8 +4113,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4229,7 +4143,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4240,11 +4153,11 @@ class ServersApi
      *
      * Get the screenshot config of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAppcdScreenshotConfigAsync($server_id, string $contentType = self::contentTypes['getAppcdScreenshotConfig'][0])
     {
@@ -4261,11 +4174,11 @@ class ServersApi
      *
      * Get the screenshot config of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAppcdScreenshotConfigAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getAppcdScreenshotConfig'][0])
     {
@@ -4277,7 +4190,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4288,7 +4201,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4311,11 +4224,11 @@ class ServersApi
     /**
      * Create request for operation 'getAppcdScreenshotConfig'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getAppcdScreenshotConfigRequest($server_id, string $contentType = self::contentTypes['getAppcdScreenshotConfig'][0])
     {
@@ -4327,7 +4240,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/appcd/screenshot/config';
         $formParams = [];
         $queryParams = [];
@@ -4335,20 +4247,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4362,7 +4271,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4370,7 +4279,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4381,11 +4290,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4401,9 +4310,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4414,16 +4324,17 @@ class ServersApi
      *
      * Get the version of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getAppcdVersion($server_id, string $contentType = self::contentTypes['getAppcdVersion'][0])
     {
-        list($response) = $this->getAppcdVersionWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getAppcdVersionWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -4432,12 +4343,12 @@ class ServersApi
      *
      * Get the version of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAppcdVersionWithHttpInfo($server_id, string $contentType = self::contentTypes['getAppcdVersion'][0])
     {
@@ -4465,8 +4376,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -4474,8 +4384,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4506,7 +4414,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4517,11 +4424,11 @@ class ServersApi
      *
      * Get the version of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAppcdVersionAsync($server_id, string $contentType = self::contentTypes['getAppcdVersion'][0])
     {
@@ -4538,11 +4445,11 @@ class ServersApi
      *
      * Get the version of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAppcdVersionAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getAppcdVersion'][0])
     {
@@ -4554,7 +4461,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4565,7 +4472,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4588,11 +4495,11 @@ class ServersApi
     /**
      * Create request for operation 'getAppcdVersion'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAppcdVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getAppcdVersionRequest($server_id, string $contentType = self::contentTypes['getAppcdVersion'][0])
     {
@@ -4604,7 +4511,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/appcd/version';
         $formParams = [];
         $queryParams = [];
@@ -4612,20 +4518,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4639,7 +4542,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4647,7 +4550,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4658,11 +4561,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4678,9 +4581,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4691,15 +4595,16 @@ class ServersApi
      *
      * Reflect back the IP of the API consumer
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getClientIp(string $contentType = self::contentTypes['getClientIp'][0])
     {
-        list($response) = $this->getClientIpWithHttpInfo($contentType);
+        [$response] = $this->getClientIpWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -4708,11 +4613,11 @@ class ServersApi
      *
      * Reflect back the IP of the API consumer
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientIpWithHttpInfo(string $contentType = self::contentTypes['getClientIp'][0])
     {
@@ -4740,8 +4645,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -4749,8 +4653,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4781,7 +4683,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4792,10 +4693,10 @@ class ServersApi
      *
      * Reflect back the IP of the API consumer
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getClientIpAsync(string $contentType = self::contentTypes['getClientIp'][0])
     {
@@ -4812,10 +4713,10 @@ class ServersApi
      *
      * Reflect back the IP of the API consumer
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getClientIpAsyncWithHttpInfo(string $contentType = self::contentTypes['getClientIp'][0])
     {
@@ -4827,7 +4728,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4838,7 +4739,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4861,14 +4762,13 @@ class ServersApi
     /**
      * Create request for operation 'getClientIp'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getClientIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getClientIpRequest(string $contentType = self::contentTypes['getClientIp'][0])
     {
-
 
         $resourcePath = '/client_ip';
         $formParams = [];
@@ -4877,12 +4777,8 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4896,7 +4792,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4904,14 +4800,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4926,9 +4821,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4939,17 +4835,18 @@ class ServersApi
      *
      * Gets the MySQL kind for a given server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  mysql_kind (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MysqlKind
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MysqlKind
      */
     public function getDatabaseRoleMysqlKind($server_id, $mysql_kind = null, string $contentType = self::contentTypes['getDatabaseRoleMysqlKind'][0])
     {
-        list($response) = $this->getDatabaseRoleMysqlKindWithHttpInfo($server_id, $mysql_kind, $contentType);
+        [$response] = $this->getDatabaseRoleMysqlKindWithHttpInfo($server_id, $mysql_kind, $contentType);
+
         return $response;
     }
 
@@ -4958,13 +4855,13 @@ class ServersApi
      *
      * Gets the MySQL kind for a given server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MysqlKind, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MysqlKind, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDatabaseRoleMysqlKindWithHttpInfo($server_id, $mysql_kind = null, string $contentType = self::contentTypes['getDatabaseRoleMysqlKind'][0])
     {
@@ -4992,8 +4889,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MysqlKind',
@@ -5001,8 +4897,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5033,7 +4927,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5044,12 +4937,12 @@ class ServersApi
      *
      * Gets the MySQL kind for a given server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDatabaseRoleMysqlKindAsync($server_id, $mysql_kind = null, string $contentType = self::contentTypes['getDatabaseRoleMysqlKind'][0])
     {
@@ -5066,12 +4959,12 @@ class ServersApi
      *
      * Gets the MySQL kind for a given server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDatabaseRoleMysqlKindAsyncWithHttpInfo($server_id, $mysql_kind = null, string $contentType = self::contentTypes['getDatabaseRoleMysqlKind'][0])
     {
@@ -5083,7 +4976,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5094,7 +4987,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5117,12 +5010,12 @@ class ServersApi
     /**
      * Create request for operation 'getDatabaseRoleMysqlKind'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDatabaseRoleMysqlKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDatabaseRoleMysqlKindRequest($server_id, $mysql_kind = null, string $contentType = self::contentTypes['getDatabaseRoleMysqlKind'][0])
     {
@@ -5133,8 +5026,6 @@ class ServersApi
                 'Missing the required parameter $server_id when calling getDatabaseRoleMysqlKind'
             );
         }
-
-
 
         $resourcePath = '/v2/servers/{server_id}/database-role';
         $formParams = [];
@@ -5153,19 +5044,17 @@ class ServersApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5179,7 +5068,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5187,14 +5076,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5209,9 +5097,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5222,15 +5111,16 @@ class ServersApi
      *
      * Get DNS pool IPs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @return string[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string[]
      */
     public function getDnsPoolIps(string $contentType = self::contentTypes['getDnsPoolIps'][0])
     {
-        list($response) = $this->getDnsPoolIpsWithHttpInfo($contentType);
+        [$response] = $this->getDnsPoolIpsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -5239,11 +5129,11 @@ class ServersApi
      *
      * Get DNS pool IPs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getDnsPoolIpsWithHttpInfo(string $contentType = self::contentTypes['getDnsPoolIps'][0])
     {
@@ -5271,8 +5161,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string[]',
@@ -5280,8 +5169,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5312,7 +5199,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5323,10 +5209,10 @@ class ServersApi
      *
      * Get DNS pool IPs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDnsPoolIpsAsync(string $contentType = self::contentTypes['getDnsPoolIps'][0])
     {
@@ -5343,10 +5229,10 @@ class ServersApi
      *
      * Get DNS pool IPs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDnsPoolIpsAsyncWithHttpInfo(string $contentType = self::contentTypes['getDnsPoolIps'][0])
     {
@@ -5358,7 +5244,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5369,7 +5255,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5392,14 +5278,13 @@ class ServersApi
     /**
      * Create request for operation 'getDnsPoolIps'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsPoolIps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDnsPoolIpsRequest(string $contentType = self::contentTypes['getDnsPoolIps'][0])
     {
-
 
         $resourcePath = '/v2/servers/dns_pool';
         $formParams = [];
@@ -5408,12 +5293,8 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5427,7 +5308,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5435,14 +5316,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5457,9 +5337,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5470,16 +5351,17 @@ class ServersApi
      *
      * Get the hostname override for the email server (postfix) if set
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride
      */
     public function getEmailServerHostnameOverride($server_id, string $contentType = self::contentTypes['getEmailServerHostnameOverride'][0])
     {
-        list($response) = $this->getEmailServerHostnameOverrideWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getEmailServerHostnameOverrideWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -5488,12 +5370,12 @@ class ServersApi
      *
      * Get the hostname override for the email server (postfix) if set
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailServerHostnameOverrideWithHttpInfo($server_id, string $contentType = self::contentTypes['getEmailServerHostnameOverride'][0])
     {
@@ -5521,8 +5403,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride',
@@ -5530,8 +5411,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5562,7 +5441,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5573,11 +5451,11 @@ class ServersApi
      *
      * Get the hostname override for the email server (postfix) if set
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailServerHostnameOverrideAsync($server_id, string $contentType = self::contentTypes['getEmailServerHostnameOverride'][0])
     {
@@ -5594,11 +5472,11 @@ class ServersApi
      *
      * Get the hostname override for the email server (postfix) if set
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailServerHostnameOverrideAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getEmailServerHostnameOverride'][0])
     {
@@ -5610,7 +5488,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5621,7 +5499,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5644,11 +5522,11 @@ class ServersApi
     /**
      * Create request for operation 'getEmailServerHostnameOverride'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmailServerHostnameOverrideRequest($server_id, string $contentType = self::contentTypes['getEmailServerHostnameOverride'][0])
     {
@@ -5660,7 +5538,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/email/hostname_override';
         $formParams = [];
         $queryParams = [];
@@ -5668,20 +5545,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5695,7 +5569,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5703,7 +5577,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5714,11 +5588,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5734,9 +5608,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5747,16 +5622,17 @@ class ServersApi
      *
      * Get whether FS quota was enabled on the server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\FsQuotaStatus
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\FsQuotaStatus
      */
     public function getFsQuotaStatus($server_id, string $contentType = self::contentTypes['getFsQuotaStatus'][0])
     {
-        list($response) = $this->getFsQuotaStatusWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getFsQuotaStatusWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -5765,12 +5641,12 @@ class ServersApi
      *
      * Get whether FS quota was enabled on the server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\FsQuotaStatus, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\FsQuotaStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFsQuotaStatusWithHttpInfo($server_id, string $contentType = self::contentTypes['getFsQuotaStatus'][0])
     {
@@ -5798,8 +5674,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\FsQuotaStatus',
@@ -5807,8 +5682,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5839,7 +5712,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5850,11 +5722,11 @@ class ServersApi
      *
      * Get whether FS quota was enabled on the server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFsQuotaStatusAsync($server_id, string $contentType = self::contentTypes['getFsQuotaStatus'][0])
     {
@@ -5871,11 +5743,11 @@ class ServersApi
      *
      * Get whether FS quota was enabled on the server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFsQuotaStatusAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getFsQuotaStatus'][0])
     {
@@ -5887,7 +5759,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5898,7 +5770,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5921,11 +5793,11 @@ class ServersApi
     /**
      * Create request for operation 'getFsQuotaStatus'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFsQuotaStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getFsQuotaStatusRequest($server_id, string $contentType = self::contentTypes['getFsQuotaStatus'][0])
     {
@@ -5937,7 +5809,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/fs-quota-limits';
         $formParams = [];
         $queryParams = [];
@@ -5945,20 +5816,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5972,7 +5840,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5980,7 +5848,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5991,11 +5859,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6011,9 +5879,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6024,17 +5893,18 @@ class ServersApi
      *
      * Get status of a running httpd server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\HttpdStatus
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\HttpdStatus
      */
     public function getHttpdStatus($server_id, $role, string $contentType = self::contentTypes['getHttpdStatus'][0])
     {
-        list($response) = $this->getHttpdStatusWithHttpInfo($server_id, $role, $contentType);
+        [$response] = $this->getHttpdStatusWithHttpInfo($server_id, $role, $contentType);
+
         return $response;
     }
 
@@ -6043,13 +5913,13 @@ class ServersApi
      *
      * Get status of a running httpd server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\HttpdStatus, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\HttpdStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getHttpdStatusWithHttpInfo($server_id, $role, string $contentType = self::contentTypes['getHttpdStatus'][0])
     {
@@ -6077,8 +5947,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\HttpdStatus',
@@ -6086,8 +5955,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6118,7 +5985,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6129,12 +5995,12 @@ class ServersApi
      *
      * Get status of a running httpd server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getHttpdStatusAsync($server_id, $role, string $contentType = self::contentTypes['getHttpdStatus'][0])
     {
@@ -6151,12 +6017,12 @@ class ServersApi
      *
      * Get status of a running httpd server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getHttpdStatusAsyncWithHttpInfo($server_id, $role, string $contentType = self::contentTypes['getHttpdStatus'][0])
     {
@@ -6168,7 +6034,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6179,7 +6045,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6202,12 +6068,12 @@ class ServersApi
     /**
      * Create request for operation 'getHttpdStatus'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getHttpdStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getHttpdStatusRequest($server_id, $role, string $contentType = self::contentTypes['getHttpdStatus'][0])
     {
@@ -6226,7 +6092,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/roles/{role}/httpd_status';
         $formParams = [];
         $queryParams = [];
@@ -6234,12 +6099,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -6247,15 +6110,14 @@ class ServersApi
         // path params
         if ($role !== null) {
             $resourcePath = str_replace(
-                '{' . 'role' . '}',
+                '{'.'role'.'}',
                 ObjectSerializer::toPathValue($role),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -6269,7 +6131,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6277,14 +6139,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6299,9 +6160,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6312,15 +6174,16 @@ class ServersApi
      *
      * Get slave installation command
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\InstallCmd
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\InstallCmd
      */
     public function getInstallCmd(string $contentType = self::contentTypes['getInstallCmd'][0])
     {
-        list($response) = $this->getInstallCmdWithHttpInfo($contentType);
+        [$response] = $this->getInstallCmdWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -6329,11 +6192,11 @@ class ServersApi
      *
      * Get slave installation command
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\InstallCmd, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\InstallCmd, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInstallCmdWithHttpInfo(string $contentType = self::contentTypes['getInstallCmd'][0])
     {
@@ -6361,8 +6224,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\InstallCmd',
@@ -6370,8 +6232,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6402,7 +6262,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6413,10 +6272,10 @@ class ServersApi
      *
      * Get slave installation command
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInstallCmdAsync(string $contentType = self::contentTypes['getInstallCmd'][0])
     {
@@ -6433,10 +6292,10 @@ class ServersApi
      *
      * Get slave installation command
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInstallCmdAsyncWithHttpInfo(string $contentType = self::contentTypes['getInstallCmd'][0])
     {
@@ -6448,7 +6307,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6459,7 +6318,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6482,14 +6341,13 @@ class ServersApi
     /**
      * Create request for operation 'getInstallCmd'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallCmd'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getInstallCmdRequest(string $contentType = self::contentTypes['getInstallCmd'][0])
     {
-
 
         $resourcePath = '/servers/install-cmd';
         $formParams = [];
@@ -6498,12 +6356,8 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -6517,7 +6371,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6525,7 +6379,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6536,11 +6390,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6556,9 +6410,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6569,16 +6424,17 @@ class ServersApi
      *
      * Download my.cnf for a given server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getMysqlMyCnf($server_id, string $contentType = self::contentTypes['getMysqlMyCnf'][0])
     {
-        list($response) = $this->getMysqlMyCnfWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getMysqlMyCnfWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -6587,12 +6443,12 @@ class ServersApi
      *
      * Download my.cnf for a given server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMysqlMyCnfWithHttpInfo($server_id, string $contentType = self::contentTypes['getMysqlMyCnf'][0])
     {
@@ -6620,8 +6476,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -6629,8 +6484,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6661,7 +6514,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6672,11 +6524,11 @@ class ServersApi
      *
      * Download my.cnf for a given server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMysqlMyCnfAsync($server_id, string $contentType = self::contentTypes['getMysqlMyCnf'][0])
     {
@@ -6693,11 +6545,11 @@ class ServersApi
      *
      * Download my.cnf for a given server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMysqlMyCnfAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getMysqlMyCnf'][0])
     {
@@ -6709,7 +6561,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6720,7 +6572,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6743,11 +6595,11 @@ class ServersApi
     /**
      * Create request for operation 'getMysqlMyCnf'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMysqlMyCnf'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getMysqlMyCnfRequest($server_id, string $contentType = self::contentTypes['getMysqlMyCnf'][0])
     {
@@ -6759,7 +6611,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/my-cnf';
         $formParams = [];
         $queryParams = [];
@@ -6767,20 +6618,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -6794,7 +6642,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6802,14 +6650,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6824,9 +6671,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6837,16 +6685,17 @@ class ServersApi
      *
      * Get the status of outbound spam scanning
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings
      */
     public function getOutboundSpamScanningSettings($server_id, string $contentType = self::contentTypes['getOutboundSpamScanningSettings'][0])
     {
-        list($response) = $this->getOutboundSpamScanningSettingsWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getOutboundSpamScanningSettingsWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -6855,12 +6704,12 @@ class ServersApi
      *
      * Get the status of outbound spam scanning
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOutboundSpamScanningSettingsWithHttpInfo($server_id, string $contentType = self::contentTypes['getOutboundSpamScanningSettings'][0])
     {
@@ -6888,8 +6737,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings',
@@ -6897,8 +6745,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6929,7 +6775,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6940,11 +6785,11 @@ class ServersApi
      *
      * Get the status of outbound spam scanning
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOutboundSpamScanningSettingsAsync($server_id, string $contentType = self::contentTypes['getOutboundSpamScanningSettings'][0])
     {
@@ -6961,11 +6806,11 @@ class ServersApi
      *
      * Get the status of outbound spam scanning
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOutboundSpamScanningSettingsAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getOutboundSpamScanningSettings'][0])
     {
@@ -6977,7 +6822,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6988,7 +6833,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7011,11 +6856,11 @@ class ServersApi
     /**
      * Create request for operation 'getOutboundSpamScanningSettings'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOutboundSpamScanningSettingsRequest($server_id, string $contentType = self::contentTypes['getOutboundSpamScanningSettings'][0])
     {
@@ -7027,7 +6872,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/email/spam/outbound_scanning';
         $formParams = [];
         $queryParams = [];
@@ -7035,20 +6879,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7062,7 +6903,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7070,7 +6911,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7081,11 +6922,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7101,9 +6942,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7114,16 +6956,17 @@ class ServersApi
      *
      * Get the current and available version of the OWASP rules
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\OwaspVersion
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\OwaspVersion
      */
     public function getOwaspRulesVersion($server_id, string $contentType = self::contentTypes['getOwaspRulesVersion'][0])
     {
-        list($response) = $this->getOwaspRulesVersionWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getOwaspRulesVersionWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -7132,12 +6975,12 @@ class ServersApi
      *
      * Get the current and available version of the OWASP rules
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OwaspVersion, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OwaspVersion, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOwaspRulesVersionWithHttpInfo($server_id, string $contentType = self::contentTypes['getOwaspRulesVersion'][0])
     {
@@ -7165,8 +7008,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\OwaspVersion',
@@ -7174,8 +7016,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -7206,7 +7046,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -7217,11 +7056,11 @@ class ServersApi
      *
      * Get the current and available version of the OWASP rules
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOwaspRulesVersionAsync($server_id, string $contentType = self::contentTypes['getOwaspRulesVersion'][0])
     {
@@ -7238,11 +7077,11 @@ class ServersApi
      *
      * Get the current and available version of the OWASP rules
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOwaspRulesVersionAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getOwaspRulesVersion'][0])
     {
@@ -7254,7 +7093,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -7265,7 +7104,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7288,11 +7127,11 @@ class ServersApi
     /**
      * Create request for operation 'getOwaspRulesVersion'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOwaspRulesVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOwaspRulesVersionRequest($server_id, string $contentType = self::contentTypes['getOwaspRulesVersion'][0])
     {
@@ -7304,7 +7143,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/owasp';
         $formParams = [];
         $queryParams = [];
@@ -7312,20 +7150,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7339,7 +7174,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7347,7 +7182,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7358,11 +7193,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7378,9 +7213,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7391,15 +7227,16 @@ class ServersApi
      *
      * Get slave registration key
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getRegistrationKey(string $contentType = self::contentTypes['getRegistrationKey'][0])
     {
-        list($response) = $this->getRegistrationKeyWithHttpInfo($contentType);
+        [$response] = $this->getRegistrationKeyWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -7408,11 +7245,11 @@ class ServersApi
      *
      * Get slave registration key
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRegistrationKeyWithHttpInfo(string $contentType = self::contentTypes['getRegistrationKey'][0])
     {
@@ -7440,8 +7277,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -7449,8 +7285,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -7481,7 +7315,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -7492,10 +7325,10 @@ class ServersApi
      *
      * Get slave registration key
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getRegistrationKeyAsync(string $contentType = self::contentTypes['getRegistrationKey'][0])
     {
@@ -7512,10 +7345,10 @@ class ServersApi
      *
      * Get slave registration key
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getRegistrationKeyAsyncWithHttpInfo(string $contentType = self::contentTypes['getRegistrationKey'][0])
     {
@@ -7527,7 +7360,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -7538,7 +7371,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7561,14 +7394,13 @@ class ServersApi
     /**
      * Create request for operation 'getRegistrationKey'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getRegistrationKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getRegistrationKeyRequest(string $contentType = self::contentTypes['getRegistrationKey'][0])
     {
-
 
         $resourcePath = '/servers/registration-key';
         $formParams = [];
@@ -7577,12 +7409,8 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7596,7 +7424,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7604,7 +7432,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7615,11 +7443,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7635,9 +7463,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7648,16 +7477,17 @@ class ServersApi
      *
      * Get server disk usage
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerDiskUsage
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerDiskUsage
      */
     public function getServerDiskUsage($server_id, string $contentType = self::contentTypes['getServerDiskUsage'][0])
     {
-        list($response) = $this->getServerDiskUsageWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerDiskUsageWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -7666,12 +7496,12 @@ class ServersApi
      *
      * Get server disk usage
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerDiskUsage, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerDiskUsage, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerDiskUsageWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerDiskUsage'][0])
     {
@@ -7699,8 +7529,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerDiskUsage',
@@ -7708,8 +7537,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -7740,7 +7567,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -7751,11 +7577,11 @@ class ServersApi
      *
      * Get server disk usage
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerDiskUsageAsync($server_id, string $contentType = self::contentTypes['getServerDiskUsage'][0])
     {
@@ -7772,11 +7598,11 @@ class ServersApi
      *
      * Get server disk usage
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerDiskUsageAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerDiskUsage'][0])
     {
@@ -7788,7 +7614,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -7799,7 +7625,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7822,11 +7648,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerDiskUsage'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerDiskUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerDiskUsageRequest($server_id, string $contentType = self::contentTypes['getServerDiskUsage'][0])
     {
@@ -7838,7 +7664,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/disk-usage';
         $formParams = [];
         $queryParams = [];
@@ -7846,20 +7671,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7873,7 +7695,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7881,7 +7703,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7892,11 +7714,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7912,9 +7734,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7925,16 +7748,17 @@ class ServersApi
      *
      * Get php-fpm config for all the websites on a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsitePhpSettings[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsitePhpSettings[]
      */
     public function getServerFpmSettings($server_id, string $contentType = self::contentTypes['getServerFpmSettings'][0])
     {
-        list($response) = $this->getServerFpmSettingsWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerFpmSettingsWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -7943,12 +7767,12 @@ class ServersApi
      *
      * Get php-fpm config for all the websites on a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsitePhpSettings[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsitePhpSettings[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerFpmSettingsWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerFpmSettings'][0])
     {
@@ -7976,8 +7800,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsitePhpSettings[]',
@@ -7985,8 +7808,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -8017,7 +7838,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -8028,11 +7848,11 @@ class ServersApi
      *
      * Get php-fpm config for all the websites on a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerFpmSettingsAsync($server_id, string $contentType = self::contentTypes['getServerFpmSettings'][0])
     {
@@ -8049,11 +7869,11 @@ class ServersApi
      *
      * Get php-fpm config for all the websites on a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerFpmSettingsAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerFpmSettings'][0])
     {
@@ -8065,7 +7885,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -8076,7 +7896,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -8099,11 +7919,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerFpmSettings'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerFpmSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerFpmSettingsRequest($server_id, string $contentType = self::contentTypes['getServerFpmSettings'][0])
     {
@@ -8115,7 +7935,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/php/fpm';
         $formParams = [];
         $queryParams = [];
@@ -8123,20 +7942,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -8150,7 +7966,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8158,14 +7974,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -8180,9 +7995,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8193,15 +8009,16 @@ class ServersApi
      *
      * Returns all server groups
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerGroups
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerGroups
      */
     public function getServerGroups(string $contentType = self::contentTypes['getServerGroups'][0])
     {
-        list($response) = $this->getServerGroupsWithHttpInfo($contentType);
+        [$response] = $this->getServerGroupsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -8210,11 +8027,11 @@ class ServersApi
      *
      * Returns all server groups
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerGroups, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerGroups, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerGroupsWithHttpInfo(string $contentType = self::contentTypes['getServerGroups'][0])
     {
@@ -8242,8 +8059,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerGroups',
@@ -8251,8 +8067,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -8283,7 +8097,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -8294,10 +8107,10 @@ class ServersApi
      *
      * Returns all server groups
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerGroupsAsync(string $contentType = self::contentTypes['getServerGroups'][0])
     {
@@ -8314,10 +8127,10 @@ class ServersApi
      *
      * Returns all server groups
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerGroupsAsyncWithHttpInfo(string $contentType = self::contentTypes['getServerGroups'][0])
     {
@@ -8329,7 +8142,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -8340,7 +8153,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -8363,14 +8176,13 @@ class ServersApi
     /**
      * Create request for operation 'getServerGroups'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerGroups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerGroupsRequest(string $contentType = self::contentTypes['getServerGroups'][0])
     {
-
 
         $resourcePath = '/servers/groups';
         $formParams = [];
@@ -8379,12 +8191,8 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -8398,7 +8206,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8406,7 +8214,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8417,11 +8225,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8437,9 +8245,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8450,16 +8259,17 @@ class ServersApi
      *
      * Get domains which are mapped to a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerHostnameWebsite
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerHostnameWebsite
      */
     public function getServerHostnameWebsite($server_id, string $contentType = self::contentTypes['getServerHostnameWebsite'][0])
     {
-        list($response) = $this->getServerHostnameWebsiteWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerHostnameWebsiteWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -8468,12 +8278,12 @@ class ServersApi
      *
      * Get domains which are mapped to a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerHostnameWebsite, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerHostnameWebsite, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerHostnameWebsiteWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerHostnameWebsite'][0])
     {
@@ -8501,8 +8311,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerHostnameWebsite',
@@ -8510,8 +8319,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -8542,7 +8349,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -8553,11 +8359,11 @@ class ServersApi
      *
      * Get domains which are mapped to a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerHostnameWebsiteAsync($server_id, string $contentType = self::contentTypes['getServerHostnameWebsite'][0])
     {
@@ -8574,11 +8380,11 @@ class ServersApi
      *
      * Get domains which are mapped to a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerHostnameWebsiteAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerHostnameWebsite'][0])
     {
@@ -8590,7 +8396,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -8601,7 +8407,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -8624,11 +8430,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerHostnameWebsite'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerHostnameWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerHostnameWebsiteRequest($server_id, string $contentType = self::contentTypes['getServerHostnameWebsite'][0])
     {
@@ -8640,7 +8446,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/domains';
         $formParams = [];
         $queryParams = [];
@@ -8648,20 +8453,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -8675,7 +8477,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8683,7 +8485,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8694,11 +8496,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8714,9 +8516,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8727,16 +8530,17 @@ class ServersApi
      *
      * Get server info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerInfo
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerInfo
      */
     public function getServerInfo($server_id, string $contentType = self::contentTypes['getServerInfo'][0])
     {
-        list($response) = $this->getServerInfoWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerInfoWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -8745,12 +8549,12 @@ class ServersApi
      *
      * Get server info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerInfo, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerInfoWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerInfo'][0])
     {
@@ -8778,8 +8582,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerInfo',
@@ -8787,8 +8590,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -8819,7 +8620,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -8830,11 +8630,11 @@ class ServersApi
      *
      * Get server info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerInfoAsync($server_id, string $contentType = self::contentTypes['getServerInfo'][0])
     {
@@ -8851,11 +8651,11 @@ class ServersApi
      *
      * Get server info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerInfoAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerInfo'][0])
     {
@@ -8867,7 +8667,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -8878,7 +8678,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -8901,11 +8701,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerInfo'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerInfoRequest($server_id, string $contentType = self::contentTypes['getServerInfo'][0])
     {
@@ -8917,7 +8717,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}';
         $formParams = [];
         $queryParams = [];
@@ -8925,20 +8724,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -8952,7 +8748,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8960,7 +8756,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8971,11 +8767,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8991,9 +8787,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9004,16 +8801,17 @@ class ServersApi
      *
      * Get server iowait
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerIowait
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerIowait
      */
     public function getServerIowait($server_id, string $contentType = self::contentTypes['getServerIowait'][0])
     {
-        list($response) = $this->getServerIowaitWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerIowaitWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -9022,12 +8820,12 @@ class ServersApi
      *
      * Get server iowait
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerIowait, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerIowait, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerIowaitWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerIowait'][0])
     {
@@ -9055,8 +8853,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerIowait',
@@ -9064,8 +8861,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -9096,7 +8891,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -9107,11 +8901,11 @@ class ServersApi
      *
      * Get server iowait
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerIowaitAsync($server_id, string $contentType = self::contentTypes['getServerIowait'][0])
     {
@@ -9128,11 +8922,11 @@ class ServersApi
      *
      * Get server iowait
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerIowaitAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerIowait'][0])
     {
@@ -9144,7 +8938,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -9155,7 +8949,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -9178,11 +8972,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerIowait'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerIowait'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerIowaitRequest($server_id, string $contentType = self::contentTypes['getServerIowait'][0])
     {
@@ -9194,7 +8988,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/iowait';
         $formParams = [];
         $queryParams = [];
@@ -9202,20 +8995,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -9229,7 +9019,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -9237,7 +9027,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -9248,11 +9038,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9268,9 +9058,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9281,16 +9072,17 @@ class ServersApi
      *
      * Get server system load
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerLoad
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerLoad
      */
     public function getServerLoad($server_id, string $contentType = self::contentTypes['getServerLoad'][0])
     {
-        list($response) = $this->getServerLoadWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerLoadWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -9299,12 +9091,12 @@ class ServersApi
      *
      * Get server system load
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerLoad, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerLoad, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerLoadWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerLoad'][0])
     {
@@ -9332,8 +9124,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerLoad',
@@ -9341,8 +9132,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -9373,7 +9162,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -9384,11 +9172,11 @@ class ServersApi
      *
      * Get server system load
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerLoadAsync($server_id, string $contentType = self::contentTypes['getServerLoad'][0])
     {
@@ -9405,11 +9193,11 @@ class ServersApi
      *
      * Get server system load
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerLoadAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerLoad'][0])
     {
@@ -9421,7 +9209,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -9432,7 +9220,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -9455,11 +9243,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerLoad'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerLoad'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerLoadRequest($server_id, string $contentType = self::contentTypes['getServerLoad'][0])
     {
@@ -9471,7 +9259,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/load';
         $formParams = [];
         $queryParams = [];
@@ -9479,20 +9266,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -9506,7 +9290,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -9514,7 +9298,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -9525,11 +9309,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9545,9 +9329,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9558,16 +9343,17 @@ class ServersApi
      *
      * Get server memory usage
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerMemoryUsage
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerMemoryUsage
      */
     public function getServerMemoryUsage($server_id, string $contentType = self::contentTypes['getServerMemoryUsage'][0])
     {
-        list($response) = $this->getServerMemoryUsageWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerMemoryUsageWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -9576,12 +9362,12 @@ class ServersApi
      *
      * Get server memory usage
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerMemoryUsage, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerMemoryUsage, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerMemoryUsageWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerMemoryUsage'][0])
     {
@@ -9609,8 +9395,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerMemoryUsage',
@@ -9618,8 +9403,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -9650,7 +9433,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -9661,11 +9443,11 @@ class ServersApi
      *
      * Get server memory usage
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerMemoryUsageAsync($server_id, string $contentType = self::contentTypes['getServerMemoryUsage'][0])
     {
@@ -9682,11 +9464,11 @@ class ServersApi
      *
      * Get server memory usage
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerMemoryUsageAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerMemoryUsage'][0])
     {
@@ -9698,7 +9480,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -9709,7 +9491,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -9732,11 +9514,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerMemoryUsage'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerMemoryUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerMemoryUsageRequest($server_id, string $contentType = self::contentTypes['getServerMemoryUsage'][0])
     {
@@ -9748,7 +9530,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/memory-usage';
         $formParams = [];
         $queryParams = [];
@@ -9756,20 +9537,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -9783,7 +9561,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -9791,7 +9569,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -9802,11 +9580,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9822,9 +9600,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9835,16 +9614,17 @@ class ServersApi
      *
      * Get mod security config
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getServerModSecurityConfig($server_id, string $contentType = self::contentTypes['getServerModSecurityConfig'][0])
     {
-        list($response) = $this->getServerModSecurityConfigWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerModSecurityConfigWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -9853,12 +9633,12 @@ class ServersApi
      *
      * Get mod security config
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerModSecurityConfigWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerModSecurityConfig'][0])
     {
@@ -9886,8 +9666,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -9895,8 +9674,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -9927,7 +9704,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -9938,11 +9714,11 @@ class ServersApi
      *
      * Get mod security config
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerModSecurityConfigAsync($server_id, string $contentType = self::contentTypes['getServerModSecurityConfig'][0])
     {
@@ -9959,11 +9735,11 @@ class ServersApi
      *
      * Get mod security config
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerModSecurityConfigAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerModSecurityConfig'][0])
     {
@@ -9975,7 +9751,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -9986,7 +9762,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -10009,11 +9785,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerModSecurityConfig'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerModSecurityConfigRequest($server_id, string $contentType = self::contentTypes['getServerModSecurityConfig'][0])
     {
@@ -10025,7 +9801,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/modsec_conf';
         $formParams = [];
         $queryParams = [];
@@ -10033,20 +9808,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -10060,7 +9832,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -10068,7 +9840,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -10079,11 +9851,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10099,9 +9871,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10112,16 +9885,17 @@ class ServersApi
      *
      * Get mod security status for a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus
      */
     public function getServerModSecurityStatus($server_id, string $contentType = self::contentTypes['getServerModSecurityStatus'][0])
     {
-        list($response) = $this->getServerModSecurityStatusWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerModSecurityStatusWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -10130,12 +9904,12 @@ class ServersApi
      *
      * Get mod security status for a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerModSecurityStatusWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerModSecurityStatus'][0])
     {
@@ -10163,8 +9937,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ModSecStatus',
@@ -10172,8 +9945,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -10204,7 +9975,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -10215,11 +9985,11 @@ class ServersApi
      *
      * Get mod security status for a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerModSecurityStatusAsync($server_id, string $contentType = self::contentTypes['getServerModSecurityStatus'][0])
     {
@@ -10236,11 +10006,11 @@ class ServersApi
      *
      * Get mod security status for a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerModSecurityStatusAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerModSecurityStatus'][0])
     {
@@ -10252,7 +10022,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -10263,7 +10033,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -10286,11 +10056,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerModSecurityStatus'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerModSecurityStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerModSecurityStatusRequest($server_id, string $contentType = self::contentTypes['getServerModSecurityStatus'][0])
     {
@@ -10302,7 +10072,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/modsec_status';
         $formParams = [];
         $queryParams = [];
@@ -10310,20 +10079,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -10337,7 +10103,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -10345,7 +10111,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -10356,11 +10122,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10376,9 +10142,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10389,16 +10156,17 @@ class ServersApi
      *
      * Get server network interfaces
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerNetworkInterfaces
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerNetworkInterfaces
      */
     public function getServerNetworkInterfaces($server_id, string $contentType = self::contentTypes['getServerNetworkInterfaces'][0])
     {
-        list($response) = $this->getServerNetworkInterfacesWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerNetworkInterfacesWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -10407,12 +10175,12 @@ class ServersApi
      *
      * Get server network interfaces
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerNetworkInterfaces, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerNetworkInterfaces, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerNetworkInterfacesWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerNetworkInterfaces'][0])
     {
@@ -10440,8 +10208,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerNetworkInterfaces',
@@ -10449,8 +10216,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -10481,7 +10246,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -10492,11 +10256,11 @@ class ServersApi
      *
      * Get server network interfaces
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerNetworkInterfacesAsync($server_id, string $contentType = self::contentTypes['getServerNetworkInterfaces'][0])
     {
@@ -10513,11 +10277,11 @@ class ServersApi
      *
      * Get server network interfaces
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerNetworkInterfacesAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerNetworkInterfaces'][0])
     {
@@ -10529,7 +10293,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -10540,7 +10304,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -10563,11 +10327,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerNetworkInterfaces'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkInterfaces'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerNetworkInterfacesRequest($server_id, string $contentType = self::contentTypes['getServerNetworkInterfaces'][0])
     {
@@ -10579,7 +10343,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/interfaces';
         $formParams = [];
         $queryParams = [];
@@ -10587,20 +10350,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -10614,7 +10374,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -10622,7 +10382,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -10633,11 +10393,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10653,9 +10413,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10666,16 +10427,17 @@ class ServersApi
      *
      * Get server network stats
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerNetworkStats
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerNetworkStats
      */
     public function getServerNetworkStats($server_id, string $contentType = self::contentTypes['getServerNetworkStats'][0])
     {
-        list($response) = $this->getServerNetworkStatsWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerNetworkStatsWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -10684,12 +10446,12 @@ class ServersApi
      *
      * Get server network stats
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerNetworkStats, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerNetworkStats, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerNetworkStatsWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerNetworkStats'][0])
     {
@@ -10717,8 +10479,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerNetworkStats',
@@ -10726,8 +10487,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -10758,7 +10517,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -10769,11 +10527,11 @@ class ServersApi
      *
      * Get server network stats
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerNetworkStatsAsync($server_id, string $contentType = self::contentTypes['getServerNetworkStats'][0])
     {
@@ -10790,11 +10548,11 @@ class ServersApi
      *
      * Get server network stats
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerNetworkStatsAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerNetworkStats'][0])
     {
@@ -10806,7 +10564,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -10817,7 +10575,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -10840,11 +10598,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerNetworkStats'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerNetworkStats'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerNetworkStatsRequest($server_id, string $contentType = self::contentTypes['getServerNetworkStats'][0])
     {
@@ -10856,7 +10614,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/network-stats';
         $formParams = [];
         $queryParams = [];
@@ -10864,20 +10621,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -10891,7 +10645,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -10899,7 +10653,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -10910,11 +10664,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10930,9 +10684,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10943,17 +10698,18 @@ class ServersApi
      *
      * Get server role info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\GetServerRole200Response
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\GetServerRole200Response
      */
     public function getServerRole($server_id, $role, string $contentType = self::contentTypes['getServerRole'][0])
     {
-        list($response) = $this->getServerRoleWithHttpInfo($server_id, $role, $contentType);
+        [$response] = $this->getServerRoleWithHttpInfo($server_id, $role, $contentType);
+
         return $response;
     }
 
@@ -10962,13 +10718,13 @@ class ServersApi
      *
      * Get server role info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\GetServerRole200Response, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\GetServerRole200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerRoleWithHttpInfo($server_id, $role, string $contentType = self::contentTypes['getServerRole'][0])
     {
@@ -10996,8 +10752,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\GetServerRole200Response',
@@ -11005,8 +10760,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -11037,7 +10790,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -11048,12 +10800,12 @@ class ServersApi
      *
      * Get server role info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerRoleAsync($server_id, $role, string $contentType = self::contentTypes['getServerRole'][0])
     {
@@ -11070,12 +10822,12 @@ class ServersApi
      *
      * Get server role info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerRoleAsyncWithHttpInfo($server_id, $role, string $contentType = self::contentTypes['getServerRole'][0])
     {
@@ -11087,7 +10839,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -11098,7 +10850,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -11121,12 +10873,12 @@ class ServersApi
     /**
      * Create request for operation 'getServerRole'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerRoleRequest($server_id, $role, string $contentType = self::contentTypes['getServerRole'][0])
     {
@@ -11145,7 +10897,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/roles/{role}';
         $formParams = [];
         $queryParams = [];
@@ -11153,12 +10904,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -11166,15 +10915,14 @@ class ServersApi
         // path params
         if ($role !== null) {
             $resourcePath = str_replace(
-                '{' . 'role' . '}',
+                '{'.'role'.'}',
                 ObjectSerializer::toPathValue($role),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -11188,7 +10936,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -11196,7 +10944,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -11207,11 +10955,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -11227,9 +10975,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -11240,16 +10989,17 @@ class ServersApi
      *
      * Get server roles info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\RolesInfo
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\RolesInfo
      */
     public function getServerRoles($server_id, string $contentType = self::contentTypes['getServerRoles'][0])
     {
-        list($response) = $this->getServerRolesWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerRolesWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -11258,12 +11008,12 @@ class ServersApi
      *
      * Get server roles info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\RolesInfo, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\RolesInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerRolesWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerRoles'][0])
     {
@@ -11291,8 +11041,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\RolesInfo',
@@ -11300,8 +11049,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -11332,7 +11079,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -11343,11 +11089,11 @@ class ServersApi
      *
      * Get server roles info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerRolesAsync($server_id, string $contentType = self::contentTypes['getServerRoles'][0])
     {
@@ -11364,11 +11110,11 @@ class ServersApi
      *
      * Get server roles info
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerRolesAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerRoles'][0])
     {
@@ -11380,7 +11126,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -11391,7 +11137,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -11414,11 +11160,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerRoles'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerRoles'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerRolesRequest($server_id, string $contentType = self::contentTypes['getServerRoles'][0])
     {
@@ -11430,7 +11176,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/roles';
         $formParams = [];
         $queryParams = [];
@@ -11438,20 +11183,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -11465,7 +11207,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -11473,7 +11215,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -11484,11 +11226,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -11504,9 +11246,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -11517,18 +11260,19 @@ class ServersApi
      *
      * Get Server stats
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerStatsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerStatsFullListing
      */
     public function getServerStats($server_id, $start = null, $end = null, string $contentType = self::contentTypes['getServerStats'][0])
     {
-        list($response) = $this->getServerStatsWithHttpInfo($server_id, $start, $end, $contentType);
+        [$response] = $this->getServerStatsWithHttpInfo($server_id, $start, $end, $contentType);
+
         return $response;
     }
 
@@ -11537,14 +11281,14 @@ class ServersApi
      *
      * Get Server stats
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerStatsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerStatsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerStatsWithHttpInfo($server_id, $start = null, $end = null, string $contentType = self::contentTypes['getServerStats'][0])
     {
@@ -11572,8 +11316,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerStatsFullListing',
@@ -11581,8 +11324,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -11613,7 +11354,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -11624,13 +11364,13 @@ class ServersApi
      *
      * Get Server stats
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerStatsAsync($server_id, $start = null, $end = null, string $contentType = self::contentTypes['getServerStats'][0])
     {
@@ -11647,13 +11387,13 @@ class ServersApi
      *
      * Get Server stats
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerStatsAsyncWithHttpInfo($server_id, $start = null, $end = null, string $contentType = self::contentTypes['getServerStats'][0])
     {
@@ -11665,7 +11405,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -11676,7 +11416,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -11699,13 +11439,13 @@ class ServersApi
     /**
      * Create request for operation 'getServerStats'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStats'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerStatsRequest($server_id, $start = null, $end = null, string $contentType = self::contentTypes['getServerStats'][0])
     {
@@ -11716,9 +11456,6 @@ class ServersApi
                 'Missing the required parameter $server_id when calling getServerStats'
             );
         }
-
-
-
 
         $resourcePath = '/servers/{server_id}/historic-stats';
         $formParams = [];
@@ -11746,19 +11483,17 @@ class ServersApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -11772,7 +11507,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -11780,14 +11515,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -11802,9 +11536,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -11815,16 +11550,17 @@ class ServersApi
      *
      * Get server status
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerStatus
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerStatus
      */
     public function getServerStatus($server_id, string $contentType = self::contentTypes['getServerStatus'][0])
     {
-        list($response) = $this->getServerStatusWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerStatusWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -11833,12 +11569,12 @@ class ServersApi
      *
      * Get server status
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerStatus, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerStatusWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerStatus'][0])
     {
@@ -11866,8 +11602,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerStatus',
@@ -11875,8 +11610,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -11907,7 +11640,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -11918,11 +11650,11 @@ class ServersApi
      *
      * Get server status
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerStatusAsync($server_id, string $contentType = self::contentTypes['getServerStatus'][0])
     {
@@ -11939,11 +11671,11 @@ class ServersApi
      *
      * Get server status
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerStatusAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerStatus'][0])
     {
@@ -11955,7 +11687,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -11966,7 +11698,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -11989,11 +11721,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerStatus'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerStatusRequest($server_id, string $contentType = self::contentTypes['getServerStatus'][0])
     {
@@ -12005,7 +11737,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/status';
         $formParams = [];
         $queryParams = [];
@@ -12013,20 +11744,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -12040,7 +11768,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -12048,7 +11776,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -12059,11 +11787,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -12079,9 +11807,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -12092,16 +11821,17 @@ class ServersApi
      *
      * Get server uptime in seconds
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerUptime
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServerUptime
      */
     public function getServerUptime($server_id, string $contentType = self::contentTypes['getServerUptime'][0])
     {
-        list($response) = $this->getServerUptimeWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getServerUptimeWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -12110,12 +11840,12 @@ class ServersApi
      *
      * Get server uptime in seconds
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerUptime, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServerUptime, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServerUptimeWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerUptime'][0])
     {
@@ -12143,8 +11873,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServerUptime',
@@ -12152,8 +11881,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -12184,7 +11911,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -12195,11 +11921,11 @@ class ServersApi
      *
      * Get server uptime in seconds
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerUptimeAsync($server_id, string $contentType = self::contentTypes['getServerUptime'][0])
     {
@@ -12216,11 +11942,11 @@ class ServersApi
      *
      * Get server uptime in seconds
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServerUptimeAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getServerUptime'][0])
     {
@@ -12232,7 +11958,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -12243,7 +11969,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -12266,11 +11992,11 @@ class ServersApi
     /**
      * Create request for operation 'getServerUptime'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServerUptime'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServerUptimeRequest($server_id, string $contentType = self::contentTypes['getServerUptime'][0])
     {
@@ -12282,7 +12008,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/uptime';
         $formParams = [];
         $queryParams = [];
@@ -12290,20 +12015,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -12317,7 +12039,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -12325,7 +12047,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -12336,11 +12058,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -12356,9 +12078,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -12369,19 +12092,20 @@ class ServersApi
      *
      * Get installed servers
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ServersListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ServersListing
      */
     public function getServers($offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getServers'][0])
     {
-        list($response) = $this->getServersWithHttpInfo($offset, $limit, $sort_order, $sort_by, $contentType);
+        [$response] = $this->getServersWithHttpInfo($offset, $limit, $sort_order, $sort_by, $contentType);
+
         return $response;
     }
 
@@ -12390,15 +12114,15 @@ class ServersApi
      *
      * Get installed servers
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServersListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ServersListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServersWithHttpInfo($offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getServers'][0])
     {
@@ -12426,8 +12150,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ServersListing',
@@ -12435,8 +12158,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -12467,7 +12188,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -12478,14 +12198,14 @@ class ServersApi
      *
      * Get installed servers
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServersAsync($offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getServers'][0])
     {
@@ -12502,14 +12222,14 @@ class ServersApi
      *
      * Get installed servers
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServersAsyncWithHttpInfo($offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getServers'][0])
     {
@@ -12521,7 +12241,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -12532,7 +12252,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -12555,22 +12275,17 @@ class ServersApi
     /**
      * Create request for operation 'getServers'
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServersRequest($offset = null, $limit = null, $sort_order = null, $sort_by = null, string $contentType = self::contentTypes['getServers'][0])
     {
-
-
-
-
-
 
         $resourcePath = '/servers';
         $formParams = [];
@@ -12616,11 +12331,8 @@ class ServersApi
             false // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -12634,7 +12346,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -12642,7 +12354,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -12653,11 +12365,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -12673,9 +12385,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -12686,17 +12399,18 @@ class ServersApi
      *
      * Get the value for a particular setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @return mixed
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return mixed
      */
     public function getServiceSetting($server_id, $setting_kind, string $contentType = self::contentTypes['getServiceSetting'][0])
     {
-        list($response) = $this->getServiceSettingWithHttpInfo($server_id, $setting_kind, $contentType);
+        [$response] = $this->getServiceSettingWithHttpInfo($server_id, $setting_kind, $contentType);
+
         return $response;
     }
 
@@ -12705,13 +12419,13 @@ class ServersApi
      *
      * Get the value for a particular setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @return array of mixed, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of mixed, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServiceSettingWithHttpInfo($server_id, $setting_kind, string $contentType = self::contentTypes['getServiceSetting'][0])
     {
@@ -12739,8 +12453,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'mixed',
@@ -12748,8 +12461,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -12780,7 +12491,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -12791,12 +12501,12 @@ class ServersApi
      *
      * Get the value for a particular setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServiceSettingAsync($server_id, $setting_kind, string $contentType = self::contentTypes['getServiceSetting'][0])
     {
@@ -12813,12 +12523,12 @@ class ServersApi
      *
      * Get the value for a particular setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getServiceSettingAsyncWithHttpInfo($server_id, $setting_kind, string $contentType = self::contentTypes['getServiceSetting'][0])
     {
@@ -12830,7 +12540,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -12841,7 +12551,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -12864,12 +12574,12 @@ class ServersApi
     /**
      * Create request for operation 'getServiceSetting'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getServiceSettingRequest($server_id, $setting_kind, string $contentType = self::contentTypes['getServiceSetting'][0])
     {
@@ -12888,7 +12598,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/settings/{setting_kind}';
         $formParams = [];
         $queryParams = [];
@@ -12896,12 +12605,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -12909,15 +12616,14 @@ class ServersApi
         // path params
         if ($setting_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_kind' . '}',
+                '{'.'setting_kind'.'}',
                 ObjectSerializer::toPathValue($setting_kind),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -12931,7 +12637,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -12939,7 +12645,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -12950,11 +12656,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -12970,9 +12676,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -12983,16 +12690,17 @@ class ServersApi
      *
      * Get the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return float
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return float
      */
     public function getSmtpRateLimitHourly($server_id, string $contentType = self::contentTypes['getSmtpRateLimitHourly'][0])
     {
-        list($response) = $this->getSmtpRateLimitHourlyWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getSmtpRateLimitHourlyWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -13001,12 +12709,12 @@ class ServersApi
      *
      * Get the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return array of float, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of float, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSmtpRateLimitHourlyWithHttpInfo($server_id, string $contentType = self::contentTypes['getSmtpRateLimitHourly'][0])
     {
@@ -13034,8 +12742,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'float',
@@ -13043,8 +12750,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -13075,7 +12780,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -13086,11 +12790,11 @@ class ServersApi
      *
      * Get the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSmtpRateLimitHourlyAsync($server_id, string $contentType = self::contentTypes['getSmtpRateLimitHourly'][0])
     {
@@ -13107,11 +12811,11 @@ class ServersApi
      *
      * Get the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSmtpRateLimitHourlyAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getSmtpRateLimitHourly'][0])
     {
@@ -13123,7 +12827,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -13134,7 +12838,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -13157,11 +12861,11 @@ class ServersApi
     /**
      * Create request for operation 'getSmtpRateLimitHourly'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSmtpRateLimitHourlyRequest($server_id, string $contentType = self::contentTypes['getSmtpRateLimitHourly'][0])
     {
@@ -13173,7 +12877,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/spam/smtp_rate_limit_hourly';
         $formParams = [];
         $queryParams = [];
@@ -13181,20 +12884,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -13208,7 +12908,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -13216,7 +12916,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -13227,11 +12927,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -13247,9 +12947,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -13260,16 +12961,17 @@ class ServersApi
      *
      * Get the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @return string[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string[]
      */
     public function getSpamIpWhitelist($server_id, string $contentType = self::contentTypes['getSpamIpWhitelist'][0])
     {
-        list($response) = $this->getSpamIpWhitelistWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getSpamIpWhitelistWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -13278,12 +12980,12 @@ class ServersApi
      *
      * Get the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSpamIpWhitelistWithHttpInfo($server_id, string $contentType = self::contentTypes['getSpamIpWhitelist'][0])
     {
@@ -13311,8 +13013,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string[]',
@@ -13320,8 +13021,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -13352,7 +13051,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -13363,11 +13061,11 @@ class ServersApi
      *
      * Get the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSpamIpWhitelistAsync($server_id, string $contentType = self::contentTypes['getSpamIpWhitelist'][0])
     {
@@ -13384,11 +13082,11 @@ class ServersApi
      *
      * Get the IP whitelist
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSpamIpWhitelistAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getSpamIpWhitelist'][0])
     {
@@ -13400,7 +13098,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -13411,7 +13109,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -13434,11 +13132,11 @@ class ServersApi
     /**
      * Create request for operation 'getSpamIpWhitelist'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSpamIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSpamIpWhitelistRequest($server_id, string $contentType = self::contentTypes['getSpamIpWhitelist'][0])
     {
@@ -13450,7 +13148,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/spam/ip_whitelist';
         $formParams = [];
         $queryParams = [];
@@ -13458,20 +13155,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -13485,7 +13179,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -13493,7 +13187,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -13504,11 +13198,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -13524,9 +13218,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -13537,17 +13232,18 @@ class ServersApi
      *
      * Returns a map of upgradable packages.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  system_package_name (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\UpgradableSystemPackage
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\UpgradableSystemPackage
      */
     public function getSystemPackageUpdateInfo($server_id, $system_package_name = null, string $contentType = self::contentTypes['getSystemPackageUpdateInfo'][0])
     {
-        list($response) = $this->getSystemPackageUpdateInfoWithHttpInfo($server_id, $system_package_name, $contentType);
+        [$response] = $this->getSystemPackageUpdateInfoWithHttpInfo($server_id, $system_package_name, $contentType);
+
         return $response;
     }
 
@@ -13556,13 +13252,13 @@ class ServersApi
      *
      * Returns a map of upgradable packages.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UpgradableSystemPackage, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UpgradableSystemPackage, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSystemPackageUpdateInfoWithHttpInfo($server_id, $system_package_name = null, string $contentType = self::contentTypes['getSystemPackageUpdateInfo'][0])
     {
@@ -13590,8 +13286,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\UpgradableSystemPackage',
@@ -13599,8 +13294,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -13631,7 +13324,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -13642,12 +13334,12 @@ class ServersApi
      *
      * Returns a map of upgradable packages.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSystemPackageUpdateInfoAsync($server_id, $system_package_name = null, string $contentType = self::contentTypes['getSystemPackageUpdateInfo'][0])
     {
@@ -13664,12 +13356,12 @@ class ServersApi
      *
      * Returns a map of upgradable packages.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSystemPackageUpdateInfoAsyncWithHttpInfo($server_id, $system_package_name = null, string $contentType = self::contentTypes['getSystemPackageUpdateInfo'][0])
     {
@@ -13681,7 +13373,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -13692,7 +13384,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -13715,12 +13407,12 @@ class ServersApi
     /**
      * Create request for operation 'getSystemPackageUpdateInfo'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSystemPackageUpdateInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSystemPackageUpdateInfoRequest($server_id, $system_package_name = null, string $contentType = self::contentTypes['getSystemPackageUpdateInfo'][0])
     {
@@ -13731,8 +13423,6 @@ class ServersApi
                 'Missing the required parameter $server_id when calling getSystemPackageUpdateInfo'
             );
         }
-
-
 
         $resourcePath = '/servers/{server_id}/packages/update';
         $formParams = [];
@@ -13751,19 +13441,17 @@ class ServersApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -13777,7 +13465,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -13785,7 +13473,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -13796,11 +13484,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -13816,9 +13504,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -13829,16 +13518,17 @@ class ServersApi
      *
      * Get web server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebserverKind
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebserverKind
      */
     public function getWebserverKind($server_id, string $contentType = self::contentTypes['getWebserverKind'][0])
     {
-        list($response) = $this->getWebserverKindWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getWebserverKindWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -13847,12 +13537,12 @@ class ServersApi
      *
      * Get web server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebserverKind, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebserverKind, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebserverKindWithHttpInfo($server_id, string $contentType = self::contentTypes['getWebserverKind'][0])
     {
@@ -13880,8 +13570,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebserverKind',
@@ -13889,8 +13578,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -13921,7 +13608,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -13932,11 +13618,11 @@ class ServersApi
      *
      * Get web server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebserverKindAsync($server_id, string $contentType = self::contentTypes['getWebserverKind'][0])
     {
@@ -13953,11 +13639,11 @@ class ServersApi
      *
      * Get web server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebserverKindAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getWebserverKind'][0])
     {
@@ -13969,7 +13655,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -13980,7 +13666,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -14003,11 +13689,11 @@ class ServersApi
     /**
      * Create request for operation 'getWebserverKind'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebserverKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebserverKindRequest($server_id, string $contentType = self::contentTypes['getWebserverKind'][0])
     {
@@ -14019,7 +13705,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/webserver';
         $formParams = [];
         $queryParams = [];
@@ -14027,20 +13712,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -14054,7 +13736,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -14062,7 +13744,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -14073,11 +13755,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -14093,9 +13775,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -14106,17 +13789,18 @@ class ServersApi
      *
      * Get php-fpm config for the specified website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\PhpIni
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\PhpIni
      */
     public function getWebsiteFpmSettings($server_id, $website_id, string $contentType = self::contentTypes['getWebsiteFpmSettings'][0])
     {
-        list($response) = $this->getWebsiteFpmSettingsWithHttpInfo($server_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteFpmSettingsWithHttpInfo($server_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -14125,13 +13809,13 @@ class ServersApi
      *
      * Get php-fpm config for the specified website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\PhpIni, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\PhpIni, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteFpmSettingsWithHttpInfo($server_id, $website_id, string $contentType = self::contentTypes['getWebsiteFpmSettings'][0])
     {
@@ -14159,8 +13843,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\PhpIni',
@@ -14168,8 +13851,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -14200,7 +13881,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -14211,12 +13891,12 @@ class ServersApi
      *
      * Get php-fpm config for the specified website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteFpmSettingsAsync($server_id, $website_id, string $contentType = self::contentTypes['getWebsiteFpmSettings'][0])
     {
@@ -14233,12 +13913,12 @@ class ServersApi
      *
      * Get php-fpm config for the specified website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteFpmSettingsAsyncWithHttpInfo($server_id, $website_id, string $contentType = self::contentTypes['getWebsiteFpmSettings'][0])
     {
@@ -14250,7 +13930,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -14261,7 +13941,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -14284,12 +13964,12 @@ class ServersApi
     /**
      * Create request for operation 'getWebsiteFpmSettings'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFpmSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteFpmSettingsRequest($server_id, $website_id, string $contentType = self::contentTypes['getWebsiteFpmSettings'][0])
     {
@@ -14308,7 +13988,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/php/fpm/{website_id}';
         $formParams = [];
         $queryParams = [];
@@ -14316,12 +13995,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -14329,15 +14006,14 @@ class ServersApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -14351,7 +14027,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -14359,14 +14035,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -14381,9 +14056,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -14394,16 +14070,17 @@ class ServersApi
      *
      * Get the hourly website generated email rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return float
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return float
      */
     public function getWebsiteGeneratedRateLimitHourly($server_id, string $contentType = self::contentTypes['getWebsiteGeneratedRateLimitHourly'][0])
     {
-        list($response) = $this->getWebsiteGeneratedRateLimitHourlyWithHttpInfo($server_id, $contentType);
+        [$response] = $this->getWebsiteGeneratedRateLimitHourlyWithHttpInfo($server_id, $contentType);
+
         return $response;
     }
 
@@ -14412,12 +14089,12 @@ class ServersApi
      *
      * Get the hourly website generated email rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return array of float, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of float, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteGeneratedRateLimitHourlyWithHttpInfo($server_id, string $contentType = self::contentTypes['getWebsiteGeneratedRateLimitHourly'][0])
     {
@@ -14445,8 +14122,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'float',
@@ -14454,8 +14130,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -14486,7 +14160,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -14497,11 +14170,11 @@ class ServersApi
      *
      * Get the hourly website generated email rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteGeneratedRateLimitHourlyAsync($server_id, string $contentType = self::contentTypes['getWebsiteGeneratedRateLimitHourly'][0])
     {
@@ -14518,11 +14191,11 @@ class ServersApi
      *
      * Get the hourly website generated email rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteGeneratedRateLimitHourlyAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['getWebsiteGeneratedRateLimitHourly'][0])
     {
@@ -14534,7 +14207,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -14545,7 +14218,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -14568,11 +14241,11 @@ class ServersApi
     /**
      * Create request for operation 'getWebsiteGeneratedRateLimitHourly'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteGeneratedRateLimitHourlyRequest($server_id, string $contentType = self::contentTypes['getWebsiteGeneratedRateLimitHourly'][0])
     {
@@ -14584,7 +14257,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/spam/website_generated_rate_limit_hourly';
         $formParams = [];
         $queryParams = [];
@@ -14592,20 +14264,17 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -14619,7 +14288,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -14627,7 +14296,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -14638,11 +14307,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -14658,9 +14327,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -14671,13 +14341,13 @@ class ServersApi
      *
      * Enables the database role on a given ServerUuid
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  mysql_kind (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function installDatabaseRole($server_id, $mysql_kind = null, string $contentType = self::contentTypes['installDatabaseRole'][0])
     {
@@ -14689,13 +14359,13 @@ class ServersApi
      *
      * Enables the database role on a given ServerUuid
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function installDatabaseRoleWithHttpInfo($server_id, $mysql_kind = null, string $contentType = self::contentTypes['installDatabaseRole'][0])
     {
@@ -14723,12 +14393,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -14739,12 +14407,12 @@ class ServersApi
      *
      * Enables the database role on a given ServerUuid
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function installDatabaseRoleAsync($server_id, $mysql_kind = null, string $contentType = self::contentTypes['installDatabaseRole'][0])
     {
@@ -14761,12 +14429,12 @@ class ServersApi
      *
      * Enables the database role on a given ServerUuid
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function installDatabaseRoleAsyncWithHttpInfo($server_id, $mysql_kind = null, string $contentType = self::contentTypes['installDatabaseRole'][0])
     {
@@ -14776,7 +14444,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -14799,12 +14467,12 @@ class ServersApi
     /**
      * Create request for operation 'installDatabaseRole'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null $mysql_kind (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MysqlKind|null  $mysql_kind  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installDatabaseRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function installDatabaseRoleRequest($server_id, $mysql_kind = null, string $contentType = self::contentTypes['installDatabaseRole'][0])
     {
@@ -14815,8 +14483,6 @@ class ServersApi
                 'Missing the required parameter $server_id when calling installDatabaseRole'
             );
         }
-
-
 
         $resourcePath = '/v2/servers/{server_id}/database-role';
         $formParams = [];
@@ -14835,16 +14501,14 @@ class ServersApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -14861,7 +14525,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -14869,14 +14533,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -14891,9 +14554,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -14904,14 +14568,14 @@ class ServersApi
      *
      * Install server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null $new_backup_role Information for the backup role. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null  $new_backup_role  Information for the backup role. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function installServerRole($server_id, $role, $new_backup_role = null, string $contentType = self::contentTypes['installServerRole'][0])
     {
@@ -14923,14 +14587,14 @@ class ServersApi
      *
      * Install server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null $new_backup_role Information for the backup role. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null  $new_backup_role  Information for the backup role. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function installServerRoleWithHttpInfo($server_id, $role, $new_backup_role = null, string $contentType = self::contentTypes['installServerRole'][0])
     {
@@ -14958,12 +14622,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -14974,13 +14636,13 @@ class ServersApi
      *
      * Install server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null $new_backup_role Information for the backup role. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null  $new_backup_role  Information for the backup role. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function installServerRoleAsync($server_id, $role, $new_backup_role = null, string $contentType = self::contentTypes['installServerRole'][0])
     {
@@ -14997,13 +14659,13 @@ class ServersApi
      *
      * Install server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null $new_backup_role Information for the backup role. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null  $new_backup_role  Information for the backup role. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function installServerRoleAsyncWithHttpInfo($server_id, $role, $new_backup_role = null, string $contentType = self::contentTypes['installServerRole'][0])
     {
@@ -15013,7 +14675,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -15036,13 +14698,13 @@ class ServersApi
     /**
      * Create request for operation 'installServerRole'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null $new_backup_role Information for the backup role. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewBackupRole|null  $new_backup_role  Information for the backup role. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function installServerRoleRequest($server_id, $role, $new_backup_role = null, string $contentType = self::contentTypes['installServerRole'][0])
     {
@@ -15061,8 +14723,6 @@ class ServersApi
             );
         }
 
-
-
         $resourcePath = '/servers/{server_id}/roles/{role}';
         $formParams = [];
         $queryParams = [];
@@ -15070,12 +14730,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -15083,12 +14741,11 @@ class ServersApi
         // path params
         if ($role !== null) {
             $resourcePath = str_replace(
-                '{' . 'role' . '}',
+                '{'.'role'.'}',
                 ObjectSerializer::toPathValue($role),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -15099,7 +14756,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($new_backup_role)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_backup_role));
             } else {
                 $httpBody = $new_backup_role;
@@ -15112,7 +14769,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -15120,7 +14777,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -15131,11 +14788,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -15151,9 +14808,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -15164,12 +14822,12 @@ class ServersApi
      *
      * Delete custom mod_security config and reset to default
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function resetServerModSecurityConfig($server_id, string $contentType = self::contentTypes['resetServerModSecurityConfig'][0])
     {
@@ -15181,12 +14839,12 @@ class ServersApi
      *
      * Delete custom mod_security config and reset to default
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function resetServerModSecurityConfigWithHttpInfo($server_id, string $contentType = self::contentTypes['resetServerModSecurityConfig'][0])
     {
@@ -15214,12 +14872,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -15230,11 +14886,11 @@ class ServersApi
      *
      * Delete custom mod_security config and reset to default
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function resetServerModSecurityConfigAsync($server_id, string $contentType = self::contentTypes['resetServerModSecurityConfig'][0])
     {
@@ -15251,11 +14907,11 @@ class ServersApi
      *
      * Delete custom mod_security config and reset to default
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function resetServerModSecurityConfigAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['resetServerModSecurityConfig'][0])
     {
@@ -15265,7 +14921,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -15288,11 +14944,11 @@ class ServersApi
     /**
      * Create request for operation 'resetServerModSecurityConfig'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetServerModSecurityConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function resetServerModSecurityConfigRequest($server_id, string $contentType = self::contentTypes['resetServerModSecurityConfig'][0])
     {
@@ -15304,7 +14960,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/modsec_conf';
         $formParams = [];
         $queryParams = [];
@@ -15312,17 +14967,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -15339,7 +14991,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -15347,7 +14999,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -15358,11 +15010,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -15378,9 +15030,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -15391,12 +15044,12 @@ class ServersApi
      *
      * Reset the config for the web server to default.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function resetWebServerConfig($server_id, string $contentType = self::contentTypes['resetWebServerConfig'][0])
     {
@@ -15408,12 +15061,12 @@ class ServersApi
      *
      * Reset the config for the web server to default.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function resetWebServerConfigWithHttpInfo($server_id, string $contentType = self::contentTypes['resetWebServerConfig'][0])
     {
@@ -15441,12 +15094,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -15457,11 +15108,11 @@ class ServersApi
      *
      * Reset the config for the web server to default.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function resetWebServerConfigAsync($server_id, string $contentType = self::contentTypes['resetWebServerConfig'][0])
     {
@@ -15478,11 +15129,11 @@ class ServersApi
      *
      * Reset the config for the web server to default.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function resetWebServerConfigAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['resetWebServerConfig'][0])
     {
@@ -15492,7 +15143,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -15515,11 +15166,11 @@ class ServersApi
     /**
      * Create request for operation 'resetWebServerConfig'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['resetWebServerConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function resetWebServerConfigRequest($server_id, string $contentType = self::contentTypes['resetWebServerConfig'][0])
     {
@@ -15531,7 +15182,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/webserver/config/reset';
         $formParams = [];
         $queryParams = [];
@@ -15539,17 +15189,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -15566,7 +15213,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -15574,7 +15221,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -15585,11 +15232,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -15605,9 +15252,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -15618,12 +15266,12 @@ class ServersApi
      *
      * Restart MySQL gracefully
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function restartMysql($server_id, string $contentType = self::contentTypes['restartMysql'][0])
     {
@@ -15635,12 +15283,12 @@ class ServersApi
      *
      * Restart MySQL gracefully
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function restartMysqlWithHttpInfo($server_id, string $contentType = self::contentTypes['restartMysql'][0])
     {
@@ -15668,12 +15316,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -15684,11 +15330,11 @@ class ServersApi
      *
      * Restart MySQL gracefully
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function restartMysqlAsync($server_id, string $contentType = self::contentTypes['restartMysql'][0])
     {
@@ -15705,11 +15351,11 @@ class ServersApi
      *
      * Restart MySQL gracefully
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function restartMysqlAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['restartMysql'][0])
     {
@@ -15719,7 +15365,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -15742,11 +15388,11 @@ class ServersApi
     /**
      * Create request for operation 'restartMysql'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartMysql'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function restartMysqlRequest($server_id, string $contentType = self::contentTypes['restartMysql'][0])
     {
@@ -15758,7 +15404,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/database-role/restart';
         $formParams = [];
         $queryParams = [];
@@ -15766,17 +15411,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -15793,7 +15435,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -15801,14 +15443,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -15823,9 +15464,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -15836,13 +15478,13 @@ class ServersApi
      *
      * Save a new my.cnf
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body New my.cnf to be applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  New my.cnf to be applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function saveMysqlMyCnf($server_id, $body, string $contentType = self::contentTypes['saveMysqlMyCnf'][0])
     {
@@ -15854,13 +15496,13 @@ class ServersApi
      *
      * Save a new my.cnf
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body New my.cnf to be applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  New my.cnf to be applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function saveMysqlMyCnfWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['saveMysqlMyCnf'][0])
     {
@@ -15888,12 +15530,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -15904,12 +15544,12 @@ class ServersApi
      *
      * Save a new my.cnf
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body New my.cnf to be applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  New my.cnf to be applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function saveMysqlMyCnfAsync($server_id, $body, string $contentType = self::contentTypes['saveMysqlMyCnf'][0])
     {
@@ -15926,12 +15566,12 @@ class ServersApi
      *
      * Save a new my.cnf
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body New my.cnf to be applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  New my.cnf to be applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function saveMysqlMyCnfAsyncWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['saveMysqlMyCnf'][0])
     {
@@ -15941,7 +15581,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -15964,12 +15604,12 @@ class ServersApi
     /**
      * Create request for operation 'saveMysqlMyCnf'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body New my.cnf to be applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  New my.cnf to be applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['saveMysqlMyCnf'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function saveMysqlMyCnfRequest($server_id, $body, string $contentType = self::contentTypes['saveMysqlMyCnf'][0])
     {
@@ -15988,7 +15628,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/my-cnf';
         $formParams = [];
         $queryParams = [];
@@ -15996,17 +15635,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -16017,7 +15653,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -16030,7 +15666,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -16038,14 +15674,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -16060,9 +15695,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -16073,13 +15709,13 @@ class ServersApi
      *
      * Set the hostname override for the email server (postfix)
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null $email_server_hostname_override Hostname override or null (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null  $email_server_hostname_override  Hostname override or null (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setEmailServerHostnameOverride($server_id, $email_server_hostname_override = null, string $contentType = self::contentTypes['setEmailServerHostnameOverride'][0])
     {
@@ -16091,13 +15727,13 @@ class ServersApi
      *
      * Set the hostname override for the email server (postfix)
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null $email_server_hostname_override Hostname override or null (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null  $email_server_hostname_override  Hostname override or null (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setEmailServerHostnameOverrideWithHttpInfo($server_id, $email_server_hostname_override = null, string $contentType = self::contentTypes['setEmailServerHostnameOverride'][0])
     {
@@ -16125,12 +15761,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -16141,12 +15775,12 @@ class ServersApi
      *
      * Set the hostname override for the email server (postfix)
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null $email_server_hostname_override Hostname override or null (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null  $email_server_hostname_override  Hostname override or null (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setEmailServerHostnameOverrideAsync($server_id, $email_server_hostname_override = null, string $contentType = self::contentTypes['setEmailServerHostnameOverride'][0])
     {
@@ -16163,12 +15797,12 @@ class ServersApi
      *
      * Set the hostname override for the email server (postfix)
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null $email_server_hostname_override Hostname override or null (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null  $email_server_hostname_override  Hostname override or null (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setEmailServerHostnameOverrideAsyncWithHttpInfo($server_id, $email_server_hostname_override = null, string $contentType = self::contentTypes['setEmailServerHostnameOverride'][0])
     {
@@ -16178,7 +15812,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -16201,12 +15835,12 @@ class ServersApi
     /**
      * Create request for operation 'setEmailServerHostnameOverride'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null $email_server_hostname_override Hostname override or null (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailServerHostnameOverride|null  $email_server_hostname_override  Hostname override or null (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailServerHostnameOverride'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setEmailServerHostnameOverrideRequest($server_id, $email_server_hostname_override = null, string $contentType = self::contentTypes['setEmailServerHostnameOverride'][0])
     {
@@ -16218,8 +15852,6 @@ class ServersApi
             );
         }
 
-
-
         $resourcePath = '/servers/{server_id}/email/hostname_override';
         $formParams = [];
         $queryParams = [];
@@ -16227,17 +15859,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -16248,7 +15877,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($email_server_hostname_override)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($email_server_hostname_override));
             } else {
                 $httpBody = $email_server_hostname_override;
@@ -16261,7 +15890,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -16269,7 +15898,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -16280,11 +15909,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -16300,9 +15929,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -16313,13 +15943,13 @@ class ServersApi
      *
      * Set a new LiteSpeed admin password.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setLiteSpeedAdminPassword($server_id, $body, string $contentType = self::contentTypes['setLiteSpeedAdminPassword'][0])
     {
@@ -16331,13 +15961,13 @@ class ServersApi
      *
      * Set a new LiteSpeed admin password.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setLiteSpeedAdminPasswordWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['setLiteSpeedAdminPassword'][0])
     {
@@ -16365,12 +15995,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -16381,12 +16009,12 @@ class ServersApi
      *
      * Set a new LiteSpeed admin password.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setLiteSpeedAdminPasswordAsync($server_id, $body, string $contentType = self::contentTypes['setLiteSpeedAdminPassword'][0])
     {
@@ -16403,12 +16031,12 @@ class ServersApi
      *
      * Set a new LiteSpeed admin password.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setLiteSpeedAdminPasswordAsyncWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['setLiteSpeedAdminPassword'][0])
     {
@@ -16418,7 +16046,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -16441,12 +16069,12 @@ class ServersApi
     /**
      * Create request for operation 'setLiteSpeedAdminPassword'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setLiteSpeedAdminPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setLiteSpeedAdminPasswordRequest($server_id, $body, string $contentType = self::contentTypes['setLiteSpeedAdminPassword'][0])
     {
@@ -16465,7 +16093,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/webserver/litespeed/password';
         $formParams = [];
         $queryParams = [];
@@ -16473,17 +16100,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -16494,7 +16118,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -16507,7 +16131,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -16515,7 +16139,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -16526,11 +16150,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -16546,9 +16170,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -16559,13 +16184,13 @@ class ServersApi
      *
      * Set the settings for outbound spam scanning
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null $outbound_spam_scanning_settings Outbound spam settings (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null  $outbound_spam_scanning_settings  Outbound spam settings (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setOutboundSpamScanningSettings($server_id, $outbound_spam_scanning_settings = null, string $contentType = self::contentTypes['setOutboundSpamScanningSettings'][0])
     {
@@ -16577,13 +16202,13 @@ class ServersApi
      *
      * Set the settings for outbound spam scanning
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null $outbound_spam_scanning_settings Outbound spam settings (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null  $outbound_spam_scanning_settings  Outbound spam settings (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setOutboundSpamScanningSettingsWithHttpInfo($server_id, $outbound_spam_scanning_settings = null, string $contentType = self::contentTypes['setOutboundSpamScanningSettings'][0])
     {
@@ -16611,12 +16236,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -16627,12 +16250,12 @@ class ServersApi
      *
      * Set the settings for outbound spam scanning
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null $outbound_spam_scanning_settings Outbound spam settings (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null  $outbound_spam_scanning_settings  Outbound spam settings (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setOutboundSpamScanningSettingsAsync($server_id, $outbound_spam_scanning_settings = null, string $contentType = self::contentTypes['setOutboundSpamScanningSettings'][0])
     {
@@ -16649,12 +16272,12 @@ class ServersApi
      *
      * Set the settings for outbound spam scanning
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null $outbound_spam_scanning_settings Outbound spam settings (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null  $outbound_spam_scanning_settings  Outbound spam settings (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setOutboundSpamScanningSettingsAsyncWithHttpInfo($server_id, $outbound_spam_scanning_settings = null, string $contentType = self::contentTypes['setOutboundSpamScanningSettings'][0])
     {
@@ -16664,7 +16287,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -16687,12 +16310,12 @@ class ServersApi
     /**
      * Create request for operation 'setOutboundSpamScanningSettings'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null $outbound_spam_scanning_settings Outbound spam settings (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OutboundSpamScanningSettings|null  $outbound_spam_scanning_settings  Outbound spam settings (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOutboundSpamScanningSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setOutboundSpamScanningSettingsRequest($server_id, $outbound_spam_scanning_settings = null, string $contentType = self::contentTypes['setOutboundSpamScanningSettings'][0])
     {
@@ -16704,8 +16327,6 @@ class ServersApi
             );
         }
 
-
-
         $resourcePath = '/servers/{server_id}/email/spam/outbound_scanning';
         $formParams = [];
         $queryParams = [];
@@ -16713,17 +16334,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -16734,7 +16352,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($outbound_spam_scanning_settings)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($outbound_spam_scanning_settings));
             } else {
                 $httpBody = $outbound_spam_scanning_settings;
@@ -16747,7 +16365,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -16755,7 +16373,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -16766,11 +16384,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -16786,9 +16404,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -16799,12 +16418,12 @@ class ServersApi
      *
      * Set server to decommissioned
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setServerDecommissioned($server_id, string $contentType = self::contentTypes['setServerDecommissioned'][0])
     {
@@ -16816,12 +16435,12 @@ class ServersApi
      *
      * Set server to decommissioned
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setServerDecommissionedWithHttpInfo($server_id, string $contentType = self::contentTypes['setServerDecommissioned'][0])
     {
@@ -16849,12 +16468,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -16865,11 +16482,11 @@ class ServersApi
      *
      * Set server to decommissioned
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServerDecommissionedAsync($server_id, string $contentType = self::contentTypes['setServerDecommissioned'][0])
     {
@@ -16886,11 +16503,11 @@ class ServersApi
      *
      * Set server to decommissioned
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServerDecommissionedAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['setServerDecommissioned'][0])
     {
@@ -16900,7 +16517,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -16923,11 +16540,11 @@ class ServersApi
     /**
      * Create request for operation 'setServerDecommissioned'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerDecommissioned'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setServerDecommissionedRequest($server_id, string $contentType = self::contentTypes['setServerDecommissioned'][0])
     {
@@ -16939,7 +16556,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/decommissioned';
         $formParams = [];
         $queryParams = [];
@@ -16947,17 +16563,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -16974,7 +16587,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -16982,7 +16595,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -16993,11 +16606,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -17013,9 +16626,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -17026,13 +16640,13 @@ class ServersApi
      *
      * Set mod security config
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setServerModSecurityConfig($server_id, $body, string $contentType = self::contentTypes['setServerModSecurityConfig'][0])
     {
@@ -17044,13 +16658,13 @@ class ServersApi
      *
      * Set mod security config
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setServerModSecurityConfigWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['setServerModSecurityConfig'][0])
     {
@@ -17078,12 +16692,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -17094,12 +16706,12 @@ class ServersApi
      *
      * Set mod security config
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServerModSecurityConfigAsync($server_id, $body, string $contentType = self::contentTypes['setServerModSecurityConfig'][0])
     {
@@ -17116,12 +16728,12 @@ class ServersApi
      *
      * Set mod security config
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServerModSecurityConfigAsyncWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['setServerModSecurityConfig'][0])
     {
@@ -17131,7 +16743,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -17154,12 +16766,12 @@ class ServersApi
     /**
      * Create request for operation 'setServerModSecurityConfig'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setServerModSecurityConfigRequest($server_id, $body, string $contentType = self::contentTypes['setServerModSecurityConfig'][0])
     {
@@ -17178,7 +16790,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/modsec_conf';
         $formParams = [];
         $queryParams = [];
@@ -17186,17 +16797,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -17207,7 +16815,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -17220,7 +16828,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -17228,7 +16836,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -17239,11 +16847,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -17259,9 +16867,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -17272,13 +16881,13 @@ class ServersApi
      *
      * Set mod security status for a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  mod_sec_status (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setServerModSecurityStatus($server_id, $mod_sec_status, string $contentType = self::contentTypes['setServerModSecurityStatus'][0])
     {
@@ -17290,13 +16899,13 @@ class ServersApi
      *
      * Set mod security status for a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setServerModSecurityStatusWithHttpInfo($server_id, $mod_sec_status, string $contentType = self::contentTypes['setServerModSecurityStatus'][0])
     {
@@ -17324,12 +16933,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -17340,12 +16947,12 @@ class ServersApi
      *
      * Set mod security status for a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServerModSecurityStatusAsync($server_id, $mod_sec_status, string $contentType = self::contentTypes['setServerModSecurityStatus'][0])
     {
@@ -17362,12 +16969,12 @@ class ServersApi
      *
      * Set mod security status for a server
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServerModSecurityStatusAsyncWithHttpInfo($server_id, $mod_sec_status, string $contentType = self::contentTypes['setServerModSecurityStatus'][0])
     {
@@ -17377,7 +16984,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -17400,12 +17007,12 @@ class ServersApi
     /**
      * Create request for operation 'setServerModSecurityStatus'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerModSecurityStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setServerModSecurityStatusRequest($server_id, $mod_sec_status, string $contentType = self::contentTypes['setServerModSecurityStatus'][0])
     {
@@ -17424,7 +17031,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/modsec_status';
         $formParams = [];
         $queryParams = [];
@@ -17432,17 +17038,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -17453,7 +17056,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($mod_sec_status)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($mod_sec_status));
             } else {
                 $httpBody = $mod_sec_status;
@@ -17466,7 +17069,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -17474,7 +17077,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -17485,11 +17088,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -17505,9 +17108,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -17518,13 +17122,13 @@ class ServersApi
      *
      * Set the status of one server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus $set_server_status The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus  $set_server_status  The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setServerStatus($server_id, $set_server_status, string $contentType = self::contentTypes['setServerStatus'][0])
     {
@@ -17536,13 +17140,13 @@ class ServersApi
      *
      * Set the status of one server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus $set_server_status The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus  $set_server_status  The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setServerStatusWithHttpInfo($server_id, $set_server_status, string $contentType = self::contentTypes['setServerStatus'][0])
     {
@@ -17570,12 +17174,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -17586,12 +17188,12 @@ class ServersApi
      *
      * Set the status of one server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus $set_server_status The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus  $set_server_status  The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServerStatusAsync($server_id, $set_server_status, string $contentType = self::contentTypes['setServerStatus'][0])
     {
@@ -17608,12 +17210,12 @@ class ServersApi
      *
      * Set the status of one server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus $set_server_status The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus  $set_server_status  The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServerStatusAsyncWithHttpInfo($server_id, $set_server_status, string $contentType = self::contentTypes['setServerStatus'][0])
     {
@@ -17623,7 +17225,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -17646,12 +17248,12 @@ class ServersApi
     /**
      * Create request for operation 'setServerStatus'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus $set_server_status The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetServerStatus  $set_server_status  The action to be taken for a specific server. When rebooting a server if the reboot is graceful before the server itself is rebooted all the installed services which make use of an underlying daemon will be asked to shutdown the daemon in question (such as mysqld, httpd or pdns). If the reboot is forced the underlying daemon stop will be forced as well. Note: Primary server reboots are never allowed. The server reboot will only happens 1 minute after the request is sent. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServerStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setServerStatusRequest($server_id, $set_server_status, string $contentType = self::contentTypes['setServerStatus'][0])
     {
@@ -17670,7 +17272,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/status';
         $formParams = [];
         $queryParams = [];
@@ -17678,17 +17279,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -17699,7 +17297,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($set_server_status)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($set_server_status));
             } else {
                 $httpBody = $set_server_status;
@@ -17712,7 +17310,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -17720,7 +17318,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -17731,11 +17329,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -17751,9 +17349,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -17764,19 +17363,20 @@ class ServersApi
      *
      * Set a single service setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  service_setting_value (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome
      */
     public function setServiceSetting($server_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setServiceSetting'][0])
     {
-        list($response) = $this->setServiceSettingWithHttpInfo($server_id, $setting_kind, $setting_key, $service_setting_value, $contentType);
+        [$response] = $this->setServiceSettingWithHttpInfo($server_id, $setting_kind, $setting_key, $service_setting_value, $contentType);
+
         return $response;
     }
 
@@ -17785,15 +17385,15 @@ class ServersApi
      *
      * Set a single service setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome, HTTP status code, HTTP response headers (array of strings)
      */
     public function setServiceSettingWithHttpInfo($server_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setServiceSetting'][0])
     {
@@ -17821,8 +17421,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Outcome',
@@ -17836,8 +17435,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -17876,7 +17473,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -17887,14 +17483,14 @@ class ServersApi
      *
      * Set a single service setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServiceSettingAsync($server_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setServiceSetting'][0])
     {
@@ -17911,14 +17507,14 @@ class ServersApi
      *
      * Set a single service setting
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setServiceSettingAsyncWithHttpInfo($server_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setServiceSetting'][0])
     {
@@ -17930,7 +17526,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -17941,7 +17537,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -17964,14 +17560,14 @@ class ServersApi
     /**
      * Create request for operation 'setServiceSetting'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setServiceSettingRequest($server_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setServiceSetting'][0])
     {
@@ -18004,7 +17600,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/settings/{setting_kind}/{setting_key}';
         $formParams = [];
         $queryParams = [];
@@ -18012,12 +17607,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -18025,7 +17618,7 @@ class ServersApi
         // path params
         if ($setting_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_kind' . '}',
+                '{'.'setting_kind'.'}',
                 ObjectSerializer::toPathValue($setting_kind),
                 $resourcePath
             );
@@ -18033,15 +17626,14 @@ class ServersApi
         // path params
         if ($setting_key !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_key' . '}',
+                '{'.'setting_key'.'}',
                 ObjectSerializer::toPathValue($setting_key),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -18049,7 +17641,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($service_setting_value)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($service_setting_value));
             } else {
                 $httpBody = $service_setting_value;
@@ -18062,7 +17654,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -18070,7 +17662,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -18081,11 +17673,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -18101,9 +17693,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -18114,13 +17707,13 @@ class ServersApi
      *
      * Set the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setSmtpRateLimitHourly($server_id, $body = null, string $contentType = self::contentTypes['setSmtpRateLimitHourly'][0])
     {
@@ -18132,13 +17725,13 @@ class ServersApi
      *
      * Set the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setSmtpRateLimitHourlyWithHttpInfo($server_id, $body = null, string $contentType = self::contentTypes['setSmtpRateLimitHourly'][0])
     {
@@ -18166,12 +17759,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -18182,12 +17773,12 @@ class ServersApi
      *
      * Set the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setSmtpRateLimitHourlyAsync($server_id, $body = null, string $contentType = self::contentTypes['setSmtpRateLimitHourly'][0])
     {
@@ -18204,12 +17795,12 @@ class ServersApi
      *
      * Set the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setSmtpRateLimitHourlyAsyncWithHttpInfo($server_id, $body = null, string $contentType = self::contentTypes['setSmtpRateLimitHourly'][0])
     {
@@ -18219,7 +17810,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -18242,12 +17833,12 @@ class ServersApi
     /**
      * Create request for operation 'setSmtpRateLimitHourly'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setSmtpRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setSmtpRateLimitHourlyRequest($server_id, $body = null, string $contentType = self::contentTypes['setSmtpRateLimitHourly'][0])
     {
@@ -18259,8 +17850,6 @@ class ServersApi
             );
         }
 
-
-
         $resourcePath = '/servers/{server_id}/spam/smtp_rate_limit_hourly';
         $formParams = [];
         $queryParams = [];
@@ -18268,17 +17857,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -18289,7 +17875,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -18302,7 +17888,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -18310,7 +17896,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -18321,11 +17907,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -18341,9 +17927,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -18354,13 +17941,13 @@ class ServersApi
      *
      * Set the web server kind for one server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind $set_webserver_kind set_webserver_kind (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind  $set_webserver_kind  set_webserver_kind (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebserverKind($server_id, $set_webserver_kind, string $contentType = self::contentTypes['setWebserverKind'][0])
     {
@@ -18372,13 +17959,13 @@ class ServersApi
      *
      * Set the web server kind for one server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind $set_webserver_kind (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind  $set_webserver_kind  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebserverKindWithHttpInfo($server_id, $set_webserver_kind, string $contentType = self::contentTypes['setWebserverKind'][0])
     {
@@ -18406,12 +17993,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -18422,12 +18007,12 @@ class ServersApi
      *
      * Set the web server kind for one server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind $set_webserver_kind (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind  $set_webserver_kind  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebserverKindAsync($server_id, $set_webserver_kind, string $contentType = self::contentTypes['setWebserverKind'][0])
     {
@@ -18444,12 +18029,12 @@ class ServersApi
      *
      * Set the web server kind for one server.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind $set_webserver_kind (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind  $set_webserver_kind  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebserverKindAsyncWithHttpInfo($server_id, $set_webserver_kind, string $contentType = self::contentTypes['setWebserverKind'][0])
     {
@@ -18459,7 +18044,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -18482,12 +18067,12 @@ class ServersApi
     /**
      * Create request for operation 'setWebserverKind'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind $set_webserver_kind (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetWebserverKind  $set_webserver_kind  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebserverKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebserverKindRequest($server_id, $set_webserver_kind, string $contentType = self::contentTypes['setWebserverKind'][0])
     {
@@ -18506,7 +18091,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/webserver';
         $formParams = [];
         $queryParams = [];
@@ -18514,17 +18098,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -18535,7 +18116,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($set_webserver_kind)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($set_webserver_kind));
             } else {
                 $httpBody = $set_webserver_kind;
@@ -18548,7 +18129,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -18556,7 +18137,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -18567,11 +18148,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -18587,9 +18168,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -18600,13 +18182,13 @@ class ServersApi
      *
      * Set the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteGeneratedRateLimitHourly($server_id, $body = null, string $contentType = self::contentTypes['setWebsiteGeneratedRateLimitHourly'][0])
     {
@@ -18618,13 +18200,13 @@ class ServersApi
      *
      * Set the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteGeneratedRateLimitHourlyWithHttpInfo($server_id, $body = null, string $contentType = self::contentTypes['setWebsiteGeneratedRateLimitHourly'][0])
     {
@@ -18652,12 +18234,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -18668,12 +18248,12 @@ class ServersApi
      *
      * Set the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteGeneratedRateLimitHourlyAsync($server_id, $body = null, string $contentType = self::contentTypes['setWebsiteGeneratedRateLimitHourly'][0])
     {
@@ -18690,12 +18270,12 @@ class ServersApi
      *
      * Set the hourly SMTP rate limit
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteGeneratedRateLimitHourlyAsyncWithHttpInfo($server_id, $body = null, string $contentType = self::contentTypes['setWebsiteGeneratedRateLimitHourly'][0])
     {
@@ -18705,7 +18285,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -18728,12 +18308,12 @@ class ServersApi
     /**
      * Create request for operation 'setWebsiteGeneratedRateLimitHourly'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  float|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  float|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteGeneratedRateLimitHourly'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteGeneratedRateLimitHourlyRequest($server_id, $body = null, string $contentType = self::contentTypes['setWebsiteGeneratedRateLimitHourly'][0])
     {
@@ -18745,8 +18325,6 @@ class ServersApi
             );
         }
 
-
-
         $resourcePath = '/servers/{server_id}/spam/website_generated_rate_limit_hourly';
         $formParams = [];
         $queryParams = [];
@@ -18754,17 +18332,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -18775,7 +18350,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -18788,7 +18363,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -18796,7 +18371,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -18807,11 +18382,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -18827,9 +18402,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -18840,13 +18416,13 @@ class ServersApi
      *
      * Uninstall a server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function uninstallServerRole($server_id, $role, string $contentType = self::contentTypes['uninstallServerRole'][0])
     {
@@ -18858,13 +18434,13 @@ class ServersApi
      *
      * Uninstall a server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function uninstallServerRoleWithHttpInfo($server_id, $role, string $contentType = self::contentTypes['uninstallServerRole'][0])
     {
@@ -18892,12 +18468,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -18908,12 +18482,12 @@ class ServersApi
      *
      * Uninstall a server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uninstallServerRoleAsync($server_id, $role, string $contentType = self::contentTypes['uninstallServerRole'][0])
     {
@@ -18930,12 +18504,12 @@ class ServersApi
      *
      * Uninstall a server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uninstallServerRoleAsyncWithHttpInfo($server_id, $role, string $contentType = self::contentTypes['uninstallServerRole'][0])
     {
@@ -18945,7 +18519,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -18968,12 +18542,12 @@ class ServersApi
     /**
      * Create request for operation 'uninstallServerRole'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uninstallServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function uninstallServerRoleRequest($server_id, $role, string $contentType = self::contentTypes['uninstallServerRole'][0])
     {
@@ -18992,7 +18566,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/roles/{role}';
         $formParams = [];
         $queryParams = [];
@@ -19000,12 +18573,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -19013,12 +18584,11 @@ class ServersApi
         // path params
         if ($role !== null) {
             $resourcePath = str_replace(
-                '{' . 'role' . '}',
+                '{'.'role'.'}',
                 ObjectSerializer::toPathValue($role),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -19035,7 +18605,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -19043,7 +18613,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -19054,11 +18624,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -19074,9 +18644,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -19087,13 +18658,13 @@ class ServersApi
      *
      * Update the screenshot config of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate $screenshot_config_update screenshot_config_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate  $screenshot_config_update  screenshot_config_update (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateAppcdScreenshotConfig($server_id, $screenshot_config_update, string $contentType = self::contentTypes['updateAppcdScreenshotConfig'][0])
     {
@@ -19105,13 +18676,13 @@ class ServersApi
      *
      * Update the screenshot config of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate $screenshot_config_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate  $screenshot_config_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAppcdScreenshotConfigWithHttpInfo($server_id, $screenshot_config_update, string $contentType = self::contentTypes['updateAppcdScreenshotConfig'][0])
     {
@@ -19139,12 +18710,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -19155,12 +18724,12 @@ class ServersApi
      *
      * Update the screenshot config of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate $screenshot_config_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate  $screenshot_config_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateAppcdScreenshotConfigAsync($server_id, $screenshot_config_update, string $contentType = self::contentTypes['updateAppcdScreenshotConfig'][0])
     {
@@ -19177,12 +18746,12 @@ class ServersApi
      *
      * Update the screenshot config of the running appcd
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate $screenshot_config_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate  $screenshot_config_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateAppcdScreenshotConfigAsyncWithHttpInfo($server_id, $screenshot_config_update, string $contentType = self::contentTypes['updateAppcdScreenshotConfig'][0])
     {
@@ -19192,7 +18761,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -19215,12 +18784,12 @@ class ServersApi
     /**
      * Create request for operation 'updateAppcdScreenshotConfig'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate $screenshot_config_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ScreenshotConfigUpdate  $screenshot_config_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAppcdScreenshotConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAppcdScreenshotConfigRequest($server_id, $screenshot_config_update, string $contentType = self::contentTypes['updateAppcdScreenshotConfig'][0])
     {
@@ -19239,7 +18808,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/appcd/screenshot/config';
         $formParams = [];
         $queryParams = [];
@@ -19247,17 +18815,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -19268,7 +18833,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($screenshot_config_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($screenshot_config_update));
             } else {
                 $httpBody = $screenshot_config_update;
@@ -19281,7 +18846,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -19289,7 +18854,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -19300,11 +18865,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -19320,9 +18885,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -19333,12 +18899,12 @@ class ServersApi
      *
      * Upgrade OWASP rules
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateOwaspRules($server_id, string $contentType = self::contentTypes['updateOwaspRules'][0])
     {
@@ -19350,12 +18916,12 @@ class ServersApi
      *
      * Upgrade OWASP rules
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateOwaspRulesWithHttpInfo($server_id, string $contentType = self::contentTypes['updateOwaspRules'][0])
     {
@@ -19383,12 +18949,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -19399,11 +18963,11 @@ class ServersApi
      *
      * Upgrade OWASP rules
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateOwaspRulesAsync($server_id, string $contentType = self::contentTypes['updateOwaspRules'][0])
     {
@@ -19420,11 +18984,11 @@ class ServersApi
      *
      * Upgrade OWASP rules
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateOwaspRulesAsyncWithHttpInfo($server_id, string $contentType = self::contentTypes['updateOwaspRules'][0])
     {
@@ -19434,7 +18998,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -19457,11 +19021,11 @@ class ServersApi
     /**
      * Create request for operation 'updateOwaspRules'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwaspRules'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateOwaspRulesRequest($server_id, string $contentType = self::contentTypes['updateOwaspRules'][0])
     {
@@ -19473,7 +19037,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/owasp';
         $formParams = [];
         $queryParams = [];
@@ -19481,17 +19044,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -19508,7 +19068,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -19516,7 +19076,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -19527,11 +19087,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -19547,9 +19107,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -19560,13 +19121,13 @@ class ServersApi
      *
      * Updates an existing server group&#39;s name
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate $server_group_update Server group info. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate  $server_group_update  Server group info. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateServerGroup($group_id, $server_group_update, string $contentType = self::contentTypes['updateServerGroup'][0])
     {
@@ -19578,13 +19139,13 @@ class ServersApi
      *
      * Updates an existing server group&#39;s name
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate $server_group_update Server group info. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate  $server_group_update  Server group info. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateServerGroupWithHttpInfo($group_id, $server_group_update, string $contentType = self::contentTypes['updateServerGroup'][0])
     {
@@ -19612,12 +19173,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -19628,12 +19187,12 @@ class ServersApi
      *
      * Updates an existing server group&#39;s name
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate $server_group_update Server group info. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate  $server_group_update  Server group info. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateServerGroupAsync($group_id, $server_group_update, string $contentType = self::contentTypes['updateServerGroup'][0])
     {
@@ -19650,12 +19209,12 @@ class ServersApi
      *
      * Updates an existing server group&#39;s name
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate $server_group_update Server group info. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate  $server_group_update  Server group info. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateServerGroupAsyncWithHttpInfo($group_id, $server_group_update, string $contentType = self::contentTypes['updateServerGroup'][0])
     {
@@ -19665,7 +19224,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -19688,12 +19247,12 @@ class ServersApi
     /**
      * Create request for operation 'updateServerGroup'
      *
-     * @param  string $group_id The id of the server group. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate $server_group_update Server group info. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @param  string  $group_id  The id of the server group. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroupUpdate  $server_group_update  Server group info. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerGroup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateServerGroupRequest($group_id, $server_group_update, string $contentType = self::contentTypes['updateServerGroup'][0])
     {
@@ -19712,7 +19271,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/groups/{group_id}';
         $formParams = [];
         $queryParams = [];
@@ -19720,17 +19278,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($group_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'group_id' . '}',
+                '{'.'group_id'.'}',
                 ObjectSerializer::toPathValue($group_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -19741,7 +19296,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($server_group_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($server_group_update));
             } else {
                 $httpBody = $server_group_update;
@@ -19754,7 +19309,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -19762,7 +19317,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -19773,11 +19328,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -19793,9 +19348,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -19806,13 +19362,13 @@ class ServersApi
      *
      * Updates the primary IP of the server in the database and in-memory metadata. This operation will not affect the IP used for service communication until the next restart of orchd. The new IP will be used for creation of new resources such as websites on this server but existing websites will not have their IP changed.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateServerPrimaryIp($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIp'][0])
     {
@@ -19824,13 +19380,13 @@ class ServersApi
      *
      * Updates the primary IP of the server in the database and in-memory metadata. This operation will not affect the IP used for service communication until the next restart of orchd. The new IP will be used for creation of new resources such as websites on this server but existing websites will not have their IP changed.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateServerPrimaryIpWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIp'][0])
     {
@@ -19858,12 +19414,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -19874,12 +19428,12 @@ class ServersApi
      *
      * Updates the primary IP of the server in the database and in-memory metadata. This operation will not affect the IP used for service communication until the next restart of orchd. The new IP will be used for creation of new resources such as websites on this server but existing websites will not have their IP changed.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateServerPrimaryIpAsync($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIp'][0])
     {
@@ -19896,12 +19450,12 @@ class ServersApi
      *
      * Updates the primary IP of the server in the database and in-memory metadata. This operation will not affect the IP used for service communication until the next restart of orchd. The new IP will be used for creation of new resources such as websites on this server but existing websites will not have their IP changed.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateServerPrimaryIpAsyncWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIp'][0])
     {
@@ -19911,7 +19465,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -19934,12 +19488,12 @@ class ServersApi
     /**
      * Create request for operation 'updateServerPrimaryIp'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateServerPrimaryIpRequest($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIp'][0])
     {
@@ -19958,7 +19512,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/primary-ip';
         $formParams = [];
         $queryParams = [];
@@ -19966,17 +19519,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -19987,7 +19537,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -20000,7 +19550,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -20008,14 +19558,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -20030,9 +19579,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -20043,13 +19593,13 @@ class ServersApi
      *
      * Updates or sets the primary ipv6 address of the server.  This endpoint will not change existing websites&#39; DNS but the new record will be applied to all future zones.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateServerPrimaryIpv6($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIpv6'][0])
     {
@@ -20061,13 +19611,13 @@ class ServersApi
      *
      * Updates or sets the primary ipv6 address of the server.  This endpoint will not change existing websites&#39; DNS but the new record will be applied to all future zones.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateServerPrimaryIpv6WithHttpInfo($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIpv6'][0])
     {
@@ -20095,12 +19645,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -20111,12 +19659,12 @@ class ServersApi
      *
      * Updates or sets the primary ipv6 address of the server.  This endpoint will not change existing websites&#39; DNS but the new record will be applied to all future zones.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateServerPrimaryIpv6Async($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIpv6'][0])
     {
@@ -20133,12 +19681,12 @@ class ServersApi
      *
      * Updates or sets the primary ipv6 address of the server.  This endpoint will not change existing websites&#39; DNS but the new record will be applied to all future zones.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateServerPrimaryIpv6AsyncWithHttpInfo($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIpv6'][0])
     {
@@ -20148,7 +19696,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -20171,12 +19719,12 @@ class ServersApi
     /**
      * Create request for operation 'updateServerPrimaryIpv6'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerPrimaryIpv6'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateServerPrimaryIpv6Request($server_id, $body, string $contentType = self::contentTypes['updateServerPrimaryIpv6'][0])
     {
@@ -20195,7 +19743,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/v2/servers/{server_id}/primary-ipv6';
         $formParams = [];
         $queryParams = [];
@@ -20203,17 +19750,14 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -20224,7 +19768,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -20237,7 +19781,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -20245,14 +19789,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -20267,9 +19810,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -20280,14 +19824,14 @@ class ServersApi
      *
      * Update server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest $update_server_role_request Info for updating the server role. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest  $update_server_role_request  Info for updating the server role. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateServerRole($server_id, $role, $update_server_role_request, string $contentType = self::contentTypes['updateServerRole'][0])
     {
@@ -20299,14 +19843,14 @@ class ServersApi
      *
      * Update server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest $update_server_role_request Info for updating the server role. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest  $update_server_role_request  Info for updating the server role. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateServerRoleWithHttpInfo($server_id, $role, $update_server_role_request, string $contentType = self::contentTypes['updateServerRole'][0])
     {
@@ -20334,12 +19878,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -20350,13 +19892,13 @@ class ServersApi
      *
      * Update server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest $update_server_role_request Info for updating the server role. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest  $update_server_role_request  Info for updating the server role. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateServerRoleAsync($server_id, $role, $update_server_role_request, string $contentType = self::contentTypes['updateServerRole'][0])
     {
@@ -20373,13 +19915,13 @@ class ServersApi
      *
      * Update server role
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest $update_server_role_request Info for updating the server role. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest  $update_server_role_request  Info for updating the server role. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateServerRoleAsyncWithHttpInfo($server_id, $role, $update_server_role_request, string $contentType = self::contentTypes['updateServerRole'][0])
     {
@@ -20389,7 +19931,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -20412,13 +19954,13 @@ class ServersApi
     /**
      * Create request for operation 'updateServerRole'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole $role The role of the server. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest $update_server_role_request Info for updating the server role. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole  $role  The role of the server. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateServerRoleRequest  $update_server_role_request  Info for updating the server role. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateServerRole'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateServerRoleRequest($server_id, $role, $update_server_role_request, string $contentType = self::contentTypes['updateServerRole'][0])
     {
@@ -20444,7 +19986,6 @@ class ServersApi
             );
         }
 
-
         $resourcePath = '/servers/{server_id}/roles/{role}';
         $formParams = [];
         $queryParams = [];
@@ -20452,12 +19993,10 @@ class ServersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -20465,12 +20004,11 @@ class ServersApi
         // path params
         if ($role !== null) {
             $resourcePath = str_replace(
-                '{' . 'role' . '}',
+                '{'.'role'.'}',
                 ObjectSerializer::toPathValue($role),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -20481,7 +20019,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($update_server_role_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_server_role_request));
             } else {
                 $httpBody = $update_server_role_request;
@@ -20494,7 +20032,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -20502,7 +20040,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -20513,11 +20051,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -20533,9 +20071,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -20546,14 +20085,14 @@ class ServersApi
      *
      * Updates a system package to its latest version.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage $system_package Package to be updated. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage  $system_package  Package to be updated. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  system_package_name (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateSystemPackage($server_id, $system_package, $system_package_name = null, string $contentType = self::contentTypes['updateSystemPackage'][0])
     {
@@ -20565,14 +20104,14 @@ class ServersApi
      *
      * Updates a system package to its latest version.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage $system_package Package to be updated. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage  $system_package  Package to be updated. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSystemPackageWithHttpInfo($server_id, $system_package, $system_package_name = null, string $contentType = self::contentTypes['updateSystemPackage'][0])
     {
@@ -20600,12 +20139,10 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -20616,13 +20153,13 @@ class ServersApi
      *
      * Updates a system package to its latest version.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage $system_package Package to be updated. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage  $system_package  Package to be updated. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateSystemPackageAsync($server_id, $system_package, $system_package_name = null, string $contentType = self::contentTypes['updateSystemPackage'][0])
     {
@@ -20639,13 +20176,13 @@ class ServersApi
      *
      * Updates a system package to its latest version.
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage $system_package Package to be updated. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage  $system_package  Package to be updated. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateSystemPackageAsyncWithHttpInfo($server_id, $system_package, $system_package_name = null, string $contentType = self::contentTypes['updateSystemPackage'][0])
     {
@@ -20655,7 +20192,7 @@ class ServersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -20678,13 +20215,13 @@ class ServersApi
     /**
      * Create request for operation 'updateSystemPackage'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage $system_package Package to be updated. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null $system_package_name (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackage  $system_package  Package to be updated. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SystemPackageName|null  $system_package_name  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSystemPackage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateSystemPackageRequest($server_id, $system_package, $system_package_name = null, string $contentType = self::contentTypes['updateSystemPackage'][0])
     {
@@ -20703,8 +20240,6 @@ class ServersApi
             );
         }
 
-
-
         $resourcePath = '/servers/{server_id}/packages/update';
         $formParams = [];
         $queryParams = [];
@@ -20722,16 +20257,14 @@ class ServersApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -20742,7 +20275,7 @@ class ServersApi
         // for model (json/xml)
         if (isset($system_package)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($system_package));
             } else {
                 $httpBody = $system_package;
@@ -20755,7 +20288,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -20763,7 +20296,7 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -20774,11 +20307,11 @@ class ServersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -20794,9 +20327,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -20807,16 +20341,17 @@ class ServersApi
      *
      * Validate slave registration key
      *
-     * @param  string $key The secret registration key (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ValidationResult
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ValidationResult
      */
     public function validateRegistrationKey($key, string $contentType = self::contentTypes['validateRegistrationKey'][0])
     {
-        list($response) = $this->validateRegistrationKeyWithHttpInfo($key, $contentType);
+        [$response] = $this->validateRegistrationKeyWithHttpInfo($key, $contentType);
+
         return $response;
     }
 
@@ -20825,12 +20360,12 @@ class ServersApi
      *
      * Validate slave registration key
      *
-     * @param  string $key The secret registration key (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ValidationResult, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ValidationResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function validateRegistrationKeyWithHttpInfo($key, string $contentType = self::contentTypes['validateRegistrationKey'][0])
     {
@@ -20858,8 +20393,7 @@ class ServersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ValidationResult',
@@ -20867,8 +20401,6 @@ class ServersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -20899,7 +20431,6 @@ class ServersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -20910,11 +20441,11 @@ class ServersApi
      *
      * Validate slave registration key
      *
-     * @param  string $key The secret registration key (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validateRegistrationKeyAsync($key, string $contentType = self::contentTypes['validateRegistrationKey'][0])
     {
@@ -20931,11 +20462,11 @@ class ServersApi
      *
      * Validate slave registration key
      *
-     * @param  string $key The secret registration key (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validateRegistrationKeyAsyncWithHttpInfo($key, string $contentType = self::contentTypes['validateRegistrationKey'][0])
     {
@@ -20947,7 +20478,7 @@ class ServersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -20958,7 +20489,7 @@ class ServersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -20981,11 +20512,11 @@ class ServersApi
     /**
      * Create request for operation 'validateRegistrationKey'
      *
-     * @param  string $key The secret registration key (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @param  string  $key  The secret registration key (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateRegistrationKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function validateRegistrationKeyRequest($key, string $contentType = self::contentTypes['validateRegistrationKey'][0])
     {
@@ -20996,7 +20527,6 @@ class ServersApi
                 'Missing the required parameter $key when calling validateRegistrationKey'
             );
         }
-
 
         $resourcePath = '/servers/registration-key/validate';
         $formParams = [];
@@ -21015,11 +20545,8 @@ class ServersApi
             true // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -21033,7 +20560,7 @@ class ServersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -21041,14 +20568,13 @@ class ServersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -21063,9 +20589,10 @@ class ServersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -21074,16 +20601,17 @@ class ServersApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -21096,7 +20624,7 @@ class ServersApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -21119,7 +20647,7 @@ class ServersApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

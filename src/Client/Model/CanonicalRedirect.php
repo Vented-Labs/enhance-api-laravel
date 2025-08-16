@@ -1,12 +1,14 @@
 <?php
+
 /**
  * CanonicalRedirect
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,67 +30,72 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * CanonicalRedirect Class Doc Comment
  *
  * @category Class
+ *
  * @description If this object is present, the website&#39;s .htaccess will have a new set of rules which redirect all secondary domains to this primary domain with 301 header. If this object is missing, any existing rules will be removed.
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializable
+class CanonicalRedirect implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'CanonicalRedirect';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'use_www' => 'bool',
-        'use_https' => 'bool'
+        'use_https' => 'bool',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'use_www' => null,
-        'use_https' => null
+        'use_https' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'use_www' => false,
-        'use_https' => false
+        'use_https' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -113,8 +120,6 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -124,7 +129,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -134,7 +139,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -143,9 +148,6 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -154,9 +156,6 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -171,7 +170,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'use_www' => 'useWww',
-        'use_https' => 'useHttps'
+        'use_https' => 'useHttps',
     ];
 
     /**
@@ -181,7 +180,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'use_www' => 'setUseWww',
-        'use_https' => 'setUseHttps'
+        'use_https' => 'setUseHttps',
     ];
 
     /**
@@ -191,7 +190,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'use_www' => 'getUseWww',
-        'use_https' => 'getUseHttps'
+        'use_https' => 'getUseHttps',
     ];
 
     /**
@@ -235,7 +234,6 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -246,8 +244,8 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -256,14 +254,12 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -288,6 +284,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
         if ($this->container['use_https'] === null) {
             $invalidProperties[] = "'use_https' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -302,7 +299,6 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets use_www
      *
@@ -316,8 +312,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets use_www
      *
-     * @param bool $use_www Whether to put www to the url which is being redirected to. In .htaccess syntax: `http://www.example.com/$1`
-     *
+     * @param  bool  $use_www  Whether to put www to the url which is being redirected to. In .htaccess syntax: `http://www.example.com/$1`
      * @return self
      */
     public function setUseWww($use_www)
@@ -343,8 +338,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets use_https
      *
-     * @param bool $use_https Whether to put www to the url which is being redirected to. In .htaccess syntax: `https://example.com/$1`
-     *
+     * @param  bool  $use_https  Whether to put www to the url which is being redirected to. In .htaccess syntax: `https://example.com/$1`
      * @return self
      */
     public function setUseHttps($use_https)
@@ -356,12 +350,11 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -371,8 +364,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -384,10 +376,8 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -401,9 +391,7 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -412,15 +400,16 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -446,5 +435,3 @@ class CanonicalRedirect implements ModelInterface, ArrayAccess, \JsonSerializabl
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

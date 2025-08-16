@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ImporterAnalyzedDataMailboxesInner
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,78 +30,82 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ImporterAnalyzedDataMailboxesInner Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ImporterAnalyzedDataMailboxesInner implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ImporterAnalyzedData_mailboxes_inner';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'username' => 'string',
         'domain' => 'string',
         'has_mailbox' => 'bool',
         'is_suspended' => 'bool',
         'forwarders' => 'string[]',
-        'quota' => 'float'
+        'quota' => 'float',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'username' => null,
         'domain' => null,
         'has_mailbox' => null,
         'is_suspended' => null,
         'forwarders' => null,
-        'quota' => null
+        'quota' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'username' => false,
         'domain' => false,
         'has_mailbox' => false,
         'is_suspended' => false,
         'forwarders' => false,
-        'quota' => false
+        'quota' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -124,8 +130,6 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -135,7 +139,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -145,7 +149,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -154,9 +158,6 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -165,9 +166,6 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -186,7 +184,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
         'has_mailbox' => 'hasMailbox',
         'is_suspended' => 'isSuspended',
         'forwarders' => 'forwarders',
-        'quota' => 'quota'
+        'quota' => 'quota',
     ];
 
     /**
@@ -200,7 +198,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
         'has_mailbox' => 'setHasMailbox',
         'is_suspended' => 'setIsSuspended',
         'forwarders' => 'setForwarders',
-        'quota' => 'setQuota'
+        'quota' => 'setQuota',
     ];
 
     /**
@@ -214,7 +212,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
         'has_mailbox' => 'getHasMailbox',
         'is_suspended' => 'getIsSuspended',
         'forwarders' => 'getForwarders',
-        'quota' => 'getQuota'
+        'quota' => 'getQuota',
     ];
 
     /**
@@ -258,7 +256,6 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -269,8 +266,8 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -283,14 +280,12 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -321,6 +316,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
         if ($this->container['is_suspended'] === null) {
             $invalidProperties[] = "'is_suspended' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -335,7 +331,6 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets username
      *
@@ -349,8 +344,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Sets username
      *
-     * @param string $username username
-     *
+     * @param  string  $username  username
      * @return self
      */
     public function setUsername($username)
@@ -376,8 +370,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Sets domain
      *
-     * @param string $domain domain
-     *
+     * @param  string  $domain  domain
      * @return self
      */
     public function setDomain($domain)
@@ -403,8 +396,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Sets has_mailbox
      *
-     * @param bool $has_mailbox has_mailbox
-     *
+     * @param  bool  $has_mailbox  has_mailbox
      * @return self
      */
     public function setHasMailbox($has_mailbox)
@@ -430,8 +422,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Sets is_suspended
      *
-     * @param bool $is_suspended is_suspended
-     *
+     * @param  bool  $is_suspended  is_suspended
      * @return self
      */
     public function setIsSuspended($is_suspended)
@@ -457,8 +448,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Sets forwarders
      *
-     * @param string[]|null $forwarders forwarders
-     *
+     * @param  string[]|null  $forwarders  forwarders
      * @return self
      */
     public function setForwarders($forwarders)
@@ -484,8 +474,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Sets quota
      *
-     * @param float|null $quota quota
-     *
+     * @param  float|null  $quota  quota
      * @return self
      */
     public function setQuota($quota)
@@ -497,12 +486,11 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -512,8 +500,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -525,10 +512,8 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -542,9 +527,7 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -553,15 +536,16 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -587,5 +571,3 @@ class ImporterAnalyzedDataMailboxesInner implements ModelInterface, ArrayAccess,
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

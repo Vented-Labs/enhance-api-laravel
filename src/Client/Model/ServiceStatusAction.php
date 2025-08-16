@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ServiceStatusAction
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ServiceStatusAction Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ServiceStatusAction
@@ -48,15 +50,14 @@ class ServiceStatusAction
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
     {
         return [
             self::GRACEFUL_RESTART,
-            self::FORCE_RESTART
+            self::FORCE_RESTART,
         ];
     }
 }
-
-

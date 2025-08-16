@@ -1,11 +1,13 @@
 <?php
+
 /**
  * ReportsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * ReportsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ReportsApi
@@ -72,7 +74,7 @@ class ReportsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'getLoginPolicyBlockedIps' => [
             'application/json',
@@ -83,10 +85,7 @@ class ReportsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -94,16 +93,16 @@ class ReportsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -133,15 +132,16 @@ class ReportsApi
      *
      * Get blocked ips
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @return array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>
      */
     public function getLoginPolicyBlockedIps(string $contentType = self::contentTypes['getLoginPolicyBlockedIps'][0])
     {
-        list($response) = $this->getLoginPolicyBlockedIpsWithHttpInfo($contentType);
+        [$response] = $this->getLoginPolicyBlockedIpsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -150,11 +150,11 @@ class ReportsApi
      *
      * Get blocked ips
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @return array of array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLoginPolicyBlockedIpsWithHttpInfo(string $contentType = self::contentTypes['getLoginPolicyBlockedIps'][0])
     {
@@ -182,8 +182,7 @@ class ReportsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>',
@@ -191,8 +190,6 @@ class ReportsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -223,7 +220,6 @@ class ReportsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -234,10 +230,10 @@ class ReportsApi
      *
      * Get blocked ips
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginPolicyBlockedIpsAsync(string $contentType = self::contentTypes['getLoginPolicyBlockedIps'][0])
     {
@@ -254,10 +250,10 @@ class ReportsApi
      *
      * Get blocked ips
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginPolicyBlockedIpsAsyncWithHttpInfo(string $contentType = self::contentTypes['getLoginPolicyBlockedIps'][0])
     {
@@ -269,7 +265,7 @@ class ReportsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -280,7 +276,7 @@ class ReportsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -303,14 +299,13 @@ class ReportsApi
     /**
      * Create request for operation 'getLoginPolicyBlockedIps'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedIps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getLoginPolicyBlockedIpsRequest(string $contentType = self::contentTypes['getLoginPolicyBlockedIps'][0])
     {
-
 
         $resourcePath = '/reports/orchd/login-policy/blocked-ips';
         $formParams = [];
@@ -319,12 +314,8 @@ class ReportsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -338,7 +329,7 @@ class ReportsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -346,7 +337,7 @@ class ReportsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -357,11 +348,11 @@ class ReportsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -377,9 +368,10 @@ class ReportsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -390,15 +382,16 @@ class ReportsApi
      *
      * Get blocked logins
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @return array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>
      */
     public function getLoginPolicyBlockedLogins(string $contentType = self::contentTypes['getLoginPolicyBlockedLogins'][0])
     {
-        list($response) = $this->getLoginPolicyBlockedLoginsWithHttpInfo($contentType);
+        [$response] = $this->getLoginPolicyBlockedLoginsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -407,11 +400,11 @@ class ReportsApi
      *
      * Get blocked logins
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @return array of array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLoginPolicyBlockedLoginsWithHttpInfo(string $contentType = self::contentTypes['getLoginPolicyBlockedLogins'][0])
     {
@@ -439,8 +432,7 @@ class ReportsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'array<string,\Vented\EnhanceApiLaravel\Client\Model\Blocked>',
@@ -448,8 +440,6 @@ class ReportsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -480,7 +470,6 @@ class ReportsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -491,10 +480,10 @@ class ReportsApi
      *
      * Get blocked logins
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginPolicyBlockedLoginsAsync(string $contentType = self::contentTypes['getLoginPolicyBlockedLogins'][0])
     {
@@ -511,10 +500,10 @@ class ReportsApi
      *
      * Get blocked logins
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLoginPolicyBlockedLoginsAsyncWithHttpInfo(string $contentType = self::contentTypes['getLoginPolicyBlockedLogins'][0])
     {
@@ -526,7 +515,7 @@ class ReportsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -537,7 +526,7 @@ class ReportsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -560,14 +549,13 @@ class ReportsApi
     /**
      * Create request for operation 'getLoginPolicyBlockedLogins'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLoginPolicyBlockedLogins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getLoginPolicyBlockedLoginsRequest(string $contentType = self::contentTypes['getLoginPolicyBlockedLogins'][0])
     {
-
 
         $resourcePath = '/reports/orchd/login-policy/blocked-logins';
         $formParams = [];
@@ -576,12 +564,8 @@ class ReportsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -595,7 +579,7 @@ class ReportsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -603,7 +587,7 @@ class ReportsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -614,11 +598,11 @@ class ReportsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -634,9 +618,10 @@ class ReportsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -645,16 +630,17 @@ class ReportsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -667,7 +653,7 @@ class ReportsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -690,7 +676,7 @@ class ReportsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

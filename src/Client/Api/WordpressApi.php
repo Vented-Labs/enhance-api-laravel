@@ -1,11 +1,13 @@
 <?php
+
 /**
  * WordpressApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * WordpressApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class WordpressApi
@@ -72,7 +74,7 @@ class WordpressApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'activateWordpressTheme' => [
             'application/json',
@@ -167,10 +169,7 @@ class WordpressApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -178,16 +177,16 @@ class WordpressApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -217,15 +216,15 @@ class WordpressApi
      *
      * Activate a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function activateWordpressTheme($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['activateWordpressTheme'][0])
     {
@@ -237,15 +236,15 @@ class WordpressApi
      *
      * Activate a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function activateWordpressThemeWithHttpInfo($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['activateWordpressTheme'][0])
     {
@@ -273,12 +272,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -289,14 +286,14 @@ class WordpressApi
      *
      * Activate a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function activateWordpressThemeAsync($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['activateWordpressTheme'][0])
     {
@@ -313,14 +310,14 @@ class WordpressApi
      *
      * Activate a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function activateWordpressThemeAsyncWithHttpInfo($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['activateWordpressTheme'][0])
     {
@@ -330,7 +327,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -353,14 +350,14 @@ class WordpressApi
     /**
      * Create request for operation 'activateWordpressTheme'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['activateWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function activateWordpressThemeRequest($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['activateWordpressTheme'][0])
     {
@@ -393,7 +390,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/themes/{theme}/activate';
         $formParams = [];
         $queryParams = [];
@@ -401,12 +397,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -414,7 +408,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -422,7 +416,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -430,12 +424,11 @@ class WordpressApi
         // path params
         if ($theme !== null) {
             $resourcePath = str_replace(
-                '{' . 'theme' . '}',
+                '{'.'theme'.'}',
                 ObjectSerializer::toPathValue($theme),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -452,7 +445,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -460,14 +453,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -482,9 +474,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -495,15 +488,15 @@ class WordpressApi
      *
      * Create website WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser $new_wp_user new_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser  $new_wp_user  new_wp_user (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createWordpressUser($org_id, $website_id, $app_id, $new_wp_user, string $contentType = self::contentTypes['createWordpressUser'][0])
     {
@@ -515,15 +508,15 @@ class WordpressApi
      *
      * Create website WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser $new_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser  $new_wp_user  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWordpressUserWithHttpInfo($org_id, $website_id, $app_id, $new_wp_user, string $contentType = self::contentTypes['createWordpressUser'][0])
     {
@@ -551,12 +544,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -567,14 +558,14 @@ class WordpressApi
      *
      * Create website WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser $new_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser  $new_wp_user  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWordpressUserAsync($org_id, $website_id, $app_id, $new_wp_user, string $contentType = self::contentTypes['createWordpressUser'][0])
     {
@@ -591,14 +582,14 @@ class WordpressApi
      *
      * Create website WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser $new_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser  $new_wp_user  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWordpressUserAsyncWithHttpInfo($org_id, $website_id, $app_id, $new_wp_user, string $contentType = self::contentTypes['createWordpressUser'][0])
     {
@@ -608,7 +599,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -631,14 +622,14 @@ class WordpressApi
     /**
      * Create request for operation 'createWordpressUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser $new_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWpUser  $new_wp_user  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWordpressUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWordpressUserRequest($org_id, $website_id, $app_id, $new_wp_user, string $contentType = self::contentTypes['createWordpressUser'][0])
     {
@@ -671,7 +662,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/users';
         $formParams = [];
         $queryParams = [];
@@ -679,12 +669,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -692,7 +680,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -700,12 +688,11 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -716,7 +703,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($new_wp_user)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_wp_user));
             } else {
                 $httpBody = $new_wp_user;
@@ -729,7 +716,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -737,14 +724,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -759,9 +745,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -772,15 +759,15 @@ class WordpressApi
      *
      * Delete website WordPress plugin
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWordpressPlugin($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['deleteWordpressPlugin'][0])
     {
@@ -792,15 +779,15 @@ class WordpressApi
      *
      * Delete website WordPress plugin
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWordpressPluginWithHttpInfo($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['deleteWordpressPlugin'][0])
     {
@@ -828,12 +815,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -844,14 +829,14 @@ class WordpressApi
      *
      * Delete website WordPress plugin
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWordpressPluginAsync($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['deleteWordpressPlugin'][0])
     {
@@ -868,14 +853,14 @@ class WordpressApi
      *
      * Delete website WordPress plugin
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWordpressPluginAsyncWithHttpInfo($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['deleteWordpressPlugin'][0])
     {
@@ -885,7 +870,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -908,14 +893,14 @@ class WordpressApi
     /**
      * Create request for operation 'deleteWordpressPlugin'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressPlugin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWordpressPluginRequest($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['deleteWordpressPlugin'][0])
     {
@@ -948,7 +933,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/plugins/{plugin}';
         $formParams = [];
         $queryParams = [];
@@ -956,12 +940,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -969,7 +951,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -977,7 +959,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -985,12 +967,11 @@ class WordpressApi
         // path params
         if ($plugin !== null) {
             $resourcePath = str_replace(
-                '{' . 'plugin' . '}',
+                '{'.'plugin'.'}',
                 ObjectSerializer::toPathValue($plugin),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1007,7 +988,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1015,14 +996,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1037,9 +1017,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1050,15 +1031,15 @@ class WordpressApi
      *
      * Delete a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWordpressTheme($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['deleteWordpressTheme'][0])
     {
@@ -1070,15 +1051,15 @@ class WordpressApi
      *
      * Delete a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWordpressThemeWithHttpInfo($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['deleteWordpressTheme'][0])
     {
@@ -1106,12 +1087,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1122,14 +1101,14 @@ class WordpressApi
      *
      * Delete a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWordpressThemeAsync($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['deleteWordpressTheme'][0])
     {
@@ -1146,14 +1125,14 @@ class WordpressApi
      *
      * Delete a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWordpressThemeAsyncWithHttpInfo($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['deleteWordpressTheme'][0])
     {
@@ -1163,7 +1142,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1186,14 +1165,14 @@ class WordpressApi
     /**
      * Create request for operation 'deleteWordpressTheme'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWordpressThemeRequest($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['deleteWordpressTheme'][0])
     {
@@ -1226,7 +1205,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/themes/{theme}';
         $formParams = [];
         $queryParams = [];
@@ -1234,12 +1212,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1247,7 +1223,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1255,7 +1231,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -1263,12 +1239,11 @@ class WordpressApi
         // path params
         if ($theme !== null) {
             $resourcePath = str_replace(
-                '{' . 'theme' . '}',
+                '{'.'theme'.'}',
                 ObjectSerializer::toPathValue($theme),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1285,7 +1260,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1293,14 +1268,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1315,9 +1289,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1328,15 +1303,15 @@ class WordpressApi
      *
      * Delete WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWordpressUser($org_id, $website_id, $app_id, $user_id, string $contentType = self::contentTypes['deleteWordpressUser'][0])
     {
@@ -1348,15 +1323,15 @@ class WordpressApi
      *
      * Delete WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWordpressUserWithHttpInfo($org_id, $website_id, $app_id, $user_id, string $contentType = self::contentTypes['deleteWordpressUser'][0])
     {
@@ -1384,12 +1359,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1400,14 +1373,14 @@ class WordpressApi
      *
      * Delete WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWordpressUserAsync($org_id, $website_id, $app_id, $user_id, string $contentType = self::contentTypes['deleteWordpressUser'][0])
     {
@@ -1424,14 +1397,14 @@ class WordpressApi
      *
      * Delete WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWordpressUserAsyncWithHttpInfo($org_id, $website_id, $app_id, $user_id, string $contentType = self::contentTypes['deleteWordpressUser'][0])
     {
@@ -1441,7 +1414,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1464,14 +1437,14 @@ class WordpressApi
     /**
      * Create request for operation 'deleteWordpressUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWordpressUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWordpressUserRequest($org_id, $website_id, $app_id, $user_id, string $contentType = self::contentTypes['deleteWordpressUser'][0])
     {
@@ -1504,7 +1477,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/users/{user_id}';
         $formParams = [];
         $queryParams = [];
@@ -1512,12 +1484,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1525,7 +1495,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1533,7 +1503,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -1541,12 +1511,11 @@ class WordpressApi
         // path params
         if ($user_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'user_id' . '}',
+                '{'.'user_id'.'}',
                 ObjectSerializer::toPathValue($user_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1563,7 +1532,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1571,14 +1540,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1593,9 +1561,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1604,32 +1573,33 @@ class WordpressApi
     /**
      * Operation getDefaultWpSsoUser
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WpUser
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WpUser
      */
     public function getDefaultWpSsoUser($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getDefaultWpSsoUser'][0])
     {
-        list($response) = $this->getDefaultWpSsoUserWithHttpInfo($org_id, $website_id, $app_id, $contentType);
+        [$response] = $this->getDefaultWpSsoUserWithHttpInfo($org_id, $website_id, $app_id, $contentType);
+
         return $response;
     }
 
     /**
      * Operation getDefaultWpSsoUserWithHttpInfo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpUser, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpUser, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDefaultWpSsoUserWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getDefaultWpSsoUser'][0])
     {
@@ -1657,8 +1627,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WpUser',
@@ -1666,8 +1635,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1698,7 +1665,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1707,13 +1673,13 @@ class WordpressApi
     /**
      * Operation getDefaultWpSsoUserAsync
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDefaultWpSsoUserAsync($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getDefaultWpSsoUser'][0])
     {
@@ -1728,13 +1694,13 @@ class WordpressApi
     /**
      * Operation getDefaultWpSsoUserAsyncWithHttpInfo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDefaultWpSsoUserAsyncWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getDefaultWpSsoUser'][0])
     {
@@ -1746,7 +1712,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1757,7 +1723,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1780,13 +1746,13 @@ class WordpressApi
     /**
      * Create request for operation 'getDefaultWpSsoUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDefaultWpSsoUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDefaultWpSsoUserRequest($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getDefaultWpSsoUser'][0])
     {
@@ -1812,7 +1778,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/users/default';
         $formParams = [];
         $queryParams = [];
@@ -1820,12 +1785,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1833,7 +1796,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1841,15 +1804,14 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1863,7 +1825,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1871,14 +1833,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1893,9 +1854,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1906,16 +1868,17 @@ class WordpressApi
      *
      * Gets the MaintenanceMode for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MaintenanceModeStatus
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MaintenanceModeStatus
      */
     public function getWordPressMaintenanceMode($app_id, string $contentType = self::contentTypes['getWordPressMaintenanceMode'][0])
     {
-        list($response) = $this->getWordPressMaintenanceModeWithHttpInfo($app_id, $contentType);
+        [$response] = $this->getWordPressMaintenanceModeWithHttpInfo($app_id, $contentType);
+
         return $response;
     }
 
@@ -1924,12 +1887,12 @@ class WordpressApi
      *
      * Gets the MaintenanceMode for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MaintenanceModeStatus, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MaintenanceModeStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordPressMaintenanceModeWithHttpInfo($app_id, string $contentType = self::contentTypes['getWordPressMaintenanceMode'][0])
     {
@@ -1957,8 +1920,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MaintenanceModeStatus',
@@ -1966,8 +1928,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1998,7 +1958,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2009,11 +1968,11 @@ class WordpressApi
      *
      * Gets the MaintenanceMode for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordPressMaintenanceModeAsync($app_id, string $contentType = self::contentTypes['getWordPressMaintenanceMode'][0])
     {
@@ -2030,11 +1989,11 @@ class WordpressApi
      *
      * Gets the MaintenanceMode for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordPressMaintenanceModeAsyncWithHttpInfo($app_id, string $contentType = self::contentTypes['getWordPressMaintenanceMode'][0])
     {
@@ -2046,7 +2005,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2057,7 +2016,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2080,11 +2039,11 @@ class WordpressApi
     /**
      * Create request for operation 'getWordPressMaintenanceMode'
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordPressMaintenanceModeRequest($app_id, string $contentType = self::contentTypes['getWordPressMaintenanceMode'][0])
     {
@@ -2096,7 +2055,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/v2/apps/{app_id}/wordpress/maintenance-mode';
         $formParams = [];
         $queryParams = [];
@@ -2104,20 +2062,17 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2131,7 +2086,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2139,14 +2094,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2161,9 +2115,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2174,16 +2129,17 @@ class WordpressApi
      *
      * Fetches the site URL for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getWordPressSiteurl($app_id, string $contentType = self::contentTypes['getWordPressSiteurl'][0])
     {
-        list($response) = $this->getWordPressSiteurlWithHttpInfo($app_id, $contentType);
+        [$response] = $this->getWordPressSiteurlWithHttpInfo($app_id, $contentType);
+
         return $response;
     }
 
@@ -2192,12 +2148,12 @@ class WordpressApi
      *
      * Fetches the site URL for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordPressSiteurlWithHttpInfo($app_id, string $contentType = self::contentTypes['getWordPressSiteurl'][0])
     {
@@ -2225,8 +2181,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -2234,8 +2189,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2266,7 +2219,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2277,11 +2229,11 @@ class WordpressApi
      *
      * Fetches the site URL for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordPressSiteurlAsync($app_id, string $contentType = self::contentTypes['getWordPressSiteurl'][0])
     {
@@ -2298,11 +2250,11 @@ class WordpressApi
      *
      * Fetches the site URL for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordPressSiteurlAsyncWithHttpInfo($app_id, string $contentType = self::contentTypes['getWordPressSiteurl'][0])
     {
@@ -2314,7 +2266,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2325,7 +2277,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2348,11 +2300,11 @@ class WordpressApi
     /**
      * Create request for operation 'getWordPressSiteurl'
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordPressSiteurl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordPressSiteurlRequest($app_id, string $contentType = self::contentTypes['getWordPressSiteurl'][0])
     {
@@ -2364,7 +2316,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/v2/apps/{app_id}/wordpress/url';
         $formParams = [];
         $queryParams = [];
@@ -2372,20 +2323,17 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2399,7 +2347,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2407,14 +2355,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2429,9 +2376,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2442,18 +2390,19 @@ class WordpressApi
      *
      * Get WordPress version
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\GetWordpressAppVersion200Response
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\GetWordpressAppVersion200Response
      */
     public function getWordpressAppVersion($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressAppVersion'][0])
     {
-        list($response) = $this->getWordpressAppVersionWithHttpInfo($org_id, $website_id, $app_id, $contentType);
+        [$response] = $this->getWordpressAppVersionWithHttpInfo($org_id, $website_id, $app_id, $contentType);
+
         return $response;
     }
 
@@ -2462,14 +2411,14 @@ class WordpressApi
      *
      * Get WordPress version
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\GetWordpressAppVersion200Response, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\GetWordpressAppVersion200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordpressAppVersionWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressAppVersion'][0])
     {
@@ -2497,8 +2446,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\GetWordpressAppVersion200Response',
@@ -2506,8 +2454,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2538,7 +2484,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2549,13 +2494,13 @@ class WordpressApi
      *
      * Get WordPress version
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressAppVersionAsync($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressAppVersion'][0])
     {
@@ -2572,13 +2517,13 @@ class WordpressApi
      *
      * Get WordPress version
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressAppVersionAsyncWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressAppVersion'][0])
     {
@@ -2590,7 +2535,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2601,7 +2546,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2624,13 +2569,13 @@ class WordpressApi
     /**
      * Create request for operation 'getWordpressAppVersion'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressAppVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordpressAppVersionRequest($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressAppVersion'][0])
     {
@@ -2656,7 +2601,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/version';
         $formParams = [];
         $queryParams = [];
@@ -2664,12 +2608,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2677,7 +2619,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -2685,15 +2627,14 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2707,7 +2648,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2715,14 +2656,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2737,9 +2677,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2750,19 +2691,20 @@ class WordpressApi
      *
      * Get the WP config value for a given option
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $wp_option The wordpress config option. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $wp_option  The wordpress config option. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig
      */
     public function getWordpressConfig($org_id, $website_id, $app_id, $wp_option, string $contentType = self::contentTypes['getWordpressConfig'][0])
     {
-        list($response) = $this->getWordpressConfigWithHttpInfo($org_id, $website_id, $app_id, $wp_option, $contentType);
+        [$response] = $this->getWordpressConfigWithHttpInfo($org_id, $website_id, $app_id, $wp_option, $contentType);
+
         return $response;
     }
 
@@ -2771,15 +2713,15 @@ class WordpressApi
      *
      * Get the WP config value for a given option
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $wp_option The wordpress config option. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $wp_option  The wordpress config option. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordpressConfigWithHttpInfo($org_id, $website_id, $app_id, $wp_option, string $contentType = self::contentTypes['getWordpressConfig'][0])
     {
@@ -2807,8 +2749,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WordpressConfig',
@@ -2816,8 +2757,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2848,7 +2787,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2859,14 +2797,14 @@ class WordpressApi
      *
      * Get the WP config value for a given option
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $wp_option The wordpress config option. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $wp_option  The wordpress config option. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressConfigAsync($org_id, $website_id, $app_id, $wp_option, string $contentType = self::contentTypes['getWordpressConfig'][0])
     {
@@ -2883,14 +2821,14 @@ class WordpressApi
      *
      * Get the WP config value for a given option
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $wp_option The wordpress config option. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $wp_option  The wordpress config option. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressConfigAsyncWithHttpInfo($org_id, $website_id, $app_id, $wp_option, string $contentType = self::contentTypes['getWordpressConfig'][0])
     {
@@ -2902,7 +2840,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2913,7 +2851,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2936,14 +2874,14 @@ class WordpressApi
     /**
      * Create request for operation 'getWordpressConfig'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $wp_option The wordpress config option. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $wp_option  The wordpress config option. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordpressConfigRequest($org_id, $website_id, $app_id, $wp_option, string $contentType = self::contentTypes['getWordpressConfig'][0])
     {
@@ -2976,7 +2914,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/wp-config/{wp_option}';
         $formParams = [];
         $queryParams = [];
@@ -2984,12 +2921,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2997,7 +2932,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3005,7 +2940,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -3013,15 +2948,14 @@ class WordpressApi
         // path params
         if ($wp_option !== null) {
             $resourcePath = str_replace(
-                '{' . 'wp_option' . '}',
+                '{'.'wp_option'.'}',
                 ObjectSerializer::toPathValue($wp_option),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3035,7 +2969,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3043,7 +2977,7 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3054,11 +2988,11 @@ class WordpressApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3074,9 +3008,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3087,17 +3022,18 @@ class WordpressApi
      *
      * Trigger discovery of WP installations
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WpInstallation[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WpInstallation[]
      */
     public function getWordpressInstallations($org_id, $website_id, string $contentType = self::contentTypes['getWordpressInstallations'][0])
     {
-        list($response) = $this->getWordpressInstallationsWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWordpressInstallationsWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -3106,13 +3042,13 @@ class WordpressApi
      *
      * Trigger discovery of WP installations
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpInstallation[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpInstallation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordpressInstallationsWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWordpressInstallations'][0])
     {
@@ -3140,8 +3076,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WpInstallation[]',
@@ -3149,8 +3084,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3181,7 +3114,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3192,12 +3124,12 @@ class WordpressApi
      *
      * Trigger discovery of WP installations
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressInstallationsAsync($org_id, $website_id, string $contentType = self::contentTypes['getWordpressInstallations'][0])
     {
@@ -3214,12 +3146,12 @@ class WordpressApi
      *
      * Trigger discovery of WP installations
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressInstallationsAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWordpressInstallations'][0])
     {
@@ -3231,7 +3163,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3242,7 +3174,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3265,12 +3197,12 @@ class WordpressApi
     /**
      * Create request for operation 'getWordpressInstallations'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressInstallations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordpressInstallationsRequest($org_id, $website_id, string $contentType = self::contentTypes['getWordpressInstallations'][0])
     {
@@ -3289,7 +3221,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/wordpress';
         $formParams = [];
         $queryParams = [];
@@ -3297,12 +3228,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3310,15 +3239,14 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3332,7 +3260,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3340,14 +3268,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3362,9 +3289,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3375,15 +3303,16 @@ class WordpressApi
      *
      * Get WordPress latest available version
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WpLatestVersion
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WpLatestVersion
      */
     public function getWordpressLatestVersion(string $contentType = self::contentTypes['getWordpressLatestVersion'][0])
     {
-        list($response) = $this->getWordpressLatestVersionWithHttpInfo($contentType);
+        [$response] = $this->getWordpressLatestVersionWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -3392,11 +3321,11 @@ class WordpressApi
      *
      * Get WordPress latest available version
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpLatestVersion, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpLatestVersion, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordpressLatestVersionWithHttpInfo(string $contentType = self::contentTypes['getWordpressLatestVersion'][0])
     {
@@ -3424,8 +3353,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WpLatestVersion',
@@ -3433,8 +3361,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3465,7 +3391,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3476,10 +3401,10 @@ class WordpressApi
      *
      * Get WordPress latest available version
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressLatestVersionAsync(string $contentType = self::contentTypes['getWordpressLatestVersion'][0])
     {
@@ -3496,10 +3421,10 @@ class WordpressApi
      *
      * Get WordPress latest available version
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressLatestVersionAsyncWithHttpInfo(string $contentType = self::contentTypes['getWordpressLatestVersion'][0])
     {
@@ -3511,7 +3436,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3522,7 +3447,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3545,14 +3470,13 @@ class WordpressApi
     /**
      * Create request for operation 'getWordpressLatestVersion'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressLatestVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordpressLatestVersionRequest(string $contentType = self::contentTypes['getWordpressLatestVersion'][0])
     {
-
 
         $resourcePath = '/utils/wordpress/latest';
         $formParams = [];
@@ -3561,12 +3485,8 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3580,7 +3500,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3588,14 +3508,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3610,9 +3529,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3623,19 +3543,20 @@ class WordpressApi
      *
      * Get website WordPress plugins
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WpPluginsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WpPluginsFullListing
      */
     public function getWordpressPlugins($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressPlugins'][0])
     {
-        list($response) = $this->getWordpressPluginsWithHttpInfo($org_id, $website_id, $app_id, $refresh_cache, $contentType);
+        [$response] = $this->getWordpressPluginsWithHttpInfo($org_id, $website_id, $app_id, $refresh_cache, $contentType);
+
         return $response;
     }
 
@@ -3644,15 +3565,15 @@ class WordpressApi
      *
      * Get website WordPress plugins
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpPluginsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpPluginsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordpressPluginsWithHttpInfo($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressPlugins'][0])
     {
@@ -3680,8 +3601,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WpPluginsFullListing',
@@ -3689,8 +3609,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3721,7 +3639,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3732,14 +3649,14 @@ class WordpressApi
      *
      * Get website WordPress plugins
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressPluginsAsync($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressPlugins'][0])
     {
@@ -3756,14 +3673,14 @@ class WordpressApi
      *
      * Get website WordPress plugins
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressPluginsAsyncWithHttpInfo($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressPlugins'][0])
     {
@@ -3775,7 +3692,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3786,7 +3703,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3809,14 +3726,14 @@ class WordpressApi
     /**
      * Create request for operation 'getWordpressPlugins'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressPlugins'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordpressPluginsRequest($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressPlugins'][0])
     {
@@ -3842,8 +3759,6 @@ class WordpressApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/plugins';
         $formParams = [];
         $queryParams = [];
@@ -3861,11 +3776,10 @@ class WordpressApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3873,7 +3787,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3881,15 +3795,14 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3903,7 +3816,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3911,14 +3824,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3933,9 +3845,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3946,18 +3859,19 @@ class WordpressApi
      *
      * Get Wordpress application settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WpSettings
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WpSettings
      */
     public function getWordpressSettings($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressSettings'][0])
     {
-        list($response) = $this->getWordpressSettingsWithHttpInfo($org_id, $website_id, $app_id, $contentType);
+        [$response] = $this->getWordpressSettingsWithHttpInfo($org_id, $website_id, $app_id, $contentType);
+
         return $response;
     }
 
@@ -3966,14 +3880,14 @@ class WordpressApi
      *
      * Get Wordpress application settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpSettings, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordpressSettingsWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressSettings'][0])
     {
@@ -4001,8 +3915,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WpSettings',
@@ -4010,8 +3923,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4042,7 +3953,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4053,13 +3963,13 @@ class WordpressApi
      *
      * Get Wordpress application settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressSettingsAsync($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressSettings'][0])
     {
@@ -4076,13 +3986,13 @@ class WordpressApi
      *
      * Get Wordpress application settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressSettingsAsyncWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressSettings'][0])
     {
@@ -4094,7 +4004,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4105,7 +4015,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4128,13 +4038,13 @@ class WordpressApi
     /**
      * Create request for operation 'getWordpressSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordpressSettingsRequest($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressSettings'][0])
     {
@@ -4160,7 +4070,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress';
         $formParams = [];
         $queryParams = [];
@@ -4168,12 +4077,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -4181,7 +4088,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -4189,15 +4096,14 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4211,7 +4117,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4219,14 +4125,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4241,9 +4146,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4254,19 +4160,20 @@ class WordpressApi
      *
      * Get website WordPress themes
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WpThemesFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WpThemesFullListing
      */
     public function getWordpressThemes($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressThemes'][0])
     {
-        list($response) = $this->getWordpressThemesWithHttpInfo($org_id, $website_id, $app_id, $refresh_cache, $contentType);
+        [$response] = $this->getWordpressThemesWithHttpInfo($org_id, $website_id, $app_id, $refresh_cache, $contentType);
+
         return $response;
     }
 
@@ -4275,15 +4182,15 @@ class WordpressApi
      *
      * Get website WordPress themes
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpThemesFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpThemesFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordpressThemesWithHttpInfo($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressThemes'][0])
     {
@@ -4311,8 +4218,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WpThemesFullListing',
@@ -4320,8 +4226,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4352,7 +4256,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4363,14 +4266,14 @@ class WordpressApi
      *
      * Get website WordPress themes
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressThemesAsync($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressThemes'][0])
     {
@@ -4387,14 +4290,14 @@ class WordpressApi
      *
      * Get website WordPress themes
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressThemesAsyncWithHttpInfo($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressThemes'][0])
     {
@@ -4406,7 +4309,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4417,7 +4320,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4440,14 +4343,14 @@ class WordpressApi
     /**
      * Create request for operation 'getWordpressThemes'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressThemes'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordpressThemesRequest($org_id, $website_id, $app_id, $refresh_cache = null, string $contentType = self::contentTypes['getWordpressThemes'][0])
     {
@@ -4473,8 +4376,6 @@ class WordpressApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/themes';
         $formParams = [];
         $queryParams = [];
@@ -4492,11 +4393,10 @@ class WordpressApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -4504,7 +4404,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -4512,15 +4412,14 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4534,7 +4433,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4542,14 +4441,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4564,9 +4462,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4577,20 +4476,21 @@ class WordpressApi
      *
      * Get SSO URL for a WP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getWordpressUserSsoUrl($org_id, $website_id, $app_id, $user_id, $should_redirect = null, string $contentType = self::contentTypes['getWordpressUserSsoUrl'][0])
     {
-        list($response) = $this->getWordpressUserSsoUrlWithHttpInfo($org_id, $website_id, $app_id, $user_id, $should_redirect, $contentType);
+        [$response] = $this->getWordpressUserSsoUrlWithHttpInfo($org_id, $website_id, $app_id, $user_id, $should_redirect, $contentType);
+
         return $response;
     }
 
@@ -4599,16 +4499,16 @@ class WordpressApi
      *
      * Get SSO URL for a WP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordpressUserSsoUrlWithHttpInfo($org_id, $website_id, $app_id, $user_id, $should_redirect = null, string $contentType = self::contentTypes['getWordpressUserSsoUrl'][0])
     {
@@ -4636,8 +4536,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -4645,8 +4544,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4677,7 +4574,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4688,15 +4584,15 @@ class WordpressApi
      *
      * Get SSO URL for a WP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressUserSsoUrlAsync($org_id, $website_id, $app_id, $user_id, $should_redirect = null, string $contentType = self::contentTypes['getWordpressUserSsoUrl'][0])
     {
@@ -4713,15 +4609,15 @@ class WordpressApi
      *
      * Get SSO URL for a WP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressUserSsoUrlAsyncWithHttpInfo($org_id, $website_id, $app_id, $user_id, $should_redirect = null, string $contentType = self::contentTypes['getWordpressUserSsoUrl'][0])
     {
@@ -4733,7 +4629,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4744,7 +4640,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4767,15 +4663,15 @@ class WordpressApi
     /**
      * Create request for operation 'getWordpressUserSsoUrl'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUserSsoUrl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordpressUserSsoUrlRequest($org_id, $website_id, $app_id, $user_id, $should_redirect = null, string $contentType = self::contentTypes['getWordpressUserSsoUrl'][0])
     {
@@ -4808,8 +4704,6 @@ class WordpressApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/users/{user_id}/sso';
         $formParams = [];
         $queryParams = [];
@@ -4827,11 +4721,10 @@ class WordpressApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -4839,7 +4732,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -4847,7 +4740,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -4855,15 +4748,14 @@ class WordpressApi
         // path params
         if ($user_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'user_id' . '}',
+                '{'.'user_id'.'}',
                 ObjectSerializer::toPathValue($user_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4877,7 +4769,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4885,14 +4777,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4907,9 +4798,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4918,32 +4810,33 @@ class WordpressApi
     /**
      * Operation getWordpressUsers
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WpUsersFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WpUsersFullListing
      */
     public function getWordpressUsers($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressUsers'][0])
     {
-        list($response) = $this->getWordpressUsersWithHttpInfo($org_id, $website_id, $app_id, $contentType);
+        [$response] = $this->getWordpressUsersWithHttpInfo($org_id, $website_id, $app_id, $contentType);
+
         return $response;
     }
 
     /**
      * Operation getWordpressUsersWithHttpInfo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpUsersFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WpUsersFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWordpressUsersWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressUsers'][0])
     {
@@ -4971,8 +4864,7 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WpUsersFullListing',
@@ -4980,8 +4872,6 @@ class WordpressApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5012,7 +4902,6 @@ class WordpressApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5021,13 +4910,13 @@ class WordpressApi
     /**
      * Operation getWordpressUsersAsync
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressUsersAsync($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressUsers'][0])
     {
@@ -5042,13 +4931,13 @@ class WordpressApi
     /**
      * Operation getWordpressUsersAsyncWithHttpInfo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWordpressUsersAsyncWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressUsers'][0])
     {
@@ -5060,7 +4949,7 @@ class WordpressApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5071,7 +4960,7 @@ class WordpressApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5094,13 +4983,13 @@ class WordpressApi
     /**
      * Create request for operation 'getWordpressUsers'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWordpressUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWordpressUsersRequest($org_id, $website_id, $app_id, string $contentType = self::contentTypes['getWordpressUsers'][0])
     {
@@ -5126,7 +5015,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/users';
         $formParams = [];
         $queryParams = [];
@@ -5134,12 +5022,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5147,7 +5033,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -5155,15 +5041,14 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5177,7 +5062,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5185,14 +5070,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5207,9 +5091,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5220,16 +5105,16 @@ class WordpressApi
      *
      * Install a plugin
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin $install_wp_plugin install_wp_plugin (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin  $install_wp_plugin  install_wp_plugin (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function installWordpressPlugin($org_id, $website_id, $app_id, $install_wp_plugin, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressPlugin'][0])
     {
@@ -5241,16 +5126,16 @@ class WordpressApi
      *
      * Install a plugin
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin $install_wp_plugin (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin  $install_wp_plugin  (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function installWordpressPluginWithHttpInfo($org_id, $website_id, $app_id, $install_wp_plugin, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressPlugin'][0])
     {
@@ -5278,12 +5163,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5294,15 +5177,15 @@ class WordpressApi
      *
      * Install a plugin
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin $install_wp_plugin (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin  $install_wp_plugin  (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function installWordpressPluginAsync($org_id, $website_id, $app_id, $install_wp_plugin, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressPlugin'][0])
     {
@@ -5319,15 +5202,15 @@ class WordpressApi
      *
      * Install a plugin
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin $install_wp_plugin (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin  $install_wp_plugin  (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function installWordpressPluginAsyncWithHttpInfo($org_id, $website_id, $app_id, $install_wp_plugin, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressPlugin'][0])
     {
@@ -5337,7 +5220,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5360,15 +5243,15 @@ class WordpressApi
     /**
      * Create request for operation 'installWordpressPlugin'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin $install_wp_plugin (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpPlugin  $install_wp_plugin  (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressPlugin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function installWordpressPluginRequest($org_id, $website_id, $app_id, $install_wp_plugin, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressPlugin'][0])
     {
@@ -5401,8 +5284,6 @@ class WordpressApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/plugins';
         $formParams = [];
         $queryParams = [];
@@ -5420,11 +5301,10 @@ class WordpressApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5432,7 +5312,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -5440,12 +5320,11 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5456,7 +5335,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($install_wp_plugin)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($install_wp_plugin));
             } else {
                 $httpBody = $install_wp_plugin;
@@ -5469,7 +5348,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5477,14 +5356,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5499,9 +5377,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5512,16 +5391,16 @@ class WordpressApi
      *
      * Install a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest $install_wp_theme_request install_wp_theme_request (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest  $install_wp_theme_request  install_wp_theme_request (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function installWordpressTheme($org_id, $website_id, $app_id, $install_wp_theme_request, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressTheme'][0])
     {
@@ -5533,16 +5412,16 @@ class WordpressApi
      *
      * Install a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest $install_wp_theme_request (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest  $install_wp_theme_request  (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function installWordpressThemeWithHttpInfo($org_id, $website_id, $app_id, $install_wp_theme_request, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressTheme'][0])
     {
@@ -5570,12 +5449,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5586,15 +5463,15 @@ class WordpressApi
      *
      * Install a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest $install_wp_theme_request (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest  $install_wp_theme_request  (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function installWordpressThemeAsync($org_id, $website_id, $app_id, $install_wp_theme_request, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressTheme'][0])
     {
@@ -5611,15 +5488,15 @@ class WordpressApi
      *
      * Install a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest $install_wp_theme_request (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest  $install_wp_theme_request  (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function installWordpressThemeAsyncWithHttpInfo($org_id, $website_id, $app_id, $install_wp_theme_request, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressTheme'][0])
     {
@@ -5629,7 +5506,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5652,15 +5529,15 @@ class WordpressApi
     /**
      * Create request for operation 'installWordpressTheme'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest $install_wp_theme_request (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\InstallWpThemeRequest  $install_wp_theme_request  (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['installWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function installWordpressThemeRequest($org_id, $website_id, $app_id, $install_wp_theme_request, $refresh_cache = null, string $contentType = self::contentTypes['installWordpressTheme'][0])
     {
@@ -5693,8 +5570,6 @@ class WordpressApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/themes';
         $formParams = [];
         $queryParams = [];
@@ -5712,11 +5587,10 @@ class WordpressApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5724,7 +5598,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -5732,12 +5606,11 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5748,7 +5621,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($install_wp_theme_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($install_wp_theme_request));
             } else {
                 $httpBody = $install_wp_theme_request;
@@ -5761,7 +5634,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5769,14 +5642,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5791,9 +5663,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5804,15 +5677,15 @@ class WordpressApi
      *
      * Set WP user as the default SSO user for that website.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  float $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  float  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setDefaultWpSsoUser($org_id, $website_id, $app_id, $body, string $contentType = self::contentTypes['setDefaultWpSsoUser'][0])
     {
@@ -5824,15 +5697,15 @@ class WordpressApi
      *
      * Set WP user as the default SSO user for that website.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  float $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  float  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setDefaultWpSsoUserWithHttpInfo($org_id, $website_id, $app_id, $body, string $contentType = self::contentTypes['setDefaultWpSsoUser'][0])
     {
@@ -5860,12 +5733,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5876,14 +5747,14 @@ class WordpressApi
      *
      * Set WP user as the default SSO user for that website.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  float $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  float  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setDefaultWpSsoUserAsync($org_id, $website_id, $app_id, $body, string $contentType = self::contentTypes['setDefaultWpSsoUser'][0])
     {
@@ -5900,14 +5771,14 @@ class WordpressApi
      *
      * Set WP user as the default SSO user for that website.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  float $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  float  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setDefaultWpSsoUserAsyncWithHttpInfo($org_id, $website_id, $app_id, $body, string $contentType = self::contentTypes['setDefaultWpSsoUser'][0])
     {
@@ -5917,7 +5788,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5940,14 +5811,14 @@ class WordpressApi
     /**
      * Create request for operation 'setDefaultWpSsoUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  float $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  float  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDefaultWpSsoUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setDefaultWpSsoUserRequest($org_id, $website_id, $app_id, $body, string $contentType = self::contentTypes['setDefaultWpSsoUser'][0])
     {
@@ -5980,7 +5851,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/users/default';
         $formParams = [];
         $queryParams = [];
@@ -5988,12 +5858,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -6001,7 +5869,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -6009,12 +5877,11 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -6025,7 +5892,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -6038,7 +5905,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6046,14 +5913,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6068,9 +5934,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6081,13 +5948,13 @@ class WordpressApi
      *
      * Sets the MaintenanceMode for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWordPressMaintenanceMode($app_id, $body, string $contentType = self::contentTypes['setWordPressMaintenanceMode'][0])
     {
@@ -6099,13 +5966,13 @@ class WordpressApi
      *
      * Sets the MaintenanceMode for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWordPressMaintenanceModeWithHttpInfo($app_id, $body, string $contentType = self::contentTypes['setWordPressMaintenanceMode'][0])
     {
@@ -6133,12 +6000,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -6149,12 +6014,12 @@ class WordpressApi
      *
      * Sets the MaintenanceMode for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWordPressMaintenanceModeAsync($app_id, $body, string $contentType = self::contentTypes['setWordPressMaintenanceMode'][0])
     {
@@ -6171,12 +6036,12 @@ class WordpressApi
      *
      * Sets the MaintenanceMode for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWordPressMaintenanceModeAsyncWithHttpInfo($app_id, $body, string $contentType = self::contentTypes['setWordPressMaintenanceMode'][0])
     {
@@ -6186,7 +6051,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -6209,12 +6074,12 @@ class WordpressApi
     /**
      * Create request for operation 'setWordPressMaintenanceMode'
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressMaintenanceMode'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWordPressMaintenanceModeRequest($app_id, $body, string $contentType = self::contentTypes['setWordPressMaintenanceMode'][0])
     {
@@ -6233,7 +6098,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/v2/apps/{app_id}/wordpress/maintenance-mode';
         $formParams = [];
         $queryParams = [];
@@ -6241,17 +6105,14 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -6262,7 +6123,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -6275,7 +6136,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6283,14 +6144,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6305,9 +6165,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6318,13 +6179,13 @@ class WordpressApi
      *
      * Sets the site URL for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWordPressSiteurl($app_id, $body, string $contentType = self::contentTypes['setWordPressSiteurl'][0])
     {
@@ -6336,13 +6197,13 @@ class WordpressApi
      *
      * Sets the site URL for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWordPressSiteurlWithHttpInfo($app_id, $body, string $contentType = self::contentTypes['setWordPressSiteurl'][0])
     {
@@ -6370,12 +6231,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -6386,12 +6245,12 @@ class WordpressApi
      *
      * Sets the site URL for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWordPressSiteurlAsync($app_id, $body, string $contentType = self::contentTypes['setWordPressSiteurl'][0])
     {
@@ -6408,12 +6267,12 @@ class WordpressApi
      *
      * Sets the site URL for a WordPress installation
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWordPressSiteurlAsyncWithHttpInfo($app_id, $body, string $contentType = self::contentTypes['setWordPressSiteurl'][0])
     {
@@ -6423,7 +6282,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -6446,12 +6305,12 @@ class WordpressApi
     /**
      * Create request for operation 'setWordPressSiteurl'
      *
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordPressSiteurl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWordPressSiteurlRequest($app_id, $body, string $contentType = self::contentTypes['setWordPressSiteurl'][0])
     {
@@ -6470,7 +6329,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/v2/apps/{app_id}/wordpress/url';
         $formParams = [];
         $queryParams = [];
@@ -6478,17 +6336,14 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -6499,7 +6354,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -6512,7 +6367,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6520,14 +6375,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6542,9 +6396,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6555,15 +6410,15 @@ class WordpressApi
      *
      * Set a single value of a wp-config.php entry.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig $wordpress_config wordpress_config (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig  $wordpress_config  wordpress_config (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWordpressConfig($org_id, $website_id, $app_id, $wordpress_config, string $contentType = self::contentTypes['setWordpressConfig'][0])
     {
@@ -6575,15 +6430,15 @@ class WordpressApi
      *
      * Set a single value of a wp-config.php entry.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig $wordpress_config (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig  $wordpress_config  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWordpressConfigWithHttpInfo($org_id, $website_id, $app_id, $wordpress_config, string $contentType = self::contentTypes['setWordpressConfig'][0])
     {
@@ -6611,12 +6466,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -6627,14 +6480,14 @@ class WordpressApi
      *
      * Set a single value of a wp-config.php entry.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig $wordpress_config (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig  $wordpress_config  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWordpressConfigAsync($org_id, $website_id, $app_id, $wordpress_config, string $contentType = self::contentTypes['setWordpressConfig'][0])
     {
@@ -6651,14 +6504,14 @@ class WordpressApi
      *
      * Set a single value of a wp-config.php entry.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig $wordpress_config (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig  $wordpress_config  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWordpressConfigAsyncWithHttpInfo($org_id, $website_id, $app_id, $wordpress_config, string $contentType = self::contentTypes['setWordpressConfig'][0])
     {
@@ -6668,7 +6521,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -6691,14 +6544,14 @@ class WordpressApi
     /**
      * Create request for operation 'setWordpressConfig'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig $wordpress_config (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WordpressConfig  $wordpress_config  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressConfig'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWordpressConfigRequest($org_id, $website_id, $app_id, $wordpress_config, string $contentType = self::contentTypes['setWordpressConfig'][0])
     {
@@ -6731,7 +6584,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/wp-config';
         $formParams = [];
         $queryParams = [];
@@ -6739,12 +6591,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -6752,7 +6602,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -6760,12 +6610,11 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -6776,7 +6625,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($wordpress_config)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($wordpress_config));
             } else {
                 $httpBody = $wordpress_config;
@@ -6789,7 +6638,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6797,7 +6646,7 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6808,11 +6657,11 @@ class WordpressApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6828,9 +6677,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6841,16 +6691,16 @@ class WordpressApi
      *
      * Set WordPress theme auto-update status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  bool $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  bool  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWordpressThemeAutoUpdateStatus($org_id, $website_id, $app_id, $theme, $body, string $contentType = self::contentTypes['setWordpressThemeAutoUpdateStatus'][0])
     {
@@ -6862,16 +6712,16 @@ class WordpressApi
      *
      * Set WordPress theme auto-update status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  bool $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  bool  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWordpressThemeAutoUpdateStatusWithHttpInfo($org_id, $website_id, $app_id, $theme, $body, string $contentType = self::contentTypes['setWordpressThemeAutoUpdateStatus'][0])
     {
@@ -6899,12 +6749,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -6915,15 +6763,15 @@ class WordpressApi
      *
      * Set WordPress theme auto-update status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  bool $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  bool  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWordpressThemeAutoUpdateStatusAsync($org_id, $website_id, $app_id, $theme, $body, string $contentType = self::contentTypes['setWordpressThemeAutoUpdateStatus'][0])
     {
@@ -6940,15 +6788,15 @@ class WordpressApi
      *
      * Set WordPress theme auto-update status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  bool $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  bool  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWordpressThemeAutoUpdateStatusAsyncWithHttpInfo($org_id, $website_id, $app_id, $theme, $body, string $contentType = self::contentTypes['setWordpressThemeAutoUpdateStatus'][0])
     {
@@ -6958,7 +6806,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -6981,15 +6829,15 @@ class WordpressApi
     /**
      * Create request for operation 'setWordpressThemeAutoUpdateStatus'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  bool $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  bool  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWordpressThemeAutoUpdateStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWordpressThemeAutoUpdateStatusRequest($org_id, $website_id, $app_id, $theme, $body, string $contentType = self::contentTypes['setWordpressThemeAutoUpdateStatus'][0])
     {
@@ -7029,7 +6877,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/themes/{theme}/auto_update';
         $formParams = [];
         $queryParams = [];
@@ -7037,12 +6884,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -7050,7 +6895,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -7058,7 +6903,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -7066,12 +6911,11 @@ class WordpressApi
         // path params
         if ($theme !== null) {
             $resourcePath = str_replace(
-                '{' . 'theme' . '}',
+                '{'.'theme'.'}',
                 ObjectSerializer::toPathValue($theme),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -7082,7 +6926,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -7095,7 +6939,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7103,14 +6947,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -7125,9 +6968,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7138,14 +6982,14 @@ class WordpressApi
      *
      * Update website WP app to specific version or latest
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWordpressAppVersion($org_id, $website_id, $app_id, string $contentType = self::contentTypes['updateWordpressAppVersion'][0])
     {
@@ -7157,14 +7001,14 @@ class WordpressApi
      *
      * Update website WP app to specific version or latest
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWordpressAppVersionWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['updateWordpressAppVersion'][0])
     {
@@ -7192,12 +7036,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -7208,13 +7050,13 @@ class WordpressApi
      *
      * Update website WP app to specific version or latest
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressAppVersionAsync($org_id, $website_id, $app_id, string $contentType = self::contentTypes['updateWordpressAppVersion'][0])
     {
@@ -7231,13 +7073,13 @@ class WordpressApi
      *
      * Update website WP app to specific version or latest
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressAppVersionAsyncWithHttpInfo($org_id, $website_id, $app_id, string $contentType = self::contentTypes['updateWordpressAppVersion'][0])
     {
@@ -7247,7 +7089,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -7270,13 +7112,13 @@ class WordpressApi
     /**
      * Create request for operation 'updateWordpressAppVersion'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressAppVersion'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWordpressAppVersionRequest($org_id, $website_id, $app_id, string $contentType = self::contentTypes['updateWordpressAppVersion'][0])
     {
@@ -7302,7 +7144,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/version';
         $formParams = [];
         $queryParams = [];
@@ -7310,12 +7151,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -7323,7 +7162,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -7331,12 +7170,11 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -7353,7 +7191,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7361,14 +7199,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -7383,9 +7220,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7396,16 +7234,16 @@ class WordpressApi
      *
      * Updates website WordPress plugin settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin $update_wp_plugin update_wp_plugin (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin  $update_wp_plugin  update_wp_plugin (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWordpressPluginSettings($org_id, $website_id, $app_id, $plugin, $update_wp_plugin, string $contentType = self::contentTypes['updateWordpressPluginSettings'][0])
     {
@@ -7417,16 +7255,16 @@ class WordpressApi
      *
      * Updates website WordPress plugin settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin $update_wp_plugin (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin  $update_wp_plugin  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWordpressPluginSettingsWithHttpInfo($org_id, $website_id, $app_id, $plugin, $update_wp_plugin, string $contentType = self::contentTypes['updateWordpressPluginSettings'][0])
     {
@@ -7454,12 +7292,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -7470,15 +7306,15 @@ class WordpressApi
      *
      * Updates website WordPress plugin settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin $update_wp_plugin (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin  $update_wp_plugin  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressPluginSettingsAsync($org_id, $website_id, $app_id, $plugin, $update_wp_plugin, string $contentType = self::contentTypes['updateWordpressPluginSettings'][0])
     {
@@ -7495,15 +7331,15 @@ class WordpressApi
      *
      * Updates website WordPress plugin settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin $update_wp_plugin (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin  $update_wp_plugin  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressPluginSettingsAsyncWithHttpInfo($org_id, $website_id, $app_id, $plugin, $update_wp_plugin, string $contentType = self::contentTypes['updateWordpressPluginSettings'][0])
     {
@@ -7513,7 +7349,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -7536,15 +7372,15 @@ class WordpressApi
     /**
      * Create request for operation 'updateWordpressPluginSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin $update_wp_plugin (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpPlugin  $update_wp_plugin  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWordpressPluginSettingsRequest($org_id, $website_id, $app_id, $plugin, $update_wp_plugin, string $contentType = self::contentTypes['updateWordpressPluginSettings'][0])
     {
@@ -7584,7 +7420,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/plugins/{plugin}';
         $formParams = [];
         $queryParams = [];
@@ -7592,12 +7427,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -7605,7 +7438,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -7613,7 +7446,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -7621,12 +7454,11 @@ class WordpressApi
         // path params
         if ($plugin !== null) {
             $resourcePath = str_replace(
-                '{' . 'plugin' . '}',
+                '{'.'plugin'.'}',
                 ObjectSerializer::toPathValue($plugin),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -7637,7 +7469,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($update_wp_plugin)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_wp_plugin));
             } else {
                 $httpBody = $update_wp_plugin;
@@ -7650,7 +7482,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7658,14 +7490,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -7680,9 +7511,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7693,15 +7525,15 @@ class WordpressApi
      *
      * Updates website WordPress plugin to latest version
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWordpressPluginToLatest($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['updateWordpressPluginToLatest'][0])
     {
@@ -7713,15 +7545,15 @@ class WordpressApi
      *
      * Updates website WordPress plugin to latest version
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWordpressPluginToLatestWithHttpInfo($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['updateWordpressPluginToLatest'][0])
     {
@@ -7749,12 +7581,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -7765,14 +7595,14 @@ class WordpressApi
      *
      * Updates website WordPress plugin to latest version
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressPluginToLatestAsync($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['updateWordpressPluginToLatest'][0])
     {
@@ -7789,14 +7619,14 @@ class WordpressApi
      *
      * Updates website WordPress plugin to latest version
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressPluginToLatestAsyncWithHttpInfo($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['updateWordpressPluginToLatest'][0])
     {
@@ -7806,7 +7636,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -7829,14 +7659,14 @@ class WordpressApi
     /**
      * Create request for operation 'updateWordpressPluginToLatest'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $plugin The name of the wordpress plugin (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $plugin  The name of the wordpress plugin (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressPluginToLatest'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWordpressPluginToLatestRequest($org_id, $website_id, $app_id, $plugin, string $contentType = self::contentTypes['updateWordpressPluginToLatest'][0])
     {
@@ -7869,7 +7699,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/plugins/{plugin}/version';
         $formParams = [];
         $queryParams = [];
@@ -7877,12 +7706,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -7890,7 +7717,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -7898,7 +7725,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -7906,12 +7733,11 @@ class WordpressApi
         // path params
         if ($plugin !== null) {
             $resourcePath = str_replace(
-                '{' . 'plugin' . '}',
+                '{'.'plugin'.'}',
                 ObjectSerializer::toPathValue($plugin),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -7928,7 +7754,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7936,14 +7762,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -7958,9 +7783,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7971,15 +7797,15 @@ class WordpressApi
      *
      * Update Wordpress app settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings $update_wp_settings update_wp_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings  $update_wp_settings  update_wp_settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWordpressSettings($org_id, $website_id, $app_id, $update_wp_settings, string $contentType = self::contentTypes['updateWordpressSettings'][0])
     {
@@ -7991,15 +7817,15 @@ class WordpressApi
      *
      * Update Wordpress app settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings $update_wp_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings  $update_wp_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWordpressSettingsWithHttpInfo($org_id, $website_id, $app_id, $update_wp_settings, string $contentType = self::contentTypes['updateWordpressSettings'][0])
     {
@@ -8027,12 +7853,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -8043,14 +7867,14 @@ class WordpressApi
      *
      * Update Wordpress app settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings $update_wp_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings  $update_wp_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressSettingsAsync($org_id, $website_id, $app_id, $update_wp_settings, string $contentType = self::contentTypes['updateWordpressSettings'][0])
     {
@@ -8067,14 +7891,14 @@ class WordpressApi
      *
      * Update Wordpress app settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings $update_wp_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings  $update_wp_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressSettingsAsyncWithHttpInfo($org_id, $website_id, $app_id, $update_wp_settings, string $contentType = self::contentTypes['updateWordpressSettings'][0])
     {
@@ -8084,7 +7908,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -8107,14 +7931,14 @@ class WordpressApi
     /**
      * Create request for operation 'updateWordpressSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings $update_wp_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpSettings  $update_wp_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWordpressSettingsRequest($org_id, $website_id, $app_id, $update_wp_settings, string $contentType = self::contentTypes['updateWordpressSettings'][0])
     {
@@ -8147,7 +7971,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress';
         $formParams = [];
         $queryParams = [];
@@ -8155,12 +7978,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -8168,7 +7989,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -8176,12 +7997,11 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -8192,7 +8012,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($update_wp_settings)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_wp_settings));
             } else {
                 $httpBody = $update_wp_settings;
@@ -8205,7 +8025,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8213,14 +8033,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -8235,9 +8054,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8248,15 +8068,15 @@ class WordpressApi
      *
      * Update a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWordpressTheme($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['updateWordpressTheme'][0])
     {
@@ -8268,15 +8088,15 @@ class WordpressApi
      *
      * Update a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWordpressThemeWithHttpInfo($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['updateWordpressTheme'][0])
     {
@@ -8304,12 +8124,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -8320,14 +8138,14 @@ class WordpressApi
      *
      * Update a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressThemeAsync($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['updateWordpressTheme'][0])
     {
@@ -8344,14 +8162,14 @@ class WordpressApi
      *
      * Update a WordPress theme
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressThemeAsyncWithHttpInfo($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['updateWordpressTheme'][0])
     {
@@ -8361,7 +8179,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -8384,14 +8202,14 @@ class WordpressApi
     /**
      * Create request for operation 'updateWordpressTheme'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  string $theme The name of the wordpress theme (not file name!). (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  string  $theme  The name of the wordpress theme (not file name!). (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressTheme'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWordpressThemeRequest($org_id, $website_id, $app_id, $theme, string $contentType = self::contentTypes['updateWordpressTheme'][0])
     {
@@ -8424,7 +8242,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/themes/{theme}/update';
         $formParams = [];
         $queryParams = [];
@@ -8432,12 +8249,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -8445,7 +8260,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -8453,7 +8268,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -8461,12 +8276,11 @@ class WordpressApi
         // path params
         if ($theme !== null) {
             $resourcePath = str_replace(
-                '{' . 'theme' . '}',
+                '{'.'theme'.'}',
                 ObjectSerializer::toPathValue($theme),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -8483,7 +8297,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8491,14 +8305,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -8513,9 +8326,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8526,16 +8340,16 @@ class WordpressApi
      *
      * Update WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser $update_wp_user update_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser  $update_wp_user  update_wp_user (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWordpressUser($org_id, $website_id, $app_id, $user_id, $update_wp_user, string $contentType = self::contentTypes['updateWordpressUser'][0])
     {
@@ -8547,16 +8361,16 @@ class WordpressApi
      *
      * Update WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser $update_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser  $update_wp_user  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWordpressUserWithHttpInfo($org_id, $website_id, $app_id, $user_id, $update_wp_user, string $contentType = self::contentTypes['updateWordpressUser'][0])
     {
@@ -8584,12 +8398,10 @@ class WordpressApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -8600,15 +8412,15 @@ class WordpressApi
      *
      * Update WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser $update_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser  $update_wp_user  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressUserAsync($org_id, $website_id, $app_id, $user_id, $update_wp_user, string $contentType = self::contentTypes['updateWordpressUser'][0])
     {
@@ -8625,15 +8437,15 @@ class WordpressApi
      *
      * Update WordPress user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser $update_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser  $update_wp_user  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWordpressUserAsyncWithHttpInfo($org_id, $website_id, $app_id, $user_id, $update_wp_user, string $contentType = self::contentTypes['updateWordpressUser'][0])
     {
@@ -8643,7 +8455,7 @@ class WordpressApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -8666,15 +8478,15 @@ class WordpressApi
     /**
      * Create request for operation 'updateWordpressUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  int $user_id The id of the wordpress user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser $update_wp_user (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  int  $user_id  The id of the wordpress user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWpUser  $update_wp_user  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWordpressUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWordpressUserRequest($org_id, $website_id, $app_id, $user_id, $update_wp_user, string $contentType = self::contentTypes['updateWordpressUser'][0])
     {
@@ -8714,7 +8526,6 @@ class WordpressApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}/wordpress/users/{user_id}';
         $formParams = [];
         $queryParams = [];
@@ -8722,12 +8533,10 @@ class WordpressApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -8735,7 +8544,7 @@ class WordpressApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -8743,7 +8552,7 @@ class WordpressApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
@@ -8751,12 +8560,11 @@ class WordpressApi
         // path params
         if ($user_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'user_id' . '}',
+                '{'.'user_id'.'}',
                 ObjectSerializer::toPathValue($user_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -8767,7 +8575,7 @@ class WordpressApi
         // for model (json/xml)
         if (isset($update_wp_user)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_wp_user));
             } else {
                 $httpBody = $update_wp_user;
@@ -8780,7 +8588,7 @@ class WordpressApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8788,14 +8596,13 @@ class WordpressApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -8810,9 +8617,10 @@ class WordpressApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8821,16 +8629,17 @@ class WordpressApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -8843,7 +8652,7 @@ class WordpressApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -8866,7 +8675,7 @@ class WordpressApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

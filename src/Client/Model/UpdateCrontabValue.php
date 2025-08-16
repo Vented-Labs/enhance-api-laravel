@@ -1,12 +1,14 @@
 <?php
+
 /**
  * UpdateCrontabValue
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,66 +30,70 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * UpdateCrontabValue Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateCrontabValue implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'UpdateCrontabValue';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'variable' => '\Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabValueVariableVariable',
-        'cron_cmd' => '\Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabValueCmdCronCmd'
+        'cron_cmd' => '\Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabValueCmdCronCmd',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'variable' => null,
-        'cron_cmd' => null
+        'cron_cmd' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'variable' => false,
-        'cron_cmd' => false
+        'cron_cmd' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -112,8 +118,6 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -123,7 +127,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -133,7 +137,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -142,9 +146,6 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -153,9 +154,6 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -170,7 +168,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'variable' => 'variable',
-        'cron_cmd' => 'cronCmd'
+        'cron_cmd' => 'cronCmd',
     ];
 
     /**
@@ -180,7 +178,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'variable' => 'setVariable',
-        'cron_cmd' => 'setCronCmd'
+        'cron_cmd' => 'setCronCmd',
     ];
 
     /**
@@ -190,7 +188,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'variable' => 'getVariable',
-        'cron_cmd' => 'getCronCmd'
+        'cron_cmd' => 'getCronCmd',
     ];
 
     /**
@@ -234,7 +232,6 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -245,8 +242,8 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -255,14 +252,12 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -287,6 +282,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
         if ($this->container['cron_cmd'] === null) {
             $invalidProperties[] = "'cron_cmd' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -301,7 +297,6 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets variable
      *
@@ -315,8 +310,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets variable
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabValueVariableVariable $variable variable
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabValueVariableVariable  $variable  variable
      * @return self
      */
     public function setVariable($variable)
@@ -342,8 +336,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cron_cmd
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabValueCmdCronCmd $cron_cmd cron_cmd
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabValueCmdCronCmd  $cron_cmd  cron_cmd
      * @return self
      */
     public function setCronCmd($cron_cmd)
@@ -355,12 +348,11 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -370,8 +362,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -383,10 +374,8 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -400,9 +389,7 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -411,15 +398,16 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -445,5 +433,3 @@ class UpdateCrontabValue implements ModelInterface, ArrayAccess, \JsonSerializab
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

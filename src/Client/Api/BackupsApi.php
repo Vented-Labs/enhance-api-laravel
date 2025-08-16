@@ -1,11 +1,13 @@
 <?php
+
 /**
  * BackupsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * BackupsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class BackupsApi
@@ -72,7 +74,7 @@ class BackupsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'backupWebsite' => [
             'application/json',
@@ -107,10 +109,7 @@ class BackupsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -118,16 +117,16 @@ class BackupsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -157,19 +156,20 @@ class BackupsApi
      *
      * Create a website backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $include_emails The boolean flag used to include emails in the backup. (optional, default to false)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null $backup_options backup_options (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $include_emails  The boolean flag used to include emails in the backup. (optional, default to false)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null  $backup_options  backup_options (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Backup
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Backup
      */
     public function backupWebsite($org_id, $website_id, $include_emails = false, $backup_options = null, string $contentType = self::contentTypes['backupWebsite'][0])
     {
-        list($response) = $this->backupWebsiteWithHttpInfo($org_id, $website_id, $include_emails, $backup_options, $contentType);
+        [$response] = $this->backupWebsiteWithHttpInfo($org_id, $website_id, $include_emails, $backup_options, $contentType);
+
         return $response;
     }
 
@@ -178,15 +178,15 @@ class BackupsApi
      *
      * Create a website backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $include_emails The boolean flag used to include emails in the backup. (optional, default to false)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null $backup_options (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $include_emails  The boolean flag used to include emails in the backup. (optional, default to false)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null  $backup_options  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Backup, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Backup, HTTP status code, HTTP response headers (array of strings)
      */
     public function backupWebsiteWithHttpInfo($org_id, $website_id, $include_emails = false, $backup_options = null, string $contentType = self::contentTypes['backupWebsite'][0])
     {
@@ -214,8 +214,7 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Backup',
@@ -223,8 +222,6 @@ class BackupsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -255,7 +252,6 @@ class BackupsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -266,14 +262,14 @@ class BackupsApi
      *
      * Create a website backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $include_emails The boolean flag used to include emails in the backup. (optional, default to false)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null $backup_options (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $include_emails  The boolean flag used to include emails in the backup. (optional, default to false)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null  $backup_options  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function backupWebsiteAsync($org_id, $website_id, $include_emails = false, $backup_options = null, string $contentType = self::contentTypes['backupWebsite'][0])
     {
@@ -290,14 +286,14 @@ class BackupsApi
      *
      * Create a website backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $include_emails The boolean flag used to include emails in the backup. (optional, default to false)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null $backup_options (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $include_emails  The boolean flag used to include emails in the backup. (optional, default to false)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null  $backup_options  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function backupWebsiteAsyncWithHttpInfo($org_id, $website_id, $include_emails = false, $backup_options = null, string $contentType = self::contentTypes['backupWebsite'][0])
     {
@@ -309,7 +305,7 @@ class BackupsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -320,7 +316,7 @@ class BackupsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -343,14 +339,14 @@ class BackupsApi
     /**
      * Create request for operation 'backupWebsite'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $include_emails The boolean flag used to include emails in the backup. (optional, default to false)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null $backup_options (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $include_emails  The boolean flag used to include emails in the backup. (optional, default to false)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupOptions|null  $backup_options  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['backupWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function backupWebsiteRequest($org_id, $website_id, $include_emails = false, $backup_options = null, string $contentType = self::contentTypes['backupWebsite'][0])
     {
@@ -369,9 +365,6 @@ class BackupsApi
             );
         }
 
-
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/backups';
         $formParams = [];
         $queryParams = [];
@@ -389,11 +382,10 @@ class BackupsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -401,15 +393,14 @@ class BackupsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -417,7 +408,7 @@ class BackupsApi
         // for model (json/xml)
         if (isset($backup_options)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($backup_options));
             } else {
                 $httpBody = $backup_options;
@@ -430,7 +421,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -438,7 +429,7 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -449,11 +440,11 @@ class BackupsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -469,9 +460,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -482,13 +474,13 @@ class BackupsApi
      *
      * Delete all backups for a website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteAllWebsiteBackups($server_id, $website_id, string $contentType = self::contentTypes['deleteAllWebsiteBackups'][0])
     {
@@ -500,13 +492,13 @@ class BackupsApi
      *
      * Delete all backups for a website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAllWebsiteBackupsWithHttpInfo($server_id, $website_id, string $contentType = self::contentTypes['deleteAllWebsiteBackups'][0])
     {
@@ -534,12 +526,10 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -550,12 +540,12 @@ class BackupsApi
      *
      * Delete all backups for a website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteAllWebsiteBackupsAsync($server_id, $website_id, string $contentType = self::contentTypes['deleteAllWebsiteBackups'][0])
     {
@@ -572,12 +562,12 @@ class BackupsApi
      *
      * Delete all backups for a website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteAllWebsiteBackupsAsyncWithHttpInfo($server_id, $website_id, string $contentType = self::contentTypes['deleteAllWebsiteBackups'][0])
     {
@@ -587,7 +577,7 @@ class BackupsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -610,12 +600,12 @@ class BackupsApi
     /**
      * Create request for operation 'deleteAllWebsiteBackups'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAllWebsiteBackups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAllWebsiteBackupsRequest($server_id, $website_id, string $contentType = self::contentTypes['deleteAllWebsiteBackups'][0])
     {
@@ -634,7 +624,6 @@ class BackupsApi
             );
         }
 
-
         $resourcePath = '/backups/{server_id}/{website_id}';
         $formParams = [];
         $queryParams = [];
@@ -642,12 +631,10 @@ class BackupsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -655,12 +642,11 @@ class BackupsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -677,7 +663,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -685,7 +671,7 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -696,11 +682,11 @@ class BackupsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -716,9 +702,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -729,15 +716,15 @@ class BackupsApi
      *
      * Delete a backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteBackup($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['deleteWebsiteBackup'][0])
     {
@@ -749,15 +736,15 @@ class BackupsApi
      *
      * Delete a backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteBackupWithHttpInfo($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['deleteWebsiteBackup'][0])
     {
@@ -785,12 +772,10 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -801,14 +786,14 @@ class BackupsApi
      *
      * Delete a backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteBackupAsync($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['deleteWebsiteBackup'][0])
     {
@@ -825,14 +810,14 @@ class BackupsApi
      *
      * Delete a backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteBackupAsyncWithHttpInfo($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['deleteWebsiteBackup'][0])
     {
@@ -842,7 +827,7 @@ class BackupsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -865,14 +850,14 @@ class BackupsApi
     /**
      * Create request for operation 'deleteWebsiteBackup'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteBackup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteBackupRequest($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['deleteWebsiteBackup'][0])
     {
@@ -898,8 +883,6 @@ class BackupsApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/backups/{backup_id}';
         $formParams = [];
         $queryParams = [];
@@ -917,11 +900,10 @@ class BackupsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -929,7 +911,7 @@ class BackupsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -937,12 +919,11 @@ class BackupsApi
         // path params
         if ($backup_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'backup_id' . '}',
+                '{'.'backup_id'.'}',
                 ObjectSerializer::toPathValue($backup_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -959,7 +940,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -967,7 +948,7 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -978,11 +959,11 @@ class BackupsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -998,9 +979,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1011,19 +993,20 @@ class BackupsApi
      *
      * Get detailed metadata of the website backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\BackupDetailed
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\BackupDetailed
      */
     public function getWebsiteBackup($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['getWebsiteBackup'][0])
     {
-        list($response) = $this->getWebsiteBackupWithHttpInfo($org_id, $website_id, $backup_id, $storage_kind, $contentType);
+        [$response] = $this->getWebsiteBackupWithHttpInfo($org_id, $website_id, $backup_id, $storage_kind, $contentType);
+
         return $response;
     }
 
@@ -1032,15 +1015,15 @@ class BackupsApi
      *
      * Get detailed metadata of the website backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\BackupDetailed, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\BackupDetailed, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteBackupWithHttpInfo($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['getWebsiteBackup'][0])
     {
@@ -1068,8 +1051,7 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\BackupDetailed',
@@ -1077,8 +1059,6 @@ class BackupsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1109,7 +1089,6 @@ class BackupsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1120,14 +1099,14 @@ class BackupsApi
      *
      * Get detailed metadata of the website backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteBackupAsync($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['getWebsiteBackup'][0])
     {
@@ -1144,14 +1123,14 @@ class BackupsApi
      *
      * Get detailed metadata of the website backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteBackupAsyncWithHttpInfo($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['getWebsiteBackup'][0])
     {
@@ -1163,7 +1142,7 @@ class BackupsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1174,7 +1153,7 @@ class BackupsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1197,14 +1176,14 @@ class BackupsApi
     /**
      * Create request for operation 'getWebsiteBackup'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteBackupRequest($org_id, $website_id, $backup_id, $storage_kind = null, string $contentType = self::contentTypes['getWebsiteBackup'][0])
     {
@@ -1230,8 +1209,6 @@ class BackupsApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/backups/{backup_id}';
         $formParams = [];
         $queryParams = [];
@@ -1249,11 +1226,10 @@ class BackupsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1261,7 +1237,7 @@ class BackupsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1269,15 +1245,14 @@ class BackupsApi
         // path params
         if ($backup_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'backup_id' . '}',
+                '{'.'backup_id'.'}',
                 ObjectSerializer::toPathValue($backup_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1291,7 +1266,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1299,7 +1274,7 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1310,11 +1285,11 @@ class BackupsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1330,9 +1305,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1343,17 +1319,18 @@ class BackupsApi
      *
      * Get all website backups metadata
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\BackupsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\BackupsFullListing
      */
     public function getWebsiteBackups($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackups'][0])
     {
-        list($response) = $this->getWebsiteBackupsWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteBackupsWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -1362,13 +1339,13 @@ class BackupsApi
      *
      * Get all website backups metadata
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\BackupsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\BackupsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteBackupsWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackups'][0])
     {
@@ -1396,8 +1373,7 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\BackupsFullListing',
@@ -1405,8 +1381,6 @@ class BackupsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1437,7 +1411,6 @@ class BackupsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1448,12 +1421,12 @@ class BackupsApi
      *
      * Get all website backups metadata
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteBackupsAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackups'][0])
     {
@@ -1470,12 +1443,12 @@ class BackupsApi
      *
      * Get all website backups metadata
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteBackupsAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackups'][0])
     {
@@ -1487,7 +1460,7 @@ class BackupsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1498,7 +1471,7 @@ class BackupsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1521,12 +1494,12 @@ class BackupsApi
     /**
      * Create request for operation 'getWebsiteBackups'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteBackupsRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackups'][0])
     {
@@ -1545,7 +1518,6 @@ class BackupsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/backups';
         $formParams = [];
         $queryParams = [];
@@ -1553,12 +1525,10 @@ class BackupsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1566,15 +1536,14 @@ class BackupsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1588,7 +1557,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1596,7 +1565,7 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1607,11 +1576,11 @@ class BackupsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1627,9 +1596,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1640,16 +1610,17 @@ class BackupsApi
      *
      * Get the log for an ongoing restore, will return 404 if the restore is already complete
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @return string[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string[]
      */
     public function getWebsiteRestoreLog($website_id, string $contentType = self::contentTypes['getWebsiteRestoreLog'][0])
     {
-        list($response) = $this->getWebsiteRestoreLogWithHttpInfo($website_id, $contentType);
+        [$response] = $this->getWebsiteRestoreLogWithHttpInfo($website_id, $contentType);
+
         return $response;
     }
 
@@ -1658,12 +1629,12 @@ class BackupsApi
      *
      * Get the log for an ongoing restore, will return 404 if the restore is already complete
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteRestoreLogWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteRestoreLog'][0])
     {
@@ -1691,8 +1662,7 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string[]',
@@ -1700,8 +1670,6 @@ class BackupsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1732,7 +1700,6 @@ class BackupsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1743,11 +1710,11 @@ class BackupsApi
      *
      * Get the log for an ongoing restore, will return 404 if the restore is already complete
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteRestoreLogAsync($website_id, string $contentType = self::contentTypes['getWebsiteRestoreLog'][0])
     {
@@ -1764,11 +1731,11 @@ class BackupsApi
      *
      * Get the log for an ongoing restore, will return 404 if the restore is already complete
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteRestoreLogAsyncWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteRestoreLog'][0])
     {
@@ -1780,7 +1747,7 @@ class BackupsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1791,7 +1758,7 @@ class BackupsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1814,11 +1781,11 @@ class BackupsApi
     /**
      * Create request for operation 'getWebsiteRestoreLog'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteRestoreLogRequest($website_id, string $contentType = self::contentTypes['getWebsiteRestoreLog'][0])
     {
@@ -1830,7 +1797,6 @@ class BackupsApi
             );
         }
 
-
         $resourcePath = '/backups/{website_id}/restore/log';
         $formParams = [];
         $queryParams = [];
@@ -1838,20 +1804,17 @@ class BackupsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1865,7 +1828,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1873,7 +1836,7 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1884,11 +1847,11 @@ class BackupsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1904,9 +1867,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1917,18 +1881,19 @@ class BackupsApi
      *
      * Get the last detailed metadata of the restored website backup.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\RestoreDetailed
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\RestoreDetailed
      */
     public function getWebsiteRestoreStatus($org_id, $website_id, $backup_id, string $contentType = self::contentTypes['getWebsiteRestoreStatus'][0])
     {
-        list($response) = $this->getWebsiteRestoreStatusWithHttpInfo($org_id, $website_id, $backup_id, $contentType);
+        [$response] = $this->getWebsiteRestoreStatusWithHttpInfo($org_id, $website_id, $backup_id, $contentType);
+
         return $response;
     }
 
@@ -1937,14 +1902,14 @@ class BackupsApi
      *
      * Get the last detailed metadata of the restored website backup.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\RestoreDetailed, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\RestoreDetailed, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteRestoreStatusWithHttpInfo($org_id, $website_id, $backup_id, string $contentType = self::contentTypes['getWebsiteRestoreStatus'][0])
     {
@@ -1972,8 +1937,7 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\RestoreDetailed',
@@ -1981,8 +1945,6 @@ class BackupsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2013,7 +1975,6 @@ class BackupsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2024,13 +1985,13 @@ class BackupsApi
      *
      * Get the last detailed metadata of the restored website backup.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteRestoreStatusAsync($org_id, $website_id, $backup_id, string $contentType = self::contentTypes['getWebsiteRestoreStatus'][0])
     {
@@ -2047,13 +2008,13 @@ class BackupsApi
      *
      * Get the last detailed metadata of the restored website backup.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteRestoreStatusAsyncWithHttpInfo($org_id, $website_id, $backup_id, string $contentType = self::contentTypes['getWebsiteRestoreStatus'][0])
     {
@@ -2065,7 +2026,7 @@ class BackupsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2076,7 +2037,7 @@ class BackupsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2099,13 +2060,13 @@ class BackupsApi
     /**
      * Create request for operation 'getWebsiteRestoreStatus'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRestoreStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteRestoreStatusRequest($org_id, $website_id, $backup_id, string $contentType = self::contentTypes['getWebsiteRestoreStatus'][0])
     {
@@ -2131,7 +2092,6 @@ class BackupsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/backups/{backup_id}/restore_status';
         $formParams = [];
         $queryParams = [];
@@ -2139,12 +2099,10 @@ class BackupsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2152,7 +2110,7 @@ class BackupsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -2160,15 +2118,14 @@ class BackupsApi
         // path params
         if ($backup_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'backup_id' . '}',
+                '{'.'backup_id'.'}',
                 ObjectSerializer::toPathValue($backup_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2182,7 +2139,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2190,14 +2147,13 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2212,9 +2168,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2225,16 +2182,17 @@ class BackupsApi
      *
      * List global website backups across all backup servers, by backup server ID
      *
-     * @param  bool|null $show_existing Show global backups belonging to websites that already exist on the cluster (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @param  bool|null  $show_existing  Show global backups belonging to websites that already exist on the cluster (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @return array<string,\Vented\EnhanceApiLaravel\Client\Model\GlobalWebsiteBackup[]>
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array<string,\Vented\EnhanceApiLaravel\Client\Model\GlobalWebsiteBackup[]>
      */
     public function listGlobalBackups($show_existing = null, string $contentType = self::contentTypes['listGlobalBackups'][0])
     {
-        list($response) = $this->listGlobalBackupsWithHttpInfo($show_existing, $contentType);
+        [$response] = $this->listGlobalBackupsWithHttpInfo($show_existing, $contentType);
+
         return $response;
     }
 
@@ -2243,12 +2201,12 @@ class BackupsApi
      *
      * List global website backups across all backup servers, by backup server ID
      *
-     * @param  bool|null $show_existing Show global backups belonging to websites that already exist on the cluster (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @param  bool|null  $show_existing  Show global backups belonging to websites that already exist on the cluster (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @return array of array<string,\Vented\EnhanceApiLaravel\Client\Model\GlobalWebsiteBackup[]>, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of array<string,\Vented\EnhanceApiLaravel\Client\Model\GlobalWebsiteBackup[]>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listGlobalBackupsWithHttpInfo($show_existing = null, string $contentType = self::contentTypes['listGlobalBackups'][0])
     {
@@ -2276,8 +2234,7 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'array<string,\Vented\EnhanceApiLaravel\Client\Model\GlobalWebsiteBackup[]>',
@@ -2285,8 +2242,6 @@ class BackupsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2317,7 +2272,6 @@ class BackupsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2328,11 +2282,11 @@ class BackupsApi
      *
      * List global website backups across all backup servers, by backup server ID
      *
-     * @param  bool|null $show_existing Show global backups belonging to websites that already exist on the cluster (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @param  bool|null  $show_existing  Show global backups belonging to websites that already exist on the cluster (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function listGlobalBackupsAsync($show_existing = null, string $contentType = self::contentTypes['listGlobalBackups'][0])
     {
@@ -2349,11 +2303,11 @@ class BackupsApi
      *
      * List global website backups across all backup servers, by backup server ID
      *
-     * @param  bool|null $show_existing Show global backups belonging to websites that already exist on the cluster (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @param  bool|null  $show_existing  Show global backups belonging to websites that already exist on the cluster (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function listGlobalBackupsAsyncWithHttpInfo($show_existing = null, string $contentType = self::contentTypes['listGlobalBackups'][0])
     {
@@ -2365,7 +2319,7 @@ class BackupsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2376,7 +2330,7 @@ class BackupsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2399,16 +2353,14 @@ class BackupsApi
     /**
      * Create request for operation 'listGlobalBackups'
      *
-     * @param  bool|null $show_existing Show global backups belonging to websites that already exist on the cluster (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @param  bool|null  $show_existing  Show global backups belonging to websites that already exist on the cluster (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listGlobalBackups'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function listGlobalBackupsRequest($show_existing = null, string $contentType = self::contentTypes['listGlobalBackups'][0])
     {
-
-
 
         $resourcePath = '/backups';
         $formParams = [];
@@ -2427,11 +2379,8 @@ class BackupsApi
             false // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2445,7 +2394,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2453,7 +2402,7 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2464,11 +2413,11 @@ class BackupsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2484,9 +2433,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2497,17 +2447,18 @@ class BackupsApi
      *
      * Restore a backup of a hard deleted website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function restoreHardDeletedBackup($server_id, $website_id, string $contentType = self::contentTypes['restoreHardDeletedBackup'][0])
     {
-        list($response) = $this->restoreHardDeletedBackupWithHttpInfo($server_id, $website_id, $contentType);
+        [$response] = $this->restoreHardDeletedBackupWithHttpInfo($server_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -2516,13 +2467,13 @@ class BackupsApi
      *
      * Restore a backup of a hard deleted website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function restoreHardDeletedBackupWithHttpInfo($server_id, $website_id, string $contentType = self::contentTypes['restoreHardDeletedBackup'][0])
     {
@@ -2550,8 +2501,7 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -2559,8 +2509,6 @@ class BackupsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2591,7 +2539,6 @@ class BackupsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2602,12 +2549,12 @@ class BackupsApi
      *
      * Restore a backup of a hard deleted website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function restoreHardDeletedBackupAsync($server_id, $website_id, string $contentType = self::contentTypes['restoreHardDeletedBackup'][0])
     {
@@ -2624,12 +2571,12 @@ class BackupsApi
      *
      * Restore a backup of a hard deleted website
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function restoreHardDeletedBackupAsyncWithHttpInfo($server_id, $website_id, string $contentType = self::contentTypes['restoreHardDeletedBackup'][0])
     {
@@ -2641,7 +2588,7 @@ class BackupsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2652,7 +2599,7 @@ class BackupsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2675,12 +2622,12 @@ class BackupsApi
     /**
      * Create request for operation 'restoreHardDeletedBackup'
      *
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreHardDeletedBackup'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function restoreHardDeletedBackupRequest($server_id, $website_id, string $contentType = self::contentTypes['restoreHardDeletedBackup'][0])
     {
@@ -2699,7 +2646,6 @@ class BackupsApi
             );
         }
 
-
         $resourcePath = '/backups/{server_id}/{website_id}';
         $formParams = [];
         $queryParams = [];
@@ -2707,12 +2653,10 @@ class BackupsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -2720,15 +2664,14 @@ class BackupsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2742,7 +2685,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2750,7 +2693,7 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2761,11 +2704,11 @@ class BackupsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2781,9 +2724,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2794,16 +2738,16 @@ class BackupsApi
      *
      * Restore website from a backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null $backup_restore_options The options used to define what will be restored from the backup snapshot. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null  $backup_restore_options  The options used to define what will be restored from the backup snapshot. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function restoreWebsite($org_id, $website_id, $backup_id, $storage_kind = null, $backup_restore_options = null, string $contentType = self::contentTypes['restoreWebsite'][0])
     {
@@ -2815,16 +2759,16 @@ class BackupsApi
      *
      * Restore website from a backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null $backup_restore_options The options used to define what will be restored from the backup snapshot. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null  $backup_restore_options  The options used to define what will be restored from the backup snapshot. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function restoreWebsiteWithHttpInfo($org_id, $website_id, $backup_id, $storage_kind = null, $backup_restore_options = null, string $contentType = self::contentTypes['restoreWebsite'][0])
     {
@@ -2852,12 +2796,10 @@ class BackupsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2868,15 +2810,15 @@ class BackupsApi
      *
      * Restore website from a backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null $backup_restore_options The options used to define what will be restored from the backup snapshot. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null  $backup_restore_options  The options used to define what will be restored from the backup snapshot. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function restoreWebsiteAsync($org_id, $website_id, $backup_id, $storage_kind = null, $backup_restore_options = null, string $contentType = self::contentTypes['restoreWebsite'][0])
     {
@@ -2893,15 +2835,15 @@ class BackupsApi
      *
      * Restore website from a backup
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null $backup_restore_options The options used to define what will be restored from the backup snapshot. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null  $backup_restore_options  The options used to define what will be restored from the backup snapshot. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function restoreWebsiteAsyncWithHttpInfo($org_id, $website_id, $backup_id, $storage_kind = null, $backup_restore_options = null, string $contentType = self::contentTypes['restoreWebsite'][0])
     {
@@ -2911,7 +2853,7 @@ class BackupsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2934,15 +2876,15 @@ class BackupsApi
     /**
      * Create request for operation 'restoreWebsite'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  int $backup_id The id of the backup. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null $storage_kind The storage kind of the requested backup. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null $backup_restore_options The options used to define what will be restored from the backup snapshot. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  int  $backup_id  The id of the backup. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind|null  $storage_kind  The storage kind of the requested backup. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupRestoreOptions|null  $backup_restore_options  The options used to define what will be restored from the backup snapshot. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restoreWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function restoreWebsiteRequest($org_id, $website_id, $backup_id, $storage_kind = null, $backup_restore_options = null, string $contentType = self::contentTypes['restoreWebsite'][0])
     {
@@ -2968,9 +2910,6 @@ class BackupsApi
             );
         }
 
-
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/backups/{backup_id}';
         $formParams = [];
         $queryParams = [];
@@ -2988,11 +2927,10 @@ class BackupsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3000,7 +2938,7 @@ class BackupsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3008,12 +2946,11 @@ class BackupsApi
         // path params
         if ($backup_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'backup_id' . '}',
+                '{'.'backup_id'.'}',
                 ObjectSerializer::toPathValue($backup_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3024,7 +2961,7 @@ class BackupsApi
         // for model (json/xml)
         if (isset($backup_restore_options)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($backup_restore_options));
             } else {
                 $httpBody = $backup_restore_options;
@@ -3037,7 +2974,7 @@ class BackupsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3045,7 +2982,7 @@ class BackupsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3056,11 +2993,11 @@ class BackupsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3076,9 +3013,10 @@ class BackupsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3087,16 +3025,17 @@ class BackupsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -3109,7 +3048,7 @@ class BackupsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -3132,7 +3071,7 @@ class BackupsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

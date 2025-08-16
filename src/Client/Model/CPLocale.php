@@ -1,12 +1,14 @@
 <?php
+
 /**
  * CPLocale
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * CPLocale Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class CPLocale
@@ -512,6 +514,7 @@ class CPLocale
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -750,9 +753,7 @@ class CPLocale
             self::ZH_SG,
             self::ZH_TW,
             self::ZU,
-            self::ZU_ZA
+            self::ZU_ZA,
         ];
     }
 }
-
-

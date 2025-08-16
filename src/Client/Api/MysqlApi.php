@@ -1,11 +1,13 @@
 <?php
+
 /**
  * MysqlApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -46,8 +48,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * MysqlApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class MysqlApi
@@ -72,7 +75,7 @@ class MysqlApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createWebsiteMySQLDB' => [
             'application/json',
@@ -116,10 +119,7 @@ class MysqlApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -127,16 +127,16 @@ class MysqlApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -166,14 +166,14 @@ class MysqlApi
      *
      * Create a MySQL database for website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createWebsiteMySQLDB($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -185,14 +185,14 @@ class MysqlApi
      *
      * Create a MySQL database for website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteMySQLDBWithHttpInfo($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -220,12 +220,10 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -236,13 +234,13 @@ class MysqlApi
      *
      * Create a MySQL database for website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMySQLDBAsync($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -259,13 +257,13 @@ class MysqlApi
      *
      * Create a MySQL database for website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMySQLDBAsyncWithHttpInfo($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -275,7 +273,7 @@ class MysqlApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -298,13 +296,13 @@ class MysqlApi
     /**
      * Create request for operation 'createWebsiteMySQLDB'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteMySQLDBRequest($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -330,7 +328,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-dbs';
         $formParams = [];
         $queryParams = [];
@@ -338,12 +335,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -351,12 +346,11 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -367,7 +361,7 @@ class MysqlApi
         // for model (json/xml)
         if (isset($new_my_sqldb)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_my_sqldb));
             } else {
                 $httpBody = $new_my_sqldb;
@@ -380,7 +374,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -388,14 +382,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -410,9 +403,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -423,14 +417,14 @@ class MysqlApi
      *
      * Create website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser $new_my_sql_user New user details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser  $new_my_sql_user  New user details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createWebsiteMySQLUser($org_id, $website_id, $new_my_sql_user, string $contentType = self::contentTypes['createWebsiteMySQLUser'][0])
     {
@@ -442,14 +436,14 @@ class MysqlApi
      *
      * Create website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser $new_my_sql_user New user details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser  $new_my_sql_user  New user details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteMySQLUserWithHttpInfo($org_id, $website_id, $new_my_sql_user, string $contentType = self::contentTypes['createWebsiteMySQLUser'][0])
     {
@@ -477,12 +471,10 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -493,13 +485,13 @@ class MysqlApi
      *
      * Create website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser $new_my_sql_user New user details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser  $new_my_sql_user  New user details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMySQLUserAsync($org_id, $website_id, $new_my_sql_user, string $contentType = self::contentTypes['createWebsiteMySQLUser'][0])
     {
@@ -516,13 +508,13 @@ class MysqlApi
      *
      * Create website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser $new_my_sql_user New user details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser  $new_my_sql_user  New user details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMySQLUserAsyncWithHttpInfo($org_id, $website_id, $new_my_sql_user, string $contentType = self::contentTypes['createWebsiteMySQLUser'][0])
     {
@@ -532,7 +524,7 @@ class MysqlApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -555,13 +547,13 @@ class MysqlApi
     /**
      * Create request for operation 'createWebsiteMySQLUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser $new_my_sql_user New user details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLUser  $new_my_sql_user  New user details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteMySQLUserRequest($org_id, $website_id, $new_my_sql_user, string $contentType = self::contentTypes['createWebsiteMySQLUser'][0])
     {
@@ -587,7 +579,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-users';
         $formParams = [];
         $queryParams = [];
@@ -595,12 +586,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -608,12 +597,11 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -624,7 +612,7 @@ class MysqlApi
         // for model (json/xml)
         if (isset($new_my_sql_user)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_my_sql_user));
             } else {
                 $httpBody = $new_my_sql_user;
@@ -637,7 +625,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -645,14 +633,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -667,9 +654,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -680,15 +668,15 @@ class MysqlApi
      *
      * Create website MySQL database user access hosts
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createWebsiteMySQLUserAccessHosts($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['createWebsiteMySQLUserAccessHosts'][0])
     {
@@ -700,15 +688,15 @@ class MysqlApi
      *
      * Create website MySQL database user access hosts
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteMySQLUserAccessHostsWithHttpInfo($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['createWebsiteMySQLUserAccessHosts'][0])
     {
@@ -736,12 +724,10 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -752,14 +738,14 @@ class MysqlApi
      *
      * Create website MySQL database user access hosts
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMySQLUserAccessHostsAsync($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['createWebsiteMySQLUserAccessHosts'][0])
     {
@@ -776,14 +762,14 @@ class MysqlApi
      *
      * Create website MySQL database user access hosts
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMySQLUserAccessHostsAsyncWithHttpInfo($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['createWebsiteMySQLUserAccessHosts'][0])
     {
@@ -793,7 +779,7 @@ class MysqlApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -816,14 +802,14 @@ class MysqlApi
     /**
      * Create request for operation 'createWebsiteMySQLUserAccessHosts'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteMySQLUserAccessHostsRequest($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['createWebsiteMySQLUserAccessHosts'][0])
     {
@@ -856,7 +842,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-users/{username}/access-hosts';
         $formParams = [];
         $queryParams = [];
@@ -864,12 +849,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -877,7 +860,7 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -885,12 +868,11 @@ class MysqlApi
         // path params
         if ($username !== null) {
             $resourcePath = str_replace(
-                '{' . 'username' . '}',
+                '{'.'username'.'}',
                 ObjectSerializer::toPathValue($username),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -901,7 +883,7 @@ class MysqlApi
         // for model (json/xml)
         if (isset($my_sql_user_access_hosts)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($my_sql_user_access_hosts));
             } else {
                 $httpBody = $my_sql_user_access_hosts;
@@ -914,7 +896,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -922,14 +904,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -944,9 +925,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -957,14 +939,14 @@ class MysqlApi
      *
      * Delete website MySQL database
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteMySQLDB($org_id, $website_id, $db_name, string $contentType = self::contentTypes['deleteWebsiteMySQLDB'][0])
     {
@@ -976,14 +958,14 @@ class MysqlApi
      *
      * Delete website MySQL database
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteMySQLDBWithHttpInfo($org_id, $website_id, $db_name, string $contentType = self::contentTypes['deleteWebsiteMySQLDB'][0])
     {
@@ -1011,12 +993,10 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1027,13 +1007,13 @@ class MysqlApi
      *
      * Delete website MySQL database
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteMySQLDBAsync($org_id, $website_id, $db_name, string $contentType = self::contentTypes['deleteWebsiteMySQLDB'][0])
     {
@@ -1050,13 +1030,13 @@ class MysqlApi
      *
      * Delete website MySQL database
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteMySQLDBAsyncWithHttpInfo($org_id, $website_id, $db_name, string $contentType = self::contentTypes['deleteWebsiteMySQLDB'][0])
     {
@@ -1066,7 +1046,7 @@ class MysqlApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1089,13 +1069,13 @@ class MysqlApi
     /**
      * Create request for operation 'deleteWebsiteMySQLDB'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLDB'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteMySQLDBRequest($org_id, $website_id, $db_name, string $contentType = self::contentTypes['deleteWebsiteMySQLDB'][0])
     {
@@ -1121,7 +1101,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-dbs/{db_name}';
         $formParams = [];
         $queryParams = [];
@@ -1129,12 +1108,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1142,7 +1119,7 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1150,12 +1127,11 @@ class MysqlApi
         // path params
         if ($db_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'db_name' . '}',
+                '{'.'db_name'.'}',
                 ObjectSerializer::toPathValue($db_name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1172,7 +1148,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1180,14 +1156,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1202,9 +1177,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1215,14 +1191,14 @@ class MysqlApi
      *
      * Delete website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteMySQLUser($org_id, $website_id, $username, string $contentType = self::contentTypes['deleteWebsiteMySQLUser'][0])
     {
@@ -1234,14 +1210,14 @@ class MysqlApi
      *
      * Delete website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteMySQLUserWithHttpInfo($org_id, $website_id, $username, string $contentType = self::contentTypes['deleteWebsiteMySQLUser'][0])
     {
@@ -1269,12 +1245,10 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1285,13 +1259,13 @@ class MysqlApi
      *
      * Delete website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteMySQLUserAsync($org_id, $website_id, $username, string $contentType = self::contentTypes['deleteWebsiteMySQLUser'][0])
     {
@@ -1308,13 +1282,13 @@ class MysqlApi
      *
      * Delete website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteMySQLUserAsyncWithHttpInfo($org_id, $website_id, $username, string $contentType = self::contentTypes['deleteWebsiteMySQLUser'][0])
     {
@@ -1324,7 +1298,7 @@ class MysqlApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1347,13 +1321,13 @@ class MysqlApi
     /**
      * Create request for operation 'deleteWebsiteMySQLUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteMySQLUserRequest($org_id, $website_id, $username, string $contentType = self::contentTypes['deleteWebsiteMySQLUser'][0])
     {
@@ -1379,7 +1353,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-users/{username}';
         $formParams = [];
         $queryParams = [];
@@ -1387,12 +1360,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1400,7 +1371,7 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1408,12 +1379,11 @@ class MysqlApi
         // path params
         if ($username !== null) {
             $resourcePath = str_replace(
-                '{' . 'username' . '}',
+                '{'.'username'.'}',
                 ObjectSerializer::toPathValue($username),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1430,7 +1400,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1438,14 +1408,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1460,9 +1429,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1473,15 +1443,15 @@ class MysqlApi
      *
      * Delete website MySQL database user access hosts
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteMySQLUserAccessHosts($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['deleteWebsiteMySQLUserAccessHosts'][0])
     {
@@ -1493,15 +1463,15 @@ class MysqlApi
      *
      * Delete website MySQL database user access hosts
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteMySQLUserAccessHostsWithHttpInfo($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['deleteWebsiteMySQLUserAccessHosts'][0])
     {
@@ -1529,12 +1499,10 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1545,14 +1513,14 @@ class MysqlApi
      *
      * Delete website MySQL database user access hosts
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteMySQLUserAccessHostsAsync($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['deleteWebsiteMySQLUserAccessHosts'][0])
     {
@@ -1569,14 +1537,14 @@ class MysqlApi
      *
      * Delete website MySQL database user access hosts
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteMySQLUserAccessHostsAsyncWithHttpInfo($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['deleteWebsiteMySQLUserAccessHosts'][0])
     {
@@ -1586,7 +1554,7 @@ class MysqlApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1609,14 +1577,14 @@ class MysqlApi
     /**
      * Create request for operation 'deleteWebsiteMySQLUserAccessHosts'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts $my_sql_user_access_hosts User access hosts. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserAccessHosts  $my_sql_user_access_hosts  User access hosts. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteMySQLUserAccessHosts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteMySQLUserAccessHostsRequest($org_id, $website_id, $username, $my_sql_user_access_hosts, string $contentType = self::contentTypes['deleteWebsiteMySQLUserAccessHosts'][0])
     {
@@ -1649,7 +1617,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-users/{username}/access-hosts';
         $formParams = [];
         $queryParams = [];
@@ -1657,12 +1624,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1670,7 +1635,7 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1678,12 +1643,11 @@ class MysqlApi
         // path params
         if ($username !== null) {
             $resourcePath = str_replace(
-                '{' . 'username' . '}',
+                '{'.'username'.'}',
                 ObjectSerializer::toPathValue($username),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1694,7 +1658,7 @@ class MysqlApi
         // for model (json/xml)
         if (isset($my_sql_user_access_hosts)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($my_sql_user_access_hosts));
             } else {
                 $httpBody = $my_sql_user_access_hosts;
@@ -1707,7 +1671,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1715,14 +1679,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1737,9 +1700,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1750,18 +1714,19 @@ class MysqlApi
      *
      * Takes a backup of given database and returns it gziped
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function downloadSql($org_id, $website_id, $db_name, string $contentType = self::contentTypes['downloadSql'][0])
     {
-        list($response) = $this->downloadSqlWithHttpInfo($org_id, $website_id, $db_name, $contentType);
+        [$response] = $this->downloadSqlWithHttpInfo($org_id, $website_id, $db_name, $contentType);
+
         return $response;
     }
 
@@ -1770,14 +1735,14 @@ class MysqlApi
      *
      * Takes a backup of given database and returns it gziped
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function downloadSqlWithHttpInfo($org_id, $website_id, $db_name, string $contentType = self::contentTypes['downloadSql'][0])
     {
@@ -1805,8 +1770,7 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -1814,8 +1778,6 @@ class MysqlApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1846,7 +1808,6 @@ class MysqlApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1857,13 +1818,13 @@ class MysqlApi
      *
      * Takes a backup of given database and returns it gziped
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function downloadSqlAsync($org_id, $website_id, $db_name, string $contentType = self::contentTypes['downloadSql'][0])
     {
@@ -1880,13 +1841,13 @@ class MysqlApi
      *
      * Takes a backup of given database and returns it gziped
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function downloadSqlAsyncWithHttpInfo($org_id, $website_id, $db_name, string $contentType = self::contentTypes['downloadSql'][0])
     {
@@ -1898,7 +1859,7 @@ class MysqlApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1909,7 +1870,7 @@ class MysqlApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1932,13 +1893,13 @@ class MysqlApi
     /**
      * Create request for operation 'downloadSql'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['downloadSql'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function downloadSqlRequest($org_id, $website_id, $db_name, string $contentType = self::contentTypes['downloadSql'][0])
     {
@@ -1964,7 +1925,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-dbs/{db_name}/sql';
         $formParams = [];
         $queryParams = [];
@@ -1972,12 +1932,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1985,7 +1943,7 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1993,15 +1951,14 @@ class MysqlApi
         // path params
         if ($db_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'db_name' . '}',
+                '{'.'db_name'.'}',
                 ObjectSerializer::toPathValue($db_name),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2015,7 +1972,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2023,7 +1980,7 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2034,11 +1991,11 @@ class MysqlApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2054,9 +2011,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2067,19 +2025,20 @@ class MysqlApi
      *
      * Get phpMyAdmin SSO URL
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getPhpMyAdminSSOUrl($org_id, $website_id, $db_name, $should_redirect = null, string $contentType = self::contentTypes['getPhpMyAdminSSOUrl'][0])
     {
-        list($response) = $this->getPhpMyAdminSSOUrlWithHttpInfo($org_id, $website_id, $db_name, $should_redirect, $contentType);
+        [$response] = $this->getPhpMyAdminSSOUrlWithHttpInfo($org_id, $website_id, $db_name, $should_redirect, $contentType);
+
         return $response;
     }
 
@@ -2088,15 +2047,15 @@ class MysqlApi
      *
      * Get phpMyAdmin SSO URL
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPhpMyAdminSSOUrlWithHttpInfo($org_id, $website_id, $db_name, $should_redirect = null, string $contentType = self::contentTypes['getPhpMyAdminSSOUrl'][0])
     {
@@ -2124,8 +2083,7 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -2133,8 +2091,6 @@ class MysqlApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2165,7 +2121,6 @@ class MysqlApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2176,14 +2131,14 @@ class MysqlApi
      *
      * Get phpMyAdmin SSO URL
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPhpMyAdminSSOUrlAsync($org_id, $website_id, $db_name, $should_redirect = null, string $contentType = self::contentTypes['getPhpMyAdminSSOUrl'][0])
     {
@@ -2200,14 +2155,14 @@ class MysqlApi
      *
      * Get phpMyAdmin SSO URL
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPhpMyAdminSSOUrlAsyncWithHttpInfo($org_id, $website_id, $db_name, $should_redirect = null, string $contentType = self::contentTypes['getPhpMyAdminSSOUrl'][0])
     {
@@ -2219,7 +2174,7 @@ class MysqlApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2230,7 +2185,7 @@ class MysqlApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2253,14 +2208,14 @@ class MysqlApi
     /**
      * Create request for operation 'getPhpMyAdminSSOUrl'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  bool|null $should_redirect If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  bool|null  $should_redirect  If set to true, the endpoint will send a 307 redirect to the SSO URL. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPhpMyAdminSSOUrl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getPhpMyAdminSSOUrlRequest($org_id, $website_id, $db_name, $should_redirect = null, string $contentType = self::contentTypes['getPhpMyAdminSSOUrl'][0])
     {
@@ -2286,8 +2241,6 @@ class MysqlApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-dbs/{db_name}/sso';
         $formParams = [];
         $queryParams = [];
@@ -2305,11 +2258,10 @@ class MysqlApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2317,7 +2269,7 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -2325,15 +2277,14 @@ class MysqlApi
         // path params
         if ($db_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'db_name' . '}',
+                '{'.'db_name'.'}',
                 ObjectSerializer::toPathValue($db_name),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2347,7 +2298,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2355,14 +2306,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2377,9 +2327,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2390,17 +2341,18 @@ class MysqlApi
      *
      * Get website MySQL databases
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing
      */
     public function getWebsiteMySQLDBs($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
-        list($response) = $this->getWebsiteMySQLDBsWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteMySQLDBsWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -2409,13 +2361,13 @@ class MysqlApi
      *
      * Get website MySQL databases
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteMySQLDBsWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
@@ -2443,8 +2395,7 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing',
@@ -2452,8 +2403,6 @@ class MysqlApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2484,7 +2433,6 @@ class MysqlApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2495,12 +2443,12 @@ class MysqlApi
      *
      * Get website MySQL databases
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMySQLDBsAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
@@ -2517,12 +2465,12 @@ class MysqlApi
      *
      * Get website MySQL databases
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMySQLDBsAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
@@ -2534,7 +2482,7 @@ class MysqlApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2545,7 +2493,7 @@ class MysqlApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2568,12 +2516,12 @@ class MysqlApi
     /**
      * Create request for operation 'getWebsiteMySQLDBs'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteMySQLDBsRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
@@ -2592,7 +2540,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-dbs';
         $formParams = [];
         $queryParams = [];
@@ -2600,12 +2547,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2613,15 +2558,14 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2635,7 +2579,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2643,14 +2587,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2665,9 +2608,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2678,17 +2622,18 @@ class MysqlApi
      *
      * Get website MySQL database users
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MySQLUsersFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MySQLUsersFullListing
      */
     public function getWebsiteMySQLUsers($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLUsers'][0])
     {
-        list($response) = $this->getWebsiteMySQLUsersWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteMySQLUsersWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -2697,13 +2642,13 @@ class MysqlApi
      *
      * Get website MySQL database users
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MySQLUsersFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MySQLUsersFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteMySQLUsersWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLUsers'][0])
     {
@@ -2731,8 +2676,7 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MySQLUsersFullListing',
@@ -2740,8 +2684,6 @@ class MysqlApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2772,7 +2714,6 @@ class MysqlApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2783,12 +2724,12 @@ class MysqlApi
      *
      * Get website MySQL database users
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMySQLUsersAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLUsers'][0])
     {
@@ -2805,12 +2746,12 @@ class MysqlApi
      *
      * Get website MySQL database users
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMySQLUsersAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLUsers'][0])
     {
@@ -2822,7 +2763,7 @@ class MysqlApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2833,7 +2774,7 @@ class MysqlApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2856,12 +2797,12 @@ class MysqlApi
     /**
      * Create request for operation 'getWebsiteMySQLUsers'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteMySQLUsersRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLUsers'][0])
     {
@@ -2880,7 +2821,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-users';
         $formParams = [];
         $queryParams = [];
@@ -2888,12 +2828,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2901,15 +2839,14 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2923,7 +2860,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2931,14 +2868,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2953,9 +2889,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2966,15 +2903,15 @@ class MysqlApi
      *
      * Create website MySQL database user privileges
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants $my_sql_user_grants User privilege grants. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants  $my_sql_user_grants  User privilege grants. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteMySQLUserPrivileges($org_id, $website_id, $username, $my_sql_user_grants, string $contentType = self::contentTypes['setWebsiteMySQLUserPrivileges'][0])
     {
@@ -2986,15 +2923,15 @@ class MysqlApi
      *
      * Create website MySQL database user privileges
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants $my_sql_user_grants User privilege grants. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants  $my_sql_user_grants  User privilege grants. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteMySQLUserPrivilegesWithHttpInfo($org_id, $website_id, $username, $my_sql_user_grants, string $contentType = self::contentTypes['setWebsiteMySQLUserPrivileges'][0])
     {
@@ -3022,12 +2959,10 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3038,14 +2973,14 @@ class MysqlApi
      *
      * Create website MySQL database user privileges
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants $my_sql_user_grants User privilege grants. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants  $my_sql_user_grants  User privilege grants. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteMySQLUserPrivilegesAsync($org_id, $website_id, $username, $my_sql_user_grants, string $contentType = self::contentTypes['setWebsiteMySQLUserPrivileges'][0])
     {
@@ -3062,14 +2997,14 @@ class MysqlApi
      *
      * Create website MySQL database user privileges
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants $my_sql_user_grants User privilege grants. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants  $my_sql_user_grants  User privilege grants. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteMySQLUserPrivilegesAsyncWithHttpInfo($org_id, $website_id, $username, $my_sql_user_grants, string $contentType = self::contentTypes['setWebsiteMySQLUserPrivileges'][0])
     {
@@ -3079,7 +3014,7 @@ class MysqlApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3102,14 +3037,14 @@ class MysqlApi
     /**
      * Create request for operation 'setWebsiteMySQLUserPrivileges'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants $my_sql_user_grants User privilege grants. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserGrants  $my_sql_user_grants  User privilege grants. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteMySQLUserPrivileges'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteMySQLUserPrivilegesRequest($org_id, $website_id, $username, $my_sql_user_grants, string $contentType = self::contentTypes['setWebsiteMySQLUserPrivileges'][0])
     {
@@ -3142,7 +3077,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-users/{username}/privileges';
         $formParams = [];
         $queryParams = [];
@@ -3150,12 +3084,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3163,7 +3095,7 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3171,12 +3103,11 @@ class MysqlApi
         // path params
         if ($username !== null) {
             $resourcePath = str_replace(
-                '{' . 'username' . '}',
+                '{'.'username'.'}',
                 ObjectSerializer::toPathValue($username),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3187,7 +3118,7 @@ class MysqlApi
         // for model (json/xml)
         if (isset($my_sql_user_grants)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($my_sql_user_grants));
             } else {
                 $httpBody = $my_sql_user_grants;
@@ -3200,7 +3131,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3208,14 +3139,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3230,9 +3160,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3243,15 +3174,15 @@ class MysqlApi
      *
      * Update website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate $my_sql_user_update User update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate  $my_sql_user_update  User update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsiteMySQLUser($org_id, $website_id, $username, $my_sql_user_update, string $contentType = self::contentTypes['updateWebsiteMySQLUser'][0])
     {
@@ -3263,15 +3194,15 @@ class MysqlApi
      *
      * Update website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate $my_sql_user_update User update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate  $my_sql_user_update  User update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsiteMySQLUserWithHttpInfo($org_id, $website_id, $username, $my_sql_user_update, string $contentType = self::contentTypes['updateWebsiteMySQLUser'][0])
     {
@@ -3299,12 +3230,10 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3315,14 +3244,14 @@ class MysqlApi
      *
      * Update website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate $my_sql_user_update User update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate  $my_sql_user_update  User update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteMySQLUserAsync($org_id, $website_id, $username, $my_sql_user_update, string $contentType = self::contentTypes['updateWebsiteMySQLUser'][0])
     {
@@ -3339,14 +3268,14 @@ class MysqlApi
      *
      * Update website MySQL database user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate $my_sql_user_update User update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate  $my_sql_user_update  User update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteMySQLUserAsyncWithHttpInfo($org_id, $website_id, $username, $my_sql_user_update, string $contentType = self::contentTypes['updateWebsiteMySQLUser'][0])
     {
@@ -3356,7 +3285,7 @@ class MysqlApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3379,14 +3308,14 @@ class MysqlApi
     /**
      * Create request for operation 'updateWebsiteMySQLUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username The user of the database user. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate $my_sql_user_update User update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  The user of the database user. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MySQLUserUpdate  $my_sql_user_update  User update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteMySQLUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsiteMySQLUserRequest($org_id, $website_id, $username, $my_sql_user_update, string $contentType = self::contentTypes['updateWebsiteMySQLUser'][0])
     {
@@ -3419,7 +3348,6 @@ class MysqlApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-users/{username}';
         $formParams = [];
         $queryParams = [];
@@ -3427,12 +3355,10 @@ class MysqlApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3440,7 +3366,7 @@ class MysqlApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3448,12 +3374,11 @@ class MysqlApi
         // path params
         if ($username !== null) {
             $resourcePath = str_replace(
-                '{' . 'username' . '}',
+                '{'.'username'.'}',
                 ObjectSerializer::toPathValue($username),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3464,7 +3389,7 @@ class MysqlApi
         // for model (json/xml)
         if (isset($my_sql_user_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($my_sql_user_update));
             } else {
                 $httpBody = $my_sql_user_update;
@@ -3477,7 +3402,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3485,14 +3410,13 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3507,9 +3431,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3520,15 +3445,15 @@ class MysqlApi
      *
      * Uploads sql file and executes it against db
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  \SplFileObject $sql Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
-     * @param  bool|null $force force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  \SplFileObject  $sql  Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
+     * @param  bool|null  $force  force (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function uploadSql($website_id, $db_name, $sql, $force = false, string $contentType = self::contentTypes['uploadSql'][0])
     {
@@ -3540,15 +3465,15 @@ class MysqlApi
      *
      * Uploads sql file and executes it against db
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  \SplFileObject $sql Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  \SplFileObject  $sql  Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadSqlWithHttpInfo($website_id, $db_name, $sql, $force = false, string $contentType = self::contentTypes['uploadSql'][0])
     {
@@ -3576,12 +3501,10 @@ class MysqlApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3592,14 +3515,14 @@ class MysqlApi
      *
      * Uploads sql file and executes it against db
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  \SplFileObject $sql Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  \SplFileObject  $sql  Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadSqlAsync($website_id, $db_name, $sql, $force = false, string $contentType = self::contentTypes['uploadSql'][0])
     {
@@ -3616,14 +3539,14 @@ class MysqlApi
      *
      * Uploads sql file and executes it against db
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  \SplFileObject $sql Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  \SplFileObject  $sql  Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadSqlAsyncWithHttpInfo($website_id, $db_name, $sql, $force = false, string $contentType = self::contentTypes['uploadSql'][0])
     {
@@ -3633,7 +3556,7 @@ class MysqlApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3656,14 +3579,14 @@ class MysqlApi
     /**
      * Create request for operation 'uploadSql'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $db_name The name of the database. (required)
-     * @param  \SplFileObject $sql Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $db_name  The name of the database. (required)
+     * @param  \SplFileObject  $sql  Upload either a raw sql file (must be utf8 valid string) or .zip or .gz file with the sql string. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadSql'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function uploadSqlRequest($website_id, $db_name, $sql, $force = false, string $contentType = self::contentTypes['uploadSql'][0])
     {
@@ -3689,8 +3612,6 @@ class MysqlApi
             );
         }
 
-
-
         $resourcePath = '/v2/websites/{websiteId}/mysql/{db_id}/sql';
         $formParams = [];
         $queryParams = [];
@@ -3708,11 +3629,10 @@ class MysqlApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3720,14 +3640,14 @@ class MysqlApi
         // path params
         if ($db_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'db_name' . '}',
+                '{'.'db_name'.'}',
                 ObjectSerializer::toPathValue($db_name),
                 $resourcePath
             );
         }
 
         // form params
-        $formDataProcessor = new FormDataProcessor();
+        $formDataProcessor = new FormDataProcessor;
 
         $formData = $formDataProcessor->prepare([
             'sql' => $sql,
@@ -3752,7 +3672,7 @@ class MysqlApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3760,7 +3680,7 @@ class MysqlApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3771,11 +3691,11 @@ class MysqlApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3791,9 +3711,10 @@ class MysqlApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3802,16 +3723,17 @@ class MysqlApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -3824,7 +3746,7 @@ class MysqlApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -3847,7 +3769,7 @@ class MysqlApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

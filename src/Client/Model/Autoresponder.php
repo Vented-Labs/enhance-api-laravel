@@ -1,12 +1,14 @@
 <?php
+
 /**
  * Autoresponder
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,78 +30,82 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * Autoresponder Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
+class Autoresponder implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'Autoresponder';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'id' => 'int',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'enabled' => 'bool',
         'subject' => 'string',
-        'body' => 'string'
+        'body' => 'string',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'id' => null,
         'start_date' => 'date',
         'end_date' => 'date',
         'enabled' => null,
         'subject' => null,
-        'body' => null
+        'body' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'id' => false,
         'start_date' => false,
         'end_date' => false,
         'enabled' => false,
         'subject' => false,
-        'body' => false
+        'body' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -124,8 +130,6 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -135,7 +139,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -145,7 +149,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -154,9 +158,6 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -165,9 +166,6 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -186,7 +184,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
         'end_date' => 'endDate',
         'enabled' => 'enabled',
         'subject' => 'subject',
-        'body' => 'body'
+        'body' => 'body',
     ];
 
     /**
@@ -200,7 +198,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
         'end_date' => 'setEndDate',
         'enabled' => 'setEnabled',
         'subject' => 'setSubject',
-        'body' => 'setBody'
+        'body' => 'setBody',
     ];
 
     /**
@@ -214,7 +212,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
         'end_date' => 'getEndDate',
         'enabled' => 'getEnabled',
         'subject' => 'getSubject',
-        'body' => 'getBody'
+        'body' => 'getBody',
     ];
 
     /**
@@ -258,7 +256,6 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -269,8 +266,8 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -283,14 +280,12 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -324,6 +319,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['body'] === null) {
             $invalidProperties[] = "'body' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -338,7 +334,6 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets id
      *
@@ -352,8 +347,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int $id id
-     *
+     * @param  int  $id  id
      * @return self
      */
     public function setId($id)
@@ -379,8 +373,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date start_date
-     *
+     * @param  \DateTime  $start_date  start_date
      * @return self
      */
     public function setStartDate($start_date)
@@ -406,8 +399,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date end_date
-     *
+     * @param  \DateTime|null  $end_date  end_date
      * @return self
      */
     public function setEndDate($end_date)
@@ -433,8 +425,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets enabled
      *
-     * @param bool $enabled enabled
-     *
+     * @param  bool  $enabled  enabled
      * @return self
      */
     public function setEnabled($enabled)
@@ -460,8 +451,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subject
      *
-     * @param string $subject subject
-     *
+     * @param  string  $subject  subject
      * @return self
      */
     public function setSubject($subject)
@@ -487,8 +477,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets body
      *
-     * @param string $body body
-     *
+     * @param  string  $body  body
      * @return self
      */
     public function setBody($body)
@@ -500,12 +489,11 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -515,8 +503,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -528,10 +515,8 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -545,9 +530,7 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -556,15 +539,16 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -590,5 +574,3 @@ class Autoresponder implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -1,12 +1,14 @@
 <?php
+
 /**
  * BackupRestoreOptions
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,72 +30,76 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * BackupRestoreOptions Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializable
+class BackupRestoreOptions implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'BackupRestoreOptions';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'restore_files' => 'bool',
         'restore_emails' => 'string[]',
         'restore_all_emails' => 'bool',
-        'restore_databases' => 'string[]'
+        'restore_databases' => 'string[]',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'restore_files' => null,
         'restore_emails' => null,
         'restore_all_emails' => null,
-        'restore_databases' => null
+        'restore_databases' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'restore_files' => false,
         'restore_emails' => false,
         'restore_all_emails' => false,
-        'restore_databases' => false
+        'restore_databases' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -118,8 +124,6 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -129,7 +133,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -139,7 +143,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -148,9 +152,6 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -159,9 +160,6 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -178,7 +176,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
         'restore_files' => 'restoreFiles',
         'restore_emails' => 'restoreEmails',
         'restore_all_emails' => 'restoreAllEmails',
-        'restore_databases' => 'restoreDatabases'
+        'restore_databases' => 'restoreDatabases',
     ];
 
     /**
@@ -190,7 +188,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
         'restore_files' => 'setRestoreFiles',
         'restore_emails' => 'setRestoreEmails',
         'restore_all_emails' => 'setRestoreAllEmails',
-        'restore_databases' => 'setRestoreDatabases'
+        'restore_databases' => 'setRestoreDatabases',
     ];
 
     /**
@@ -202,7 +200,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
         'restore_files' => 'getRestoreFiles',
         'restore_emails' => 'getRestoreEmails',
         'restore_all_emails' => 'getRestoreAllEmails',
-        'restore_databases' => 'getRestoreDatabases'
+        'restore_databases' => 'getRestoreDatabases',
     ];
 
     /**
@@ -246,7 +244,6 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -257,8 +254,8 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -269,14 +266,12 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -309,7 +304,6 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets restore_files
      *
@@ -323,8 +317,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets restore_files
      *
-     * @param bool|null $restore_files If set to false, the backup restoration will not include the website home directory.
-     *
+     * @param  bool|null  $restore_files  If set to false, the backup restoration will not include the website home directory.
      * @return self
      */
     public function setRestoreFiles($restore_files)
@@ -350,8 +343,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets restore_emails
      *
-     * @param string[]|null $restore_emails restore_emails
-     *
+     * @param  string[]|null  $restore_emails  restore_emails
      * @return self
      */
     public function setRestoreEmails($restore_emails)
@@ -377,8 +369,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets restore_all_emails
      *
-     * @param bool|null $restore_all_emails Restore all the mailboxes from this backup.  Overrides the `restoreEmails` property.
-     *
+     * @param  bool|null  $restore_all_emails  Restore all the mailboxes from this backup.  Overrides the `restoreEmails` property.
      * @return self
      */
     public function setRestoreAllEmails($restore_all_emails)
@@ -404,8 +395,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets restore_databases
      *
-     * @param string[]|null $restore_databases The list of databases names that need to be restored. If this list is not specified all the databases found in the backup snapshot will be restored, otherwise if this list is specified as empty, no database will be restored.
-     *
+     * @param  string[]|null  $restore_databases  The list of databases names that need to be restored. If this list is not specified all the databases found in the backup snapshot will be restored, otherwise if this list is specified as empty, no database will be restored.
      * @return self
      */
     public function setRestoreDatabases($restore_databases)
@@ -417,12 +407,11 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -432,8 +421,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -445,10 +433,8 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -462,9 +448,7 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -473,15 +457,16 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -507,5 +492,3 @@ class BackupRestoreOptions implements ModelInterface, ArrayAccess, \JsonSerializ
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

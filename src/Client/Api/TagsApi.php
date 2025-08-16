@@ -1,11 +1,13 @@
 <?php
+
 /**
  * TagsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * TagsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class TagsApi
@@ -72,7 +74,7 @@ class TagsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createTag' => [
             'application/json',
@@ -83,10 +85,7 @@ class TagsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -94,16 +93,16 @@ class TagsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -133,17 +132,18 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag $new_tag New tag details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag  $new_tag  New tag details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      */
     public function createTag($org_id, $new_tag, string $contentType = self::contentTypes['createTag'][0])
     {
-        list($response) = $this->createTagWithHttpInfo($org_id, $new_tag, $contentType);
+        [$response] = $this->createTagWithHttpInfo($org_id, $new_tag, $contentType);
+
         return $response;
     }
 
@@ -152,13 +152,13 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag $new_tag New tag details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag  $new_tag  New tag details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      */
     public function createTagWithHttpInfo($org_id, $new_tag, string $contentType = self::contentTypes['createTag'][0])
     {
@@ -186,8 +186,7 @@ class TagsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceId',
@@ -195,8 +194,6 @@ class TagsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -227,7 +224,6 @@ class TagsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -238,12 +234,12 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag $new_tag New tag details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag  $new_tag  New tag details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createTagAsync($org_id, $new_tag, string $contentType = self::contentTypes['createTag'][0])
     {
@@ -260,12 +256,12 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag $new_tag New tag details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag  $new_tag  New tag details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createTagAsyncWithHttpInfo($org_id, $new_tag, string $contentType = self::contentTypes['createTag'][0])
     {
@@ -277,7 +273,7 @@ class TagsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -288,7 +284,7 @@ class TagsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -311,12 +307,12 @@ class TagsApi
     /**
      * Create request for operation 'createTag'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag $new_tag New tag details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewTag  $new_tag  New tag details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createTagRequest($org_id, $new_tag, string $contentType = self::contentTypes['createTag'][0])
     {
@@ -335,7 +331,6 @@ class TagsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/tags';
         $formParams = [];
         $queryParams = [];
@@ -343,20 +338,17 @@ class TagsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -364,7 +356,7 @@ class TagsApi
         // for model (json/xml)
         if (isset($new_tag)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_tag));
             } else {
                 $httpBody = $new_tag;
@@ -377,7 +369,7 @@ class TagsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -385,7 +377,7 @@ class TagsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -396,11 +388,11 @@ class TagsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -416,9 +408,10 @@ class TagsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -429,16 +422,17 @@ class TagsApi
      *
      * Get tags
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\TagsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\TagsFullListing
      */
     public function getTags($org_id, string $contentType = self::contentTypes['getTags'][0])
     {
-        list($response) = $this->getTagsWithHttpInfo($org_id, $contentType);
+        [$response] = $this->getTagsWithHttpInfo($org_id, $contentType);
+
         return $response;
     }
 
@@ -447,12 +441,12 @@ class TagsApi
      *
      * Get tags
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\TagsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\TagsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTagsWithHttpInfo($org_id, string $contentType = self::contentTypes['getTags'][0])
     {
@@ -480,8 +474,7 @@ class TagsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\TagsFullListing',
@@ -489,8 +482,6 @@ class TagsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -521,7 +512,6 @@ class TagsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -532,11 +522,11 @@ class TagsApi
      *
      * Get tags
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getTagsAsync($org_id, string $contentType = self::contentTypes['getTags'][0])
     {
@@ -553,11 +543,11 @@ class TagsApi
      *
      * Get tags
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getTagsAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['getTags'][0])
     {
@@ -569,7 +559,7 @@ class TagsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -580,7 +570,7 @@ class TagsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -603,11 +593,11 @@ class TagsApi
     /**
      * Create request for operation 'getTags'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getTags'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getTagsRequest($org_id, string $contentType = self::contentTypes['getTags'][0])
     {
@@ -619,7 +609,6 @@ class TagsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/tags';
         $formParams = [];
         $queryParams = [];
@@ -627,20 +616,17 @@ class TagsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -654,7 +640,7 @@ class TagsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -662,7 +648,7 @@ class TagsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -673,11 +659,11 @@ class TagsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -693,9 +679,10 @@ class TagsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -704,16 +691,17 @@ class TagsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -726,7 +714,7 @@ class TagsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -749,7 +737,7 @@ class TagsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

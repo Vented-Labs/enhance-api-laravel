@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ImportKind
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ImportKind Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ImportKind
@@ -50,6 +52,7 @@ class ImportKind
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -57,9 +60,7 @@ class ImportKind
         return [
             self::C_PANEL,
             self::PLESK,
-            self::PLESK_STREAMING
+            self::PLESK_STREAMING,
         ];
     }
 }
-
-

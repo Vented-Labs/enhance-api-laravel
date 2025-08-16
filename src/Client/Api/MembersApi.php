@@ -1,11 +1,13 @@
 <?php
+
 /**
  * MembersApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * MembersApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class MembersApi
@@ -72,7 +74,7 @@ class MembersApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createAccessToken' => [
             'application/json',
@@ -113,10 +115,7 @@ class MembersApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -124,16 +123,16 @@ class MembersApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -163,17 +162,18 @@ class MembersApi
      *
      * Create organisation access token
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken $new_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken  $new_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewAccessTokenResponse
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewAccessTokenResponse
      */
     public function createAccessToken($org_id, $new_access_token, string $contentType = self::contentTypes['createAccessToken'][0])
     {
-        list($response) = $this->createAccessTokenWithHttpInfo($org_id, $new_access_token, $contentType);
+        [$response] = $this->createAccessTokenWithHttpInfo($org_id, $new_access_token, $contentType);
+
         return $response;
     }
 
@@ -182,13 +182,13 @@ class MembersApi
      *
      * Create organisation access token
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken $new_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken  $new_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewAccessTokenResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewAccessTokenResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccessTokenWithHttpInfo($org_id, $new_access_token, string $contentType = self::contentTypes['createAccessToken'][0])
     {
@@ -216,8 +216,7 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewAccessTokenResponse',
@@ -225,8 +224,6 @@ class MembersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -257,7 +254,6 @@ class MembersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -268,12 +264,12 @@ class MembersApi
      *
      * Create organisation access token
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken $new_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken  $new_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccessTokenAsync($org_id, $new_access_token, string $contentType = self::contentTypes['createAccessToken'][0])
     {
@@ -290,12 +286,12 @@ class MembersApi
      *
      * Create organisation access token
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken $new_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken  $new_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createAccessTokenAsyncWithHttpInfo($org_id, $new_access_token, string $contentType = self::contentTypes['createAccessToken'][0])
     {
@@ -307,7 +303,7 @@ class MembersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -318,7 +314,7 @@ class MembersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -341,12 +337,12 @@ class MembersApi
     /**
      * Create request for operation 'createAccessToken'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken $new_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAccessToken  $new_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createAccessTokenRequest($org_id, $new_access_token, string $contentType = self::contentTypes['createAccessToken'][0])
     {
@@ -365,7 +361,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/access_tokens';
         $formParams = [];
         $queryParams = [];
@@ -373,20 +368,17 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -394,7 +386,7 @@ class MembersApi
         // for model (json/xml)
         if (isset($new_access_token)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_access_token));
             } else {
                 $httpBody = $new_access_token;
@@ -407,7 +399,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -415,7 +407,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -426,11 +418,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -446,9 +438,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -459,17 +452,18 @@ class MembersApi
      *
      * Create organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember $new_member New member details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember  $new_member  New member details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createMember($org_id, $new_member, string $contentType = self::contentTypes['createMember'][0])
     {
-        list($response) = $this->createMemberWithHttpInfo($org_id, $new_member, $contentType);
+        [$response] = $this->createMemberWithHttpInfo($org_id, $new_member, $contentType);
+
         return $response;
     }
 
@@ -478,13 +472,13 @@ class MembersApi
      *
      * Create organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember $new_member New member details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember  $new_member  New member details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createMemberWithHttpInfo($org_id, $new_member, string $contentType = self::contentTypes['createMember'][0])
     {
@@ -512,8 +506,7 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -521,8 +514,6 @@ class MembersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -553,7 +544,6 @@ class MembersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -564,12 +554,12 @@ class MembersApi
      *
      * Create organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember $new_member New member details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember  $new_member  New member details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createMemberAsync($org_id, $new_member, string $contentType = self::contentTypes['createMember'][0])
     {
@@ -586,12 +576,12 @@ class MembersApi
      *
      * Create organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember $new_member New member details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember  $new_member  New member details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createMemberAsyncWithHttpInfo($org_id, $new_member, string $contentType = self::contentTypes['createMember'][0])
     {
@@ -603,7 +593,7 @@ class MembersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -614,7 +604,7 @@ class MembersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -637,12 +627,12 @@ class MembersApi
     /**
      * Create request for operation 'createMember'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember $new_member New member details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMember  $new_member  New member details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createMemberRequest($org_id, $new_member, string $contentType = self::contentTypes['createMember'][0])
     {
@@ -661,7 +651,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/members';
         $formParams = [];
         $queryParams = [];
@@ -669,20 +658,17 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -690,7 +676,7 @@ class MembersApi
         // for model (json/xml)
         if (isset($new_member)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_member));
             } else {
                 $httpBody = $new_member;
@@ -703,7 +689,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -711,7 +697,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -722,11 +708,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -742,9 +728,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -755,13 +742,13 @@ class MembersApi
      *
      * Delete access token member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteAccessToken($org_id, $token_id, string $contentType = self::contentTypes['deleteAccessToken'][0])
     {
@@ -773,13 +760,13 @@ class MembersApi
      *
      * Delete access token member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteAccessTokenWithHttpInfo($org_id, $token_id, string $contentType = self::contentTypes['deleteAccessToken'][0])
     {
@@ -807,12 +794,10 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -823,12 +808,12 @@ class MembersApi
      *
      * Delete access token member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteAccessTokenAsync($org_id, $token_id, string $contentType = self::contentTypes['deleteAccessToken'][0])
     {
@@ -845,12 +830,12 @@ class MembersApi
      *
      * Delete access token member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteAccessTokenAsyncWithHttpInfo($org_id, $token_id, string $contentType = self::contentTypes['deleteAccessToken'][0])
     {
@@ -860,7 +845,7 @@ class MembersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -883,12 +868,12 @@ class MembersApi
     /**
      * Create request for operation 'deleteAccessToken'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteAccessTokenRequest($org_id, $token_id, string $contentType = self::contentTypes['deleteAccessToken'][0])
     {
@@ -907,7 +892,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/access_tokens/{token_id}';
         $formParams = [];
         $queryParams = [];
@@ -915,12 +899,10 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -928,12 +910,11 @@ class MembersApi
         // path params
         if ($token_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'token_id' . '}',
+                '{'.'token_id'.'}',
                 ObjectSerializer::toPathValue($token_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -950,7 +931,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -958,7 +939,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -969,11 +950,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -989,9 +970,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1002,13 +984,13 @@ class MembersApi
      *
      * Delete organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteMember($org_id, $member_id, string $contentType = self::contentTypes['deleteMember'][0])
     {
@@ -1020,13 +1002,13 @@ class MembersApi
      *
      * Delete organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteMemberWithHttpInfo($org_id, $member_id, string $contentType = self::contentTypes['deleteMember'][0])
     {
@@ -1054,12 +1036,10 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1070,12 +1050,12 @@ class MembersApi
      *
      * Delete organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteMemberAsync($org_id, $member_id, string $contentType = self::contentTypes['deleteMember'][0])
     {
@@ -1092,12 +1072,12 @@ class MembersApi
      *
      * Delete organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteMemberAsyncWithHttpInfo($org_id, $member_id, string $contentType = self::contentTypes['deleteMember'][0])
     {
@@ -1107,7 +1087,7 @@ class MembersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1130,12 +1110,12 @@ class MembersApi
     /**
      * Create request for operation 'deleteMember'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteMemberRequest($org_id, $member_id, string $contentType = self::contentTypes['deleteMember'][0])
     {
@@ -1154,7 +1134,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/members/{member_id}';
         $formParams = [];
         $queryParams = [];
@@ -1162,12 +1141,10 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1175,12 +1152,11 @@ class MembersApi
         // path params
         if ($member_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'member_id' . '}',
+                '{'.'member_id'.'}',
                 ObjectSerializer::toPathValue($member_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1197,7 +1173,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1205,7 +1181,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1216,11 +1192,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1236,9 +1212,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1249,12 +1226,12 @@ class MembersApi
      *
      * Delete organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteOwner($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -1266,12 +1243,12 @@ class MembersApi
      *
      * Delete organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteOwnerWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -1299,12 +1276,10 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1315,11 +1290,11 @@ class MembersApi
      *
      * Delete organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOwnerAsync($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -1336,11 +1311,11 @@ class MembersApi
      *
      * Delete organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOwnerAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -1350,7 +1325,7 @@ class MembersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1373,11 +1348,11 @@ class MembersApi
     /**
      * Create request for operation 'deleteOwner'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteOwnerRequest($org_id, string $contentType = self::contentTypes['deleteOwner'][0])
     {
@@ -1389,7 +1364,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/owner';
         $formParams = [];
         $queryParams = [];
@@ -1397,17 +1371,14 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1424,7 +1395,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1432,7 +1403,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1443,11 +1414,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1463,9 +1434,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1476,16 +1448,17 @@ class MembersApi
      *
      * Get access token members
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\OrgAccessToken[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\OrgAccessToken[]
      */
     public function getAccessTokens($org_id, string $contentType = self::contentTypes['getAccessTokens'][0])
     {
-        list($response) = $this->getAccessTokensWithHttpInfo($org_id, $contentType);
+        [$response] = $this->getAccessTokensWithHttpInfo($org_id, $contentType);
+
         return $response;
     }
 
@@ -1494,12 +1467,12 @@ class MembersApi
      *
      * Get access token members
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrgAccessToken[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrgAccessToken[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccessTokensWithHttpInfo($org_id, string $contentType = self::contentTypes['getAccessTokens'][0])
     {
@@ -1527,8 +1500,7 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\OrgAccessToken[]',
@@ -1536,8 +1508,6 @@ class MembersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1568,7 +1538,6 @@ class MembersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1579,11 +1548,11 @@ class MembersApi
      *
      * Get access token members
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAccessTokensAsync($org_id, string $contentType = self::contentTypes['getAccessTokens'][0])
     {
@@ -1600,11 +1569,11 @@ class MembersApi
      *
      * Get access token members
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAccessTokensAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['getAccessTokens'][0])
     {
@@ -1616,7 +1585,7 @@ class MembersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1627,7 +1596,7 @@ class MembersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1650,11 +1619,11 @@ class MembersApi
     /**
      * Create request for operation 'getAccessTokens'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAccessTokens'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getAccessTokensRequest($org_id, string $contentType = self::contentTypes['getAccessTokens'][0])
     {
@@ -1666,7 +1635,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/access_tokens';
         $formParams = [];
         $queryParams = [];
@@ -1674,20 +1642,17 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1701,7 +1666,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1709,7 +1674,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1720,11 +1685,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1740,9 +1705,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1753,17 +1719,18 @@ class MembersApi
      *
      * Get organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Member
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Member
      */
     public function getMember($org_id, $member_id, string $contentType = self::contentTypes['getMember'][0])
     {
-        list($response) = $this->getMemberWithHttpInfo($org_id, $member_id, $contentType);
+        [$response] = $this->getMemberWithHttpInfo($org_id, $member_id, $contentType);
+
         return $response;
     }
 
@@ -1772,13 +1739,13 @@ class MembersApi
      *
      * Get organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Member, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Member, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMemberWithHttpInfo($org_id, $member_id, string $contentType = self::contentTypes['getMember'][0])
     {
@@ -1806,8 +1773,7 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Member',
@@ -1815,8 +1781,6 @@ class MembersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1847,7 +1811,6 @@ class MembersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1858,12 +1821,12 @@ class MembersApi
      *
      * Get organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMemberAsync($org_id, $member_id, string $contentType = self::contentTypes['getMember'][0])
     {
@@ -1880,12 +1843,12 @@ class MembersApi
      *
      * Get organization member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMemberAsyncWithHttpInfo($org_id, $member_id, string $contentType = self::contentTypes['getMember'][0])
     {
@@ -1897,7 +1860,7 @@ class MembersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1908,7 +1871,7 @@ class MembersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1931,12 +1894,12 @@ class MembersApi
     /**
      * Create request for operation 'getMember'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getMemberRequest($org_id, $member_id, string $contentType = self::contentTypes['getMember'][0])
     {
@@ -1955,7 +1918,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/members/{member_id}';
         $formParams = [];
         $queryParams = [];
@@ -1963,12 +1925,10 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1976,15 +1936,14 @@ class MembersApi
         // path params
         if ($member_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'member_id' . '}',
+                '{'.'member_id'.'}',
                 ObjectSerializer::toPathValue($member_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1998,7 +1957,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2006,7 +1965,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2017,11 +1976,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2037,9 +1996,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2050,22 +2010,23 @@ class MembersApi
      *
      * Get organization members
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null $role Return only members with this role. (optional)
-     * @param  string|null $site_access Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null  $role  Return only members with this role. (optional)
+     * @param  string|null  $site_access  Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MembersListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MembersListing
      */
     public function getMembers($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $role = null, $site_access = null, string $contentType = self::contentTypes['getMembers'][0])
     {
-        list($response) = $this->getMembersWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $role, $site_access, $contentType);
+        [$response] = $this->getMembersWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $role, $site_access, $contentType);
+
         return $response;
     }
 
@@ -2074,18 +2035,18 @@ class MembersApi
      *
      * Get organization members
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null $role Return only members with this role. (optional)
-     * @param  string|null $site_access Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null  $role  Return only members with this role. (optional)
+     * @param  string|null  $site_access  Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MembersListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MembersListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMembersWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $role = null, $site_access = null, string $contentType = self::contentTypes['getMembers'][0])
     {
@@ -2113,8 +2074,7 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MembersListing',
@@ -2122,8 +2082,6 @@ class MembersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2154,7 +2112,6 @@ class MembersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2165,17 +2122,17 @@ class MembersApi
      *
      * Get organization members
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null $role Return only members with this role. (optional)
-     * @param  string|null $site_access Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null  $role  Return only members with this role. (optional)
+     * @param  string|null  $site_access  Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMembersAsync($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $role = null, $site_access = null, string $contentType = self::contentTypes['getMembers'][0])
     {
@@ -2192,17 +2149,17 @@ class MembersApi
      *
      * Get organization members
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null $role Return only members with this role. (optional)
-     * @param  string|null $site_access Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null  $role  Return only members with this role. (optional)
+     * @param  string|null  $site_access  Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMembersAsyncWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $role = null, $site_access = null, string $contentType = self::contentTypes['getMembers'][0])
     {
@@ -2214,7 +2171,7 @@ class MembersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2225,7 +2182,7 @@ class MembersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2248,17 +2205,17 @@ class MembersApi
     /**
      * Create request for operation 'getMembers'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null $role Return only members with this role. (optional)
-     * @param  string|null $site_access Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Role|null  $role  Return only members with this role. (optional)
+     * @param  string|null  $site_access  Return only collaborator members that have access to this website. Note that super admins and owners are not returned because they implicitly have access. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMembers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getMembersRequest($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $role = null, $site_access = null, string $contentType = self::contentTypes['getMembers'][0])
     {
@@ -2269,13 +2226,6 @@ class MembersApi
                 'Missing the required parameter $org_id when calling getMembers'
             );
         }
-
-
-
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/members';
         $formParams = [];
@@ -2339,19 +2289,17 @@ class MembersApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2365,7 +2313,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2373,7 +2321,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2384,11 +2332,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2404,9 +2352,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2417,17 +2366,18 @@ class MembersApi
      *
      * Get a One-Time-Password link for the member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getOrgMemberLogin($org_id, $member_id, string $contentType = self::contentTypes['getOrgMemberLogin'][0])
     {
-        list($response) = $this->getOrgMemberLoginWithHttpInfo($org_id, $member_id, $contentType);
+        [$response] = $this->getOrgMemberLoginWithHttpInfo($org_id, $member_id, $contentType);
+
         return $response;
     }
 
@@ -2436,13 +2386,13 @@ class MembersApi
      *
      * Get a One-Time-Password link for the member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrgMemberLoginWithHttpInfo($org_id, $member_id, string $contentType = self::contentTypes['getOrgMemberLogin'][0])
     {
@@ -2470,8 +2420,7 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -2479,8 +2428,6 @@ class MembersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2511,7 +2458,6 @@ class MembersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2522,12 +2468,12 @@ class MembersApi
      *
      * Get a One-Time-Password link for the member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrgMemberLoginAsync($org_id, $member_id, string $contentType = self::contentTypes['getOrgMemberLogin'][0])
     {
@@ -2544,12 +2490,12 @@ class MembersApi
      *
      * Get a One-Time-Password link for the member
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrgMemberLoginAsyncWithHttpInfo($org_id, $member_id, string $contentType = self::contentTypes['getOrgMemberLogin'][0])
     {
@@ -2561,7 +2507,7 @@ class MembersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2572,7 +2518,7 @@ class MembersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2595,12 +2541,12 @@ class MembersApi
     /**
      * Create request for operation 'getOrgMemberLogin'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrgMemberLogin'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOrgMemberLoginRequest($org_id, $member_id, string $contentType = self::contentTypes['getOrgMemberLogin'][0])
     {
@@ -2619,7 +2565,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/members/{member_id}/sso';
         $formParams = [];
         $queryParams = [];
@@ -2627,12 +2572,10 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2640,15 +2583,14 @@ class MembersApi
         // path params
         if ($member_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'member_id' . '}',
+                '{'.'member_id'.'}',
                 ObjectSerializer::toPathValue($member_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2662,7 +2604,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2670,7 +2612,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2681,11 +2623,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2701,9 +2643,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2714,14 +2657,14 @@ class MembersApi
      *
      * Update access token
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken $update_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken  $update_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateAccessToken($org_id, $token_id, $update_access_token, string $contentType = self::contentTypes['updateAccessToken'][0])
     {
@@ -2733,14 +2676,14 @@ class MembersApi
      *
      * Update access token
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken $update_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken  $update_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAccessTokenWithHttpInfo($org_id, $token_id, $update_access_token, string $contentType = self::contentTypes['updateAccessToken'][0])
     {
@@ -2768,12 +2711,10 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2784,13 +2725,13 @@ class MembersApi
      *
      * Update access token
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken $update_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken  $update_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateAccessTokenAsync($org_id, $token_id, $update_access_token, string $contentType = self::contentTypes['updateAccessToken'][0])
     {
@@ -2807,13 +2748,13 @@ class MembersApi
      *
      * Update access token
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken $update_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken  $update_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateAccessTokenAsyncWithHttpInfo($org_id, $token_id, $update_access_token, string $contentType = self::contentTypes['updateAccessToken'][0])
     {
@@ -2823,7 +2764,7 @@ class MembersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2846,13 +2787,13 @@ class MembersApi
     /**
      * Create request for operation 'updateAccessToken'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $token_id The id of an org access token. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken $update_access_token Access token details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $token_id  The id of an org access token. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAccessToken  $update_access_token  Access token details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateAccessTokenRequest($org_id, $token_id, $update_access_token, string $contentType = self::contentTypes['updateAccessToken'][0])
     {
@@ -2878,7 +2819,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/access_tokens/{token_id}';
         $formParams = [];
         $queryParams = [];
@@ -2886,12 +2826,10 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2899,12 +2837,11 @@ class MembersApi
         // path params
         if ($token_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'token_id' . '}',
+                '{'.'token_id'.'}',
                 ObjectSerializer::toPathValue($token_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2915,7 +2852,7 @@ class MembersApi
         // for model (json/xml)
         if (isset($update_access_token)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_access_token));
             } else {
                 $httpBody = $update_access_token;
@@ -2928,7 +2865,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2936,7 +2873,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2947,11 +2884,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2967,9 +2904,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2980,14 +2918,14 @@ class MembersApi
      *
      * Overwrite organization member settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember $update_member Member settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember  $update_member  Member settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateMember($org_id, $member_id, $update_member, string $contentType = self::contentTypes['updateMember'][0])
     {
@@ -2999,14 +2937,14 @@ class MembersApi
      *
      * Overwrite organization member settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember $update_member Member settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember  $update_member  Member settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateMemberWithHttpInfo($org_id, $member_id, $update_member, string $contentType = self::contentTypes['updateMember'][0])
     {
@@ -3034,12 +2972,10 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3050,13 +2986,13 @@ class MembersApi
      *
      * Overwrite organization member settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember $update_member Member settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember  $update_member  Member settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateMemberAsync($org_id, $member_id, $update_member, string $contentType = self::contentTypes['updateMember'][0])
     {
@@ -3073,13 +3009,13 @@ class MembersApi
      *
      * Overwrite organization member settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember $update_member Member settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember  $update_member  Member settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateMemberAsyncWithHttpInfo($org_id, $member_id, $update_member, string $contentType = self::contentTypes['updateMember'][0])
     {
@@ -3089,7 +3025,7 @@ class MembersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3112,13 +3048,13 @@ class MembersApi
     /**
      * Create request for operation 'updateMember'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $member_id The id of the member. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember $update_member Member settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $member_id  The id of the member. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateMember  $update_member  Member settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateMember'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateMemberRequest($org_id, $member_id, $update_member, string $contentType = self::contentTypes['updateMember'][0])
     {
@@ -3144,7 +3080,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/members/{member_id}';
         $formParams = [];
         $queryParams = [];
@@ -3152,12 +3087,10 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3165,12 +3098,11 @@ class MembersApi
         // path params
         if ($member_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'member_id' . '}',
+                '{'.'member_id'.'}',
                 ObjectSerializer::toPathValue($member_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3181,7 +3113,7 @@ class MembersApi
         // for model (json/xml)
         if (isset($update_member)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_member));
             } else {
                 $httpBody = $update_member;
@@ -3194,7 +3126,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3202,7 +3134,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3213,11 +3145,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3233,9 +3165,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3246,13 +3179,13 @@ class MembersApi
      *
      * Update organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateOwner($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -3264,13 +3197,13 @@ class MembersApi
      *
      * Update organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateOwnerWithHttpInfo($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -3298,12 +3231,10 @@ class MembersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3314,12 +3245,12 @@ class MembersApi
      *
      * Update organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateOwnerAsync($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -3336,12 +3267,12 @@ class MembersApi
      *
      * Update organization owner
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateOwnerAsyncWithHttpInfo($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -3351,7 +3282,7 @@ class MembersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3374,12 +3305,12 @@ class MembersApi
     /**
      * Create request for operation 'updateOwner'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate $org_owner_update Membership id of the to-be owner (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrgOwnerUpdate  $org_owner_update  Membership id of the to-be owner (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateOwner'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateOwnerRequest($org_id, $org_owner_update, string $contentType = self::contentTypes['updateOwner'][0])
     {
@@ -3398,7 +3329,6 @@ class MembersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/owner';
         $formParams = [];
         $queryParams = [];
@@ -3406,17 +3336,14 @@ class MembersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3427,7 +3354,7 @@ class MembersApi
         // for model (json/xml)
         if (isset($org_owner_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($org_owner_update));
             } else {
                 $httpBody = $org_owner_update;
@@ -3440,7 +3367,7 @@ class MembersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3448,7 +3375,7 @@ class MembersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3459,11 +3386,11 @@ class MembersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3479,9 +3406,10 @@ class MembersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3490,16 +3418,17 @@ class MembersApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -3512,7 +3441,7 @@ class MembersApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -3535,7 +3464,7 @@ class MembersApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

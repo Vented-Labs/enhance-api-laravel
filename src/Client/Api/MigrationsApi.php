@@ -1,11 +1,13 @@
 <?php
+
 /**
  * MigrationsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * MigrationsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class MigrationsApi
@@ -72,7 +74,7 @@ class MigrationsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createMigration' => [
             'application/json',
@@ -95,10 +97,7 @@ class MigrationsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -106,16 +105,16 @@ class MigrationsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -145,17 +144,19 @@ class MigrationsApi
      *
      * Create website role migration
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails $new_migration_details Migration details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails  $new_migration_details  Migration details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
+     *
      * @deprecated
      */
     public function createMigration($new_migration_details, string $contentType = self::contentTypes['createMigration'][0])
     {
-        list($response) = $this->createMigrationWithHttpInfo($new_migration_details, $contentType);
+        [$response] = $this->createMigrationWithHttpInfo($new_migration_details, $contentType);
+
         return $response;
     }
 
@@ -164,12 +165,13 @@ class MigrationsApi
      *
      * Create website role migration
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails $new_migration_details Migration details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails  $new_migration_details  Migration details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
+     *
      * @deprecated
      */
     public function createMigrationWithHttpInfo($new_migration_details, string $contentType = self::contentTypes['createMigration'][0])
@@ -198,8 +200,7 @@ class MigrationsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -207,8 +208,6 @@ class MigrationsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -239,7 +238,6 @@ class MigrationsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -250,11 +248,12 @@ class MigrationsApi
      *
      * Create website role migration
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails $new_migration_details Migration details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails  $new_migration_details  Migration details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     *
      * @deprecated
      */
     public function createMigrationAsync($new_migration_details, string $contentType = self::contentTypes['createMigration'][0])
@@ -272,11 +271,12 @@ class MigrationsApi
      *
      * Create website role migration
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails $new_migration_details Migration details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails  $new_migration_details  Migration details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
+     *
      * @deprecated
      */
     public function createMigrationAsyncWithHttpInfo($new_migration_details, string $contentType = self::contentTypes['createMigration'][0])
@@ -289,7 +289,7 @@ class MigrationsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -300,7 +300,7 @@ class MigrationsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -323,11 +323,12 @@ class MigrationsApi
     /**
      * Create request for operation 'createMigration'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails $new_migration_details Migration details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails  $new_migration_details  Migration details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
+     *
      * @deprecated
      */
     public function createMigrationRequest($new_migration_details, string $contentType = self::contentTypes['createMigration'][0])
@@ -340,7 +341,6 @@ class MigrationsApi
             );
         }
 
-
         $resourcePath = '/migrations';
         $formParams = [];
         $queryParams = [];
@@ -348,12 +348,8 @@ class MigrationsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -361,7 +357,7 @@ class MigrationsApi
         // for model (json/xml)
         if (isset($new_migration_details)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_migration_details));
             } else {
                 $httpBody = $new_migration_details;
@@ -374,7 +370,7 @@ class MigrationsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -382,7 +378,7 @@ class MigrationsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -393,11 +389,11 @@ class MigrationsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -413,9 +409,10 @@ class MigrationsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -426,16 +423,17 @@ class MigrationsApi
      *
      * Create bulk website role migrations
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[] $new_migration_details Migrations details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[]  $new_migration_details  Migrations details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationOk|\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationOk|\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationError
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationOk|\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationOk|\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationError
      */
     public function createMigrationSession($new_migration_details, string $contentType = self::contentTypes['createMigrationSession'][0])
     {
-        list($response) = $this->createMigrationSessionWithHttpInfo($new_migration_details, $contentType);
+        [$response] = $this->createMigrationSessionWithHttpInfo($new_migration_details, $contentType);
+
         return $response;
     }
 
@@ -444,12 +442,12 @@ class MigrationsApi
      *
      * Create bulk website role migrations
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[] $new_migration_details Migrations details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[]  $new_migration_details  Migrations details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationOk|\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationOk|\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationError, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationOk|\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationOk|\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationError, HTTP status code, HTTP response headers (array of strings)
      */
     public function createMigrationSessionWithHttpInfo($new_migration_details, string $contentType = self::contentTypes['createMigrationSession'][0])
     {
@@ -477,8 +475,7 @@ class MigrationsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionCreationOk',
@@ -498,8 +495,6 @@ class MigrationsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -546,7 +541,6 @@ class MigrationsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -557,11 +551,11 @@ class MigrationsApi
      *
      * Create bulk website role migrations
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[] $new_migration_details Migrations details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[]  $new_migration_details  Migrations details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createMigrationSessionAsync($new_migration_details, string $contentType = self::contentTypes['createMigrationSession'][0])
     {
@@ -578,11 +572,11 @@ class MigrationsApi
      *
      * Create bulk website role migrations
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[] $new_migration_details Migrations details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[]  $new_migration_details  Migrations details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createMigrationSessionAsyncWithHttpInfo($new_migration_details, string $contentType = self::contentTypes['createMigrationSession'][0])
     {
@@ -594,7 +588,7 @@ class MigrationsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -605,7 +599,7 @@ class MigrationsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -628,11 +622,11 @@ class MigrationsApi
     /**
      * Create request for operation 'createMigrationSession'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[] $new_migration_details Migrations details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMigrationDetails[]  $new_migration_details  Migrations details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createMigrationSession'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createMigrationSessionRequest($new_migration_details, string $contentType = self::contentTypes['createMigrationSession'][0])
     {
@@ -644,7 +638,6 @@ class MigrationsApi
             );
         }
 
-
         $resourcePath = '/migrations/sessions';
         $formParams = [];
         $queryParams = [];
@@ -652,12 +645,8 @@ class MigrationsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -665,7 +654,7 @@ class MigrationsApi
         // for model (json/xml)
         if (isset($new_migration_details)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_migration_details));
             } else {
                 $httpBody = $new_migration_details;
@@ -678,7 +667,7 @@ class MigrationsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -686,7 +675,7 @@ class MigrationsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -697,11 +686,11 @@ class MigrationsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -717,9 +706,10 @@ class MigrationsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -730,16 +720,17 @@ class MigrationsApi
      *
      * Get a single migration
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationDetails
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationDetails
      */
     public function getMigration($migration_id, string $contentType = self::contentTypes['getMigration'][0])
     {
-        list($response) = $this->getMigrationWithHttpInfo($migration_id, $contentType);
+        [$response] = $this->getMigrationWithHttpInfo($migration_id, $contentType);
+
         return $response;
     }
 
@@ -748,12 +739,12 @@ class MigrationsApi
      *
      * Get a single migration
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationDetails, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationDetails, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMigrationWithHttpInfo($migration_id, string $contentType = self::contentTypes['getMigration'][0])
     {
@@ -781,8 +772,7 @@ class MigrationsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MigrationDetails',
@@ -790,8 +780,6 @@ class MigrationsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -822,7 +810,6 @@ class MigrationsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -833,11 +820,11 @@ class MigrationsApi
      *
      * Get a single migration
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMigrationAsync($migration_id, string $contentType = self::contentTypes['getMigration'][0])
     {
@@ -854,11 +841,11 @@ class MigrationsApi
      *
      * Get a single migration
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMigrationAsyncWithHttpInfo($migration_id, string $contentType = self::contentTypes['getMigration'][0])
     {
@@ -870,7 +857,7 @@ class MigrationsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -881,7 +868,7 @@ class MigrationsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -904,11 +891,11 @@ class MigrationsApi
     /**
      * Create request for operation 'getMigration'
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getMigrationRequest($migration_id, string $contentType = self::contentTypes['getMigration'][0])
     {
@@ -920,7 +907,6 @@ class MigrationsApi
             );
         }
 
-
         $resourcePath = '/migrations/{migrationId}';
         $formParams = [];
         $queryParams = [];
@@ -928,20 +914,17 @@ class MigrationsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($migration_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'migrationId' . '}',
+                '{'.'migrationId'.'}',
                 ObjectSerializer::toPathValue($migration_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -955,7 +938,7 @@ class MigrationsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -963,7 +946,7 @@ class MigrationsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -974,11 +957,11 @@ class MigrationsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -994,9 +977,10 @@ class MigrationsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1007,16 +991,17 @@ class MigrationsApi
      *
      * Get the log for a migration
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationLog[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationLog[]
      */
     public function getMigrationLog($migration_id, string $contentType = self::contentTypes['getMigrationLog'][0])
     {
-        list($response) = $this->getMigrationLogWithHttpInfo($migration_id, $contentType);
+        [$response] = $this->getMigrationLogWithHttpInfo($migration_id, $contentType);
+
         return $response;
     }
 
@@ -1025,12 +1010,12 @@ class MigrationsApi
      *
      * Get the log for a migration
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationLog[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationLog[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getMigrationLogWithHttpInfo($migration_id, string $contentType = self::contentTypes['getMigrationLog'][0])
     {
@@ -1058,8 +1043,7 @@ class MigrationsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MigrationLog[]',
@@ -1067,8 +1051,6 @@ class MigrationsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1099,7 +1081,6 @@ class MigrationsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1110,11 +1091,11 @@ class MigrationsApi
      *
      * Get the log for a migration
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMigrationLogAsync($migration_id, string $contentType = self::contentTypes['getMigrationLog'][0])
     {
@@ -1131,11 +1112,11 @@ class MigrationsApi
      *
      * Get the log for a migration
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMigrationLogAsyncWithHttpInfo($migration_id, string $contentType = self::contentTypes['getMigrationLog'][0])
     {
@@ -1147,7 +1128,7 @@ class MigrationsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1158,7 +1139,7 @@ class MigrationsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1181,11 +1162,11 @@ class MigrationsApi
     /**
      * Create request for operation 'getMigrationLog'
      *
-     * @param  string $migration_id The ID of the migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @param  string  $migration_id  The ID of the migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getMigrationLogRequest($migration_id, string $contentType = self::contentTypes['getMigrationLog'][0])
     {
@@ -1197,7 +1178,6 @@ class MigrationsApi
             );
         }
 
-
         $resourcePath = '/migrations/{migrationId}/log';
         $formParams = [];
         $queryParams = [];
@@ -1205,20 +1185,17 @@ class MigrationsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($migration_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'migrationId' . '}',
+                '{'.'migrationId'.'}',
                 ObjectSerializer::toPathValue($migration_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1232,7 +1209,7 @@ class MigrationsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1240,7 +1217,7 @@ class MigrationsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1251,11 +1228,11 @@ class MigrationsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1271,9 +1248,10 @@ class MigrationsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1284,21 +1262,22 @@ class MigrationsApi
      *
      * Get website role migration sessions
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $created_by Look for a specific session creator in the result set. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $created_by  Look for a specific session creator in the result set. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationSessionsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationSessionsListing
      */
     public function getMigrationSessions($offset = null, $limit = null, $sort_order = null, $sort_by = null, $created_by = null, $search_domain = null, string $contentType = self::contentTypes['getMigrationSessions'][0])
     {
-        list($response) = $this->getMigrationSessionsWithHttpInfo($offset, $limit, $sort_order, $sort_by, $created_by, $search_domain, $contentType);
+        [$response] = $this->getMigrationSessionsWithHttpInfo($offset, $limit, $sort_order, $sort_by, $created_by, $search_domain, $contentType);
+
         return $response;
     }
 
@@ -1307,17 +1286,17 @@ class MigrationsApi
      *
      * Get website role migration sessions
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $created_by Look for a specific session creator in the result set. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $created_by  Look for a specific session creator in the result set. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationSessionsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationSessionsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMigrationSessionsWithHttpInfo($offset = null, $limit = null, $sort_order = null, $sort_by = null, $created_by = null, $search_domain = null, string $contentType = self::contentTypes['getMigrationSessions'][0])
     {
@@ -1345,8 +1324,7 @@ class MigrationsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MigrationSessionsListing',
@@ -1354,8 +1332,6 @@ class MigrationsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1386,7 +1362,6 @@ class MigrationsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1397,16 +1372,16 @@ class MigrationsApi
      *
      * Get website role migration sessions
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $created_by Look for a specific session creator in the result set. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $created_by  Look for a specific session creator in the result set. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMigrationSessionsAsync($offset = null, $limit = null, $sort_order = null, $sort_by = null, $created_by = null, $search_domain = null, string $contentType = self::contentTypes['getMigrationSessions'][0])
     {
@@ -1423,16 +1398,16 @@ class MigrationsApi
      *
      * Get website role migration sessions
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $created_by Look for a specific session creator in the result set. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $created_by  Look for a specific session creator in the result set. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMigrationSessionsAsyncWithHttpInfo($offset = null, $limit = null, $sort_order = null, $sort_by = null, $created_by = null, $search_domain = null, string $contentType = self::contentTypes['getMigrationSessions'][0])
     {
@@ -1444,7 +1419,7 @@ class MigrationsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1455,7 +1430,7 @@ class MigrationsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1478,26 +1453,19 @@ class MigrationsApi
     /**
      * Create request for operation 'getMigrationSessions'
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $created_by Look for a specific session creator in the result set. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $created_by  Look for a specific session creator in the result set. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrationSessions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getMigrationSessionsRequest($offset = null, $limit = null, $sort_order = null, $sort_by = null, $created_by = null, $search_domain = null, string $contentType = self::contentTypes['getMigrationSessions'][0])
     {
-
-
-
-
-
-
-
 
         $resourcePath = '/migrations/sessions';
         $formParams = [];
@@ -1561,11 +1529,8 @@ class MigrationsApi
             false // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1579,7 +1544,7 @@ class MigrationsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1587,7 +1552,7 @@ class MigrationsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1598,11 +1563,11 @@ class MigrationsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1618,9 +1583,10 @@ class MigrationsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1631,22 +1597,23 @@ class MigrationsApi
      *
      * Get website role migrations
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null $migration_status Filter by a particular migration status (optional)
-     * @param  string|null $session_id Filter for a specific migration session. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null  $migration_status  Filter by a particular migration status (optional)
+     * @param  string|null  $session_id  Filter for a specific migration session. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MigrationsListing
      */
     public function getMigrations($offset = null, $limit = null, $sort_order = null, $sort_by = null, $search_domain = null, $migration_status = null, $session_id = null, string $contentType = self::contentTypes['getMigrations'][0])
     {
-        list($response) = $this->getMigrationsWithHttpInfo($offset, $limit, $sort_order, $sort_by, $search_domain, $migration_status, $session_id, $contentType);
+        [$response] = $this->getMigrationsWithHttpInfo($offset, $limit, $sort_order, $sort_by, $search_domain, $migration_status, $session_id, $contentType);
+
         return $response;
     }
 
@@ -1655,18 +1622,18 @@ class MigrationsApi
      *
      * Get website role migrations
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null $migration_status Filter by a particular migration status (optional)
-     * @param  string|null $session_id Filter for a specific migration session. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null  $migration_status  Filter by a particular migration status (optional)
+     * @param  string|null  $session_id  Filter for a specific migration session. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MigrationsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMigrationsWithHttpInfo($offset = null, $limit = null, $sort_order = null, $sort_by = null, $search_domain = null, $migration_status = null, $session_id = null, string $contentType = self::contentTypes['getMigrations'][0])
     {
@@ -1694,8 +1661,7 @@ class MigrationsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MigrationsListing',
@@ -1703,8 +1669,6 @@ class MigrationsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1735,7 +1699,6 @@ class MigrationsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1746,17 +1709,17 @@ class MigrationsApi
      *
      * Get website role migrations
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null $migration_status Filter by a particular migration status (optional)
-     * @param  string|null $session_id Filter for a specific migration session. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null  $migration_status  Filter by a particular migration status (optional)
+     * @param  string|null  $session_id  Filter for a specific migration session. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMigrationsAsync($offset = null, $limit = null, $sort_order = null, $sort_by = null, $search_domain = null, $migration_status = null, $session_id = null, string $contentType = self::contentTypes['getMigrations'][0])
     {
@@ -1773,17 +1736,17 @@ class MigrationsApi
      *
      * Get website role migrations
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null $migration_status Filter by a particular migration status (optional)
-     * @param  string|null $session_id Filter for a specific migration session. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null  $migration_status  Filter by a particular migration status (optional)
+     * @param  string|null  $session_id  Filter for a specific migration session. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMigrationsAsyncWithHttpInfo($offset = null, $limit = null, $sort_order = null, $sort_by = null, $search_domain = null, $migration_status = null, $session_id = null, string $contentType = self::contentTypes['getMigrations'][0])
     {
@@ -1795,7 +1758,7 @@ class MigrationsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1806,7 +1769,7 @@ class MigrationsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1829,28 +1792,20 @@ class MigrationsApi
     /**
      * Create request for operation 'getMigrations'
      *
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null $migration_status Filter by a particular migration status (optional)
-     * @param  string|null $session_id Filter for a specific migration session. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\MigrationStatus|null  $migration_status  Filter by a particular migration status (optional)
+     * @param  string|null  $session_id  Filter for a specific migration session. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getMigrationsRequest($offset = null, $limit = null, $sort_order = null, $sort_by = null, $search_domain = null, $migration_status = null, $session_id = null, string $contentType = self::contentTypes['getMigrations'][0])
     {
-
-
-
-
-
-
-
-
 
         $resourcePath = '/migrations';
         $formParams = [];
@@ -1923,11 +1878,8 @@ class MigrationsApi
             false // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1941,7 +1893,7 @@ class MigrationsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1949,7 +1901,7 @@ class MigrationsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1960,11 +1912,11 @@ class MigrationsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1980,9 +1932,10 @@ class MigrationsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1991,16 +1944,17 @@ class MigrationsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -2013,7 +1967,7 @@ class MigrationsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -2036,7 +1990,7 @@ class MigrationsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

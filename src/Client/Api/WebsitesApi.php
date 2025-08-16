@@ -1,11 +1,13 @@
 <?php
+
 /**
  * WebsitesApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * WebsitesApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class WebsitesApi
@@ -72,7 +74,7 @@ class WebsitesApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'addDomainNginxFastCgiExcludedPath' => [
             'application/json',
@@ -329,10 +331,7 @@ class WebsitesApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -340,16 +339,16 @@ class WebsitesApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -379,13 +378,13 @@ class WebsitesApi
      *
      * Add Nginx FastCGI excluded path
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $body Exclude the following path from nginx fastcgi cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $body  Exclude the following path from nginx fastcgi cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function addDomainNginxFastCgiExcludedPath($domain_id, $body, string $contentType = self::contentTypes['addDomainNginxFastCgiExcludedPath'][0])
     {
@@ -397,13 +396,13 @@ class WebsitesApi
      *
      * Add Nginx FastCGI excluded path
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $body Exclude the following path from nginx fastcgi cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $body  Exclude the following path from nginx fastcgi cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function addDomainNginxFastCgiExcludedPathWithHttpInfo($domain_id, $body, string $contentType = self::contentTypes['addDomainNginxFastCgiExcludedPath'][0])
     {
@@ -431,12 +430,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -447,12 +444,12 @@ class WebsitesApi
      *
      * Add Nginx FastCGI excluded path
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $body Exclude the following path from nginx fastcgi cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $body  Exclude the following path from nginx fastcgi cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addDomainNginxFastCgiExcludedPathAsync($domain_id, $body, string $contentType = self::contentTypes['addDomainNginxFastCgiExcludedPath'][0])
     {
@@ -469,12 +466,12 @@ class WebsitesApi
      *
      * Add Nginx FastCGI excluded path
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $body Exclude the following path from nginx fastcgi cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $body  Exclude the following path from nginx fastcgi cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addDomainNginxFastCgiExcludedPathAsyncWithHttpInfo($domain_id, $body, string $contentType = self::contentTypes['addDomainNginxFastCgiExcludedPath'][0])
     {
@@ -484,7 +481,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -507,12 +504,12 @@ class WebsitesApi
     /**
      * Create request for operation 'addDomainNginxFastCgiExcludedPath'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $body Exclude the following path from nginx fastcgi cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $body  Exclude the following path from nginx fastcgi cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function addDomainNginxFastCgiExcludedPathRequest($domain_id, $body, string $contentType = self::contentTypes['addDomainNginxFastCgiExcludedPath'][0])
     {
@@ -531,7 +528,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/nginx_fastcgi_excluded_paths';
         $formParams = [];
         $queryParams = [];
@@ -539,17 +535,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -560,7 +553,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -573,7 +566,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -581,7 +574,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -592,11 +585,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -612,9 +605,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -625,19 +619,20 @@ class WebsitesApi
      *
      * Authorize a new SSH key.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey $new_ssh_key The public SSH key to authorize. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey  $new_ssh_key  The public SSH key to authorize. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSshKeyId
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSshKeyId
      */
     public function authorizeWebsiteSshKey($org_id, $website_id, $new_ssh_key, $sanitize = false, string $contentType = self::contentTypes['authorizeWebsiteSshKey'][0])
     {
-        list($response) = $this->authorizeWebsiteSshKeyWithHttpInfo($org_id, $website_id, $new_ssh_key, $sanitize, $contentType);
+        [$response] = $this->authorizeWebsiteSshKeyWithHttpInfo($org_id, $website_id, $new_ssh_key, $sanitize, $contentType);
+
         return $response;
     }
 
@@ -646,15 +641,15 @@ class WebsitesApi
      *
      * Authorize a new SSH key.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey $new_ssh_key The public SSH key to authorize. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey  $new_ssh_key  The public SSH key to authorize. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSshKeyId, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSshKeyId, HTTP status code, HTTP response headers (array of strings)
      */
     public function authorizeWebsiteSshKeyWithHttpInfo($org_id, $website_id, $new_ssh_key, $sanitize = false, string $contentType = self::contentTypes['authorizeWebsiteSshKey'][0])
     {
@@ -682,8 +677,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewSshKeyId',
@@ -691,8 +685,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -723,7 +715,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -734,14 +725,14 @@ class WebsitesApi
      *
      * Authorize a new SSH key.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey $new_ssh_key The public SSH key to authorize. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey  $new_ssh_key  The public SSH key to authorize. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function authorizeWebsiteSshKeyAsync($org_id, $website_id, $new_ssh_key, $sanitize = false, string $contentType = self::contentTypes['authorizeWebsiteSshKey'][0])
     {
@@ -758,14 +749,14 @@ class WebsitesApi
      *
      * Authorize a new SSH key.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey $new_ssh_key The public SSH key to authorize. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey  $new_ssh_key  The public SSH key to authorize. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function authorizeWebsiteSshKeyAsyncWithHttpInfo($org_id, $website_id, $new_ssh_key, $sanitize = false, string $contentType = self::contentTypes['authorizeWebsiteSshKey'][0])
     {
@@ -777,7 +768,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -788,7 +779,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -811,14 +802,14 @@ class WebsitesApi
     /**
      * Create request for operation 'authorizeWebsiteSshKey'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey $new_ssh_key The public SSH key to authorize. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSshKey  $new_ssh_key  The public SSH key to authorize. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function authorizeWebsiteSshKeyRequest($org_id, $website_id, $new_ssh_key, $sanitize = false, string $contentType = self::contentTypes['authorizeWebsiteSshKey'][0])
     {
@@ -844,8 +835,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ssh/keys';
         $formParams = [];
         $queryParams = [];
@@ -863,11 +852,10 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -875,15 +863,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -891,7 +878,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($new_ssh_key)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_ssh_key));
             } else {
                 $httpBody = $new_ssh_key;
@@ -904,7 +891,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -912,7 +899,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -923,11 +910,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -943,9 +930,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -956,14 +944,14 @@ class WebsitesApi
      *
      * Authorize a new SSH password for website.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The SSH password to authorize. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The SSH password to authorize. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function authorizeWebsiteSshPassword($org_id, $website_id, $new_password, string $contentType = self::contentTypes['authorizeWebsiteSshPassword'][0])
     {
@@ -975,14 +963,14 @@ class WebsitesApi
      *
      * Authorize a new SSH password for website.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The SSH password to authorize. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The SSH password to authorize. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function authorizeWebsiteSshPasswordWithHttpInfo($org_id, $website_id, $new_password, string $contentType = self::contentTypes['authorizeWebsiteSshPassword'][0])
     {
@@ -1010,12 +998,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1026,13 +1012,13 @@ class WebsitesApi
      *
      * Authorize a new SSH password for website.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The SSH password to authorize. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The SSH password to authorize. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function authorizeWebsiteSshPasswordAsync($org_id, $website_id, $new_password, string $contentType = self::contentTypes['authorizeWebsiteSshPassword'][0])
     {
@@ -1049,13 +1035,13 @@ class WebsitesApi
      *
      * Authorize a new SSH password for website.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The SSH password to authorize. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The SSH password to authorize. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function authorizeWebsiteSshPasswordAsyncWithHttpInfo($org_id, $website_id, $new_password, string $contentType = self::contentTypes['authorizeWebsiteSshPassword'][0])
     {
@@ -1065,7 +1051,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1088,13 +1074,13 @@ class WebsitesApi
     /**
      * Create request for operation 'authorizeWebsiteSshPassword'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword $new_password The SSH password to authorize. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPassword  $new_password  The SSH password to authorize. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['authorizeWebsiteSshPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function authorizeWebsiteSshPasswordRequest($org_id, $website_id, $new_password, string $contentType = self::contentTypes['authorizeWebsiteSshPassword'][0])
     {
@@ -1120,7 +1106,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ssh/password';
         $formParams = [];
         $queryParams = [];
@@ -1128,12 +1113,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1141,12 +1124,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1157,7 +1139,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($new_password)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_password));
             } else {
                 $httpBody = $new_password;
@@ -1170,7 +1152,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1178,7 +1160,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1189,11 +1171,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1209,9 +1191,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1222,12 +1205,12 @@ class WebsitesApi
      *
      * Clear FastCGI cache for domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function clearDomainNginxFastCgi($domain_id, string $contentType = self::contentTypes['clearDomainNginxFastCgi'][0])
     {
@@ -1239,12 +1222,12 @@ class WebsitesApi
      *
      * Clear FastCGI cache for domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function clearDomainNginxFastCgiWithHttpInfo($domain_id, string $contentType = self::contentTypes['clearDomainNginxFastCgi'][0])
     {
@@ -1272,12 +1255,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1288,11 +1269,11 @@ class WebsitesApi
      *
      * Clear FastCGI cache for domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function clearDomainNginxFastCgiAsync($domain_id, string $contentType = self::contentTypes['clearDomainNginxFastCgi'][0])
     {
@@ -1309,11 +1290,11 @@ class WebsitesApi
      *
      * Clear FastCGI cache for domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function clearDomainNginxFastCgiAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['clearDomainNginxFastCgi'][0])
     {
@@ -1323,7 +1304,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1346,11 +1327,11 @@ class WebsitesApi
     /**
      * Create request for operation 'clearDomainNginxFastCgi'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['clearDomainNginxFastCgi'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function clearDomainNginxFastCgiRequest($domain_id, string $contentType = self::contentTypes['clearDomainNginxFastCgi'][0])
     {
@@ -1362,7 +1343,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/nginx_fastcgi';
         $formParams = [];
         $queryParams = [];
@@ -1370,17 +1350,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1397,7 +1374,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1405,7 +1382,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1416,11 +1393,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1436,9 +1413,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1449,17 +1427,18 @@ class WebsitesApi
      *
      * Clone website or push live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest $website_clone_request website_clone_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest  $website_clone_request  website_clone_request (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function cloneWebsite($org_id, $website_clone_request, string $contentType = self::contentTypes['cloneWebsite'][0])
     {
-        list($response) = $this->cloneWebsiteWithHttpInfo($org_id, $website_clone_request, $contentType);
+        [$response] = $this->cloneWebsiteWithHttpInfo($org_id, $website_clone_request, $contentType);
+
         return $response;
     }
 
@@ -1468,13 +1447,13 @@ class WebsitesApi
      *
      * Clone website or push live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest $website_clone_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest  $website_clone_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function cloneWebsiteWithHttpInfo($org_id, $website_clone_request, string $contentType = self::contentTypes['cloneWebsite'][0])
     {
@@ -1502,8 +1481,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -1511,8 +1489,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1543,7 +1519,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1554,12 +1529,12 @@ class WebsitesApi
      *
      * Clone website or push live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest $website_clone_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest  $website_clone_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function cloneWebsiteAsync($org_id, $website_clone_request, string $contentType = self::contentTypes['cloneWebsite'][0])
     {
@@ -1576,12 +1551,12 @@ class WebsitesApi
      *
      * Clone website or push live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest $website_clone_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest  $website_clone_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function cloneWebsiteAsyncWithHttpInfo($org_id, $website_clone_request, string $contentType = self::contentTypes['cloneWebsite'][0])
     {
@@ -1593,7 +1568,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1604,7 +1579,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1627,12 +1602,12 @@ class WebsitesApi
     /**
      * Create request for operation 'cloneWebsite'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest $website_clone_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneRequest  $website_clone_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['cloneWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function cloneWebsiteRequest($org_id, $website_clone_request, string $contentType = self::contentTypes['cloneWebsite'][0])
     {
@@ -1651,7 +1626,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/clone';
         $formParams = [];
         $queryParams = [];
@@ -1659,20 +1633,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1680,7 +1651,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($website_clone_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($website_clone_request));
             } else {
                 $httpBody = $website_clone_request;
@@ -1693,7 +1664,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1701,7 +1672,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1712,11 +1683,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1732,9 +1703,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1745,19 +1717,20 @@ class WebsitesApi
      *
      * Creates a new FTP user for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createFtpUser($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
-        list($response) = $this->createFtpUserWithHttpInfo($org_id, $website_id, $new_ftp_user, $create_home, $contentType);
+        [$response] = $this->createFtpUserWithHttpInfo($org_id, $website_id, $new_ftp_user, $create_home, $contentType);
+
         return $response;
     }
 
@@ -1766,15 +1739,15 @@ class WebsitesApi
      *
      * Creates a new FTP user for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFtpUserWithHttpInfo($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
@@ -1802,8 +1775,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -1811,8 +1783,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1843,7 +1813,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1854,14 +1823,14 @@ class WebsitesApi
      *
      * Creates a new FTP user for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFtpUserAsync($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
@@ -1878,14 +1847,14 @@ class WebsitesApi
      *
      * Creates a new FTP user for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFtpUserAsyncWithHttpInfo($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
@@ -1897,7 +1866,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1908,7 +1877,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1931,14 +1900,14 @@ class WebsitesApi
     /**
      * Create request for operation 'createFtpUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createFtpUserRequest($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
@@ -1964,8 +1933,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ftp/users';
         $formParams = [];
         $queryParams = [];
@@ -1983,11 +1950,10 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1995,15 +1961,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2011,7 +1976,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($new_ftp_user)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_ftp_user));
             } else {
                 $httpBody = $new_ftp_user;
@@ -2024,7 +1989,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2032,7 +1997,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2043,11 +2008,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2063,9 +2028,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2076,17 +2042,18 @@ class WebsitesApi
      *
      * Create a preview domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @return string|string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string|string
      */
     public function createPreviewDomain($org_id, $website_id, string $contentType = self::contentTypes['createPreviewDomain'][0])
     {
-        list($response) = $this->createPreviewDomainWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->createPreviewDomainWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -2095,13 +2062,13 @@ class WebsitesApi
      *
      * Create a preview domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @return array of string|string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string|string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPreviewDomainWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['createPreviewDomain'][0])
     {
@@ -2129,8 +2096,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -2144,8 +2110,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2184,7 +2148,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2195,12 +2158,12 @@ class WebsitesApi
      *
      * Create a preview domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPreviewDomainAsync($org_id, $website_id, string $contentType = self::contentTypes['createPreviewDomain'][0])
     {
@@ -2217,12 +2180,12 @@ class WebsitesApi
      *
      * Create a preview domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPreviewDomainAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['createPreviewDomain'][0])
     {
@@ -2234,7 +2197,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2245,7 +2208,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2268,12 +2231,12 @@ class WebsitesApi
     /**
      * Create request for operation 'createPreviewDomain'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPreviewDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createPreviewDomainRequest($org_id, $website_id, string $contentType = self::contentTypes['createPreviewDomain'][0])
     {
@@ -2292,7 +2255,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/preview';
         $formParams = [];
         $queryParams = [];
@@ -2300,12 +2262,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2313,15 +2273,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2335,7 +2294,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2343,7 +2302,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2354,11 +2313,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2374,9 +2333,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2387,18 +2347,19 @@ class WebsitesApi
      *
      * Create a new website or clone an existing one.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite $new_website New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite  $new_website  New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createWebsite($org_id, $new_website, $kind = null, string $contentType = self::contentTypes['createWebsite'][0])
     {
-        list($response) = $this->createWebsiteWithHttpInfo($org_id, $new_website, $kind, $contentType);
+        [$response] = $this->createWebsiteWithHttpInfo($org_id, $new_website, $kind, $contentType);
+
         return $response;
     }
 
@@ -2407,14 +2368,14 @@ class WebsitesApi
      *
      * Create a new website or clone an existing one.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite $new_website New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite  $new_website  New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteWithHttpInfo($org_id, $new_website, $kind = null, string $contentType = self::contentTypes['createWebsite'][0])
     {
@@ -2442,8 +2403,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -2451,8 +2411,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2483,7 +2441,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2494,13 +2451,13 @@ class WebsitesApi
      *
      * Create a new website or clone an existing one.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite $new_website New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite  $new_website  New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteAsync($org_id, $new_website, $kind = null, string $contentType = self::contentTypes['createWebsite'][0])
     {
@@ -2517,13 +2474,13 @@ class WebsitesApi
      *
      * Create a new website or clone an existing one.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite $new_website New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite  $new_website  New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteAsyncWithHttpInfo($org_id, $new_website, $kind = null, string $contentType = self::contentTypes['createWebsite'][0])
     {
@@ -2535,7 +2492,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2546,7 +2503,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2569,13 +2526,13 @@ class WebsitesApi
     /**
      * Create request for operation 'createWebsite'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite $new_website New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsite  $new_website  New website details. If the organization is the MO, they need not have a subscription to create a website. In all other cases organization needs to be subscribed to a plan that allows creating websites. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  The kind of a *special* website that needs to be created. Whether this website is to be a *control panel* website or a *phpMyAdmin* website. Note: in order to create a new *phpMyAdmin* website the control panel website needs to be created first, since the new phpMyAdmin website will be under the control panel domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteRequest($org_id, $new_website, $kind = null, string $contentType = self::contentTypes['createWebsite'][0])
     {
@@ -2594,8 +2551,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites';
         $formParams = [];
         $queryParams = [];
@@ -2613,19 +2568,17 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2633,7 +2586,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($new_website)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_website));
             } else {
                 $httpBody = $new_website;
@@ -2646,7 +2599,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2654,7 +2607,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2665,11 +2618,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2685,9 +2638,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2698,12 +2652,12 @@ class WebsitesApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createWebsiteDomainLetsencryptCerts($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -2715,12 +2669,12 @@ class WebsitesApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteDomainLetsencryptCertsWithHttpInfo($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -2748,12 +2702,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2764,11 +2716,11 @@ class WebsitesApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteDomainLetsencryptCertsAsync($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -2785,11 +2737,11 @@ class WebsitesApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteDomainLetsencryptCertsAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -2799,7 +2751,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2822,11 +2774,11 @@ class WebsitesApi
     /**
      * Create request for operation 'createWebsiteDomainLetsencryptCerts'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteDomainLetsencryptCertsRequest($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -2838,7 +2790,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/letsencrypt';
         $formParams = [];
         $queryParams = [];
@@ -2846,17 +2797,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2873,7 +2821,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2881,14 +2829,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2903,9 +2850,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2916,12 +2864,12 @@ class WebsitesApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain with mail. prefix.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createWebsiteMailDomainLetsencryptCerts($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -2933,12 +2881,12 @@ class WebsitesApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain with mail. prefix.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteMailDomainLetsencryptCertsWithHttpInfo($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -2966,12 +2914,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2982,11 +2928,11 @@ class WebsitesApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain with mail. prefix.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMailDomainLetsencryptCertsAsync($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -3003,11 +2949,11 @@ class WebsitesApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain with mail. prefix.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMailDomainLetsencryptCertsAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -3017,7 +2963,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3040,11 +2986,11 @@ class WebsitesApi
     /**
      * Create request for operation 'createWebsiteMailDomainLetsencryptCerts'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteMailDomainLetsencryptCertsRequest($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -3056,7 +3002,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/letsencrypt_mail';
         $formParams = [];
         $queryParams = [];
@@ -3064,17 +3009,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3091,7 +3033,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3099,14 +3041,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3121,9 +3062,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3134,18 +3076,19 @@ class WebsitesApi
      *
      * Create website mapped domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain $new_mapped_domain Domain details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain  $new_mapped_domain  Domain details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createWebsiteMappedDomain($org_id, $website_id, $new_mapped_domain, string $contentType = self::contentTypes['createWebsiteMappedDomain'][0])
     {
-        list($response) = $this->createWebsiteMappedDomainWithHttpInfo($org_id, $website_id, $new_mapped_domain, $contentType);
+        [$response] = $this->createWebsiteMappedDomainWithHttpInfo($org_id, $website_id, $new_mapped_domain, $contentType);
+
         return $response;
     }
 
@@ -3154,14 +3097,14 @@ class WebsitesApi
      *
      * Create website mapped domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain $new_mapped_domain Domain details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain  $new_mapped_domain  Domain details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteMappedDomainWithHttpInfo($org_id, $website_id, $new_mapped_domain, string $contentType = self::contentTypes['createWebsiteMappedDomain'][0])
     {
@@ -3189,8 +3132,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -3198,8 +3140,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3230,7 +3170,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3241,13 +3180,13 @@ class WebsitesApi
      *
      * Create website mapped domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain $new_mapped_domain Domain details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain  $new_mapped_domain  Domain details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMappedDomainAsync($org_id, $website_id, $new_mapped_domain, string $contentType = self::contentTypes['createWebsiteMappedDomain'][0])
     {
@@ -3264,13 +3203,13 @@ class WebsitesApi
      *
      * Create website mapped domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain $new_mapped_domain Domain details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain  $new_mapped_domain  Domain details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMappedDomainAsyncWithHttpInfo($org_id, $website_id, $new_mapped_domain, string $contentType = self::contentTypes['createWebsiteMappedDomain'][0])
     {
@@ -3282,7 +3221,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3293,7 +3232,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3316,13 +3255,13 @@ class WebsitesApi
     /**
      * Create request for operation 'createWebsiteMappedDomain'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain $new_mapped_domain Domain details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMappedDomain  $new_mapped_domain  Domain details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMappedDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteMappedDomainRequest($org_id, $website_id, $new_mapped_domain, string $contentType = self::contentTypes['createWebsiteMappedDomain'][0])
     {
@@ -3348,7 +3287,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains';
         $formParams = [];
         $queryParams = [];
@@ -3356,12 +3294,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3369,15 +3305,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3385,7 +3320,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($new_mapped_domain)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_mapped_domain));
             } else {
                 $httpBody = $new_mapped_domain;
@@ -3398,7 +3333,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3406,7 +3341,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3417,11 +3352,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3437,9 +3372,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3450,14 +3386,14 @@ class WebsitesApi
      *
      * Create a MySQL database for website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createWebsiteMySQLDB($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -3469,14 +3405,14 @@ class WebsitesApi
      *
      * Create a MySQL database for website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteMySQLDBWithHttpInfo($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -3504,12 +3440,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3520,13 +3454,13 @@ class WebsitesApi
      *
      * Create a MySQL database for website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMySQLDBAsync($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -3543,13 +3477,13 @@ class WebsitesApi
      *
      * Create a MySQL database for website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMySQLDBAsyncWithHttpInfo($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -3559,7 +3493,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3582,13 +3516,13 @@ class WebsitesApi
     /**
      * Create request for operation 'createWebsiteMySQLDB'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB $new_my_sqldb New database details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewMySQLDB  $new_my_sqldb  New database details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMySQLDB'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteMySQLDBRequest($org_id, $website_id, $new_my_sqldb, string $contentType = self::contentTypes['createWebsiteMySQLDB'][0])
     {
@@ -3614,7 +3548,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-dbs';
         $formParams = [];
         $queryParams = [];
@@ -3622,12 +3555,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3635,12 +3566,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3651,7 +3581,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($new_my_sqldb)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_my_sqldb));
             } else {
                 $httpBody = $new_my_sqldb;
@@ -3664,7 +3594,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3672,14 +3602,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3694,9 +3623,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3707,13 +3637,13 @@ class WebsitesApi
      *
      * Delete Nginx FastCGI excluded path
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  path (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteDomainNginxFastCgiExcludedPath($domain_id, $path, string $contentType = self::contentTypes['deleteDomainNginxFastCgiExcludedPath'][0])
     {
@@ -3725,13 +3655,13 @@ class WebsitesApi
      *
      * Delete Nginx FastCGI excluded path
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDomainNginxFastCgiExcludedPathWithHttpInfo($domain_id, $path, string $contentType = self::contentTypes['deleteDomainNginxFastCgiExcludedPath'][0])
     {
@@ -3759,12 +3689,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3775,12 +3703,12 @@ class WebsitesApi
      *
      * Delete Nginx FastCGI excluded path
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteDomainNginxFastCgiExcludedPathAsync($domain_id, $path, string $contentType = self::contentTypes['deleteDomainNginxFastCgiExcludedPath'][0])
     {
@@ -3797,12 +3725,12 @@ class WebsitesApi
      *
      * Delete Nginx FastCGI excluded path
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteDomainNginxFastCgiExcludedPathAsyncWithHttpInfo($domain_id, $path, string $contentType = self::contentTypes['deleteDomainNginxFastCgiExcludedPath'][0])
     {
@@ -3812,7 +3740,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3835,12 +3763,12 @@ class WebsitesApi
     /**
      * Create request for operation 'deleteDomainNginxFastCgiExcludedPath'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainNginxFastCgiExcludedPath'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDomainNginxFastCgiExcludedPathRequest($domain_id, $path, string $contentType = self::contentTypes['deleteDomainNginxFastCgiExcludedPath'][0])
     {
@@ -3859,7 +3787,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/nginx_fastcgi_excluded_paths';
         $formParams = [];
         $queryParams = [];
@@ -3877,16 +3804,14 @@ class WebsitesApi
             true // required
         ) ?? []);
 
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3903,7 +3828,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3911,7 +3836,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3922,11 +3847,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3942,9 +3867,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3955,13 +3881,13 @@ class WebsitesApi
      *
      * Delete web server rewrite
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  path (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteDomainWebserverRewrite($domain_id, $path, string $contentType = self::contentTypes['deleteDomainWebserverRewrite'][0])
     {
@@ -3973,13 +3899,13 @@ class WebsitesApi
      *
      * Delete web server rewrite
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDomainWebserverRewriteWithHttpInfo($domain_id, $path, string $contentType = self::contentTypes['deleteDomainWebserverRewrite'][0])
     {
@@ -4007,12 +3933,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4023,12 +3947,12 @@ class WebsitesApi
      *
      * Delete web server rewrite
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteDomainWebserverRewriteAsync($domain_id, $path, string $contentType = self::contentTypes['deleteDomainWebserverRewrite'][0])
     {
@@ -4045,12 +3969,12 @@ class WebsitesApi
      *
      * Delete web server rewrite
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteDomainWebserverRewriteAsyncWithHttpInfo($domain_id, $path, string $contentType = self::contentTypes['deleteDomainWebserverRewrite'][0])
     {
@@ -4060,7 +3984,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4083,12 +4007,12 @@ class WebsitesApi
     /**
      * Create request for operation 'deleteDomainWebserverRewrite'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $path (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $path  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDomainWebserverRewrite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDomainWebserverRewriteRequest($domain_id, $path, string $contentType = self::contentTypes['deleteDomainWebserverRewrite'][0])
     {
@@ -4107,7 +4031,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/webserver_rewrites';
         $formParams = [];
         $queryParams = [];
@@ -4125,16 +4048,14 @@ class WebsitesApi
             true // required
         ) ?? []);
 
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4151,7 +4072,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4159,7 +4080,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4170,11 +4091,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4190,9 +4111,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4203,15 +4125,15 @@ class WebsitesApi
      *
      * Deletes given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  username (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteFtpUser($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -4223,15 +4145,15 @@ class WebsitesApi
      *
      * Deletes given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteFtpUserWithHttpInfo($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -4259,12 +4181,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4275,14 +4195,14 @@ class WebsitesApi
      *
      * Deletes given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFtpUserAsync($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -4299,14 +4219,14 @@ class WebsitesApi
      *
      * Deletes given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFtpUserAsyncWithHttpInfo($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -4316,7 +4236,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4339,14 +4259,14 @@ class WebsitesApi
     /**
      * Create request for operation 'deleteFtpUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteFtpUserRequest($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -4372,8 +4292,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ftp/users/{username}';
         $formParams = [];
         $queryParams = [];
@@ -4391,11 +4309,10 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -4403,7 +4320,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -4411,12 +4328,11 @@ class WebsitesApi
         // path params
         if ($username !== null) {
             $resourcePath = str_replace(
-                '{' . 'username' . '}',
+                '{'.'username'.'}',
                 ObjectSerializer::toPathValue($username),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4433,7 +4349,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4441,7 +4357,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4452,11 +4368,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4472,9 +4388,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4485,13 +4402,13 @@ class WebsitesApi
      *
      * Delete user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteUserCrontab($org_id, $website_id, string $contentType = self::contentTypes['deleteUserCrontab'][0])
     {
@@ -4503,13 +4420,13 @@ class WebsitesApi
      *
      * Delete user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteUserCrontabWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['deleteUserCrontab'][0])
     {
@@ -4537,12 +4454,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4553,12 +4468,12 @@ class WebsitesApi
      *
      * Delete user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteUserCrontabAsync($org_id, $website_id, string $contentType = self::contentTypes['deleteUserCrontab'][0])
     {
@@ -4575,12 +4490,12 @@ class WebsitesApi
      *
      * Delete user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteUserCrontabAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['deleteUserCrontab'][0])
     {
@@ -4590,7 +4505,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4613,12 +4528,12 @@ class WebsitesApi
     /**
      * Create request for operation 'deleteUserCrontab'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteUserCrontab'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteUserCrontabRequest($org_id, $website_id, string $contentType = self::contentTypes['deleteUserCrontab'][0])
     {
@@ -4637,7 +4552,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/crontab';
         $formParams = [];
         $queryParams = [];
@@ -4645,12 +4559,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -4658,12 +4570,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4680,7 +4591,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4688,7 +4599,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4699,11 +4610,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4719,9 +4630,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4732,14 +4644,14 @@ class WebsitesApi
      *
      * Delete website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $force force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $force  force (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsite($org_id, $website_id, $force = false, string $contentType = self::contentTypes['deleteWebsite'][0])
     {
@@ -4751,14 +4663,14 @@ class WebsitesApi
      *
      * Delete website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteWithHttpInfo($org_id, $website_id, $force = false, string $contentType = self::contentTypes['deleteWebsite'][0])
     {
@@ -4786,12 +4698,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4802,13 +4712,13 @@ class WebsitesApi
      *
      * Delete website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteAsync($org_id, $website_id, $force = false, string $contentType = self::contentTypes['deleteWebsite'][0])
     {
@@ -4825,13 +4735,13 @@ class WebsitesApi
      *
      * Delete website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteAsyncWithHttpInfo($org_id, $website_id, $force = false, string $contentType = self::contentTypes['deleteWebsite'][0])
     {
@@ -4841,7 +4751,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4864,13 +4774,13 @@ class WebsitesApi
     /**
      * Create request for operation 'deleteWebsite'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteRequest($org_id, $website_id, $force = false, string $contentType = self::contentTypes['deleteWebsite'][0])
     {
@@ -4889,8 +4799,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}';
         $formParams = [];
         $queryParams = [];
@@ -4908,11 +4816,10 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -4920,12 +4827,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4942,7 +4848,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4950,7 +4856,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4961,11 +4867,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4981,9 +4887,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4994,14 +4901,14 @@ class WebsitesApi
      *
      * Delete website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteDomainMapping($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['deleteWebsiteDomainMapping'][0])
     {
@@ -5013,14 +4920,14 @@ class WebsitesApi
      *
      * Delete website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteDomainMappingWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['deleteWebsiteDomainMapping'][0])
     {
@@ -5048,12 +4955,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5064,13 +4969,13 @@ class WebsitesApi
      *
      * Delete website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteDomainMappingAsync($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['deleteWebsiteDomainMapping'][0])
     {
@@ -5087,13 +4992,13 @@ class WebsitesApi
      *
      * Delete website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteDomainMappingAsyncWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['deleteWebsiteDomainMapping'][0])
     {
@@ -5103,7 +5008,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5126,13 +5031,13 @@ class WebsitesApi
     /**
      * Create request for operation 'deleteWebsiteDomainMapping'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteDomainMappingRequest($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['deleteWebsiteDomainMapping'][0])
     {
@@ -5158,7 +5063,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}';
         $formParams = [];
         $queryParams = [];
@@ -5166,12 +5070,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5179,7 +5081,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -5187,12 +5089,11 @@ class WebsitesApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5209,7 +5110,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5217,7 +5118,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5228,11 +5129,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5248,9 +5149,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5261,13 +5163,13 @@ class WebsitesApi
      *
      * Deletes domain&#39;s custom vhost file if any
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest $delete_website_domain_vhost_request delete_website_domain_vhost_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest  $delete_website_domain_vhost_request  delete_website_domain_vhost_request (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteDomainVhost($domain_id, $delete_website_domain_vhost_request, string $contentType = self::contentTypes['deleteWebsiteDomainVhost'][0])
     {
@@ -5279,13 +5181,13 @@ class WebsitesApi
      *
      * Deletes domain&#39;s custom vhost file if any
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest $delete_website_domain_vhost_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest  $delete_website_domain_vhost_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteDomainVhostWithHttpInfo($domain_id, $delete_website_domain_vhost_request, string $contentType = self::contentTypes['deleteWebsiteDomainVhost'][0])
     {
@@ -5313,12 +5215,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5329,12 +5229,12 @@ class WebsitesApi
      *
      * Deletes domain&#39;s custom vhost file if any
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest $delete_website_domain_vhost_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest  $delete_website_domain_vhost_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteDomainVhostAsync($domain_id, $delete_website_domain_vhost_request, string $contentType = self::contentTypes['deleteWebsiteDomainVhost'][0])
     {
@@ -5351,12 +5251,12 @@ class WebsitesApi
      *
      * Deletes domain&#39;s custom vhost file if any
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest $delete_website_domain_vhost_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest  $delete_website_domain_vhost_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteDomainVhostAsyncWithHttpInfo($domain_id, $delete_website_domain_vhost_request, string $contentType = self::contentTypes['deleteWebsiteDomainVhost'][0])
     {
@@ -5366,7 +5266,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5389,12 +5289,12 @@ class WebsitesApi
     /**
      * Create request for operation 'deleteWebsiteDomainVhost'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest $delete_website_domain_vhost_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DeleteWebsiteDomainVhostRequest  $delete_website_domain_vhost_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteDomainVhostRequest($domain_id, $delete_website_domain_vhost_request, string $contentType = self::contentTypes['deleteWebsiteDomainVhost'][0])
     {
@@ -5413,7 +5313,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/vhost';
         $formParams = [];
         $queryParams = [];
@@ -5421,17 +5320,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5442,7 +5338,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($delete_website_domain_vhost_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($delete_website_domain_vhost_request));
             } else {
                 $httpBody = $delete_website_domain_vhost_request;
@@ -5455,7 +5351,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5463,14 +5359,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5485,9 +5380,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5498,15 +5394,15 @@ class WebsitesApi
      *
      * Delete a single override setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteSetting($org_id, $website_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteWebsiteSetting'][0])
     {
@@ -5518,15 +5414,15 @@ class WebsitesApi
      *
      * Delete a single override setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteSettingWithHttpInfo($org_id, $website_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteWebsiteSetting'][0])
     {
@@ -5554,12 +5450,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5570,14 +5464,14 @@ class WebsitesApi
      *
      * Delete a single override setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteSettingAsync($org_id, $website_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteWebsiteSetting'][0])
     {
@@ -5594,14 +5488,14 @@ class WebsitesApi
      *
      * Delete a single override setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteSettingAsyncWithHttpInfo($org_id, $website_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteWebsiteSetting'][0])
     {
@@ -5611,7 +5505,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5634,14 +5528,14 @@ class WebsitesApi
     /**
      * Create request for operation 'deleteWebsiteSetting'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteSettingRequest($org_id, $website_id, $setting_kind, $setting_key, string $contentType = self::contentTypes['deleteWebsiteSetting'][0])
     {
@@ -5674,7 +5568,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/settings/{setting_kind}/{setting_key}';
         $formParams = [];
         $queryParams = [];
@@ -5682,12 +5575,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5695,7 +5586,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -5703,7 +5594,7 @@ class WebsitesApi
         // path params
         if ($setting_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_kind' . '}',
+                '{'.'setting_kind'.'}',
                 ObjectSerializer::toPathValue($setting_kind),
                 $resourcePath
             );
@@ -5711,12 +5602,11 @@ class WebsitesApi
         // path params
         if ($setting_key !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_key' . '}',
+                '{'.'setting_key'.'}',
                 ObjectSerializer::toPathValue($setting_key),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5733,7 +5623,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5741,7 +5631,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5752,11 +5642,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5772,9 +5662,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5785,13 +5676,13 @@ class WebsitesApi
      *
      * Delete websites
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing $uuid_listing The ids of the websites to delete. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing  $uuid_listing  The ids of the websites to delete. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsites($org_id, $uuid_listing, string $contentType = self::contentTypes['deleteWebsites'][0])
     {
@@ -5803,13 +5694,13 @@ class WebsitesApi
      *
      * Delete websites
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing $uuid_listing The ids of the websites to delete. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing  $uuid_listing  The ids of the websites to delete. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsitesWithHttpInfo($org_id, $uuid_listing, string $contentType = self::contentTypes['deleteWebsites'][0])
     {
@@ -5837,12 +5728,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5853,12 +5742,12 @@ class WebsitesApi
      *
      * Delete websites
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing $uuid_listing The ids of the websites to delete. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing  $uuid_listing  The ids of the websites to delete. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsitesAsync($org_id, $uuid_listing, string $contentType = self::contentTypes['deleteWebsites'][0])
     {
@@ -5875,12 +5764,12 @@ class WebsitesApi
      *
      * Delete websites
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing $uuid_listing The ids of the websites to delete. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing  $uuid_listing  The ids of the websites to delete. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsitesAsyncWithHttpInfo($org_id, $uuid_listing, string $contentType = self::contentTypes['deleteWebsites'][0])
     {
@@ -5890,7 +5779,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5913,12 +5802,12 @@ class WebsitesApi
     /**
      * Create request for operation 'deleteWebsites'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing $uuid_listing The ids of the websites to delete. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UuidListing  $uuid_listing  The ids of the websites to delete. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsitesRequest($org_id, $uuid_listing, string $contentType = self::contentTypes['deleteWebsites'][0])
     {
@@ -5937,7 +5826,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites';
         $formParams = [];
         $queryParams = [];
@@ -5945,17 +5833,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5966,7 +5851,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($uuid_listing)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($uuid_listing));
             } else {
                 $httpBody = $uuid_listing;
@@ -5979,7 +5864,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5987,14 +5872,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -6009,9 +5893,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6022,13 +5907,13 @@ class WebsitesApi
      *
      * Disable a PHP extension
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function disableWebsitePhpExtension($website_id, $body = null, string $contentType = self::contentTypes['disableWebsitePhpExtension'][0])
     {
@@ -6040,13 +5925,13 @@ class WebsitesApi
      *
      * Disable a PHP extension
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function disableWebsitePhpExtensionWithHttpInfo($website_id, $body = null, string $contentType = self::contentTypes['disableWebsitePhpExtension'][0])
     {
@@ -6074,12 +5959,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -6090,12 +5973,12 @@ class WebsitesApi
      *
      * Disable a PHP extension
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function disableWebsitePhpExtensionAsync($website_id, $body = null, string $contentType = self::contentTypes['disableWebsitePhpExtension'][0])
     {
@@ -6112,12 +5995,12 @@ class WebsitesApi
      *
      * Disable a PHP extension
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function disableWebsitePhpExtensionAsyncWithHttpInfo($website_id, $body = null, string $contentType = self::contentTypes['disableWebsitePhpExtension'][0])
     {
@@ -6127,7 +6010,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -6150,12 +6033,12 @@ class WebsitesApi
     /**
      * Create request for operation 'disableWebsitePhpExtension'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableWebsitePhpExtension'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function disableWebsitePhpExtensionRequest($website_id, $body = null, string $contentType = self::contentTypes['disableWebsitePhpExtension'][0])
     {
@@ -6167,8 +6050,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/websites/{website_id}/php_extensions';
         $formParams = [];
         $queryParams = [];
@@ -6176,17 +6057,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -6197,7 +6075,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -6210,7 +6088,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6218,7 +6096,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6229,11 +6107,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6249,9 +6127,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6262,13 +6141,13 @@ class WebsitesApi
      *
      * Enable a PHP extension
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function enableWebsitePhpExtension($website_id, $body = null, string $contentType = self::contentTypes['enableWebsitePhpExtension'][0])
     {
@@ -6280,13 +6159,13 @@ class WebsitesApi
      *
      * Enable a PHP extension
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function enableWebsitePhpExtensionWithHttpInfo($website_id, $body = null, string $contentType = self::contentTypes['enableWebsitePhpExtension'][0])
     {
@@ -6314,12 +6193,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -6330,12 +6207,12 @@ class WebsitesApi
      *
      * Enable a PHP extension
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function enableWebsitePhpExtensionAsync($website_id, $body = null, string $contentType = self::contentTypes['enableWebsitePhpExtension'][0])
     {
@@ -6352,12 +6229,12 @@ class WebsitesApi
      *
      * Enable a PHP extension
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function enableWebsitePhpExtensionAsyncWithHttpInfo($website_id, $body = null, string $contentType = self::contentTypes['enableWebsitePhpExtension'][0])
     {
@@ -6367,7 +6244,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -6390,12 +6267,12 @@ class WebsitesApi
     /**
      * Create request for operation 'enableWebsitePhpExtension'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableWebsitePhpExtension'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function enableWebsitePhpExtensionRequest($website_id, $body = null, string $contentType = self::contentTypes['enableWebsitePhpExtension'][0])
     {
@@ -6407,8 +6284,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/websites/{website_id}/php_extensions';
         $formParams = [];
         $queryParams = [];
@@ -6416,17 +6291,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -6437,7 +6309,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -6450,7 +6322,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6458,7 +6330,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6469,11 +6341,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6489,9 +6361,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6502,16 +6375,17 @@ class WebsitesApi
      *
      * Get status of Nginx FastCGI enablement
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @return bool
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return bool
      */
     public function getDomainNginxFastCgi($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgi'][0])
     {
-        list($response) = $this->getDomainNginxFastCgiWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->getDomainNginxFastCgiWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -6520,12 +6394,12 @@ class WebsitesApi
      *
      * Get status of Nginx FastCGI enablement
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDomainNginxFastCgiWithHttpInfo($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgi'][0])
     {
@@ -6553,8 +6427,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'bool',
@@ -6562,8 +6435,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6594,7 +6465,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6605,11 +6475,11 @@ class WebsitesApi
      *
      * Get status of Nginx FastCGI enablement
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainNginxFastCgiAsync($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgi'][0])
     {
@@ -6626,11 +6496,11 @@ class WebsitesApi
      *
      * Get status of Nginx FastCGI enablement
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainNginxFastCgiAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgi'][0])
     {
@@ -6642,7 +6512,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6653,7 +6523,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6676,11 +6546,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getDomainNginxFastCgi'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgi'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDomainNginxFastCgiRequest($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgi'][0])
     {
@@ -6692,7 +6562,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/nginx_fastcgi';
         $formParams = [];
         $queryParams = [];
@@ -6700,20 +6569,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -6727,7 +6593,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6735,7 +6601,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6746,11 +6612,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6766,9 +6632,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6779,16 +6646,17 @@ class WebsitesApi
      *
      * Get Nginx FastCGI excluded paths
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @return string[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string[]
      */
     public function getDomainNginxFastCgiExcludedPaths($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgiExcludedPaths'][0])
     {
-        list($response) = $this->getDomainNginxFastCgiExcludedPathsWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->getDomainNginxFastCgiExcludedPathsWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -6797,12 +6665,12 @@ class WebsitesApi
      *
      * Get Nginx FastCGI excluded paths
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getDomainNginxFastCgiExcludedPathsWithHttpInfo($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgiExcludedPaths'][0])
     {
@@ -6830,8 +6698,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string[]',
@@ -6839,8 +6706,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6871,7 +6736,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6882,11 +6746,11 @@ class WebsitesApi
      *
      * Get Nginx FastCGI excluded paths
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainNginxFastCgiExcludedPathsAsync($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgiExcludedPaths'][0])
     {
@@ -6903,11 +6767,11 @@ class WebsitesApi
      *
      * Get Nginx FastCGI excluded paths
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainNginxFastCgiExcludedPathsAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgiExcludedPaths'][0])
     {
@@ -6919,7 +6783,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6930,7 +6794,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6953,11 +6817,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getDomainNginxFastCgiExcludedPaths'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainNginxFastCgiExcludedPaths'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDomainNginxFastCgiExcludedPathsRequest($domain_id, string $contentType = self::contentTypes['getDomainNginxFastCgiExcludedPaths'][0])
     {
@@ -6969,7 +6833,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/nginx_fastcgi_excluded_paths';
         $formParams = [];
         $queryParams = [];
@@ -6977,20 +6840,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7004,7 +6864,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7012,7 +6872,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7023,11 +6883,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7043,9 +6903,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7056,16 +6917,17 @@ class WebsitesApi
      *
      * Get web server rewrites for specified domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite[]
      */
     public function getDomainWebserverRewrites($domain_id, string $contentType = self::contentTypes['getDomainWebserverRewrites'][0])
     {
-        list($response) = $this->getDomainWebserverRewritesWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->getDomainWebserverRewritesWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -7074,12 +6936,12 @@ class WebsitesApi
      *
      * Get web server rewrites for specified domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getDomainWebserverRewritesWithHttpInfo($domain_id, string $contentType = self::contentTypes['getDomainWebserverRewrites'][0])
     {
@@ -7107,8 +6969,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite[]',
@@ -7116,8 +6977,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -7148,7 +7007,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -7159,11 +7017,11 @@ class WebsitesApi
      *
      * Get web server rewrites for specified domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainWebserverRewritesAsync($domain_id, string $contentType = self::contentTypes['getDomainWebserverRewrites'][0])
     {
@@ -7180,11 +7038,11 @@ class WebsitesApi
      *
      * Get web server rewrites for specified domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainWebserverRewritesAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['getDomainWebserverRewrites'][0])
     {
@@ -7196,7 +7054,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -7207,7 +7065,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7230,11 +7088,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getDomainWebserverRewrites'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainWebserverRewrites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDomainWebserverRewritesRequest($domain_id, string $contentType = self::contentTypes['getDomainWebserverRewrites'][0])
     {
@@ -7246,7 +7104,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/webserver_rewrites';
         $formParams = [];
         $queryParams = [];
@@ -7254,20 +7111,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7281,7 +7135,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7289,7 +7143,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7300,11 +7154,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7320,9 +7174,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7333,17 +7188,18 @@ class WebsitesApi
      *
      * Returns all ftp users data for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing
      */
     public function getFtpUsers($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
-        list($response) = $this->getFtpUsersWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getFtpUsersWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -7352,13 +7208,13 @@ class WebsitesApi
      *
      * Returns all ftp users data for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFtpUsersWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
@@ -7386,8 +7242,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing',
@@ -7395,8 +7250,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -7427,7 +7280,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -7438,12 +7290,12 @@ class WebsitesApi
      *
      * Returns all ftp users data for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFtpUsersAsync($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
@@ -7460,12 +7312,12 @@ class WebsitesApi
      *
      * Returns all ftp users data for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFtpUsersAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
@@ -7477,7 +7329,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -7488,7 +7340,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7511,12 +7363,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getFtpUsers'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getFtpUsersRequest($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
@@ -7535,7 +7387,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ftp/users';
         $formParams = [];
         $queryParams = [];
@@ -7543,12 +7394,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -7556,15 +7405,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7578,7 +7426,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7586,7 +7434,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7597,11 +7445,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7617,9 +7465,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7630,18 +7479,19 @@ class WebsitesApi
      *
      * Get last screeshot file&#39;s Timestamp
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\UnixTimestamp
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\UnixTimestamp
      */
     public function getScreenshotTimestamp($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getScreenshotTimestamp'][0])
     {
-        list($response) = $this->getScreenshotTimestampWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+        [$response] = $this->getScreenshotTimestampWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+
         return $response;
     }
 
@@ -7650,14 +7500,14 @@ class WebsitesApi
      *
      * Get last screeshot file&#39;s Timestamp
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UnixTimestamp, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UnixTimestamp, HTTP status code, HTTP response headers (array of strings)
      */
     public function getScreenshotTimestampWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getScreenshotTimestamp'][0])
     {
@@ -7685,8 +7535,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\UnixTimestamp',
@@ -7694,8 +7543,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -7726,7 +7573,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -7737,13 +7583,13 @@ class WebsitesApi
      *
      * Get last screeshot file&#39;s Timestamp
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getScreenshotTimestampAsync($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getScreenshotTimestamp'][0])
     {
@@ -7760,13 +7606,13 @@ class WebsitesApi
      *
      * Get last screeshot file&#39;s Timestamp
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getScreenshotTimestampAsyncWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getScreenshotTimestamp'][0])
     {
@@ -7778,7 +7624,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -7789,7 +7635,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7812,13 +7658,13 @@ class WebsitesApi
     /**
      * Create request for operation 'getScreenshotTimestamp'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getScreenshotTimestamp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getScreenshotTimestampRequest($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getScreenshotTimestamp'][0])
     {
@@ -7844,7 +7690,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/screenshot/timestamp';
         $formParams = [];
         $queryParams = [];
@@ -7852,12 +7697,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -7865,7 +7708,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -7873,15 +7716,14 @@ class WebsitesApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7895,7 +7737,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7903,7 +7745,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7914,11 +7756,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7934,9 +7776,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7947,17 +7790,18 @@ class WebsitesApi
      *
      * Get an access token for the given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getSiteAccessToken($org_id, $website_id, string $contentType = self::contentTypes['getSiteAccessToken'][0])
     {
-        list($response) = $this->getSiteAccessTokenWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getSiteAccessTokenWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -7966,13 +7810,13 @@ class WebsitesApi
      *
      * Get an access token for the given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSiteAccessTokenWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getSiteAccessToken'][0])
     {
@@ -8000,8 +7844,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -8009,8 +7852,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -8041,7 +7882,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -8052,12 +7892,12 @@ class WebsitesApi
      *
      * Get an access token for the given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSiteAccessTokenAsync($org_id, $website_id, string $contentType = self::contentTypes['getSiteAccessToken'][0])
     {
@@ -8074,12 +7914,12 @@ class WebsitesApi
      *
      * Get an access token for the given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSiteAccessTokenAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getSiteAccessToken'][0])
     {
@@ -8091,7 +7931,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -8102,7 +7942,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -8125,12 +7965,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getSiteAccessToken'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSiteAccessToken'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSiteAccessTokenRequest($org_id, $website_id, string $contentType = self::contentTypes['getSiteAccessToken'][0])
     {
@@ -8149,7 +7989,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/access-tokens';
         $formParams = [];
         $queryParams = [];
@@ -8157,12 +7996,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -8170,15 +8007,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -8192,7 +8028,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8200,7 +8036,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8211,11 +8047,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8231,9 +8067,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8244,17 +8081,18 @@ class WebsitesApi
      *
      * Get user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\CrontabFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\CrontabFullListing
      */
     public function getUserCrontab($org_id, $website_id, string $contentType = self::contentTypes['getUserCrontab'][0])
     {
-        list($response) = $this->getUserCrontabWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getUserCrontabWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -8263,13 +8101,13 @@ class WebsitesApi
      *
      * Get user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\CrontabFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\CrontabFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserCrontabWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getUserCrontab'][0])
     {
@@ -8297,8 +8135,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 204:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\CrontabFullListing',
@@ -8306,8 +8143,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -8338,7 +8173,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -8349,12 +8183,12 @@ class WebsitesApi
      *
      * Get user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getUserCrontabAsync($org_id, $website_id, string $contentType = self::contentTypes['getUserCrontab'][0])
     {
@@ -8371,12 +8205,12 @@ class WebsitesApi
      *
      * Get user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getUserCrontabAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getUserCrontab'][0])
     {
@@ -8388,7 +8222,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -8399,7 +8233,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -8422,12 +8256,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getUserCrontab'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getUserCrontab'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getUserCrontabRequest($org_id, $website_id, string $contentType = self::contentTypes['getUserCrontab'][0])
     {
@@ -8446,7 +8280,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/crontab';
         $formParams = [];
         $queryParams = [];
@@ -8454,12 +8287,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -8467,15 +8298,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -8489,7 +8319,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8497,7 +8327,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8508,11 +8338,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8528,9 +8358,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8541,17 +8372,18 @@ class WebsitesApi
      *
      * Get website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Website
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Website
      */
     public function getWebsite($org_id, $website_id, string $contentType = self::contentTypes['getWebsite'][0])
     {
-        list($response) = $this->getWebsiteWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -8560,13 +8392,13 @@ class WebsitesApi
      *
      * Get website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Website, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Website, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsite'][0])
     {
@@ -8594,8 +8426,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Website',
@@ -8603,8 +8434,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -8635,7 +8464,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -8646,12 +8474,12 @@ class WebsitesApi
      *
      * Get website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsite'][0])
     {
@@ -8668,12 +8496,12 @@ class WebsitesApi
      *
      * Get website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsite'][0])
     {
@@ -8685,7 +8513,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -8696,7 +8524,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -8719,12 +8547,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsite'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsite'][0])
     {
@@ -8743,7 +8571,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}';
         $formParams = [];
         $queryParams = [];
@@ -8751,12 +8578,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -8764,15 +8589,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -8786,7 +8610,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8794,7 +8618,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8805,11 +8629,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8825,9 +8649,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8838,16 +8663,17 @@ class WebsitesApi
      *
      * Get available PHP extensions for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @return string[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string[]
      */
     public function getWebsiteAvailablePhpExtensions($website_id, string $contentType = self::contentTypes['getWebsiteAvailablePhpExtensions'][0])
     {
-        list($response) = $this->getWebsiteAvailablePhpExtensionsWithHttpInfo($website_id, $contentType);
+        [$response] = $this->getWebsiteAvailablePhpExtensionsWithHttpInfo($website_id, $contentType);
+
         return $response;
     }
 
@@ -8856,12 +8682,12 @@ class WebsitesApi
      *
      * Get available PHP extensions for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteAvailablePhpExtensionsWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteAvailablePhpExtensions'][0])
     {
@@ -8889,8 +8715,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string[]',
@@ -8898,8 +8723,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -8930,7 +8753,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -8941,11 +8763,11 @@ class WebsitesApi
      *
      * Get available PHP extensions for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteAvailablePhpExtensionsAsync($website_id, string $contentType = self::contentTypes['getWebsiteAvailablePhpExtensions'][0])
     {
@@ -8962,11 +8784,11 @@ class WebsitesApi
      *
      * Get available PHP extensions for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteAvailablePhpExtensionsAsyncWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteAvailablePhpExtensions'][0])
     {
@@ -8978,7 +8800,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -8989,7 +8811,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -9012,11 +8834,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteAvailablePhpExtensions'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteAvailablePhpExtensions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteAvailablePhpExtensionsRequest($website_id, string $contentType = self::contentTypes['getWebsiteAvailablePhpExtensions'][0])
     {
@@ -9028,7 +8850,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/websites/{website_id}/available_php_extensions';
         $formParams = [];
         $queryParams = [];
@@ -9036,20 +8857,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -9063,7 +8881,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -9071,7 +8889,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -9082,11 +8900,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9102,9 +8920,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9115,17 +8934,18 @@ class WebsitesApi
      *
      * Get the status of an ongoing website backup operation
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\BackupStatus
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\BackupStatus
      */
     public function getWebsiteBackupStatus($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackupStatus'][0])
     {
-        list($response) = $this->getWebsiteBackupStatusWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteBackupStatusWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -9134,13 +8954,13 @@ class WebsitesApi
      *
      * Get the status of an ongoing website backup operation
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\BackupStatus, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\BackupStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteBackupStatusWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackupStatus'][0])
     {
@@ -9168,8 +8988,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\BackupStatus',
@@ -9177,8 +8996,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -9209,7 +9026,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -9220,12 +9036,12 @@ class WebsitesApi
      *
      * Get the status of an ongoing website backup operation
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteBackupStatusAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackupStatus'][0])
     {
@@ -9242,12 +9058,12 @@ class WebsitesApi
      *
      * Get the status of an ongoing website backup operation
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteBackupStatusAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackupStatus'][0])
     {
@@ -9259,7 +9075,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -9270,7 +9086,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -9293,12 +9109,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteBackupStatus'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteBackupStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteBackupStatusRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteBackupStatus'][0])
     {
@@ -9317,7 +9133,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/status/backup';
         $formParams = [];
         $queryParams = [];
@@ -9325,12 +9140,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -9338,15 +9151,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -9360,7 +9172,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -9368,7 +9180,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -9379,11 +9191,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9399,9 +9211,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9412,17 +9225,18 @@ class WebsitesApi
      *
      * Get the active cgroup limits for a website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\CgroupLimits
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\CgroupLimits
      */
     public function getWebsiteCgroupLimits($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteCgroupLimits'][0])
     {
-        list($response) = $this->getWebsiteCgroupLimitsWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteCgroupLimitsWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -9431,13 +9245,13 @@ class WebsitesApi
      *
      * Get the active cgroup limits for a website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\CgroupLimits, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\CgroupLimits, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteCgroupLimitsWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteCgroupLimits'][0])
     {
@@ -9465,8 +9279,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\CgroupLimits',
@@ -9474,8 +9287,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -9506,7 +9317,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -9517,12 +9327,12 @@ class WebsitesApi
      *
      * Get the active cgroup limits for a website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteCgroupLimitsAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteCgroupLimits'][0])
     {
@@ -9539,12 +9349,12 @@ class WebsitesApi
      *
      * Get the active cgroup limits for a website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteCgroupLimitsAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteCgroupLimits'][0])
     {
@@ -9556,7 +9366,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -9567,7 +9377,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -9590,12 +9400,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteCgroupLimits'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteCgroupLimitsRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteCgroupLimits'][0])
     {
@@ -9614,7 +9424,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/cgroup_limits';
         $formParams = [];
         $queryParams = [];
@@ -9622,12 +9431,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -9635,15 +9442,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -9657,7 +9463,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -9665,7 +9471,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -9676,11 +9482,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9696,9 +9502,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -9709,17 +9516,18 @@ class WebsitesApi
      *
      * Get&#39;s detail about a single push live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneResponse
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneResponse
      */
     public function getWebsiteClone($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteClone'][0])
     {
-        list($response) = $this->getWebsiteCloneWithHttpInfo($org_id, $clone_id, $contentType);
+        [$response] = $this->getWebsiteCloneWithHttpInfo($org_id, $clone_id, $contentType);
+
         return $response;
     }
 
@@ -9728,13 +9536,13 @@ class WebsitesApi
      *
      * Get&#39;s detail about a single push live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneResponse, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteCloneWithHttpInfo($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteClone'][0])
     {
@@ -9762,8 +9570,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneResponse',
@@ -9771,8 +9578,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -9803,7 +9608,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -9814,12 +9618,12 @@ class WebsitesApi
      *
      * Get&#39;s detail about a single push live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteCloneAsync($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteClone'][0])
     {
@@ -9836,12 +9640,12 @@ class WebsitesApi
      *
      * Get&#39;s detail about a single push live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteCloneAsyncWithHttpInfo($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteClone'][0])
     {
@@ -9853,7 +9657,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -9864,7 +9668,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -9887,12 +9691,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteClone'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClone'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteCloneRequest($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteClone'][0])
     {
@@ -9911,7 +9715,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/clone/{clone_id}';
         $formParams = [];
         $queryParams = [];
@@ -9919,12 +9722,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -9932,15 +9733,14 @@ class WebsitesApi
         // path params
         if ($clone_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'clone_id' . '}',
+                '{'.'clone_id'.'}',
                 ObjectSerializer::toPathValue($clone_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -9954,7 +9754,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -9962,7 +9762,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -9973,11 +9773,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -9993,9 +9793,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10006,17 +9807,18 @@ class WebsitesApi
      *
      * Get the log for a given clone id..
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneLogEntry[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneLogEntry[]
      */
     public function getWebsiteCloneLog($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteCloneLog'][0])
     {
-        list($response) = $this->getWebsiteCloneLogWithHttpInfo($org_id, $clone_id, $contentType);
+        [$response] = $this->getWebsiteCloneLogWithHttpInfo($org_id, $clone_id, $contentType);
+
         return $response;
     }
 
@@ -10025,13 +9827,13 @@ class WebsitesApi
      *
      * Get the log for a given clone id..
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneLogEntry[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneLogEntry[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteCloneLogWithHttpInfo($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteCloneLog'][0])
     {
@@ -10059,8 +9861,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneLogEntry[]',
@@ -10068,8 +9869,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -10100,7 +9899,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -10111,12 +9909,12 @@ class WebsitesApi
      *
      * Get the log for a given clone id..
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteCloneLogAsync($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteCloneLog'][0])
     {
@@ -10133,12 +9931,12 @@ class WebsitesApi
      *
      * Get the log for a given clone id..
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteCloneLogAsyncWithHttpInfo($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteCloneLog'][0])
     {
@@ -10150,7 +9948,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -10161,7 +9959,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -10184,12 +9982,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteCloneLog'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $clone_id The id of the website push live. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $clone_id  The id of the website push live. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteCloneLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteCloneLogRequest($org_id, $clone_id, string $contentType = self::contentTypes['getWebsiteCloneLog'][0])
     {
@@ -10208,7 +10006,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/clone/{clone_id}/log';
         $formParams = [];
         $queryParams = [];
@@ -10216,12 +10013,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -10229,15 +10024,14 @@ class WebsitesApi
         // path params
         if ($clone_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'clone_id' . '}',
+                '{'.'clone_id'.'}',
                 ObjectSerializer::toPathValue($clone_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -10251,7 +10045,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -10259,7 +10053,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -10270,11 +10064,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10290,9 +10084,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10303,16 +10098,17 @@ class WebsitesApi
      *
      * List website clones for given OrgId
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneFullListing
      */
     public function getWebsiteClones($org_id, string $contentType = self::contentTypes['getWebsiteClones'][0])
     {
-        list($response) = $this->getWebsiteClonesWithHttpInfo($org_id, $contentType);
+        [$response] = $this->getWebsiteClonesWithHttpInfo($org_id, $contentType);
+
         return $response;
     }
 
@@ -10321,12 +10117,12 @@ class WebsitesApi
      *
      * List website clones for given OrgId
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteClonesWithHttpInfo($org_id, string $contentType = self::contentTypes['getWebsiteClones'][0])
     {
@@ -10354,8 +10150,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsiteCloneFullListing',
@@ -10363,8 +10158,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -10395,7 +10188,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -10406,11 +10198,11 @@ class WebsitesApi
      *
      * List website clones for given OrgId
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteClonesAsync($org_id, string $contentType = self::contentTypes['getWebsiteClones'][0])
     {
@@ -10427,11 +10219,11 @@ class WebsitesApi
      *
      * List website clones for given OrgId
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteClonesAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['getWebsiteClones'][0])
     {
@@ -10443,7 +10235,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -10454,7 +10246,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -10477,11 +10269,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteClones'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteClones'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteClonesRequest($org_id, string $contentType = self::contentTypes['getWebsiteClones'][0])
     {
@@ -10493,7 +10285,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/clone';
         $formParams = [];
         $queryParams = [];
@@ -10501,20 +10292,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -10528,7 +10316,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -10536,7 +10324,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -10547,11 +10335,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10567,9 +10355,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10580,19 +10369,20 @@ class WebsitesApi
      *
      * Recursively query Dns servers for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string|null $resolve_depth DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string|null  $resolve_depth  DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DnsQueryOutcome
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DnsQueryOutcome
      */
     public function getWebsiteDomainDnsQuery($org_id, $website_id, $domain_id, $resolve_depth = null, string $contentType = self::contentTypes['getWebsiteDomainDnsQuery'][0])
     {
-        list($response) = $this->getWebsiteDomainDnsQueryWithHttpInfo($org_id, $website_id, $domain_id, $resolve_depth, $contentType);
+        [$response] = $this->getWebsiteDomainDnsQueryWithHttpInfo($org_id, $website_id, $domain_id, $resolve_depth, $contentType);
+
         return $response;
     }
 
@@ -10601,15 +10391,15 @@ class WebsitesApi
      *
      * Recursively query Dns servers for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string|null $resolve_depth DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string|null  $resolve_depth  DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DnsQueryOutcome, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DnsQueryOutcome, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteDomainDnsQueryWithHttpInfo($org_id, $website_id, $domain_id, $resolve_depth = null, string $contentType = self::contentTypes['getWebsiteDomainDnsQuery'][0])
     {
@@ -10637,8 +10427,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DnsQueryOutcome',
@@ -10646,8 +10435,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -10678,7 +10465,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -10689,14 +10475,14 @@ class WebsitesApi
      *
      * Recursively query Dns servers for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string|null $resolve_depth DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string|null  $resolve_depth  DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainDnsQueryAsync($org_id, $website_id, $domain_id, $resolve_depth = null, string $contentType = self::contentTypes['getWebsiteDomainDnsQuery'][0])
     {
@@ -10713,14 +10499,14 @@ class WebsitesApi
      *
      * Recursively query Dns servers for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string|null $resolve_depth DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string|null  $resolve_depth  DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainDnsQueryAsyncWithHttpInfo($org_id, $website_id, $domain_id, $resolve_depth = null, string $contentType = self::contentTypes['getWebsiteDomainDnsQuery'][0])
     {
@@ -10732,7 +10518,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -10743,7 +10529,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -10766,14 +10552,14 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteDomainDnsQuery'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string|null $resolve_depth DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string|null  $resolve_depth  DNS query resolve depth, defaults to &#x60;short&#x60; if not provided. &#x60;short&#x60; -&gt; takes the shortest path to resolve domain IP. &#x60;detailed&#x60; -&gt; queries and returns output from all found Authoritative name servers. &#x60;queryAllTldNs&#x60; -&gt; queries and returns results from all TLD name servers (very expensive). (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsQuery'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteDomainDnsQueryRequest($org_id, $website_id, $domain_id, $resolve_depth = null, string $contentType = self::contentTypes['getWebsiteDomainDnsQuery'][0])
     {
@@ -10799,8 +10585,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/dns-query';
         $formParams = [];
         $queryParams = [];
@@ -10818,11 +10602,10 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -10830,7 +10613,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -10838,15 +10621,14 @@ class WebsitesApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -10860,7 +10642,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -10868,7 +10650,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -10879,11 +10661,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -10899,9 +10681,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -10912,18 +10695,19 @@ class WebsitesApi
      *
      * Returns website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainMapping
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainMapping
      */
     public function getWebsiteDomainMapping($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMapping'][0])
     {
-        list($response) = $this->getWebsiteDomainMappingWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+        [$response] = $this->getWebsiteDomainMappingWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+
         return $response;
     }
 
@@ -10932,14 +10716,14 @@ class WebsitesApi
      *
      * Returns website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainMapping, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainMapping, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteDomainMappingWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMapping'][0])
     {
@@ -10967,8 +10751,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DomainMapping',
@@ -10976,8 +10759,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -11008,7 +10789,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -11019,13 +10799,13 @@ class WebsitesApi
      *
      * Returns website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainMappingAsync($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMapping'][0])
     {
@@ -11042,13 +10822,13 @@ class WebsitesApi
      *
      * Returns website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainMappingAsyncWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMapping'][0])
     {
@@ -11060,7 +10840,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -11071,7 +10851,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -11094,13 +10874,13 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteDomainMapping'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteDomainMappingRequest($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMapping'][0])
     {
@@ -11126,7 +10906,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}';
         $formParams = [];
         $queryParams = [];
@@ -11134,12 +10913,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -11147,7 +10924,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -11155,15 +10932,14 @@ class WebsitesApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -11177,7 +10953,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -11185,7 +10961,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -11196,11 +10972,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -11216,9 +10992,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -11229,18 +11006,19 @@ class WebsitesApi
      *
      * Returns website domain mapping DNS status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DnsStatus
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DnsStatus
      */
     public function getWebsiteDomainMappingDnsStatus($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMappingDnsStatus'][0])
     {
-        list($response) = $this->getWebsiteDomainMappingDnsStatusWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+        [$response] = $this->getWebsiteDomainMappingDnsStatusWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+
         return $response;
     }
 
@@ -11249,14 +11027,14 @@ class WebsitesApi
      *
      * Returns website domain mapping DNS status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DnsStatus, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DnsStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteDomainMappingDnsStatusWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMappingDnsStatus'][0])
     {
@@ -11284,8 +11062,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DnsStatus',
@@ -11293,8 +11070,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -11325,7 +11100,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -11336,13 +11110,13 @@ class WebsitesApi
      *
      * Returns website domain mapping DNS status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainMappingDnsStatusAsync($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMappingDnsStatus'][0])
     {
@@ -11359,13 +11133,13 @@ class WebsitesApi
      *
      * Returns website domain mapping DNS status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainMappingDnsStatusAsyncWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMappingDnsStatus'][0])
     {
@@ -11377,7 +11151,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -11388,7 +11162,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -11411,13 +11185,13 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteDomainMappingDnsStatus'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappingDnsStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteDomainMappingDnsStatusRequest($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainMappingDnsStatus'][0])
     {
@@ -11443,7 +11217,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/dns-status';
         $formParams = [];
         $queryParams = [];
@@ -11451,12 +11224,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -11464,7 +11235,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -11472,15 +11243,14 @@ class WebsitesApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -11494,7 +11264,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -11502,7 +11272,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -11513,11 +11283,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -11533,9 +11303,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -11546,18 +11317,19 @@ class WebsitesApi
      *
      * Get website&#39;s mapped domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $with_ssl If set to true, domains are returned with applicable ssl certificates. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $with_ssl  If set to true, domains are returned with applicable ssl certificates. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainMappingsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainMappingsFullListing
      */
     public function getWebsiteDomainMappings($org_id, $website_id, $with_ssl = null, string $contentType = self::contentTypes['getWebsiteDomainMappings'][0])
     {
-        list($response) = $this->getWebsiteDomainMappingsWithHttpInfo($org_id, $website_id, $with_ssl, $contentType);
+        [$response] = $this->getWebsiteDomainMappingsWithHttpInfo($org_id, $website_id, $with_ssl, $contentType);
+
         return $response;
     }
 
@@ -11566,14 +11338,14 @@ class WebsitesApi
      *
      * Get website&#39;s mapped domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $with_ssl If set to true, domains are returned with applicable ssl certificates. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $with_ssl  If set to true, domains are returned with applicable ssl certificates. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainMappingsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainMappingsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteDomainMappingsWithHttpInfo($org_id, $website_id, $with_ssl = null, string $contentType = self::contentTypes['getWebsiteDomainMappings'][0])
     {
@@ -11601,8 +11373,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DomainMappingsFullListing',
@@ -11610,8 +11381,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -11642,7 +11411,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -11653,13 +11421,13 @@ class WebsitesApi
      *
      * Get website&#39;s mapped domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $with_ssl If set to true, domains are returned with applicable ssl certificates. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $with_ssl  If set to true, domains are returned with applicable ssl certificates. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainMappingsAsync($org_id, $website_id, $with_ssl = null, string $contentType = self::contentTypes['getWebsiteDomainMappings'][0])
     {
@@ -11676,13 +11444,13 @@ class WebsitesApi
      *
      * Get website&#39;s mapped domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $with_ssl If set to true, domains are returned with applicable ssl certificates. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $with_ssl  If set to true, domains are returned with applicable ssl certificates. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainMappingsAsyncWithHttpInfo($org_id, $website_id, $with_ssl = null, string $contentType = self::contentTypes['getWebsiteDomainMappings'][0])
     {
@@ -11694,7 +11462,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -11705,7 +11473,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -11728,13 +11496,13 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteDomainMappings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $with_ssl If set to true, domains are returned with applicable ssl certificates. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $with_ssl  If set to true, domains are returned with applicable ssl certificates. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainMappings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteDomainMappingsRequest($org_id, $website_id, $with_ssl = null, string $contentType = self::contentTypes['getWebsiteDomainMappings'][0])
     {
@@ -11753,8 +11521,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains';
         $formParams = [];
         $queryParams = [];
@@ -11772,11 +11538,10 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -11784,15 +11549,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -11806,7 +11570,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -11814,7 +11578,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -11825,11 +11589,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -11845,9 +11609,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -11858,16 +11623,17 @@ class WebsitesApi
      *
      * Get mod security status for a single domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus
      */
     public function getWebsiteDomainModSecStatus($domain_id, string $contentType = self::contentTypes['getWebsiteDomainModSecStatus'][0])
     {
-        list($response) = $this->getWebsiteDomainModSecStatusWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->getWebsiteDomainModSecStatusWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -11876,12 +11642,12 @@ class WebsitesApi
      *
      * Get mod security status for a single domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteDomainModSecStatusWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteDomainModSecStatus'][0])
     {
@@ -11909,8 +11675,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ModSecStatus',
@@ -11918,8 +11683,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -11950,7 +11713,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -11961,11 +11723,11 @@ class WebsitesApi
      *
      * Get mod security status for a single domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainModSecStatusAsync($domain_id, string $contentType = self::contentTypes['getWebsiteDomainModSecStatus'][0])
     {
@@ -11982,11 +11744,11 @@ class WebsitesApi
      *
      * Get mod security status for a single domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainModSecStatusAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteDomainModSecStatus'][0])
     {
@@ -11998,7 +11760,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -12009,7 +11771,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -12032,11 +11794,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteDomainModSecStatus'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteDomainModSecStatusRequest($domain_id, string $contentType = self::contentTypes['getWebsiteDomainModSecStatus'][0])
     {
@@ -12048,7 +11810,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/modsec_status';
         $formParams = [];
         $queryParams = [];
@@ -12056,20 +11817,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -12083,7 +11841,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -12091,14 +11849,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -12113,9 +11870,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -12126,16 +11884,17 @@ class WebsitesApi
      *
      * Returns the SSL for this website domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData
      */
     public function getWebsiteDomainSslCert($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
-        list($response) = $this->getWebsiteDomainSslCertWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->getWebsiteDomainSslCertWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -12144,12 +11903,12 @@ class WebsitesApi
      *
      * Returns the SSL for this website domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteDomainSslCertWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
@@ -12177,8 +11936,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData',
@@ -12186,8 +11944,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -12218,7 +11974,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -12229,11 +11984,11 @@ class WebsitesApi
      *
      * Returns the SSL for this website domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainSslCertAsync($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
@@ -12250,11 +12005,11 @@ class WebsitesApi
      *
      * Returns the SSL for this website domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainSslCertAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
@@ -12266,7 +12021,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -12277,7 +12032,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -12300,11 +12055,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteDomainSslCert'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteDomainSslCertRequest($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
@@ -12316,7 +12071,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/ssl';
         $formParams = [];
         $queryParams = [];
@@ -12324,20 +12078,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -12351,7 +12102,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -12359,14 +12110,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -12381,9 +12131,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -12394,16 +12145,17 @@ class WebsitesApi
      *
      * Get domain&#39;s custom vhost file, if the file does not exist return empty string
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Vhost
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Vhost
      */
     public function getWebsiteDomainVhost($domain_id, string $contentType = self::contentTypes['getWebsiteDomainVhost'][0])
     {
-        list($response) = $this->getWebsiteDomainVhostWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->getWebsiteDomainVhostWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -12412,12 +12164,12 @@ class WebsitesApi
      *
      * Get domain&#39;s custom vhost file, if the file does not exist return empty string
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Vhost, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Vhost, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteDomainVhostWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteDomainVhost'][0])
     {
@@ -12445,8 +12197,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Vhost',
@@ -12454,8 +12205,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -12486,7 +12235,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -12497,11 +12245,11 @@ class WebsitesApi
      *
      * Get domain&#39;s custom vhost file, if the file does not exist return empty string
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainVhostAsync($domain_id, string $contentType = self::contentTypes['getWebsiteDomainVhost'][0])
     {
@@ -12518,11 +12266,11 @@ class WebsitesApi
      *
      * Get domain&#39;s custom vhost file, if the file does not exist return empty string
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainVhostAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteDomainVhost'][0])
     {
@@ -12534,7 +12282,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -12545,7 +12293,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -12568,11 +12316,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteDomainVhost'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteDomainVhostRequest($domain_id, string $contentType = self::contentTypes['getWebsiteDomainVhost'][0])
     {
@@ -12584,7 +12332,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/vhost';
         $formParams = [];
         $queryParams = [];
@@ -12592,20 +12339,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -12619,7 +12363,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -12627,14 +12371,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -12649,9 +12392,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -12662,16 +12406,17 @@ class WebsitesApi
      *
      * Get enabled PHP extensions
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @return string[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string[]
      */
     public function getWebsiteEnabledPhpExtensions($website_id, string $contentType = self::contentTypes['getWebsiteEnabledPhpExtensions'][0])
     {
-        list($response) = $this->getWebsiteEnabledPhpExtensionsWithHttpInfo($website_id, $contentType);
+        [$response] = $this->getWebsiteEnabledPhpExtensionsWithHttpInfo($website_id, $contentType);
+
         return $response;
     }
 
@@ -12680,12 +12425,12 @@ class WebsitesApi
      *
      * Get enabled PHP extensions
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteEnabledPhpExtensionsWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteEnabledPhpExtensions'][0])
     {
@@ -12713,8 +12458,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string[]',
@@ -12722,8 +12466,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -12754,7 +12496,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -12765,11 +12506,11 @@ class WebsitesApi
      *
      * Get enabled PHP extensions
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEnabledPhpExtensionsAsync($website_id, string $contentType = self::contentTypes['getWebsiteEnabledPhpExtensions'][0])
     {
@@ -12786,11 +12527,11 @@ class WebsitesApi
      *
      * Get enabled PHP extensions
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEnabledPhpExtensionsAsyncWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteEnabledPhpExtensions'][0])
     {
@@ -12802,7 +12543,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -12813,7 +12554,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -12836,11 +12577,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteEnabledPhpExtensions'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEnabledPhpExtensions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteEnabledPhpExtensionsRequest($website_id, string $contentType = self::contentTypes['getWebsiteEnabledPhpExtensions'][0])
     {
@@ -12852,7 +12593,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/websites/{website_id}/php_extensions';
         $formParams = [];
         $queryParams = [];
@@ -12860,20 +12600,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -12887,7 +12624,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -12895,7 +12632,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -12906,11 +12643,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -12926,9 +12663,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -12939,17 +12677,18 @@ class WebsitesApi
      *
      * Get the active FS quoa limits for a website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\FsQuotaInfo
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\FsQuotaInfo
      */
     public function getWebsiteFsQuotaLimits($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteFsQuotaLimits'][0])
     {
-        list($response) = $this->getWebsiteFsQuotaLimitsWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteFsQuotaLimitsWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -12958,13 +12697,13 @@ class WebsitesApi
      *
      * Get the active FS quoa limits for a website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\FsQuotaInfo, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\FsQuotaInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteFsQuotaLimitsWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteFsQuotaLimits'][0])
     {
@@ -12992,8 +12731,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\FsQuotaInfo',
@@ -13001,8 +12739,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -13033,7 +12769,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -13044,12 +12779,12 @@ class WebsitesApi
      *
      * Get the active FS quoa limits for a website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteFsQuotaLimitsAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteFsQuotaLimits'][0])
     {
@@ -13066,12 +12801,12 @@ class WebsitesApi
      *
      * Get the active FS quoa limits for a website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteFsQuotaLimitsAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteFsQuotaLimits'][0])
     {
@@ -13083,7 +12818,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -13094,7 +12829,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -13117,12 +12852,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteFsQuotaLimits'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteFsQuotaLimitsRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteFsQuotaLimits'][0])
     {
@@ -13141,7 +12876,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/fs_quota_limits';
         $formParams = [];
         $queryParams = [];
@@ -13149,12 +12883,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -13162,15 +12894,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -13184,7 +12915,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -13192,7 +12923,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -13203,11 +12934,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -13223,9 +12954,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -13236,17 +12968,18 @@ class WebsitesApi
      *
      * Returns current rules of blocked/whitelisted IPs
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule
      */
     public function getWebsiteHtaccessIpsRule($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessIpsRule'][0])
     {
-        list($response) = $this->getWebsiteHtaccessIpsRuleWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteHtaccessIpsRuleWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -13255,13 +12988,13 @@ class WebsitesApi
      *
      * Returns current rules of blocked/whitelisted IPs
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteHtaccessIpsRuleWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessIpsRule'][0])
     {
@@ -13289,8 +13022,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule',
@@ -13298,8 +13030,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -13330,7 +13060,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -13341,12 +13070,12 @@ class WebsitesApi
      *
      * Returns current rules of blocked/whitelisted IPs
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteHtaccessIpsRuleAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessIpsRule'][0])
     {
@@ -13363,12 +13092,12 @@ class WebsitesApi
      *
      * Returns current rules of blocked/whitelisted IPs
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteHtaccessIpsRuleAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessIpsRule'][0])
     {
@@ -13380,7 +13109,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -13391,7 +13120,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -13414,12 +13143,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteHtaccessIpsRule'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteHtaccessIpsRuleRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessIpsRule'][0])
     {
@@ -13438,7 +13167,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/htaccess/ips';
         $formParams = [];
         $queryParams = [];
@@ -13446,12 +13174,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -13459,15 +13185,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -13481,7 +13206,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -13489,7 +13214,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -13500,11 +13225,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -13520,9 +13245,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -13533,17 +13259,18 @@ class WebsitesApi
      *
      * Reads chains of rewrite rules
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\RewriteChainFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\RewriteChainFullListing
      */
     public function getWebsiteHtaccessRewrites($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessRewrites'][0])
     {
-        list($response) = $this->getWebsiteHtaccessRewritesWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteHtaccessRewritesWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -13552,13 +13279,13 @@ class WebsitesApi
      *
      * Reads chains of rewrite rules
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\RewriteChainFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\RewriteChainFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteHtaccessRewritesWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessRewrites'][0])
     {
@@ -13586,8 +13313,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\RewriteChainFullListing',
@@ -13595,8 +13321,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -13627,7 +13351,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -13638,12 +13361,12 @@ class WebsitesApi
      *
      * Reads chains of rewrite rules
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteHtaccessRewritesAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessRewrites'][0])
     {
@@ -13660,12 +13383,12 @@ class WebsitesApi
      *
      * Reads chains of rewrite rules
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteHtaccessRewritesAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessRewrites'][0])
     {
@@ -13677,7 +13400,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -13688,7 +13411,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -13711,12 +13434,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteHtaccessRewrites'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteHtaccessRewritesRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteHtaccessRewrites'][0])
     {
@@ -13735,7 +13458,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/htaccess';
         $formParams = [];
         $queryParams = [];
@@ -13743,12 +13465,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -13756,15 +13476,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -13778,7 +13497,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -13786,7 +13505,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -13797,11 +13516,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -13817,9 +13536,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -13830,16 +13550,17 @@ class WebsitesApi
      *
      * Get ioncube status for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return bool
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return bool
      */
     public function getWebsiteIoncubeStatus($website_id, string $contentType = self::contentTypes['getWebsiteIoncubeStatus'][0])
     {
-        list($response) = $this->getWebsiteIoncubeStatusWithHttpInfo($website_id, $contentType);
+        [$response] = $this->getWebsiteIoncubeStatusWithHttpInfo($website_id, $contentType);
+
         return $response;
     }
 
@@ -13848,12 +13569,12 @@ class WebsitesApi
      *
      * Get ioncube status for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteIoncubeStatusWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteIoncubeStatus'][0])
     {
@@ -13881,8 +13602,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'bool',
@@ -13890,8 +13610,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -13922,7 +13640,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -13933,11 +13650,11 @@ class WebsitesApi
      *
      * Get ioncube status for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteIoncubeStatusAsync($website_id, string $contentType = self::contentTypes['getWebsiteIoncubeStatus'][0])
     {
@@ -13954,11 +13671,11 @@ class WebsitesApi
      *
      * Get ioncube status for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteIoncubeStatusAsyncWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteIoncubeStatus'][0])
     {
@@ -13970,7 +13687,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -13981,7 +13698,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -14004,11 +13721,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteIoncubeStatus'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteIoncubeStatusRequest($website_id, string $contentType = self::contentTypes['getWebsiteIoncubeStatus'][0])
     {
@@ -14020,7 +13737,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/websites/{website_id}/ioncube';
         $formParams = [];
         $queryParams = [];
@@ -14028,20 +13744,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -14055,7 +13768,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -14063,7 +13776,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -14074,11 +13787,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -14094,9 +13807,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -14107,16 +13821,17 @@ class WebsitesApi
      *
      * Returns the SSL for this website domain with the mail.prefix
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData
      */
     public function getWebsiteMailDomainSslCert($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
-        list($response) = $this->getWebsiteMailDomainSslCertWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->getWebsiteMailDomainSslCertWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -14125,12 +13840,12 @@ class WebsitesApi
      *
      * Returns the SSL for this website domain with the mail.prefix
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteMailDomainSslCertWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
@@ -14158,8 +13873,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData',
@@ -14167,8 +13881,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -14199,7 +13911,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -14210,11 +13921,11 @@ class WebsitesApi
      *
      * Returns the SSL for this website domain with the mail.prefix
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMailDomainSslCertAsync($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
@@ -14231,11 +13942,11 @@ class WebsitesApi
      *
      * Returns the SSL for this website domain with the mail.prefix
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMailDomainSslCertAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
@@ -14247,7 +13958,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -14258,7 +13969,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -14281,11 +13992,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteMailDomainSslCert'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteMailDomainSslCertRequest($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
@@ -14297,7 +14008,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/mail_ssl';
         $formParams = [];
         $queryParams = [];
@@ -14305,20 +14015,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -14332,7 +14039,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -14340,14 +14047,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -14362,9 +14068,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -14375,20 +14082,21 @@ class WebsitesApi
      *
      * Get website metrics
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing
      */
     public function getWebsiteMetrics($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
-        list($response) = $this->getWebsiteMetricsWithHttpInfo($org_id, $website_id, $start, $end, $granularity, $contentType);
+        [$response] = $this->getWebsiteMetricsWithHttpInfo($org_id, $website_id, $start, $end, $granularity, $contentType);
+
         return $response;
     }
 
@@ -14397,16 +14105,16 @@ class WebsitesApi
      *
      * Get website metrics
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteMetricsWithHttpInfo($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
@@ -14434,8 +14142,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing',
@@ -14443,8 +14150,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -14475,7 +14180,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -14486,15 +14190,15 @@ class WebsitesApi
      *
      * Get website metrics
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMetricsAsync($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
@@ -14511,15 +14215,15 @@ class WebsitesApi
      *
      * Get website metrics
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMetricsAsyncWithHttpInfo($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
@@ -14531,7 +14235,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -14542,7 +14246,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -14565,15 +14269,15 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteMetrics'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteMetricsRequest($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
@@ -14591,10 +14295,6 @@ class WebsitesApi
                 'Missing the required parameter $website_id when calling getWebsiteMetrics'
             );
         }
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/metrics';
         $formParams = [];
@@ -14631,11 +14331,10 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -14643,15 +14342,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -14665,7 +14363,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -14673,14 +14371,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -14695,9 +14392,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -14708,17 +14406,18 @@ class WebsitesApi
      *
      * Get website MySQL databases
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing
      */
     public function getWebsiteMySQLDBs($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
-        list($response) = $this->getWebsiteMySQLDBsWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteMySQLDBsWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -14727,13 +14426,13 @@ class WebsitesApi
      *
      * Get website MySQL databases
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteMySQLDBsWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
@@ -14761,8 +14460,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\MySQLDBsFullListing',
@@ -14770,8 +14468,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -14802,7 +14498,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -14813,12 +14508,12 @@ class WebsitesApi
      *
      * Get website MySQL databases
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMySQLDBsAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
@@ -14835,12 +14530,12 @@ class WebsitesApi
      *
      * Get website MySQL databases
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMySQLDBsAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
@@ -14852,7 +14547,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -14863,7 +14558,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -14886,12 +14581,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteMySQLDBs'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMySQLDBs'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteMySQLDBsRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteMySQLDBs'][0])
     {
@@ -14910,7 +14605,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/mysql-dbs';
         $formParams = [];
         $queryParams = [];
@@ -14918,12 +14612,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -14931,15 +14623,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -14953,7 +14644,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -14961,14 +14652,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -14983,9 +14673,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -14996,16 +14687,17 @@ class WebsitesApi
      *
      * Get redis state for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @return bool
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return bool
      */
     public function getWebsiteRedisState($website_id, string $contentType = self::contentTypes['getWebsiteRedisState'][0])
     {
-        list($response) = $this->getWebsiteRedisStateWithHttpInfo($website_id, $contentType);
+        [$response] = $this->getWebsiteRedisStateWithHttpInfo($website_id, $contentType);
+
         return $response;
     }
 
@@ -15014,12 +14706,12 @@ class WebsitesApi
      *
      * Get redis state for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteRedisStateWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteRedisState'][0])
     {
@@ -15047,8 +14739,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'bool',
@@ -15056,8 +14747,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -15088,7 +14777,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -15099,11 +14787,11 @@ class WebsitesApi
      *
      * Get redis state for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteRedisStateAsync($website_id, string $contentType = self::contentTypes['getWebsiteRedisState'][0])
     {
@@ -15120,11 +14808,11 @@ class WebsitesApi
      *
      * Get redis state for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteRedisStateAsyncWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteRedisState'][0])
     {
@@ -15136,7 +14824,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -15147,7 +14835,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -15170,11 +14858,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteRedisState'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteRedisState'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteRedisStateRequest($website_id, string $contentType = self::contentTypes['getWebsiteRedisState'][0])
     {
@@ -15186,7 +14874,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/websites/{website_id}/redis';
         $formParams = [];
         $queryParams = [];
@@ -15194,20 +14881,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -15221,7 +14905,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -15229,7 +14913,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -15240,11 +14924,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -15260,9 +14944,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -15273,17 +14958,18 @@ class WebsitesApi
      *
      * Fetch website server domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteServerDomains
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteServerDomains
      */
     public function getWebsiteServerDomains($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteServerDomains'][0])
     {
-        list($response) = $this->getWebsiteServerDomainsWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteServerDomainsWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -15292,13 +14978,13 @@ class WebsitesApi
      *
      * Fetch website server domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteServerDomains, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteServerDomains, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteServerDomainsWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteServerDomains'][0])
     {
@@ -15326,8 +15012,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsiteServerDomains',
@@ -15335,8 +15020,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -15367,7 +15050,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -15378,12 +15060,12 @@ class WebsitesApi
      *
      * Fetch website server domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteServerDomainsAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteServerDomains'][0])
     {
@@ -15400,12 +15082,12 @@ class WebsitesApi
      *
      * Fetch website server domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteServerDomainsAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteServerDomains'][0])
     {
@@ -15417,7 +15099,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -15428,7 +15110,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -15451,12 +15133,12 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteServerDomains'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteServerDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteServerDomainsRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteServerDomains'][0])
     {
@@ -15475,7 +15157,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/server_domains';
         $formParams = [];
         $queryParams = [];
@@ -15483,12 +15164,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -15496,15 +15175,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -15518,7 +15196,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -15526,7 +15204,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -15537,11 +15215,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -15557,9 +15235,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -15570,18 +15249,19 @@ class WebsitesApi
      *
      * Get the value for a particular setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @return mixed
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return mixed
      */
     public function getWebsiteSetting($org_id, $website_id, $setting_kind, string $contentType = self::contentTypes['getWebsiteSetting'][0])
     {
-        list($response) = $this->getWebsiteSettingWithHttpInfo($org_id, $website_id, $setting_kind, $contentType);
+        [$response] = $this->getWebsiteSettingWithHttpInfo($org_id, $website_id, $setting_kind, $contentType);
+
         return $response;
     }
 
@@ -15590,14 +15270,14 @@ class WebsitesApi
      *
      * Get the value for a particular setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @return array of mixed, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of mixed, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteSettingWithHttpInfo($org_id, $website_id, $setting_kind, string $contentType = self::contentTypes['getWebsiteSetting'][0])
     {
@@ -15625,8 +15305,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'mixed',
@@ -15634,8 +15313,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -15666,7 +15343,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -15677,13 +15353,13 @@ class WebsitesApi
      *
      * Get the value for a particular setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteSettingAsync($org_id, $website_id, $setting_kind, string $contentType = self::contentTypes['getWebsiteSetting'][0])
     {
@@ -15700,13 +15376,13 @@ class WebsitesApi
      *
      * Get the value for a particular setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteSettingAsyncWithHttpInfo($org_id, $website_id, $setting_kind, string $contentType = self::contentTypes['getWebsiteSetting'][0])
     {
@@ -15718,7 +15394,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -15729,7 +15405,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -15752,13 +15428,13 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteSetting'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteSettingRequest($org_id, $website_id, $setting_kind, string $contentType = self::contentTypes['getWebsiteSetting'][0])
     {
@@ -15784,7 +15460,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/settings/{setting_kind}';
         $formParams = [];
         $queryParams = [];
@@ -15792,12 +15467,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -15805,7 +15478,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -15813,15 +15486,14 @@ class WebsitesApi
         // path params
         if ($setting_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_kind' . '}',
+                '{'.'setting_kind'.'}',
                 ObjectSerializer::toPathValue($setting_kind),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -15835,7 +15507,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -15843,7 +15515,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -15854,11 +15526,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -15874,9 +15546,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -15887,18 +15560,19 @@ class WebsitesApi
      *
      * Get website&#39;s authorized SSH keys
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\SshKeyFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\SshKeyFullListing
      */
     public function getWebsiteSshKeys($org_id, $website_id, $sanitize = false, string $contentType = self::contentTypes['getWebsiteSshKeys'][0])
     {
-        list($response) = $this->getWebsiteSshKeysWithHttpInfo($org_id, $website_id, $sanitize, $contentType);
+        [$response] = $this->getWebsiteSshKeysWithHttpInfo($org_id, $website_id, $sanitize, $contentType);
+
         return $response;
     }
 
@@ -15907,14 +15581,14 @@ class WebsitesApi
      *
      * Get website&#39;s authorized SSH keys
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SshKeyFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SshKeyFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteSshKeysWithHttpInfo($org_id, $website_id, $sanitize = false, string $contentType = self::contentTypes['getWebsiteSshKeys'][0])
     {
@@ -15942,8 +15616,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\SshKeyFullListing',
@@ -15951,8 +15624,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -15983,7 +15654,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -15994,13 +15664,13 @@ class WebsitesApi
      *
      * Get website&#39;s authorized SSH keys
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteSshKeysAsync($org_id, $website_id, $sanitize = false, string $contentType = self::contentTypes['getWebsiteSshKeys'][0])
     {
@@ -16017,13 +15687,13 @@ class WebsitesApi
      *
      * Get website&#39;s authorized SSH keys
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteSshKeysAsyncWithHttpInfo($org_id, $website_id, $sanitize = false, string $contentType = self::contentTypes['getWebsiteSshKeys'][0])
     {
@@ -16035,7 +15705,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -16046,7 +15716,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -16069,13 +15739,13 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteSshKeys'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $sanitize If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $sanitize  If set to true, the SSH keys with unrecognized comments will be sanitized by changing the comment to a valid format that can be used to store metadata. If any of the keys requires sanitization the content of the authorized_keys file will be edited accordingly before returning the set of keys. If instead set to false, only the SSH keys that are recognized as valid (that is, contain valid metadata in their comments), will be returned, all the other keys will be skipped. (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteSshKeys'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteSshKeysRequest($org_id, $website_id, $sanitize = false, string $contentType = self::contentTypes['getWebsiteSshKeys'][0])
     {
@@ -16094,8 +15764,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ssh/keys';
         $formParams = [];
         $queryParams = [];
@@ -16113,11 +15781,10 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -16125,15 +15792,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -16147,7 +15813,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -16155,7 +15821,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -16166,11 +15832,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -16186,9 +15852,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -16199,16 +15866,17 @@ class WebsitesApi
      *
      * Get web server kind for a given website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebserverKind
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebserverKind
      */
     public function getWebsiteWebserverKind($website_id, string $contentType = self::contentTypes['getWebsiteWebserverKind'][0])
     {
-        list($response) = $this->getWebsiteWebserverKindWithHttpInfo($website_id, $contentType);
+        [$response] = $this->getWebsiteWebserverKindWithHttpInfo($website_id, $contentType);
+
         return $response;
     }
 
@@ -16217,12 +15885,12 @@ class WebsitesApi
      *
      * Get web server kind for a given website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebserverKind, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebserverKind, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteWebserverKindWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteWebserverKind'][0])
     {
@@ -16250,8 +15918,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebserverKind',
@@ -16259,8 +15926,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -16291,7 +15956,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -16302,11 +15966,11 @@ class WebsitesApi
      *
      * Get web server kind for a given website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteWebserverKindAsync($website_id, string $contentType = self::contentTypes['getWebsiteWebserverKind'][0])
     {
@@ -16323,11 +15987,11 @@ class WebsitesApi
      *
      * Get web server kind for a given website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteWebserverKindAsyncWithHttpInfo($website_id, string $contentType = self::contentTypes['getWebsiteWebserverKind'][0])
     {
@@ -16339,7 +16003,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -16350,7 +16014,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -16373,11 +16037,11 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsiteWebserverKind'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteWebserverKind'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteWebserverKindRequest($website_id, string $contentType = self::contentTypes['getWebsiteWebserverKind'][0])
     {
@@ -16389,7 +16053,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/websites/{website_id}/webserver_kind';
         $formParams = [];
         $queryParams = [];
@@ -16397,20 +16060,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -16424,7 +16084,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -16432,7 +16092,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -16443,11 +16103,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -16463,9 +16123,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -16476,31 +16137,32 @@ class WebsitesApi
      *
      * Get websites
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null $recursion If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  bool|null $is_suspended Limit the result set to websites which are currently suspended or not suspended. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null $roles Limit the result set to websites having one of these roles assigned to a server. (optional)
-     * @param  string[]|null $servers Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind Limit the results to websites of the specified type. (optional)
-     * @param  bool|null $show_deleted Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  bool|null $show_aliases Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null  $recursion  If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  bool|null  $is_suspended  Limit the result set to websites which are currently suspended or not suspended. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null  $roles  Limit the result set to websites having one of these roles assigned to a server. (optional)
+     * @param  string[]|null  $servers  Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  Limit the results to websites of the specified type. (optional)
+     * @param  bool|null  $show_deleted  Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  bool|null  $show_aliases  Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsitesListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsitesListing
      */
     public function getWebsites($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursion = null, $plan_id = null, $subscription_id = null, $status = null, $is_suspended = null, $roles = null, $servers = null, $kind = null, $show_deleted = null, $show_aliases = null, string $contentType = self::contentTypes['getWebsites'][0])
     {
-        list($response) = $this->getWebsitesWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $search, $recursion, $plan_id, $subscription_id, $status, $is_suspended, $roles, $servers, $kind, $show_deleted, $show_aliases, $contentType);
+        [$response] = $this->getWebsitesWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $search, $recursion, $plan_id, $subscription_id, $status, $is_suspended, $roles, $servers, $kind, $show_deleted, $show_aliases, $contentType);
+
         return $response;
     }
 
@@ -16509,27 +16171,27 @@ class WebsitesApi
      *
      * Get websites
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null $recursion If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  bool|null $is_suspended Limit the result set to websites which are currently suspended or not suspended. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null $roles Limit the result set to websites having one of these roles assigned to a server. (optional)
-     * @param  string[]|null $servers Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind Limit the results to websites of the specified type. (optional)
-     * @param  bool|null $show_deleted Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  bool|null $show_aliases Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null  $recursion  If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  bool|null  $is_suspended  Limit the result set to websites which are currently suspended or not suspended. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null  $roles  Limit the result set to websites having one of these roles assigned to a server. (optional)
+     * @param  string[]|null  $servers  Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  Limit the results to websites of the specified type. (optional)
+     * @param  bool|null  $show_deleted  Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  bool|null  $show_aliases  Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsitesListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsitesListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsitesWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursion = null, $plan_id = null, $subscription_id = null, $status = null, $is_suspended = null, $roles = null, $servers = null, $kind = null, $show_deleted = null, $show_aliases = null, string $contentType = self::contentTypes['getWebsites'][0])
     {
@@ -16557,8 +16219,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsitesListing',
@@ -16566,8 +16227,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -16598,7 +16257,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -16609,26 +16267,26 @@ class WebsitesApi
      *
      * Get websites
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null $recursion If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  bool|null $is_suspended Limit the result set to websites which are currently suspended or not suspended. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null $roles Limit the result set to websites having one of these roles assigned to a server. (optional)
-     * @param  string[]|null $servers Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind Limit the results to websites of the specified type. (optional)
-     * @param  bool|null $show_deleted Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  bool|null $show_aliases Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null  $recursion  If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  bool|null  $is_suspended  Limit the result set to websites which are currently suspended or not suspended. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null  $roles  Limit the result set to websites having one of these roles assigned to a server. (optional)
+     * @param  string[]|null  $servers  Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  Limit the results to websites of the specified type. (optional)
+     * @param  bool|null  $show_deleted  Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  bool|null  $show_aliases  Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsitesAsync($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursion = null, $plan_id = null, $subscription_id = null, $status = null, $is_suspended = null, $roles = null, $servers = null, $kind = null, $show_deleted = null, $show_aliases = null, string $contentType = self::contentTypes['getWebsites'][0])
     {
@@ -16645,26 +16303,26 @@ class WebsitesApi
      *
      * Get websites
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null $recursion If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  bool|null $is_suspended Limit the result set to websites which are currently suspended or not suspended. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null $roles Limit the result set to websites having one of these roles assigned to a server. (optional)
-     * @param  string[]|null $servers Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind Limit the results to websites of the specified type. (optional)
-     * @param  bool|null $show_deleted Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  bool|null $show_aliases Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null  $recursion  If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  bool|null  $is_suspended  Limit the result set to websites which are currently suspended or not suspended. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null  $roles  Limit the result set to websites having one of these roles assigned to a server. (optional)
+     * @param  string[]|null  $servers  Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  Limit the results to websites of the specified type. (optional)
+     * @param  bool|null  $show_deleted  Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  bool|null  $show_aliases  Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsitesAsyncWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursion = null, $plan_id = null, $subscription_id = null, $status = null, $is_suspended = null, $roles = null, $servers = null, $kind = null, $show_deleted = null, $show_aliases = null, string $contentType = self::contentTypes['getWebsites'][0])
     {
@@ -16676,7 +16334,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -16687,7 +16345,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -16710,26 +16368,26 @@ class WebsitesApi
     /**
      * Create request for operation 'getWebsites'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null $recursion If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  bool|null $is_suspended Limit the result set to websites which are currently suspended or not suspended. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null $roles Limit the result set to websites having one of these roles assigned to a server. (optional)
-     * @param  string[]|null $servers Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null $kind Limit the results to websites of the specified type. (optional)
-     * @param  bool|null $show_deleted Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  bool|null $show_aliases Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Recursion|null  $recursion  If set to directCustomers then websites belonging to direct customers of the orgId will be returned.  If set to infinite then websites belonging to customers of customers (and so on) will be returned.  If unset then no recursion will be performed. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to websites with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  bool|null  $is_suspended  Limit the result set to websites which are currently suspended or not suspended. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRole[]|null  $roles  Limit the result set to websites having one of these roles assigned to a server. (optional)
+     * @param  string[]|null  $servers  Limit the result set to websites having one of the selected roles (or all roles) on one of these servers. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteKind|null  $kind  Limit the results to websites of the specified type. (optional)
+     * @param  bool|null  $show_deleted  Filters out deleted websites, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  bool|null  $show_aliases  Includes domain aliases in search results and listings in addition to the website&#39;s primary domain. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsitesRequest($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursion = null, $plan_id = null, $subscription_id = null, $status = null, $is_suspended = null, $roles = null, $servers = null, $kind = null, $show_deleted = null, $show_aliases = null, string $contentType = self::contentTypes['getWebsites'][0])
     {
@@ -16740,22 +16398,6 @@ class WebsitesApi
                 'Missing the required parameter $org_id when calling getWebsites'
             );
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/websites';
         $formParams = [];
@@ -16900,19 +16542,17 @@ class WebsitesApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -16926,7 +16566,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -16934,7 +16574,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -16945,11 +16585,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -16965,9 +16605,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -16978,16 +16619,17 @@ class WebsitesApi
      *
      * Perform the LetsEncrypt preflight check
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult
      */
     public function performLetsEncryptPreflightCheck($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
-        list($response) = $this->performLetsEncryptPreflightCheckWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->performLetsEncryptPreflightCheckWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -16996,12 +16638,12 @@ class WebsitesApi
      *
      * Perform the LetsEncrypt preflight check
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function performLetsEncryptPreflightCheckWithHttpInfo($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
@@ -17029,8 +16671,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult',
@@ -17038,8 +16679,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -17070,7 +16709,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -17081,11 +16719,11 @@ class WebsitesApi
      *
      * Perform the LetsEncrypt preflight check
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function performLetsEncryptPreflightCheckAsync($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
@@ -17102,11 +16740,11 @@ class WebsitesApi
      *
      * Perform the LetsEncrypt preflight check
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function performLetsEncryptPreflightCheckAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
@@ -17118,7 +16756,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -17129,7 +16767,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -17152,11 +16790,11 @@ class WebsitesApi
     /**
      * Create request for operation 'performLetsEncryptPreflightCheck'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function performLetsEncryptPreflightCheckRequest($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
@@ -17168,7 +16806,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/letsencrypt_preflight';
         $formParams = [];
         $queryParams = [];
@@ -17176,20 +16813,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -17203,7 +16837,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -17211,14 +16845,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -17233,9 +16866,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -17246,13 +16880,13 @@ class WebsitesApi
      *
      * Making a staging website live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function pushWebsiteLive($org_id, $website_id, string $contentType = self::contentTypes['pushWebsiteLive'][0])
     {
@@ -17264,13 +16898,13 @@ class WebsitesApi
      *
      * Making a staging website live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function pushWebsiteLiveWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['pushWebsiteLive'][0])
     {
@@ -17298,12 +16932,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -17314,12 +16946,12 @@ class WebsitesApi
      *
      * Making a staging website live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function pushWebsiteLiveAsync($org_id, $website_id, string $contentType = self::contentTypes['pushWebsiteLive'][0])
     {
@@ -17336,12 +16968,12 @@ class WebsitesApi
      *
      * Making a staging website live
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function pushWebsiteLiveAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['pushWebsiteLive'][0])
     {
@@ -17351,7 +16983,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -17374,12 +17006,12 @@ class WebsitesApi
     /**
      * Create request for operation 'pushWebsiteLive'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['pushWebsiteLive'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function pushWebsiteLiveRequest($org_id, $website_id, string $contentType = self::contentTypes['pushWebsiteLive'][0])
     {
@@ -17398,7 +17030,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/push-live';
         $formParams = [];
         $queryParams = [];
@@ -17406,12 +17037,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -17419,12 +17048,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -17441,7 +17069,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -17449,7 +17077,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -17460,11 +17088,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -17480,9 +17108,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -17493,12 +17122,12 @@ class WebsitesApi
      *
      * Restart PHP container for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function restartWebsitePhp($website_id, string $contentType = self::contentTypes['restartWebsitePhp'][0])
     {
@@ -17510,12 +17139,12 @@ class WebsitesApi
      *
      * Restart PHP container for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function restartWebsitePhpWithHttpInfo($website_id, string $contentType = self::contentTypes['restartWebsitePhp'][0])
     {
@@ -17543,12 +17172,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -17559,11 +17186,11 @@ class WebsitesApi
      *
      * Restart PHP container for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function restartWebsitePhpAsync($website_id, string $contentType = self::contentTypes['restartWebsitePhp'][0])
     {
@@ -17580,11 +17207,11 @@ class WebsitesApi
      *
      * Restart PHP container for a website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function restartWebsitePhpAsyncWithHttpInfo($website_id, string $contentType = self::contentTypes['restartWebsitePhp'][0])
     {
@@ -17594,7 +17221,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -17617,11 +17244,11 @@ class WebsitesApi
     /**
      * Create request for operation 'restartWebsitePhp'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['restartWebsitePhp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function restartWebsitePhpRequest($website_id, string $contentType = self::contentTypes['restartWebsitePhp'][0])
     {
@@ -17633,7 +17260,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/websites/{website_id}/restart_php';
         $formParams = [];
         $queryParams = [];
@@ -17641,17 +17267,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -17668,7 +17291,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -17676,7 +17299,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -17687,11 +17310,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -17707,9 +17330,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -17720,13 +17344,13 @@ class WebsitesApi
      *
      * Set Nginx FastCGI enablement
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean value, set true to enable and false to disable FastCGI cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean value, set true to enable and false to disable FastCGI cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setDomainNginxFastCgi($domain_id, $body, string $contentType = self::contentTypes['setDomainNginxFastCgi'][0])
     {
@@ -17738,13 +17362,13 @@ class WebsitesApi
      *
      * Set Nginx FastCGI enablement
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean value, set true to enable and false to disable FastCGI cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean value, set true to enable and false to disable FastCGI cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setDomainNginxFastCgiWithHttpInfo($domain_id, $body, string $contentType = self::contentTypes['setDomainNginxFastCgi'][0])
     {
@@ -17772,12 +17396,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -17788,12 +17410,12 @@ class WebsitesApi
      *
      * Set Nginx FastCGI enablement
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean value, set true to enable and false to disable FastCGI cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean value, set true to enable and false to disable FastCGI cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setDomainNginxFastCgiAsync($domain_id, $body, string $contentType = self::contentTypes['setDomainNginxFastCgi'][0])
     {
@@ -17810,12 +17432,12 @@ class WebsitesApi
      *
      * Set Nginx FastCGI enablement
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean value, set true to enable and false to disable FastCGI cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean value, set true to enable and false to disable FastCGI cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setDomainNginxFastCgiAsyncWithHttpInfo($domain_id, $body, string $contentType = self::contentTypes['setDomainNginxFastCgi'][0])
     {
@@ -17825,7 +17447,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -17848,12 +17470,12 @@ class WebsitesApi
     /**
      * Create request for operation 'setDomainNginxFastCgi'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean value, set true to enable and false to disable FastCGI cache. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean value, set true to enable and false to disable FastCGI cache. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainNginxFastCgi'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setDomainNginxFastCgiRequest($domain_id, $body, string $contentType = self::contentTypes['setDomainNginxFastCgi'][0])
     {
@@ -17872,7 +17494,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/nginx_fastcgi';
         $formParams = [];
         $queryParams = [];
@@ -17880,17 +17501,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -17901,7 +17519,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -17914,7 +17532,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -17922,7 +17540,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -17933,11 +17551,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -17953,9 +17571,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -17966,13 +17585,13 @@ class WebsitesApi
      *
      * Set web server rewrite to file
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite $web_server_rewrite Rewrite a path to a file (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite  $web_server_rewrite  Rewrite a path to a file (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setDomainWebserverRewrite($domain_id, $web_server_rewrite, string $contentType = self::contentTypes['setDomainWebserverRewrite'][0])
     {
@@ -17984,13 +17603,13 @@ class WebsitesApi
      *
      * Set web server rewrite to file
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite $web_server_rewrite Rewrite a path to a file (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite  $web_server_rewrite  Rewrite a path to a file (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setDomainWebserverRewriteWithHttpInfo($domain_id, $web_server_rewrite, string $contentType = self::contentTypes['setDomainWebserverRewrite'][0])
     {
@@ -18018,12 +17637,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -18034,12 +17651,12 @@ class WebsitesApi
      *
      * Set web server rewrite to file
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite $web_server_rewrite Rewrite a path to a file (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite  $web_server_rewrite  Rewrite a path to a file (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setDomainWebserverRewriteAsync($domain_id, $web_server_rewrite, string $contentType = self::contentTypes['setDomainWebserverRewrite'][0])
     {
@@ -18056,12 +17673,12 @@ class WebsitesApi
      *
      * Set web server rewrite to file
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite $web_server_rewrite Rewrite a path to a file (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite  $web_server_rewrite  Rewrite a path to a file (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setDomainWebserverRewriteAsyncWithHttpInfo($domain_id, $web_server_rewrite, string $contentType = self::contentTypes['setDomainWebserverRewrite'][0])
     {
@@ -18071,7 +17688,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -18094,12 +17711,12 @@ class WebsitesApi
     /**
      * Create request for operation 'setDomainWebserverRewrite'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite $web_server_rewrite Rewrite a path to a file (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebServerRewrite  $web_server_rewrite  Rewrite a path to a file (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainWebserverRewrite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setDomainWebserverRewriteRequest($domain_id, $web_server_rewrite, string $contentType = self::contentTypes['setDomainWebserverRewrite'][0])
     {
@@ -18118,7 +17735,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/webserver_rewrites';
         $formParams = [];
         $queryParams = [];
@@ -18126,17 +17742,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -18147,7 +17760,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($web_server_rewrite)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($web_server_rewrite));
             } else {
                 $httpBody = $web_server_rewrite;
@@ -18160,7 +17773,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -18168,7 +17781,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -18179,11 +17792,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -18199,9 +17812,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -18212,14 +17826,14 @@ class WebsitesApi
      *
      * Set the active cgroup limits for a website (Master org only)
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits $set_cgroup_limits Cgroup limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits  $set_cgroup_limits  Cgroup limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteCgroupLimits($org_id, $website_id, $set_cgroup_limits, string $contentType = self::contentTypes['setWebsiteCgroupLimits'][0])
     {
@@ -18231,14 +17845,14 @@ class WebsitesApi
      *
      * Set the active cgroup limits for a website (Master org only)
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits $set_cgroup_limits Cgroup limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits  $set_cgroup_limits  Cgroup limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteCgroupLimitsWithHttpInfo($org_id, $website_id, $set_cgroup_limits, string $contentType = self::contentTypes['setWebsiteCgroupLimits'][0])
     {
@@ -18266,12 +17880,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -18282,13 +17894,13 @@ class WebsitesApi
      *
      * Set the active cgroup limits for a website (Master org only)
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits $set_cgroup_limits Cgroup limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits  $set_cgroup_limits  Cgroup limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteCgroupLimitsAsync($org_id, $website_id, $set_cgroup_limits, string $contentType = self::contentTypes['setWebsiteCgroupLimits'][0])
     {
@@ -18305,13 +17917,13 @@ class WebsitesApi
      *
      * Set the active cgroup limits for a website (Master org only)
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits $set_cgroup_limits Cgroup limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits  $set_cgroup_limits  Cgroup limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteCgroupLimitsAsyncWithHttpInfo($org_id, $website_id, $set_cgroup_limits, string $contentType = self::contentTypes['setWebsiteCgroupLimits'][0])
     {
@@ -18321,7 +17933,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -18344,13 +17956,13 @@ class WebsitesApi
     /**
      * Create request for operation 'setWebsiteCgroupLimits'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits $set_cgroup_limits Cgroup limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SetCgroupLimits  $set_cgroup_limits  Cgroup limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteCgroupLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteCgroupLimitsRequest($org_id, $website_id, $set_cgroup_limits, string $contentType = self::contentTypes['setWebsiteCgroupLimits'][0])
     {
@@ -18376,7 +17988,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/cgroup_limits';
         $formParams = [];
         $queryParams = [];
@@ -18384,12 +17995,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -18397,12 +18006,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -18413,7 +18021,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($set_cgroup_limits)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($set_cgroup_limits));
             } else {
                 $httpBody = $set_cgroup_limits;
@@ -18426,7 +18034,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -18434,7 +18042,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -18445,11 +18053,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -18465,9 +18073,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -18478,13 +18087,13 @@ class WebsitesApi
      *
      * Set \&quot;force ssl\&quot; status for domain mapping
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteDomainForceSsl($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -18496,13 +18105,13 @@ class WebsitesApi
      *
      * Set \&quot;force ssl\&quot; status for domain mapping
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteDomainForceSslWithHttpInfo($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -18530,12 +18139,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -18546,12 +18153,12 @@ class WebsitesApi
      *
      * Set \&quot;force ssl\&quot; status for domain mapping
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteDomainForceSslAsync($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -18568,12 +18175,12 @@ class WebsitesApi
      *
      * Set \&quot;force ssl\&quot; status for domain mapping
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteDomainForceSslAsyncWithHttpInfo($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -18583,7 +18190,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -18606,12 +18213,12 @@ class WebsitesApi
     /**
      * Create request for operation 'setWebsiteDomainForceSsl'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteDomainForceSslRequest($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -18630,7 +18237,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/ssl/force_ssl';
         $formParams = [];
         $queryParams = [];
@@ -18638,17 +18244,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -18659,7 +18262,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -18672,7 +18275,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -18680,14 +18283,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -18702,9 +18304,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -18715,13 +18318,13 @@ class WebsitesApi
      *
      * Set mod security status on a single domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  mod_sec_status (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteDomainModSecStatus($domain_id, $mod_sec_status, string $contentType = self::contentTypes['setWebsiteDomainModSecStatus'][0])
     {
@@ -18733,13 +18336,13 @@ class WebsitesApi
      *
      * Set mod security status on a single domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteDomainModSecStatusWithHttpInfo($domain_id, $mod_sec_status, string $contentType = self::contentTypes['setWebsiteDomainModSecStatus'][0])
     {
@@ -18767,12 +18370,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -18783,12 +18384,12 @@ class WebsitesApi
      *
      * Set mod security status on a single domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteDomainModSecStatusAsync($domain_id, $mod_sec_status, string $contentType = self::contentTypes['setWebsiteDomainModSecStatus'][0])
     {
@@ -18805,12 +18406,12 @@ class WebsitesApi
      *
      * Set mod security status on a single domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteDomainModSecStatusAsyncWithHttpInfo($domain_id, $mod_sec_status, string $contentType = self::contentTypes['setWebsiteDomainModSecStatus'][0])
     {
@@ -18820,7 +18421,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -18843,12 +18444,12 @@ class WebsitesApi
     /**
      * Create request for operation 'setWebsiteDomainModSecStatus'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus $mod_sec_status (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ModSecStatus  $mod_sec_status  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainModSecStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteDomainModSecStatusRequest($domain_id, $mod_sec_status, string $contentType = self::contentTypes['setWebsiteDomainModSecStatus'][0])
     {
@@ -18867,7 +18468,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/modsec_status';
         $formParams = [];
         $queryParams = [];
@@ -18875,17 +18475,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -18896,7 +18493,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($mod_sec_status)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($mod_sec_status));
             } else {
                 $httpBody = $mod_sec_status;
@@ -18909,7 +18506,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -18917,14 +18514,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -18939,9 +18535,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -18952,13 +18549,13 @@ class WebsitesApi
      *
      * Set a custom vhost file
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost $vhost vhost (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost  $vhost  vhost (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteDomainVhost($domain_id, $vhost, string $contentType = self::contentTypes['setWebsiteDomainVhost'][0])
     {
@@ -18970,13 +18567,13 @@ class WebsitesApi
      *
      * Set a custom vhost file
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost $vhost (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost  $vhost  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteDomainVhostWithHttpInfo($domain_id, $vhost, string $contentType = self::contentTypes['setWebsiteDomainVhost'][0])
     {
@@ -19004,12 +18601,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -19020,12 +18615,12 @@ class WebsitesApi
      *
      * Set a custom vhost file
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost $vhost (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost  $vhost  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteDomainVhostAsync($domain_id, $vhost, string $contentType = self::contentTypes['setWebsiteDomainVhost'][0])
     {
@@ -19042,12 +18637,12 @@ class WebsitesApi
      *
      * Set a custom vhost file
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost $vhost (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost  $vhost  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteDomainVhostAsyncWithHttpInfo($domain_id, $vhost, string $contentType = self::contentTypes['setWebsiteDomainVhost'][0])
     {
@@ -19057,7 +18652,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -19080,12 +18675,12 @@ class WebsitesApi
     /**
      * Create request for operation 'setWebsiteDomainVhost'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost $vhost (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Vhost  $vhost  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainVhost'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteDomainVhostRequest($domain_id, $vhost, string $contentType = self::contentTypes['setWebsiteDomainVhost'][0])
     {
@@ -19104,7 +18699,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/vhost';
         $formParams = [];
         $queryParams = [];
@@ -19112,17 +18706,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -19133,7 +18724,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($vhost)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($vhost));
             } else {
                 $httpBody = $vhost;
@@ -19146,7 +18737,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -19154,14 +18745,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -19176,9 +18766,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -19189,14 +18780,14 @@ class WebsitesApi
      *
      * Set the active FS quota limits for a website (Master org only)
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit $fs_quota_limit FS quota limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit  $fs_quota_limit  FS quota limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteFsQuotaLimits($org_id, $website_id, $fs_quota_limit, string $contentType = self::contentTypes['setWebsiteFsQuotaLimits'][0])
     {
@@ -19208,14 +18799,14 @@ class WebsitesApi
      *
      * Set the active FS quota limits for a website (Master org only)
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit $fs_quota_limit FS quota limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit  $fs_quota_limit  FS quota limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteFsQuotaLimitsWithHttpInfo($org_id, $website_id, $fs_quota_limit, string $contentType = self::contentTypes['setWebsiteFsQuotaLimits'][0])
     {
@@ -19243,12 +18834,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -19259,13 +18848,13 @@ class WebsitesApi
      *
      * Set the active FS quota limits for a website (Master org only)
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit $fs_quota_limit FS quota limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit  $fs_quota_limit  FS quota limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteFsQuotaLimitsAsync($org_id, $website_id, $fs_quota_limit, string $contentType = self::contentTypes['setWebsiteFsQuotaLimits'][0])
     {
@@ -19282,13 +18871,13 @@ class WebsitesApi
      *
      * Set the active FS quota limits for a website (Master org only)
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit $fs_quota_limit FS quota limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit  $fs_quota_limit  FS quota limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteFsQuotaLimitsAsyncWithHttpInfo($org_id, $website_id, $fs_quota_limit, string $contentType = self::contentTypes['setWebsiteFsQuotaLimits'][0])
     {
@@ -19298,7 +18887,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -19321,13 +18910,13 @@ class WebsitesApi
     /**
      * Create request for operation 'setWebsiteFsQuotaLimits'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit $fs_quota_limit FS quota limits. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit  $fs_quota_limit  FS quota limits. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteFsQuotaLimits'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteFsQuotaLimitsRequest($org_id, $website_id, $fs_quota_limit, string $contentType = self::contentTypes['setWebsiteFsQuotaLimits'][0])
     {
@@ -19353,7 +18942,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/fs_quota_limits';
         $formParams = [];
         $queryParams = [];
@@ -19361,12 +18949,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -19374,12 +18960,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -19390,7 +18975,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($fs_quota_limit)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($fs_quota_limit));
             } else {
                 $httpBody = $fs_quota_limit;
@@ -19403,7 +18988,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -19411,7 +18996,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -19422,11 +19007,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -19442,9 +19027,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -19455,13 +19041,13 @@ class WebsitesApi
      *
      * Set ioncube status for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteIoncubeStatus($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteIoncubeStatus'][0])
     {
@@ -19473,13 +19059,13 @@ class WebsitesApi
      *
      * Set ioncube status for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteIoncubeStatusWithHttpInfo($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteIoncubeStatus'][0])
     {
@@ -19507,12 +19093,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -19523,12 +19107,12 @@ class WebsitesApi
      *
      * Set ioncube status for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteIoncubeStatusAsync($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteIoncubeStatus'][0])
     {
@@ -19545,12 +19129,12 @@ class WebsitesApi
      *
      * Set ioncube status for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteIoncubeStatusAsyncWithHttpInfo($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteIoncubeStatus'][0])
     {
@@ -19560,7 +19144,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -19583,12 +19167,12 @@ class WebsitesApi
     /**
      * Create request for operation 'setWebsiteIoncubeStatus'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteIoncubeStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteIoncubeStatusRequest($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteIoncubeStatus'][0])
     {
@@ -19600,8 +19184,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/v2/websites/{website_id}/ioncube';
         $formParams = [];
         $queryParams = [];
@@ -19609,17 +19191,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -19630,7 +19209,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -19643,7 +19222,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -19651,7 +19230,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -19662,11 +19241,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -19682,9 +19261,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -19695,13 +19275,13 @@ class WebsitesApi
      *
      * Set Redis state for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteRedisState($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteRedisState'][0])
     {
@@ -19713,13 +19293,13 @@ class WebsitesApi
      *
      * Set Redis state for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteRedisStateWithHttpInfo($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteRedisState'][0])
     {
@@ -19747,12 +19327,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -19763,12 +19341,12 @@ class WebsitesApi
      *
      * Set Redis state for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteRedisStateAsync($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteRedisState'][0])
     {
@@ -19785,12 +19363,12 @@ class WebsitesApi
      *
      * Set Redis state for an existing website
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteRedisStateAsyncWithHttpInfo($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteRedisState'][0])
     {
@@ -19800,7 +19378,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -19823,12 +19401,12 @@ class WebsitesApi
     /**
      * Create request for operation 'setWebsiteRedisState'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  bool|null $body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  bool|null  $body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteRedisState'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteRedisStateRequest($website_id, $body = null, string $contentType = self::contentTypes['setWebsiteRedisState'][0])
     {
@@ -19840,8 +19418,6 @@ class WebsitesApi
             );
         }
 
-
-
         $resourcePath = '/v2/websites/{website_id}/redis';
         $formParams = [];
         $queryParams = [];
@@ -19849,17 +19425,14 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -19870,7 +19443,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -19883,7 +19456,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -19891,7 +19464,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -19902,11 +19475,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -19922,9 +19495,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -19935,16 +19509,16 @@ class WebsitesApi
      *
      * Set a single override setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  service_setting_value (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteSetting($org_id, $website_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setWebsiteSetting'][0])
     {
@@ -19956,16 +19530,16 @@ class WebsitesApi
      *
      * Set a single override setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteSettingWithHttpInfo($org_id, $website_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setWebsiteSetting'][0])
     {
@@ -19993,12 +19567,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -20009,15 +19581,15 @@ class WebsitesApi
      *
      * Set a single override setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteSettingAsync($org_id, $website_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setWebsiteSetting'][0])
     {
@@ -20034,15 +19606,15 @@ class WebsitesApi
      *
      * Set a single override setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteSettingAsyncWithHttpInfo($org_id, $website_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setWebsiteSetting'][0])
     {
@@ -20052,7 +19624,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -20075,15 +19647,15 @@ class WebsitesApi
     /**
      * Create request for operation 'setWebsiteSetting'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteSettingRequest($org_id, $website_id, $setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setWebsiteSetting'][0])
     {
@@ -20123,7 +19695,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/settings/{setting_kind}/{setting_key}';
         $formParams = [];
         $queryParams = [];
@@ -20131,12 +19702,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -20144,7 +19713,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -20152,7 +19721,7 @@ class WebsitesApi
         // path params
         if ($setting_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_kind' . '}',
+                '{'.'setting_kind'.'}',
                 ObjectSerializer::toPathValue($setting_kind),
                 $resourcePath
             );
@@ -20160,12 +19729,11 @@ class WebsitesApi
         // path params
         if ($setting_key !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_key' . '}',
+                '{'.'setting_key'.'}',
                 ObjectSerializer::toPathValue($setting_key),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -20176,7 +19744,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($service_setting_value)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($service_setting_value));
             } else {
                 $httpBody = $service_setting_value;
@@ -20189,7 +19757,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -20197,7 +19765,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -20208,11 +19776,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -20228,9 +19796,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -20241,14 +19810,14 @@ class WebsitesApi
      *
      * Take website screenshot immediately
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function takeScreenshot($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['takeScreenshot'][0])
     {
@@ -20260,14 +19829,14 @@ class WebsitesApi
      *
      * Take website screenshot immediately
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function takeScreenshotWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['takeScreenshot'][0])
     {
@@ -20295,12 +19864,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -20311,13 +19878,13 @@ class WebsitesApi
      *
      * Take website screenshot immediately
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function takeScreenshotAsync($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['takeScreenshot'][0])
     {
@@ -20334,13 +19901,13 @@ class WebsitesApi
      *
      * Take website screenshot immediately
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function takeScreenshotAsyncWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['takeScreenshot'][0])
     {
@@ -20350,7 +19917,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -20373,13 +19940,13 @@ class WebsitesApi
     /**
      * Create request for operation 'takeScreenshot'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['takeScreenshot'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function takeScreenshotRequest($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['takeScreenshot'][0])
     {
@@ -20405,7 +19972,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/screenshot/take';
         $formParams = [];
         $queryParams = [];
@@ -20413,12 +19979,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -20426,7 +19990,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -20434,12 +19998,11 @@ class WebsitesApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -20456,7 +20019,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -20464,7 +20027,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -20475,11 +20038,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -20495,9 +20058,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -20508,14 +20072,14 @@ class WebsitesApi
      *
      * Unauthorize the public SSH key with the given ID.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function unauthorizeWebsiteSshKey($org_id, $website_id, $key_id, string $contentType = self::contentTypes['unauthorizeWebsiteSshKey'][0])
     {
@@ -20527,14 +20091,14 @@ class WebsitesApi
      *
      * Unauthorize the public SSH key with the given ID.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function unauthorizeWebsiteSshKeyWithHttpInfo($org_id, $website_id, $key_id, string $contentType = self::contentTypes['unauthorizeWebsiteSshKey'][0])
     {
@@ -20562,12 +20126,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -20578,13 +20140,13 @@ class WebsitesApi
      *
      * Unauthorize the public SSH key with the given ID.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function unauthorizeWebsiteSshKeyAsync($org_id, $website_id, $key_id, string $contentType = self::contentTypes['unauthorizeWebsiteSshKey'][0])
     {
@@ -20601,13 +20163,13 @@ class WebsitesApi
      *
      * Unauthorize the public SSH key with the given ID.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function unauthorizeWebsiteSshKeyAsyncWithHttpInfo($org_id, $website_id, $key_id, string $contentType = self::contentTypes['unauthorizeWebsiteSshKey'][0])
     {
@@ -20617,7 +20179,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -20640,13 +20202,13 @@ class WebsitesApi
     /**
      * Create request for operation 'unauthorizeWebsiteSshKey'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['unauthorizeWebsiteSshKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function unauthorizeWebsiteSshKeyRequest($org_id, $website_id, $key_id, string $contentType = self::contentTypes['unauthorizeWebsiteSshKey'][0])
     {
@@ -20672,7 +20234,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ssh/keys/{key_id}';
         $formParams = [];
         $queryParams = [];
@@ -20680,12 +20241,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -20693,7 +20252,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -20701,12 +20260,11 @@ class WebsitesApi
         // path params
         if ($key_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'key_id' . '}',
+                '{'.'key_id'.'}',
                 ObjectSerializer::toPathValue($key_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -20723,7 +20281,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -20731,14 +20289,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -20753,9 +20310,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -20766,15 +20324,15 @@ class WebsitesApi
      *
      * Update given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  username (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateFtpUser($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -20786,15 +20344,15 @@ class WebsitesApi
      *
      * Update given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateFtpUserWithHttpInfo($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -20822,12 +20380,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -20838,14 +20394,14 @@ class WebsitesApi
      *
      * Update given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateFtpUserAsync($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -20862,14 +20418,14 @@ class WebsitesApi
      *
      * Update given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateFtpUserAsyncWithHttpInfo($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -20879,7 +20435,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -20902,14 +20458,14 @@ class WebsitesApi
     /**
      * Create request for operation 'updateFtpUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateFtpUserRequest($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -20942,7 +20498,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ftp/users/{username}';
         $formParams = [];
         $queryParams = [];
@@ -20950,12 +20505,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -20963,7 +20516,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -20971,12 +20524,11 @@ class WebsitesApi
         // path params
         if ($username !== null) {
             $resourcePath = str_replace(
-                '{' . 'username' . '}',
+                '{'.'username'.'}',
                 ObjectSerializer::toPathValue($username),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -20987,7 +20539,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($ftp_user_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ftp_user_update));
             } else {
                 $httpBody = $ftp_user_update;
@@ -21000,7 +20552,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -21008,7 +20560,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -21019,11 +20571,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -21039,9 +20591,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -21052,14 +20605,14 @@ class WebsitesApi
      *
      * Update user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing $update_crontab_full_listing List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing  $update_crontab_full_listing  List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateUserCrontab($org_id, $website_id, $update_crontab_full_listing, string $contentType = self::contentTypes['updateUserCrontab'][0])
     {
@@ -21071,14 +20624,14 @@ class WebsitesApi
      *
      * Update user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing $update_crontab_full_listing List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing  $update_crontab_full_listing  List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateUserCrontabWithHttpInfo($org_id, $website_id, $update_crontab_full_listing, string $contentType = self::contentTypes['updateUserCrontab'][0])
     {
@@ -21106,12 +20659,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -21122,13 +20673,13 @@ class WebsitesApi
      *
      * Update user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing $update_crontab_full_listing List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing  $update_crontab_full_listing  List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateUserCrontabAsync($org_id, $website_id, $update_crontab_full_listing, string $contentType = self::contentTypes['updateUserCrontab'][0])
     {
@@ -21145,13 +20696,13 @@ class WebsitesApi
      *
      * Update user&#39;s crontab
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing $update_crontab_full_listing List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing  $update_crontab_full_listing  List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateUserCrontabAsyncWithHttpInfo($org_id, $website_id, $update_crontab_full_listing, string $contentType = self::contentTypes['updateUserCrontab'][0])
     {
@@ -21161,7 +20712,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -21184,13 +20735,13 @@ class WebsitesApi
     /**
      * Create request for operation 'updateUserCrontab'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing $update_crontab_full_listing List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateCrontabFullListing  $update_crontab_full_listing  List of crontab expressions to be inserted into user&#39;s crontab. To identify a crontab expressions in the crontab file, we use line numbers. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateUserCrontab'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateUserCrontabRequest($org_id, $website_id, $update_crontab_full_listing, string $contentType = self::contentTypes['updateUserCrontab'][0])
     {
@@ -21216,7 +20767,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/crontab';
         $formParams = [];
         $queryParams = [];
@@ -21224,12 +20774,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -21237,12 +20785,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -21253,7 +20800,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($update_crontab_full_listing)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_crontab_full_listing));
             } else {
                 $httpBody = $update_crontab_full_listing;
@@ -21266,7 +20813,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -21274,7 +20821,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -21285,11 +20832,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -21305,9 +20852,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -21318,14 +20866,14 @@ class WebsitesApi
      *
      * Update website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite $update_website Website update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite  $update_website  Website update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsite($org_id, $website_id, $update_website, string $contentType = self::contentTypes['updateWebsite'][0])
     {
@@ -21337,14 +20885,14 @@ class WebsitesApi
      *
      * Update website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite $update_website Website update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite  $update_website  Website update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsiteWithHttpInfo($org_id, $website_id, $update_website, string $contentType = self::contentTypes['updateWebsite'][0])
     {
@@ -21372,12 +20920,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -21388,13 +20934,13 @@ class WebsitesApi
      *
      * Update website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite $update_website Website update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite  $update_website  Website update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteAsync($org_id, $website_id, $update_website, string $contentType = self::contentTypes['updateWebsite'][0])
     {
@@ -21411,13 +20957,13 @@ class WebsitesApi
      *
      * Update website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite $update_website Website update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite  $update_website  Website update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteAsyncWithHttpInfo($org_id, $website_id, $update_website, string $contentType = self::contentTypes['updateWebsite'][0])
     {
@@ -21427,7 +20973,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -21450,13 +20996,13 @@ class WebsitesApi
     /**
      * Create request for operation 'updateWebsite'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite $update_website Website update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsite  $update_website  Website update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsiteRequest($org_id, $website_id, $update_website, string $contentType = self::contentTypes['updateWebsite'][0])
     {
@@ -21482,7 +21028,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}';
         $formParams = [];
         $queryParams = [];
@@ -21490,12 +21035,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -21503,12 +21046,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -21519,7 +21061,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($update_website)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_website));
             } else {
                 $httpBody = $update_website;
@@ -21532,7 +21074,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -21540,7 +21082,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -21551,11 +21093,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -21571,9 +21113,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -21584,15 +21127,15 @@ class WebsitesApi
      *
      * Update website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate $domain_mapping_update domain_mapping_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate  $domain_mapping_update  domain_mapping_update (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsiteDomainMapping($org_id, $website_id, $domain_id, $domain_mapping_update, string $contentType = self::contentTypes['updateWebsiteDomainMapping'][0])
     {
@@ -21604,15 +21147,15 @@ class WebsitesApi
      *
      * Update website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate $domain_mapping_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate  $domain_mapping_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsiteDomainMappingWithHttpInfo($org_id, $website_id, $domain_id, $domain_mapping_update, string $contentType = self::contentTypes['updateWebsiteDomainMapping'][0])
     {
@@ -21640,12 +21183,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -21656,14 +21197,14 @@ class WebsitesApi
      *
      * Update website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate $domain_mapping_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate  $domain_mapping_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteDomainMappingAsync($org_id, $website_id, $domain_id, $domain_mapping_update, string $contentType = self::contentTypes['updateWebsiteDomainMapping'][0])
     {
@@ -21680,14 +21221,14 @@ class WebsitesApi
      *
      * Update website domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate $domain_mapping_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate  $domain_mapping_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteDomainMappingAsyncWithHttpInfo($org_id, $website_id, $domain_id, $domain_mapping_update, string $contentType = self::contentTypes['updateWebsiteDomainMapping'][0])
     {
@@ -21697,7 +21238,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -21720,14 +21261,14 @@ class WebsitesApi
     /**
      * Create request for operation 'updateWebsiteDomainMapping'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate $domain_mapping_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingUpdate  $domain_mapping_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainMapping'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsiteDomainMappingRequest($org_id, $website_id, $domain_id, $domain_mapping_update, string $contentType = self::contentTypes['updateWebsiteDomainMapping'][0])
     {
@@ -21760,7 +21301,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}';
         $formParams = [];
         $queryParams = [];
@@ -21768,12 +21308,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -21781,7 +21319,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -21789,12 +21327,11 @@ class WebsitesApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -21805,7 +21342,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($domain_mapping_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($domain_mapping_update));
             } else {
                 $httpBody = $domain_mapping_update;
@@ -21818,7 +21355,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -21826,7 +21363,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -21837,11 +21374,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -21857,9 +21394,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -21870,14 +21408,14 @@ class WebsitesApi
      *
      * Sets a rule over provided ips - either block or allow
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule $require_ips_rule List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule  $require_ips_rule  List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsiteHtaccessIpsRule($org_id, $website_id, $require_ips_rule, string $contentType = self::contentTypes['updateWebsiteHtaccessIpsRule'][0])
     {
@@ -21889,14 +21427,14 @@ class WebsitesApi
      *
      * Sets a rule over provided ips - either block or allow
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule $require_ips_rule List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule  $require_ips_rule  List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsiteHtaccessIpsRuleWithHttpInfo($org_id, $website_id, $require_ips_rule, string $contentType = self::contentTypes['updateWebsiteHtaccessIpsRule'][0])
     {
@@ -21924,12 +21462,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -21940,13 +21476,13 @@ class WebsitesApi
      *
      * Sets a rule over provided ips - either block or allow
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule $require_ips_rule List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule  $require_ips_rule  List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteHtaccessIpsRuleAsync($org_id, $website_id, $require_ips_rule, string $contentType = self::contentTypes['updateWebsiteHtaccessIpsRule'][0])
     {
@@ -21963,13 +21499,13 @@ class WebsitesApi
      *
      * Sets a rule over provided ips - either block or allow
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule $require_ips_rule List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule  $require_ips_rule  List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteHtaccessIpsRuleAsyncWithHttpInfo($org_id, $website_id, $require_ips_rule, string $contentType = self::contentTypes['updateWebsiteHtaccessIpsRule'][0])
     {
@@ -21979,7 +21515,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -22002,13 +21538,13 @@ class WebsitesApi
     /**
      * Create request for operation 'updateWebsiteHtaccessIpsRule'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule $require_ips_rule List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\RequireIpsRule  $require_ips_rule  List of ips and a rule which should apply to them - either block all these ips or allow only these ips. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessIpsRule'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsiteHtaccessIpsRuleRequest($org_id, $website_id, $require_ips_rule, string $contentType = self::contentTypes['updateWebsiteHtaccessIpsRule'][0])
     {
@@ -22034,7 +21570,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/htaccess/ips';
         $formParams = [];
         $queryParams = [];
@@ -22042,12 +21577,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -22055,12 +21588,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -22071,7 +21603,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($require_ips_rule)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($require_ips_rule));
             } else {
                 $httpBody = $require_ips_rule;
@@ -22084,7 +21616,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -22092,7 +21624,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -22103,11 +21635,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -22123,9 +21655,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -22136,14 +21669,14 @@ class WebsitesApi
      *
      * Updates rewrite rules
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing $update_rewrite_chain_full_listing List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing  $update_rewrite_chain_full_listing  List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsiteHtaccessRewrites($org_id, $website_id, $update_rewrite_chain_full_listing, string $contentType = self::contentTypes['updateWebsiteHtaccessRewrites'][0])
     {
@@ -22155,14 +21688,14 @@ class WebsitesApi
      *
      * Updates rewrite rules
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing $update_rewrite_chain_full_listing List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing  $update_rewrite_chain_full_listing  List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsiteHtaccessRewritesWithHttpInfo($org_id, $website_id, $update_rewrite_chain_full_listing, string $contentType = self::contentTypes['updateWebsiteHtaccessRewrites'][0])
     {
@@ -22190,12 +21723,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -22206,13 +21737,13 @@ class WebsitesApi
      *
      * Updates rewrite rules
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing $update_rewrite_chain_full_listing List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing  $update_rewrite_chain_full_listing  List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteHtaccessRewritesAsync($org_id, $website_id, $update_rewrite_chain_full_listing, string $contentType = self::contentTypes['updateWebsiteHtaccessRewrites'][0])
     {
@@ -22229,13 +21760,13 @@ class WebsitesApi
      *
      * Updates rewrite rules
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing $update_rewrite_chain_full_listing List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing  $update_rewrite_chain_full_listing  List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteHtaccessRewritesAsyncWithHttpInfo($org_id, $website_id, $update_rewrite_chain_full_listing, string $contentType = self::contentTypes['updateWebsiteHtaccessRewrites'][0])
     {
@@ -22245,7 +21776,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -22268,13 +21799,13 @@ class WebsitesApi
     /**
      * Create request for operation 'updateWebsiteHtaccessRewrites'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing $update_rewrite_chain_full_listing List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateRewriteChainFullListing  $update_rewrite_chain_full_listing  List of rewrite chains to be inserted into the .htaccess file. To identify a rewrite chain in the .htaccess file, we use line numbers. Line numbers serve two purposes. It acts loosely as an identifier, i.e. if you want to remove some chain or replace it by another, you would use the same line number you received when you read the &#x60;GET&#x60; endpoint. Second purpose is that of ordering. If you want some chain to be above another in the file, you have to make sure that the line number is less. To delete a rewrite chain, just send a line number without any additional information for a single &#x60;RewriteChain&#x60; object. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteHtaccessRewrites'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsiteHtaccessRewritesRequest($org_id, $website_id, $update_rewrite_chain_full_listing, string $contentType = self::contentTypes['updateWebsiteHtaccessRewrites'][0])
     {
@@ -22300,7 +21831,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/htaccess';
         $formParams = [];
         $queryParams = [];
@@ -22308,12 +21838,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -22321,12 +21849,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -22337,7 +21864,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($update_rewrite_chain_full_listing)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_rewrite_chain_full_listing));
             } else {
                 $httpBody = $update_rewrite_chain_full_listing;
@@ -22350,7 +21877,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -22358,7 +21885,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -22369,11 +21896,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -22389,9 +21916,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -22402,14 +21930,14 @@ class WebsitesApi
      *
      * Update primary domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping $new_primary_domain_mapping Domain mapping details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping  $new_primary_domain_mapping  Domain mapping details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsitePrimaryDomain($org_id, $website_id, $new_primary_domain_mapping, string $contentType = self::contentTypes['updateWebsitePrimaryDomain'][0])
     {
@@ -22421,14 +21949,14 @@ class WebsitesApi
      *
      * Update primary domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping $new_primary_domain_mapping Domain mapping details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping  $new_primary_domain_mapping  Domain mapping details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsitePrimaryDomainWithHttpInfo($org_id, $website_id, $new_primary_domain_mapping, string $contentType = self::contentTypes['updateWebsitePrimaryDomain'][0])
     {
@@ -22456,12 +21984,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -22472,13 +21998,13 @@ class WebsitesApi
      *
      * Update primary domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping $new_primary_domain_mapping Domain mapping details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping  $new_primary_domain_mapping  Domain mapping details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsitePrimaryDomainAsync($org_id, $website_id, $new_primary_domain_mapping, string $contentType = self::contentTypes['updateWebsitePrimaryDomain'][0])
     {
@@ -22495,13 +22021,13 @@ class WebsitesApi
      *
      * Update primary domain mapping
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping $new_primary_domain_mapping Domain mapping details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping  $new_primary_domain_mapping  Domain mapping details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsitePrimaryDomainAsyncWithHttpInfo($org_id, $website_id, $new_primary_domain_mapping, string $contentType = self::contentTypes['updateWebsitePrimaryDomain'][0])
     {
@@ -22511,7 +22037,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -22534,13 +22060,13 @@ class WebsitesApi
     /**
      * Create request for operation 'updateWebsitePrimaryDomain'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping $new_primary_domain_mapping Domain mapping details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPrimaryDomainMapping  $new_primary_domain_mapping  Domain mapping details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsitePrimaryDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsitePrimaryDomainRequest($org_id, $website_id, $new_primary_domain_mapping, string $contentType = self::contentTypes['updateWebsitePrimaryDomain'][0])
     {
@@ -22566,7 +22092,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/primary';
         $formParams = [];
         $queryParams = [];
@@ -22574,12 +22099,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -22587,12 +22110,11 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -22603,7 +22125,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($new_primary_domain_mapping)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_primary_domain_mapping));
             } else {
                 $httpBody = $new_primary_domain_mapping;
@@ -22616,7 +22138,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -22624,7 +22146,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -22635,11 +22157,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -22655,9 +22177,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -22668,15 +22191,15 @@ class WebsitesApi
      *
      * Update an existing website public SSH key.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate $ssh_key_update The public SSH key updatable fields. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate  $ssh_key_update  The public SSH key updatable fields. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsiteSshKey($org_id, $website_id, $key_id, $ssh_key_update, string $contentType = self::contentTypes['updateWebsiteSshKey'][0])
     {
@@ -22688,15 +22211,15 @@ class WebsitesApi
      *
      * Update an existing website public SSH key.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate $ssh_key_update The public SSH key updatable fields. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate  $ssh_key_update  The public SSH key updatable fields. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsiteSshKeyWithHttpInfo($org_id, $website_id, $key_id, $ssh_key_update, string $contentType = self::contentTypes['updateWebsiteSshKey'][0])
     {
@@ -22724,12 +22247,10 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -22740,14 +22261,14 @@ class WebsitesApi
      *
      * Update an existing website public SSH key.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate $ssh_key_update The public SSH key updatable fields. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate  $ssh_key_update  The public SSH key updatable fields. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteSshKeyAsync($org_id, $website_id, $key_id, $ssh_key_update, string $contentType = self::contentTypes['updateWebsiteSshKey'][0])
     {
@@ -22764,14 +22285,14 @@ class WebsitesApi
      *
      * Update an existing website public SSH key.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate $ssh_key_update The public SSH key updatable fields. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate  $ssh_key_update  The public SSH key updatable fields. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteSshKeyAsyncWithHttpInfo($org_id, $website_id, $key_id, $ssh_key_update, string $contentType = self::contentTypes['updateWebsiteSshKey'][0])
     {
@@ -22781,7 +22302,7 @@ class WebsitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -22804,14 +22325,14 @@ class WebsitesApi
     /**
      * Create request for operation 'updateWebsiteSshKey'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $key_id The unique ID of the SSH key within the same authorized_keys file. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate $ssh_key_update The public SSH key updatable fields. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $key_id  The unique ID of the SSH key within the same authorized_keys file. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SshKeyUpdate  $ssh_key_update  The public SSH key updatable fields. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteSshKey'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsiteSshKeyRequest($org_id, $website_id, $key_id, $ssh_key_update, string $contentType = self::contentTypes['updateWebsiteSshKey'][0])
     {
@@ -22844,7 +22365,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ssh/keys/{key_id}';
         $formParams = [];
         $queryParams = [];
@@ -22852,12 +22372,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -22865,7 +22383,7 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -22873,12 +22391,11 @@ class WebsitesApi
         // path params
         if ($key_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'key_id' . '}',
+                '{'.'key_id'.'}',
                 ObjectSerializer::toPathValue($key_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -22889,7 +22406,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($ssh_key_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ssh_key_update));
             } else {
                 $httpBody = $ssh_key_update;
@@ -22902,7 +22419,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -22910,14 +22427,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -22932,9 +22448,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -22945,17 +22462,18 @@ class WebsitesApi
      *
      * Upload custom ssl certificate, key and optional fullchain for a given website
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSslCert
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSslCert
      */
     public function uploadWebsiteDomainSslCert($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
-        list($response) = $this->uploadWebsiteDomainSslCertWithHttpInfo($domain_id, $ssl_cert, $contentType);
+        [$response] = $this->uploadWebsiteDomainSslCertWithHttpInfo($domain_id, $ssl_cert, $contentType);
+
         return $response;
     }
 
@@ -22964,13 +22482,13 @@ class WebsitesApi
      *
      * Upload custom ssl certificate, key and optional fullchain for a given website
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSslCert, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSslCert, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadWebsiteDomainSslCertWithHttpInfo($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
@@ -22998,8 +22516,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewSslCert',
@@ -23007,8 +22524,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -23039,7 +22554,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -23050,12 +22564,12 @@ class WebsitesApi
      *
      * Upload custom ssl certificate, key and optional fullchain for a given website
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadWebsiteDomainSslCertAsync($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
@@ -23072,12 +22586,12 @@ class WebsitesApi
      *
      * Upload custom ssl certificate, key and optional fullchain for a given website
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadWebsiteDomainSslCertAsyncWithHttpInfo($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
@@ -23089,7 +22603,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -23100,7 +22614,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -23123,12 +22637,12 @@ class WebsitesApi
     /**
      * Create request for operation 'uploadWebsiteDomainSslCert'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function uploadWebsiteDomainSslCertRequest($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
@@ -23147,7 +22661,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/ssl';
         $formParams = [];
         $queryParams = [];
@@ -23155,20 +22668,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -23176,7 +22686,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($ssl_cert)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ssl_cert));
             } else {
                 $httpBody = $ssl_cert;
@@ -23189,7 +22699,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -23197,14 +22707,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -23219,9 +22728,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -23232,17 +22742,18 @@ class WebsitesApi
      *
      * Upload SSL for mail.customerdomain.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSslCert
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSslCert
      */
     public function uploadWebsiteMailDomainSslCert($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
-        list($response) = $this->uploadWebsiteMailDomainSslCertWithHttpInfo($domain_id, $ssl_cert, $contentType);
+        [$response] = $this->uploadWebsiteMailDomainSslCertWithHttpInfo($domain_id, $ssl_cert, $contentType);
+
         return $response;
     }
 
@@ -23251,13 +22762,13 @@ class WebsitesApi
      *
      * Upload SSL for mail.customerdomain.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSslCert, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSslCert, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadWebsiteMailDomainSslCertWithHttpInfo($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
@@ -23285,8 +22796,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewSslCert',
@@ -23294,8 +22804,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -23326,7 +22834,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -23337,12 +22844,12 @@ class WebsitesApi
      *
      * Upload SSL for mail.customerdomain.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadWebsiteMailDomainSslCertAsync($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
@@ -23359,12 +22866,12 @@ class WebsitesApi
      *
      * Upload SSL for mail.customerdomain.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadWebsiteMailDomainSslCertAsyncWithHttpInfo($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
@@ -23376,7 +22883,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -23387,7 +22894,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -23410,12 +22917,12 @@ class WebsitesApi
     /**
      * Create request for operation 'uploadWebsiteMailDomainSslCert'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function uploadWebsiteMailDomainSslCertRequest($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
@@ -23434,7 +22941,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/mail_ssl';
         $formParams = [];
         $queryParams = [];
@@ -23442,20 +22948,17 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -23463,7 +22966,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($ssl_cert)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ssl_cert));
             } else {
                 $httpBody = $ssl_cert;
@@ -23476,7 +22979,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -23484,14 +22987,13 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -23506,9 +23008,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -23519,18 +23022,19 @@ class WebsitesApi
      *
      * Validate whether a website operation is allowed
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation $website_operation_validation website_operation_validation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation  $website_operation_validation  website_operation_validation (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ValidationResult
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ValidationResult
      */
     public function validateWebsiteOperation($org_id, $website_id, $website_operation_validation, string $contentType = self::contentTypes['validateWebsiteOperation'][0])
     {
-        list($response) = $this->validateWebsiteOperationWithHttpInfo($org_id, $website_id, $website_operation_validation, $contentType);
+        [$response] = $this->validateWebsiteOperationWithHttpInfo($org_id, $website_id, $website_operation_validation, $contentType);
+
         return $response;
     }
 
@@ -23539,14 +23043,14 @@ class WebsitesApi
      *
      * Validate whether a website operation is allowed
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation $website_operation_validation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation  $website_operation_validation  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ValidationResult, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ValidationResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function validateWebsiteOperationWithHttpInfo($org_id, $website_id, $website_operation_validation, string $contentType = self::contentTypes['validateWebsiteOperation'][0])
     {
@@ -23574,8 +23078,7 @@ class WebsitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ValidationResult',
@@ -23583,8 +23086,6 @@ class WebsitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -23615,7 +23116,6 @@ class WebsitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -23626,13 +23126,13 @@ class WebsitesApi
      *
      * Validate whether a website operation is allowed
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation $website_operation_validation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation  $website_operation_validation  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validateWebsiteOperationAsync($org_id, $website_id, $website_operation_validation, string $contentType = self::contentTypes['validateWebsiteOperation'][0])
     {
@@ -23649,13 +23149,13 @@ class WebsitesApi
      *
      * Validate whether a website operation is allowed
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation $website_operation_validation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation  $website_operation_validation  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validateWebsiteOperationAsyncWithHttpInfo($org_id, $website_id, $website_operation_validation, string $contentType = self::contentTypes['validateWebsiteOperation'][0])
     {
@@ -23667,7 +23167,7 @@ class WebsitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -23678,7 +23178,7 @@ class WebsitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -23701,13 +23201,13 @@ class WebsitesApi
     /**
      * Create request for operation 'validateWebsiteOperation'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation $website_operation_validation (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteOperationValidation  $website_operation_validation  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateWebsiteOperation'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function validateWebsiteOperationRequest($org_id, $website_id, $website_operation_validation, string $contentType = self::contentTypes['validateWebsiteOperation'][0])
     {
@@ -23733,7 +23233,6 @@ class WebsitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/validate-operation';
         $formParams = [];
         $queryParams = [];
@@ -23741,12 +23240,10 @@ class WebsitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -23754,15 +23251,14 @@ class WebsitesApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -23770,7 +23266,7 @@ class WebsitesApi
         // for model (json/xml)
         if (isset($website_operation_validation)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($website_operation_validation));
             } else {
                 $httpBody = $website_operation_validation;
@@ -23783,7 +23279,7 @@ class WebsitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -23791,7 +23287,7 @@ class WebsitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -23802,11 +23298,11 @@ class WebsitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -23822,9 +23318,10 @@ class WebsitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -23833,16 +23330,17 @@ class WebsitesApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -23855,7 +23353,7 @@ class WebsitesApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -23878,7 +23376,7 @@ class WebsitesApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

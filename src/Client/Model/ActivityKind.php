@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ActivityKind
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,15 +29,16 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ActivityKind Class Doc Comment
  *
  * @category Class
+ *
  * @description Different activities that happen in orchd. There will be a lot of changes to the values of this enum as time goes by, consider this non-exhausive and be graceful with unknown values.
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ActivityKind
@@ -59,6 +62,7 @@ class ActivityKind
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -70,9 +74,7 @@ class ActivityKind
             self::IMPORTED,
             self::BACKED_UP,
             self::ERROR_RAISED,
-            self::BACKUP_ERROR
+            self::BACKUP_ERROR,
         ];
     }
 }
-
-

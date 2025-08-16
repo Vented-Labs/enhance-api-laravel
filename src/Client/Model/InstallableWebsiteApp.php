@@ -1,12 +1,14 @@
 <?php
+
 /**
  * InstallableWebsiteApp
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,78 +30,82 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * InstallableWebsiteApp Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
+class InstallableWebsiteApp implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'InstallableWebsiteApp';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'app' => '\Vented\EnhanceApiLaravel\Client\Model\WebsiteAppKind',
         'version' => 'string',
         'is_latest' => 'bool',
         'description' => 'string',
         'size' => 'float',
-        'created_at' => '\DateTime'
+        'created_at' => '\DateTime',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'app' => null,
         'version' => 'semver',
         'is_latest' => null,
         'description' => null,
         'size' => null,
-        'created_at' => 'date-time'
+        'created_at' => 'date-time',
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'app' => false,
         'version' => false,
         'is_latest' => false,
         'description' => false,
         'size' => false,
-        'created_at' => false
+        'created_at' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -124,8 +130,6 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -135,7 +139,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -145,7 +149,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -154,9 +158,6 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -165,9 +166,6 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -186,7 +184,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
         'is_latest' => 'isLatest',
         'description' => 'description',
         'size' => 'size',
-        'created_at' => 'createdAt'
+        'created_at' => 'createdAt',
     ];
 
     /**
@@ -200,7 +198,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
         'is_latest' => 'setIsLatest',
         'description' => 'setDescription',
         'size' => 'setSize',
-        'created_at' => 'setCreatedAt'
+        'created_at' => 'setCreatedAt',
     ];
 
     /**
@@ -214,7 +212,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
         'is_latest' => 'getIsLatest',
         'description' => 'getDescription',
         'size' => 'getSize',
-        'created_at' => 'getCreatedAt'
+        'created_at' => 'getCreatedAt',
     ];
 
     /**
@@ -258,7 +256,6 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -269,8 +266,8 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -283,14 +280,12 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -321,6 +316,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['created_at'] === null) {
             $invalidProperties[] = "'created_at' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -335,7 +331,6 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets app
      *
@@ -349,8 +344,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets app
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\WebsiteAppKind $app app
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteAppKind  $app  app
      * @return self
      */
     public function setApp($app)
@@ -376,8 +370,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets version
      *
-     * @param string $version version
-     *
+     * @param  string  $version  version
      * @return self
      */
     public function setVersion($version)
@@ -403,8 +396,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets is_latest
      *
-     * @param bool $is_latest is_latest
-     *
+     * @param  bool  $is_latest  is_latest
      * @return self
      */
     public function setIsLatest($is_latest)
@@ -430,8 +422,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets description
      *
-     * @param string|null $description description
-     *
+     * @param  string|null  $description  description
      * @return self
      */
     public function setDescription($description)
@@ -457,8 +448,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets size
      *
-     * @param float|null $size Approximate number of bytes after fresh installation.
-     *
+     * @param  float|null  $size  Approximate number of bytes after fresh installation.
      * @return self
      */
     public function setSize($size)
@@ -484,8 +474,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets created_at
      *
-     * @param \DateTime $created_at created_at
-     *
+     * @param  \DateTime  $created_at  created_at
      * @return self
      */
     public function setCreatedAt($created_at)
@@ -497,12 +486,11 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -512,8 +500,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -525,10 +512,8 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -542,9 +527,7 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -553,15 +536,16 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -587,5 +571,3 @@ class InstallableWebsiteApp implements ModelInterface, ArrayAccess, \JsonSeriali
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

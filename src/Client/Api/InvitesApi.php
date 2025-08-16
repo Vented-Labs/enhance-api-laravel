@@ -1,11 +1,13 @@
 <?php
+
 /**
  * InvitesApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * InvitesApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class InvitesApi
@@ -72,7 +74,7 @@ class InvitesApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'acceptInvite' => [
             'application/json',
@@ -86,10 +88,7 @@ class InvitesApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -97,16 +96,16 @@ class InvitesApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -136,13 +135,13 @@ class InvitesApi
      *
      * Accept invite
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null $accept_invite_body Login credentials. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null  $accept_invite_body  Login credentials. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function acceptInvite($invite_id, $accept_invite_body = null, string $contentType = self::contentTypes['acceptInvite'][0])
     {
@@ -154,13 +153,13 @@ class InvitesApi
      *
      * Accept invite
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null $accept_invite_body Login credentials. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null  $accept_invite_body  Login credentials. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function acceptInviteWithHttpInfo($invite_id, $accept_invite_body = null, string $contentType = self::contentTypes['acceptInvite'][0])
     {
@@ -188,12 +187,10 @@ class InvitesApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -204,12 +201,12 @@ class InvitesApi
      *
      * Accept invite
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null $accept_invite_body Login credentials. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null  $accept_invite_body  Login credentials. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function acceptInviteAsync($invite_id, $accept_invite_body = null, string $contentType = self::contentTypes['acceptInvite'][0])
     {
@@ -226,12 +223,12 @@ class InvitesApi
      *
      * Accept invite
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null $accept_invite_body Login credentials. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null  $accept_invite_body  Login credentials. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function acceptInviteAsyncWithHttpInfo($invite_id, $accept_invite_body = null, string $contentType = self::contentTypes['acceptInvite'][0])
     {
@@ -241,7 +238,7 @@ class InvitesApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -264,12 +261,12 @@ class InvitesApi
     /**
      * Create request for operation 'acceptInvite'
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null $accept_invite_body Login credentials. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\AcceptInviteBody|null  $accept_invite_body  Login credentials. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['acceptInvite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function acceptInviteRequest($invite_id, $accept_invite_body = null, string $contentType = self::contentTypes['acceptInvite'][0])
     {
@@ -281,8 +278,6 @@ class InvitesApi
             );
         }
 
-
-
         $resourcePath = '/invites/{invite_id}';
         $formParams = [];
         $queryParams = [];
@@ -290,17 +285,14 @@ class InvitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($invite_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'invite_id' . '}',
+                '{'.'invite_id'.'}',
                 ObjectSerializer::toPathValue($invite_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -311,7 +303,7 @@ class InvitesApi
         // for model (json/xml)
         if (isset($accept_invite_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($accept_invite_body));
             } else {
                 $httpBody = $accept_invite_body;
@@ -324,7 +316,7 @@ class InvitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -332,7 +324,7 @@ class InvitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -343,11 +335,11 @@ class InvitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -363,9 +355,10 @@ class InvitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -376,17 +369,18 @@ class InvitesApi
      *
      * Create invite
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite $new_invite Invite details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite  $new_invite  Invite details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function createInvite($org_id, $new_invite, string $contentType = self::contentTypes['createInvite'][0])
     {
-        list($response) = $this->createInviteWithHttpInfo($org_id, $new_invite, $contentType);
+        [$response] = $this->createInviteWithHttpInfo($org_id, $new_invite, $contentType);
+
         return $response;
     }
 
@@ -395,13 +389,13 @@ class InvitesApi
      *
      * Create invite
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite $new_invite Invite details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite  $new_invite  Invite details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createInviteWithHttpInfo($org_id, $new_invite, string $contentType = self::contentTypes['createInvite'][0])
     {
@@ -429,8 +423,7 @@ class InvitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -438,8 +431,6 @@ class InvitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -470,7 +461,6 @@ class InvitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -481,12 +471,12 @@ class InvitesApi
      *
      * Create invite
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite $new_invite Invite details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite  $new_invite  Invite details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInviteAsync($org_id, $new_invite, string $contentType = self::contentTypes['createInvite'][0])
     {
@@ -503,12 +493,12 @@ class InvitesApi
      *
      * Create invite
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite $new_invite Invite details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite  $new_invite  Invite details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInviteAsyncWithHttpInfo($org_id, $new_invite, string $contentType = self::contentTypes['createInvite'][0])
     {
@@ -520,7 +510,7 @@ class InvitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -531,7 +521,7 @@ class InvitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -554,12 +544,12 @@ class InvitesApi
     /**
      * Create request for operation 'createInvite'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite $new_invite Invite details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewInvite  $new_invite  Invite details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createInvite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createInviteRequest($org_id, $new_invite, string $contentType = self::contentTypes['createInvite'][0])
     {
@@ -578,7 +568,6 @@ class InvitesApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/invites';
         $formParams = [];
         $queryParams = [];
@@ -586,20 +575,17 @@ class InvitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -607,7 +593,7 @@ class InvitesApi
         // for model (json/xml)
         if (isset($new_invite)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_invite));
             } else {
                 $httpBody = $new_invite;
@@ -620,7 +606,7 @@ class InvitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -628,7 +614,7 @@ class InvitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -639,11 +625,11 @@ class InvitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -659,9 +645,10 @@ class InvitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -672,16 +659,17 @@ class InvitesApi
      *
      * Validate invite
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\InviteValidation
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\InviteValidation
      */
     public function validateInvite($invite_id, string $contentType = self::contentTypes['validateInvite'][0])
     {
-        list($response) = $this->validateInviteWithHttpInfo($invite_id, $contentType);
+        [$response] = $this->validateInviteWithHttpInfo($invite_id, $contentType);
+
         return $response;
     }
 
@@ -690,12 +678,12 @@ class InvitesApi
      *
      * Validate invite
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\InviteValidation, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\InviteValidation, HTTP status code, HTTP response headers (array of strings)
      */
     public function validateInviteWithHttpInfo($invite_id, string $contentType = self::contentTypes['validateInvite'][0])
     {
@@ -723,8 +711,7 @@ class InvitesApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\InviteValidation',
@@ -732,8 +719,6 @@ class InvitesApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -764,7 +749,6 @@ class InvitesApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -775,11 +759,11 @@ class InvitesApi
      *
      * Validate invite
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validateInviteAsync($invite_id, string $contentType = self::contentTypes['validateInvite'][0])
     {
@@ -796,11 +780,11 @@ class InvitesApi
      *
      * Validate invite
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validateInviteAsyncWithHttpInfo($invite_id, string $contentType = self::contentTypes['validateInvite'][0])
     {
@@ -812,7 +796,7 @@ class InvitesApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -823,7 +807,7 @@ class InvitesApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -846,11 +830,11 @@ class InvitesApi
     /**
      * Create request for operation 'validateInvite'
      *
-     * @param  string $invite_id The id of the invite. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @param  string  $invite_id  The id of the invite. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateInvite'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function validateInviteRequest($invite_id, string $contentType = self::contentTypes['validateInvite'][0])
     {
@@ -862,7 +846,6 @@ class InvitesApi
             );
         }
 
-
         $resourcePath = '/invites/{invite_id}/validate';
         $formParams = [];
         $queryParams = [];
@@ -870,20 +853,17 @@ class InvitesApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($invite_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'invite_id' . '}',
+                '{'.'invite_id'.'}',
                 ObjectSerializer::toPathValue($invite_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -897,7 +877,7 @@ class InvitesApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -905,7 +885,7 @@ class InvitesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -916,11 +896,11 @@ class InvitesApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -936,9 +916,10 @@ class InvitesApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -947,16 +928,17 @@ class InvitesApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -969,7 +951,7 @@ class InvitesApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -992,7 +974,7 @@ class InvitesApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ServiceLogStatus
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,15 +29,16 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ServiceLogStatus Class Doc Comment
  *
  * @category Class
+ *
  * @description The status of the website at the time the log was written. Some statuses have additional metadata (ok, slow, unrecognizedGreetingsMessage)     whereas some don&#39;t (timeout).
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ServiceLogStatus
@@ -53,6 +56,7 @@ class ServiceLogStatus
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -61,9 +65,7 @@ class ServiceLogStatus
             self::OK,
             self::SLOW,
             self::TIMEOUT,
-            self::UNRECOGNIZED_GREETINGS_MESSAGE
+            self::UNRECOGNIZED_GREETINGS_MESSAGE,
         ];
     }
 }
-
-

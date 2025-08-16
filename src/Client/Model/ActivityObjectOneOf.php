@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ActivityObjectOneOf
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,69 +30,73 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ActivityObjectOneOf Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializable
+class ActivityObjectOneOf implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ActivityObject_oneOf';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'type' => 'string',
         'from' => '\Vented\EnhanceApiLaravel\Client\Model\ActivityObjectEntity',
-        'to' => '\Vented\EnhanceApiLaravel\Client\Model\ActivityObjectEntity'
+        'to' => '\Vented\EnhanceApiLaravel\Client\Model\ActivityObjectEntity',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'type' => null,
         'from' => null,
-        'to' => null
+        'to' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'type' => false,
         'from' => false,
-        'to' => false
+        'to' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -115,8 +121,6 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -126,7 +130,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -136,7 +140,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -145,9 +149,6 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -156,9 +157,6 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -174,7 +172,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $attributeMap = [
         'type' => 'type',
         'from' => 'from',
-        'to' => 'to'
+        'to' => 'to',
     ];
 
     /**
@@ -185,7 +183,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'type' => 'setType',
         'from' => 'setFrom',
-        'to' => 'setTo'
+        'to' => 'setTo',
     ];
 
     /**
@@ -196,7 +194,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'type' => 'getType',
         'from' => 'getFrom',
-        'to' => 'getTo'
+        'to' => 'getTo',
     ];
 
     /**
@@ -264,8 +262,8 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -275,14 +273,12 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -305,7 +301,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "'type' can't be null";
         }
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+        if (! is_null($this->container['type']) && ! in_array($this->container['type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'type', must be one of '%s'",
                 $this->container['type'],
@@ -319,6 +315,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['to'] === null) {
             $invalidProperties[] = "'to' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -333,7 +330,6 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets type
      *
@@ -347,8 +343,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets type
      *
-     * @param string $type type
-     *
+     * @param  string  $type  type
      * @return self
      */
     public function setType($type)
@@ -357,7 +352,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
         $allowedValues = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowedValues, true)) {
+        if (! in_array($type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -384,8 +379,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets from
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ActivityObjectEntity $from from
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ActivityObjectEntity  $from  from
      * @return self
      */
     public function setFrom($from)
@@ -411,8 +405,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets to
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ActivityObjectEntity $to to
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ActivityObjectEntity  $to  to
      * @return self
      */
     public function setTo($to)
@@ -424,12 +417,11 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -439,8 +431,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -452,10 +443,8 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -469,9 +458,7 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -480,15 +467,16 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -514,5 +502,3 @@ class ActivityObjectOneOf implements ModelInterface, ArrayAccess, \JsonSerializa
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

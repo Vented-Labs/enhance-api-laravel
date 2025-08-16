@@ -1,11 +1,13 @@
 <?php
+
 /**
  * AppsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * AppsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class AppsApi
@@ -72,7 +74,7 @@ class AppsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createWebsiteApp' => [
             'application/json',
@@ -92,10 +94,7 @@ class AppsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -103,16 +102,16 @@ class AppsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -142,18 +141,19 @@ class AppsApi
      *
      * Create website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp $new_website_app new_website_app (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp  $new_website_app  new_website_app (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createWebsiteApp($org_id, $website_id, $new_website_app, string $contentType = self::contentTypes['createWebsiteApp'][0])
     {
-        list($response) = $this->createWebsiteAppWithHttpInfo($org_id, $website_id, $new_website_app, $contentType);
+        [$response] = $this->createWebsiteAppWithHttpInfo($org_id, $website_id, $new_website_app, $contentType);
+
         return $response;
     }
 
@@ -162,14 +162,14 @@ class AppsApi
      *
      * Create website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp $new_website_app (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp  $new_website_app  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteAppWithHttpInfo($org_id, $website_id, $new_website_app, string $contentType = self::contentTypes['createWebsiteApp'][0])
     {
@@ -197,8 +197,7 @@ class AppsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -206,8 +205,6 @@ class AppsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -238,7 +235,6 @@ class AppsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -249,13 +245,13 @@ class AppsApi
      *
      * Create website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp $new_website_app (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp  $new_website_app  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteAppAsync($org_id, $website_id, $new_website_app, string $contentType = self::contentTypes['createWebsiteApp'][0])
     {
@@ -272,13 +268,13 @@ class AppsApi
      *
      * Create website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp $new_website_app (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp  $new_website_app  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteAppAsyncWithHttpInfo($org_id, $website_id, $new_website_app, string $contentType = self::contentTypes['createWebsiteApp'][0])
     {
@@ -290,7 +286,7 @@ class AppsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -301,7 +297,7 @@ class AppsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -324,13 +320,13 @@ class AppsApi
     /**
      * Create request for operation 'createWebsiteApp'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp $new_website_app (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewWebsiteApp  $new_website_app  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteApp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteAppRequest($org_id, $website_id, $new_website_app, string $contentType = self::contentTypes['createWebsiteApp'][0])
     {
@@ -356,7 +352,6 @@ class AppsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps';
         $formParams = [];
         $queryParams = [];
@@ -364,12 +359,10 @@ class AppsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -377,15 +370,14 @@ class AppsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -393,7 +385,7 @@ class AppsApi
         // for model (json/xml)
         if (isset($new_website_app)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_website_app));
             } else {
                 $httpBody = $new_website_app;
@@ -406,7 +398,7 @@ class AppsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -414,7 +406,7 @@ class AppsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -425,11 +417,11 @@ class AppsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -445,9 +437,10 @@ class AppsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -458,15 +451,15 @@ class AppsApi
      *
      * Delete website app
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $backup_before_operation Whether a backup should be ran before the endpoint operation is executed. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $backup_before_operation  Whether a backup should be ran before the endpoint operation is executed. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteApp($org_id, $website_id, $app_id, $backup_before_operation = null, string $contentType = self::contentTypes['deleteWebsiteApp'][0])
     {
@@ -478,15 +471,15 @@ class AppsApi
      *
      * Delete website app
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $backup_before_operation Whether a backup should be ran before the endpoint operation is executed. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $backup_before_operation  Whether a backup should be ran before the endpoint operation is executed. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteAppWithHttpInfo($org_id, $website_id, $app_id, $backup_before_operation = null, string $contentType = self::contentTypes['deleteWebsiteApp'][0])
     {
@@ -514,12 +507,10 @@ class AppsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -530,14 +521,14 @@ class AppsApi
      *
      * Delete website app
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $backup_before_operation Whether a backup should be ran before the endpoint operation is executed. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $backup_before_operation  Whether a backup should be ran before the endpoint operation is executed. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteAppAsync($org_id, $website_id, $app_id, $backup_before_operation = null, string $contentType = self::contentTypes['deleteWebsiteApp'][0])
     {
@@ -554,14 +545,14 @@ class AppsApi
      *
      * Delete website app
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $backup_before_operation Whether a backup should be ran before the endpoint operation is executed. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $backup_before_operation  Whether a backup should be ran before the endpoint operation is executed. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteAppAsyncWithHttpInfo($org_id, $website_id, $app_id, $backup_before_operation = null, string $contentType = self::contentTypes['deleteWebsiteApp'][0])
     {
@@ -571,7 +562,7 @@ class AppsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -594,14 +585,14 @@ class AppsApi
     /**
      * Create request for operation 'deleteWebsiteApp'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $app_id The id of the app. (required)
-     * @param  bool|null $backup_before_operation Whether a backup should be ran before the endpoint operation is executed. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $app_id  The id of the app. (required)
+     * @param  bool|null  $backup_before_operation  Whether a backup should be ran before the endpoint operation is executed. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteApp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteAppRequest($org_id, $website_id, $app_id, $backup_before_operation = null, string $contentType = self::contentTypes['deleteWebsiteApp'][0])
     {
@@ -627,8 +618,6 @@ class AppsApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps/{app_id}';
         $formParams = [];
         $queryParams = [];
@@ -646,11 +635,10 @@ class AppsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -658,7 +646,7 @@ class AppsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -666,12 +654,11 @@ class AppsApi
         // path params
         if ($app_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'app_id' . '}',
+                '{'.'app_id'.'}',
                 ObjectSerializer::toPathValue($app_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -688,7 +675,7 @@ class AppsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -696,7 +683,7 @@ class AppsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -707,11 +694,11 @@ class AppsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -727,9 +714,10 @@ class AppsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -740,15 +728,16 @@ class AppsApi
      *
      * Get all installable applications
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing
      */
     public function getGlobalInstallableApps(string $contentType = self::contentTypes['getGlobalInstallableApps'][0])
     {
-        list($response) = $this->getGlobalInstallableAppsWithHttpInfo($contentType);
+        [$response] = $this->getGlobalInstallableAppsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -757,11 +746,11 @@ class AppsApi
      *
      * Get all installable applications
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGlobalInstallableAppsWithHttpInfo(string $contentType = self::contentTypes['getGlobalInstallableApps'][0])
     {
@@ -789,8 +778,7 @@ class AppsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing',
@@ -798,8 +786,6 @@ class AppsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -830,7 +816,6 @@ class AppsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -841,10 +826,10 @@ class AppsApi
      *
      * Get all installable applications
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getGlobalInstallableAppsAsync(string $contentType = self::contentTypes['getGlobalInstallableApps'][0])
     {
@@ -861,10 +846,10 @@ class AppsApi
      *
      * Get all installable applications
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getGlobalInstallableAppsAsyncWithHttpInfo(string $contentType = self::contentTypes['getGlobalInstallableApps'][0])
     {
@@ -876,7 +861,7 @@ class AppsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -887,7 +872,7 @@ class AppsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -910,14 +895,13 @@ class AppsApi
     /**
      * Create request for operation 'getGlobalInstallableApps'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalInstallableApps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getGlobalInstallableAppsRequest(string $contentType = self::contentTypes['getGlobalInstallableApps'][0])
     {
-
 
         $resourcePath = '/utils/installable-apps';
         $formParams = [];
@@ -926,12 +910,8 @@ class AppsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -945,7 +925,7 @@ class AppsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -953,14 +933,13 @@ class AppsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -975,9 +954,10 @@ class AppsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -988,17 +968,18 @@ class AppsApi
      *
      * Get installable website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing
      */
     public function getInstallableApps($org_id, $subscription_id, string $contentType = self::contentTypes['getInstallableApps'][0])
     {
-        list($response) = $this->getInstallableAppsWithHttpInfo($org_id, $subscription_id, $contentType);
+        [$response] = $this->getInstallableAppsWithHttpInfo($org_id, $subscription_id, $contentType);
+
         return $response;
     }
 
@@ -1007,13 +988,13 @@ class AppsApi
      *
      * Get installable website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInstallableAppsWithHttpInfo($org_id, $subscription_id, string $contentType = self::contentTypes['getInstallableApps'][0])
     {
@@ -1041,8 +1022,7 @@ class AppsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\InstallableWebsiteAppsFullListing',
@@ -1050,8 +1030,6 @@ class AppsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1082,7 +1060,6 @@ class AppsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1093,12 +1070,12 @@ class AppsApi
      *
      * Get installable website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInstallableAppsAsync($org_id, $subscription_id, string $contentType = self::contentTypes['getInstallableApps'][0])
     {
@@ -1115,12 +1092,12 @@ class AppsApi
      *
      * Get installable website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getInstallableAppsAsyncWithHttpInfo($org_id, $subscription_id, string $contentType = self::contentTypes['getInstallableApps'][0])
     {
@@ -1132,7 +1109,7 @@ class AppsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1143,7 +1120,7 @@ class AppsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1166,12 +1143,12 @@ class AppsApi
     /**
      * Create request for operation 'getInstallableApps'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getInstallableApps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getInstallableAppsRequest($org_id, $subscription_id, string $contentType = self::contentTypes['getInstallableApps'][0])
     {
@@ -1190,7 +1167,6 @@ class AppsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/subscriptions/{subscription_id}/installable-apps';
         $formParams = [];
         $queryParams = [];
@@ -1198,12 +1174,10 @@ class AppsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1211,15 +1185,14 @@ class AppsApi
         // path params
         if ($subscription_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'subscription_id' . '}',
+                '{'.'subscription_id'.'}',
                 ObjectSerializer::toPathValue($subscription_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1233,7 +1206,7 @@ class AppsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1241,14 +1214,13 @@ class AppsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1263,9 +1235,10 @@ class AppsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1276,17 +1249,18 @@ class AppsApi
      *
      * Get website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteAppsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteAppsFullListing
      */
     public function getWebsiteApps($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteApps'][0])
     {
-        list($response) = $this->getWebsiteAppsWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getWebsiteAppsWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -1295,13 +1269,13 @@ class AppsApi
      *
      * Get website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteAppsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteAppsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteAppsWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteApps'][0])
     {
@@ -1329,8 +1303,7 @@ class AppsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsiteAppsFullListing',
@@ -1338,8 +1311,6 @@ class AppsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1370,7 +1341,6 @@ class AppsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1381,12 +1351,12 @@ class AppsApi
      *
      * Get website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteAppsAsync($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteApps'][0])
     {
@@ -1403,12 +1373,12 @@ class AppsApi
      *
      * Get website applications
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteAppsAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteApps'][0])
     {
@@ -1420,7 +1390,7 @@ class AppsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1431,7 +1401,7 @@ class AppsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1454,12 +1424,12 @@ class AppsApi
     /**
      * Create request for operation 'getWebsiteApps'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteApps'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteAppsRequest($org_id, $website_id, string $contentType = self::contentTypes['getWebsiteApps'][0])
     {
@@ -1478,7 +1448,6 @@ class AppsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/apps';
         $formParams = [];
         $queryParams = [];
@@ -1486,12 +1455,10 @@ class AppsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1499,15 +1466,14 @@ class AppsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1521,7 +1487,7 @@ class AppsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1529,7 +1495,7 @@ class AppsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1540,11 +1506,11 @@ class AppsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1560,9 +1526,10 @@ class AppsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1571,16 +1538,17 @@ class AppsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -1593,7 +1561,7 @@ class AppsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -1616,7 +1584,7 @@ class AppsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

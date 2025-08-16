@@ -1,12 +1,14 @@
 <?php
+
 /**
  * FsQuotaStatus
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * FsQuotaStatus Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class FsQuotaStatus
@@ -50,6 +52,7 @@ class FsQuotaStatus
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -57,9 +60,7 @@ class FsQuotaStatus
         return [
             self::DISABLED,
             self::ENABLING,
-            self::ENABLED
+            self::ENABLED,
         ];
     }
 }
-
-

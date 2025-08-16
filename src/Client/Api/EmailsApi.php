@@ -1,11 +1,13 @@
 <?php
+
 /**
  * EmailsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * EmailsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class EmailsApi
@@ -72,7 +74,7 @@ class EmailsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createWebsiteEmail' => [
             'application/json',
@@ -128,10 +130,7 @@ class EmailsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -139,16 +138,16 @@ class EmailsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -178,19 +177,20 @@ class EmailsApi
      *
      * Create an email under website&#39;s domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail $new_email New email details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail  $new_email  New email details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createWebsiteEmail($org_id, $website_id, $domain_id, $new_email, string $contentType = self::contentTypes['createWebsiteEmail'][0])
     {
-        list($response) = $this->createWebsiteEmailWithHttpInfo($org_id, $website_id, $domain_id, $new_email, $contentType);
+        [$response] = $this->createWebsiteEmailWithHttpInfo($org_id, $website_id, $domain_id, $new_email, $contentType);
+
         return $response;
     }
 
@@ -199,15 +199,15 @@ class EmailsApi
      *
      * Create an email under website&#39;s domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail $new_email New email details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail  $new_email  New email details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteEmailWithHttpInfo($org_id, $website_id, $domain_id, $new_email, string $contentType = self::contentTypes['createWebsiteEmail'][0])
     {
@@ -235,8 +235,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -244,8 +243,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -276,7 +273,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -287,14 +283,14 @@ class EmailsApi
      *
      * Create an email under website&#39;s domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail $new_email New email details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail  $new_email  New email details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteEmailAsync($org_id, $website_id, $domain_id, $new_email, string $contentType = self::contentTypes['createWebsiteEmail'][0])
     {
@@ -311,14 +307,14 @@ class EmailsApi
      *
      * Create an email under website&#39;s domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail $new_email New email details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail  $new_email  New email details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteEmailAsyncWithHttpInfo($org_id, $website_id, $domain_id, $new_email, string $contentType = self::contentTypes['createWebsiteEmail'][0])
     {
@@ -330,7 +326,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -341,7 +337,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -364,14 +360,14 @@ class EmailsApi
     /**
      * Create request for operation 'createWebsiteEmail'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail $new_email New email details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewEmail  $new_email  New email details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteEmailRequest($org_id, $website_id, $domain_id, $new_email, string $contentType = self::contentTypes['createWebsiteEmail'][0])
     {
@@ -404,7 +400,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/emails';
         $formParams = [];
         $queryParams = [];
@@ -412,12 +407,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -425,7 +418,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -433,15 +426,14 @@ class EmailsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -449,7 +441,7 @@ class EmailsApi
         // for model (json/xml)
         if (isset($new_email)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_email));
             } else {
                 $httpBody = $new_email;
@@ -462,7 +454,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -470,14 +462,13 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -492,9 +483,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -505,19 +497,20 @@ class EmailsApi
      *
      * Create new website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      */
     public function createWebsiteEmailAutoresponder($org_id, $website_id, $email_address, $new_autoresponder, string $contentType = self::contentTypes['createWebsiteEmailAutoresponder'][0])
     {
-        list($response) = $this->createWebsiteEmailAutoresponderWithHttpInfo($org_id, $website_id, $email_address, $new_autoresponder, $contentType);
+        [$response] = $this->createWebsiteEmailAutoresponderWithHttpInfo($org_id, $website_id, $email_address, $new_autoresponder, $contentType);
+
         return $response;
     }
 
@@ -526,15 +519,15 @@ class EmailsApi
      *
      * Create new website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteEmailAutoresponderWithHttpInfo($org_id, $website_id, $email_address, $new_autoresponder, string $contentType = self::contentTypes['createWebsiteEmailAutoresponder'][0])
     {
@@ -562,8 +555,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceId',
@@ -571,8 +563,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -603,7 +593,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -614,14 +603,14 @@ class EmailsApi
      *
      * Create new website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteEmailAutoresponderAsync($org_id, $website_id, $email_address, $new_autoresponder, string $contentType = self::contentTypes['createWebsiteEmailAutoresponder'][0])
     {
@@ -638,14 +627,14 @@ class EmailsApi
      *
      * Create new website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteEmailAutoresponderAsyncWithHttpInfo($org_id, $website_id, $email_address, $new_autoresponder, string $contentType = self::contentTypes['createWebsiteEmailAutoresponder'][0])
     {
@@ -657,7 +646,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -668,7 +657,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -691,14 +680,14 @@ class EmailsApi
     /**
      * Create request for operation 'createWebsiteEmailAutoresponder'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteEmailAutoresponderRequest($org_id, $website_id, $email_address, $new_autoresponder, string $contentType = self::contentTypes['createWebsiteEmailAutoresponder'][0])
     {
@@ -731,7 +720,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/emails/{email_address}/autoresponder';
         $formParams = [];
         $queryParams = [];
@@ -739,12 +727,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -752,7 +738,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -760,15 +746,14 @@ class EmailsApi
         // path params
         if ($email_address !== null) {
             $resourcePath = str_replace(
-                '{' . 'email_address' . '}',
+                '{'.'email_address'.'}',
                 ObjectSerializer::toPathValue($email_address),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -776,7 +761,7 @@ class EmailsApi
         // for model (json/xml)
         if (isset($new_autoresponder)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_autoresponder));
             } else {
                 $httpBody = $new_autoresponder;
@@ -789,7 +774,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -797,7 +782,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -808,11 +793,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -828,9 +813,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -841,14 +827,14 @@ class EmailsApi
      *
      * Delete website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteEmail($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmail'][0])
     {
@@ -860,14 +846,14 @@ class EmailsApi
      *
      * Delete website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteEmailWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmail'][0])
     {
@@ -895,12 +881,10 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -911,13 +895,13 @@ class EmailsApi
      *
      * Delete website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteEmailAsync($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmail'][0])
     {
@@ -934,13 +918,13 @@ class EmailsApi
      *
      * Delete website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteEmailAsyncWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmail'][0])
     {
@@ -950,7 +934,7 @@ class EmailsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -973,13 +957,13 @@ class EmailsApi
     /**
      * Create request for operation 'deleteWebsiteEmail'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteEmailRequest($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmail'][0])
     {
@@ -1005,7 +989,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/emails/{email_address}';
         $formParams = [];
         $queryParams = [];
@@ -1013,12 +996,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1026,7 +1007,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1034,12 +1015,11 @@ class EmailsApi
         // path params
         if ($email_address !== null) {
             $resourcePath = str_replace(
-                '{' . 'email_address' . '}',
+                '{'.'email_address'.'}',
                 ObjectSerializer::toPathValue($email_address),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1056,7 +1036,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1064,7 +1044,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1075,11 +1055,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1095,9 +1075,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1108,14 +1089,14 @@ class EmailsApi
      *
      * Delete website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteEmailAutoresponder($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmailAutoresponder'][0])
     {
@@ -1127,14 +1108,14 @@ class EmailsApi
      *
      * Delete website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteEmailAutoresponderWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmailAutoresponder'][0])
     {
@@ -1162,12 +1143,10 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1178,13 +1157,13 @@ class EmailsApi
      *
      * Delete website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteEmailAutoresponderAsync($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmailAutoresponder'][0])
     {
@@ -1201,13 +1180,13 @@ class EmailsApi
      *
      * Delete website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteEmailAutoresponderAsyncWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmailAutoresponder'][0])
     {
@@ -1217,7 +1196,7 @@ class EmailsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1240,13 +1219,13 @@ class EmailsApi
     /**
      * Create request for operation 'deleteWebsiteEmailAutoresponder'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteEmailAutoresponderRequest($org_id, $website_id, $email_address, string $contentType = self::contentTypes['deleteWebsiteEmailAutoresponder'][0])
     {
@@ -1272,7 +1251,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/emails/{email_address}/autoresponder';
         $formParams = [];
         $queryParams = [];
@@ -1280,12 +1258,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1293,7 +1269,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1301,12 +1277,11 @@ class EmailsApi
         // path params
         if ($email_address !== null) {
             $resourcePath = str_replace(
-                '{' . 'email_address' . '}',
+                '{'.'email_address'.'}',
                 ObjectSerializer::toPathValue($email_address),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1323,7 +1298,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1331,7 +1306,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1342,11 +1317,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1362,9 +1337,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1375,17 +1351,18 @@ class EmailsApi
      *
      * Get email authentication preferences
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailAuth
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailAuth
      */
     public function getDomainEmailAuth($website_id, $domain_name, string $contentType = self::contentTypes['getDomainEmailAuth'][0])
     {
-        list($response) = $this->getDomainEmailAuthWithHttpInfo($website_id, $domain_name, $contentType);
+        [$response] = $this->getDomainEmailAuthWithHttpInfo($website_id, $domain_name, $contentType);
+
         return $response;
     }
 
@@ -1394,13 +1371,13 @@ class EmailsApi
      *
      * Get email authentication preferences
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailAuth, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailAuth, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDomainEmailAuthWithHttpInfo($website_id, $domain_name, string $contentType = self::contentTypes['getDomainEmailAuth'][0])
     {
@@ -1428,8 +1405,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\EmailAuth',
@@ -1437,8 +1413,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1469,7 +1443,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1480,12 +1453,12 @@ class EmailsApi
      *
      * Get email authentication preferences
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainEmailAuthAsync($website_id, $domain_name, string $contentType = self::contentTypes['getDomainEmailAuth'][0])
     {
@@ -1502,12 +1475,12 @@ class EmailsApi
      *
      * Get email authentication preferences
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainEmailAuthAsyncWithHttpInfo($website_id, $domain_name, string $contentType = self::contentTypes['getDomainEmailAuth'][0])
     {
@@ -1519,7 +1492,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1530,7 +1503,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1553,12 +1526,12 @@ class EmailsApi
     /**
      * Create request for operation 'getDomainEmailAuth'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainEmailAuth'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDomainEmailAuthRequest($website_id, $domain_name, string $contentType = self::contentTypes['getDomainEmailAuth'][0])
     {
@@ -1577,7 +1550,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/websites/{website_id}/domains/{domain_name}/email-auth';
         $formParams = [];
         $queryParams = [];
@@ -1585,12 +1557,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1598,15 +1568,14 @@ class EmailsApi
         // path params
         if ($domain_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_name' . '}',
+                '{'.'domain_name'.'}',
                 ObjectSerializer::toPathValue($domain_name),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1620,7 +1589,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1628,7 +1597,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1639,11 +1608,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1659,9 +1628,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1672,18 +1642,19 @@ class EmailsApi
      *
      * Get the current local/remote status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody
      */
     public function getDomainLocalRemote($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getDomainLocalRemote'][0])
     {
-        list($response) = $this->getDomainLocalRemoteWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+        [$response] = $this->getDomainLocalRemoteWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+
         return $response;
     }
 
@@ -1692,14 +1663,14 @@ class EmailsApi
      *
      * Get the current local/remote status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDomainLocalRemoteWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getDomainLocalRemote'][0])
     {
@@ -1727,8 +1698,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody',
@@ -1736,8 +1706,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1768,7 +1736,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1779,13 +1746,13 @@ class EmailsApi
      *
      * Get the current local/remote status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainLocalRemoteAsync($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getDomainLocalRemote'][0])
     {
@@ -1802,13 +1769,13 @@ class EmailsApi
      *
      * Get the current local/remote status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDomainLocalRemoteAsyncWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getDomainLocalRemote'][0])
     {
@@ -1820,7 +1787,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1831,7 +1798,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1854,13 +1821,13 @@ class EmailsApi
     /**
      * Create request for operation 'getDomainLocalRemote'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDomainLocalRemote'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDomainLocalRemoteRequest($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getDomainLocalRemote'][0])
     {
@@ -1886,7 +1853,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/local_remote';
         $formParams = [];
         $queryParams = [];
@@ -1894,12 +1860,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1907,7 +1871,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1915,15 +1879,14 @@ class EmailsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1937,7 +1900,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1945,7 +1908,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1956,11 +1919,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1976,9 +1939,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1989,17 +1953,18 @@ class EmailsApi
      *
      * Get spam thresholds for an email address
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds
      */
     public function getEmailSpamThresholds($website_id, $email_address, string $contentType = self::contentTypes['getEmailSpamThresholds'][0])
     {
-        list($response) = $this->getEmailSpamThresholdsWithHttpInfo($website_id, $email_address, $contentType);
+        [$response] = $this->getEmailSpamThresholdsWithHttpInfo($website_id, $email_address, $contentType);
+
         return $response;
     }
 
@@ -2008,13 +1973,13 @@ class EmailsApi
      *
      * Get spam thresholds for an email address
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailSpamThresholdsWithHttpInfo($website_id, $email_address, string $contentType = self::contentTypes['getEmailSpamThresholds'][0])
     {
@@ -2042,8 +2007,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\SpamThresholds',
@@ -2051,8 +2015,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2083,7 +2045,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2094,12 +2055,12 @@ class EmailsApi
      *
      * Get spam thresholds for an email address
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailSpamThresholdsAsync($website_id, $email_address, string $contentType = self::contentTypes['getEmailSpamThresholds'][0])
     {
@@ -2116,12 +2077,12 @@ class EmailsApi
      *
      * Get spam thresholds for an email address
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailSpamThresholdsAsyncWithHttpInfo($website_id, $email_address, string $contentType = self::contentTypes['getEmailSpamThresholds'][0])
     {
@@ -2133,7 +2094,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2144,7 +2105,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2167,12 +2128,12 @@ class EmailsApi
     /**
      * Create request for operation 'getEmailSpamThresholds'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailSpamThresholds'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmailSpamThresholdsRequest($website_id, $email_address, string $contentType = self::contentTypes['getEmailSpamThresholds'][0])
     {
@@ -2191,7 +2152,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/websites/{website_id}/emails/{email_address}/spam_thresholds';
         $formParams = [];
         $queryParams = [];
@@ -2199,12 +2159,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -2212,15 +2170,14 @@ class EmailsApi
         // path params
         if ($email_address !== null) {
             $resourcePath = str_replace(
-                '{' . 'email_address' . '}',
+                '{'.'email_address'.'}',
                 ObjectSerializer::toPathValue($email_address),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2234,7 +2191,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2242,7 +2199,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2253,11 +2210,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2273,9 +2230,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2286,29 +2244,30 @@ class EmailsApi
      *
      * Get org emails
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $recursive If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
-     * @param  int|null $max_depth If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  string|null $domain_id Limit the result set to emails under domain. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  bool|null $show_deleted Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $recursive  If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
+     * @param  int|null  $max_depth  If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  string|null  $domain_id  Limit the result set to emails under domain. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  bool|null  $show_deleted  Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailsListing
      */
     public function getEmails($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursive = null, $max_depth = null, $status = null, $domain_id = null, $plan_id = null, $subscription_id = null, $include_internal = false, $show_deleted = null, string $contentType = self::contentTypes['getEmails'][0])
     {
-        list($response) = $this->getEmailsWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $search, $recursive, $max_depth, $status, $domain_id, $plan_id, $subscription_id, $include_internal, $show_deleted, $contentType);
+        [$response] = $this->getEmailsWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $search, $recursive, $max_depth, $status, $domain_id, $plan_id, $subscription_id, $include_internal, $show_deleted, $contentType);
+
         return $response;
     }
 
@@ -2317,25 +2276,25 @@ class EmailsApi
      *
      * Get org emails
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $recursive If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
-     * @param  int|null $max_depth If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  string|null $domain_id Limit the result set to emails under domain. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  bool|null $show_deleted Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $recursive  If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
+     * @param  int|null  $max_depth  If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  string|null  $domain_id  Limit the result set to emails under domain. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  bool|null  $show_deleted  Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailsWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursive = null, $max_depth = null, $status = null, $domain_id = null, $plan_id = null, $subscription_id = null, $include_internal = false, $show_deleted = null, string $contentType = self::contentTypes['getEmails'][0])
     {
@@ -2363,8 +2322,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\EmailsListing',
@@ -2372,8 +2330,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2404,7 +2360,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2415,24 +2370,24 @@ class EmailsApi
      *
      * Get org emails
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $recursive If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
-     * @param  int|null $max_depth If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  string|null $domain_id Limit the result set to emails under domain. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  bool|null $show_deleted Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $recursive  If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
+     * @param  int|null  $max_depth  If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  string|null  $domain_id  Limit the result set to emails under domain. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  bool|null  $show_deleted  Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailsAsync($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursive = null, $max_depth = null, $status = null, $domain_id = null, $plan_id = null, $subscription_id = null, $include_internal = false, $show_deleted = null, string $contentType = self::contentTypes['getEmails'][0])
     {
@@ -2449,24 +2404,24 @@ class EmailsApi
      *
      * Get org emails
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $recursive If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
-     * @param  int|null $max_depth If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  string|null $domain_id Limit the result set to emails under domain. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  bool|null $show_deleted Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $recursive  If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
+     * @param  int|null  $max_depth  If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  string|null  $domain_id  Limit the result set to emails under domain. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  bool|null  $show_deleted  Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailsAsyncWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursive = null, $max_depth = null, $status = null, $domain_id = null, $plan_id = null, $subscription_id = null, $include_internal = false, $show_deleted = null, string $contentType = self::contentTypes['getEmails'][0])
     {
@@ -2478,7 +2433,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2489,7 +2444,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2512,24 +2467,24 @@ class EmailsApi
     /**
      * Create request for operation 'getEmails'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $recursive If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
-     * @param  int|null $max_depth If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
-     * @param  string|null $domain_id Limit the result set to emails under domain. (optional)
-     * @param  int|null $plan_id Limit the result set to resources under subscriptions to the plan. (optional)
-     * @param  int|null $subscription_id Limit the result set to resources under subscription. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  bool|null $show_deleted Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $recursive  If set to true, the endpoint will return resources in some hierarchy recursively, that is, several or all levels of the hierarchy, depending on whether &#x60;maxDepth&#x60; is set. E.g. for customers this means direct and indirect customers are returned. For websites, this returns websites of all direct and indirect customers. (optional)
+     * @param  int|null  $max_depth  If recursive is set to true, this can be specified to limit the recursion depth. By default there is no recursion bound. (optional)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  Limit the result set to emails with the specified status. Only applicable if &#x60;recursive&#x60; is set to true. (optional)
+     * @param  string|null  $domain_id  Limit the result set to emails under domain. (optional)
+     * @param  int|null  $plan_id  Limit the result set to resources under subscriptions to the plan. (optional)
+     * @param  int|null  $subscription_id  Limit the result set to resources under subscription. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  bool|null  $show_deleted  Filters out deleted emails, which are otherwise returned in the result. Defaults to &#x60;showDeleted&#x3D;true&#x60; if not set. Can only be set by MO, if set by others, a 403 is returned. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmails'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmailsRequest($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, $search = null, $recursive = null, $max_depth = null, $status = null, $domain_id = null, $plan_id = null, $subscription_id = null, $include_internal = false, $show_deleted = null, string $contentType = self::contentTypes['getEmails'][0])
     {
@@ -2540,20 +2495,6 @@ class EmailsApi
                 'Missing the required parameter $org_id when calling getEmails'
             );
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/emails';
         $formParams = [];
@@ -2680,19 +2621,17 @@ class EmailsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2706,7 +2645,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2714,7 +2653,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2725,11 +2664,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2745,9 +2684,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2758,18 +2698,19 @@ class EmailsApi
      *
      * Get website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailDetailed
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailDetailed
      */
     public function getWebsiteEmail($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmail'][0])
     {
-        list($response) = $this->getWebsiteEmailWithHttpInfo($org_id, $website_id, $email_address, $contentType);
+        [$response] = $this->getWebsiteEmailWithHttpInfo($org_id, $website_id, $email_address, $contentType);
+
         return $response;
     }
 
@@ -2778,14 +2719,14 @@ class EmailsApi
      *
      * Get website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailDetailed, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailDetailed, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteEmailWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmail'][0])
     {
@@ -2813,8 +2754,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\EmailDetailed',
@@ -2822,8 +2762,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2854,7 +2792,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2865,13 +2802,13 @@ class EmailsApi
      *
      * Get website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEmailAsync($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmail'][0])
     {
@@ -2888,13 +2825,13 @@ class EmailsApi
      *
      * Get website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEmailAsyncWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmail'][0])
     {
@@ -2906,7 +2843,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2917,7 +2854,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2940,13 +2877,13 @@ class EmailsApi
     /**
      * Create request for operation 'getWebsiteEmail'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteEmailRequest($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmail'][0])
     {
@@ -2972,7 +2909,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/emails/{email_address}';
         $formParams = [];
         $queryParams = [];
@@ -2980,12 +2916,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2993,7 +2927,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3001,15 +2935,14 @@ class EmailsApi
         // path params
         if ($email_address !== null) {
             $resourcePath = str_replace(
-                '{' . 'email_address' . '}',
+                '{'.'email_address'.'}',
                 ObjectSerializer::toPathValue($email_address),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3023,7 +2956,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3031,14 +2964,13 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3053,9 +2985,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3066,18 +2999,19 @@ class EmailsApi
      *
      * Get website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Autoresponder
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Autoresponder
      */
     public function getWebsiteEmailAutoresponder($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailAutoresponder'][0])
     {
-        list($response) = $this->getWebsiteEmailAutoresponderWithHttpInfo($org_id, $website_id, $email_address, $contentType);
+        [$response] = $this->getWebsiteEmailAutoresponderWithHttpInfo($org_id, $website_id, $email_address, $contentType);
+
         return $response;
     }
 
@@ -3086,14 +3020,14 @@ class EmailsApi
      *
      * Get website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Autoresponder, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Autoresponder, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteEmailAutoresponderWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailAutoresponder'][0])
     {
@@ -3121,8 +3055,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Autoresponder',
@@ -3130,8 +3063,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3162,7 +3093,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3173,13 +3103,13 @@ class EmailsApi
      *
      * Get website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEmailAutoresponderAsync($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailAutoresponder'][0])
     {
@@ -3196,13 +3126,13 @@ class EmailsApi
      *
      * Get website email autoresponder
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEmailAutoresponderAsyncWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailAutoresponder'][0])
     {
@@ -3214,7 +3144,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3225,7 +3155,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3248,13 +3178,13 @@ class EmailsApi
     /**
      * Create request for operation 'getWebsiteEmailAutoresponder'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteEmailAutoresponderRequest($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailAutoresponder'][0])
     {
@@ -3280,7 +3210,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/emails/{email_address}/autoresponder';
         $formParams = [];
         $queryParams = [];
@@ -3288,12 +3217,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3301,7 +3228,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3309,15 +3236,14 @@ class EmailsApi
         // path params
         if ($email_address !== null) {
             $resourcePath = str_replace(
-                '{' . 'email_address' . '}',
+                '{'.'email_address'.'}',
                 ObjectSerializer::toPathValue($email_address),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3331,7 +3257,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3339,7 +3265,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3350,11 +3276,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3370,9 +3296,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3383,18 +3310,19 @@ class EmailsApi
      *
      * Get website email client configuration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @return object
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object
      */
     public function getWebsiteEmailClientConf($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailClientConf'][0])
     {
-        list($response) = $this->getWebsiteEmailClientConfWithHttpInfo($org_id, $website_id, $email_address, $contentType);
+        [$response] = $this->getWebsiteEmailClientConfWithHttpInfo($org_id, $website_id, $email_address, $contentType);
+
         return $response;
     }
 
@@ -3403,14 +3331,14 @@ class EmailsApi
      *
      * Get website email client configuration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteEmailClientConfWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailClientConf'][0])
     {
@@ -3438,8 +3366,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'object',
@@ -3447,8 +3374,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3479,7 +3404,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3490,13 +3414,13 @@ class EmailsApi
      *
      * Get website email client configuration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEmailClientConfAsync($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailClientConf'][0])
     {
@@ -3513,13 +3437,13 @@ class EmailsApi
      *
      * Get website email client configuration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEmailClientConfAsyncWithHttpInfo($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailClientConf'][0])
     {
@@ -3531,7 +3455,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3542,7 +3466,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3565,13 +3489,13 @@ class EmailsApi
     /**
      * Create request for operation 'getWebsiteEmailClientConf'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmailClientConf'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteEmailClientConfRequest($org_id, $website_id, $email_address, string $contentType = self::contentTypes['getWebsiteEmailClientConf'][0])
     {
@@ -3597,7 +3521,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/emails/{email_address}/client-conf';
         $formParams = [];
         $queryParams = [];
@@ -3605,12 +3528,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3618,7 +3539,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3626,15 +3547,14 @@ class EmailsApi
         // path params
         if ($email_address !== null) {
             $resourcePath = str_replace(
-                '{' . 'email_address' . '}',
+                '{'.'email_address'.'}',
                 ObjectSerializer::toPathValue($email_address),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3648,7 +3568,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3656,7 +3576,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3667,11 +3587,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3687,9 +3607,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3700,21 +3621,22 @@ class EmailsApi
      *
      * Get website emails
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailsListing
      */
     public function getWebsiteEmails($org_id, $website_id, $sort_by = null, $sort_order = null, $search = null, $include_internal = false, string $contentType = self::contentTypes['getWebsiteEmails'][0])
     {
-        list($response) = $this->getWebsiteEmailsWithHttpInfo($org_id, $website_id, $sort_by, $sort_order, $search, $include_internal, $contentType);
+        [$response] = $this->getWebsiteEmailsWithHttpInfo($org_id, $website_id, $sort_by, $sort_order, $search, $include_internal, $contentType);
+
         return $response;
     }
 
@@ -3723,17 +3645,17 @@ class EmailsApi
      *
      * Get website emails
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteEmailsWithHttpInfo($org_id, $website_id, $sort_by = null, $sort_order = null, $search = null, $include_internal = false, string $contentType = self::contentTypes['getWebsiteEmails'][0])
     {
@@ -3761,8 +3683,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\EmailsListing',
@@ -3770,8 +3691,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3802,7 +3721,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3813,16 +3731,16 @@ class EmailsApi
      *
      * Get website emails
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEmailsAsync($org_id, $website_id, $sort_by = null, $sort_order = null, $search = null, $include_internal = false, string $contentType = self::contentTypes['getWebsiteEmails'][0])
     {
@@ -3839,16 +3757,16 @@ class EmailsApi
      *
      * Get website emails
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteEmailsAsyncWithHttpInfo($org_id, $website_id, $sort_by = null, $sort_order = null, $search = null, $include_internal = false, string $contentType = self::contentTypes['getWebsiteEmails'][0])
     {
@@ -3860,7 +3778,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3871,7 +3789,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3894,16 +3812,16 @@ class EmailsApi
     /**
      * Create request for operation 'getWebsiteEmails'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
-     * @param  bool|null $include_internal Include internal emails in response (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search  Limit the result set to the resources whose names, partially and case insensitively, match the specified search term. E.g. for websites, this is their domain or tag, for databases the database name, for emails the email address or mailbox name, etc. A website will also be returned if the search term exactly matches the website&#39;s uuid. (optional)
+     * @param  bool|null  $include_internal  Include internal emails in response (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteEmails'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteEmailsRequest($org_id, $website_id, $sort_by = null, $sort_order = null, $search = null, $include_internal = false, string $contentType = self::contentTypes['getWebsiteEmails'][0])
     {
@@ -3921,11 +3839,6 @@ class EmailsApi
                 'Missing the required parameter $website_id when calling getWebsiteEmails'
             );
         }
-
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/emails';
         $formParams = [];
@@ -3971,11 +3884,10 @@ class EmailsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3983,15 +3895,14 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4005,7 +3916,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4013,7 +3924,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4024,11 +3935,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4044,9 +3955,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4057,15 +3969,15 @@ class EmailsApi
      *
      * Update email local/remote status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody $local_remote_body local_remote_body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody  $local_remote_body  local_remote_body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setDomainLocalRemote($org_id, $website_id, $domain_id, $local_remote_body, string $contentType = self::contentTypes['setDomainLocalRemote'][0])
     {
@@ -4077,15 +3989,15 @@ class EmailsApi
      *
      * Update email local/remote status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody $local_remote_body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody  $local_remote_body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setDomainLocalRemoteWithHttpInfo($org_id, $website_id, $domain_id, $local_remote_body, string $contentType = self::contentTypes['setDomainLocalRemote'][0])
     {
@@ -4113,12 +4025,10 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4129,14 +4039,14 @@ class EmailsApi
      *
      * Update email local/remote status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody $local_remote_body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody  $local_remote_body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setDomainLocalRemoteAsync($org_id, $website_id, $domain_id, $local_remote_body, string $contentType = self::contentTypes['setDomainLocalRemote'][0])
     {
@@ -4153,14 +4063,14 @@ class EmailsApi
      *
      * Update email local/remote status
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody $local_remote_body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody  $local_remote_body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setDomainLocalRemoteAsyncWithHttpInfo($org_id, $website_id, $domain_id, $local_remote_body, string $contentType = self::contentTypes['setDomainLocalRemote'][0])
     {
@@ -4170,7 +4080,7 @@ class EmailsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4193,14 +4103,14 @@ class EmailsApi
     /**
      * Create request for operation 'setDomainLocalRemote'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody $local_remote_body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LocalRemoteBody  $local_remote_body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setDomainLocalRemote'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setDomainLocalRemoteRequest($org_id, $website_id, $domain_id, $local_remote_body, string $contentType = self::contentTypes['setDomainLocalRemote'][0])
     {
@@ -4233,7 +4143,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/local_remote';
         $formParams = [];
         $queryParams = [];
@@ -4241,12 +4150,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -4254,7 +4161,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -4262,12 +4169,11 @@ class EmailsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4278,7 +4184,7 @@ class EmailsApi
         // for model (json/xml)
         if (isset($local_remote_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($local_remote_body));
             } else {
                 $httpBody = $local_remote_body;
@@ -4291,7 +4197,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4299,7 +4205,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4310,11 +4216,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4330,9 +4236,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4343,14 +4250,14 @@ class EmailsApi
      *
      * Set spam thresholds for an email address
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds $spam_thresholds Spam thresholds. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds  $spam_thresholds  Spam thresholds. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setEmailSpamThresholds($website_id, $email_address, $spam_thresholds, string $contentType = self::contentTypes['setEmailSpamThresholds'][0])
     {
@@ -4362,14 +4269,14 @@ class EmailsApi
      *
      * Set spam thresholds for an email address
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds $spam_thresholds Spam thresholds. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds  $spam_thresholds  Spam thresholds. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setEmailSpamThresholdsWithHttpInfo($website_id, $email_address, $spam_thresholds, string $contentType = self::contentTypes['setEmailSpamThresholds'][0])
     {
@@ -4397,12 +4304,10 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4413,13 +4318,13 @@ class EmailsApi
      *
      * Set spam thresholds for an email address
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds $spam_thresholds Spam thresholds. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds  $spam_thresholds  Spam thresholds. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setEmailSpamThresholdsAsync($website_id, $email_address, $spam_thresholds, string $contentType = self::contentTypes['setEmailSpamThresholds'][0])
     {
@@ -4436,13 +4341,13 @@ class EmailsApi
      *
      * Set spam thresholds for an email address
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds $spam_thresholds Spam thresholds. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds  $spam_thresholds  Spam thresholds. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setEmailSpamThresholdsAsyncWithHttpInfo($website_id, $email_address, $spam_thresholds, string $contentType = self::contentTypes['setEmailSpamThresholds'][0])
     {
@@ -4452,7 +4357,7 @@ class EmailsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4475,13 +4380,13 @@ class EmailsApi
     /**
      * Create request for operation 'setEmailSpamThresholds'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds $spam_thresholds Spam thresholds. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpamThresholds  $spam_thresholds  Spam thresholds. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setEmailSpamThresholds'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setEmailSpamThresholdsRequest($website_id, $email_address, $spam_thresholds, string $contentType = self::contentTypes['setEmailSpamThresholds'][0])
     {
@@ -4507,7 +4412,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/websites/{website_id}/emails/{email_address}/spam_thresholds';
         $formParams = [];
         $queryParams = [];
@@ -4515,12 +4419,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -4528,12 +4430,11 @@ class EmailsApi
         // path params
         if ($email_address !== null) {
             $resourcePath = str_replace(
-                '{' . 'email_address' . '}',
+                '{'.'email_address'.'}',
                 ObjectSerializer::toPathValue($email_address),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4544,7 +4445,7 @@ class EmailsApi
         // for model (json/xml)
         if (isset($spam_thresholds)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($spam_thresholds));
             } else {
                 $httpBody = $spam_thresholds;
@@ -4557,7 +4458,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4565,7 +4466,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4576,11 +4477,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4596,9 +4497,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4609,14 +4511,14 @@ class EmailsApi
      *
      * Update email authentication preferences
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate $email_auth_update Email auth details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate  $email_auth_update  Email auth details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateDomainEmailAuth($website_id, $domain_name, $email_auth_update, string $contentType = self::contentTypes['updateDomainEmailAuth'][0])
     {
@@ -4628,14 +4530,14 @@ class EmailsApi
      *
      * Update email authentication preferences
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate $email_auth_update Email auth details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate  $email_auth_update  Email auth details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateDomainEmailAuthWithHttpInfo($website_id, $domain_name, $email_auth_update, string $contentType = self::contentTypes['updateDomainEmailAuth'][0])
     {
@@ -4663,12 +4565,10 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4679,13 +4579,13 @@ class EmailsApi
      *
      * Update email authentication preferences
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate $email_auth_update Email auth details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate  $email_auth_update  Email auth details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateDomainEmailAuthAsync($website_id, $domain_name, $email_auth_update, string $contentType = self::contentTypes['updateDomainEmailAuth'][0])
     {
@@ -4702,13 +4602,13 @@ class EmailsApi
      *
      * Update email authentication preferences
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate $email_auth_update Email auth details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate  $email_auth_update  Email auth details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateDomainEmailAuthAsyncWithHttpInfo($website_id, $domain_name, $email_auth_update, string $contentType = self::contentTypes['updateDomainEmailAuth'][0])
     {
@@ -4718,7 +4618,7 @@ class EmailsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4741,13 +4641,13 @@ class EmailsApi
     /**
      * Create request for operation 'updateDomainEmailAuth'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate $email_auth_update Email auth details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailAuthUpdate  $email_auth_update  Email auth details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDomainEmailAuth'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateDomainEmailAuthRequest($website_id, $domain_name, $email_auth_update, string $contentType = self::contentTypes['updateDomainEmailAuth'][0])
     {
@@ -4773,7 +4673,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/websites/{website_id}/domains/{domain_name}/email-auth';
         $formParams = [];
         $queryParams = [];
@@ -4781,12 +4680,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -4794,12 +4691,11 @@ class EmailsApi
         // path params
         if ($domain_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_name' . '}',
+                '{'.'domain_name'.'}',
                 ObjectSerializer::toPathValue($domain_name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4810,7 +4706,7 @@ class EmailsApi
         // for model (json/xml)
         if (isset($email_auth_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($email_auth_update));
             } else {
                 $httpBody = $email_auth_update;
@@ -4823,7 +4719,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4831,7 +4727,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4842,11 +4738,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4862,9 +4758,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4875,15 +4772,15 @@ class EmailsApi
      *
      * Update website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail $update_email Email update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail  $update_email  Email update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsiteEmail($org_id, $website_id, $email_address, $update_email, string $contentType = self::contentTypes['updateWebsiteEmail'][0])
     {
@@ -4895,15 +4792,15 @@ class EmailsApi
      *
      * Update website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail $update_email Email update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail  $update_email  Email update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsiteEmailWithHttpInfo($org_id, $website_id, $email_address, $update_email, string $contentType = self::contentTypes['updateWebsiteEmail'][0])
     {
@@ -4931,12 +4828,10 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4947,14 +4842,14 @@ class EmailsApi
      *
      * Update website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail $update_email Email update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail  $update_email  Email update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteEmailAsync($org_id, $website_id, $email_address, $update_email, string $contentType = self::contentTypes['updateWebsiteEmail'][0])
     {
@@ -4971,14 +4866,14 @@ class EmailsApi
      *
      * Update website email
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail $update_email Email update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail  $update_email  Email update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteEmailAsyncWithHttpInfo($org_id, $website_id, $email_address, $update_email, string $contentType = self::contentTypes['updateWebsiteEmail'][0])
     {
@@ -4988,7 +4883,7 @@ class EmailsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5011,14 +4906,14 @@ class EmailsApi
     /**
      * Create request for operation 'updateWebsiteEmail'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $email_address The address of the email. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail $update_email Email update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $email_address  The address of the email. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateEmail  $update_email  Email update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteEmail'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsiteEmailRequest($org_id, $website_id, $email_address, $update_email, string $contentType = self::contentTypes['updateWebsiteEmail'][0])
     {
@@ -5051,7 +4946,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/emails/{email_address}';
         $formParams = [];
         $queryParams = [];
@@ -5059,12 +4953,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5072,7 +4964,7 @@ class EmailsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -5080,12 +4972,11 @@ class EmailsApi
         // path params
         if ($email_address !== null) {
             $resourcePath = str_replace(
-                '{' . 'email_address' . '}',
+                '{'.'email_address'.'}',
                 ObjectSerializer::toPathValue($email_address),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5096,7 +4987,7 @@ class EmailsApi
         // for model (json/xml)
         if (isset($update_email)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_email));
             } else {
                 $httpBody = $update_email;
@@ -5109,7 +5000,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5117,14 +5008,13 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5139,9 +5029,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5152,17 +5043,18 @@ class EmailsApi
      *
      * Validate email authentication DNS records
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailAuthValidation
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailAuthValidation
      */
     public function validateDomainEmailAuth($website_id, $domain_name, string $contentType = self::contentTypes['validateDomainEmailAuth'][0])
     {
-        list($response) = $this->validateDomainEmailAuthWithHttpInfo($website_id, $domain_name, $contentType);
+        [$response] = $this->validateDomainEmailAuthWithHttpInfo($website_id, $domain_name, $contentType);
+
         return $response;
     }
 
@@ -5171,13 +5063,13 @@ class EmailsApi
      *
      * Validate email authentication DNS records
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailAuthValidation, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailAuthValidation, HTTP status code, HTTP response headers (array of strings)
      */
     public function validateDomainEmailAuthWithHttpInfo($website_id, $domain_name, string $contentType = self::contentTypes['validateDomainEmailAuth'][0])
     {
@@ -5205,8 +5097,7 @@ class EmailsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\EmailAuthValidation',
@@ -5214,8 +5105,6 @@ class EmailsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5246,7 +5135,6 @@ class EmailsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5257,12 +5145,12 @@ class EmailsApi
      *
      * Validate email authentication DNS records
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validateDomainEmailAuthAsync($website_id, $domain_name, string $contentType = self::contentTypes['validateDomainEmailAuth'][0])
     {
@@ -5279,12 +5167,12 @@ class EmailsApi
      *
      * Validate email authentication DNS records
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validateDomainEmailAuthAsyncWithHttpInfo($website_id, $domain_name, string $contentType = self::contentTypes['validateDomainEmailAuth'][0])
     {
@@ -5296,7 +5184,7 @@ class EmailsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5307,7 +5195,7 @@ class EmailsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5330,12 +5218,12 @@ class EmailsApi
     /**
      * Create request for operation 'validateDomainEmailAuth'
      *
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_name The full domain to query. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_name  The full domain to query. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['validateDomainEmailAuth'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function validateDomainEmailAuthRequest($website_id, $domain_name, string $contentType = self::contentTypes['validateDomainEmailAuth'][0])
     {
@@ -5354,7 +5242,6 @@ class EmailsApi
             );
         }
 
-
         $resourcePath = '/websites/{website_id}/domains/{domain_name}/email-auth/validate';
         $formParams = [];
         $queryParams = [];
@@ -5362,12 +5249,10 @@ class EmailsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -5375,15 +5260,14 @@ class EmailsApi
         // path params
         if ($domain_name !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_name' . '}',
+                '{'.'domain_name'.'}',
                 ObjectSerializer::toPathValue($domain_name),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5397,7 +5281,7 @@ class EmailsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5405,7 +5289,7 @@ class EmailsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5416,11 +5300,11 @@ class EmailsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5436,9 +5320,10 @@ class EmailsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5447,16 +5332,17 @@ class EmailsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -5469,7 +5355,7 @@ class EmailsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -5492,7 +5378,7 @@ class EmailsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

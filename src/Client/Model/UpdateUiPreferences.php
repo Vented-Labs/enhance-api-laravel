@@ -1,12 +1,14 @@
 <?php
+
 /**
  * UpdateUiPreferences
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,75 +30,79 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * UpdateUiPreferences Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateUiPreferences implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'UpdateUiPreferences';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'file_manager_view' => '\Vented\EnhanceApiLaravel\Client\Model\UiPreferencesViewKind',
         'website_view' => '\Vented\EnhanceApiLaravel\Client\Model\UiPreferencesViewKind',
         'spine_open' => 'bool',
         'file_manager_editor_fullscreen' => 'bool',
-        'server_groups' => 'string[]'
+        'server_groups' => 'string[]',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'file_manager_view' => null,
         'website_view' => null,
         'spine_open' => null,
         'file_manager_editor_fullscreen' => null,
-        'server_groups' => 'uuid'
+        'server_groups' => 'uuid',
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'file_manager_view' => false,
         'website_view' => false,
         'spine_open' => false,
         'file_manager_editor_fullscreen' => false,
-        'server_groups' => false
+        'server_groups' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -121,8 +127,6 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -132,7 +136,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -142,7 +146,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -151,9 +155,6 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -162,9 +163,6 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -182,7 +180,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
         'website_view' => 'websiteView',
         'spine_open' => 'spineOpen',
         'file_manager_editor_fullscreen' => 'fileManagerEditorFullscreen',
-        'server_groups' => 'serverGroups'
+        'server_groups' => 'serverGroups',
     ];
 
     /**
@@ -195,7 +193,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
         'website_view' => 'setWebsiteView',
         'spine_open' => 'setSpineOpen',
         'file_manager_editor_fullscreen' => 'setFileManagerEditorFullscreen',
-        'server_groups' => 'setServerGroups'
+        'server_groups' => 'setServerGroups',
     ];
 
     /**
@@ -208,7 +206,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
         'website_view' => 'getWebsiteView',
         'spine_open' => 'getSpineOpen',
         'file_manager_editor_fullscreen' => 'getFileManagerEditorFullscreen',
-        'server_groups' => 'getServerGroups'
+        'server_groups' => 'getServerGroups',
     ];
 
     /**
@@ -252,7 +250,6 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -263,8 +260,8 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -276,14 +273,12 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -316,7 +311,6 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets file_manager_view
      *
@@ -330,8 +324,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets file_manager_view
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\UiPreferencesViewKind|null $file_manager_view file_manager_view
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UiPreferencesViewKind|null  $file_manager_view  file_manager_view
      * @return self
      */
     public function setFileManagerView($file_manager_view)
@@ -357,8 +350,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets website_view
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\UiPreferencesViewKind|null $website_view website_view
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UiPreferencesViewKind|null  $website_view  website_view
      * @return self
      */
     public function setWebsiteView($website_view)
@@ -384,8 +376,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets spine_open
      *
-     * @param bool|null $spine_open spine_open
-     *
+     * @param  bool|null  $spine_open  spine_open
      * @return self
      */
     public function setSpineOpen($spine_open)
@@ -411,8 +402,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets file_manager_editor_fullscreen
      *
-     * @param bool|null $file_manager_editor_fullscreen file_manager_editor_fullscreen
-     *
+     * @param  bool|null  $file_manager_editor_fullscreen  file_manager_editor_fullscreen
      * @return self
      */
     public function setFileManagerEditorFullscreen($file_manager_editor_fullscreen)
@@ -438,8 +428,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets server_groups
      *
-     * @param string[]|null $server_groups server_groups
-     *
+     * @param  string[]|null  $server_groups  server_groups
      * @return self
      */
     public function setServerGroups($server_groups)
@@ -451,12 +440,11 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -466,8 +454,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -479,10 +466,8 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -496,9 +481,7 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -507,15 +490,16 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -541,5 +525,3 @@ class UpdateUiPreferences implements ModelInterface, ArrayAccess, \JsonSerializa
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

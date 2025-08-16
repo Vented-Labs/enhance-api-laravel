@@ -1,12 +1,14 @@
 <?php
+
 /**
  * UpdateWebsiteSubscriptionId
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,64 +30,69 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * UpdateWebsiteSubscriptionId Class Doc Comment
  *
  * @category Class
+ *
  * @description The website can be moved to another subscription within the organization by setting this field.
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateWebsiteSubscriptionId implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'UpdateWebsite_subscriptionId';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
-        'unset' => 'bool'
+        'unset' => 'bool',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
-        'unset' => null
+        'unset' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
-        'unset' => false
+        'unset' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -110,8 +117,6 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -121,7 +126,7 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -131,7 +136,7 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -140,9 +145,6 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -151,9 +153,6 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -167,7 +166,7 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'unset' => 'unset'
+        'unset' => 'unset',
     ];
 
     /**
@@ -176,7 +175,7 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'unset' => 'setUnset'
+        'unset' => 'setUnset',
     ];
 
     /**
@@ -185,7 +184,7 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'unset' => 'getUnset'
+        'unset' => 'getUnset',
     ];
 
     /**
@@ -229,7 +228,6 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -240,8 +238,8 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -249,14 +247,12 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -278,6 +274,7 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['unset'] === null) {
             $invalidProperties[] = "'unset' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -292,7 +289,6 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets unset
      *
@@ -306,8 +302,7 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets unset
      *
-     * @param bool $unset unset
-     *
+     * @param  bool  $unset  unset
      * @return self
      */
     public function setUnset($unset)
@@ -319,12 +314,11 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -334,8 +328,7 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -347,10 +340,8 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -364,9 +355,7 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -375,15 +364,16 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -409,5 +399,3 @@ class UpdateWebsiteSubscriptionId implements ModelInterface, ArrayAccess, \JsonS
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

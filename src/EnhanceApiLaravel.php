@@ -2,7 +2,6 @@
 
 namespace Vented\EnhanceApiLaravel;
 
-use Vented\EnhanceApiLaravel\Client\Configuration;
 use Vented\EnhanceApiLaravel\Client\Api\AppsApi;
 use Vented\EnhanceApiLaravel\Client\Api\BackupsApi;
 use Vented\EnhanceApiLaravel\Client\Api\BrandingApi;
@@ -33,10 +32,12 @@ use Vented\EnhanceApiLaravel\Client\Api\SubscriptionsApi;
 use Vented\EnhanceApiLaravel\Client\Api\TagsApi;
 use Vented\EnhanceApiLaravel\Client\Api\WebsitesApi;
 use Vented\EnhanceApiLaravel\Client\Api\WordpressApi;
+use Vented\EnhanceApiLaravel\Client\Configuration;
 
 class EnhanceApiLaravel
 {
     protected Configuration $config;
+
     protected array $apiInstances = [];
 
     public function __construct(Configuration $config)

@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ServerInfo
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ServerInfo Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
+class ServerInfo implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ServerInfo';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'id' => 'string',
         'group_id' => 'string',
@@ -72,16 +76,18 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_decommissioned' => 'bool',
         'ipv6_addr' => 'string',
         'disks' => '\Vented\EnhanceApiLaravel\Client\Model\Disk[]',
-        'update_required' => 'bool'
+        'update_required' => 'bool',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'id' => 'uuid',
         'group_id' => 'uuid',
@@ -98,14 +104,14 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_decommissioned' => null,
         'ipv6_addr' => null,
         'disks' => null,
-        'update_required' => null
+        'update_required' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'id' => false,
         'group_id' => false,
@@ -122,14 +128,14 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_decommissioned' => false,
         'ipv6_addr' => false,
         'disks' => false,
-        'update_required' => false
+        'update_required' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -154,8 +160,6 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -165,7 +169,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -175,7 +179,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -184,9 +188,6 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -195,9 +196,6 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -226,7 +224,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_decommissioned' => 'isDecommissioned',
         'ipv6_addr' => 'ipv6Addr',
         'disks' => 'disks',
-        'update_required' => 'updateRequired'
+        'update_required' => 'updateRequired',
     ];
 
     /**
@@ -250,7 +248,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_decommissioned' => 'setIsDecommissioned',
         'ipv6_addr' => 'setIpv6Addr',
         'disks' => 'setDisks',
-        'update_required' => 'setUpdateRequired'
+        'update_required' => 'setUpdateRequired',
     ];
 
     /**
@@ -274,7 +272,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_decommissioned' => 'getIsDecommissioned',
         'ipv6_addr' => 'getIpv6Addr',
         'disks' => 'getDisks',
-        'update_required' => 'getUpdateRequired'
+        'update_required' => 'getUpdateRequired',
     ];
 
     /**
@@ -318,7 +316,6 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -329,8 +326,8 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -353,14 +350,12 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -412,6 +407,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['disks'] === null) {
             $invalidProperties[] = "'disks' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -426,7 +422,6 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets id
      *
@@ -440,8 +435,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string $id id
-     *
+     * @param  string  $id  id
      * @return self
      */
     public function setId($id)
@@ -467,8 +461,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group_id
      *
-     * @param string $group_id group_id
-     *
+     * @param  string  $group_id  group_id
      * @return self
      */
     public function setGroupId($group_id)
@@ -494,8 +487,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_control_panel
      *
-     * @param bool $is_control_panel is_control_panel
-     *
+     * @param  bool  $is_control_panel  is_control_panel
      * @return self
      */
     public function setIsControlPanel($is_control_panel)
@@ -521,8 +513,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_configured
      *
-     * @param bool $is_configured is_configured
-     *
+     * @param  bool  $is_configured  is_configured
      * @return self
      */
     public function setIsConfigured($is_configured)
@@ -548,8 +539,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets friendly_name
      *
-     * @param string $friendly_name friendly_name
-     *
+     * @param  string  $friendly_name  friendly_name
      * @return self
      */
     public function setFriendlyName($friendly_name)
@@ -575,8 +565,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hostname
      *
-     * @param string $hostname hostname
-     *
+     * @param  string  $hostname  hostname
      * @return self
      */
     public function setHostname($hostname)
@@ -602,8 +591,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ips
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServerIp[] $ips ips
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerIp[]  $ips  ips
      * @return self
      */
     public function setIps($ips)
@@ -629,8 +617,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\NetworkStatus|null $status status
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NetworkStatus|null  $status  status
      * @return self
      */
     public function setStatus($status)
@@ -656,8 +643,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets roles
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\RolesSummary $roles roles
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\RolesSummary  $roles  roles
      * @return self
      */
     public function setRoles($roles)
@@ -683,8 +669,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param string $created_at created_at
-     *
+     * @param  string  $created_at  created_at
      * @return self
      */
     public function setCreatedAt($created_at)
@@ -710,8 +695,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets appcd_version
      *
-     * @param string|null $appcd_version appcd_version
-     *
+     * @param  string|null  $appcd_version  appcd_version
      * @return self
      */
     public function setAppcdVersion($appcd_version)
@@ -737,8 +721,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dedicated_subscription
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\DedicatedSubscriptionInfo|null $dedicated_subscription dedicated_subscription
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DedicatedSubscriptionInfo|null  $dedicated_subscription  dedicated_subscription
      * @return self
      */
     public function setDedicatedSubscription($dedicated_subscription)
@@ -764,8 +747,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_decommissioned
      *
-     * @param bool $is_decommissioned is_decommissioned
-     *
+     * @param  bool  $is_decommissioned  is_decommissioned
      * @return self
      */
     public function setIsDecommissioned($is_decommissioned)
@@ -791,8 +773,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ipv6_addr
      *
-     * @param string|null $ipv6_addr ipv6_addr
-     *
+     * @param  string|null  $ipv6_addr  ipv6_addr
      * @return self
      */
     public function setIpv6Addr($ipv6_addr)
@@ -818,8 +799,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets disks
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\Disk[] $disks disks
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Disk[]  $disks  disks
      * @return self
      */
     public function setDisks($disks)
@@ -845,8 +825,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets update_required
      *
-     * @param bool|null $update_required update_required
-     *
+     * @param  bool|null  $update_required  update_required
      * @return self
      */
     public function setUpdateRequired($update_required)
@@ -858,12 +837,11 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -873,8 +851,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -886,10 +863,8 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -903,9 +878,7 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -914,15 +887,16 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -948,5 +922,3 @@ class ServerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

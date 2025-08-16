@@ -1,11 +1,13 @@
 <?php
+
 /**
  * PlansApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * PlansApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class PlansApi
@@ -72,7 +74,7 @@ class PlansApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createPlan' => [
             'application/json',
@@ -113,10 +115,7 @@ class PlansApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -124,16 +123,16 @@ class PlansApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -163,17 +162,18 @@ class PlansApi
      *
      * Create plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan $new_plan New plan details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan  $new_plan  New plan details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      */
     public function createPlan($org_id, $new_plan, string $contentType = self::contentTypes['createPlan'][0])
     {
-        list($response) = $this->createPlanWithHttpInfo($org_id, $new_plan, $contentType);
+        [$response] = $this->createPlanWithHttpInfo($org_id, $new_plan, $contentType);
+
         return $response;
     }
 
@@ -182,13 +182,13 @@ class PlansApi
      *
      * Create plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan $new_plan New plan details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan  $new_plan  New plan details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPlanWithHttpInfo($org_id, $new_plan, string $contentType = self::contentTypes['createPlan'][0])
     {
@@ -216,8 +216,7 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceId',
@@ -225,8 +224,6 @@ class PlansApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -257,7 +254,6 @@ class PlansApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -268,12 +264,12 @@ class PlansApi
      *
      * Create plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan $new_plan New plan details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan  $new_plan  New plan details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPlanAsync($org_id, $new_plan, string $contentType = self::contentTypes['createPlan'][0])
     {
@@ -290,12 +286,12 @@ class PlansApi
      *
      * Create plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan $new_plan New plan details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan  $new_plan  New plan details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPlanAsyncWithHttpInfo($org_id, $new_plan, string $contentType = self::contentTypes['createPlan'][0])
     {
@@ -307,7 +303,7 @@ class PlansApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -318,7 +314,7 @@ class PlansApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -341,12 +337,12 @@ class PlansApi
     /**
      * Create request for operation 'createPlan'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan $new_plan New plan details (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewPlan  $new_plan  New plan details (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createPlanRequest($org_id, $new_plan, string $contentType = self::contentTypes['createPlan'][0])
     {
@@ -365,7 +361,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans';
         $formParams = [];
         $queryParams = [];
@@ -373,20 +368,17 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -394,7 +386,7 @@ class PlansApi
         // for model (json/xml)
         if (isset($new_plan)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_plan));
             } else {
                 $httpBody = $new_plan;
@@ -407,7 +399,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -415,7 +407,7 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -426,11 +418,11 @@ class PlansApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -446,9 +438,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -459,14 +452,14 @@ class PlansApi
      *
      * Create plan allowances
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[] $allowance allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[]  $allowance  allowance (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createPlanAllowances($org_id, $plan_id, $allowance, string $contentType = self::contentTypes['createPlanAllowances'][0])
     {
@@ -478,14 +471,14 @@ class PlansApi
      *
      * Create plan allowances
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[] $allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[]  $allowance  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPlanAllowancesWithHttpInfo($org_id, $plan_id, $allowance, string $contentType = self::contentTypes['createPlanAllowances'][0])
     {
@@ -513,12 +506,10 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -529,13 +520,13 @@ class PlansApi
      *
      * Create plan allowances
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[] $allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[]  $allowance  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPlanAllowancesAsync($org_id, $plan_id, $allowance, string $contentType = self::contentTypes['createPlanAllowances'][0])
     {
@@ -552,13 +543,13 @@ class PlansApi
      *
      * Create plan allowances
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[] $allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[]  $allowance  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPlanAllowancesAsyncWithHttpInfo($org_id, $plan_id, $allowance, string $contentType = self::contentTypes['createPlanAllowances'][0])
     {
@@ -568,7 +559,7 @@ class PlansApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -591,13 +582,13 @@ class PlansApi
     /**
      * Create request for operation 'createPlanAllowances'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[] $allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[]  $allowance  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanAllowances'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createPlanAllowancesRequest($org_id, $plan_id, $allowance, string $contentType = self::contentTypes['createPlanAllowances'][0])
     {
@@ -623,7 +614,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}/allowances';
         $formParams = [];
         $queryParams = [];
@@ -631,12 +621,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -644,12 +632,11 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -660,7 +647,7 @@ class PlansApi
         // for model (json/xml)
         if (isset($allowance)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($allowance));
             } else {
                 $httpBody = $allowance;
@@ -673,7 +660,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -681,14 +668,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -703,9 +689,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -716,14 +703,14 @@ class PlansApi
      *
      * Create plan resources
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[] $resource resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[]  $resource  resource (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createPlanResources($org_id, $plan_id, $resource, string $contentType = self::contentTypes['createPlanResources'][0])
     {
@@ -735,14 +722,14 @@ class PlansApi
      *
      * Create plan resources
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[] $resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[]  $resource  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPlanResourcesWithHttpInfo($org_id, $plan_id, $resource, string $contentType = self::contentTypes['createPlanResources'][0])
     {
@@ -770,12 +757,10 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -786,13 +771,13 @@ class PlansApi
      *
      * Create plan resources
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[] $resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[]  $resource  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPlanResourcesAsync($org_id, $plan_id, $resource, string $contentType = self::contentTypes['createPlanResources'][0])
     {
@@ -809,13 +794,13 @@ class PlansApi
      *
      * Create plan resources
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[] $resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[]  $resource  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPlanResourcesAsyncWithHttpInfo($org_id, $plan_id, $resource, string $contentType = self::contentTypes['createPlanResources'][0])
     {
@@ -825,7 +810,7 @@ class PlansApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -848,13 +833,13 @@ class PlansApi
     /**
      * Create request for operation 'createPlanResources'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[] $resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[]  $resource  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanResources'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createPlanResourcesRequest($org_id, $plan_id, $resource, string $contentType = self::contentTypes['createPlanResources'][0])
     {
@@ -880,7 +865,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}/resources';
         $formParams = [];
         $queryParams = [];
@@ -888,12 +872,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -901,12 +883,11 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -917,7 +898,7 @@ class PlansApi
         // for model (json/xml)
         if (isset($resource)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($resource));
             } else {
                 $httpBody = $resource;
@@ -930,7 +911,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -938,14 +919,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -960,9 +940,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -973,14 +954,14 @@ class PlansApi
      *
      * Create plan selections
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[] $selection selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[]  $selection  selection (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createPlanSelections($org_id, $plan_id, $selection, string $contentType = self::contentTypes['createPlanSelections'][0])
     {
@@ -992,14 +973,14 @@ class PlansApi
      *
      * Create plan selections
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[] $selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[]  $selection  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPlanSelectionsWithHttpInfo($org_id, $plan_id, $selection, string $contentType = self::contentTypes['createPlanSelections'][0])
     {
@@ -1027,12 +1008,10 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1043,13 +1022,13 @@ class PlansApi
      *
      * Create plan selections
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[] $selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[]  $selection  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPlanSelectionsAsync($org_id, $plan_id, $selection, string $contentType = self::contentTypes['createPlanSelections'][0])
     {
@@ -1066,13 +1045,13 @@ class PlansApi
      *
      * Create plan selections
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[] $selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[]  $selection  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createPlanSelectionsAsyncWithHttpInfo($org_id, $plan_id, $selection, string $contentType = self::contentTypes['createPlanSelections'][0])
     {
@@ -1082,7 +1061,7 @@ class PlansApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1105,13 +1084,13 @@ class PlansApi
     /**
      * Create request for operation 'createPlanSelections'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[] $selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[]  $selection  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createPlanSelections'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createPlanSelectionsRequest($org_id, $plan_id, $selection, string $contentType = self::contentTypes['createPlanSelections'][0])
     {
@@ -1137,7 +1116,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}/selections';
         $formParams = [];
         $queryParams = [];
@@ -1145,12 +1123,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1158,12 +1134,11 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1174,7 +1149,7 @@ class PlansApi
         // for model (json/xml)
         if (isset($selection)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($selection));
             } else {
                 $httpBody = $selection;
@@ -1187,7 +1162,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1195,14 +1170,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1217,9 +1191,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1230,13 +1205,13 @@ class PlansApi
      *
      * Delete plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deletePlan($org_id, $plan_id, string $contentType = self::contentTypes['deletePlan'][0])
     {
@@ -1248,13 +1223,13 @@ class PlansApi
      *
      * Delete plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePlanWithHttpInfo($org_id, $plan_id, string $contentType = self::contentTypes['deletePlan'][0])
     {
@@ -1282,12 +1257,10 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1298,12 +1271,12 @@ class PlansApi
      *
      * Delete plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deletePlanAsync($org_id, $plan_id, string $contentType = self::contentTypes['deletePlan'][0])
     {
@@ -1320,12 +1293,12 @@ class PlansApi
      *
      * Delete plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deletePlanAsyncWithHttpInfo($org_id, $plan_id, string $contentType = self::contentTypes['deletePlan'][0])
     {
@@ -1335,7 +1308,7 @@ class PlansApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1358,12 +1331,12 @@ class PlansApi
     /**
      * Create request for operation 'deletePlan'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePlanRequest($org_id, $plan_id, string $contentType = self::contentTypes['deletePlan'][0])
     {
@@ -1382,7 +1355,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}';
         $formParams = [];
         $queryParams = [];
@@ -1390,12 +1362,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1403,12 +1373,11 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1425,7 +1394,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1433,14 +1402,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1455,9 +1423,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1468,14 +1437,14 @@ class PlansApi
      *
      * Delete plan allowance
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deletePlanAllowance($org_id, $plan_id, $name, string $contentType = self::contentTypes['deletePlanAllowance'][0])
     {
@@ -1487,14 +1456,14 @@ class PlansApi
      *
      * Delete plan allowance
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePlanAllowanceWithHttpInfo($org_id, $plan_id, $name, string $contentType = self::contentTypes['deletePlanAllowance'][0])
     {
@@ -1522,12 +1491,10 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1538,13 +1505,13 @@ class PlansApi
      *
      * Delete plan allowance
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deletePlanAllowanceAsync($org_id, $plan_id, $name, string $contentType = self::contentTypes['deletePlanAllowance'][0])
     {
@@ -1561,13 +1528,13 @@ class PlansApi
      *
      * Delete plan allowance
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deletePlanAllowanceAsyncWithHttpInfo($org_id, $plan_id, $name, string $contentType = self::contentTypes['deletePlanAllowance'][0])
     {
@@ -1577,7 +1544,7 @@ class PlansApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1600,13 +1567,13 @@ class PlansApi
     /**
      * Create request for operation 'deletePlanAllowance'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deletePlanAllowance'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deletePlanAllowanceRequest($org_id, $plan_id, $name, string $contentType = self::contentTypes['deletePlanAllowance'][0])
     {
@@ -1632,7 +1599,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}/allowances/{name}';
         $formParams = [];
         $queryParams = [];
@@ -1640,12 +1606,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1653,7 +1617,7 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
@@ -1661,12 +1625,11 @@ class PlansApi
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1683,7 +1646,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1691,14 +1654,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1713,9 +1675,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1726,17 +1689,18 @@ class PlansApi
      *
      * Get plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Plan
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Plan
      */
     public function getPlan($org_id, $plan_id, string $contentType = self::contentTypes['getPlan'][0])
     {
-        list($response) = $this->getPlanWithHttpInfo($org_id, $plan_id, $contentType);
+        [$response] = $this->getPlanWithHttpInfo($org_id, $plan_id, $contentType);
+
         return $response;
     }
 
@@ -1745,13 +1709,13 @@ class PlansApi
      *
      * Get plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Plan, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Plan, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlanWithHttpInfo($org_id, $plan_id, string $contentType = self::contentTypes['getPlan'][0])
     {
@@ -1779,8 +1743,7 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Plan',
@@ -1788,8 +1751,6 @@ class PlansApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1820,7 +1781,6 @@ class PlansApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1831,12 +1791,12 @@ class PlansApi
      *
      * Get plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPlanAsync($org_id, $plan_id, string $contentType = self::contentTypes['getPlan'][0])
     {
@@ -1853,12 +1813,12 @@ class PlansApi
      *
      * Get plan
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPlanAsyncWithHttpInfo($org_id, $plan_id, string $contentType = self::contentTypes['getPlan'][0])
     {
@@ -1870,7 +1830,7 @@ class PlansApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1881,7 +1841,7 @@ class PlansApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1904,12 +1864,12 @@ class PlansApi
     /**
      * Create request for operation 'getPlan'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getPlanRequest($org_id, $plan_id, string $contentType = self::contentTypes['getPlan'][0])
     {
@@ -1928,7 +1888,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}';
         $formParams = [];
         $queryParams = [];
@@ -1936,12 +1895,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1949,15 +1906,14 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1971,7 +1927,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1979,14 +1935,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2001,9 +1956,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2014,20 +1970,21 @@ class PlansApi
      *
      * Get plans
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\PlansListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\PlansListing
      */
     public function getPlans($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getPlans'][0])
     {
-        list($response) = $this->getPlansWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $contentType);
+        [$response] = $this->getPlansWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $contentType);
+
         return $response;
     }
 
@@ -2036,16 +1993,16 @@ class PlansApi
      *
      * Get plans
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\PlansListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\PlansListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlansWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getPlans'][0])
     {
@@ -2073,8 +2030,7 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\PlansListing',
@@ -2082,8 +2038,6 @@ class PlansApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2114,7 +2068,6 @@ class PlansApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2125,15 +2078,15 @@ class PlansApi
      *
      * Get plans
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPlansAsync($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getPlans'][0])
     {
@@ -2150,15 +2103,15 @@ class PlansApi
      *
      * Get plans
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getPlansAsyncWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getPlans'][0])
     {
@@ -2170,7 +2123,7 @@ class PlansApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2181,7 +2134,7 @@ class PlansApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2204,15 +2157,15 @@ class PlansApi
     /**
      * Create request for operation 'getPlans'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getPlans'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getPlansRequest($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getPlans'][0])
     {
@@ -2223,11 +2176,6 @@ class PlansApi
                 'Missing the required parameter $org_id when calling getPlans'
             );
         }
-
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/plans';
         $formParams = [];
@@ -2273,19 +2221,17 @@ class PlansApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2299,7 +2245,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2307,7 +2253,7 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2318,11 +2264,11 @@ class PlansApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2338,9 +2284,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2351,14 +2298,14 @@ class PlansApi
      *
      * Update plan name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan $update_plan update_plan (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan  $update_plan  update_plan (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updatePlan($org_id, $plan_id, $update_plan, string $contentType = self::contentTypes['updatePlan'][0])
     {
@@ -2370,14 +2317,14 @@ class PlansApi
      *
      * Update plan name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan $update_plan (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan  $update_plan  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePlanWithHttpInfo($org_id, $plan_id, $update_plan, string $contentType = self::contentTypes['updatePlan'][0])
     {
@@ -2405,12 +2352,10 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2421,13 +2366,13 @@ class PlansApi
      *
      * Update plan name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan $update_plan (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan  $update_plan  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePlanAsync($org_id, $plan_id, $update_plan, string $contentType = self::contentTypes['updatePlan'][0])
     {
@@ -2444,13 +2389,13 @@ class PlansApi
      *
      * Update plan name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan $update_plan (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan  $update_plan  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePlanAsyncWithHttpInfo($org_id, $plan_id, $update_plan, string $contentType = self::contentTypes['updatePlan'][0])
     {
@@ -2460,7 +2405,7 @@ class PlansApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2483,13 +2428,13 @@ class PlansApi
     /**
      * Create request for operation 'updatePlan'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan $update_plan (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdatePlan  $update_plan  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlan'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePlanRequest($org_id, $plan_id, $update_plan, string $contentType = self::contentTypes['updatePlan'][0])
     {
@@ -2515,7 +2460,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}';
         $formParams = [];
         $queryParams = [];
@@ -2523,12 +2467,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2536,12 +2478,11 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2552,7 +2493,7 @@ class PlansApi
         // for model (json/xml)
         if (isset($update_plan)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_plan));
             } else {
                 $httpBody = $update_plan;
@@ -2565,7 +2506,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2573,14 +2514,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2595,9 +2535,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2608,15 +2549,15 @@ class PlansApi
      *
      * Update plan allowance
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance $allowance allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance  $allowance  allowance (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updatePlanAllowance($org_id, $plan_id, $name, $allowance, string $contentType = self::contentTypes['updatePlanAllowance'][0])
     {
@@ -2628,15 +2569,15 @@ class PlansApi
      *
      * Update plan allowance
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance $allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance  $allowance  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePlanAllowanceWithHttpInfo($org_id, $plan_id, $name, $allowance, string $contentType = self::contentTypes['updatePlanAllowance'][0])
     {
@@ -2664,12 +2605,10 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2680,14 +2619,14 @@ class PlansApi
      *
      * Update plan allowance
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance $allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance  $allowance  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePlanAllowanceAsync($org_id, $plan_id, $name, $allowance, string $contentType = self::contentTypes['updatePlanAllowance'][0])
     {
@@ -2704,14 +2643,14 @@ class PlansApi
      *
      * Update plan allowance
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance $allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance  $allowance  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePlanAllowanceAsyncWithHttpInfo($org_id, $plan_id, $name, $allowance, string $contentType = self::contentTypes['updatePlanAllowance'][0])
     {
@@ -2721,7 +2660,7 @@ class PlansApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2744,14 +2683,14 @@ class PlansApi
     /**
      * Create request for operation 'updatePlanAllowance'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the allowance. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance $allowance (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the allowance. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance  $allowance  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanAllowance'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePlanAllowanceRequest($org_id, $plan_id, $name, $allowance, string $contentType = self::contentTypes['updatePlanAllowance'][0])
     {
@@ -2784,7 +2723,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}/allowances/{name}';
         $formParams = [];
         $queryParams = [];
@@ -2792,12 +2730,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2805,7 +2741,7 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
@@ -2813,12 +2749,11 @@ class PlansApi
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2829,7 +2764,7 @@ class PlansApi
         // for model (json/xml)
         if (isset($allowance)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($allowance));
             } else {
                 $httpBody = $allowance;
@@ -2842,7 +2777,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2850,14 +2785,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2872,9 +2806,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2885,15 +2820,15 @@ class PlansApi
      *
      * Update plan resource
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource $resource resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource  $resource  resource (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updatePlanResource($org_id, $plan_id, $name, $resource, string $contentType = self::contentTypes['updatePlanResource'][0])
     {
@@ -2905,15 +2840,15 @@ class PlansApi
      *
      * Update plan resource
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource $resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource  $resource  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePlanResourceWithHttpInfo($org_id, $plan_id, $name, $resource, string $contentType = self::contentTypes['updatePlanResource'][0])
     {
@@ -2941,12 +2876,10 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2957,14 +2890,14 @@ class PlansApi
      *
      * Update plan resource
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource $resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource  $resource  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePlanResourceAsync($org_id, $plan_id, $name, $resource, string $contentType = self::contentTypes['updatePlanResource'][0])
     {
@@ -2981,14 +2914,14 @@ class PlansApi
      *
      * Update plan resource
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource $resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource  $resource  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePlanResourceAsyncWithHttpInfo($org_id, $plan_id, $name, $resource, string $contentType = self::contentTypes['updatePlanResource'][0])
     {
@@ -2998,7 +2931,7 @@ class PlansApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3021,14 +2954,14 @@ class PlansApi
     /**
      * Create request for operation 'updatePlanResource'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource $resource (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource  $resource  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanResource'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePlanResourceRequest($org_id, $plan_id, $name, $resource, string $contentType = self::contentTypes['updatePlanResource'][0])
     {
@@ -3061,7 +2994,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}/resources/{name}';
         $formParams = [];
         $queryParams = [];
@@ -3069,12 +3001,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3082,7 +3012,7 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
@@ -3090,12 +3020,11 @@ class PlansApi
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3106,7 +3035,7 @@ class PlansApi
         // for model (json/xml)
         if (isset($resource)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($resource));
             } else {
                 $httpBody = $resource;
@@ -3119,7 +3048,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3127,14 +3056,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3149,9 +3077,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3162,15 +3091,15 @@ class PlansApi
      *
      * Update plan selection
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the selection. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection $selection selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the selection. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection  $selection  selection (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updatePlanSelection($org_id, $plan_id, $name, $selection, string $contentType = self::contentTypes['updatePlanSelection'][0])
     {
@@ -3182,15 +3111,15 @@ class PlansApi
      *
      * Update plan selection
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the selection. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection $selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the selection. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection  $selection  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePlanSelectionWithHttpInfo($org_id, $plan_id, $name, $selection, string $contentType = self::contentTypes['updatePlanSelection'][0])
     {
@@ -3218,12 +3147,10 @@ class PlansApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3234,14 +3161,14 @@ class PlansApi
      *
      * Update plan selection
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the selection. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection $selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the selection. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection  $selection  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePlanSelectionAsync($org_id, $plan_id, $name, $selection, string $contentType = self::contentTypes['updatePlanSelection'][0])
     {
@@ -3258,14 +3185,14 @@ class PlansApi
      *
      * Update plan selection
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the selection. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection $selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the selection. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection  $selection  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePlanSelectionAsyncWithHttpInfo($org_id, $plan_id, $name, $selection, string $contentType = self::contentTypes['updatePlanSelection'][0])
     {
@@ -3275,7 +3202,7 @@ class PlansApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3298,14 +3225,14 @@ class PlansApi
     /**
      * Create request for operation 'updatePlanSelection'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int $plan_id The id of the plan. (required)
-     * @param  string $name The name of the selection. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection $selection (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int  $plan_id  The id of the plan. (required)
+     * @param  string  $name  The name of the selection. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection  $selection  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updatePlanSelection'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updatePlanSelectionRequest($org_id, $plan_id, $name, $selection, string $contentType = self::contentTypes['updatePlanSelection'][0])
     {
@@ -3338,7 +3265,6 @@ class PlansApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/plans/{plan_id}/selections/{name}';
         $formParams = [];
         $queryParams = [];
@@ -3346,12 +3272,10 @@ class PlansApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3359,7 +3283,7 @@ class PlansApi
         // path params
         if ($plan_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'plan_id' . '}',
+                '{'.'plan_id'.'}',
                 ObjectSerializer::toPathValue($plan_id),
                 $resourcePath
             );
@@ -3367,12 +3291,11 @@ class PlansApi
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3383,7 +3306,7 @@ class PlansApi
         // for model (json/xml)
         if (isset($selection)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($selection));
             } else {
                 $httpBody = $selection;
@@ -3396,7 +3319,7 @@ class PlansApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3404,14 +3327,13 @@ class PlansApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3426,9 +3348,10 @@ class PlansApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3437,16 +3360,17 @@ class PlansApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -3459,7 +3383,7 @@ class PlansApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -3482,7 +3406,7 @@ class PlansApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

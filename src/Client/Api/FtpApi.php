@@ -1,11 +1,13 @@
 <?php
+
 /**
  * FtpApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * FtpApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class FtpApi
@@ -72,7 +74,7 @@ class FtpApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createFtpUser' => [
             'application/json',
@@ -89,10 +91,7 @@ class FtpApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -100,16 +99,16 @@ class FtpApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -139,19 +138,20 @@ class FtpApi
      *
      * Creates a new FTP user for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createFtpUser($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
-        list($response) = $this->createFtpUserWithHttpInfo($org_id, $website_id, $new_ftp_user, $create_home, $contentType);
+        [$response] = $this->createFtpUserWithHttpInfo($org_id, $website_id, $new_ftp_user, $create_home, $contentType);
+
         return $response;
     }
 
@@ -160,15 +160,15 @@ class FtpApi
      *
      * Creates a new FTP user for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFtpUserWithHttpInfo($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
@@ -196,8 +196,7 @@ class FtpApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -205,8 +204,6 @@ class FtpApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -237,7 +234,6 @@ class FtpApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -248,14 +244,14 @@ class FtpApi
      *
      * Creates a new FTP user for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFtpUserAsync($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
@@ -272,14 +268,14 @@ class FtpApi
      *
      * Creates a new FTP user for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFtpUserAsyncWithHttpInfo($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
@@ -291,7 +287,7 @@ class FtpApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -302,7 +298,7 @@ class FtpApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -325,14 +321,14 @@ class FtpApi
     /**
      * Create request for operation 'createFtpUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser $new_ftp_user FTP User (required)
-     * @param  bool|null $create_home If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewFtpUser  $new_ftp_user  FTP User (required)
+     * @param  bool|null  $create_home  If set to true we will try to crete a new home_dir for the user if does not exist. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createFtpUserRequest($org_id, $website_id, $new_ftp_user, $create_home = null, string $contentType = self::contentTypes['createFtpUser'][0])
     {
@@ -358,8 +354,6 @@ class FtpApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ftp/users';
         $formParams = [];
         $queryParams = [];
@@ -377,11 +371,10 @@ class FtpApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -389,15 +382,14 @@ class FtpApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -405,7 +397,7 @@ class FtpApi
         // for model (json/xml)
         if (isset($new_ftp_user)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_ftp_user));
             } else {
                 $httpBody = $new_ftp_user;
@@ -418,7 +410,7 @@ class FtpApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -426,7 +418,7 @@ class FtpApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -437,11 +429,11 @@ class FtpApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -457,9 +449,10 @@ class FtpApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -470,15 +463,15 @@ class FtpApi
      *
      * Deletes given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  username (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteFtpUser($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -490,15 +483,15 @@ class FtpApi
      *
      * Deletes given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteFtpUserWithHttpInfo($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -526,12 +519,10 @@ class FtpApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -542,14 +533,14 @@ class FtpApi
      *
      * Deletes given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFtpUserAsync($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -566,14 +557,14 @@ class FtpApi
      *
      * Deletes given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteFtpUserAsyncWithHttpInfo($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -583,7 +574,7 @@ class FtpApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -606,14 +597,14 @@ class FtpApi
     /**
      * Create request for operation 'deleteFtpUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  bool|null $delete_home If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  bool|null  $delete_home  If set to true we will try to delete the homeDir for the user. User homeDir can only be deleted if it is a subdir for the website home. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteFtpUserRequest($org_id, $website_id, $username, $delete_home = null, string $contentType = self::contentTypes['deleteFtpUser'][0])
     {
@@ -639,8 +630,6 @@ class FtpApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ftp/users/{username}';
         $formParams = [];
         $queryParams = [];
@@ -658,11 +647,10 @@ class FtpApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -670,7 +658,7 @@ class FtpApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -678,12 +666,11 @@ class FtpApi
         // path params
         if ($username !== null) {
             $resourcePath = str_replace(
-                '{' . 'username' . '}',
+                '{'.'username'.'}',
                 ObjectSerializer::toPathValue($username),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -700,7 +687,7 @@ class FtpApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -708,7 +695,7 @@ class FtpApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -719,11 +706,11 @@ class FtpApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -739,9 +726,10 @@ class FtpApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -752,17 +740,18 @@ class FtpApi
      *
      * Returns all ftp users data for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing
      */
     public function getFtpUsers($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
-        list($response) = $this->getFtpUsersWithHttpInfo($org_id, $website_id, $contentType);
+        [$response] = $this->getFtpUsersWithHttpInfo($org_id, $website_id, $contentType);
+
         return $response;
     }
 
@@ -771,13 +760,13 @@ class FtpApi
      *
      * Returns all ftp users data for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFtpUsersWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
@@ -805,8 +794,7 @@ class FtpApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\FtpUsersFullListing',
@@ -814,8 +802,6 @@ class FtpApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -846,7 +832,6 @@ class FtpApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -857,12 +842,12 @@ class FtpApi
      *
      * Returns all ftp users data for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFtpUsersAsync($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
@@ -879,12 +864,12 @@ class FtpApi
      *
      * Returns all ftp users data for a given website
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getFtpUsersAsyncWithHttpInfo($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
@@ -896,7 +881,7 @@ class FtpApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -907,7 +892,7 @@ class FtpApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -930,12 +915,12 @@ class FtpApi
     /**
      * Create request for operation 'getFtpUsers'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getFtpUsers'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getFtpUsersRequest($org_id, $website_id, string $contentType = self::contentTypes['getFtpUsers'][0])
     {
@@ -954,7 +939,6 @@ class FtpApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ftp/users';
         $formParams = [];
         $queryParams = [];
@@ -962,12 +946,10 @@ class FtpApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -975,15 +957,14 @@ class FtpApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -997,7 +978,7 @@ class FtpApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1005,7 +986,7 @@ class FtpApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1016,11 +997,11 @@ class FtpApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1036,9 +1017,10 @@ class FtpApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1049,15 +1031,15 @@ class FtpApi
      *
      * Update given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  username (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateFtpUser($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -1069,15 +1051,15 @@ class FtpApi
      *
      * Update given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateFtpUserWithHttpInfo($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -1105,12 +1087,10 @@ class FtpApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1121,14 +1101,14 @@ class FtpApi
      *
      * Update given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateFtpUserAsync($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -1145,14 +1125,14 @@ class FtpApi
      *
      * Update given FTP user
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateFtpUserAsyncWithHttpInfo($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -1162,7 +1142,7 @@ class FtpApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1185,14 +1165,14 @@ class FtpApi
     /**
      * Create request for operation 'updateFtpUser'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $username (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate $ftp_user_update FTP User (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $username  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FtpUserUpdate  $ftp_user_update  FTP User (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateFtpUser'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateFtpUserRequest($org_id, $website_id, $username, $ftp_user_update, string $contentType = self::contentTypes['updateFtpUser'][0])
     {
@@ -1225,7 +1205,6 @@ class FtpApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/ftp/users/{username}';
         $formParams = [];
         $queryParams = [];
@@ -1233,12 +1212,10 @@ class FtpApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1246,7 +1223,7 @@ class FtpApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1254,12 +1231,11 @@ class FtpApi
         // path params
         if ($username !== null) {
             $resourcePath = str_replace(
-                '{' . 'username' . '}',
+                '{'.'username'.'}',
                 ObjectSerializer::toPathValue($username),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1270,7 +1246,7 @@ class FtpApi
         // for model (json/xml)
         if (isset($ftp_user_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ftp_user_update));
             } else {
                 $httpBody = $ftp_user_update;
@@ -1283,7 +1259,7 @@ class FtpApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1291,7 +1267,7 @@ class FtpApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1302,11 +1278,11 @@ class FtpApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1322,9 +1298,10 @@ class FtpApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1333,16 +1310,17 @@ class FtpApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -1355,7 +1333,7 @@ class FtpApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -1378,7 +1356,7 @@ class FtpApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

@@ -1,12 +1,14 @@
 <?php
+
 /**
  * GlobalWebsiteBackup
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * GlobalWebsiteBackup Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializable
+class GlobalWebsiteBackup implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'GlobalWebsiteBackup';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'website_id' => 'string',
         'primary_domain' => 'string',
@@ -65,16 +69,18 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         'mysql_dbs_count' => 'int',
         'created_at' => 'string',
         'server_id' => 'string',
-        'customer' => '\Vented\EnhanceApiLaravel\Client\Model\Customer'
+        'customer' => '\Vented\EnhanceApiLaravel\Client\Model\Customer',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'website_id' => 'uuid',
         'primary_domain' => null,
@@ -84,14 +90,14 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         'mysql_dbs_count' => null,
         'created_at' => 'datetime',
         'server_id' => 'uuid',
-        'customer' => null
+        'customer' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'website_id' => false,
         'primary_domain' => false,
@@ -101,14 +107,14 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         'mysql_dbs_count' => false,
         'created_at' => false,
         'server_id' => false,
-        'customer' => false
+        'customer' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -133,8 +139,6 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -144,7 +148,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -154,7 +158,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -163,9 +167,6 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -174,9 +175,6 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -198,7 +196,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         'mysql_dbs_count' => 'mysqlDbsCount',
         'created_at' => 'createdAt',
         'server_id' => 'serverId',
-        'customer' => 'customer'
+        'customer' => 'customer',
     ];
 
     /**
@@ -215,7 +213,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         'mysql_dbs_count' => 'setMysqlDbsCount',
         'created_at' => 'setCreatedAt',
         'server_id' => 'setServerId',
-        'customer' => 'setCustomer'
+        'customer' => 'setCustomer',
     ];
 
     /**
@@ -232,7 +230,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         'mysql_dbs_count' => 'getMysqlDbsCount',
         'created_at' => 'getCreatedAt',
         'server_id' => 'getServerId',
-        'customer' => 'getCustomer'
+        'customer' => 'getCustomer',
     ];
 
     /**
@@ -276,7 +274,6 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -287,8 +284,8 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -304,14 +301,12 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -351,6 +346,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['server_id'] === null) {
             $invalidProperties[] = "'server_id' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -365,7 +361,6 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets website_id
      *
@@ -379,8 +374,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets website_id
      *
-     * @param string $website_id website_id
-     *
+     * @param  string  $website_id  website_id
      * @return self
      */
     public function setWebsiteId($website_id)
@@ -406,8 +400,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets primary_domain
      *
-     * @param string $primary_domain primary_domain
-     *
+     * @param  string  $primary_domain  primary_domain
      * @return self
      */
     public function setPrimaryDomain($primary_domain)
@@ -433,8 +426,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets snapshot_id
      *
-     * @param int $snapshot_id snapshot_id
-     *
+     * @param  int  $snapshot_id  snapshot_id
      * @return self
      */
     public function setSnapshotId($snapshot_id)
@@ -460,8 +452,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets emails_count
      *
-     * @param int|null $emails_count emails_count
-     *
+     * @param  int|null  $emails_count  emails_count
      * @return self
      */
     public function setEmailsCount($emails_count)
@@ -487,8 +478,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets files_size
      *
-     * @param int $files_size files_size
-     *
+     * @param  int  $files_size  files_size
      * @return self
      */
     public function setFilesSize($files_size)
@@ -514,8 +504,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets mysql_dbs_count
      *
-     * @param int $mysql_dbs_count mysql_dbs_count
-     *
+     * @param  int  $mysql_dbs_count  mysql_dbs_count
      * @return self
      */
     public function setMysqlDbsCount($mysql_dbs_count)
@@ -541,8 +530,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets created_at
      *
-     * @param string $created_at created_at
-     *
+     * @param  string  $created_at  created_at
      * @return self
      */
     public function setCreatedAt($created_at)
@@ -568,8 +556,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets server_id
      *
-     * @param string $server_id server_id
-     *
+     * @param  string  $server_id  server_id
      * @return self
      */
     public function setServerId($server_id)
@@ -595,8 +582,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets customer
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\Customer|null $customer customer
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Customer|null  $customer  customer
      * @return self
      */
     public function setCustomer($customer)
@@ -608,12 +594,11 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -623,8 +608,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -636,10 +620,8 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -653,9 +635,7 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -664,15 +644,16 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -698,5 +679,3 @@ class GlobalWebsiteBackup implements ModelInterface, ArrayAccess, \JsonSerializa
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

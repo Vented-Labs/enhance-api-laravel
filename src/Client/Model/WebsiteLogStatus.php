@@ -1,12 +1,14 @@
 <?php
+
 /**
  * WebsiteLogStatus
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,15 +29,16 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * WebsiteLogStatus Class Doc Comment
  *
  * @category Class
+ *
  * @description The status of the website at the time the log was written. Some statuses have additional metadata (ok, slow, failed4xx, failed5xx) whereas some don&#39;t (timeout, dnsZoneNotFound, appServerMismatch).
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class WebsiteLogStatus
@@ -59,6 +62,7 @@ class WebsiteLogStatus
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -70,9 +74,7 @@ class WebsiteLogStatus
             self::FAILED5XX,
             self::TIMEOUT,
             self::DNS_ZONE_NOT_FOUND,
-            self::APP_SERVER_MISMATCH
+            self::APP_SERVER_MISMATCH,
         ];
     }
 }
-
-

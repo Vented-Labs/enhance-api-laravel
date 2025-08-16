@@ -1,11 +1,13 @@
 <?php
+
 /**
  * DnsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * DnsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class DnsApi
@@ -72,7 +74,7 @@ class DnsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createDefaultDnsRecord' => [
             'application/json',
@@ -119,10 +121,7 @@ class DnsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -130,16 +129,16 @@ class DnsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -169,16 +168,17 @@ class DnsApi
      *
      * Create a default DNS record
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord $new_default_dns_record new_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord  $new_default_dns_record  new_default_dns_record (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function createDefaultDnsRecord($new_default_dns_record, string $contentType = self::contentTypes['createDefaultDnsRecord'][0])
     {
-        list($response) = $this->createDefaultDnsRecordWithHttpInfo($new_default_dns_record, $contentType);
+        [$response] = $this->createDefaultDnsRecordWithHttpInfo($new_default_dns_record, $contentType);
+
         return $response;
     }
 
@@ -187,12 +187,12 @@ class DnsApi
      *
      * Create a default DNS record
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord $new_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord  $new_default_dns_record  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDefaultDnsRecordWithHttpInfo($new_default_dns_record, string $contentType = self::contentTypes['createDefaultDnsRecord'][0])
     {
@@ -220,8 +220,7 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -229,8 +228,6 @@ class DnsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -261,7 +258,6 @@ class DnsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -272,11 +268,11 @@ class DnsApi
      *
      * Create a default DNS record
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord $new_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord  $new_default_dns_record  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDefaultDnsRecordAsync($new_default_dns_record, string $contentType = self::contentTypes['createDefaultDnsRecord'][0])
     {
@@ -293,11 +289,11 @@ class DnsApi
      *
      * Create a default DNS record
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord $new_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord  $new_default_dns_record  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDefaultDnsRecordAsyncWithHttpInfo($new_default_dns_record, string $contentType = self::contentTypes['createDefaultDnsRecord'][0])
     {
@@ -309,7 +305,7 @@ class DnsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -320,7 +316,7 @@ class DnsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -343,11 +339,11 @@ class DnsApi
     /**
      * Create request for operation 'createDefaultDnsRecord'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord $new_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDefaultDnsRecord  $new_default_dns_record  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDefaultDnsRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createDefaultDnsRecordRequest($new_default_dns_record, string $contentType = self::contentTypes['createDefaultDnsRecord'][0])
     {
@@ -359,7 +355,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/v2/settings/dns/default-records';
         $formParams = [];
         $queryParams = [];
@@ -367,12 +362,8 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -380,7 +371,7 @@ class DnsApi
         // for model (json/xml)
         if (isset($new_default_dns_record)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_default_dns_record));
             } else {
                 $httpBody = $new_default_dns_record;
@@ -393,7 +384,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -401,7 +392,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -412,11 +403,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -432,9 +423,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -445,12 +437,12 @@ class DnsApi
      *
      * Create new third party provider.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider $new_dns_third_party_provider Url where the updates are sent and map of header names to their values. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider  $new_dns_third_party_provider  Url where the updates are sent and map of header names to their values. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createDnsThirdPartyProvider($new_dns_third_party_provider, string $contentType = self::contentTypes['createDnsThirdPartyProvider'][0])
     {
@@ -462,12 +454,12 @@ class DnsApi
      *
      * Create new third party provider.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider $new_dns_third_party_provider Url where the updates are sent and map of header names to their values. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider  $new_dns_third_party_provider  Url where the updates are sent and map of header names to their values. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDnsThirdPartyProviderWithHttpInfo($new_dns_third_party_provider, string $contentType = self::contentTypes['createDnsThirdPartyProvider'][0])
     {
@@ -495,12 +487,10 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -511,11 +501,11 @@ class DnsApi
      *
      * Create new third party provider.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider $new_dns_third_party_provider Url where the updates are sent and map of header names to their values. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider  $new_dns_third_party_provider  Url where the updates are sent and map of header names to their values. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDnsThirdPartyProviderAsync($new_dns_third_party_provider, string $contentType = self::contentTypes['createDnsThirdPartyProvider'][0])
     {
@@ -532,11 +522,11 @@ class DnsApi
      *
      * Create new third party provider.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider $new_dns_third_party_provider Url where the updates are sent and map of header names to their values. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider  $new_dns_third_party_provider  Url where the updates are sent and map of header names to their values. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createDnsThirdPartyProviderAsyncWithHttpInfo($new_dns_third_party_provider, string $contentType = self::contentTypes['createDnsThirdPartyProvider'][0])
     {
@@ -546,7 +536,7 @@ class DnsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -569,11 +559,11 @@ class DnsApi
     /**
      * Create request for operation 'createDnsThirdPartyProvider'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider $new_dns_third_party_provider Url where the updates are sent and map of header names to their values. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsThirdPartyProvider  $new_dns_third_party_provider  Url where the updates are sent and map of header names to their values. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createDnsThirdPartyProviderRequest($new_dns_third_party_provider, string $contentType = self::contentTypes['createDnsThirdPartyProvider'][0])
     {
@@ -585,17 +575,12 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/dns/third-party-providers';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -606,7 +591,7 @@ class DnsApi
         // for model (json/xml)
         if (isset($new_dns_third_party_provider)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_dns_third_party_provider));
             } else {
                 $httpBody = $new_dns_third_party_provider;
@@ -619,7 +604,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -627,7 +612,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -638,11 +623,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -658,9 +643,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -671,19 +657,20 @@ class DnsApi
      *
      * Create a new dns record for website domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord $new_dns_record New dns record details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord  $new_dns_record  New dns record details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createWebsiteDomainDnsZoneRecord($org_id, $website_id, $domain_id, $new_dns_record, string $contentType = self::contentTypes['createWebsiteDomainDnsZoneRecord'][0])
     {
-        list($response) = $this->createWebsiteDomainDnsZoneRecordWithHttpInfo($org_id, $website_id, $domain_id, $new_dns_record, $contentType);
+        [$response] = $this->createWebsiteDomainDnsZoneRecordWithHttpInfo($org_id, $website_id, $domain_id, $new_dns_record, $contentType);
+
         return $response;
     }
 
@@ -692,15 +679,15 @@ class DnsApi
      *
      * Create a new dns record for website domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord $new_dns_record New dns record details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord  $new_dns_record  New dns record details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteDomainDnsZoneRecordWithHttpInfo($org_id, $website_id, $domain_id, $new_dns_record, string $contentType = self::contentTypes['createWebsiteDomainDnsZoneRecord'][0])
     {
@@ -728,8 +715,7 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -737,8 +723,6 @@ class DnsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -769,7 +753,6 @@ class DnsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -780,14 +763,14 @@ class DnsApi
      *
      * Create a new dns record for website domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord $new_dns_record New dns record details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord  $new_dns_record  New dns record details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteDomainDnsZoneRecordAsync($org_id, $website_id, $domain_id, $new_dns_record, string $contentType = self::contentTypes['createWebsiteDomainDnsZoneRecord'][0])
     {
@@ -804,14 +787,14 @@ class DnsApi
      *
      * Create a new dns record for website domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord $new_dns_record New dns record details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord  $new_dns_record  New dns record details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteDomainDnsZoneRecordAsyncWithHttpInfo($org_id, $website_id, $domain_id, $new_dns_record, string $contentType = self::contentTypes['createWebsiteDomainDnsZoneRecord'][0])
     {
@@ -823,7 +806,7 @@ class DnsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -834,7 +817,7 @@ class DnsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -857,14 +840,14 @@ class DnsApi
     /**
      * Create request for operation 'createWebsiteDomainDnsZoneRecord'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord $new_dns_record New dns record details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDnsRecord  $new_dns_record  New dns record details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteDomainDnsZoneRecordRequest($org_id, $website_id, $domain_id, $new_dns_record, string $contentType = self::contentTypes['createWebsiteDomainDnsZoneRecord'][0])
     {
@@ -897,7 +880,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/dns-zone/records';
         $formParams = [];
         $queryParams = [];
@@ -905,12 +887,10 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -918,7 +898,7 @@ class DnsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -926,15 +906,14 @@ class DnsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -942,7 +921,7 @@ class DnsApi
         // for model (json/xml)
         if (isset($new_dns_record)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_dns_record));
             } else {
                 $httpBody = $new_dns_record;
@@ -955,7 +934,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -963,7 +942,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -974,11 +953,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -994,9 +973,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1007,12 +987,12 @@ class DnsApi
      *
      * Delete a default DNS record
      *
-     * @param  string $record_id record_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  record_id (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteDefaultDnsRecord($record_id, string $contentType = self::contentTypes['deleteDefaultDnsRecord'][0])
     {
@@ -1024,12 +1004,12 @@ class DnsApi
      *
      * Delete a default DNS record
      *
-     * @param  string $record_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDefaultDnsRecordWithHttpInfo($record_id, string $contentType = self::contentTypes['deleteDefaultDnsRecord'][0])
     {
@@ -1057,12 +1037,10 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1073,11 +1051,11 @@ class DnsApi
      *
      * Delete a default DNS record
      *
-     * @param  string $record_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteDefaultDnsRecordAsync($record_id, string $contentType = self::contentTypes['deleteDefaultDnsRecord'][0])
     {
@@ -1094,11 +1072,11 @@ class DnsApi
      *
      * Delete a default DNS record
      *
-     * @param  string $record_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteDefaultDnsRecordAsyncWithHttpInfo($record_id, string $contentType = self::contentTypes['deleteDefaultDnsRecord'][0])
     {
@@ -1108,7 +1086,7 @@ class DnsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1131,11 +1109,11 @@ class DnsApi
     /**
      * Create request for operation 'deleteDefaultDnsRecord'
      *
-     * @param  string $record_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDefaultDnsRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDefaultDnsRecordRequest($record_id, string $contentType = self::contentTypes['deleteDefaultDnsRecord'][0])
     {
@@ -1147,7 +1125,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/v2/settings/dns/default-records/{record_id}';
         $formParams = [];
         $queryParams = [];
@@ -1155,17 +1132,14 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($record_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'record_id' . '}',
+                '{'.'record_id'.'}',
                 ObjectSerializer::toPathValue($record_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1182,7 +1156,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1190,7 +1164,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1201,11 +1175,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1221,9 +1195,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1234,12 +1209,12 @@ class DnsApi
      *
      * Deletes a third party dns provider.
      *
-     * @param  int $provider_id The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  int  $provider_id  The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteDnsThirdPartyProvider($provider_id, string $contentType = self::contentTypes['deleteDnsThirdPartyProvider'][0])
     {
@@ -1251,12 +1226,12 @@ class DnsApi
      *
      * Deletes a third party dns provider.
      *
-     * @param  int $provider_id The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  int  $provider_id  The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDnsThirdPartyProviderWithHttpInfo($provider_id, string $contentType = self::contentTypes['deleteDnsThirdPartyProvider'][0])
     {
@@ -1284,12 +1259,10 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1300,11 +1273,11 @@ class DnsApi
      *
      * Deletes a third party dns provider.
      *
-     * @param  int $provider_id The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  int  $provider_id  The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteDnsThirdPartyProviderAsync($provider_id, string $contentType = self::contentTypes['deleteDnsThirdPartyProvider'][0])
     {
@@ -1321,11 +1294,11 @@ class DnsApi
      *
      * Deletes a third party dns provider.
      *
-     * @param  int $provider_id The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  int  $provider_id  The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteDnsThirdPartyProviderAsyncWithHttpInfo($provider_id, string $contentType = self::contentTypes['deleteDnsThirdPartyProvider'][0])
     {
@@ -1335,7 +1308,7 @@ class DnsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1358,11 +1331,11 @@ class DnsApi
     /**
      * Create request for operation 'deleteDnsThirdPartyProvider'
      *
-     * @param  int $provider_id The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @param  int  $provider_id  The id of the third party provider which can be obtained by querying the GET /dns/third-party-providers endpoint. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteDnsThirdPartyProvider'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteDnsThirdPartyProviderRequest($provider_id, string $contentType = self::contentTypes['deleteDnsThirdPartyProvider'][0])
     {
@@ -1374,7 +1347,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/dns/third-party-providers/{provider_id}';
         $formParams = [];
         $queryParams = [];
@@ -1382,17 +1354,14 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($provider_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'provider_id' . '}',
+                '{'.'provider_id'.'}',
                 ObjectSerializer::toPathValue($provider_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1409,7 +1378,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1417,7 +1386,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1428,11 +1397,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1448,9 +1417,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1461,15 +1431,15 @@ class DnsApi
      *
      * Delete dns zone record
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteWebsiteDomainDnsZoneRecord($org_id, $website_id, $domain_id, $record_id, string $contentType = self::contentTypes['deleteWebsiteDomainDnsZoneRecord'][0])
     {
@@ -1481,15 +1451,15 @@ class DnsApi
      *
      * Delete dns zone record
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebsiteDomainDnsZoneRecordWithHttpInfo($org_id, $website_id, $domain_id, $record_id, string $contentType = self::contentTypes['deleteWebsiteDomainDnsZoneRecord'][0])
     {
@@ -1517,12 +1487,10 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1533,14 +1501,14 @@ class DnsApi
      *
      * Delete dns zone record
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteDomainDnsZoneRecordAsync($org_id, $website_id, $domain_id, $record_id, string $contentType = self::contentTypes['deleteWebsiteDomainDnsZoneRecord'][0])
     {
@@ -1557,14 +1525,14 @@ class DnsApi
      *
      * Delete dns zone record
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteWebsiteDomainDnsZoneRecordAsyncWithHttpInfo($org_id, $website_id, $domain_id, $record_id, string $contentType = self::contentTypes['deleteWebsiteDomainDnsZoneRecord'][0])
     {
@@ -1574,7 +1542,7 @@ class DnsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1597,14 +1565,14 @@ class DnsApi
     /**
      * Create request for operation 'deleteWebsiteDomainDnsZoneRecord'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteWebsiteDomainDnsZoneRecordRequest($org_id, $website_id, $domain_id, $record_id, string $contentType = self::contentTypes['deleteWebsiteDomainDnsZoneRecord'][0])
     {
@@ -1637,7 +1605,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/dns-zone/records/{record_id}';
         $formParams = [];
         $queryParams = [];
@@ -1645,12 +1612,10 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1658,7 +1623,7 @@ class DnsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1666,7 +1631,7 @@ class DnsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
@@ -1674,12 +1639,11 @@ class DnsApi
         // path params
         if ($record_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'record_id' . '}',
+                '{'.'record_id'.'}',
                 ObjectSerializer::toPathValue($record_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1696,7 +1660,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1704,7 +1668,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1715,11 +1679,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1735,9 +1699,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1748,14 +1713,14 @@ class DnsApi
      *
      * Disable DNSSEC on this domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function disableDomainDnsSec($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['disableDomainDnsSec'][0])
     {
@@ -1767,14 +1732,14 @@ class DnsApi
      *
      * Disable DNSSEC on this domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function disableDomainDnsSecWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['disableDomainDnsSec'][0])
     {
@@ -1802,12 +1767,10 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1818,13 +1781,13 @@ class DnsApi
      *
      * Disable DNSSEC on this domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function disableDomainDnsSecAsync($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['disableDomainDnsSec'][0])
     {
@@ -1841,13 +1804,13 @@ class DnsApi
      *
      * Disable DNSSEC on this domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function disableDomainDnsSecAsyncWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['disableDomainDnsSec'][0])
     {
@@ -1857,7 +1820,7 @@ class DnsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1880,13 +1843,13 @@ class DnsApi
     /**
      * Create request for operation 'disableDomainDnsSec'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['disableDomainDnsSec'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function disableDomainDnsSecRequest($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['disableDomainDnsSec'][0])
     {
@@ -1912,7 +1875,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/dns-zone/dnssec';
         $formParams = [];
         $queryParams = [];
@@ -1920,12 +1882,10 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1933,7 +1893,7 @@ class DnsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -1941,12 +1901,11 @@ class DnsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1963,7 +1922,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1971,7 +1930,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1982,11 +1941,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2002,9 +1961,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2015,18 +1975,19 @@ class DnsApi
      *
      * Enable DNSSEC on this domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function enableDomainDnsSec($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['enableDomainDnsSec'][0])
     {
-        list($response) = $this->enableDomainDnsSecWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+        [$response] = $this->enableDomainDnsSecWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+
         return $response;
     }
 
@@ -2035,14 +1996,14 @@ class DnsApi
      *
      * Enable DNSSEC on this domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function enableDomainDnsSecWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['enableDomainDnsSec'][0])
     {
@@ -2070,8 +2031,7 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -2079,8 +2039,6 @@ class DnsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2111,7 +2069,6 @@ class DnsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2122,13 +2079,13 @@ class DnsApi
      *
      * Enable DNSSEC on this domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function enableDomainDnsSecAsync($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['enableDomainDnsSec'][0])
     {
@@ -2145,13 +2102,13 @@ class DnsApi
      *
      * Enable DNSSEC on this domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function enableDomainDnsSecAsyncWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['enableDomainDnsSec'][0])
     {
@@ -2163,7 +2120,7 @@ class DnsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2174,7 +2131,7 @@ class DnsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2197,13 +2154,13 @@ class DnsApi
     /**
      * Create request for operation 'enableDomainDnsSec'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['enableDomainDnsSec'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function enableDomainDnsSecRequest($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['enableDomainDnsSec'][0])
     {
@@ -2229,7 +2186,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/dns-zone/dnssec';
         $formParams = [];
         $queryParams = [];
@@ -2237,12 +2193,10 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2250,7 +2204,7 @@ class DnsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -2258,15 +2212,14 @@ class DnsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2280,7 +2233,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2288,7 +2241,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2299,11 +2252,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2319,9 +2272,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2332,15 +2286,16 @@ class DnsApi
      *
      * Lists all third party providers.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DnsThirdPartyProvider[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DnsThirdPartyProvider[]
      */
     public function getDnsThirdPartyProviders(string $contentType = self::contentTypes['getDnsThirdPartyProviders'][0])
     {
-        list($response) = $this->getDnsThirdPartyProvidersWithHttpInfo($contentType);
+        [$response] = $this->getDnsThirdPartyProvidersWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -2349,11 +2304,11 @@ class DnsApi
      *
      * Lists all third party providers.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DnsThirdPartyProvider[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DnsThirdPartyProvider[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getDnsThirdPartyProvidersWithHttpInfo(string $contentType = self::contentTypes['getDnsThirdPartyProviders'][0])
     {
@@ -2381,8 +2336,7 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DnsThirdPartyProvider[]',
@@ -2390,8 +2344,6 @@ class DnsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2422,7 +2374,6 @@ class DnsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2433,10 +2384,10 @@ class DnsApi
      *
      * Lists all third party providers.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDnsThirdPartyProvidersAsync(string $contentType = self::contentTypes['getDnsThirdPartyProviders'][0])
     {
@@ -2453,10 +2404,10 @@ class DnsApi
      *
      * Lists all third party providers.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDnsThirdPartyProvidersAsyncWithHttpInfo(string $contentType = self::contentTypes['getDnsThirdPartyProviders'][0])
     {
@@ -2468,7 +2419,7 @@ class DnsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2479,7 +2430,7 @@ class DnsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2502,14 +2453,13 @@ class DnsApi
     /**
      * Create request for operation 'getDnsThirdPartyProviders'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDnsThirdPartyProviders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDnsThirdPartyProvidersRequest(string $contentType = self::contentTypes['getDnsThirdPartyProviders'][0])
     {
-
 
         $resourcePath = '/dns/third-party-providers';
         $formParams = [];
@@ -2518,12 +2468,8 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2537,7 +2483,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2545,7 +2491,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2556,11 +2502,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2576,9 +2522,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2589,18 +2536,19 @@ class DnsApi
      *
      * Get a dns zone for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DnsZone
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DnsZone
      */
     public function getWebsiteDomainDnsZone($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainDnsZone'][0])
     {
-        list($response) = $this->getWebsiteDomainDnsZoneWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+        [$response] = $this->getWebsiteDomainDnsZoneWithHttpInfo($org_id, $website_id, $domain_id, $contentType);
+
         return $response;
     }
 
@@ -2609,14 +2557,14 @@ class DnsApi
      *
      * Get a dns zone for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DnsZone, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DnsZone, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteDomainDnsZoneWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainDnsZone'][0])
     {
@@ -2644,8 +2592,7 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DnsZone',
@@ -2653,8 +2600,6 @@ class DnsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2685,7 +2630,6 @@ class DnsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2696,13 +2640,13 @@ class DnsApi
      *
      * Get a dns zone for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainDnsZoneAsync($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainDnsZone'][0])
     {
@@ -2719,13 +2663,13 @@ class DnsApi
      *
      * Get a dns zone for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainDnsZoneAsyncWithHttpInfo($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainDnsZone'][0])
     {
@@ -2737,7 +2681,7 @@ class DnsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2748,7 +2692,7 @@ class DnsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2771,13 +2715,13 @@ class DnsApi
     /**
      * Create request for operation 'getWebsiteDomainDnsZone'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteDomainDnsZoneRequest($org_id, $website_id, $domain_id, string $contentType = self::contentTypes['getWebsiteDomainDnsZone'][0])
     {
@@ -2803,7 +2747,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/dns-zone';
         $formParams = [];
         $queryParams = [];
@@ -2811,12 +2754,10 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2824,7 +2765,7 @@ class DnsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -2832,15 +2773,14 @@ class DnsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2854,7 +2794,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2862,7 +2802,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2873,11 +2813,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2893,9 +2833,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2906,15 +2847,16 @@ class DnsApi
      *
      * List default DNS records
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DefaultDnsRecord[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DefaultDnsRecord[]
      */
     public function listDefaultDnsRecords(string $contentType = self::contentTypes['listDefaultDnsRecords'][0])
     {
-        list($response) = $this->listDefaultDnsRecordsWithHttpInfo($contentType);
+        [$response] = $this->listDefaultDnsRecordsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -2923,11 +2865,11 @@ class DnsApi
      *
      * List default DNS records
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DefaultDnsRecord[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DefaultDnsRecord[], HTTP status code, HTTP response headers (array of strings)
      */
     public function listDefaultDnsRecordsWithHttpInfo(string $contentType = self::contentTypes['listDefaultDnsRecords'][0])
     {
@@ -2955,8 +2897,7 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DefaultDnsRecord[]',
@@ -2964,8 +2905,6 @@ class DnsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2996,7 +2935,6 @@ class DnsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3007,10 +2945,10 @@ class DnsApi
      *
      * List default DNS records
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function listDefaultDnsRecordsAsync(string $contentType = self::contentTypes['listDefaultDnsRecords'][0])
     {
@@ -3027,10 +2965,10 @@ class DnsApi
      *
      * List default DNS records
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function listDefaultDnsRecordsAsyncWithHttpInfo(string $contentType = self::contentTypes['listDefaultDnsRecords'][0])
     {
@@ -3042,7 +2980,7 @@ class DnsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3053,7 +2991,7 @@ class DnsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3076,14 +3014,13 @@ class DnsApi
     /**
      * Create request for operation 'listDefaultDnsRecords'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listDefaultDnsRecords'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function listDefaultDnsRecordsRequest(string $contentType = self::contentTypes['listDefaultDnsRecords'][0])
     {
-
 
         $resourcePath = '/v2/settings/dns/default-records';
         $formParams = [];
@@ -3092,12 +3029,8 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3111,7 +3044,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3119,7 +3052,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3130,11 +3063,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3150,9 +3083,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3163,13 +3097,13 @@ class DnsApi
      *
      * Update a default DNS record
      *
-     * @param  string $record_id record_id (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord $update_default_dns_record update_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  record_id (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord  $update_default_dns_record  update_default_dns_record (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateDefaultDnsRecord($record_id, $update_default_dns_record, string $contentType = self::contentTypes['updateDefaultDnsRecord'][0])
     {
@@ -3181,13 +3115,13 @@ class DnsApi
      *
      * Update a default DNS record
      *
-     * @param  string $record_id (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord $update_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord  $update_default_dns_record  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateDefaultDnsRecordWithHttpInfo($record_id, $update_default_dns_record, string $contentType = self::contentTypes['updateDefaultDnsRecord'][0])
     {
@@ -3215,12 +3149,10 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3231,12 +3163,12 @@ class DnsApi
      *
      * Update a default DNS record
      *
-     * @param  string $record_id (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord $update_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord  $update_default_dns_record  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateDefaultDnsRecordAsync($record_id, $update_default_dns_record, string $contentType = self::contentTypes['updateDefaultDnsRecord'][0])
     {
@@ -3253,12 +3185,12 @@ class DnsApi
      *
      * Update a default DNS record
      *
-     * @param  string $record_id (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord $update_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord  $update_default_dns_record  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateDefaultDnsRecordAsyncWithHttpInfo($record_id, $update_default_dns_record, string $contentType = self::contentTypes['updateDefaultDnsRecord'][0])
     {
@@ -3268,7 +3200,7 @@ class DnsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3291,12 +3223,12 @@ class DnsApi
     /**
      * Create request for operation 'updateDefaultDnsRecord'
      *
-     * @param  string $record_id (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord $update_default_dns_record (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @param  string  $record_id  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDefaultDnsRecord  $update_default_dns_record  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateDefaultDnsRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateDefaultDnsRecordRequest($record_id, $update_default_dns_record, string $contentType = self::contentTypes['updateDefaultDnsRecord'][0])
     {
@@ -3315,7 +3247,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/v2/settings/dns/default-records/{record_id}';
         $formParams = [];
         $queryParams = [];
@@ -3323,17 +3254,14 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($record_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'record_id' . '}',
+                '{'.'record_id'.'}',
                 ObjectSerializer::toPathValue($record_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3344,7 +3272,7 @@ class DnsApi
         // for model (json/xml)
         if (isset($update_default_dns_record)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_default_dns_record));
             } else {
                 $httpBody = $update_default_dns_record;
@@ -3357,7 +3285,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3365,7 +3293,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3376,11 +3304,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3396,9 +3324,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3409,15 +3338,15 @@ class DnsApi
      *
      * Updates a dns zone SOA for website domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone $update_dns_zone Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone  $update_dns_zone  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsiteDomainDnsZone($org_id, $website_id, $domain_id, $update_dns_zone, string $contentType = self::contentTypes['updateWebsiteDomainDnsZone'][0])
     {
@@ -3429,15 +3358,15 @@ class DnsApi
      *
      * Updates a dns zone SOA for website domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone $update_dns_zone Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone  $update_dns_zone  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsiteDomainDnsZoneWithHttpInfo($org_id, $website_id, $domain_id, $update_dns_zone, string $contentType = self::contentTypes['updateWebsiteDomainDnsZone'][0])
     {
@@ -3465,12 +3394,10 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3481,14 +3408,14 @@ class DnsApi
      *
      * Updates a dns zone SOA for website domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone $update_dns_zone Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone  $update_dns_zone  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteDomainDnsZoneAsync($org_id, $website_id, $domain_id, $update_dns_zone, string $contentType = self::contentTypes['updateWebsiteDomainDnsZone'][0])
     {
@@ -3505,14 +3432,14 @@ class DnsApi
      *
      * Updates a dns zone SOA for website domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone $update_dns_zone Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone  $update_dns_zone  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteDomainDnsZoneAsyncWithHttpInfo($org_id, $website_id, $domain_id, $update_dns_zone, string $contentType = self::contentTypes['updateWebsiteDomainDnsZone'][0])
     {
@@ -3522,7 +3449,7 @@ class DnsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3545,14 +3472,14 @@ class DnsApi
     /**
      * Create request for operation 'updateWebsiteDomainDnsZone'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone $update_dns_zone Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsZone  $update_dns_zone  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZone'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsiteDomainDnsZoneRequest($org_id, $website_id, $domain_id, $update_dns_zone, string $contentType = self::contentTypes['updateWebsiteDomainDnsZone'][0])
     {
@@ -3585,7 +3512,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/dns-zone';
         $formParams = [];
         $queryParams = [];
@@ -3593,12 +3519,10 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3606,7 +3530,7 @@ class DnsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3614,12 +3538,11 @@ class DnsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3630,7 +3553,7 @@ class DnsApi
         // for model (json/xml)
         if (isset($update_dns_zone)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_dns_zone));
             } else {
                 $httpBody = $update_dns_zone;
@@ -3643,7 +3566,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3651,7 +3574,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3662,11 +3585,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3682,9 +3605,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3695,16 +3619,16 @@ class DnsApi
      *
      * Updates a dns record for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord $update_dns_record Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord  $update_dns_record  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateWebsiteDomainDnsZoneRecord($org_id, $website_id, $domain_id, $record_id, $update_dns_record, string $contentType = self::contentTypes['updateWebsiteDomainDnsZoneRecord'][0])
     {
@@ -3716,16 +3640,16 @@ class DnsApi
      *
      * Updates a dns record for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord $update_dns_record Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord  $update_dns_record  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebsiteDomainDnsZoneRecordWithHttpInfo($org_id, $website_id, $domain_id, $record_id, $update_dns_record, string $contentType = self::contentTypes['updateWebsiteDomainDnsZoneRecord'][0])
     {
@@ -3753,12 +3677,10 @@ class DnsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3769,15 +3691,15 @@ class DnsApi
      *
      * Updates a dns record for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord $update_dns_record Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord  $update_dns_record  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteDomainDnsZoneRecordAsync($org_id, $website_id, $domain_id, $record_id, $update_dns_record, string $contentType = self::contentTypes['updateWebsiteDomainDnsZoneRecord'][0])
     {
@@ -3794,15 +3716,15 @@ class DnsApi
      *
      * Updates a dns record for given domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord $update_dns_record Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord  $update_dns_record  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateWebsiteDomainDnsZoneRecordAsyncWithHttpInfo($org_id, $website_id, $domain_id, $record_id, $update_dns_record, string $contentType = self::contentTypes['updateWebsiteDomainDnsZoneRecord'][0])
     {
@@ -3812,7 +3734,7 @@ class DnsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3835,15 +3757,15 @@ class DnsApi
     /**
      * Create request for operation 'updateWebsiteDomainDnsZoneRecord'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $record_id The id of the record. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord $update_dns_record Fields to update. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $record_id  The id of the record. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateDnsRecord  $update_dns_record  Fields to update. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateWebsiteDomainDnsZoneRecord'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateWebsiteDomainDnsZoneRecordRequest($org_id, $website_id, $domain_id, $record_id, $update_dns_record, string $contentType = self::contentTypes['updateWebsiteDomainDnsZoneRecord'][0])
     {
@@ -3883,7 +3805,6 @@ class DnsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/domains/{domain_id}/dns-zone/records/{record_id}';
         $formParams = [];
         $queryParams = [];
@@ -3891,12 +3812,10 @@ class DnsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3904,7 +3823,7 @@ class DnsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
@@ -3912,7 +3831,7 @@ class DnsApi
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
@@ -3920,12 +3839,11 @@ class DnsApi
         // path params
         if ($record_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'record_id' . '}',
+                '{'.'record_id'.'}',
                 ObjectSerializer::toPathValue($record_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3936,7 +3854,7 @@ class DnsApi
         // for model (json/xml)
         if (isset($update_dns_record)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_dns_record));
             } else {
                 $httpBody = $update_dns_record;
@@ -3949,7 +3867,7 @@ class DnsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3957,7 +3875,7 @@ class DnsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3968,11 +3886,11 @@ class DnsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3988,9 +3906,10 @@ class DnsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3999,16 +3918,17 @@ class DnsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -4021,7 +3941,7 @@ class DnsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -4044,7 +3964,7 @@ class DnsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

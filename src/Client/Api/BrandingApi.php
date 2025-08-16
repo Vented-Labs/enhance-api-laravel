@@ -1,11 +1,13 @@
 <?php
+
 /**
  * BrandingApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -46,8 +48,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * BrandingApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class BrandingApi
@@ -72,7 +75,7 @@ class BrandingApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createBrandingSettings' => [
             'application/json',
@@ -140,10 +143,7 @@ class BrandingApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -151,16 +151,16 @@ class BrandingApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -190,13 +190,13 @@ class BrandingApi
      *
      * Create branding settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createBrandingSettings($org_id, $setting, string $contentType = self::contentTypes['createBrandingSettings'][0])
     {
@@ -208,13 +208,13 @@ class BrandingApi
      *
      * Create branding settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createBrandingSettingsWithHttpInfo($org_id, $setting, string $contentType = self::contentTypes['createBrandingSettings'][0])
     {
@@ -242,12 +242,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -258,12 +256,12 @@ class BrandingApi
      *
      * Create branding settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createBrandingSettingsAsync($org_id, $setting, string $contentType = self::contentTypes['createBrandingSettings'][0])
     {
@@ -280,12 +278,12 @@ class BrandingApi
      *
      * Create branding settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createBrandingSettingsAsyncWithHttpInfo($org_id, $setting, string $contentType = self::contentTypes['createBrandingSettings'][0])
     {
@@ -295,7 +293,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -318,12 +316,12 @@ class BrandingApi
     /**
      * Create request for operation 'createBrandingSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBrandingSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createBrandingSettingsRequest($org_id, $setting, string $contentType = self::contentTypes['createBrandingSettings'][0])
     {
@@ -342,7 +340,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/settings';
         $formParams = [];
         $queryParams = [];
@@ -350,17 +347,14 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -371,7 +365,7 @@ class BrandingApi
         // for model (json/xml)
         if (isset($setting)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($setting));
             } else {
                 $httpBody = $setting;
@@ -384,7 +378,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -392,7 +386,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -403,11 +397,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -423,9 +417,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -436,13 +431,13 @@ class BrandingApi
      *
      * Create reseller name server domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  new_domain (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createNameServerDomain($org_id, $new_domain, string $contentType = self::contentTypes['createNameServerDomain'][0])
     {
@@ -454,13 +449,13 @@ class BrandingApi
      *
      * Create reseller name server domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNameServerDomainWithHttpInfo($org_id, $new_domain, string $contentType = self::contentTypes['createNameServerDomain'][0])
     {
@@ -488,12 +483,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -504,12 +497,12 @@ class BrandingApi
      *
      * Create reseller name server domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createNameServerDomainAsync($org_id, $new_domain, string $contentType = self::contentTypes['createNameServerDomain'][0])
     {
@@ -526,12 +519,12 @@ class BrandingApi
      *
      * Create reseller name server domain
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createNameServerDomainAsyncWithHttpInfo($org_id, $new_domain, string $contentType = self::contentTypes['createNameServerDomain'][0])
     {
@@ -541,7 +534,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -564,12 +557,12 @@ class BrandingApi
     /**
      * Create request for operation 'createNameServerDomain'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createNameServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createNameServerDomainRequest($org_id, $new_domain, string $contentType = self::contentTypes['createNameServerDomain'][0])
     {
@@ -588,7 +581,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/name-servers';
         $formParams = [];
         $queryParams = [];
@@ -596,17 +588,14 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -617,7 +606,7 @@ class BrandingApi
         // for model (json/xml)
         if (isset($new_domain)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_domain));
             } else {
                 $httpBody = $new_domain;
@@ -630,7 +619,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -638,7 +627,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -649,11 +638,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -669,9 +658,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -682,12 +672,12 @@ class BrandingApi
      *
      * Delete brand favicon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteBrandFavicon($org_id, string $contentType = self::contentTypes['deleteBrandFavicon'][0])
     {
@@ -699,12 +689,12 @@ class BrandingApi
      *
      * Delete brand favicon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBrandFaviconWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteBrandFavicon'][0])
     {
@@ -732,12 +722,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -748,11 +736,11 @@ class BrandingApi
      *
      * Delete brand favicon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandFaviconAsync($org_id, string $contentType = self::contentTypes['deleteBrandFavicon'][0])
     {
@@ -769,11 +757,11 @@ class BrandingApi
      *
      * Delete brand favicon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandFaviconAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteBrandFavicon'][0])
     {
@@ -783,7 +771,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -806,11 +794,11 @@ class BrandingApi
     /**
      * Create request for operation 'deleteBrandFavicon'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandFavicon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteBrandFaviconRequest($org_id, string $contentType = self::contentTypes['deleteBrandFavicon'][0])
     {
@@ -822,7 +810,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/favicon';
         $formParams = [];
         $queryParams = [];
@@ -830,17 +817,14 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -857,7 +841,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -865,7 +849,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -876,11 +860,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -896,9 +880,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -909,12 +894,12 @@ class BrandingApi
      *
      * Delete brand inverse icon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteBrandInverseIcon($org_id, string $contentType = self::contentTypes['deleteBrandInverseIcon'][0])
     {
@@ -926,12 +911,12 @@ class BrandingApi
      *
      * Delete brand inverse icon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBrandInverseIconWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteBrandInverseIcon'][0])
     {
@@ -959,12 +944,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -975,11 +958,11 @@ class BrandingApi
      *
      * Delete brand inverse icon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandInverseIconAsync($org_id, string $contentType = self::contentTypes['deleteBrandInverseIcon'][0])
     {
@@ -996,11 +979,11 @@ class BrandingApi
      *
      * Delete brand inverse icon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandInverseIconAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteBrandInverseIcon'][0])
     {
@@ -1010,7 +993,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1033,11 +1016,11 @@ class BrandingApi
     /**
      * Create request for operation 'deleteBrandInverseIcon'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandInverseIcon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteBrandInverseIconRequest($org_id, string $contentType = self::contentTypes['deleteBrandInverseIcon'][0])
     {
@@ -1049,7 +1032,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/inverse-icon';
         $formParams = [];
         $queryParams = [];
@@ -1057,17 +1039,14 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1084,7 +1063,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1092,7 +1071,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1103,11 +1082,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1123,9 +1102,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1136,12 +1116,12 @@ class BrandingApi
      *
      * Delete brand login image
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteBrandLoginImage($org_id, string $contentType = self::contentTypes['deleteBrandLoginImage'][0])
     {
@@ -1153,12 +1133,12 @@ class BrandingApi
      *
      * Delete brand login image
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBrandLoginImageWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteBrandLoginImage'][0])
     {
@@ -1186,12 +1166,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1202,11 +1180,11 @@ class BrandingApi
      *
      * Delete brand login image
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandLoginImageAsync($org_id, string $contentType = self::contentTypes['deleteBrandLoginImage'][0])
     {
@@ -1223,11 +1201,11 @@ class BrandingApi
      *
      * Delete brand login image
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandLoginImageAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteBrandLoginImage'][0])
     {
@@ -1237,7 +1215,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1260,11 +1238,11 @@ class BrandingApi
     /**
      * Create request for operation 'deleteBrandLoginImage'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLoginImage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteBrandLoginImageRequest($org_id, string $contentType = self::contentTypes['deleteBrandLoginImage'][0])
     {
@@ -1276,7 +1254,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/login-image';
         $formParams = [];
         $queryParams = [];
@@ -1284,17 +1261,14 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1311,7 +1285,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1319,7 +1293,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1330,11 +1304,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1350,9 +1324,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1363,12 +1338,12 @@ class BrandingApi
      *
      * Delete brand logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteBrandLogo($org_id, string $contentType = self::contentTypes['deleteBrandLogo'][0])
     {
@@ -1380,12 +1355,12 @@ class BrandingApi
      *
      * Delete brand logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBrandLogoWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteBrandLogo'][0])
     {
@@ -1413,12 +1388,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1429,11 +1402,11 @@ class BrandingApi
      *
      * Delete brand logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandLogoAsync($org_id, string $contentType = self::contentTypes['deleteBrandLogo'][0])
     {
@@ -1450,11 +1423,11 @@ class BrandingApi
      *
      * Delete brand logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandLogoAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteBrandLogo'][0])
     {
@@ -1464,7 +1437,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1487,11 +1460,11 @@ class BrandingApi
     /**
      * Create request for operation 'deleteBrandLogo'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteBrandLogoRequest($org_id, string $contentType = self::contentTypes['deleteBrandLogo'][0])
     {
@@ -1503,7 +1476,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/logo';
         $formParams = [];
         $queryParams = [];
@@ -1511,17 +1483,14 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1538,7 +1507,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1546,7 +1515,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1557,11 +1526,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1577,9 +1546,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1590,13 +1560,13 @@ class BrandingApi
      *
      * Remove the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteBrandingSetting($org_id, $name, string $contentType = self::contentTypes['deleteBrandingSetting'][0])
     {
@@ -1608,13 +1578,13 @@ class BrandingApi
      *
      * Remove the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBrandingSettingWithHttpInfo($org_id, $name, string $contentType = self::contentTypes['deleteBrandingSetting'][0])
     {
@@ -1642,12 +1612,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1658,12 +1626,12 @@ class BrandingApi
      *
      * Remove the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandingSettingAsync($org_id, $name, string $contentType = self::contentTypes['deleteBrandingSetting'][0])
     {
@@ -1680,12 +1648,12 @@ class BrandingApi
      *
      * Remove the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBrandingSettingAsyncWithHttpInfo($org_id, $name, string $contentType = self::contentTypes['deleteBrandingSetting'][0])
     {
@@ -1695,7 +1663,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1718,12 +1686,12 @@ class BrandingApi
     /**
      * Create request for operation 'deleteBrandingSetting'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBrandingSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteBrandingSettingRequest($org_id, $name, string $contentType = self::contentTypes['deleteBrandingSetting'][0])
     {
@@ -1742,7 +1710,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/settings/{name}';
         $formParams = [];
         $queryParams = [];
@@ -1750,12 +1717,10 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1763,12 +1728,11 @@ class BrandingApi
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1785,7 +1749,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1793,7 +1757,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1804,11 +1768,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1824,9 +1788,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1837,12 +1802,12 @@ class BrandingApi
      *
      * Delete brand inverse logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteInverseBrandLogo($org_id, string $contentType = self::contentTypes['deleteInverseBrandLogo'][0])
     {
@@ -1854,12 +1819,12 @@ class BrandingApi
      *
      * Delete brand inverse logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteInverseBrandLogoWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteInverseBrandLogo'][0])
     {
@@ -1887,12 +1852,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1903,11 +1866,11 @@ class BrandingApi
      *
      * Delete brand inverse logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteInverseBrandLogoAsync($org_id, string $contentType = self::contentTypes['deleteInverseBrandLogo'][0])
     {
@@ -1924,11 +1887,11 @@ class BrandingApi
      *
      * Delete brand inverse logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteInverseBrandLogoAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['deleteInverseBrandLogo'][0])
     {
@@ -1938,7 +1901,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1961,11 +1924,11 @@ class BrandingApi
     /**
      * Create request for operation 'deleteInverseBrandLogo'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteInverseBrandLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteInverseBrandLogoRequest($org_id, string $contentType = self::contentTypes['deleteInverseBrandLogo'][0])
     {
@@ -1977,7 +1940,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/inverse-logo';
         $formParams = [];
         $queryParams = [];
@@ -1985,17 +1947,14 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2012,7 +1971,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2020,7 +1979,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2031,11 +1990,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2051,9 +2010,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2064,13 +2024,13 @@ class BrandingApi
      *
      * Delete reseller name server domain name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteNameServerDomain($org_id, $domain, string $contentType = self::contentTypes['deleteNameServerDomain'][0])
     {
@@ -2082,13 +2042,13 @@ class BrandingApi
      *
      * Delete reseller name server domain name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteNameServerDomainWithHttpInfo($org_id, $domain, string $contentType = self::contentTypes['deleteNameServerDomain'][0])
     {
@@ -2116,12 +2076,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2132,12 +2090,12 @@ class BrandingApi
      *
      * Delete reseller name server domain name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteNameServerDomainAsync($org_id, $domain, string $contentType = self::contentTypes['deleteNameServerDomain'][0])
     {
@@ -2154,12 +2112,12 @@ class BrandingApi
      *
      * Delete reseller name server domain name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteNameServerDomainAsyncWithHttpInfo($org_id, $domain, string $contentType = self::contentTypes['deleteNameServerDomain'][0])
     {
@@ -2169,7 +2127,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2192,12 +2150,12 @@ class BrandingApi
     /**
      * Create request for operation 'deleteNameServerDomain'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteNameServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteNameServerDomainRequest($org_id, $domain, string $contentType = self::contentTypes['deleteNameServerDomain'][0])
     {
@@ -2216,7 +2174,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/name-servers/{domain}';
         $formParams = [];
         $queryParams = [];
@@ -2224,12 +2181,10 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2237,12 +2192,11 @@ class BrandingApi
         // path params
         if ($domain !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain' . '}',
+                '{'.'domain'.'}',
                 ObjectSerializer::toPathValue($domain),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2259,7 +2213,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2267,7 +2221,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2278,11 +2232,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2298,9 +2252,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2311,16 +2266,17 @@ class BrandingApi
      *
      * Get default branding
      *
-     * @param  string|null $org_id The id of the currently logged in organization. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @param  string|null  $org_id  The id of the currently logged in organization. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Branding
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Branding
      */
     public function getBranding($org_id = null, string $contentType = self::contentTypes['getBranding'][0])
     {
-        list($response) = $this->getBrandingWithHttpInfo($org_id, $contentType);
+        [$response] = $this->getBrandingWithHttpInfo($org_id, $contentType);
+
         return $response;
     }
 
@@ -2329,12 +2285,12 @@ class BrandingApi
      *
      * Get default branding
      *
-     * @param  string|null $org_id The id of the currently logged in organization. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @param  string|null  $org_id  The id of the currently logged in organization. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Branding, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Branding, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBrandingWithHttpInfo($org_id = null, string $contentType = self::contentTypes['getBranding'][0])
     {
@@ -2362,8 +2318,7 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Branding',
@@ -2371,8 +2326,6 @@ class BrandingApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2403,7 +2356,6 @@ class BrandingApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2414,11 +2366,11 @@ class BrandingApi
      *
      * Get default branding
      *
-     * @param  string|null $org_id The id of the currently logged in organization. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @param  string|null  $org_id  The id of the currently logged in organization. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBrandingAsync($org_id = null, string $contentType = self::contentTypes['getBranding'][0])
     {
@@ -2435,11 +2387,11 @@ class BrandingApi
      *
      * Get default branding
      *
-     * @param  string|null $org_id The id of the currently logged in organization. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @param  string|null  $org_id  The id of the currently logged in organization. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBrandingAsyncWithHttpInfo($org_id = null, string $contentType = self::contentTypes['getBranding'][0])
     {
@@ -2451,7 +2403,7 @@ class BrandingApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2462,7 +2414,7 @@ class BrandingApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2485,16 +2437,14 @@ class BrandingApi
     /**
      * Create request for operation 'getBranding'
      *
-     * @param  string|null $org_id The id of the currently logged in organization. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @param  string|null  $org_id  The id of the currently logged in organization. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBranding'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getBrandingRequest($org_id = null, string $contentType = self::contentTypes['getBranding'][0])
     {
-
-
 
         $resourcePath = '/branding';
         $formParams = [];
@@ -2513,11 +2463,8 @@ class BrandingApi
             false // required
         ) ?? []);
 
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2531,7 +2478,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2539,14 +2486,13 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2561,9 +2507,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2574,17 +2521,18 @@ class BrandingApi
      *
      * Get the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Setting
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Setting
      */
     public function getBrandingSetting($org_id, $name, string $contentType = self::contentTypes['getBrandingSetting'][0])
     {
-        list($response) = $this->getBrandingSettingWithHttpInfo($org_id, $name, $contentType);
+        [$response] = $this->getBrandingSettingWithHttpInfo($org_id, $name, $contentType);
+
         return $response;
     }
 
@@ -2593,13 +2541,13 @@ class BrandingApi
      *
      * Get the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Setting, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Setting, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBrandingSettingWithHttpInfo($org_id, $name, string $contentType = self::contentTypes['getBrandingSetting'][0])
     {
@@ -2627,8 +2575,7 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Setting',
@@ -2636,8 +2583,6 @@ class BrandingApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2668,7 +2613,6 @@ class BrandingApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2679,12 +2623,12 @@ class BrandingApi
      *
      * Get the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBrandingSettingAsync($org_id, $name, string $contentType = self::contentTypes['getBrandingSetting'][0])
     {
@@ -2701,12 +2645,12 @@ class BrandingApi
      *
      * Get the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBrandingSettingAsyncWithHttpInfo($org_id, $name, string $contentType = self::contentTypes['getBrandingSetting'][0])
     {
@@ -2718,7 +2662,7 @@ class BrandingApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2729,7 +2673,7 @@ class BrandingApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2752,12 +2696,12 @@ class BrandingApi
     /**
      * Create request for operation 'getBrandingSetting'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getBrandingSettingRequest($org_id, $name, string $contentType = self::contentTypes['getBrandingSetting'][0])
     {
@@ -2776,7 +2720,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/settings/{name}';
         $formParams = [];
         $queryParams = [];
@@ -2784,12 +2727,10 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2797,15 +2738,14 @@ class BrandingApi
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2819,7 +2759,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2827,7 +2767,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2838,11 +2778,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2858,9 +2798,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2871,16 +2812,17 @@ class BrandingApi
      *
      * Get all current settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing
      */
     public function getBrandingSettings($org_id, string $contentType = self::contentTypes['getBrandingSettings'][0])
     {
-        list($response) = $this->getBrandingSettingsWithHttpInfo($org_id, $contentType);
+        [$response] = $this->getBrandingSettingsWithHttpInfo($org_id, $contentType);
+
         return $response;
     }
 
@@ -2889,12 +2831,12 @@ class BrandingApi
      *
      * Get all current settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBrandingSettingsWithHttpInfo($org_id, string $contentType = self::contentTypes['getBrandingSettings'][0])
     {
@@ -2922,8 +2864,7 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing',
@@ -2931,8 +2872,6 @@ class BrandingApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2963,7 +2902,6 @@ class BrandingApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2974,11 +2912,11 @@ class BrandingApi
      *
      * Get all current settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBrandingSettingsAsync($org_id, string $contentType = self::contentTypes['getBrandingSettings'][0])
     {
@@ -2995,11 +2933,11 @@ class BrandingApi
      *
      * Get all current settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBrandingSettingsAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['getBrandingSettings'][0])
     {
@@ -3011,7 +2949,7 @@ class BrandingApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3022,7 +2960,7 @@ class BrandingApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3045,11 +2983,11 @@ class BrandingApi
     /**
      * Create request for operation 'getBrandingSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBrandingSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getBrandingSettingsRequest($org_id, string $contentType = self::contentTypes['getBrandingSettings'][0])
     {
@@ -3061,7 +2999,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/settings';
         $formParams = [];
         $queryParams = [];
@@ -3069,20 +3006,17 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3096,7 +3030,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3104,7 +3038,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3115,11 +3049,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3135,9 +3069,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3148,16 +3083,17 @@ class BrandingApi
      *
      * Fetches the staging domain which is currently set
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\StagingDomain
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\StagingDomain
      */
     public function getStagingDomain($org_id, string $contentType = self::contentTypes['getStagingDomain'][0])
     {
-        list($response) = $this->getStagingDomainWithHttpInfo($org_id, $contentType);
+        [$response] = $this->getStagingDomainWithHttpInfo($org_id, $contentType);
+
         return $response;
     }
 
@@ -3166,12 +3102,12 @@ class BrandingApi
      *
      * Fetches the staging domain which is currently set
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\StagingDomain, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\StagingDomain, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStagingDomainWithHttpInfo($org_id, string $contentType = self::contentTypes['getStagingDomain'][0])
     {
@@ -3199,8 +3135,7 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\StagingDomain',
@@ -3208,8 +3143,6 @@ class BrandingApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3240,7 +3173,6 @@ class BrandingApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3251,11 +3183,11 @@ class BrandingApi
      *
      * Fetches the staging domain which is currently set
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getStagingDomainAsync($org_id, string $contentType = self::contentTypes['getStagingDomain'][0])
     {
@@ -3272,11 +3204,11 @@ class BrandingApi
      *
      * Fetches the staging domain which is currently set
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getStagingDomainAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['getStagingDomain'][0])
     {
@@ -3288,7 +3220,7 @@ class BrandingApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3299,7 +3231,7 @@ class BrandingApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3322,11 +3254,11 @@ class BrandingApi
     /**
      * Create request for operation 'getStagingDomain'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getStagingDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getStagingDomainRequest($org_id, string $contentType = self::contentTypes['getStagingDomain'][0])
     {
@@ -3338,7 +3270,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/staging-domain';
         $formParams = [];
         $queryParams = [];
@@ -3346,20 +3277,17 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3373,7 +3301,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3381,7 +3309,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3392,11 +3320,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3412,9 +3340,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3425,13 +3354,13 @@ class BrandingApi
      *
      * Set brand favicon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $favicon favicon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $favicon  favicon (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setBrandFavicon($org_id, $favicon = null, string $contentType = self::contentTypes['setBrandFavicon'][0])
     {
@@ -3443,13 +3372,13 @@ class BrandingApi
      *
      * Set brand favicon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $favicon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $favicon  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setBrandFaviconWithHttpInfo($org_id, $favicon = null, string $contentType = self::contentTypes['setBrandFavicon'][0])
     {
@@ -3477,12 +3406,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3493,12 +3420,12 @@ class BrandingApi
      *
      * Set brand favicon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $favicon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $favicon  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandFaviconAsync($org_id, $favicon = null, string $contentType = self::contentTypes['setBrandFavicon'][0])
     {
@@ -3515,12 +3442,12 @@ class BrandingApi
      *
      * Set brand favicon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $favicon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $favicon  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandFaviconAsyncWithHttpInfo($org_id, $favicon = null, string $contentType = self::contentTypes['setBrandFavicon'][0])
     {
@@ -3530,7 +3457,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3553,12 +3480,12 @@ class BrandingApi
     /**
      * Create request for operation 'setBrandFavicon'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $favicon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $favicon  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandFavicon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setBrandFaviconRequest($org_id, $favicon = null, string $contentType = self::contentTypes['setBrandFavicon'][0])
     {
@@ -3570,8 +3497,6 @@ class BrandingApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/branding/favicon';
         $formParams = [];
         $queryParams = [];
@@ -3579,19 +3504,17 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
         // form params
-        $formDataProcessor = new FormDataProcessor();
+        $formDataProcessor = new FormDataProcessor;
 
         $formData = $formDataProcessor->prepare([
             'favicon' => $favicon,
@@ -3616,7 +3539,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3624,7 +3547,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3635,11 +3558,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3655,9 +3578,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3668,13 +3592,13 @@ class BrandingApi
      *
      * Set brand inverse icon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $icon icon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $icon  icon (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setBrandInverseIcon($org_id, $icon = null, string $contentType = self::contentTypes['setBrandInverseIcon'][0])
     {
@@ -3686,13 +3610,13 @@ class BrandingApi
      *
      * Set brand inverse icon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $icon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $icon  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setBrandInverseIconWithHttpInfo($org_id, $icon = null, string $contentType = self::contentTypes['setBrandInverseIcon'][0])
     {
@@ -3720,12 +3644,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3736,12 +3658,12 @@ class BrandingApi
      *
      * Set brand inverse icon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $icon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $icon  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandInverseIconAsync($org_id, $icon = null, string $contentType = self::contentTypes['setBrandInverseIcon'][0])
     {
@@ -3758,12 +3680,12 @@ class BrandingApi
      *
      * Set brand inverse icon
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $icon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $icon  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandInverseIconAsyncWithHttpInfo($org_id, $icon = null, string $contentType = self::contentTypes['setBrandInverseIcon'][0])
     {
@@ -3773,7 +3695,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3796,12 +3718,12 @@ class BrandingApi
     /**
      * Create request for operation 'setBrandInverseIcon'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $icon (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $icon  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseIcon'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setBrandInverseIconRequest($org_id, $icon = null, string $contentType = self::contentTypes['setBrandInverseIcon'][0])
     {
@@ -3813,8 +3735,6 @@ class BrandingApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/branding/inverse-icon';
         $formParams = [];
         $queryParams = [];
@@ -3822,19 +3742,17 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
         // form params
-        $formDataProcessor = new FormDataProcessor();
+        $formDataProcessor = new FormDataProcessor;
 
         $formData = $formDataProcessor->prepare([
             'icon' => $icon,
@@ -3859,7 +3777,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3867,7 +3785,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3878,11 +3796,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3898,9 +3816,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3911,13 +3830,13 @@ class BrandingApi
      *
      * Set brand inverse logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  logo (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setBrandInverseLogo($org_id, $logo = null, string $contentType = self::contentTypes['setBrandInverseLogo'][0])
     {
@@ -3929,13 +3848,13 @@ class BrandingApi
      *
      * Set brand inverse logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setBrandInverseLogoWithHttpInfo($org_id, $logo = null, string $contentType = self::contentTypes['setBrandInverseLogo'][0])
     {
@@ -3963,12 +3882,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3979,12 +3896,12 @@ class BrandingApi
      *
      * Set brand inverse logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandInverseLogoAsync($org_id, $logo = null, string $contentType = self::contentTypes['setBrandInverseLogo'][0])
     {
@@ -4001,12 +3918,12 @@ class BrandingApi
      *
      * Set brand inverse logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandInverseLogoAsyncWithHttpInfo($org_id, $logo = null, string $contentType = self::contentTypes['setBrandInverseLogo'][0])
     {
@@ -4016,7 +3933,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4039,12 +3956,12 @@ class BrandingApi
     /**
      * Create request for operation 'setBrandInverseLogo'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandInverseLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setBrandInverseLogoRequest($org_id, $logo = null, string $contentType = self::contentTypes['setBrandInverseLogo'][0])
     {
@@ -4056,8 +3973,6 @@ class BrandingApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/branding/inverse-logo';
         $formParams = [];
         $queryParams = [];
@@ -4065,19 +3980,17 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
         // form params
-        $formDataProcessor = new FormDataProcessor();
+        $formDataProcessor = new FormDataProcessor;
 
         $formData = $formDataProcessor->prepare([
             'logo' => $logo,
@@ -4102,7 +4015,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4110,7 +4023,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4121,11 +4034,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4141,9 +4054,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4154,13 +4068,13 @@ class BrandingApi
      *
      * Set brand login image
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $login_image login_image (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $login_image  login_image (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setBrandLoginImage($org_id, $login_image = null, string $contentType = self::contentTypes['setBrandLoginImage'][0])
     {
@@ -4172,13 +4086,13 @@ class BrandingApi
      *
      * Set brand login image
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $login_image (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $login_image  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setBrandLoginImageWithHttpInfo($org_id, $login_image = null, string $contentType = self::contentTypes['setBrandLoginImage'][0])
     {
@@ -4206,12 +4120,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4222,12 +4134,12 @@ class BrandingApi
      *
      * Set brand login image
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $login_image (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $login_image  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandLoginImageAsync($org_id, $login_image = null, string $contentType = self::contentTypes['setBrandLoginImage'][0])
     {
@@ -4244,12 +4156,12 @@ class BrandingApi
      *
      * Set brand login image
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $login_image (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $login_image  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandLoginImageAsyncWithHttpInfo($org_id, $login_image = null, string $contentType = self::contentTypes['setBrandLoginImage'][0])
     {
@@ -4259,7 +4171,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4282,12 +4194,12 @@ class BrandingApi
     /**
      * Create request for operation 'setBrandLoginImage'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $login_image (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $login_image  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLoginImage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setBrandLoginImageRequest($org_id, $login_image = null, string $contentType = self::contentTypes['setBrandLoginImage'][0])
     {
@@ -4299,8 +4211,6 @@ class BrandingApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/branding/login-image';
         $formParams = [];
         $queryParams = [];
@@ -4308,19 +4218,17 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
         // form params
-        $formDataProcessor = new FormDataProcessor();
+        $formDataProcessor = new FormDataProcessor;
 
         $formData = $formDataProcessor->prepare([
             'login_image' => $login_image,
@@ -4345,7 +4253,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4353,7 +4261,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4364,11 +4272,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4384,9 +4292,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4397,13 +4306,13 @@ class BrandingApi
      *
      * Set brand logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  logo (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setBrandLogo($org_id, $logo = null, string $contentType = self::contentTypes['setBrandLogo'][0])
     {
@@ -4415,13 +4324,13 @@ class BrandingApi
      *
      * Set brand logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setBrandLogoWithHttpInfo($org_id, $logo = null, string $contentType = self::contentTypes['setBrandLogo'][0])
     {
@@ -4449,12 +4358,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4465,12 +4372,12 @@ class BrandingApi
      *
      * Set brand logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandLogoAsync($org_id, $logo = null, string $contentType = self::contentTypes['setBrandLogo'][0])
     {
@@ -4487,12 +4394,12 @@ class BrandingApi
      *
      * Set brand logo
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setBrandLogoAsyncWithHttpInfo($org_id, $logo = null, string $contentType = self::contentTypes['setBrandLogo'][0])
     {
@@ -4502,7 +4409,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4525,12 +4432,12 @@ class BrandingApi
     /**
      * Create request for operation 'setBrandLogo'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \SplFileObject|null $logo (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \SplFileObject|null  $logo  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setBrandLogo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setBrandLogoRequest($org_id, $logo = null, string $contentType = self::contentTypes['setBrandLogo'][0])
     {
@@ -4542,8 +4449,6 @@ class BrandingApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/branding/logo';
         $formParams = [];
         $queryParams = [];
@@ -4551,19 +4456,17 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
         // form params
-        $formDataProcessor = new FormDataProcessor();
+        $formDataProcessor = new FormDataProcessor;
 
         $formData = $formDataProcessor->prepare([
             'logo' => $logo,
@@ -4588,7 +4491,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4596,7 +4499,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4607,11 +4510,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4627,9 +4530,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4640,13 +4544,13 @@ class BrandingApi
      *
      * Set or update domain suffix for staging websites created by customers
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain $staging_domain staging_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain  $staging_domain  staging_domain (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setStagingDomain($org_id, $staging_domain, string $contentType = self::contentTypes['setStagingDomain'][0])
     {
@@ -4658,13 +4562,13 @@ class BrandingApi
      *
      * Set or update domain suffix for staging websites created by customers
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain $staging_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain  $staging_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setStagingDomainWithHttpInfo($org_id, $staging_domain, string $contentType = self::contentTypes['setStagingDomain'][0])
     {
@@ -4692,12 +4596,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4708,12 +4610,12 @@ class BrandingApi
      *
      * Set or update domain suffix for staging websites created by customers
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain $staging_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain  $staging_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setStagingDomainAsync($org_id, $staging_domain, string $contentType = self::contentTypes['setStagingDomain'][0])
     {
@@ -4730,12 +4632,12 @@ class BrandingApi
      *
      * Set or update domain suffix for staging websites created by customers
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain $staging_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain  $staging_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setStagingDomainAsyncWithHttpInfo($org_id, $staging_domain, string $contentType = self::contentTypes['setStagingDomain'][0])
     {
@@ -4745,7 +4647,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -4768,12 +4670,12 @@ class BrandingApi
     /**
      * Create request for operation 'setStagingDomain'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain $staging_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\StagingDomain  $staging_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setStagingDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setStagingDomainRequest($org_id, $staging_domain, string $contentType = self::contentTypes['setStagingDomain'][0])
     {
@@ -4792,7 +4694,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/staging-domain';
         $formParams = [];
         $queryParams = [];
@@ -4800,17 +4701,14 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -4821,7 +4719,7 @@ class BrandingApi
         // for model (json/xml)
         if (isset($staging_domain)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($staging_domain));
             } else {
                 $httpBody = $staging_domain;
@@ -4834,7 +4732,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4842,7 +4740,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4853,11 +4751,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4873,9 +4771,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4886,14 +4785,14 @@ class BrandingApi
      *
      * Create or update the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateBrandingSetting($org_id, $name, $body, string $contentType = self::contentTypes['updateBrandingSetting'][0])
     {
@@ -4905,14 +4804,14 @@ class BrandingApi
      *
      * Create or update the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateBrandingSettingWithHttpInfo($org_id, $name, $body, string $contentType = self::contentTypes['updateBrandingSetting'][0])
     {
@@ -4940,12 +4839,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -4956,13 +4853,13 @@ class BrandingApi
      *
      * Create or update the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateBrandingSettingAsync($org_id, $name, $body, string $contentType = self::contentTypes['updateBrandingSetting'][0])
     {
@@ -4979,13 +4876,13 @@ class BrandingApi
      *
      * Create or update the specified setting
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateBrandingSettingAsyncWithHttpInfo($org_id, $name, $body, string $contentType = self::contentTypes['updateBrandingSetting'][0])
     {
@@ -4995,7 +4892,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5018,13 +4915,13 @@ class BrandingApi
     /**
      * Create request for operation 'updateBrandingSetting'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $name The name of the resource. (required)
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBrandingSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateBrandingSettingRequest($org_id, $name, $body, string $contentType = self::contentTypes['updateBrandingSetting'][0])
     {
@@ -5050,7 +4947,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/branding/settings/{name}';
         $formParams = [];
         $queryParams = [];
@@ -5058,12 +4954,10 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5071,12 +4965,11 @@ class BrandingApi
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5087,7 +4980,7 @@ class BrandingApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -5100,7 +4993,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5108,7 +5001,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5119,11 +5012,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5139,9 +5032,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5152,14 +5046,14 @@ class BrandingApi
      *
      * Update reseller name server domain name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  new_domain (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateNameServerDomain($org_id, $domain, $new_domain, string $contentType = self::contentTypes['updateNameServerDomain'][0])
     {
@@ -5171,14 +5065,14 @@ class BrandingApi
      *
      * Update reseller name server domain name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateNameServerDomainWithHttpInfo($org_id, $domain, $new_domain, string $contentType = self::contentTypes['updateNameServerDomain'][0])
     {
@@ -5206,12 +5100,10 @@ class BrandingApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5222,13 +5114,13 @@ class BrandingApi
      *
      * Update reseller name server domain name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateNameServerDomainAsync($org_id, $domain, $new_domain, string $contentType = self::contentTypes['updateNameServerDomain'][0])
     {
@@ -5245,13 +5137,13 @@ class BrandingApi
      *
      * Update reseller name server domain name
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateNameServerDomainAsyncWithHttpInfo($org_id, $domain, $new_domain, string $contentType = self::contentTypes['updateNameServerDomain'][0])
     {
@@ -5261,7 +5153,7 @@ class BrandingApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5284,13 +5176,13 @@ class BrandingApi
     /**
      * Create request for operation 'updateNameServerDomain'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $domain The domain name. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain $new_domain (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $domain  The domain name. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewDomain  $new_domain  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateNameServerDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateNameServerDomainRequest($org_id, $domain, $new_domain, string $contentType = self::contentTypes['updateNameServerDomain'][0])
     {
@@ -5316,7 +5208,6 @@ class BrandingApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/name-servers/{domain}';
         $formParams = [];
         $queryParams = [];
@@ -5324,12 +5215,10 @@ class BrandingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5337,12 +5226,11 @@ class BrandingApi
         // path params
         if ($domain !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain' . '}',
+                '{'.'domain'.'}',
                 ObjectSerializer::toPathValue($domain),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5353,7 +5241,7 @@ class BrandingApi
         // for model (json/xml)
         if (isset($new_domain)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_domain));
             } else {
                 $httpBody = $new_domain;
@@ -5366,7 +5254,7 @@ class BrandingApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5374,7 +5262,7 @@ class BrandingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5385,11 +5273,11 @@ class BrandingApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5405,9 +5293,10 @@ class BrandingApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5416,16 +5305,17 @@ class BrandingApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -5438,7 +5328,7 @@ class BrandingApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -5461,7 +5351,7 @@ class BrandingApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

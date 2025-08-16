@@ -1,11 +1,13 @@
 <?php
+
 /**
  * LetsencryptApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * LetsencryptApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class LetsencryptApi
@@ -72,7 +74,7 @@ class LetsencryptApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createWebsiteDomainLetsencryptCerts' => [
             'application/json',
@@ -86,10 +88,7 @@ class LetsencryptApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -97,16 +96,16 @@ class LetsencryptApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -136,12 +135,12 @@ class LetsencryptApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createWebsiteDomainLetsencryptCerts($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -153,12 +152,12 @@ class LetsencryptApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteDomainLetsencryptCertsWithHttpInfo($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -186,12 +185,10 @@ class LetsencryptApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -202,11 +199,11 @@ class LetsencryptApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteDomainLetsencryptCertsAsync($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -223,11 +220,11 @@ class LetsencryptApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteDomainLetsencryptCertsAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -237,7 +234,7 @@ class LetsencryptApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -260,11 +257,11 @@ class LetsencryptApi
     /**
      * Create request for operation 'createWebsiteDomainLetsencryptCerts'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteDomainLetsencryptCertsRequest($domain_id, string $contentType = self::contentTypes['createWebsiteDomainLetsencryptCerts'][0])
     {
@@ -276,7 +273,6 @@ class LetsencryptApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/letsencrypt';
         $formParams = [];
         $queryParams = [];
@@ -284,17 +280,14 @@ class LetsencryptApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -311,7 +304,7 @@ class LetsencryptApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -319,14 +312,13 @@ class LetsencryptApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -341,9 +333,10 @@ class LetsencryptApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -354,12 +347,12 @@ class LetsencryptApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain with mail. prefix.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createWebsiteMailDomainLetsencryptCerts($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -371,12 +364,12 @@ class LetsencryptApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain with mail. prefix.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebsiteMailDomainLetsencryptCertsWithHttpInfo($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -404,12 +397,10 @@ class LetsencryptApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -420,11 +411,11 @@ class LetsencryptApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain with mail. prefix.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMailDomainLetsencryptCertsAsync($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -441,11 +432,11 @@ class LetsencryptApi
      *
      * Generate and setup letsencrypt ssl certificates for website&#39;s domain with mail. prefix.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createWebsiteMailDomainLetsencryptCertsAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -455,7 +446,7 @@ class LetsencryptApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -478,11 +469,11 @@ class LetsencryptApi
     /**
      * Create request for operation 'createWebsiteMailDomainLetsencryptCerts'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createWebsiteMailDomainLetsencryptCerts'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createWebsiteMailDomainLetsencryptCertsRequest($domain_id, string $contentType = self::contentTypes['createWebsiteMailDomainLetsencryptCerts'][0])
     {
@@ -494,7 +485,6 @@ class LetsencryptApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/letsencrypt_mail';
         $formParams = [];
         $queryParams = [];
@@ -502,17 +492,14 @@ class LetsencryptApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -529,7 +516,7 @@ class LetsencryptApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -537,14 +524,13 @@ class LetsencryptApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -559,9 +545,10 @@ class LetsencryptApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -572,16 +559,17 @@ class LetsencryptApi
      *
      * Perform the LetsEncrypt preflight check
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult
      */
     public function performLetsEncryptPreflightCheck($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
-        list($response) = $this->performLetsEncryptPreflightCheckWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->performLetsEncryptPreflightCheckWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -590,12 +578,12 @@ class LetsencryptApi
      *
      * Perform the LetsEncrypt preflight check
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function performLetsEncryptPreflightCheckWithHttpInfo($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
@@ -623,8 +611,7 @@ class LetsencryptApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LetsEncryptPreflightResult',
@@ -632,8 +619,6 @@ class LetsencryptApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -664,7 +649,6 @@ class LetsencryptApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -675,11 +659,11 @@ class LetsencryptApi
      *
      * Perform the LetsEncrypt preflight check
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function performLetsEncryptPreflightCheckAsync($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
@@ -696,11 +680,11 @@ class LetsencryptApi
      *
      * Perform the LetsEncrypt preflight check
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function performLetsEncryptPreflightCheckAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
@@ -712,7 +696,7 @@ class LetsencryptApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -723,7 +707,7 @@ class LetsencryptApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -746,11 +730,11 @@ class LetsencryptApi
     /**
      * Create request for operation 'performLetsEncryptPreflightCheck'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['performLetsEncryptPreflightCheck'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function performLetsEncryptPreflightCheckRequest($domain_id, string $contentType = self::contentTypes['performLetsEncryptPreflightCheck'][0])
     {
@@ -762,7 +746,6 @@ class LetsencryptApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/letsencrypt_preflight';
         $formParams = [];
         $queryParams = [];
@@ -770,20 +753,17 @@ class LetsencryptApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -797,7 +777,7 @@ class LetsencryptApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -805,14 +785,13 @@ class LetsencryptApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -827,9 +806,10 @@ class LetsencryptApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -838,16 +818,17 @@ class LetsencryptApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -860,7 +841,7 @@ class LetsencryptApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -883,7 +864,7 @@ class LetsencryptApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

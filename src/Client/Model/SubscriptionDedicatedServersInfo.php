@@ -1,12 +1,14 @@
 <?php
+
 /**
  * SubscriptionDedicatedServersInfo
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,72 +30,76 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * SubscriptionDedicatedServersInfo Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \JsonSerializable
+class SubscriptionDedicatedServersInfo implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'SubscriptionDedicatedServersInfo';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'app_server' => '\Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer',
         'backup_server' => '\Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer',
         'db_server' => '\Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer',
-        'email_server' => '\Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer'
+        'email_server' => '\Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'app_server' => null,
         'backup_server' => null,
         'db_server' => null,
-        'email_server' => null
+        'email_server' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'app_server' => false,
         'backup_server' => false,
         'db_server' => false,
-        'email_server' => false
+        'email_server' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -118,8 +124,6 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -129,7 +133,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -139,7 +143,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -148,9 +152,6 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -159,9 +160,6 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -178,7 +176,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
         'app_server' => 'appServer',
         'backup_server' => 'backupServer',
         'db_server' => 'dbServer',
-        'email_server' => 'emailServer'
+        'email_server' => 'emailServer',
     ];
 
     /**
@@ -190,7 +188,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
         'app_server' => 'setAppServer',
         'backup_server' => 'setBackupServer',
         'db_server' => 'setDbServer',
-        'email_server' => 'setEmailServer'
+        'email_server' => 'setEmailServer',
     ];
 
     /**
@@ -202,7 +200,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
         'app_server' => 'getAppServer',
         'backup_server' => 'getBackupServer',
         'db_server' => 'getDbServer',
-        'email_server' => 'getEmailServer'
+        'email_server' => 'getEmailServer',
     ];
 
     /**
@@ -246,7 +244,6 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -257,8 +254,8 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -269,14 +266,12 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -309,7 +304,6 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets app_server
      *
@@ -323,8 +317,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Sets app_server
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer|null $app_server app_server
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer|null  $app_server  app_server
      * @return self
      */
     public function setAppServer($app_server)
@@ -350,8 +343,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Sets backup_server
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer|null $backup_server backup_server
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer|null  $backup_server  backup_server
      * @return self
      */
     public function setBackupServer($backup_server)
@@ -377,8 +369,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Sets db_server
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer|null $db_server db_server
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer|null  $db_server  db_server
      * @return self
      */
     public function setDbServer($db_server)
@@ -404,8 +395,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Sets email_server
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer|null $email_server email_server
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServer|null  $email_server  email_server
      * @return self
      */
     public function setEmailServer($email_server)
@@ -417,12 +407,11 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -432,8 +421,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -445,10 +433,8 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -462,9 +448,7 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -473,15 +457,16 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -507,5 +492,3 @@ class SubscriptionDedicatedServersInfo implements ModelInterface, ArrayAccess, \
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

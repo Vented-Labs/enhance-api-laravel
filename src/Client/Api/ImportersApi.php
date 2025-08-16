@@ -1,11 +1,13 @@
 <?php
+
 /**
  * ImportersApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -46,8 +48,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * ImportersApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ImportersApi
@@ -72,7 +75,7 @@ class ImportersApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'analyzeImportMigration' => [
             'application/json',
@@ -134,10 +137,7 @@ class ImportersApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -145,16 +145,16 @@ class ImportersApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -184,13 +184,13 @@ class ImportersApi
      *
      * Analyze imported migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function analyzeImportMigration($org_id, $import_migration_id, string $contentType = self::contentTypes['analyzeImportMigration'][0])
     {
@@ -202,13 +202,13 @@ class ImportersApi
      *
      * Analyze imported migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function analyzeImportMigrationWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['analyzeImportMigration'][0])
     {
@@ -236,12 +236,10 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -252,12 +250,12 @@ class ImportersApi
      *
      * Analyze imported migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function analyzeImportMigrationAsync($org_id, $import_migration_id, string $contentType = self::contentTypes['analyzeImportMigration'][0])
     {
@@ -274,12 +272,12 @@ class ImportersApi
      *
      * Analyze imported migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function analyzeImportMigrationAsyncWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['analyzeImportMigration'][0])
     {
@@ -289,7 +287,7 @@ class ImportersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -312,12 +310,12 @@ class ImportersApi
     /**
      * Create request for operation 'analyzeImportMigration'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['analyzeImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function analyzeImportMigrationRequest($org_id, $import_migration_id, string $contentType = self::contentTypes['analyzeImportMigration'][0])
     {
@@ -336,7 +334,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/v2/orgs/{org_id}/import/{import_migration_id}/analyze';
         $formParams = [];
         $queryParams = [];
@@ -344,12 +341,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -357,12 +352,11 @@ class ImportersApi
         // path params
         if ($import_migration_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'import_migration_id' . '}',
+                '{'.'import_migration_id'.'}',
                 ObjectSerializer::toPathValue($import_migration_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -379,7 +373,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -387,7 +381,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -398,11 +392,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -418,9 +412,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -431,18 +426,19 @@ class ImportersApi
      *
      * Check if all resources from the imported migration could be created.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  importer_migration_req_body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ResourceCheckError
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ResourceCheckError
      */
     public function checkImportMigrationResources($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['checkImportMigrationResources'][0])
     {
-        list($response) = $this->checkImportMigrationResourcesWithHttpInfo($org_id, $import_migration_id, $importer_migration_req_body, $contentType);
+        [$response] = $this->checkImportMigrationResourcesWithHttpInfo($org_id, $import_migration_id, $importer_migration_req_body, $contentType);
+
         return $response;
     }
 
@@ -451,14 +447,14 @@ class ImportersApi
      *
      * Check if all resources from the imported migration could be created.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ResourceCheckError, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ResourceCheckError, HTTP status code, HTTP response headers (array of strings)
      */
     public function checkImportMigrationResourcesWithHttpInfo($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['checkImportMigrationResources'][0])
     {
@@ -486,8 +482,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ResourceCheckError',
@@ -495,8 +490,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -527,7 +520,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -538,13 +530,13 @@ class ImportersApi
      *
      * Check if all resources from the imported migration could be created.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function checkImportMigrationResourcesAsync($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['checkImportMigrationResources'][0])
     {
@@ -561,13 +553,13 @@ class ImportersApi
      *
      * Check if all resources from the imported migration could be created.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function checkImportMigrationResourcesAsyncWithHttpInfo($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['checkImportMigrationResources'][0])
     {
@@ -579,7 +571,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -590,7 +582,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -613,13 +605,13 @@ class ImportersApi
     /**
      * Create request for operation 'checkImportMigrationResources'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['checkImportMigrationResources'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function checkImportMigrationResourcesRequest($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['checkImportMigrationResources'][0])
     {
@@ -638,8 +630,6 @@ class ImportersApi
             );
         }
 
-
-
         $resourcePath = '/v2/orgs/{org_id}/import/{import_migration_id}/resource';
         $formParams = [];
         $queryParams = [];
@@ -647,12 +637,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -660,15 +648,14 @@ class ImportersApi
         // path params
         if ($import_migration_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'import_migration_id' . '}',
+                '{'.'import_migration_id'.'}',
                 ObjectSerializer::toPathValue($import_migration_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -676,7 +663,7 @@ class ImportersApi
         // for model (json/xml)
         if (isset($importer_migration_req_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($importer_migration_req_body));
             } else {
                 $httpBody = $importer_migration_req_body;
@@ -689,7 +676,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -697,7 +684,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -708,11 +695,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -728,9 +715,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -741,14 +729,14 @@ class ImportersApi
      *
      * Create a new import migration.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  importer_migration_req_body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createImportMigration($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['createImportMigration'][0])
     {
@@ -760,14 +748,14 @@ class ImportersApi
      *
      * Create a new import migration.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createImportMigrationWithHttpInfo($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['createImportMigration'][0])
     {
@@ -795,12 +783,10 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -811,13 +797,13 @@ class ImportersApi
      *
      * Create a new import migration.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createImportMigrationAsync($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['createImportMigration'][0])
     {
@@ -834,13 +820,13 @@ class ImportersApi
      *
      * Create a new import migration.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createImportMigrationAsyncWithHttpInfo($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['createImportMigration'][0])
     {
@@ -850,7 +836,7 @@ class ImportersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -873,13 +859,13 @@ class ImportersApi
     /**
      * Create request for operation 'createImportMigration'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null $importer_migration_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ImporterMigrationReqBody|null  $importer_migration_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createImportMigrationRequest($org_id, $import_migration_id, $importer_migration_req_body = null, string $contentType = self::contentTypes['createImportMigration'][0])
     {
@@ -898,8 +884,6 @@ class ImportersApi
             );
         }
 
-
-
         $resourcePath = '/v2/orgs/{org_id}/import/{import_migration_id}';
         $formParams = [];
         $queryParams = [];
@@ -907,12 +891,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -920,12 +902,11 @@ class ImportersApi
         // path params
         if ($import_migration_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'import_migration_id' . '}',
+                '{'.'import_migration_id'.'}',
                 ObjectSerializer::toPathValue($import_migration_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -936,7 +917,7 @@ class ImportersApi
         // for model (json/xml)
         if (isset($importer_migration_req_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($importer_migration_req_body));
             } else {
                 $httpBody = $importer_migration_req_body;
@@ -949,7 +930,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -957,7 +938,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -968,11 +949,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -988,9 +969,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1001,17 +983,18 @@ class ImportersApi
      *
      * Create settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings $new_import_server_settings new_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings  $new_import_server_settings  new_import_server_settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function createImportServerSettings($org_id, $new_import_server_settings, string $contentType = self::contentTypes['createImportServerSettings'][0])
     {
-        list($response) = $this->createImportServerSettingsWithHttpInfo($org_id, $new_import_server_settings, $contentType);
+        [$response] = $this->createImportServerSettingsWithHttpInfo($org_id, $new_import_server_settings, $contentType);
+
         return $response;
     }
 
@@ -1020,13 +1003,13 @@ class ImportersApi
      *
      * Create settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings $new_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings  $new_import_server_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function createImportServerSettingsWithHttpInfo($org_id, $new_import_server_settings, string $contentType = self::contentTypes['createImportServerSettings'][0])
     {
@@ -1054,8 +1037,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -1063,8 +1045,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1095,7 +1075,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1106,12 +1085,12 @@ class ImportersApi
      *
      * Create settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings $new_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings  $new_import_server_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createImportServerSettingsAsync($org_id, $new_import_server_settings, string $contentType = self::contentTypes['createImportServerSettings'][0])
     {
@@ -1128,12 +1107,12 @@ class ImportersApi
      *
      * Create settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings $new_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings  $new_import_server_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createImportServerSettingsAsyncWithHttpInfo($org_id, $new_import_server_settings, string $contentType = self::contentTypes['createImportServerSettings'][0])
     {
@@ -1145,7 +1124,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1156,7 +1135,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1179,12 +1158,12 @@ class ImportersApi
     /**
      * Create request for operation 'createImportServerSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings $new_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewImportServerSettings  $new_import_server_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createImportServerSettingsRequest($org_id, $new_import_server_settings, string $contentType = self::contentTypes['createImportServerSettings'][0])
     {
@@ -1203,7 +1182,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/import/server/settings';
         $formParams = [];
         $queryParams = [];
@@ -1211,20 +1189,17 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1232,7 +1207,7 @@ class ImportersApi
         // for model (json/xml)
         if (isset($new_import_server_settings)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_import_server_settings));
             } else {
                 $httpBody = $new_import_server_settings;
@@ -1245,7 +1220,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1253,7 +1228,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1264,11 +1239,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1284,9 +1259,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1297,13 +1273,13 @@ class ImportersApi
      *
      * Delete single migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteImportMigration($org_id, $import_migration_id, string $contentType = self::contentTypes['deleteImportMigration'][0])
     {
@@ -1315,13 +1291,13 @@ class ImportersApi
      *
      * Delete single migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteImportMigrationWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['deleteImportMigration'][0])
     {
@@ -1349,12 +1325,10 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1365,12 +1339,12 @@ class ImportersApi
      *
      * Delete single migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteImportMigrationAsync($org_id, $import_migration_id, string $contentType = self::contentTypes['deleteImportMigration'][0])
     {
@@ -1387,12 +1361,12 @@ class ImportersApi
      *
      * Delete single migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteImportMigrationAsyncWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['deleteImportMigration'][0])
     {
@@ -1402,7 +1376,7 @@ class ImportersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1425,12 +1399,12 @@ class ImportersApi
     /**
      * Create request for operation 'deleteImportMigration'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteImportMigrationRequest($org_id, $import_migration_id, string $contentType = self::contentTypes['deleteImportMigration'][0])
     {
@@ -1449,7 +1423,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/v2/orgs/{org_id}/import/{import_migration_id}';
         $formParams = [];
         $queryParams = [];
@@ -1457,12 +1430,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1470,12 +1441,11 @@ class ImportersApi
         // path params
         if ($import_migration_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'import_migration_id' . '}',
+                '{'.'import_migration_id'.'}',
                 ObjectSerializer::toPathValue($import_migration_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1492,7 +1462,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1500,7 +1470,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1511,11 +1481,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1531,9 +1501,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1544,13 +1515,13 @@ class ImportersApi
      *
      * Delete settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteImportServerSettings($org_id, $server_id, string $contentType = self::contentTypes['deleteImportServerSettings'][0])
     {
@@ -1562,13 +1533,13 @@ class ImportersApi
      *
      * Delete settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteImportServerSettingsWithHttpInfo($org_id, $server_id, string $contentType = self::contentTypes['deleteImportServerSettings'][0])
     {
@@ -1596,12 +1567,10 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1612,12 +1581,12 @@ class ImportersApi
      *
      * Delete settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteImportServerSettingsAsync($org_id, $server_id, string $contentType = self::contentTypes['deleteImportServerSettings'][0])
     {
@@ -1634,12 +1603,12 @@ class ImportersApi
      *
      * Delete settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteImportServerSettingsAsyncWithHttpInfo($org_id, $server_id, string $contentType = self::contentTypes['deleteImportServerSettings'][0])
     {
@@ -1649,7 +1618,7 @@ class ImportersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1672,12 +1641,12 @@ class ImportersApi
     /**
      * Create request for operation 'deleteImportServerSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteImportServerSettingsRequest($org_id, $server_id, string $contentType = self::contentTypes['deleteImportServerSettings'][0])
     {
@@ -1696,7 +1665,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/import/server/{server_id}/settings';
         $formParams = [];
         $queryParams = [];
@@ -1704,12 +1672,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1717,12 +1683,11 @@ class ImportersApi
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1739,7 +1704,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1747,7 +1712,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1758,11 +1723,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1778,9 +1743,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1791,17 +1757,18 @@ class ImportersApi
      *
      * Fetches single migration details
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationEntry
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationEntry
      */
     public function getImportMigration($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigration'][0])
     {
-        list($response) = $this->getImportMigrationWithHttpInfo($org_id, $import_migration_id, $contentType);
+        [$response] = $this->getImportMigrationWithHttpInfo($org_id, $import_migration_id, $contentType);
+
         return $response;
     }
 
@@ -1810,13 +1777,13 @@ class ImportersApi
      *
      * Fetches single migration details
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationEntry, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getImportMigrationWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigration'][0])
     {
@@ -1844,8 +1811,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ImportMigrationEntry',
@@ -1853,8 +1819,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1885,7 +1849,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1896,12 +1859,12 @@ class ImportersApi
      *
      * Fetches single migration details
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportMigrationAsync($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigration'][0])
     {
@@ -1918,12 +1881,12 @@ class ImportersApi
      *
      * Fetches single migration details
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportMigrationAsyncWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigration'][0])
     {
@@ -1935,7 +1898,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1946,7 +1909,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1969,12 +1932,12 @@ class ImportersApi
     /**
      * Create request for operation 'getImportMigration'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getImportMigrationRequest($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigration'][0])
     {
@@ -1993,7 +1956,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/v2/orgs/{org_id}/import/{import_migration_id}';
         $formParams = [];
         $queryParams = [];
@@ -2001,12 +1963,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2014,15 +1974,14 @@ class ImportersApi
         // path params
         if ($import_migration_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'import_migration_id' . '}',
+                '{'.'import_migration_id'.'}',
                 ObjectSerializer::toPathValue($import_migration_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2036,7 +1995,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2044,7 +2003,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2055,11 +2014,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2075,9 +2034,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2088,17 +2048,18 @@ class ImportersApi
      *
      * Get import migration information
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ImporterAnalyzedData
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ImporterAnalyzedData
      */
     public function getImportMigrationData($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationData'][0])
     {
-        list($response) = $this->getImportMigrationDataWithHttpInfo($org_id, $import_migration_id, $contentType);
+        [$response] = $this->getImportMigrationDataWithHttpInfo($org_id, $import_migration_id, $contentType);
+
         return $response;
     }
 
@@ -2107,13 +2068,13 @@ class ImportersApi
      *
      * Get import migration information
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImporterAnalyzedData, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImporterAnalyzedData, HTTP status code, HTTP response headers (array of strings)
      */
     public function getImportMigrationDataWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationData'][0])
     {
@@ -2141,8 +2102,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ImporterAnalyzedData',
@@ -2150,8 +2110,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2182,7 +2140,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2193,12 +2150,12 @@ class ImportersApi
      *
      * Get import migration information
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportMigrationDataAsync($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationData'][0])
     {
@@ -2215,12 +2172,12 @@ class ImportersApi
      *
      * Get import migration information
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportMigrationDataAsyncWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationData'][0])
     {
@@ -2232,7 +2189,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2243,7 +2200,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2266,12 +2223,12 @@ class ImportersApi
     /**
      * Create request for operation 'getImportMigrationData'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationData'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getImportMigrationDataRequest($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationData'][0])
     {
@@ -2290,7 +2247,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/v2/orgs/{org_id}/import/{import_migration_id}/analyze';
         $formParams = [];
         $queryParams = [];
@@ -2298,12 +2254,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2311,15 +2265,14 @@ class ImportersApi
         // path params
         if ($import_migration_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'import_migration_id' . '}',
+                '{'.'import_migration_id'.'}',
                 ObjectSerializer::toPathValue($import_migration_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2333,7 +2286,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2341,7 +2294,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2352,11 +2305,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2372,9 +2325,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2385,17 +2339,18 @@ class ImportersApi
      *
      * Get the log for an import migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationLogEntry[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationLogEntry[]
      */
     public function getImportMigrationLog($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationLog'][0])
     {
-        list($response) = $this->getImportMigrationLogWithHttpInfo($org_id, $import_migration_id, $contentType);
+        [$response] = $this->getImportMigrationLogWithHttpInfo($org_id, $import_migration_id, $contentType);
+
         return $response;
     }
 
@@ -2404,13 +2359,13 @@ class ImportersApi
      *
      * Get the log for an import migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationLogEntry[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationLogEntry[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getImportMigrationLogWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationLog'][0])
     {
@@ -2438,8 +2393,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ImportMigrationLogEntry[]',
@@ -2447,8 +2401,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2479,7 +2431,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2490,12 +2441,12 @@ class ImportersApi
      *
      * Get the log for an import migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportMigrationLogAsync($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationLog'][0])
     {
@@ -2512,12 +2463,12 @@ class ImportersApi
      *
      * Get the log for an import migration
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportMigrationLogAsyncWithHttpInfo($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationLog'][0])
     {
@@ -2529,7 +2480,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2540,7 +2491,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2563,12 +2514,12 @@ class ImportersApi
     /**
      * Create request for operation 'getImportMigrationLog'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_id The ID of the import migration being acted upon. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_id  The ID of the import migration being acted upon. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrationLog'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getImportMigrationLogRequest($org_id, $import_migration_id, string $contentType = self::contentTypes['getImportMigrationLog'][0])
     {
@@ -2587,7 +2538,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/v2/orgs/{org_id}/import/{import_migration_id}/log';
         $formParams = [];
         $queryParams = [];
@@ -2595,12 +2545,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2608,15 +2556,14 @@ class ImportersApi
         // path params
         if ($import_migration_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'import_migration_id' . '}',
+                '{'.'import_migration_id'.'}',
                 ObjectSerializer::toPathValue($import_migration_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2630,7 +2577,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2638,7 +2585,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2649,11 +2596,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2669,9 +2616,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2682,16 +2630,17 @@ class ImportersApi
      *
      * List all import migrations
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationFullListing
      */
     public function getImportMigrations($org_id, string $contentType = self::contentTypes['getImportMigrations'][0])
     {
-        list($response) = $this->getImportMigrationsWithHttpInfo($org_id, $contentType);
+        [$response] = $this->getImportMigrationsWithHttpInfo($org_id, $contentType);
+
         return $response;
     }
 
@@ -2700,12 +2649,12 @@ class ImportersApi
      *
      * List all import migrations
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportMigrationFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getImportMigrationsWithHttpInfo($org_id, string $contentType = self::contentTypes['getImportMigrations'][0])
     {
@@ -2733,8 +2682,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ImportMigrationFullListing',
@@ -2742,8 +2690,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2774,7 +2720,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2785,11 +2730,11 @@ class ImportersApi
      *
      * List all import migrations
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportMigrationsAsync($org_id, string $contentType = self::contentTypes['getImportMigrations'][0])
     {
@@ -2806,11 +2751,11 @@ class ImportersApi
      *
      * List all import migrations
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportMigrationsAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['getImportMigrations'][0])
     {
@@ -2822,7 +2767,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2833,7 +2778,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2856,11 +2801,11 @@ class ImportersApi
     /**
      * Create request for operation 'getImportMigrations'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportMigrations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getImportMigrationsRequest($org_id, string $contentType = self::contentTypes['getImportMigrations'][0])
     {
@@ -2872,7 +2817,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/v2/orgs/{org_id}/import';
         $formParams = [];
         $queryParams = [];
@@ -2880,20 +2824,17 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2907,7 +2848,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2915,7 +2856,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2926,11 +2867,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2946,9 +2887,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2959,22 +2901,23 @@ class ImportersApi
      *
      * Returns cached domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsListing
      */
     public function getImportServerDomainsCached($org_id, $server_id, $offset = null, $limit = null, $sort_order = null, $search_domain = null, $sort_by = null, string $contentType = self::contentTypes['getImportServerDomainsCached'][0])
     {
-        list($response) = $this->getImportServerDomainsCachedWithHttpInfo($org_id, $server_id, $offset, $limit, $sort_order, $search_domain, $sort_by, $contentType);
+        [$response] = $this->getImportServerDomainsCachedWithHttpInfo($org_id, $server_id, $offset, $limit, $sort_order, $search_domain, $sort_by, $contentType);
+
         return $response;
     }
 
@@ -2983,18 +2926,18 @@ class ImportersApi
      *
      * Returns cached domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getImportServerDomainsCachedWithHttpInfo($org_id, $server_id, $offset = null, $limit = null, $sort_order = null, $search_domain = null, $sort_by = null, string $contentType = self::contentTypes['getImportServerDomainsCached'][0])
     {
@@ -3022,8 +2965,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsListing',
@@ -3031,8 +2973,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3063,7 +3003,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3074,17 +3013,17 @@ class ImportersApi
      *
      * Returns cached domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportServerDomainsCachedAsync($org_id, $server_id, $offset = null, $limit = null, $sort_order = null, $search_domain = null, $sort_by = null, string $contentType = self::contentTypes['getImportServerDomainsCached'][0])
     {
@@ -3101,17 +3040,17 @@ class ImportersApi
      *
      * Returns cached domains
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportServerDomainsCachedAsyncWithHttpInfo($org_id, $server_id, $offset = null, $limit = null, $sort_order = null, $search_domain = null, $sort_by = null, string $contentType = self::contentTypes['getImportServerDomainsCached'][0])
     {
@@ -3123,7 +3062,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3134,7 +3073,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3157,17 +3096,17 @@ class ImportersApi
     /**
      * Create request for operation 'getImportServerDomainsCached'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string|null $search_domain Look for a specific domain in the result set. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string|null  $search_domain  Look for a specific domain in the result set. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerDomainsCached'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getImportServerDomainsCachedRequest($org_id, $server_id, $offset = null, $limit = null, $sort_order = null, $search_domain = null, $sort_by = null, string $contentType = self::contentTypes['getImportServerDomainsCached'][0])
     {
@@ -3185,12 +3124,6 @@ class ImportersApi
                 'Missing the required parameter $server_id when calling getImportServerDomainsCached'
             );
         }
-
-
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/import/server/{server_id}/cached-domains';
         $formParams = [];
@@ -3245,11 +3178,10 @@ class ImportersApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3257,15 +3189,14 @@ class ImportersApi
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3279,7 +3210,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3287,7 +3218,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3298,11 +3229,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3318,9 +3249,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3331,17 +3263,18 @@ class ImportersApi
      *
      * Pull domains form the remote server.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsFullListing
      */
     public function getImportServerPullDomains($org_id, $server_id, string $contentType = self::contentTypes['getImportServerPullDomains'][0])
     {
-        list($response) = $this->getImportServerPullDomainsWithHttpInfo($org_id, $server_id, $contentType);
+        [$response] = $this->getImportServerPullDomainsWithHttpInfo($org_id, $server_id, $contentType);
+
         return $response;
     }
 
@@ -3350,13 +3283,13 @@ class ImportersApi
      *
      * Pull domains form the remote server.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getImportServerPullDomainsWithHttpInfo($org_id, $server_id, string $contentType = self::contentTypes['getImportServerPullDomains'][0])
     {
@@ -3384,8 +3317,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ImportServerDomainsFullListing',
@@ -3393,8 +3325,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3425,7 +3355,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3436,12 +3365,12 @@ class ImportersApi
      *
      * Pull domains form the remote server.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportServerPullDomainsAsync($org_id, $server_id, string $contentType = self::contentTypes['getImportServerPullDomains'][0])
     {
@@ -3458,12 +3387,12 @@ class ImportersApi
      *
      * Pull domains form the remote server.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportServerPullDomainsAsyncWithHttpInfo($org_id, $server_id, string $contentType = self::contentTypes['getImportServerPullDomains'][0])
     {
@@ -3475,7 +3404,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3486,7 +3415,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3509,12 +3438,12 @@ class ImportersApi
     /**
      * Create request for operation 'getImportServerPullDomains'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerPullDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getImportServerPullDomainsRequest($org_id, $server_id, string $contentType = self::contentTypes['getImportServerPullDomains'][0])
     {
@@ -3533,7 +3462,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/import/server/{server_id}/pull-domains';
         $formParams = [];
         $queryParams = [];
@@ -3541,12 +3469,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3554,15 +3480,14 @@ class ImportersApi
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3576,7 +3501,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3584,7 +3509,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3595,11 +3520,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3615,9 +3540,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3628,17 +3554,18 @@ class ImportersApi
      *
      * Get settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportServerSettings
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportServerSettings
      */
     public function getImportServerSettings($org_id, $server_id, string $contentType = self::contentTypes['getImportServerSettings'][0])
     {
-        list($response) = $this->getImportServerSettingsWithHttpInfo($org_id, $server_id, $contentType);
+        [$response] = $this->getImportServerSettingsWithHttpInfo($org_id, $server_id, $contentType);
+
         return $response;
     }
 
@@ -3647,13 +3574,13 @@ class ImportersApi
      *
      * Get settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportServerSettings, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportServerSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function getImportServerSettingsWithHttpInfo($org_id, $server_id, string $contentType = self::contentTypes['getImportServerSettings'][0])
     {
@@ -3681,8 +3608,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ImportServerSettings',
@@ -3690,8 +3616,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3722,7 +3646,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3733,12 +3656,12 @@ class ImportersApi
      *
      * Get settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportServerSettingsAsync($org_id, $server_id, string $contentType = self::contentTypes['getImportServerSettings'][0])
     {
@@ -3755,12 +3678,12 @@ class ImportersApi
      *
      * Get settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getImportServerSettingsAsyncWithHttpInfo($org_id, $server_id, string $contentType = self::contentTypes['getImportServerSettings'][0])
     {
@@ -3772,7 +3695,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3783,7 +3706,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3806,12 +3729,12 @@ class ImportersApi
     /**
      * Create request for operation 'getImportServerSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getImportServerSettingsRequest($org_id, $server_id, string $contentType = self::contentTypes['getImportServerSettings'][0])
     {
@@ -3830,7 +3753,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/import/server/{server_id}/settings';
         $formParams = [];
         $queryParams = [];
@@ -3838,12 +3760,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -3851,15 +3771,14 @@ class ImportersApi
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3873,7 +3792,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3881,7 +3800,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3892,11 +3811,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3912,9 +3831,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3925,16 +3845,17 @@ class ImportersApi
      *
      * List all server import settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportServerSettingsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ImportServerSettingsFullListing
      */
     public function listImportServerSettings($org_id, string $contentType = self::contentTypes['listImportServerSettings'][0])
     {
-        list($response) = $this->listImportServerSettingsWithHttpInfo($org_id, $contentType);
+        [$response] = $this->listImportServerSettingsWithHttpInfo($org_id, $contentType);
+
         return $response;
     }
 
@@ -3943,12 +3864,12 @@ class ImportersApi
      *
      * List all server import settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportServerSettingsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ImportServerSettingsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function listImportServerSettingsWithHttpInfo($org_id, string $contentType = self::contentTypes['listImportServerSettings'][0])
     {
@@ -3976,8 +3897,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ImportServerSettingsFullListing',
@@ -3985,8 +3905,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4017,7 +3935,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4028,11 +3945,11 @@ class ImportersApi
      *
      * List all server import settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function listImportServerSettingsAsync($org_id, string $contentType = self::contentTypes['listImportServerSettings'][0])
     {
@@ -4049,11 +3966,11 @@ class ImportersApi
      *
      * List all server import settings
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function listImportServerSettingsAsyncWithHttpInfo($org_id, string $contentType = self::contentTypes['listImportServerSettings'][0])
     {
@@ -4065,7 +3982,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4076,7 +3993,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4099,11 +4016,11 @@ class ImportersApi
     /**
      * Create request for operation 'listImportServerSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['listImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function listImportServerSettingsRequest($org_id, string $contentType = self::contentTypes['listImportServerSettings'][0])
     {
@@ -4115,7 +4032,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/import/server/settings';
         $formParams = [];
         $queryParams = [];
@@ -4123,20 +4039,17 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4150,7 +4063,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4158,7 +4071,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4169,11 +4082,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4189,9 +4102,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4202,15 +4116,16 @@ class ImportersApi
      *
      * Scan for manually uploaded cPanel backups.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @return string[]
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string[]
      */
     public function scanImportMigrations(string $contentType = self::contentTypes['scanImportMigrations'][0])
     {
-        list($response) = $this->scanImportMigrationsWithHttpInfo($contentType);
+        [$response] = $this->scanImportMigrationsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -4219,11 +4134,11 @@ class ImportersApi
      *
      * Scan for manually uploaded cPanel backups.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
     public function scanImportMigrationsWithHttpInfo(string $contentType = self::contentTypes['scanImportMigrations'][0])
     {
@@ -4251,8 +4166,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         'string[]',
@@ -4260,8 +4174,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4292,7 +4204,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4303,10 +4214,10 @@ class ImportersApi
      *
      * Scan for manually uploaded cPanel backups.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function scanImportMigrationsAsync(string $contentType = self::contentTypes['scanImportMigrations'][0])
     {
@@ -4323,10 +4234,10 @@ class ImportersApi
      *
      * Scan for manually uploaded cPanel backups.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function scanImportMigrationsAsyncWithHttpInfo(string $contentType = self::contentTypes['scanImportMigrations'][0])
     {
@@ -4338,7 +4249,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4349,7 +4260,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4372,14 +4283,13 @@ class ImportersApi
     /**
      * Create request for operation 'scanImportMigrations'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['scanImportMigrations'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function scanImportMigrationsRequest(string $contentType = self::contentTypes['scanImportMigrations'][0])
     {
-
 
         $resourcePath = '/v2/import/scan';
         $formParams = [];
@@ -4388,12 +4298,8 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4407,7 +4313,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4415,7 +4321,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4426,11 +4332,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4446,9 +4352,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4459,19 +4366,20 @@ class ImportersApi
      *
      * Transfer user account from remote cPanel server
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $user_id The ID of the remote cPanel user (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null $transfer_user_account_req_body transfer_user_account_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $user_id  The ID of the remote cPanel user (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null  $transfer_user_account_req_body  transfer_user_account_req_body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function transferCPanelUserAccount($org_id, $server_id, $user_id, $transfer_user_account_req_body = null, string $contentType = self::contentTypes['transferCPanelUserAccount'][0])
     {
-        list($response) = $this->transferCPanelUserAccountWithHttpInfo($org_id, $server_id, $user_id, $transfer_user_account_req_body, $contentType);
+        [$response] = $this->transferCPanelUserAccountWithHttpInfo($org_id, $server_id, $user_id, $transfer_user_account_req_body, $contentType);
+
         return $response;
     }
 
@@ -4480,15 +4388,15 @@ class ImportersApi
      *
      * Transfer user account from remote cPanel server
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $user_id The ID of the remote cPanel user (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null $transfer_user_account_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $user_id  The ID of the remote cPanel user (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null  $transfer_user_account_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function transferCPanelUserAccountWithHttpInfo($org_id, $server_id, $user_id, $transfer_user_account_req_body = null, string $contentType = self::contentTypes['transferCPanelUserAccount'][0])
     {
@@ -4516,8 +4424,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -4525,8 +4432,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4557,7 +4462,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4568,14 +4472,14 @@ class ImportersApi
      *
      * Transfer user account from remote cPanel server
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $user_id The ID of the remote cPanel user (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null $transfer_user_account_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $user_id  The ID of the remote cPanel user (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null  $transfer_user_account_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function transferCPanelUserAccountAsync($org_id, $server_id, $user_id, $transfer_user_account_req_body = null, string $contentType = self::contentTypes['transferCPanelUserAccount'][0])
     {
@@ -4592,14 +4496,14 @@ class ImportersApi
      *
      * Transfer user account from remote cPanel server
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $user_id The ID of the remote cPanel user (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null $transfer_user_account_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $user_id  The ID of the remote cPanel user (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null  $transfer_user_account_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function transferCPanelUserAccountAsyncWithHttpInfo($org_id, $server_id, $user_id, $transfer_user_account_req_body = null, string $contentType = self::contentTypes['transferCPanelUserAccount'][0])
     {
@@ -4611,7 +4515,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4622,7 +4526,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4645,14 +4549,14 @@ class ImportersApi
     /**
      * Create request for operation 'transferCPanelUserAccount'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  string $user_id The ID of the remote cPanel user (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null $transfer_user_account_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  string  $user_id  The ID of the remote cPanel user (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferUserAccountReqBody|null  $transfer_user_account_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferCPanelUserAccount'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function transferCPanelUserAccountRequest($org_id, $server_id, $user_id, $transfer_user_account_req_body = null, string $contentType = self::contentTypes['transferCPanelUserAccount'][0])
     {
@@ -4678,8 +4582,6 @@ class ImportersApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/import/server/{server_id}/account/{user_id}';
         $formParams = [];
         $queryParams = [];
@@ -4687,12 +4589,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -4700,7 +4600,7 @@ class ImportersApi
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
@@ -4708,15 +4608,14 @@ class ImportersApi
         // path params
         if ($user_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'user_id' . '}',
+                '{'.'user_id'.'}',
                 ObjectSerializer::toPathValue($user_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4724,7 +4623,7 @@ class ImportersApi
         // for model (json/xml)
         if (isset($transfer_user_account_req_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($transfer_user_account_req_body));
             } else {
                 $httpBody = $transfer_user_account_req_body;
@@ -4737,7 +4636,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4745,7 +4644,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4756,11 +4655,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4776,9 +4675,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4789,18 +4689,19 @@ class ImportersApi
      *
      * Transfer user account from remote cPanel server
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null $transfer_plesk_domain_req_body transfer_plesk_domain_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null  $transfer_plesk_domain_req_body  transfer_plesk_domain_req_body (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function transferPleskDomain($org_id, $server_id, $transfer_plesk_domain_req_body = null, string $contentType = self::contentTypes['transferPleskDomain'][0])
     {
-        list($response) = $this->transferPleskDomainWithHttpInfo($org_id, $server_id, $transfer_plesk_domain_req_body, $contentType);
+        [$response] = $this->transferPleskDomainWithHttpInfo($org_id, $server_id, $transfer_plesk_domain_req_body, $contentType);
+
         return $response;
     }
 
@@ -4809,14 +4710,14 @@ class ImportersApi
      *
      * Transfer user account from remote cPanel server
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null $transfer_plesk_domain_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null  $transfer_plesk_domain_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function transferPleskDomainWithHttpInfo($org_id, $server_id, $transfer_plesk_domain_req_body = null, string $contentType = self::contentTypes['transferPleskDomain'][0])
     {
@@ -4844,8 +4745,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -4853,8 +4753,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4885,7 +4783,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4896,13 +4793,13 @@ class ImportersApi
      *
      * Transfer user account from remote cPanel server
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null $transfer_plesk_domain_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null  $transfer_plesk_domain_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function transferPleskDomainAsync($org_id, $server_id, $transfer_plesk_domain_req_body = null, string $contentType = self::contentTypes['transferPleskDomain'][0])
     {
@@ -4919,13 +4816,13 @@ class ImportersApi
      *
      * Transfer user account from remote cPanel server
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null $transfer_plesk_domain_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null  $transfer_plesk_domain_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function transferPleskDomainAsyncWithHttpInfo($org_id, $server_id, $transfer_plesk_domain_req_body = null, string $contentType = self::contentTypes['transferPleskDomain'][0])
     {
@@ -4937,7 +4834,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4948,7 +4845,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4971,13 +4868,13 @@ class ImportersApi
     /**
      * Create request for operation 'transferPleskDomain'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null $transfer_plesk_domain_req_body (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\TransferPleskDomainReqBody|null  $transfer_plesk_domain_req_body  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['transferPleskDomain'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function transferPleskDomainRequest($org_id, $server_id, $transfer_plesk_domain_req_body = null, string $contentType = self::contentTypes['transferPleskDomain'][0])
     {
@@ -4996,8 +4893,6 @@ class ImportersApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/import/plesk-server/{server_id}/domain';
         $formParams = [];
         $queryParams = [];
@@ -5005,12 +4900,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5018,15 +4911,14 @@ class ImportersApi
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5034,7 +4926,7 @@ class ImportersApi
         // for model (json/xml)
         if (isset($transfer_plesk_domain_req_body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($transfer_plesk_domain_req_body));
             } else {
                 $httpBody = $transfer_plesk_domain_req_body;
@@ -5047,7 +4939,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5055,7 +4947,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5066,11 +4958,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5086,9 +4978,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5099,14 +4992,14 @@ class ImportersApi
      *
      * Update settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings $update_import_server_settings update_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings  $update_import_server_settings  update_import_server_settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateImportServerSettings($org_id, $server_id, $update_import_server_settings, string $contentType = self::contentTypes['updateImportServerSettings'][0])
     {
@@ -5118,14 +5011,14 @@ class ImportersApi
      *
      * Update settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings $update_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings  $update_import_server_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateImportServerSettingsWithHttpInfo($org_id, $server_id, $update_import_server_settings, string $contentType = self::contentTypes['updateImportServerSettings'][0])
     {
@@ -5153,12 +5046,10 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -5169,13 +5060,13 @@ class ImportersApi
      *
      * Update settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings $update_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings  $update_import_server_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateImportServerSettingsAsync($org_id, $server_id, $update_import_server_settings, string $contentType = self::contentTypes['updateImportServerSettings'][0])
     {
@@ -5192,13 +5083,13 @@ class ImportersApi
      *
      * Update settings for the server import
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings $update_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings  $update_import_server_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateImportServerSettingsAsyncWithHttpInfo($org_id, $server_id, $update_import_server_settings, string $contentType = self::contentTypes['updateImportServerSettings'][0])
     {
@@ -5208,7 +5099,7 @@ class ImportersApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -5231,13 +5122,13 @@ class ImportersApi
     /**
      * Create request for operation 'updateImportServerSettings'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $server_id The UUID of the server (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings $update_import_server_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $server_id  The UUID of the server (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateImportServerSettings  $update_import_server_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateImportServerSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateImportServerSettingsRequest($org_id, $server_id, $update_import_server_settings, string $contentType = self::contentTypes['updateImportServerSettings'][0])
     {
@@ -5263,7 +5154,6 @@ class ImportersApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/import/server/{server_id}/settings';
         $formParams = [];
         $queryParams = [];
@@ -5271,12 +5161,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5284,12 +5172,11 @@ class ImportersApi
         // path params
         if ($server_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'server_id' . '}',
+                '{'.'server_id'.'}',
                 ObjectSerializer::toPathValue($server_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -5300,7 +5187,7 @@ class ImportersApi
         // for model (json/xml)
         if (isset($update_import_server_settings)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_import_server_settings));
             } else {
                 $httpBody = $update_import_server_settings;
@@ -5313,7 +5200,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5321,7 +5208,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5332,11 +5219,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5352,9 +5239,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5365,18 +5253,19 @@ class ImportersApi
      *
      * Upload file for analyzing and processing.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_kind The type of migration file being uploaded. (required)
-     * @param  \SplFileObject|null $backup backup (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_kind  The type of migration file being uploaded. (required)
+     * @param  \SplFileObject|null  $backup  backup (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid
      */
     public function uploadImportMigration($org_id, $import_migration_kind, $backup = null, string $contentType = self::contentTypes['uploadImportMigration'][0])
     {
-        list($response) = $this->uploadImportMigrationWithHttpInfo($org_id, $import_migration_kind, $backup, $contentType);
+        [$response] = $this->uploadImportMigrationWithHttpInfo($org_id, $import_migration_kind, $backup, $contentType);
+
         return $response;
     }
 
@@ -5385,14 +5274,14 @@ class ImportersApi
      *
      * Upload file for analyzing and processing.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_kind The type of migration file being uploaded. (required)
-     * @param  \SplFileObject|null $backup (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_kind  The type of migration file being uploaded. (required)
+     * @param  \SplFileObject|null  $backup  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadImportMigrationWithHttpInfo($org_id, $import_migration_kind, $backup = null, string $contentType = self::contentTypes['uploadImportMigration'][0])
     {
@@ -5420,8 +5309,7 @@ class ImportersApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceUuid',
@@ -5429,8 +5317,6 @@ class ImportersApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5461,7 +5347,6 @@ class ImportersApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5472,13 +5357,13 @@ class ImportersApi
      *
      * Upload file for analyzing and processing.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_kind The type of migration file being uploaded. (required)
-     * @param  \SplFileObject|null $backup (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_kind  The type of migration file being uploaded. (required)
+     * @param  \SplFileObject|null  $backup  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadImportMigrationAsync($org_id, $import_migration_kind, $backup = null, string $contentType = self::contentTypes['uploadImportMigration'][0])
     {
@@ -5495,13 +5380,13 @@ class ImportersApi
      *
      * Upload file for analyzing and processing.
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_kind The type of migration file being uploaded. (required)
-     * @param  \SplFileObject|null $backup (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_kind  The type of migration file being uploaded. (required)
+     * @param  \SplFileObject|null  $backup  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadImportMigrationAsyncWithHttpInfo($org_id, $import_migration_kind, $backup = null, string $contentType = self::contentTypes['uploadImportMigration'][0])
     {
@@ -5513,7 +5398,7 @@ class ImportersApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5524,7 +5409,7 @@ class ImportersApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5547,13 +5432,13 @@ class ImportersApi
     /**
      * Create request for operation 'uploadImportMigration'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $import_migration_kind The type of migration file being uploaded. (required)
-     * @param  \SplFileObject|null $backup (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $import_migration_kind  The type of migration file being uploaded. (required)
+     * @param  \SplFileObject|null  $backup  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadImportMigration'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function uploadImportMigrationRequest($org_id, $import_migration_kind, $backup = null, string $contentType = self::contentTypes['uploadImportMigration'][0])
     {
@@ -5572,8 +5457,6 @@ class ImportersApi
             );
         }
 
-
-
         $resourcePath = '/v2/orgs/{org_id}/import/upload/{import_migration_kind}';
         $formParams = [];
         $queryParams = [];
@@ -5581,12 +5464,10 @@ class ImportersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -5594,14 +5475,14 @@ class ImportersApi
         // path params
         if ($import_migration_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'import_migration_kind' . '}',
+                '{'.'import_migration_kind'.'}',
                 ObjectSerializer::toPathValue($import_migration_kind),
                 $resourcePath
             );
         }
 
         // form params
-        $formDataProcessor = new FormDataProcessor();
+        $formDataProcessor = new FormDataProcessor;
 
         $formData = $formDataProcessor->prepare([
             'backup' => $backup,
@@ -5612,7 +5493,7 @@ class ImportersApi
 
         $multipart = true;
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5626,7 +5507,7 @@ class ImportersApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5634,7 +5515,7 @@ class ImportersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5645,11 +5526,11 @@ class ImportersApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5665,9 +5546,10 @@ class ImportersApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5676,16 +5558,17 @@ class ImportersApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -5698,7 +5581,7 @@ class ImportersApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -5721,7 +5604,7 @@ class ImportersApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

@@ -1,11 +1,13 @@
 <?php
+
 /**
  * SubscriptionsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * SubscriptionsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class SubscriptionsApi
@@ -72,7 +74,7 @@ class SubscriptionsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'calculateResourceUsage' => [
             'application/json',
@@ -101,10 +103,7 @@ class SubscriptionsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -112,16 +111,16 @@ class SubscriptionsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -151,17 +150,18 @@ class SubscriptionsApi
      *
      * Re-Calculates all subscription resources
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\UsedResourcesFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\UsedResourcesFullListing
      */
     public function calculateResourceUsage($org_id, $subscription_id, string $contentType = self::contentTypes['calculateResourceUsage'][0])
     {
-        list($response) = $this->calculateResourceUsageWithHttpInfo($org_id, $subscription_id, $contentType);
+        [$response] = $this->calculateResourceUsageWithHttpInfo($org_id, $subscription_id, $contentType);
+
         return $response;
     }
 
@@ -170,13 +170,13 @@ class SubscriptionsApi
      *
      * Re-Calculates all subscription resources
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UsedResourcesFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\UsedResourcesFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function calculateResourceUsageWithHttpInfo($org_id, $subscription_id, string $contentType = self::contentTypes['calculateResourceUsage'][0])
     {
@@ -204,8 +204,7 @@ class SubscriptionsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\UsedResourcesFullListing',
@@ -213,8 +212,6 @@ class SubscriptionsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -245,7 +242,6 @@ class SubscriptionsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -256,12 +252,12 @@ class SubscriptionsApi
      *
      * Re-Calculates all subscription resources
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function calculateResourceUsageAsync($org_id, $subscription_id, string $contentType = self::contentTypes['calculateResourceUsage'][0])
     {
@@ -278,12 +274,12 @@ class SubscriptionsApi
      *
      * Re-Calculates all subscription resources
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function calculateResourceUsageAsyncWithHttpInfo($org_id, $subscription_id, string $contentType = self::contentTypes['calculateResourceUsage'][0])
     {
@@ -295,7 +291,7 @@ class SubscriptionsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -306,7 +302,7 @@ class SubscriptionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -329,12 +325,12 @@ class SubscriptionsApi
     /**
      * Create request for operation 'calculateResourceUsage'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['calculateResourceUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function calculateResourceUsageRequest($org_id, $subscription_id, string $contentType = self::contentTypes['calculateResourceUsage'][0])
     {
@@ -353,7 +349,6 @@ class SubscriptionsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/subscriptions/{subscription_id}/calculate-resource-usage';
         $formParams = [];
         $queryParams = [];
@@ -361,12 +356,10 @@ class SubscriptionsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -374,15 +367,14 @@ class SubscriptionsApi
         // path params
         if ($subscription_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'subscription_id' . '}',
+                '{'.'subscription_id'.'}',
                 ObjectSerializer::toPathValue($subscription_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -396,7 +388,7 @@ class SubscriptionsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -404,7 +396,7 @@ class SubscriptionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -415,11 +407,11 @@ class SubscriptionsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -435,9 +427,10 @@ class SubscriptionsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -448,18 +441,19 @@ class SubscriptionsApi
      *
      * Create a subscriptions for a customer
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription $new_subscription Subscription details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription  $new_subscription  Subscription details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      */
     public function createCustomerSubscription($org_id, $customer_org_id, $new_subscription, string $contentType = self::contentTypes['createCustomerSubscription'][0])
     {
-        list($response) = $this->createCustomerSubscriptionWithHttpInfo($org_id, $customer_org_id, $new_subscription, $contentType);
+        [$response] = $this->createCustomerSubscriptionWithHttpInfo($org_id, $customer_org_id, $new_subscription, $contentType);
+
         return $response;
     }
 
@@ -468,14 +462,14 @@ class SubscriptionsApi
      *
      * Create a subscriptions for a customer
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription $new_subscription Subscription details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription  $new_subscription  Subscription details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCustomerSubscriptionWithHttpInfo($org_id, $customer_org_id, $new_subscription, string $contentType = self::contentTypes['createCustomerSubscription'][0])
     {
@@ -503,8 +497,7 @@ class SubscriptionsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceId',
@@ -512,8 +505,6 @@ class SubscriptionsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -544,7 +535,6 @@ class SubscriptionsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -555,13 +545,13 @@ class SubscriptionsApi
      *
      * Create a subscriptions for a customer
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription $new_subscription Subscription details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription  $new_subscription  Subscription details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createCustomerSubscriptionAsync($org_id, $customer_org_id, $new_subscription, string $contentType = self::contentTypes['createCustomerSubscription'][0])
     {
@@ -578,13 +568,13 @@ class SubscriptionsApi
      *
      * Create a subscriptions for a customer
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription $new_subscription Subscription details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription  $new_subscription  Subscription details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createCustomerSubscriptionAsyncWithHttpInfo($org_id, $customer_org_id, $new_subscription, string $contentType = self::contentTypes['createCustomerSubscription'][0])
     {
@@ -596,7 +586,7 @@ class SubscriptionsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -607,7 +597,7 @@ class SubscriptionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -630,13 +620,13 @@ class SubscriptionsApi
     /**
      * Create request for operation 'createCustomerSubscription'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription $new_subscription Subscription details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewSubscription  $new_subscription  Subscription details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createCustomerSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createCustomerSubscriptionRequest($org_id, $customer_org_id, $new_subscription, string $contentType = self::contentTypes['createCustomerSubscription'][0])
     {
@@ -662,7 +652,6 @@ class SubscriptionsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/customers/{customer_org_id}/subscriptions';
         $formParams = [];
         $queryParams = [];
@@ -670,12 +659,10 @@ class SubscriptionsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -683,15 +670,14 @@ class SubscriptionsApi
         // path params
         if ($customer_org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'customer_org_id' . '}',
+                '{'.'customer_org_id'.'}',
                 ObjectSerializer::toPathValue($customer_org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -699,7 +685,7 @@ class SubscriptionsApi
         // for model (json/xml)
         if (isset($new_subscription)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_subscription));
             } else {
                 $httpBody = $new_subscription;
@@ -712,7 +698,7 @@ class SubscriptionsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -720,7 +706,7 @@ class SubscriptionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -731,11 +717,11 @@ class SubscriptionsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -751,9 +737,10 @@ class SubscriptionsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -764,14 +751,14 @@ class SubscriptionsApi
      *
      * Delete subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $force force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $force  force (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteSubscription($org_id, $subscription_id, $force = false, string $contentType = self::contentTypes['deleteSubscription'][0])
     {
@@ -783,14 +770,14 @@ class SubscriptionsApi
      *
      * Delete subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSubscriptionWithHttpInfo($org_id, $subscription_id, $force = false, string $contentType = self::contentTypes['deleteSubscription'][0])
     {
@@ -818,12 +805,10 @@ class SubscriptionsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -834,13 +819,13 @@ class SubscriptionsApi
      *
      * Delete subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSubscriptionAsync($org_id, $subscription_id, $force = false, string $contentType = self::contentTypes['deleteSubscription'][0])
     {
@@ -857,13 +842,13 @@ class SubscriptionsApi
      *
      * Delete subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSubscriptionAsyncWithHttpInfo($org_id, $subscription_id, $force = false, string $contentType = self::contentTypes['deleteSubscription'][0])
     {
@@ -873,7 +858,7 @@ class SubscriptionsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -896,13 +881,13 @@ class SubscriptionsApi
     /**
      * Create request for operation 'deleteSubscription'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $force (optional, default to false)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $force  (optional, default to false)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteSubscriptionRequest($org_id, $subscription_id, $force = false, string $contentType = self::contentTypes['deleteSubscription'][0])
     {
@@ -921,8 +906,6 @@ class SubscriptionsApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/subscriptions/{subscription_id}';
         $formParams = [];
         $queryParams = [];
@@ -940,11 +923,10 @@ class SubscriptionsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -952,12 +934,11 @@ class SubscriptionsApi
         // path params
         if ($subscription_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'subscription_id' . '}',
+                '{'.'subscription_id'.'}',
                 ObjectSerializer::toPathValue($subscription_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -974,7 +955,7 @@ class SubscriptionsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -982,7 +963,7 @@ class SubscriptionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -993,11 +974,11 @@ class SubscriptionsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1013,9 +994,10 @@ class SubscriptionsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1026,21 +1008,22 @@ class SubscriptionsApi
      *
      * Get customer subscriptions
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing
      */
     public function getCustomerSubscriptions($org_id, $customer_org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getCustomerSubscriptions'][0])
     {
-        list($response) = $this->getCustomerSubscriptionsWithHttpInfo($org_id, $customer_org_id, $offset, $limit, $sort_by, $sort_order, $contentType);
+        [$response] = $this->getCustomerSubscriptionsWithHttpInfo($org_id, $customer_org_id, $offset, $limit, $sort_by, $sort_order, $contentType);
+
         return $response;
     }
 
@@ -1049,17 +1032,17 @@ class SubscriptionsApi
      *
      * Get customer subscriptions
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCustomerSubscriptionsWithHttpInfo($org_id, $customer_org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getCustomerSubscriptions'][0])
     {
@@ -1087,8 +1070,7 @@ class SubscriptionsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing',
@@ -1096,8 +1078,6 @@ class SubscriptionsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1128,7 +1108,6 @@ class SubscriptionsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1139,16 +1118,16 @@ class SubscriptionsApi
      *
      * Get customer subscriptions
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getCustomerSubscriptionsAsync($org_id, $customer_org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getCustomerSubscriptions'][0])
     {
@@ -1165,16 +1144,16 @@ class SubscriptionsApi
      *
      * Get customer subscriptions
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getCustomerSubscriptionsAsyncWithHttpInfo($org_id, $customer_org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getCustomerSubscriptions'][0])
     {
@@ -1186,7 +1165,7 @@ class SubscriptionsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1197,7 +1176,7 @@ class SubscriptionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1220,16 +1199,16 @@ class SubscriptionsApi
     /**
      * Create request for operation 'getCustomerSubscriptions'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $customer_org_id The organization id of the organization&#39;s customer. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $customer_org_id  The organization id of the organization&#39;s customer. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getCustomerSubscriptions'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getCustomerSubscriptionsRequest($org_id, $customer_org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getCustomerSubscriptions'][0])
     {
@@ -1247,11 +1226,6 @@ class SubscriptionsApi
                 'Missing the required parameter $customer_org_id when calling getCustomerSubscriptions'
             );
         }
-
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/customers/{customer_org_id}/subscriptions';
         $formParams = [];
@@ -1297,11 +1271,10 @@ class SubscriptionsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1309,15 +1282,14 @@ class SubscriptionsApi
         // path params
         if ($customer_org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'customer_org_id' . '}',
+                '{'.'customer_org_id'.'}',
                 ObjectSerializer::toPathValue($customer_org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1331,7 +1303,7 @@ class SubscriptionsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1339,7 +1311,7 @@ class SubscriptionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1350,11 +1322,11 @@ class SubscriptionsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1370,9 +1342,10 @@ class SubscriptionsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1383,17 +1356,18 @@ class SubscriptionsApi
      *
      * Get subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Subscription
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Subscription
      */
     public function getSubscription($org_id, $subscription_id, string $contentType = self::contentTypes['getSubscription'][0])
     {
-        list($response) = $this->getSubscriptionWithHttpInfo($org_id, $subscription_id, $contentType);
+        [$response] = $this->getSubscriptionWithHttpInfo($org_id, $subscription_id, $contentType);
+
         return $response;
     }
 
@@ -1402,13 +1376,13 @@ class SubscriptionsApi
      *
      * Get subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionWithHttpInfo($org_id, $subscription_id, string $contentType = self::contentTypes['getSubscription'][0])
     {
@@ -1436,8 +1410,7 @@ class SubscriptionsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Subscription',
@@ -1445,8 +1418,6 @@ class SubscriptionsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1477,7 +1448,6 @@ class SubscriptionsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1488,12 +1458,12 @@ class SubscriptionsApi
      *
      * Get subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSubscriptionAsync($org_id, $subscription_id, string $contentType = self::contentTypes['getSubscription'][0])
     {
@@ -1510,12 +1480,12 @@ class SubscriptionsApi
      *
      * Get subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSubscriptionAsyncWithHttpInfo($org_id, $subscription_id, string $contentType = self::contentTypes['getSubscription'][0])
     {
@@ -1527,7 +1497,7 @@ class SubscriptionsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1538,7 +1508,7 @@ class SubscriptionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1561,12 +1531,12 @@ class SubscriptionsApi
     /**
      * Create request for operation 'getSubscription'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSubscriptionRequest($org_id, $subscription_id, string $contentType = self::contentTypes['getSubscription'][0])
     {
@@ -1585,7 +1555,6 @@ class SubscriptionsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/subscriptions/{subscription_id}';
         $formParams = [];
         $queryParams = [];
@@ -1593,12 +1562,10 @@ class SubscriptionsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1606,15 +1573,14 @@ class SubscriptionsApi
         // path params
         if ($subscription_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'subscription_id' . '}',
+                '{'.'subscription_id'.'}',
                 ObjectSerializer::toPathValue($subscription_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1628,7 +1594,7 @@ class SubscriptionsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1636,7 +1602,7 @@ class SubscriptionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1647,11 +1613,11 @@ class SubscriptionsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1667,9 +1633,10 @@ class SubscriptionsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1680,18 +1647,19 @@ class SubscriptionsApi
      *
      * Get subscription bandwidth
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @return int
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return int
      */
     public function getSubscriptionBandwidthUsage($org_id, $subscription_id, $refresh_cache = null, string $contentType = self::contentTypes['getSubscriptionBandwidthUsage'][0])
     {
-        list($response) = $this->getSubscriptionBandwidthUsageWithHttpInfo($org_id, $subscription_id, $refresh_cache, $contentType);
+        [$response] = $this->getSubscriptionBandwidthUsageWithHttpInfo($org_id, $subscription_id, $refresh_cache, $contentType);
+
         return $response;
     }
 
@@ -1700,14 +1668,14 @@ class SubscriptionsApi
      *
      * Get subscription bandwidth
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @return array of int, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionBandwidthUsageWithHttpInfo($org_id, $subscription_id, $refresh_cache = null, string $contentType = self::contentTypes['getSubscriptionBandwidthUsage'][0])
     {
@@ -1735,8 +1703,7 @@ class SubscriptionsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'int',
@@ -1744,8 +1711,6 @@ class SubscriptionsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1776,7 +1741,6 @@ class SubscriptionsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1787,13 +1751,13 @@ class SubscriptionsApi
      *
      * Get subscription bandwidth
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSubscriptionBandwidthUsageAsync($org_id, $subscription_id, $refresh_cache = null, string $contentType = self::contentTypes['getSubscriptionBandwidthUsage'][0])
     {
@@ -1810,13 +1774,13 @@ class SubscriptionsApi
      *
      * Get subscription bandwidth
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSubscriptionBandwidthUsageAsyncWithHttpInfo($org_id, $subscription_id, $refresh_cache = null, string $contentType = self::contentTypes['getSubscriptionBandwidthUsage'][0])
     {
@@ -1828,7 +1792,7 @@ class SubscriptionsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1839,7 +1803,7 @@ class SubscriptionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1862,13 +1826,13 @@ class SubscriptionsApi
     /**
      * Create request for operation 'getSubscriptionBandwidthUsage'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  bool|null $refresh_cache If set to true, it will bypass internal caching. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  bool|null  $refresh_cache  If set to true, it will bypass internal caching. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionBandwidthUsage'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSubscriptionBandwidthUsageRequest($org_id, $subscription_id, $refresh_cache = null, string $contentType = self::contentTypes['getSubscriptionBandwidthUsage'][0])
     {
@@ -1887,8 +1851,6 @@ class SubscriptionsApi
             );
         }
 
-
-
         $resourcePath = '/orgs/{org_id}/subscriptions/{subscription_id}/bandwidth';
         $formParams = [];
         $queryParams = [];
@@ -1906,11 +1868,10 @@ class SubscriptionsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -1918,15 +1879,14 @@ class SubscriptionsApi
         // path params
         if ($subscription_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'subscription_id' . '}',
+                '{'.'subscription_id'.'}',
                 ObjectSerializer::toPathValue($subscription_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1940,7 +1900,7 @@ class SubscriptionsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1948,7 +1908,7 @@ class SubscriptionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1959,11 +1919,11 @@ class SubscriptionsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1979,9 +1939,10 @@ class SubscriptionsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1992,20 +1953,21 @@ class SubscriptionsApi
      *
      * Get subscriptions to parent
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing
      */
     public function getSubscriptionsToParent($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getSubscriptionsToParent'][0])
     {
-        list($response) = $this->getSubscriptionsToParentWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $contentType);
+        [$response] = $this->getSubscriptionsToParentWithHttpInfo($org_id, $offset, $limit, $sort_by, $sort_order, $contentType);
+
         return $response;
     }
 
@@ -2014,16 +1976,16 @@ class SubscriptionsApi
      *
      * Get subscriptions to parent
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionsToParentWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getSubscriptionsToParent'][0])
     {
@@ -2051,8 +2013,7 @@ class SubscriptionsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\SubscriptionsListing',
@@ -2060,8 +2021,6 @@ class SubscriptionsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2092,7 +2051,6 @@ class SubscriptionsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2103,15 +2061,15 @@ class SubscriptionsApi
      *
      * Get subscriptions to parent
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSubscriptionsToParentAsync($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getSubscriptionsToParent'][0])
     {
@@ -2128,15 +2086,15 @@ class SubscriptionsApi
      *
      * Get subscriptions to parent
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSubscriptionsToParentAsyncWithHttpInfo($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getSubscriptionsToParent'][0])
     {
@@ -2148,7 +2106,7 @@ class SubscriptionsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2159,7 +2117,7 @@ class SubscriptionsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2182,15 +2140,15 @@ class SubscriptionsApi
     /**
      * Create request for operation 'getSubscriptionsToParent'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  int|null $offset The offset from which to return items. (optional)
-     * @param  int|null $limit The maximum number of items to return. (optional)
-     * @param  string|null $sort_by The field by which to sort. (optional)
-     * @param  string|null $sort_order The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  int|null  $offset  The offset from which to return items. (optional)
+     * @param  int|null  $limit  The maximum number of items to return. (optional)
+     * @param  string|null  $sort_by  The field by which to sort. (optional)
+     * @param  string|null  $sort_order  The direction in which to sort. Possible values are &#39;asc&#39; and &#39;desc&#39;, defaulting to &#39;asc&#39;. (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSubscriptionsToParent'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSubscriptionsToParentRequest($org_id, $offset = null, $limit = null, $sort_by = null, $sort_order = null, string $contentType = self::contentTypes['getSubscriptionsToParent'][0])
     {
@@ -2201,11 +2159,6 @@ class SubscriptionsApi
                 'Missing the required parameter $org_id when calling getSubscriptionsToParent'
             );
         }
-
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/subscriptions';
         $formParams = [];
@@ -2251,19 +2204,17 @@ class SubscriptionsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2277,7 +2228,7 @@ class SubscriptionsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2285,7 +2236,7 @@ class SubscriptionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2296,11 +2247,11 @@ class SubscriptionsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2316,9 +2267,10 @@ class SubscriptionsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2329,14 +2281,14 @@ class SubscriptionsApi
      *
      * Update subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription $update_subscription update_subscription (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription  $update_subscription  update_subscription (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateSubscription($org_id, $subscription_id, $update_subscription, string $contentType = self::contentTypes['updateSubscription'][0])
     {
@@ -2348,14 +2300,14 @@ class SubscriptionsApi
      *
      * Update subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription $update_subscription (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription  $update_subscription  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSubscriptionWithHttpInfo($org_id, $subscription_id, $update_subscription, string $contentType = self::contentTypes['updateSubscription'][0])
     {
@@ -2383,12 +2335,10 @@ class SubscriptionsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2399,13 +2349,13 @@ class SubscriptionsApi
      *
      * Update subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription $update_subscription (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription  $update_subscription  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateSubscriptionAsync($org_id, $subscription_id, $update_subscription, string $contentType = self::contentTypes['updateSubscription'][0])
     {
@@ -2422,13 +2372,13 @@ class SubscriptionsApi
      *
      * Update subscription
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription $update_subscription (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription  $update_subscription  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateSubscriptionAsyncWithHttpInfo($org_id, $subscription_id, $update_subscription, string $contentType = self::contentTypes['updateSubscription'][0])
     {
@@ -2438,7 +2388,7 @@ class SubscriptionsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2461,13 +2411,13 @@ class SubscriptionsApi
     /**
      * Create request for operation 'updateSubscription'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  float $subscription_id The id of the subscription. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription $update_subscription (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  float  $subscription_id  The id of the subscription. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSubscription  $update_subscription  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSubscription'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateSubscriptionRequest($org_id, $subscription_id, $update_subscription, string $contentType = self::contentTypes['updateSubscription'][0])
     {
@@ -2493,7 +2443,6 @@ class SubscriptionsApi
             );
         }
 
-
         $resourcePath = '/orgs/{org_id}/subscriptions/{subscription_id}';
         $formParams = [];
         $queryParams = [];
@@ -2501,12 +2450,10 @@ class SubscriptionsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -2514,12 +2461,11 @@ class SubscriptionsApi
         // path params
         if ($subscription_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'subscription_id' . '}',
+                '{'.'subscription_id'.'}',
                 ObjectSerializer::toPathValue($subscription_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2530,7 +2476,7 @@ class SubscriptionsApi
         // for model (json/xml)
         if (isset($update_subscription)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_subscription));
             } else {
                 $httpBody = $update_subscription;
@@ -2543,7 +2489,7 @@ class SubscriptionsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2551,7 +2497,7 @@ class SubscriptionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2562,11 +2508,11 @@ class SubscriptionsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2582,9 +2528,10 @@ class SubscriptionsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2593,16 +2540,17 @@ class SubscriptionsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -2615,7 +2563,7 @@ class SubscriptionsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -2638,7 +2586,7 @@ class SubscriptionsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

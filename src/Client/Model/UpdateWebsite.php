@@ -1,12 +1,14 @@
 <?php
+
 /**
  * UpdateWebsite
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,78 +30,82 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * UpdateWebsite Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateWebsite implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'UpdateWebsite';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'php_version' => '\Vented\EnhanceApiLaravel\Client\Model\PhpVersion',
         'status' => '\Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus',
         'is_suspended' => 'bool',
         'tags' => 'int[]',
         'subscription_id' => '\Vented\EnhanceApiLaravel\Client\Model\UpdateWebsiteSubscriptionId',
-        'org_id' => 'string'
+        'org_id' => 'string',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'php_version' => null,
         'status' => null,
         'is_suspended' => null,
         'tags' => null,
         'subscription_id' => null,
-        'org_id' => 'uuid'
+        'org_id' => 'uuid',
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'php_version' => false,
         'status' => false,
         'is_suspended' => false,
         'tags' => false,
         'subscription_id' => false,
-        'org_id' => false
+        'org_id' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -124,8 +130,6 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -135,7 +139,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -145,7 +149,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -154,9 +158,6 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -165,9 +166,6 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -186,7 +184,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_suspended' => 'isSuspended',
         'tags' => 'tags',
         'subscription_id' => 'subscriptionId',
-        'org_id' => 'orgId'
+        'org_id' => 'orgId',
     ];
 
     /**
@@ -200,7 +198,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_suspended' => 'setIsSuspended',
         'tags' => 'setTags',
         'subscription_id' => 'setSubscriptionId',
-        'org_id' => 'setOrgId'
+        'org_id' => 'setOrgId',
     ];
 
     /**
@@ -214,7 +212,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_suspended' => 'getIsSuspended',
         'tags' => 'getTags',
         'subscription_id' => 'getSubscriptionId',
-        'org_id' => 'getOrgId'
+        'org_id' => 'getOrgId',
     ];
 
     /**
@@ -258,7 +256,6 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -269,8 +266,8 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -283,14 +280,12 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -323,7 +318,6 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets php_version
      *
@@ -337,8 +331,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets php_version
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\PhpVersion|null $php_version php_version
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\PhpVersion|null  $php_version  php_version
      * @return self
      */
     public function setPhpVersion($php_version)
@@ -364,8 +357,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null $status status
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteStatus|null  $status  status
      * @return self
      */
     public function setStatus($status)
@@ -391,8 +383,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_suspended
      *
-     * @param bool|null $is_suspended is_suspended
-     *
+     * @param  bool|null  $is_suspended  is_suspended
      * @return self
      */
     public function setIsSuspended($is_suspended)
@@ -418,8 +409,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tags
      *
-     * @param int[]|null $tags tags
-     *
+     * @param  int[]|null  $tags  tags
      * @return self
      */
     public function setTags($tags)
@@ -445,8 +435,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subscription_id
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsiteSubscriptionId|null $subscription_id subscription_id
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateWebsiteSubscriptionId|null  $subscription_id  subscription_id
      * @return self
      */
     public function setSubscriptionId($subscription_id)
@@ -472,8 +461,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets org_id
      *
-     * @param string|null $org_id org_id
-     *
+     * @param  string|null  $org_id  org_id
      * @return self
      */
     public function setOrgId($org_id)
@@ -485,12 +473,11 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -500,8 +487,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -513,10 +499,8 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -530,9 +514,7 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -541,15 +523,16 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -575,5 +558,3 @@ class UpdateWebsite implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

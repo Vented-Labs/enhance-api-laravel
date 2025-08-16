@@ -1,12 +1,14 @@
 <?php
+
 /**
  * BackupDetailed
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * BackupDetailed Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
+class BackupDetailed implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'BackupDetailed';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'id' => 'int',
         'started_at' => '\DateTime',
@@ -73,16 +77,18 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         'emails_size' => 'int',
         'kind' => '\Vented\EnhanceApiLaravel\Client\Model\BackupKind',
         'description' => 'string',
-        'storage_kind' => '\Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind'
+        'storage_kind' => '\Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'id' => null,
         'started_at' => 'date-time',
@@ -100,14 +106,14 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         'emails_size' => null,
         'kind' => null,
         'description' => null,
-        'storage_kind' => null
+        'storage_kind' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'id' => false,
         'started_at' => false,
@@ -125,14 +131,14 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         'emails_size' => false,
         'kind' => false,
         'description' => false,
-        'storage_kind' => false
+        'storage_kind' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -157,8 +163,6 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -168,7 +172,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -178,7 +182,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -187,9 +191,6 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -198,9 +199,6 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -230,7 +228,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         'emails_size' => 'emailsSize',
         'kind' => 'kind',
         'description' => 'description',
-        'storage_kind' => 'storageKind'
+        'storage_kind' => 'storageKind',
     ];
 
     /**
@@ -255,7 +253,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         'emails_size' => 'setEmailsSize',
         'kind' => 'setKind',
         'description' => 'setDescription',
-        'storage_kind' => 'setStorageKind'
+        'storage_kind' => 'setStorageKind',
     ];
 
     /**
@@ -280,7 +278,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         'emails_size' => 'getEmailsSize',
         'kind' => 'getKind',
         'description' => 'getDescription',
-        'storage_kind' => 'getStorageKind'
+        'storage_kind' => 'getStorageKind',
     ];
 
     /**
@@ -324,7 +322,6 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -335,8 +332,8 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -360,14 +357,12 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -401,6 +396,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['storage_kind'] === null) {
             $invalidProperties[] = "'storage_kind' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -415,7 +411,6 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets id
      *
@@ -429,8 +424,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int $id id
-     *
+     * @param  int  $id  id
      * @return self
      */
     public function setId($id)
@@ -456,8 +450,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets started_at
      *
-     * @param \DateTime $started_at started_at
-     *
+     * @param  \DateTime  $started_at  started_at
      * @return self
      */
     public function setStartedAt($started_at)
@@ -483,8 +476,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets finished_at
      *
-     * @param \DateTime|null $finished_at finished_at
-     *
+     * @param  \DateTime|null  $finished_at  finished_at
      * @return self
      */
     public function setFinishedAt($finished_at)
@@ -510,8 +502,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets snapshot_dir_name
      *
-     * @param string $snapshot_dir_name snapshot_dir_name
-     *
+     * @param  string  $snapshot_dir_name  snapshot_dir_name
      * @return self
      */
     public function setSnapshotDirName($snapshot_dir_name)
@@ -537,8 +528,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets size
      *
-     * @param int|null $size size
-     *
+     * @param  int|null  $size  size
      * @return self
      */
     public function setSize($size)
@@ -564,8 +554,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets home_dir_status
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\OperationStatus|null $home_dir_status home_dir_status
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OperationStatus|null  $home_dir_status  home_dir_status
      * @return self
      */
     public function setHomeDirStatus($home_dir_status)
@@ -591,8 +580,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets files_size
      *
-     * @param int|null $files_size files_size
-     *
+     * @param  int|null  $files_size  files_size
      * @return self
      */
     public function setFilesSize($files_size)
@@ -618,8 +606,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mysql_dbs_status
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\OperationStatus|null $mysql_dbs_status mysql_dbs_status
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OperationStatus|null  $mysql_dbs_status  mysql_dbs_status
      * @return self
      */
     public function setMysqlDbsStatus($mysql_dbs_status)
@@ -645,8 +632,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mysql_dbs
      *
-     * @param string[]|null $mysql_dbs mysql_dbs
-     *
+     * @param  string[]|null  $mysql_dbs  mysql_dbs
      * @return self
      */
     public function setMysqlDbs($mysql_dbs)
@@ -672,8 +658,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mysql_dbs_size
      *
-     * @param int|null $mysql_dbs_size mysql_dbs_size
-     *
+     * @param  int|null  $mysql_dbs_size  mysql_dbs_size
      * @return self
      */
     public function setMysqlDbsSize($mysql_dbs_size)
@@ -699,8 +684,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets emails_status
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\OperationStatus|null $emails_status emails_status
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OperationStatus|null  $emails_status  emails_status
      * @return self
      */
     public function setEmailsStatus($emails_status)
@@ -726,8 +710,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets emails
      *
-     * @param string[]|null $emails The addresses of the backed up mailboxes.
-     *
+     * @param  string[]|null  $emails  The addresses of the backed up mailboxes.
      * @return self
      */
     public function setEmails($emails)
@@ -753,8 +736,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets email_domains
      *
-     * @param string[]|null $email_domains The domain ids of the backed up mailboxes.
-     *
+     * @param  string[]|null  $email_domains  The domain ids of the backed up mailboxes.
      * @return self
      */
     public function setEmailDomains($email_domains)
@@ -780,8 +762,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets emails_size
      *
-     * @param int|null $emails_size emails_size
-     *
+     * @param  int|null  $emails_size  emails_size
      * @return self
      */
     public function setEmailsSize($emails_size)
@@ -807,8 +788,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets kind
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\BackupKind $kind kind
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupKind  $kind  kind
      * @return self
      */
     public function setKind($kind)
@@ -834,8 +814,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets description
      *
-     * @param string|null $description description
-     *
+     * @param  string|null  $description  description
      * @return self
      */
     public function setDescription($description)
@@ -861,8 +840,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storage_kind
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind $storage_kind storage_kind
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\BackupStorageKind  $storage_kind  storage_kind
      * @return self
      */
     public function setStorageKind($storage_kind)
@@ -874,12 +852,11 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -889,8 +866,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -902,10 +878,8 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -919,9 +893,7 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -930,15 +902,16 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -964,5 +937,3 @@ class BackupDetailed implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

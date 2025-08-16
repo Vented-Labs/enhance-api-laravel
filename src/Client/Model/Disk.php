@@ -1,12 +1,14 @@
 <?php
+
 /**
  * Disk
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,75 +30,79 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * Disk Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
+class Disk implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'Disk';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'name' => 'string',
         'mount_point' => 'string',
         'file_system' => 'string',
         'usage' => '\Vented\EnhanceApiLaravel\Client\Model\SpaceUsage',
-        'kind' => 'string'
+        'kind' => 'string',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'name' => null,
         'mount_point' => 'path',
         'file_system' => null,
         'usage' => null,
-        'kind' => null
+        'kind' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'name' => false,
         'mount_point' => false,
         'file_system' => false,
         'usage' => false,
-        'kind' => false
+        'kind' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -121,8 +127,6 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -132,7 +136,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -142,7 +146,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -151,9 +155,6 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -162,9 +163,6 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -182,7 +180,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
         'mount_point' => 'mountPoint',
         'file_system' => 'fileSystem',
         'usage' => 'usage',
-        'kind' => 'kind'
+        'kind' => 'kind',
     ];
 
     /**
@@ -195,7 +193,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
         'mount_point' => 'setMountPoint',
         'file_system' => 'setFileSystem',
         'usage' => 'setUsage',
-        'kind' => 'setKind'
+        'kind' => 'setKind',
     ];
 
     /**
@@ -208,7 +206,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
         'mount_point' => 'getMountPoint',
         'file_system' => 'getFileSystem',
         'usage' => 'getUsage',
-        'kind' => 'getKind'
+        'kind' => 'getKind',
     ];
 
     /**
@@ -253,6 +251,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     public const KIND_SSD = 'ssd';
+
     public const KIND_HDD = 'hdd';
 
     /**
@@ -278,8 +277,8 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -291,14 +290,12 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -330,7 +327,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "'usage' can't be null";
         }
         $allowedValues = $this->getKindAllowableValues();
-        if (!is_null($this->container['kind']) && !in_array($this->container['kind'], $allowedValues, true)) {
+        if (! is_null($this->container['kind']) && ! in_array($this->container['kind'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'kind', must be one of '%s'",
                 $this->container['kind'],
@@ -352,7 +349,6 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets name
      *
@@ -366,8 +362,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name name
-     *
+     * @param  string  $name  name
      * @return self
      */
     public function setName($name)
@@ -393,8 +388,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mount_point
      *
-     * @param string $mount_point mount_point
-     *
+     * @param  string  $mount_point  mount_point
      * @return self
      */
     public function setMountPoint($mount_point)
@@ -420,8 +414,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets file_system
      *
-     * @param string $file_system file_system
-     *
+     * @param  string  $file_system  file_system
      * @return self
      */
     public function setFileSystem($file_system)
@@ -447,8 +440,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets usage
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\SpaceUsage $usage usage
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SpaceUsage  $usage  usage
      * @return self
      */
     public function setUsage($usage)
@@ -474,8 +466,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets kind
      *
-     * @param string|null $kind kind
-     *
+     * @param  string|null  $kind  kind
      * @return self
      */
     public function setKind($kind)
@@ -484,7 +475,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable kind cannot be null');
         }
         $allowedValues = $this->getKindAllowableValues();
-        if (!in_array($kind, $allowedValues, true)) {
+        if (! in_array($kind, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'kind', must be one of '%s'",
@@ -497,12 +488,11 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -512,8 +502,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -525,10 +514,8 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -542,9 +529,7 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -553,15 +538,16 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -587,5 +573,3 @@ class Disk implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

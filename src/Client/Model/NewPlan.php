@@ -1,12 +1,14 @@
 <?php
+
 /**
  * NewPlan
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * NewPlan Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
+class NewPlan implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'NewPlan';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'name' => 'string',
         'resources' => '\Vented\EnhanceApiLaravel\Client\Model\Resource[]',
@@ -71,16 +75,18 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         'default_php_version' => '\Vented\EnhanceApiLaravel\Client\Model\PhpVersion',
         'redis_allowed' => 'bool',
         'default_server_group_id' => 'string',
-        'preinstall_wordpress_theme' => 'string'
+        'preinstall_wordpress_theme' => 'string',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'name' => null,
         'resources' => null,
@@ -96,14 +102,14 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         'default_php_version' => null,
         'redis_allowed' => null,
         'default_server_group_id' => 'uuid',
-        'preinstall_wordpress_theme' => null
+        'preinstall_wordpress_theme' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'name' => false,
         'resources' => false,
@@ -119,14 +125,14 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         'default_php_version' => false,
         'redis_allowed' => false,
         'default_server_group_id' => false,
-        'preinstall_wordpress_theme' => false
+        'preinstall_wordpress_theme' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -151,8 +157,6 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -162,7 +166,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -172,7 +176,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -181,9 +185,6 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -192,9 +193,6 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -222,7 +220,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         'default_php_version' => 'defaultPhpVersion',
         'redis_allowed' => 'redisAllowed',
         'default_server_group_id' => 'defaultServerGroupId',
-        'preinstall_wordpress_theme' => 'preinstallWordpressTheme'
+        'preinstall_wordpress_theme' => 'preinstallWordpressTheme',
     ];
 
     /**
@@ -245,7 +243,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         'default_php_version' => 'setDefaultPhpVersion',
         'redis_allowed' => 'setRedisAllowed',
         'default_server_group_id' => 'setDefaultServerGroupId',
-        'preinstall_wordpress_theme' => 'setPreinstallWordpressTheme'
+        'preinstall_wordpress_theme' => 'setPreinstallWordpressTheme',
     ];
 
     /**
@@ -268,7 +266,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         'default_php_version' => 'getDefaultPhpVersion',
         'redis_allowed' => 'getRedisAllowed',
         'default_server_group_id' => 'getDefaultServerGroupId',
-        'preinstall_wordpress_theme' => 'getPreinstallWordpressTheme'
+        'preinstall_wordpress_theme' => 'getPreinstallWordpressTheme',
     ];
 
     /**
@@ -312,7 +310,6 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -323,8 +320,8 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -346,14 +343,12 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -384,6 +379,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['selections'] === null) {
             $invalidProperties[] = "'selections' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -398,7 +394,6 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets name
      *
@@ -412,8 +407,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name name
-     *
+     * @param  string  $name  name
      * @return self
      */
     public function setName($name)
@@ -439,8 +433,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resources
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\Resource[] $resources resources
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Resource[]  $resources  resources
      * @return self
      */
     public function setResources($resources)
@@ -466,8 +459,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets allowances
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\Allowance[] $allowances allowances
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[]  $allowances  allowances
      * @return self
      */
     public function setAllowances($allowances)
@@ -493,8 +485,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets selections
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\Selection[] $selections selections
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[]  $selections  selections
      * @return self
      */
     public function setSelections($selections)
@@ -511,6 +502,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
      * Gets server_group_id
      *
      * @return string|null
+     *
      * @deprecated
      */
     public function getServerGroupId()
@@ -521,9 +513,9 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets server_group_id
      *
-     * @param string|null $server_group_id server_group_id
-     *
+     * @param  string|null  $server_group_id  server_group_id
      * @return self
+     *
      * @deprecated
      */
     public function setServerGroupId($server_group_id)
@@ -549,8 +541,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets server_group_ids
      *
-     * @param string[]|null $server_group_ids server_group_ids
-     *
+     * @param  string[]|null  $server_group_ids  server_group_ids
      * @return self
      */
     public function setServerGroupIds($server_group_ids)
@@ -576,8 +567,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets allow_server_group_selection
      *
-     * @param bool|null $allow_server_group_selection allow_server_group_selection
-     *
+     * @param  bool|null  $allow_server_group_selection  allow_server_group_selection
      * @return self
      */
     public function setAllowServerGroupSelection($allow_server_group_selection)
@@ -603,8 +593,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets plan_type
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\PlanType|null $plan_type plan_type
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\PlanType|null  $plan_type  plan_type
      * @return self
      */
     public function setPlanType($plan_type)
@@ -630,8 +619,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cgroup_limits
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\CgroupLimits|null $cgroup_limits cgroup_limits
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\CgroupLimits|null  $cgroup_limits  cgroup_limits
      * @return self
      */
     public function setCgroupLimits($cgroup_limits)
@@ -657,8 +645,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fs_quota_limit
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit|null $fs_quota_limit fs_quota_limit
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\FsQuotaLimit|null  $fs_quota_limit  fs_quota_limit
      * @return self
      */
     public function setFsQuotaLimit($fs_quota_limit)
@@ -684,8 +671,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets allowed_php_versions
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\PhpVersion[]|null $allowed_php_versions allowed_php_versions
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\PhpVersion[]|null  $allowed_php_versions  allowed_php_versions
      * @return self
      */
     public function setAllowedPhpVersions($allowed_php_versions)
@@ -711,8 +697,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets default_php_version
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\PhpVersion|null $default_php_version default_php_version
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\PhpVersion|null  $default_php_version  default_php_version
      * @return self
      */
     public function setDefaultPhpVersion($default_php_version)
@@ -738,8 +723,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redis_allowed
      *
-     * @param bool|null $redis_allowed redis_allowed
-     *
+     * @param  bool|null  $redis_allowed  redis_allowed
      * @return self
      */
     public function setRedisAllowed($redis_allowed)
@@ -765,8 +749,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets default_server_group_id
      *
-     * @param string|null $default_server_group_id If set, servers from this server group are prioritized by placement algorithm. If no server from the default server group is available, servers from other server groups are tried. The defaultServerGroupId will be automatically added to serverGroupIds if they do not contain it or are not provided.
-     *
+     * @param  string|null  $default_server_group_id  If set, servers from this server group are prioritized by placement algorithm. If no server from the default server group is available, servers from other server groups are tried. The defaultServerGroupId will be automatically added to serverGroupIds if they do not contain it or are not provided.
      * @return self
      */
     public function setDefaultServerGroupId($default_server_group_id)
@@ -792,8 +775,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets preinstall_wordpress_theme
      *
-     * @param string|null $preinstall_wordpress_theme :> When WordPress is installed on a website under this plan, the chosen theme will be preinstalled.
-     *
+     * @param  string|null  $preinstall_wordpress_theme  :> When WordPress is installed on a website under this plan, the chosen theme will be preinstalled.
      * @return self
      */
     public function setPreinstallWordpressTheme($preinstall_wordpress_theme)
@@ -805,12 +787,11 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -820,8 +801,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -833,10 +813,8 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -850,9 +828,7 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -861,15 +837,16 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -895,5 +872,3 @@ class NewPlan implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

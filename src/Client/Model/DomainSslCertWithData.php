@@ -1,12 +1,14 @@
 <?php
+
 /**
  * DomainSslCertWithData
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * DomainSslCertWithData Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSerializable
+class DomainSslCertWithData implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'DomainSslCertWithData';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'cn' => 'string',
         'expires' => 'string',
@@ -64,16 +68,18 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         'sans' => 'string[]',
         'cert' => 'string',
         'key' => 'string',
-        'force_https' => 'bool'
+        'force_https' => 'bool',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'cn' => null,
         'expires' => null,
@@ -82,14 +88,14 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         'sans' => null,
         'cert' => null,
         'key' => null,
-        'force_https' => null
+        'force_https' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'cn' => false,
         'expires' => false,
@@ -98,14 +104,14 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         'sans' => false,
         'cert' => false,
         'key' => false,
-        'force_https' => false
+        'force_https' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -130,8 +136,6 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -141,7 +145,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -151,7 +155,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -160,9 +164,6 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -171,9 +172,6 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -194,7 +192,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         'sans' => 'sans',
         'cert' => 'cert',
         'key' => 'key',
-        'force_https' => 'forceHttps'
+        'force_https' => 'forceHttps',
     ];
 
     /**
@@ -210,7 +208,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         'sans' => 'setSans',
         'cert' => 'setCert',
         'key' => 'setKey',
-        'force_https' => 'setForceHttps'
+        'force_https' => 'setForceHttps',
     ];
 
     /**
@@ -226,7 +224,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         'sans' => 'getSans',
         'cert' => 'getCert',
         'key' => 'getKey',
-        'force_https' => 'getForceHttps'
+        'force_https' => 'getForceHttps',
     ];
 
     /**
@@ -270,7 +268,6 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -281,8 +278,8 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -297,14 +294,12 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -344,6 +339,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['key'] === null) {
             $invalidProperties[] = "'key' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -358,7 +354,6 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets cn
      *
@@ -372,8 +367,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets cn
      *
-     * @param string $cn cn
-     *
+     * @param  string  $cn  cn
      * @return self
      */
     public function setCn($cn)
@@ -399,8 +393,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets expires
      *
-     * @param string $expires expires
-     *
+     * @param  string  $expires  expires
      * @return self
      */
     public function setExpires($expires)
@@ -426,8 +419,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets issued
      *
-     * @param string $issued issued
-     *
+     * @param  string  $issued  issued
      * @return self
      */
     public function setIssued($issued)
@@ -453,8 +445,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets issuer
      *
-     * @param string $issuer issuer
-     *
+     * @param  string  $issuer  issuer
      * @return self
      */
     public function setIssuer($issuer)
@@ -480,8 +471,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets sans
      *
-     * @param string[] $sans sans
-     *
+     * @param  string[]  $sans  sans
      * @return self
      */
     public function setSans($sans)
@@ -507,8 +497,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets cert
      *
-     * @param string $cert cert
-     *
+     * @param  string  $cert  cert
      * @return self
      */
     public function setCert($cert)
@@ -534,8 +523,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets key
      *
-     * @param string $key key
-     *
+     * @param  string  $key  key
      * @return self
      */
     public function setKey($key)
@@ -561,8 +549,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets force_https
      *
-     * @param bool|null $force_https force_https
-     *
+     * @param  bool|null  $force_https  force_https
      * @return self
      */
     public function setForceHttps($force_https)
@@ -574,12 +561,11 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -589,8 +575,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -602,10 +587,8 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -619,9 +602,7 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -630,15 +611,16 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -664,5 +646,3 @@ class DomainSslCertWithData implements ModelInterface, ArrayAccess, \JsonSeriali
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

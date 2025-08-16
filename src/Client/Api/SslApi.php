@@ -1,11 +1,13 @@
 <?php
+
 /**
  * SslApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * SslApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class SslApi
@@ -72,7 +74,7 @@ class SslApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'getWebsiteDomainSslCert' => [
             'application/json',
@@ -92,10 +94,7 @@ class SslApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -103,16 +102,16 @@ class SslApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -142,16 +141,17 @@ class SslApi
      *
      * Returns the SSL for this website domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData
      */
     public function getWebsiteDomainSslCert($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
-        list($response) = $this->getWebsiteDomainSslCertWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->getWebsiteDomainSslCertWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -160,12 +160,12 @@ class SslApi
      *
      * Returns the SSL for this website domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteDomainSslCertWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
@@ -193,8 +193,7 @@ class SslApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData',
@@ -202,8 +201,6 @@ class SslApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -234,7 +231,6 @@ class SslApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -245,11 +241,11 @@ class SslApi
      *
      * Returns the SSL for this website domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainSslCertAsync($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
@@ -266,11 +262,11 @@ class SslApi
      *
      * Returns the SSL for this website domain
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteDomainSslCertAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
@@ -282,7 +278,7 @@ class SslApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -293,7 +289,7 @@ class SslApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -316,11 +312,11 @@ class SslApi
     /**
      * Create request for operation 'getWebsiteDomainSslCert'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteDomainSslCertRequest($domain_id, string $contentType = self::contentTypes['getWebsiteDomainSslCert'][0])
     {
@@ -332,7 +328,6 @@ class SslApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/ssl';
         $formParams = [];
         $queryParams = [];
@@ -340,20 +335,17 @@ class SslApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -367,7 +359,7 @@ class SslApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -375,14 +367,13 @@ class SslApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -397,9 +388,10 @@ class SslApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -410,16 +402,17 @@ class SslApi
      *
      * Returns the SSL for this website domain with the mail.prefix
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData
      */
     public function getWebsiteMailDomainSslCert($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
-        list($response) = $this->getWebsiteMailDomainSslCertWithHttpInfo($domain_id, $contentType);
+        [$response] = $this->getWebsiteMailDomainSslCertWithHttpInfo($domain_id, $contentType);
+
         return $response;
     }
 
@@ -428,12 +421,12 @@ class SslApi
      *
      * Returns the SSL for this website domain with the mail.prefix
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteMailDomainSslCertWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
@@ -461,8 +454,7 @@ class SslApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DomainSslCertWithData',
@@ -470,8 +462,6 @@ class SslApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -502,7 +492,6 @@ class SslApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -513,11 +502,11 @@ class SslApi
      *
      * Returns the SSL for this website domain with the mail.prefix
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMailDomainSslCertAsync($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
@@ -534,11 +523,11 @@ class SslApi
      *
      * Returns the SSL for this website domain with the mail.prefix
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMailDomainSslCertAsyncWithHttpInfo($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
@@ -550,7 +539,7 @@ class SslApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -561,7 +550,7 @@ class SslApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -584,11 +573,11 @@ class SslApi
     /**
      * Create request for operation 'getWebsiteMailDomainSslCert'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteMailDomainSslCertRequest($domain_id, string $contentType = self::contentTypes['getWebsiteMailDomainSslCert'][0])
     {
@@ -600,7 +589,6 @@ class SslApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/mail_ssl';
         $formParams = [];
         $queryParams = [];
@@ -608,20 +596,17 @@ class SslApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -635,7 +620,7 @@ class SslApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -643,14 +628,13 @@ class SslApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -665,9 +649,10 @@ class SslApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -678,13 +663,13 @@ class SslApi
      *
      * Set \&quot;force ssl\&quot; status for domain mapping
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setWebsiteDomainForceSsl($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -696,13 +681,13 @@ class SslApi
      *
      * Set \&quot;force ssl\&quot; status for domain mapping
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setWebsiteDomainForceSslWithHttpInfo($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -730,12 +715,10 @@ class SslApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -746,12 +729,12 @@ class SslApi
      *
      * Set \&quot;force ssl\&quot; status for domain mapping
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteDomainForceSslAsync($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -768,12 +751,12 @@ class SslApi
      *
      * Set \&quot;force ssl\&quot; status for domain mapping
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setWebsiteDomainForceSslAsyncWithHttpInfo($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -783,7 +766,7 @@ class SslApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -806,12 +789,12 @@ class SslApi
     /**
      * Create request for operation 'setWebsiteDomainForceSsl'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  bool $body Boolean \&quot;force ssl\&quot; setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  bool  $body  Boolean \&quot;force ssl\&quot; setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setWebsiteDomainForceSsl'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setWebsiteDomainForceSslRequest($domain_id, $body, string $contentType = self::contentTypes['setWebsiteDomainForceSsl'][0])
     {
@@ -830,7 +813,6 @@ class SslApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/ssl/force_ssl';
         $formParams = [];
         $queryParams = [];
@@ -838,17 +820,14 @@ class SslApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -859,7 +838,7 @@ class SslApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -872,7 +851,7 @@ class SslApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -880,14 +859,13 @@ class SslApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -902,9 +880,10 @@ class SslApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -915,17 +894,18 @@ class SslApi
      *
      * Upload custom ssl certificate, key and optional fullchain for a given website
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSslCert
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSslCert
      */
     public function uploadWebsiteDomainSslCert($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
-        list($response) = $this->uploadWebsiteDomainSslCertWithHttpInfo($domain_id, $ssl_cert, $contentType);
+        [$response] = $this->uploadWebsiteDomainSslCertWithHttpInfo($domain_id, $ssl_cert, $contentType);
+
         return $response;
     }
 
@@ -934,13 +914,13 @@ class SslApi
      *
      * Upload custom ssl certificate, key and optional fullchain for a given website
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSslCert, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSslCert, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadWebsiteDomainSslCertWithHttpInfo($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
@@ -968,8 +948,7 @@ class SslApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewSslCert',
@@ -977,8 +956,6 @@ class SslApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1009,7 +986,6 @@ class SslApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1020,12 +996,12 @@ class SslApi
      *
      * Upload custom ssl certificate, key and optional fullchain for a given website
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadWebsiteDomainSslCertAsync($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
@@ -1042,12 +1018,12 @@ class SslApi
      *
      * Upload custom ssl certificate, key and optional fullchain for a given website
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadWebsiteDomainSslCertAsyncWithHttpInfo($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
@@ -1059,7 +1035,7 @@ class SslApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1070,7 +1046,7 @@ class SslApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1093,12 +1069,12 @@ class SslApi
     /**
      * Create request for operation 'uploadWebsiteDomainSslCert'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function uploadWebsiteDomainSslCertRequest($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteDomainSslCert'][0])
     {
@@ -1117,7 +1093,6 @@ class SslApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/ssl';
         $formParams = [];
         $queryParams = [];
@@ -1125,20 +1100,17 @@ class SslApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1146,7 +1118,7 @@ class SslApi
         // for model (json/xml)
         if (isset($ssl_cert)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ssl_cert));
             } else {
                 $httpBody = $ssl_cert;
@@ -1159,7 +1131,7 @@ class SslApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1167,14 +1139,13 @@ class SslApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1189,9 +1160,10 @@ class SslApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1202,17 +1174,18 @@ class SslApi
      *
      * Upload SSL for mail.customerdomain.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSslCert
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewSslCert
      */
     public function uploadWebsiteMailDomainSslCert($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
-        list($response) = $this->uploadWebsiteMailDomainSslCertWithHttpInfo($domain_id, $ssl_cert, $contentType);
+        [$response] = $this->uploadWebsiteMailDomainSslCertWithHttpInfo($domain_id, $ssl_cert, $contentType);
+
         return $response;
     }
 
@@ -1221,13 +1194,13 @@ class SslApi
      *
      * Upload SSL for mail.customerdomain.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSslCert, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewSslCert, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadWebsiteMailDomainSslCertWithHttpInfo($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
@@ -1255,8 +1228,7 @@ class SslApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewSslCert',
@@ -1264,8 +1236,6 @@ class SslApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1296,7 +1266,6 @@ class SslApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1307,12 +1276,12 @@ class SslApi
      *
      * Upload SSL for mail.customerdomain.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadWebsiteMailDomainSslCertAsync($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
@@ -1329,12 +1298,12 @@ class SslApi
      *
      * Upload SSL for mail.customerdomain.
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function uploadWebsiteMailDomainSslCertAsyncWithHttpInfo($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
@@ -1346,7 +1315,7 @@ class SslApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1357,7 +1326,7 @@ class SslApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1380,12 +1349,12 @@ class SslApi
     /**
      * Create request for operation 'uploadWebsiteMailDomainSslCert'
      *
-     * @param  string $domain_id The id of the domain. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert $ssl_cert Cert, private key and optional fullchain. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @param  string  $domain_id  The id of the domain. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SslCert  $ssl_cert  Cert, private key and optional fullchain. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['uploadWebsiteMailDomainSslCert'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function uploadWebsiteMailDomainSslCertRequest($domain_id, $ssl_cert, string $contentType = self::contentTypes['uploadWebsiteMailDomainSslCert'][0])
     {
@@ -1404,7 +1373,6 @@ class SslApi
             );
         }
 
-
         $resourcePath = '/v2/domains/{domain_id}/mail_ssl';
         $formParams = [];
         $queryParams = [];
@@ -1412,20 +1380,17 @@ class SslApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($domain_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'domain_id' . '}',
+                '{'.'domain_id'.'}',
                 ObjectSerializer::toPathValue($domain_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1433,7 +1398,7 @@ class SslApi
         // for model (json/xml)
         if (isset($ssl_cert)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($ssl_cert));
             } else {
                 $httpBody = $ssl_cert;
@@ -1446,7 +1411,7 @@ class SslApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1454,14 +1419,13 @@ class SslApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1476,9 +1440,10 @@ class SslApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1487,16 +1452,17 @@ class SslApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -1509,7 +1475,7 @@ class SslApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -1532,7 +1498,7 @@ class SslApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

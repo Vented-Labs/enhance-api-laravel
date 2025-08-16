@@ -1,12 +1,14 @@
 <?php
+
 /**
  * WebserverKind
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * WebserverKind Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class WebserverKind
@@ -54,6 +56,7 @@ class WebserverKind
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -63,9 +66,7 @@ class WebserverKind
             self::OPEN_LITE_SPEED,
             self::DUMMY_WEB_SERVER,
             self::APACHE,
-            self::NGINX
+            self::NGINX,
         ];
     }
 }
-
-

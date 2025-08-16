@@ -1,12 +1,14 @@
 <?php
+
 /**
  * GetServerRole200Response
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * GetServerRole200Response Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetServerRole200Response implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'getServerRole_200_response';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'state' => '\Vented\EnhanceApiLaravel\Client\Model\ServerRoleState',
         'usage' => 'int',
@@ -70,16 +74,18 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         'filerd' => '\Vented\EnhanceApiLaravel\Client\Model\ServiceInfo',
         'ftpcd' => '\Vented\EnhanceApiLaravel\Client\Model\ServiceInfo',
         'zones_count' => 'int',
-        'dnscd' => '\Vented\EnhanceApiLaravel\Client\Model\ServiceInfo'
+        'dnscd' => '\Vented\EnhanceApiLaravel\Client\Model\ServiceInfo',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'state' => null,
         'usage' => null,
@@ -94,14 +100,14 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         'filerd' => null,
         'ftpcd' => null,
         'zones_count' => null,
-        'dnscd' => null
+        'dnscd' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'state' => false,
         'usage' => false,
@@ -116,14 +122,14 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         'filerd' => false,
         'ftpcd' => false,
         'zones_count' => false,
-        'dnscd' => false
+        'dnscd' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -148,8 +154,6 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -159,7 +163,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -169,7 +173,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -178,9 +182,6 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -189,9 +190,6 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -218,7 +216,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         'filerd' => 'filerd',
         'ftpcd' => 'ftpcd',
         'zones_count' => 'zonesCount',
-        'dnscd' => 'dnscd'
+        'dnscd' => 'dnscd',
     ];
 
     /**
@@ -240,7 +238,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         'filerd' => 'setFilerd',
         'ftpcd' => 'setFtpcd',
         'zones_count' => 'setZonesCount',
-        'dnscd' => 'setDnscd'
+        'dnscd' => 'setDnscd',
     ];
 
     /**
@@ -262,7 +260,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         'filerd' => 'getFilerd',
         'ftpcd' => 'getFtpcd',
         'zones_count' => 'getZonesCount',
-        'dnscd' => 'getDnscd'
+        'dnscd' => 'getDnscd',
     ];
 
     /**
@@ -306,7 +304,6 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -317,8 +314,8 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -339,14 +336,12 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -404,6 +399,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         if ($this->container['dnscd'] === null) {
             $invalidProperties[] = "'dnscd' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -418,7 +414,6 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets state
      *
@@ -432,8 +427,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets state
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServerRoleState $state state
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerRoleState  $state  state
      * @return self
      */
     public function setState($state)
@@ -459,8 +453,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets usage
      *
-     * @param int $usage usage
-     *
+     * @param  int  $usage  usage
      * @return self
      */
     public function setUsage($usage)
@@ -486,8 +479,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets mailbox_count
      *
-     * @param int|null $mailbox_count mailbox_count
-     *
+     * @param  int|null  $mailbox_count  mailbox_count
      * @return self
      */
     public function setMailboxCount($mailbox_count)
@@ -513,8 +505,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets failed_delivery_count
      *
-     * @param int $failed_delivery_count failed_delivery_count
-     *
+     * @param  int  $failed_delivery_count  failed_delivery_count
      * @return self
      */
     public function setFailedDeliveryCount($failed_delivery_count)
@@ -540,8 +531,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets websites_count
      *
-     * @param int $websites_count The number of websites whose DNS zones are assigned to be on this dns role.
-     *
+     * @param  int  $websites_count  The number of websites whose DNS zones are assigned to be on this dns role.
      * @return self
      */
     public function setWebsitesCount($websites_count)
@@ -567,8 +557,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets snapshots_count
      *
-     * @param int $snapshots_count snapshots_count
-     *
+     * @param  int  $snapshots_count  snapshots_count
      * @return self
      */
     public function setSnapshotsCount($snapshots_count)
@@ -594,8 +583,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets last24h_snapshots_count
      *
-     * @param int $last24h_snapshots_count last24h_snapshots_count
-     *
+     * @param  int  $last24h_snapshots_count  last24h_snapshots_count
      * @return self
      */
     public function setLast24hSnapshotsCount($last24h_snapshots_count)
@@ -621,8 +609,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets bkupd
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo $bkupd bkupd
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo  $bkupd  bkupd
      * @return self
      */
     public function setBkupd($bkupd)
@@ -648,8 +635,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets mysql_stats
      *
-     * @param object $mysql_stats mysql_stats
-     *
+     * @param  object  $mysql_stats  mysql_stats
      * @return self
      */
     public function setMysqlStats($mysql_stats)
@@ -675,8 +661,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets mysqlcd
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo $mysqlcd mysqlcd
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo  $mysqlcd  mysqlcd
      * @return self
      */
     public function setMysqlcd($mysqlcd)
@@ -702,8 +687,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets filerd
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo $filerd filerd
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo  $filerd  filerd
      * @return self
      */
     public function setFilerd($filerd)
@@ -729,8 +713,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets ftpcd
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo $ftpcd ftpcd
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo  $ftpcd  ftpcd
      * @return self
      */
     public function setFtpcd($ftpcd)
@@ -756,8 +739,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets zones_count
      *
-     * @param int $zones_count zones_count
-     *
+     * @param  int  $zones_count  zones_count
      * @return self
      */
     public function setZonesCount($zones_count)
@@ -783,8 +765,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets dnscd
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo $dnscd dnscd
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceInfo  $dnscd  dnscd
      * @return self
      */
     public function setDnscd($dnscd)
@@ -796,12 +777,11 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -811,8 +791,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -824,10 +803,8 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -841,9 +818,7 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -852,15 +827,16 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -886,5 +862,3 @@ class GetServerRole200Response implements ModelInterface, ArrayAccess, \JsonSeri
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

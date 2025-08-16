@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ImportMigrationEntry
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,34 +30,36 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ImportMigrationEntry Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializable
+class ImportMigrationEntry implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ImportMigrationEntry';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'id' => 'string',
         'org_id' => 'string',
@@ -66,16 +70,18 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
         'percentage_complete' => 'int',
-        'primary_domain' => 'string'
+        'primary_domain' => 'string',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'id' => 'uuid',
         'org_id' => 'uuid',
@@ -86,14 +92,14 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
         'percentage_complete' => null,
-        'primary_domain' => null
+        'primary_domain' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'id' => false,
         'org_id' => false,
@@ -104,14 +110,14 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'created_at' => false,
         'updated_at' => false,
         'percentage_complete' => false,
-        'primary_domain' => false
+        'primary_domain' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -136,8 +142,6 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -147,7 +151,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -157,7 +161,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -166,9 +170,6 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -177,9 +178,6 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -202,7 +200,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'created_at' => 'createdAt',
         'updated_at' => 'updatedAt',
         'percentage_complete' => 'percentageComplete',
-        'primary_domain' => 'primaryDomain'
+        'primary_domain' => 'primaryDomain',
     ];
 
     /**
@@ -220,7 +218,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'percentage_complete' => 'setPercentageComplete',
-        'primary_domain' => 'setPrimaryDomain'
+        'primary_domain' => 'setPrimaryDomain',
     ];
 
     /**
@@ -238,7 +236,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'percentage_complete' => 'getPercentageComplete',
-        'primary_domain' => 'getPrimaryDomain'
+        'primary_domain' => 'getPrimaryDomain',
     ];
 
     /**
@@ -283,14 +281,23 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     public const STATUS_UNPROCESSED = 'unprocessed';
+
     public const STATUS_PROCESSED = 'processed';
+
     public const STATUS_QUEUED = 'queued';
+
     public const STATUS_ANALYZING = 'analyzing';
+
     public const STATUS_IN_PROGRESS = 'inProgress';
+
     public const STATUS_FAILED = 'failed';
+
     public const STATUS_COMPLETE = 'complete';
+
     public const IMPORT_TYPE_C_PANEL = 'cPanel';
+
     public const IMPORT_TYPE_PLESK = 'plesk';
+
     public const IMPORT_TYPE_PLESK_STREAMING = 'pleskStreaming';
 
     /**
@@ -335,8 +342,8 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -353,14 +360,12 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -395,7 +400,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "'status' can't be null";
         }
         $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+        if (! is_null($this->container['status']) && ! in_array($this->container['status'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'status', must be one of '%s'",
                 $this->container['status'],
@@ -407,7 +412,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "'import_type' can't be null";
         }
         $allowedValues = $this->getImportTypeAllowableValues();
-        if (!is_null($this->container['import_type']) && !in_array($this->container['import_type'], $allowedValues, true)) {
+        if (! is_null($this->container['import_type']) && ! in_array($this->container['import_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'import_type', must be one of '%s'",
                 $this->container['import_type'],
@@ -424,6 +429,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['percentage_complete'] === null) {
             $invalidProperties[] = "'percentage_complete' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -438,7 +444,6 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets id
      *
@@ -452,8 +457,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets id
      *
-     * @param string $id id
-     *
+     * @param  string  $id  id
      * @return self
      */
     public function setId($id)
@@ -479,8 +483,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets org_id
      *
-     * @param string $org_id org_id
-     *
+     * @param  string  $org_id  org_id
      * @return self
      */
     public function setOrgId($org_id)
@@ -506,8 +509,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets filename
      *
-     * @param string $filename filename
-     *
+     * @param  string  $filename  filename
      * @return self
      */
     public function setFilename($filename)
@@ -533,8 +535,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets filesize
      *
-     * @param int $filesize filesize
-     *
+     * @param  int  $filesize  filesize
      * @return self
      */
     public function setFilesize($filesize)
@@ -560,8 +561,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets status
      *
-     * @param string $status status
-     *
+     * @param  string  $status  status
      * @return self
      */
     public function setStatus($status)
@@ -570,7 +570,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
+        if (! in_array($status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'status', must be one of '%s'",
@@ -597,8 +597,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets import_type
      *
-     * @param string $import_type import_type
-     *
+     * @param  string  $import_type  import_type
      * @return self
      */
     public function setImportType($import_type)
@@ -607,7 +606,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable import_type cannot be null');
         }
         $allowedValues = $this->getImportTypeAllowableValues();
-        if (!in_array($import_type, $allowedValues, true)) {
+        if (! in_array($import_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'import_type', must be one of '%s'",
@@ -634,8 +633,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets created_at
      *
-     * @param \DateTime $created_at created_at
-     *
+     * @param  \DateTime  $created_at  created_at
      * @return self
      */
     public function setCreatedAt($created_at)
@@ -661,8 +659,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets updated_at
      *
-     * @param \DateTime $updated_at updated_at
-     *
+     * @param  \DateTime  $updated_at  updated_at
      * @return self
      */
     public function setUpdatedAt($updated_at)
@@ -688,8 +685,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets percentage_complete
      *
-     * @param int $percentage_complete percentage_complete
-     *
+     * @param  int  $percentage_complete  percentage_complete
      * @return self
      */
     public function setPercentageComplete($percentage_complete)
@@ -715,8 +711,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets primary_domain
      *
-     * @param string|null $primary_domain primary_domain
-     *
+     * @param  string|null  $primary_domain  primary_domain
      * @return self
      */
     public function setPrimaryDomain($primary_domain)
@@ -728,12 +723,11 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -743,8 +737,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -756,10 +749,8 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -773,9 +764,7 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -784,15 +773,16 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -818,5 +808,3 @@ class ImportMigrationEntry implements ModelInterface, ArrayAccess, \JsonSerializ
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

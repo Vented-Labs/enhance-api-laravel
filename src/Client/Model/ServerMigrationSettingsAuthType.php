@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ServerMigrationSettingsAuthType
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ServerMigrationSettingsAuthType Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ServerMigrationSettingsAuthType
@@ -50,6 +52,7 @@ class ServerMigrationSettingsAuthType
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -57,9 +60,7 @@ class ServerMigrationSettingsAuthType
         return [
             self::WHM_TOKEN,
             self::CPANEL_TOKEN,
-            self::BASIC
+            self::BASIC,
         ];
     }
 }
-
-

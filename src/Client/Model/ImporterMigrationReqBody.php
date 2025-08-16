@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ImporterMigrationReqBody
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,78 +30,82 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ImporterMigrationReqBody Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSerializable
+class ImporterMigrationReqBody implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ImporterMigrationReqBody';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'subscription_id' => 'int',
         'force_queue' => 'bool',
         'app_server_id' => 'string',
         'backup_server_id' => 'string',
         'db_server_id' => 'string',
-        'email_server_id' => 'string'
+        'email_server_id' => 'string',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'subscription_id' => null,
         'force_queue' => null,
         'app_server_id' => 'uuid',
         'backup_server_id' => 'uuid',
         'db_server_id' => 'uuid',
-        'email_server_id' => 'uuid'
+        'email_server_id' => 'uuid',
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'subscription_id' => false,
         'force_queue' => false,
         'app_server_id' => false,
         'backup_server_id' => false,
         'db_server_id' => false,
-        'email_server_id' => false
+        'email_server_id' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -124,8 +130,6 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -135,7 +139,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -145,7 +149,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -154,9 +158,6 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -165,9 +166,6 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -186,7 +184,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
         'app_server_id' => 'appServerId',
         'backup_server_id' => 'backupServerId',
         'db_server_id' => 'dbServerId',
-        'email_server_id' => 'emailServerId'
+        'email_server_id' => 'emailServerId',
     ];
 
     /**
@@ -200,7 +198,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
         'app_server_id' => 'setAppServerId',
         'backup_server_id' => 'setBackupServerId',
         'db_server_id' => 'setDbServerId',
-        'email_server_id' => 'setEmailServerId'
+        'email_server_id' => 'setEmailServerId',
     ];
 
     /**
@@ -214,7 +212,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
         'app_server_id' => 'getAppServerId',
         'backup_server_id' => 'getBackupServerId',
         'db_server_id' => 'getDbServerId',
-        'email_server_id' => 'getEmailServerId'
+        'email_server_id' => 'getEmailServerId',
     ];
 
     /**
@@ -258,7 +256,6 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -269,8 +266,8 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -283,14 +280,12 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -323,7 +318,6 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets subscription_id
      *
@@ -337,8 +331,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets subscription_id
      *
-     * @param int|null $subscription_id subscription_id
-     *
+     * @param  int|null  $subscription_id  subscription_id
      * @return self
      */
     public function setSubscriptionId($subscription_id)
@@ -364,8 +357,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets force_queue
      *
-     * @param bool|null $force_queue force_queue
-     *
+     * @param  bool|null  $force_queue  force_queue
      * @return self
      */
     public function setForceQueue($force_queue)
@@ -391,8 +383,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets app_server_id
      *
-     * @param string|null $app_server_id app_server_id
-     *
+     * @param  string|null  $app_server_id  app_server_id
      * @return self
      */
     public function setAppServerId($app_server_id)
@@ -418,8 +409,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets backup_server_id
      *
-     * @param string|null $backup_server_id backup_server_id
-     *
+     * @param  string|null  $backup_server_id  backup_server_id
      * @return self
      */
     public function setBackupServerId($backup_server_id)
@@ -445,8 +435,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets db_server_id
      *
-     * @param string|null $db_server_id db_server_id
-     *
+     * @param  string|null  $db_server_id  db_server_id
      * @return self
      */
     public function setDbServerId($db_server_id)
@@ -472,8 +461,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets email_server_id
      *
-     * @param string|null $email_server_id email_server_id
-     *
+     * @param  string|null  $email_server_id  email_server_id
      * @return self
      */
     public function setEmailServerId($email_server_id)
@@ -485,12 +473,11 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -500,8 +487,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -513,10 +499,8 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -530,9 +514,7 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -541,15 +523,16 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -575,5 +558,3 @@ class ImporterMigrationReqBody implements ModelInterface, ArrayAccess, \JsonSeri
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

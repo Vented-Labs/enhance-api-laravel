@@ -1,12 +1,14 @@
 <?php
+
 /**
  * EmailAuthValidation
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,72 +30,76 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * EmailAuthValidation Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializable
+class EmailAuthValidation implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'EmailAuthValidation';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'dkim_is_valid' => 'bool',
         'spf_is_valid' => 'bool',
         'found_txt_records_dkim' => 'string[]',
-        'found_txt_records_spf' => 'string[]'
+        'found_txt_records_spf' => 'string[]',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'dkim_is_valid' => null,
         'spf_is_valid' => null,
         'found_txt_records_dkim' => null,
-        'found_txt_records_spf' => null
+        'found_txt_records_spf' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'dkim_is_valid' => false,
         'spf_is_valid' => false,
         'found_txt_records_dkim' => false,
-        'found_txt_records_spf' => false
+        'found_txt_records_spf' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -118,8 +124,6 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -129,7 +133,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -139,7 +143,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -148,9 +152,6 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -159,9 +160,6 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -178,7 +176,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
         'dkim_is_valid' => 'dkimIsValid',
         'spf_is_valid' => 'spfIsValid',
         'found_txt_records_dkim' => 'foundTxtRecordsDkim',
-        'found_txt_records_spf' => 'foundTxtRecordsSpf'
+        'found_txt_records_spf' => 'foundTxtRecordsSpf',
     ];
 
     /**
@@ -190,7 +188,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
         'dkim_is_valid' => 'setDkimIsValid',
         'spf_is_valid' => 'setSpfIsValid',
         'found_txt_records_dkim' => 'setFoundTxtRecordsDkim',
-        'found_txt_records_spf' => 'setFoundTxtRecordsSpf'
+        'found_txt_records_spf' => 'setFoundTxtRecordsSpf',
     ];
 
     /**
@@ -202,7 +200,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
         'dkim_is_valid' => 'getDkimIsValid',
         'spf_is_valid' => 'getSpfIsValid',
         'found_txt_records_dkim' => 'getFoundTxtRecordsDkim',
-        'found_txt_records_spf' => 'getFoundTxtRecordsSpf'
+        'found_txt_records_spf' => 'getFoundTxtRecordsSpf',
     ];
 
     /**
@@ -246,7 +244,6 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -257,8 +254,8 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -269,14 +266,12 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -304,6 +299,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['found_txt_records_dkim'] === null) {
             $invalidProperties[] = "'found_txt_records_dkim' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -318,7 +314,6 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets dkim_is_valid
      *
@@ -332,8 +327,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets dkim_is_valid
      *
-     * @param bool $dkim_is_valid dkim_is_valid
-     *
+     * @param  bool  $dkim_is_valid  dkim_is_valid
      * @return self
      */
     public function setDkimIsValid($dkim_is_valid)
@@ -359,8 +353,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets spf_is_valid
      *
-     * @param bool $spf_is_valid spf_is_valid
-     *
+     * @param  bool  $spf_is_valid  spf_is_valid
      * @return self
      */
     public function setSpfIsValid($spf_is_valid)
@@ -386,8 +379,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets found_txt_records_dkim
      *
-     * @param string[] $found_txt_records_dkim found_txt_records_dkim
-     *
+     * @param  string[]  $found_txt_records_dkim  found_txt_records_dkim
      * @return self
      */
     public function setFoundTxtRecordsDkim($found_txt_records_dkim)
@@ -413,8 +405,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets found_txt_records_spf
      *
-     * @param string[]|null $found_txt_records_spf found_txt_records_spf
-     *
+     * @param  string[]|null  $found_txt_records_spf  found_txt_records_spf
      * @return self
      */
     public function setFoundTxtRecordsSpf($found_txt_records_spf)
@@ -426,12 +417,11 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -441,8 +431,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -454,10 +443,8 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -471,9 +458,7 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -482,15 +467,16 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -516,5 +502,3 @@ class EmailAuthValidation implements ModelInterface, ArrayAccess, \JsonSerializa
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

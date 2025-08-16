@@ -1,12 +1,14 @@
 <?php
+
 /**
  * WebsiteApp
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,72 +30,76 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * WebsiteApp Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
+class WebsiteApp implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'WebsiteApp';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'id' => 'string',
         'app' => '\Vented\EnhanceApiLaravel\Client\Model\WebsiteAppKind',
         'path' => 'string',
-        'default_wp_user_id' => 'int'
+        'default_wp_user_id' => 'int',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'id' => 'uuid',
         'app' => null,
         'path' => 'path',
-        'default_wp_user_id' => null
+        'default_wp_user_id' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'id' => false,
         'app' => false,
         'path' => false,
-        'default_wp_user_id' => false
+        'default_wp_user_id' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -118,8 +124,6 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -129,7 +133,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -139,7 +143,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -148,9 +152,6 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -159,9 +160,6 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -178,7 +176,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'app' => 'app',
         'path' => 'path',
-        'default_wp_user_id' => 'defaultWpUserId'
+        'default_wp_user_id' => 'defaultWpUserId',
     ];
 
     /**
@@ -190,7 +188,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'app' => 'setApp',
         'path' => 'setPath',
-        'default_wp_user_id' => 'setDefaultWpUserId'
+        'default_wp_user_id' => 'setDefaultWpUserId',
     ];
 
     /**
@@ -202,7 +200,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'app' => 'getApp',
         'path' => 'getPath',
-        'default_wp_user_id' => 'getDefaultWpUserId'
+        'default_wp_user_id' => 'getDefaultWpUserId',
     ];
 
     /**
@@ -246,7 +244,6 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -257,8 +254,8 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -269,14 +266,12 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -298,6 +293,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['app'] === null) {
             $invalidProperties[] = "'app' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -312,7 +308,6 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets id
      *
@@ -326,8 +321,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id id
-     *
+     * @param  string|null  $id  id
      * @return self
      */
     public function setId($id)
@@ -353,8 +347,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets app
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\WebsiteAppKind $app app
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\WebsiteAppKind  $app  app
      * @return self
      */
     public function setApp($app)
@@ -380,8 +373,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets path
      *
-     * @param string|null $path The path is only present if the app is installed in the root instead of a subfolder. For example if a customer installs Wordpress at '/blog', then the path will be present and equal to 'blog'. But if they install WP in website root, instead of returning '/' or empty string, this property is omitted.
-     *
+     * @param  string|null  $path  The path is only present if the app is installed in the root instead of a subfolder. For example if a customer installs Wordpress at '/blog', then the path will be present and equal to 'blog'. But if they install WP in website root, instead of returning '/' or empty string, this property is omitted.
      * @return self
      */
     public function setPath($path)
@@ -407,8 +399,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets default_wp_user_id
      *
-     * @param int|null $default_wp_user_id Only present if default was set by the user. Otherwise, this field isn't there.
-     *
+     * @param  int|null  $default_wp_user_id  Only present if default was set by the user. Otherwise, this field isn't there.
      * @return self
      */
     public function setDefaultWpUserId($default_wp_user_id)
@@ -420,12 +411,11 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -435,8 +425,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -448,10 +437,8 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -465,9 +452,7 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -476,15 +461,16 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -510,5 +496,3 @@ class WebsiteApp implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

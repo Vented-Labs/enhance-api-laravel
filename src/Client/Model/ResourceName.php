@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ResourceName
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,15 +29,16 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ResourceName Class Doc Comment
  *
  * @category Class
+ *
  * @description The name of the resource. Must be unique within a plan. Note: for arbitrary string casting please use &#x60;camelCase&#x60; format
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ResourceName
@@ -75,6 +78,7 @@ class ResourceName
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -94,9 +98,7 @@ class ResourceName
             self::WEBSITES,
             self::ADDON_DOMAINS,
             self::SUBDOMAINS,
-            self::DNS_RECORDS
+            self::DNS_RECORDS,
         ];
     }
 }
-
-

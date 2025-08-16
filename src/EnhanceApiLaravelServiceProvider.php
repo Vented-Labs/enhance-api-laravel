@@ -24,17 +24,17 @@ class EnhanceApiLaravelServiceProvider extends PackageServiceProvider
     {
         $this->app->singleton(Configuration::class, function ($app) {
             $config = $app['config']['enhance'];
-            
-            $configuration = new Configuration();
-            
-            if (!empty($config['api_key'])) {
+
+            $configuration = new Configuration;
+
+            if (! empty($config['api_key'])) {
                 $configuration->setAccessToken($config['api_key']);
             }
-            
-            if (!empty($config['base_url'])) {
+
+            if (! empty($config['base_url'])) {
                 $configuration->setHost($config['base_url']);
             }
-            
+
             return $configuration;
         });
 

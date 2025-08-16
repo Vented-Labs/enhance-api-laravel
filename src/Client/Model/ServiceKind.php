@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ServiceKind
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ServiceKind Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ServiceKind
@@ -64,6 +66,7 @@ class ServiceKind
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -78,9 +81,7 @@ class ServiceKind
             self::MYSQLCD,
             self::DNSCD,
             self::FILERD,
-            self::FTPCD
+            self::FTPCD,
         ];
     }
 }
-
-

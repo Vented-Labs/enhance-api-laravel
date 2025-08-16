@@ -1,12 +1,14 @@
 <?php
+
 /**
  * DnsStatus
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,15 +29,16 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * DnsStatus Class Doc Comment
  *
  * @category Class
+ *
  * @description Resolved &#x3D; domain resolves to our servers. ForeignServer &#x3D; domain resolves but points to somewhere else. Failed &#x3D; DNS query failed for the domain (potentially not configured). Unknown &#x3D; Not queried. Error &#x3D; There was an internal error. Mixed &#x3D; Website&#39;s domains resolved with different statuses.
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class DnsStatus
@@ -57,6 +60,7 @@ class DnsStatus
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -67,9 +71,7 @@ class DnsStatus
             self::FAILED,
             self::MIXED,
             self::UNKNOWN,
-            self::ERROR
+            self::ERROR,
         ];
     }
 }
-
-

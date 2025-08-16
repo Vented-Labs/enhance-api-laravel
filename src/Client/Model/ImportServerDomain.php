@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ImportServerDomain
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,75 +30,79 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ImportServerDomain Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializable
+class ImportServerDomain implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ImportServerDomain';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'import_server_id' => 'string',
         'domain' => 'string',
         'kind' => '\Vented\EnhanceApiLaravel\Client\Model\DomainMappingKind',
         'user' => 'string',
-        'movable' => 'bool'
+        'movable' => 'bool',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'import_server_id' => 'uuid',
         'domain' => null,
         'kind' => null,
         'user' => null,
-        'movable' => null
+        'movable' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'import_server_id' => false,
         'domain' => false,
         'kind' => false,
         'user' => false,
-        'movable' => false
+        'movable' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -121,8 +127,6 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -132,7 +136,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -142,7 +146,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -151,9 +155,6 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -162,9 +163,6 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -182,7 +180,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
         'domain' => 'domain',
         'kind' => 'kind',
         'user' => 'user',
-        'movable' => 'movable'
+        'movable' => 'movable',
     ];
 
     /**
@@ -195,7 +193,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
         'domain' => 'setDomain',
         'kind' => 'setKind',
         'user' => 'setUser',
-        'movable' => 'setMovable'
+        'movable' => 'setMovable',
     ];
 
     /**
@@ -208,7 +206,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
         'domain' => 'getDomain',
         'kind' => 'getKind',
         'user' => 'getUser',
-        'movable' => 'getMovable'
+        'movable' => 'getMovable',
     ];
 
     /**
@@ -252,7 +250,6 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -263,8 +260,8 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -276,14 +273,12 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -317,6 +312,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
         if ($this->container['movable'] === null) {
             $invalidProperties[] = "'movable' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -331,7 +327,6 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets import_server_id
      *
@@ -345,8 +340,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets import_server_id
      *
-     * @param string $import_server_id import_server_id
-     *
+     * @param  string  $import_server_id  import_server_id
      * @return self
      */
     public function setImportServerId($import_server_id)
@@ -372,8 +366,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets domain
      *
-     * @param string $domain domain
-     *
+     * @param  string  $domain  domain
      * @return self
      */
     public function setDomain($domain)
@@ -399,8 +392,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets kind
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\DomainMappingKind $kind kind
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\DomainMappingKind  $kind  kind
      * @return self
      */
     public function setKind($kind)
@@ -426,8 +418,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets user
      *
-     * @param string $user user
-     *
+     * @param  string  $user  user
      * @return self
      */
     public function setUser($user)
@@ -453,8 +444,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets movable
      *
-     * @param bool $movable movable
-     *
+     * @param  bool  $movable  movable
      * @return self
      */
     public function setMovable($movable)
@@ -466,12 +456,11 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -481,8 +470,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -494,10 +482,8 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -511,9 +497,7 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -522,15 +506,16 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -556,5 +541,3 @@ class ImportServerDomain implements ModelInterface, ArrayAccess, \JsonSerializab
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

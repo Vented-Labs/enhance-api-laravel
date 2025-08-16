@@ -1,11 +1,13 @@
 <?php
+
 /**
  * LicenceApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * LicenceApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class LicenceApi
@@ -72,7 +74,7 @@ class LicenceApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'getLicenceInfo' => [
             'application/json',
@@ -83,10 +85,7 @@ class LicenceApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -94,16 +93,16 @@ class LicenceApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -133,15 +132,16 @@ class LicenceApi
      *
      * Get current licence status
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LicenceInfo
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LicenceInfo
      */
     public function getLicenceInfo(string $contentType = self::contentTypes['getLicenceInfo'][0])
     {
-        list($response) = $this->getLicenceInfoWithHttpInfo($contentType);
+        [$response] = $this->getLicenceInfoWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -150,11 +150,11 @@ class LicenceApi
      *
      * Get current licence status
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LicenceInfo, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LicenceInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLicenceInfoWithHttpInfo(string $contentType = self::contentTypes['getLicenceInfo'][0])
     {
@@ -182,8 +182,7 @@ class LicenceApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LicenceInfo',
@@ -191,8 +190,6 @@ class LicenceApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -223,7 +220,6 @@ class LicenceApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -234,10 +230,10 @@ class LicenceApi
      *
      * Get current licence status
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLicenceInfoAsync(string $contentType = self::contentTypes['getLicenceInfo'][0])
     {
@@ -254,10 +250,10 @@ class LicenceApi
      *
      * Get current licence status
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLicenceInfoAsyncWithHttpInfo(string $contentType = self::contentTypes['getLicenceInfo'][0])
     {
@@ -269,7 +265,7 @@ class LicenceApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -280,7 +276,7 @@ class LicenceApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -303,14 +299,13 @@ class LicenceApi
     /**
      * Create request for operation 'getLicenceInfo'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getLicenceInfo'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getLicenceInfoRequest(string $contentType = self::contentTypes['getLicenceInfo'][0])
     {
-
 
         $resourcePath = '/licence';
         $formParams = [];
@@ -319,12 +314,8 @@ class LicenceApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -338,7 +329,7 @@ class LicenceApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -346,14 +337,13 @@ class LicenceApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -368,9 +358,10 @@ class LicenceApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -381,16 +372,17 @@ class LicenceApi
      *
      * Updates licence key if provided, and refresh licence status by calling home servers. NOTE: calling without any licence_key body, only refreshes the current licence status
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null $licence_key licence_key (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null  $licence_key  licence_key (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\LicenceInfo
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\LicenceInfo
      */
     public function refreshLicence($licence_key = null, string $contentType = self::contentTypes['refreshLicence'][0])
     {
-        list($response) = $this->refreshLicenceWithHttpInfo($licence_key, $contentType);
+        [$response] = $this->refreshLicenceWithHttpInfo($licence_key, $contentType);
+
         return $response;
     }
 
@@ -399,12 +391,12 @@ class LicenceApi
      *
      * Updates licence key if provided, and refresh licence status by calling home servers. NOTE: calling without any licence_key body, only refreshes the current licence status
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null $licence_key (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null  $licence_key  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LicenceInfo, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\LicenceInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function refreshLicenceWithHttpInfo($licence_key = null, string $contentType = self::contentTypes['refreshLicence'][0])
     {
@@ -432,8 +424,7 @@ class LicenceApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\LicenceInfo',
@@ -441,8 +432,6 @@ class LicenceApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -473,7 +462,6 @@ class LicenceApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -484,11 +472,11 @@ class LicenceApi
      *
      * Updates licence key if provided, and refresh licence status by calling home servers. NOTE: calling without any licence_key body, only refreshes the current licence status
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null $licence_key (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null  $licence_key  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function refreshLicenceAsync($licence_key = null, string $contentType = self::contentTypes['refreshLicence'][0])
     {
@@ -505,11 +493,11 @@ class LicenceApi
      *
      * Updates licence key if provided, and refresh licence status by calling home servers. NOTE: calling without any licence_key body, only refreshes the current licence status
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null $licence_key (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null  $licence_key  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function refreshLicenceAsyncWithHttpInfo($licence_key = null, string $contentType = self::contentTypes['refreshLicence'][0])
     {
@@ -521,7 +509,7 @@ class LicenceApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -532,7 +520,7 @@ class LicenceApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -555,16 +543,14 @@ class LicenceApi
     /**
      * Create request for operation 'refreshLicence'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null $licence_key (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\LicenceKey|null  $licence_key  (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['refreshLicence'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function refreshLicenceRequest($licence_key = null, string $contentType = self::contentTypes['refreshLicence'][0])
     {
-
-
 
         $resourcePath = '/licence';
         $formParams = [];
@@ -573,12 +559,8 @@ class LicenceApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -586,7 +568,7 @@ class LicenceApi
         // for model (json/xml)
         if (isset($licence_key)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($licence_key));
             } else {
                 $httpBody = $licence_key;
@@ -599,7 +581,7 @@ class LicenceApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -607,14 +589,13 @@ class LicenceApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -629,9 +610,10 @@ class LicenceApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -640,16 +622,17 @@ class LicenceApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -662,7 +645,7 @@ class LicenceApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -685,7 +668,7 @@ class LicenceApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

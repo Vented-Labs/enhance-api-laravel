@@ -1,12 +1,14 @@
 <?php
+
 /**
  * LicenceStatus
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,15 +29,16 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * LicenceStatus Class Doc Comment
  *
  * @category Class
+ *
  * @description Enhance Licence status
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class LicenceStatus
@@ -57,6 +60,7 @@ class LicenceStatus
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -67,9 +71,7 @@ class LicenceStatus
             self::SUSPENDED,
             self::TRIAL,
             self::UNPAID,
-            self::UNKNOWN
+            self::UNKNOWN,
         ];
     }
 }
-
-

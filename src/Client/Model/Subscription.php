@@ -1,12 +1,14 @@
 <?php
+
 /**
  * Subscription
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,35 +30,38 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * Subscription Class Doc Comment
  *
  * @category Class
+ *
  * @description An organization&#39;s subscription to a plan. This allows the subscriber to use the subscribed to resources up until the quota defined in the plan is exhausted. Includes details about the subscription as well as the current usage of the resources.
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
+class Subscription implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'Subscription';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'id' => 'int',
         'plan_id' => 'int',
@@ -75,16 +80,18 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         'redis_allowed' => 'bool',
         'server_groups' => '\Vented\EnhanceApiLaravel\Client\Model\ServerGroup[]',
         'preinstall_wordpress_theme' => 'string',
-        'friendly_name' => 'string'
+        'friendly_name' => 'string',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'id' => null,
         'plan_id' => null,
@@ -103,14 +110,14 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         'redis_allowed' => null,
         'server_groups' => null,
         'preinstall_wordpress_theme' => null,
-        'friendly_name' => null
+        'friendly_name' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'id' => false,
         'plan_id' => false,
@@ -129,14 +136,14 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         'redis_allowed' => false,
         'server_groups' => false,
         'preinstall_wordpress_theme' => false,
-        'friendly_name' => false
+        'friendly_name' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -161,8 +168,6 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -172,7 +177,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -182,7 +187,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -191,9 +196,6 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -202,9 +204,6 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -235,7 +234,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         'redis_allowed' => 'redisAllowed',
         'server_groups' => 'serverGroups',
         'preinstall_wordpress_theme' => 'preinstallWordpressTheme',
-        'friendly_name' => 'friendlyName'
+        'friendly_name' => 'friendlyName',
     ];
 
     /**
@@ -261,7 +260,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         'redis_allowed' => 'setRedisAllowed',
         'server_groups' => 'setServerGroups',
         'preinstall_wordpress_theme' => 'setPreinstallWordpressTheme',
-        'friendly_name' => 'setFriendlyName'
+        'friendly_name' => 'setFriendlyName',
     ];
 
     /**
@@ -287,7 +286,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         'redis_allowed' => 'getRedisAllowed',
         'server_groups' => 'getServerGroups',
         'preinstall_wordpress_theme' => 'getPreinstallWordpressTheme',
-        'friendly_name' => 'getFriendlyName'
+        'friendly_name' => 'getFriendlyName',
     ];
 
     /**
@@ -331,7 +330,6 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -342,8 +340,8 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -368,14 +366,12 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -436,6 +432,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['friendly_name'] === null) {
             $invalidProperties[] = "'friendly_name' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -450,7 +447,6 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets id
      *
@@ -464,8 +460,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int $id id
-     *
+     * @param  int  $id  id
      * @return self
      */
     public function setId($id)
@@ -491,8 +486,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets plan_id
      *
-     * @param int $plan_id plan_id
-     *
+     * @param  int  $plan_id  plan_id
      * @return self
      */
     public function setPlanId($plan_id)
@@ -518,8 +512,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets plan_name
      *
-     * @param string $plan_name plan_name
-     *
+     * @param  string  $plan_name  plan_name
      * @return self
      */
     public function setPlanName($plan_name)
@@ -545,8 +538,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subscriber_id
      *
-     * @param string $subscriber_id subscriber_id
-     *
+     * @param  string  $subscriber_id  subscriber_id
      * @return self
      */
     public function setSubscriberId($subscriber_id)
@@ -572,8 +564,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vendor_id
      *
-     * @param string $vendor_id vendor_id
-     *
+     * @param  string  $vendor_id  vendor_id
      * @return self
      */
     public function setVendorId($vendor_id)
@@ -599,8 +590,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\Status $status status
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Status  $status  status
      * @return self
      */
     public function setStatus($status)
@@ -626,8 +616,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets suspended_by
      *
-     * @param string|null $suspended_by suspended_by
-     *
+     * @param  string|null  $suspended_by  suspended_by
      * @return self
      */
     public function setSuspendedBy($suspended_by)
@@ -653,8 +642,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resources
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\UsedResource[] $resources A list of used resources.
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UsedResource[]  $resources  A list of used resources.
      * @return self
      */
     public function setResources($resources)
@@ -680,8 +668,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets allowances
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\Allowance[] $allowances allowances
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Allowance[]  $allowances  allowances
      * @return self
      */
     public function setAllowances($allowances)
@@ -707,8 +694,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets selections
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\Selection[] $selections selections
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Selection[]  $selections  selections
      * @return self
      */
     public function setSelections($selections)
@@ -734,8 +720,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dedicated_servers
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServersInfo|null $dedicated_servers dedicated_servers
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SubscriptionDedicatedServersInfo|null  $dedicated_servers  dedicated_servers
      * @return self
      */
     public function setDedicatedServers($dedicated_servers)
@@ -761,8 +746,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets plan_type
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\PlanType $plan_type plan_type
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\PlanType  $plan_type  plan_type
      * @return self
      */
     public function setPlanType($plan_type)
@@ -788,8 +772,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets allowed_php_versions
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\PhpVersion[] $allowed_php_versions allowed_php_versions
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\PhpVersion[]  $allowed_php_versions  allowed_php_versions
      * @return self
      */
     public function setAllowedPhpVersions($allowed_php_versions)
@@ -815,8 +798,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets default_php_version
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\PhpVersion $default_php_version default_php_version
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\PhpVersion  $default_php_version  default_php_version
      * @return self
      */
     public function setDefaultPhpVersion($default_php_version)
@@ -842,8 +824,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets redis_allowed
      *
-     * @param bool $redis_allowed redis_allowed
-     *
+     * @param  bool  $redis_allowed  redis_allowed
      * @return self
      */
     public function setRedisAllowed($redis_allowed)
@@ -869,8 +850,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets server_groups
      *
-     * @param \Vented\EnhanceApiLaravel\Client\Model\ServerGroup[]|null $server_groups If this field is present, the customer is allowed to chose from the server groups listed here when creating a website.
-     *
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServerGroup[]|null  $server_groups  If this field is present, the customer is allowed to chose from the server groups listed here when creating a website.
      * @return self
      */
     public function setServerGroups($server_groups)
@@ -896,8 +876,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets preinstall_wordpress_theme
      *
-     * @param string|null $preinstall_wordpress_theme :> When WordPress is installed on a website under this plan, the chosen theme will be preinstalled.
-     *
+     * @param  string|null  $preinstall_wordpress_theme  :> When WordPress is installed on a website under this plan, the chosen theme will be preinstalled.
      * @return self
      */
     public function setPreinstallWordpressTheme($preinstall_wordpress_theme)
@@ -923,8 +902,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets friendly_name
      *
-     * @param string $friendly_name friendly_name
-     *
+     * @param  string  $friendly_name  friendly_name
      * @return self
      */
     public function setFriendlyName($friendly_name)
@@ -936,12 +914,11 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -951,8 +928,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -964,10 +940,8 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -981,9 +955,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -992,15 +964,16 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -1026,5 +999,3 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

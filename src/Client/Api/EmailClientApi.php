@@ -1,11 +1,13 @@
 <?php
+
 /**
  * EmailClientApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * EmailClientApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class EmailClientApi
@@ -72,7 +74,7 @@ class EmailClientApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'createEmailAutoresponder' => [
             'application/json',
@@ -101,10 +103,7 @@ class EmailClientApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -112,16 +111,16 @@ class EmailClientApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -151,19 +150,20 @@ class EmailClientApi
      *
      * Create new email autoresponder
      *
-     * @param  string $authorization authorization (required)
-     * @param  string $address address (required)
-     * @param  string $password password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  authorization (required)
+     * @param  string  $address  address (required)
+     * @param  string  $password  password (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\NewResourceId
      */
     public function createEmailAutoresponder($authorization, $address, $password, $new_autoresponder, string $contentType = self::contentTypes['createEmailAutoresponder'][0])
     {
-        list($response) = $this->createEmailAutoresponderWithHttpInfo($authorization, $address, $password, $new_autoresponder, $contentType);
+        [$response] = $this->createEmailAutoresponderWithHttpInfo($authorization, $address, $password, $new_autoresponder, $contentType);
+
         return $response;
     }
 
@@ -172,15 +172,15 @@ class EmailClientApi
      *
      * Create new email autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\NewResourceId, HTTP status code, HTTP response headers (array of strings)
      */
     public function createEmailAutoresponderWithHttpInfo($authorization, $address, $password, $new_autoresponder, string $contentType = self::contentTypes['createEmailAutoresponder'][0])
     {
@@ -208,8 +208,7 @@ class EmailClientApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\NewResourceId',
@@ -217,8 +216,6 @@ class EmailClientApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -249,7 +246,6 @@ class EmailClientApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -260,14 +256,14 @@ class EmailClientApi
      *
      * Create new email autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createEmailAutoresponderAsync($authorization, $address, $password, $new_autoresponder, string $contentType = self::contentTypes['createEmailAutoresponder'][0])
     {
@@ -284,14 +280,14 @@ class EmailClientApi
      *
      * Create new email autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createEmailAutoresponderAsyncWithHttpInfo($authorization, $address, $password, $new_autoresponder, string $contentType = self::contentTypes['createEmailAutoresponder'][0])
     {
@@ -303,7 +299,7 @@ class EmailClientApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -314,7 +310,7 @@ class EmailClientApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -337,14 +333,14 @@ class EmailClientApi
     /**
      * Create request for operation 'createEmailAutoresponder'
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder $new_autoresponder Autoresponder details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\NewAutoresponder  $new_autoresponder  Autoresponder details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createEmailAutoresponderRequest($authorization, $address, $password, $new_autoresponder, string $contentType = self::contentTypes['createEmailAutoresponder'][0])
     {
@@ -377,14 +373,12 @@ class EmailClientApi
             );
         }
 
-
         $resourcePath = '/email-client/autoresponders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
         // header params
         if ($authorization !== null) {
@@ -399,10 +393,8 @@ class EmailClientApi
             $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
         }
 
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -410,7 +402,7 @@ class EmailClientApi
         // for model (json/xml)
         if (isset($new_autoresponder)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($new_autoresponder));
             } else {
                 $httpBody = $new_autoresponder;
@@ -423,7 +415,7 @@ class EmailClientApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -431,14 +423,13 @@ class EmailClientApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -453,9 +444,10 @@ class EmailClientApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -466,14 +458,14 @@ class EmailClientApi
      *
      * Delete email autoresponder
      *
-     * @param  string $authorization authorization (required)
-     * @param  string $address address (required)
-     * @param  string $password password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  authorization (required)
+     * @param  string  $address  address (required)
+     * @param  string  $password  password (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteEmailAutoresponder($authorization, $address, $password, string $contentType = self::contentTypes['deleteEmailAutoresponder'][0])
     {
@@ -485,14 +477,14 @@ class EmailClientApi
      *
      * Delete email autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteEmailAutoresponderWithHttpInfo($authorization, $address, $password, string $contentType = self::contentTypes['deleteEmailAutoresponder'][0])
     {
@@ -520,12 +512,10 @@ class EmailClientApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -536,13 +526,13 @@ class EmailClientApi
      *
      * Delete email autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteEmailAutoresponderAsync($authorization, $address, $password, string $contentType = self::contentTypes['deleteEmailAutoresponder'][0])
     {
@@ -559,13 +549,13 @@ class EmailClientApi
      *
      * Delete email autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteEmailAutoresponderAsyncWithHttpInfo($authorization, $address, $password, string $contentType = self::contentTypes['deleteEmailAutoresponder'][0])
     {
@@ -575,7 +565,7 @@ class EmailClientApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -598,13 +588,13 @@ class EmailClientApi
     /**
      * Create request for operation 'deleteEmailAutoresponder'
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteEmailAutoresponderRequest($authorization, $address, $password, string $contentType = self::contentTypes['deleteEmailAutoresponder'][0])
     {
@@ -630,14 +620,12 @@ class EmailClientApi
             );
         }
 
-
         $resourcePath = '/email-client/autoresponders/{autoresponder_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
         // header params
         if ($authorization !== null) {
@@ -651,8 +639,6 @@ class EmailClientApi
         if ($password !== null) {
             $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
         }
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -669,7 +655,7 @@ class EmailClientApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -677,14 +663,13 @@ class EmailClientApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -699,9 +684,10 @@ class EmailClientApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -712,18 +698,19 @@ class EmailClientApi
      *
      * Get email account autoresponder
      *
-     * @param  string $authorization authorization (required)
-     * @param  string $address address (required)
-     * @param  string $password password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @param  string  $authorization  authorization (required)
+     * @param  string  $address  address (required)
+     * @param  string  $password  password (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Autoresponder
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Autoresponder
      */
     public function getEmailAutoresponders($authorization, $address, $password, string $contentType = self::contentTypes['getEmailAutoresponders'][0])
     {
-        list($response) = $this->getEmailAutorespondersWithHttpInfo($authorization, $address, $password, $contentType);
+        [$response] = $this->getEmailAutorespondersWithHttpInfo($authorization, $address, $password, $contentType);
+
         return $response;
     }
 
@@ -732,14 +719,14 @@ class EmailClientApi
      *
      * Get email account autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Autoresponder, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Autoresponder, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailAutorespondersWithHttpInfo($authorization, $address, $password, string $contentType = self::contentTypes['getEmailAutoresponders'][0])
     {
@@ -767,8 +754,7 @@ class EmailClientApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Autoresponder',
@@ -776,8 +762,6 @@ class EmailClientApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -808,7 +792,6 @@ class EmailClientApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -819,13 +802,13 @@ class EmailClientApi
      *
      * Get email account autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailAutorespondersAsync($authorization, $address, $password, string $contentType = self::contentTypes['getEmailAutoresponders'][0])
     {
@@ -842,13 +825,13 @@ class EmailClientApi
      *
      * Get email account autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailAutorespondersAsyncWithHttpInfo($authorization, $address, $password, string $contentType = self::contentTypes['getEmailAutoresponders'][0])
     {
@@ -860,7 +843,7 @@ class EmailClientApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -871,7 +854,7 @@ class EmailClientApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -894,13 +877,13 @@ class EmailClientApi
     /**
      * Create request for operation 'getEmailAutoresponders'
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailAutoresponders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmailAutorespondersRequest($authorization, $address, $password, string $contentType = self::contentTypes['getEmailAutoresponders'][0])
     {
@@ -926,14 +909,12 @@ class EmailClientApi
             );
         }
 
-
         $resourcePath = '/email-client/autoresponders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
         // header params
         if ($authorization !== null) {
@@ -948,10 +929,8 @@ class EmailClientApi
             $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
         }
 
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -965,7 +944,7 @@ class EmailClientApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -973,14 +952,13 @@ class EmailClientApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -995,9 +973,10 @@ class EmailClientApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1008,18 +987,19 @@ class EmailClientApi
      *
      * Returns email account&#39;s forwarders
      *
-     * @param  string $authorization authorization (required)
-     * @param  string $address address (required)
-     * @param  string $password password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  authorization (required)
+     * @param  string  $address  address (required)
+     * @param  string  $password  password (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\ForwardersFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\ForwardersFullListing
      */
     public function getEmailForwarders($authorization, $address, $password, string $contentType = self::contentTypes['getEmailForwarders'][0])
     {
-        list($response) = $this->getEmailForwardersWithHttpInfo($authorization, $address, $password, $contentType);
+        [$response] = $this->getEmailForwardersWithHttpInfo($authorization, $address, $password, $contentType);
+
         return $response;
     }
 
@@ -1028,14 +1008,14 @@ class EmailClientApi
      *
      * Returns email account&#39;s forwarders
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ForwardersFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\ForwardersFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailForwardersWithHttpInfo($authorization, $address, $password, string $contentType = self::contentTypes['getEmailForwarders'][0])
     {
@@ -1063,8 +1043,7 @@ class EmailClientApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\ForwardersFullListing',
@@ -1072,8 +1051,6 @@ class EmailClientApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1104,7 +1081,6 @@ class EmailClientApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1115,13 +1091,13 @@ class EmailClientApi
      *
      * Returns email account&#39;s forwarders
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailForwardersAsync($authorization, $address, $password, string $contentType = self::contentTypes['getEmailForwarders'][0])
     {
@@ -1138,13 +1114,13 @@ class EmailClientApi
      *
      * Returns email account&#39;s forwarders
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailForwardersAsyncWithHttpInfo($authorization, $address, $password, string $contentType = self::contentTypes['getEmailForwarders'][0])
     {
@@ -1156,7 +1132,7 @@ class EmailClientApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1167,7 +1143,7 @@ class EmailClientApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1190,13 +1166,13 @@ class EmailClientApi
     /**
      * Create request for operation 'getEmailForwarders'
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailForwarders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmailForwardersRequest($authorization, $address, $password, string $contentType = self::contentTypes['getEmailForwarders'][0])
     {
@@ -1222,14 +1198,12 @@ class EmailClientApi
             );
         }
 
-
         $resourcePath = '/email-client/forwarders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
         // header params
         if ($authorization !== null) {
@@ -1244,10 +1218,8 @@ class EmailClientApi
             $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
         }
 
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1261,7 +1233,7 @@ class EmailClientApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1269,14 +1241,13 @@ class EmailClientApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1291,9 +1262,10 @@ class EmailClientApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1304,18 +1276,19 @@ class EmailClientApi
      *
      * Returns public Ip Address of the email server
      *
-     * @param  string $authorization authorization (required)
-     * @param  string $address address (required)
-     * @param  string $password password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @param  string  $authorization  authorization (required)
+     * @param  string  $address  address (required)
+     * @param  string  $password  password (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailPublicIp
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\EmailPublicIp
      */
     public function getEmailPublicIp($authorization, $address, $password, string $contentType = self::contentTypes['getEmailPublicIp'][0])
     {
-        list($response) = $this->getEmailPublicIpWithHttpInfo($authorization, $address, $password, $contentType);
+        [$response] = $this->getEmailPublicIpWithHttpInfo($authorization, $address, $password, $contentType);
+
         return $response;
     }
 
@@ -1324,14 +1297,14 @@ class EmailClientApi
      *
      * Returns public Ip Address of the email server
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailPublicIp, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\EmailPublicIp, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailPublicIpWithHttpInfo($authorization, $address, $password, string $contentType = self::contentTypes['getEmailPublicIp'][0])
     {
@@ -1359,8 +1332,7 @@ class EmailClientApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\EmailPublicIp',
@@ -1368,8 +1340,6 @@ class EmailClientApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -1400,7 +1370,6 @@ class EmailClientApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -1411,13 +1380,13 @@ class EmailClientApi
      *
      * Returns public Ip Address of the email server
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailPublicIpAsync($authorization, $address, $password, string $contentType = self::contentTypes['getEmailPublicIp'][0])
     {
@@ -1434,13 +1403,13 @@ class EmailClientApi
      *
      * Returns public Ip Address of the email server
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getEmailPublicIpAsyncWithHttpInfo($authorization, $address, $password, string $contentType = self::contentTypes['getEmailPublicIp'][0])
     {
@@ -1452,7 +1421,7 @@ class EmailClientApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -1463,7 +1432,7 @@ class EmailClientApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -1486,13 +1455,13 @@ class EmailClientApi
     /**
      * Create request for operation 'getEmailPublicIp'
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getEmailPublicIp'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getEmailPublicIpRequest($authorization, $address, $password, string $contentType = self::contentTypes['getEmailPublicIp'][0])
     {
@@ -1518,14 +1487,12 @@ class EmailClientApi
             );
         }
 
-
         $resourcePath = '/email-client/public-ip';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
         // header params
         if ($authorization !== null) {
@@ -1540,10 +1507,8 @@ class EmailClientApi
             $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
         }
 
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -1557,7 +1522,7 @@ class EmailClientApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1565,14 +1530,13 @@ class EmailClientApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1587,9 +1551,10 @@ class EmailClientApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1600,15 +1565,15 @@ class EmailClientApi
      *
      * Update email autoresponder
      *
-     * @param  string $authorization authorization (required)
-     * @param  string $address address (required)
-     * @param  string $password password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder $update_autoresponder Autoresponder update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  authorization (required)
+     * @param  string  $address  address (required)
+     * @param  string  $password  password (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder  $update_autoresponder  Autoresponder update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateEmailAutoresponder($authorization, $address, $password, $update_autoresponder, string $contentType = self::contentTypes['updateEmailAutoresponder'][0])
     {
@@ -1620,15 +1585,15 @@ class EmailClientApi
      *
      * Update email autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder $update_autoresponder Autoresponder update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder  $update_autoresponder  Autoresponder update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateEmailAutoresponderWithHttpInfo($authorization, $address, $password, $update_autoresponder, string $contentType = self::contentTypes['updateEmailAutoresponder'][0])
     {
@@ -1656,12 +1621,10 @@ class EmailClientApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1672,14 +1635,14 @@ class EmailClientApi
      *
      * Update email autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder $update_autoresponder Autoresponder update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder  $update_autoresponder  Autoresponder update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateEmailAutoresponderAsync($authorization, $address, $password, $update_autoresponder, string $contentType = self::contentTypes['updateEmailAutoresponder'][0])
     {
@@ -1696,14 +1659,14 @@ class EmailClientApi
      *
      * Update email autoresponder
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder $update_autoresponder Autoresponder update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder  $update_autoresponder  Autoresponder update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateEmailAutoresponderAsyncWithHttpInfo($authorization, $address, $password, $update_autoresponder, string $contentType = self::contentTypes['updateEmailAutoresponder'][0])
     {
@@ -1713,7 +1676,7 @@ class EmailClientApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1736,14 +1699,14 @@ class EmailClientApi
     /**
      * Create request for operation 'updateEmailAutoresponder'
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder $update_autoresponder Autoresponder update details. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateAutoresponder  $update_autoresponder  Autoresponder update details. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailAutoresponder'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateEmailAutoresponderRequest($authorization, $address, $password, $update_autoresponder, string $contentType = self::contentTypes['updateEmailAutoresponder'][0])
     {
@@ -1776,14 +1739,12 @@ class EmailClientApi
             );
         }
 
-
         $resourcePath = '/email-client/autoresponders/{autoresponder_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
         // header params
         if ($authorization !== null) {
@@ -1798,8 +1759,6 @@ class EmailClientApi
             $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
         }
 
-
-
         $headers = $this->headerSelector->selectHeaders(
             [],
             $contentType,
@@ -1809,7 +1768,7 @@ class EmailClientApi
         // for model (json/xml)
         if (isset($update_autoresponder)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_autoresponder));
             } else {
                 $httpBody = $update_autoresponder;
@@ -1822,7 +1781,7 @@ class EmailClientApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1830,14 +1789,13 @@ class EmailClientApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1852,9 +1810,10 @@ class EmailClientApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1865,15 +1824,15 @@ class EmailClientApi
      *
      * Updates email account&#39;s forwarders
      *
-     * @param  string $authorization authorization (required)
-     * @param  string $address address (required)
-     * @param  string $password password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate $email_forwarders_update email_forwarders_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  authorization (required)
+     * @param  string  $address  address (required)
+     * @param  string  $password  password (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate  $email_forwarders_update  email_forwarders_update (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateEmailForwarders($authorization, $address, $password, $email_forwarders_update, string $contentType = self::contentTypes['updateEmailForwarders'][0])
     {
@@ -1885,15 +1844,15 @@ class EmailClientApi
      *
      * Updates email account&#39;s forwarders
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate $email_forwarders_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate  $email_forwarders_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateEmailForwardersWithHttpInfo($authorization, $address, $password, $email_forwarders_update, string $contentType = self::contentTypes['updateEmailForwarders'][0])
     {
@@ -1921,12 +1880,10 @@ class EmailClientApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1937,14 +1894,14 @@ class EmailClientApi
      *
      * Updates email account&#39;s forwarders
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate $email_forwarders_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate  $email_forwarders_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateEmailForwardersAsync($authorization, $address, $password, $email_forwarders_update, string $contentType = self::contentTypes['updateEmailForwarders'][0])
     {
@@ -1961,14 +1918,14 @@ class EmailClientApi
      *
      * Updates email account&#39;s forwarders
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate $email_forwarders_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate  $email_forwarders_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateEmailForwardersAsyncWithHttpInfo($authorization, $address, $password, $email_forwarders_update, string $contentType = self::contentTypes['updateEmailForwarders'][0])
     {
@@ -1978,7 +1935,7 @@ class EmailClientApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2001,14 +1958,14 @@ class EmailClientApi
     /**
      * Create request for operation 'updateEmailForwarders'
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate $email_forwarders_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailForwardersUpdate  $email_forwarders_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailForwarders'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateEmailForwardersRequest($authorization, $address, $password, $email_forwarders_update, string $contentType = self::contentTypes['updateEmailForwarders'][0])
     {
@@ -2041,14 +1998,12 @@ class EmailClientApi
             );
         }
 
-
         $resourcePath = '/email-client/forwarders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
         // header params
         if ($authorization !== null) {
@@ -2063,8 +2018,6 @@ class EmailClientApi
             $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
         }
 
-
-
         $headers = $this->headerSelector->selectHeaders(
             [],
             $contentType,
@@ -2074,7 +2027,7 @@ class EmailClientApi
         // for model (json/xml)
         if (isset($email_forwarders_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($email_forwarders_update));
             } else {
                 $httpBody = $email_forwarders_update;
@@ -2087,7 +2040,7 @@ class EmailClientApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2095,14 +2048,13 @@ class EmailClientApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2117,9 +2069,10 @@ class EmailClientApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2130,15 +2083,15 @@ class EmailClientApi
      *
      * Updates email account&#39;s password
      *
-     * @param  string $authorization authorization (required)
-     * @param  string $address address (required)
-     * @param  string $password password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate $email_password_update email_password_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @param  string  $authorization  authorization (required)
+     * @param  string  $address  address (required)
+     * @param  string  $password  password (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate  $email_password_update  email_password_update (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateEmailPassword($authorization, $address, $password, $email_password_update, string $contentType = self::contentTypes['updateEmailPassword'][0])
     {
@@ -2150,15 +2103,15 @@ class EmailClientApi
      *
      * Updates email account&#39;s password
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate $email_password_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate  $email_password_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateEmailPasswordWithHttpInfo($authorization, $address, $password, $email_password_update, string $contentType = self::contentTypes['updateEmailPassword'][0])
     {
@@ -2186,12 +2139,10 @@ class EmailClientApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2202,14 +2153,14 @@ class EmailClientApi
      *
      * Updates email account&#39;s password
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate $email_password_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate  $email_password_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateEmailPasswordAsync($authorization, $address, $password, $email_password_update, string $contentType = self::contentTypes['updateEmailPassword'][0])
     {
@@ -2226,14 +2177,14 @@ class EmailClientApi
      *
      * Updates email account&#39;s password
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate $email_password_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate  $email_password_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateEmailPasswordAsyncWithHttpInfo($authorization, $address, $password, $email_password_update, string $contentType = self::contentTypes['updateEmailPassword'][0])
     {
@@ -2243,7 +2194,7 @@ class EmailClientApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2266,14 +2217,14 @@ class EmailClientApi
     /**
      * Create request for operation 'updateEmailPassword'
      *
-     * @param  string $authorization (required)
-     * @param  string $address (required)
-     * @param  string $password (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate $email_password_update (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @param  string  $authorization  (required)
+     * @param  string  $address  (required)
+     * @param  string  $password  (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\EmailPasswordUpdate  $email_password_update  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateEmailPassword'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateEmailPasswordRequest($authorization, $address, $password, $email_password_update, string $contentType = self::contentTypes['updateEmailPassword'][0])
     {
@@ -2306,14 +2257,12 @@ class EmailClientApi
             );
         }
 
-
         $resourcePath = '/email-client/password';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
 
         // header params
         if ($authorization !== null) {
@@ -2328,8 +2277,6 @@ class EmailClientApi
             $headerParams['Password'] = ObjectSerializer::toHeaderValue($password);
         }
 
-
-
         $headers = $this->headerSelector->selectHeaders(
             [],
             $contentType,
@@ -2339,7 +2286,7 @@ class EmailClientApi
         // for model (json/xml)
         if (isset($email_password_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($email_password_update));
             } else {
                 $httpBody = $email_password_update;
@@ -2352,7 +2299,7 @@ class EmailClientApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2360,14 +2307,13 @@ class EmailClientApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2382,9 +2328,10 @@ class EmailClientApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2393,16 +2340,17 @@ class EmailClientApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -2415,7 +2363,7 @@ class EmailClientApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -2438,7 +2386,7 @@ class EmailClientApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

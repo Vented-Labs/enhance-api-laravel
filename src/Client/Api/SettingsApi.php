@@ -1,11 +1,13 @@
 <?php
+
 /**
  * SettingsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * SettingsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class SettingsApi
@@ -72,7 +74,7 @@ class SettingsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'addOrchdLoginPolicyEmailBlacklist' => [
             'application/json',
@@ -182,10 +184,7 @@ class SettingsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -193,16 +192,16 @@ class SettingsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -232,12 +231,12 @@ class SettingsApi
      *
      * Set the orchd login policy email blacklist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  orchd_login_policy_email_list (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function addOrchdLoginPolicyEmailBlacklist($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -249,12 +248,12 @@ class SettingsApi
      *
      * Set the orchd login policy email blacklist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function addOrchdLoginPolicyEmailBlacklistWithHttpInfo($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -282,12 +281,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -298,11 +295,11 @@ class SettingsApi
      *
      * Set the orchd login policy email blacklist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicyEmailBlacklistAsync($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -319,11 +316,11 @@ class SettingsApi
      *
      * Set the orchd login policy email blacklist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicyEmailBlacklistAsyncWithHttpInfo($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -333,7 +330,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -356,11 +353,11 @@ class SettingsApi
     /**
      * Create request for operation 'addOrchdLoginPolicyEmailBlacklist'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function addOrchdLoginPolicyEmailBlacklistRequest($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -372,17 +369,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/login-policy/email-blacklist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -393,7 +385,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_login_policy_email_list)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_login_policy_email_list));
             } else {
                 $httpBody = $orchd_login_policy_email_list;
@@ -406,7 +398,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -414,7 +406,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -425,11 +417,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -445,9 +437,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -458,12 +451,12 @@ class SettingsApi
      *
      * Set the orchd login policy email whitelist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  orchd_login_policy_email_list (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function addOrchdLoginPolicyEmailWhitelist($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -475,12 +468,12 @@ class SettingsApi
      *
      * Set the orchd login policy email whitelist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function addOrchdLoginPolicyEmailWhitelistWithHttpInfo($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -508,12 +501,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -524,11 +515,11 @@ class SettingsApi
      *
      * Set the orchd login policy email whitelist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicyEmailWhitelistAsync($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -545,11 +536,11 @@ class SettingsApi
      *
      * Set the orchd login policy email whitelist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicyEmailWhitelistAsyncWithHttpInfo($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -559,7 +550,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -582,11 +573,11 @@ class SettingsApi
     /**
      * Create request for operation 'addOrchdLoginPolicyEmailWhitelist'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function addOrchdLoginPolicyEmailWhitelistRequest($orchd_login_policy_email_list, string $contentType = self::contentTypes['addOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -598,17 +589,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/login-policy/email-whitelist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -619,7 +605,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_login_policy_email_list)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_login_policy_email_list));
             } else {
                 $httpBody = $orchd_login_policy_email_list;
@@ -632,7 +618,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -640,7 +626,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -651,11 +637,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -671,9 +657,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -684,12 +671,12 @@ class SettingsApi
      *
      * Set the orchd login policy ip blacklist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  orchd_login_policy_ip_list (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function addOrchdLoginPolicyIpBlacklist($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -701,12 +688,12 @@ class SettingsApi
      *
      * Set the orchd login policy ip blacklist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function addOrchdLoginPolicyIpBlacklistWithHttpInfo($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -734,12 +721,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -750,11 +735,11 @@ class SettingsApi
      *
      * Set the orchd login policy ip blacklist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicyIpBlacklistAsync($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -771,11 +756,11 @@ class SettingsApi
      *
      * Set the orchd login policy ip blacklist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicyIpBlacklistAsyncWithHttpInfo($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -785,7 +770,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -808,11 +793,11 @@ class SettingsApi
     /**
      * Create request for operation 'addOrchdLoginPolicyIpBlacklist'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function addOrchdLoginPolicyIpBlacklistRequest($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -824,17 +809,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/login-policy/ip-blacklist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -845,7 +825,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_login_policy_ip_list)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_login_policy_ip_list));
             } else {
                 $httpBody = $orchd_login_policy_ip_list;
@@ -858,7 +838,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -866,7 +846,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -877,11 +857,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -897,9 +877,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -910,12 +891,12 @@ class SettingsApi
      *
      * Set the orchd login policy ip whitelist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  orchd_login_policy_ip_list (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function addOrchdLoginPolicyIpWhitelist($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -927,12 +908,12 @@ class SettingsApi
      *
      * Set the orchd login policy ip whitelist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function addOrchdLoginPolicyIpWhitelistWithHttpInfo($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -960,12 +941,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -976,11 +955,11 @@ class SettingsApi
      *
      * Set the orchd login policy ip whitelist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicyIpWhitelistAsync($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -997,11 +976,11 @@ class SettingsApi
      *
      * Set the orchd login policy ip whitelist as a whole
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicyIpWhitelistAsyncWithHttpInfo($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -1011,7 +990,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1034,11 +1013,11 @@ class SettingsApi
     /**
      * Create request for operation 'addOrchdLoginPolicyIpWhitelist'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function addOrchdLoginPolicyIpWhitelistRequest($orchd_login_policy_ip_list, string $contentType = self::contentTypes['addOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -1050,17 +1029,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/login-policy/ip-whitelist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1071,7 +1045,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_login_policy_ip_list)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_login_policy_ip_list));
             } else {
                 $httpBody = $orchd_login_policy_ip_list;
@@ -1084,7 +1058,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1092,7 +1066,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1103,11 +1077,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1123,9 +1097,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1136,12 +1111,12 @@ class SettingsApi
      *
      * Set a single orchd login policy setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings $orchd_login_policy_settings orchd_login_policy_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings  $orchd_login_policy_settings  orchd_login_policy_settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function addOrchdLoginPolicySettings($orchd_login_policy_settings, string $contentType = self::contentTypes['addOrchdLoginPolicySettings'][0])
     {
@@ -1153,12 +1128,12 @@ class SettingsApi
      *
      * Set a single orchd login policy setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings $orchd_login_policy_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings  $orchd_login_policy_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function addOrchdLoginPolicySettingsWithHttpInfo($orchd_login_policy_settings, string $contentType = self::contentTypes['addOrchdLoginPolicySettings'][0])
     {
@@ -1186,12 +1161,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1202,11 +1175,11 @@ class SettingsApi
      *
      * Set a single orchd login policy setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings $orchd_login_policy_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings  $orchd_login_policy_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicySettingsAsync($orchd_login_policy_settings, string $contentType = self::contentTypes['addOrchdLoginPolicySettings'][0])
     {
@@ -1223,11 +1196,11 @@ class SettingsApi
      *
      * Set a single orchd login policy setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings $orchd_login_policy_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings  $orchd_login_policy_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addOrchdLoginPolicySettingsAsyncWithHttpInfo($orchd_login_policy_settings, string $contentType = self::contentTypes['addOrchdLoginPolicySettings'][0])
     {
@@ -1237,7 +1210,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1260,11 +1233,11 @@ class SettingsApi
     /**
      * Create request for operation 'addOrchdLoginPolicySettings'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings $orchd_login_policy_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings  $orchd_login_policy_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['addOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function addOrchdLoginPolicySettingsRequest($orchd_login_policy_settings, string $contentType = self::contentTypes['addOrchdLoginPolicySettings'][0])
     {
@@ -1276,17 +1249,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/login-policy/settings';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1297,7 +1265,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_login_policy_settings)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_login_policy_settings));
             } else {
                 $httpBody = $orchd_login_policy_settings;
@@ -1310,7 +1278,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1318,7 +1286,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1329,11 +1297,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1349,9 +1317,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1362,12 +1331,12 @@ class SettingsApi
      *
      * Create S3 object storage settings at platform level.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3 $create_backup_remote_storage_s3 create_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3  $create_backup_remote_storage_s3  create_backup_remote_storage_s3 (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createBackupRemoteStorageS3($create_backup_remote_storage_s3, string $contentType = self::contentTypes['createBackupRemoteStorageS3'][0])
     {
@@ -1379,12 +1348,12 @@ class SettingsApi
      *
      * Create S3 object storage settings at platform level.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3 $create_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3  $create_backup_remote_storage_s3  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createBackupRemoteStorageS3WithHttpInfo($create_backup_remote_storage_s3, string $contentType = self::contentTypes['createBackupRemoteStorageS3'][0])
     {
@@ -1412,12 +1381,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1428,11 +1395,11 @@ class SettingsApi
      *
      * Create S3 object storage settings at platform level.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3 $create_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3  $create_backup_remote_storage_s3  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createBackupRemoteStorageS3Async($create_backup_remote_storage_s3, string $contentType = self::contentTypes['createBackupRemoteStorageS3'][0])
     {
@@ -1449,11 +1416,11 @@ class SettingsApi
      *
      * Create S3 object storage settings at platform level.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3 $create_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3  $create_backup_remote_storage_s3  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createBackupRemoteStorageS3AsyncWithHttpInfo($create_backup_remote_storage_s3, string $contentType = self::contentTypes['createBackupRemoteStorageS3'][0])
     {
@@ -1463,7 +1430,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1486,11 +1453,11 @@ class SettingsApi
     /**
      * Create request for operation 'createBackupRemoteStorageS3'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3 $create_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\CreateBackupRemoteStorageS3  $create_backup_remote_storage_s3  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createBackupRemoteStorageS3Request($create_backup_remote_storage_s3, string $contentType = self::contentTypes['createBackupRemoteStorageS3'][0])
     {
@@ -1502,17 +1469,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/v2/settings/backup/remote_storage/s3';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1523,7 +1485,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($create_backup_remote_storage_s3)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_backup_remote_storage_s3));
             } else {
                 $httpBody = $create_backup_remote_storage_s3;
@@ -1536,7 +1498,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1544,7 +1506,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1555,11 +1517,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1575,9 +1537,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1588,12 +1551,12 @@ class SettingsApi
      *
      * Create settings
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  setting (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function createSettings($setting, string $contentType = self::contentTypes['createSettings'][0])
     {
@@ -1605,12 +1568,12 @@ class SettingsApi
      *
      * Create settings
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSettingsWithHttpInfo($setting, string $contentType = self::contentTypes['createSettings'][0])
     {
@@ -1638,12 +1601,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1654,11 +1615,11 @@ class SettingsApi
      *
      * Create settings
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSettingsAsync($setting, string $contentType = self::contentTypes['createSettings'][0])
     {
@@ -1675,11 +1636,11 @@ class SettingsApi
      *
      * Create settings
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSettingsAsyncWithHttpInfo($setting, string $contentType = self::contentTypes['createSettings'][0])
     {
@@ -1689,7 +1650,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1712,11 +1673,11 @@ class SettingsApi
     /**
      * Create request for operation 'createSettings'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[] $setting (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\Setting[]  $setting  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['createSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function createSettingsRequest($setting, string $contentType = self::contentTypes['createSettings'][0])
     {
@@ -1728,17 +1689,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1749,7 +1705,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($setting)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($setting));
             } else {
                 $httpBody = $setting;
@@ -1762,7 +1718,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1770,7 +1726,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1781,11 +1737,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -1801,9 +1757,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1814,11 +1771,11 @@ class SettingsApi
      *
      * Delete S3 object storage settings at platform level.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteBackupRemoteStorageS3(string $contentType = self::contentTypes['deleteBackupRemoteStorageS3'][0])
     {
@@ -1830,11 +1787,11 @@ class SettingsApi
      *
      * Delete S3 object storage settings at platform level.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBackupRemoteStorageS3WithHttpInfo(string $contentType = self::contentTypes['deleteBackupRemoteStorageS3'][0])
     {
@@ -1862,12 +1819,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -1878,10 +1833,10 @@ class SettingsApi
      *
      * Delete S3 object storage settings at platform level.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBackupRemoteStorageS3Async(string $contentType = self::contentTypes['deleteBackupRemoteStorageS3'][0])
     {
@@ -1898,10 +1853,10 @@ class SettingsApi
      *
      * Delete S3 object storage settings at platform level.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteBackupRemoteStorageS3AsyncWithHttpInfo(string $contentType = self::contentTypes['deleteBackupRemoteStorageS3'][0])
     {
@@ -1911,7 +1866,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -1934,14 +1889,13 @@ class SettingsApi
     /**
      * Create request for operation 'deleteBackupRemoteStorageS3'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteBackupRemoteStorageS3Request(string $contentType = self::contentTypes['deleteBackupRemoteStorageS3'][0])
     {
-
 
         $resourcePath = '/v2/settings/backup/remote_storage/s3';
         $formParams = [];
@@ -1949,10 +1903,6 @@ class SettingsApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -1969,7 +1919,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -1977,7 +1927,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -1988,11 +1938,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2008,9 +1958,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2021,17 +1972,18 @@ class SettingsApi
      *
      * Delete a single global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome
      */
     public function deleteGlobalServiceSetting($setting_kind, $setting_key, string $contentType = self::contentTypes['deleteGlobalServiceSetting'][0])
     {
-        list($response) = $this->deleteGlobalServiceSettingWithHttpInfo($setting_kind, $setting_key, $contentType);
+        [$response] = $this->deleteGlobalServiceSettingWithHttpInfo($setting_kind, $setting_key, $contentType);
+
         return $response;
     }
 
@@ -2040,13 +1992,13 @@ class SettingsApi
      *
      * Delete a single global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteGlobalServiceSettingWithHttpInfo($setting_kind, $setting_key, string $contentType = self::contentTypes['deleteGlobalServiceSetting'][0])
     {
@@ -2074,8 +2026,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Outcome',
@@ -2089,8 +2040,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -2129,7 +2078,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -2140,12 +2088,12 @@ class SettingsApi
      *
      * Delete a single global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteGlobalServiceSettingAsync($setting_kind, $setting_key, string $contentType = self::contentTypes['deleteGlobalServiceSetting'][0])
     {
@@ -2162,12 +2110,12 @@ class SettingsApi
      *
      * Delete a single global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteGlobalServiceSettingAsyncWithHttpInfo($setting_kind, $setting_key, string $contentType = self::contentTypes['deleteGlobalServiceSetting'][0])
     {
@@ -2179,7 +2127,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -2190,7 +2138,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -2213,12 +2161,12 @@ class SettingsApi
     /**
      * Create request for operation 'deleteGlobalServiceSetting'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteGlobalServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteGlobalServiceSettingRequest($setting_kind, $setting_key, string $contentType = self::contentTypes['deleteGlobalServiceSetting'][0])
     {
@@ -2237,7 +2185,6 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/service/{setting_kind}/{setting_key}';
         $formParams = [];
         $queryParams = [];
@@ -2245,12 +2192,10 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($setting_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_kind' . '}',
+                '{'.'setting_kind'.'}',
                 ObjectSerializer::toPathValue($setting_kind),
                 $resourcePath
             );
@@ -2258,15 +2203,14 @@ class SettingsApi
         // path params
         if ($setting_key !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_key' . '}',
+                '{'.'setting_key'.'}',
                 ObjectSerializer::toPathValue($setting_key),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2280,7 +2224,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2288,7 +2232,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2299,11 +2243,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2319,9 +2263,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2332,12 +2277,12 @@ class SettingsApi
      *
      * Delete an orchd login policy email blacklist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  orchd_login_policy_email_list (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteOrchdLoginPolicyEmailBlacklist($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -2349,12 +2294,12 @@ class SettingsApi
      *
      * Delete an orchd login policy email blacklist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteOrchdLoginPolicyEmailBlacklistWithHttpInfo($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -2382,12 +2327,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2398,11 +2341,11 @@ class SettingsApi
      *
      * Delete an orchd login policy email blacklist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOrchdLoginPolicyEmailBlacklistAsync($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -2419,11 +2362,11 @@ class SettingsApi
      *
      * Delete an orchd login policy email blacklist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOrchdLoginPolicyEmailBlacklistAsyncWithHttpInfo($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -2433,7 +2376,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2456,11 +2399,11 @@ class SettingsApi
     /**
      * Create request for operation 'deleteOrchdLoginPolicyEmailBlacklist'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteOrchdLoginPolicyEmailBlacklistRequest($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -2472,17 +2415,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/login-policy/email-blacklist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2493,7 +2431,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_login_policy_email_list)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_login_policy_email_list));
             } else {
                 $httpBody = $orchd_login_policy_email_list;
@@ -2506,7 +2444,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2514,7 +2452,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2525,11 +2463,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2545,9 +2483,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2558,12 +2497,12 @@ class SettingsApi
      *
      * Delete an orchd login policy email whitelist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  orchd_login_policy_email_list (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteOrchdLoginPolicyEmailWhitelist($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -2575,12 +2514,12 @@ class SettingsApi
      *
      * Delete an orchd login policy email whitelist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteOrchdLoginPolicyEmailWhitelistWithHttpInfo($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -2608,12 +2547,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2624,11 +2561,11 @@ class SettingsApi
      *
      * Delete an orchd login policy email whitelist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOrchdLoginPolicyEmailWhitelistAsync($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -2645,11 +2582,11 @@ class SettingsApi
      *
      * Delete an orchd login policy email whitelist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOrchdLoginPolicyEmailWhitelistAsyncWithHttpInfo($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -2659,7 +2596,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2682,11 +2619,11 @@ class SettingsApi
     /**
      * Create request for operation 'deleteOrchdLoginPolicyEmailWhitelist'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList $orchd_login_policy_email_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList  $orchd_login_policy_email_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteOrchdLoginPolicyEmailWhitelistRequest($orchd_login_policy_email_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -2698,17 +2635,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/login-policy/email-whitelist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2719,7 +2651,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_login_policy_email_list)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_login_policy_email_list));
             } else {
                 $httpBody = $orchd_login_policy_email_list;
@@ -2732,7 +2664,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2740,7 +2672,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2751,11 +2683,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2771,9 +2703,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -2784,12 +2717,12 @@ class SettingsApi
      *
      * Delete an orchd login policy ip blacklist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  orchd_login_policy_ip_list (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteOrchdLoginPolicyIpBlacklist($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -2801,12 +2734,12 @@ class SettingsApi
      *
      * Delete an orchd login policy ip blacklist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteOrchdLoginPolicyIpBlacklistWithHttpInfo($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -2834,12 +2767,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -2850,11 +2781,11 @@ class SettingsApi
      *
      * Delete an orchd login policy ip blacklist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOrchdLoginPolicyIpBlacklistAsync($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -2871,11 +2802,11 @@ class SettingsApi
      *
      * Delete an orchd login policy ip blacklist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOrchdLoginPolicyIpBlacklistAsyncWithHttpInfo($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -2885,7 +2816,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -2908,11 +2839,11 @@ class SettingsApi
     /**
      * Create request for operation 'deleteOrchdLoginPolicyIpBlacklist'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteOrchdLoginPolicyIpBlacklistRequest($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -2924,17 +2855,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/login-policy/ip-blacklist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2945,7 +2871,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_login_policy_ip_list)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_login_policy_ip_list));
             } else {
                 $httpBody = $orchd_login_policy_ip_list;
@@ -2958,7 +2884,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -2966,7 +2892,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -2977,11 +2903,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -2997,9 +2923,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3010,12 +2937,12 @@ class SettingsApi
      *
      * Delete an orchd login policy ip whitelist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  orchd_login_policy_ip_list (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteOrchdLoginPolicyIpWhitelist($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -3027,12 +2954,12 @@ class SettingsApi
      *
      * Delete an orchd login policy ip whitelist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteOrchdLoginPolicyIpWhitelistWithHttpInfo($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -3060,12 +2987,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3076,11 +3001,11 @@ class SettingsApi
      *
      * Delete an orchd login policy ip whitelist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOrchdLoginPolicyIpWhitelistAsync($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -3097,11 +3022,11 @@ class SettingsApi
      *
      * Delete an orchd login policy ip whitelist
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteOrchdLoginPolicyIpWhitelistAsyncWithHttpInfo($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -3111,7 +3036,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3134,11 +3059,11 @@ class SettingsApi
     /**
      * Create request for operation 'deleteOrchdLoginPolicyIpWhitelist'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList $orchd_login_policy_ip_list (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList  $orchd_login_policy_ip_list  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteOrchdLoginPolicyIpWhitelistRequest($orchd_login_policy_ip_list, string $contentType = self::contentTypes['deleteOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -3150,17 +3075,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/login-policy/ip-whitelist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3171,7 +3091,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_login_policy_ip_list)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_login_policy_ip_list));
             } else {
                 $httpBody = $orchd_login_policy_ip_list;
@@ -3184,7 +3104,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3192,7 +3112,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3203,11 +3123,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3223,9 +3143,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3236,12 +3157,12 @@ class SettingsApi
      *
      * Remove the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function deleteSetting($name, string $contentType = self::contentTypes['deleteSetting'][0])
     {
@@ -3253,12 +3174,12 @@ class SettingsApi
      *
      * Remove the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSettingWithHttpInfo($name, string $contentType = self::contentTypes['deleteSetting'][0])
     {
@@ -3286,12 +3207,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -3302,11 +3221,11 @@ class SettingsApi
      *
      * Remove the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSettingAsync($name, string $contentType = self::contentTypes['deleteSetting'][0])
     {
@@ -3323,11 +3242,11 @@ class SettingsApi
      *
      * Remove the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteSettingAsyncWithHttpInfo($name, string $contentType = self::contentTypes['deleteSetting'][0])
     {
@@ -3337,7 +3256,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -3360,11 +3279,11 @@ class SettingsApi
     /**
      * Create request for operation 'deleteSetting'
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['deleteSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function deleteSettingRequest($name, string $contentType = self::contentTypes['deleteSetting'][0])
     {
@@ -3376,7 +3295,6 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/{name}';
         $formParams = [];
         $queryParams = [];
@@ -3384,17 +3302,14 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -3411,7 +3326,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3419,7 +3334,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3430,11 +3345,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3450,9 +3365,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3463,15 +3379,16 @@ class SettingsApi
      *
      * Get the list of allowed IPs for master organisation login, line separated
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getAdminLockdownList(string $contentType = self::contentTypes['getAdminLockdownList'][0])
     {
-        list($response) = $this->getAdminLockdownListWithHttpInfo($contentType);
+        [$response] = $this->getAdminLockdownListWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -3480,11 +3397,11 @@ class SettingsApi
      *
      * Get the list of allowed IPs for master organisation login, line separated
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAdminLockdownListWithHttpInfo(string $contentType = self::contentTypes['getAdminLockdownList'][0])
     {
@@ -3512,8 +3429,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -3521,8 +3437,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3553,7 +3467,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3564,10 +3477,10 @@ class SettingsApi
      *
      * Get the list of allowed IPs for master organisation login, line separated
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAdminLockdownListAsync(string $contentType = self::contentTypes['getAdminLockdownList'][0])
     {
@@ -3584,10 +3497,10 @@ class SettingsApi
      *
      * Get the list of allowed IPs for master organisation login, line separated
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAdminLockdownListAsyncWithHttpInfo(string $contentType = self::contentTypes['getAdminLockdownList'][0])
     {
@@ -3599,7 +3512,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3610,7 +3523,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3633,14 +3546,13 @@ class SettingsApi
     /**
      * Create request for operation 'getAdminLockdownList'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownList'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getAdminLockdownListRequest(string $contentType = self::contentTypes['getAdminLockdownList'][0])
     {
-
 
         $resourcePath = '/settings/orchd/admin-lockdown/list';
         $formParams = [];
@@ -3649,12 +3561,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3668,7 +3576,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3676,7 +3584,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3687,11 +3595,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3707,9 +3615,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3720,15 +3629,16 @@ class SettingsApi
      *
      * Check if master organisation IP lockdown is enabled
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @return bool
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return bool
      */
     public function getAdminLockdownStatus(string $contentType = self::contentTypes['getAdminLockdownStatus'][0])
     {
-        list($response) = $this->getAdminLockdownStatusWithHttpInfo($contentType);
+        [$response] = $this->getAdminLockdownStatusWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -3737,11 +3647,11 @@ class SettingsApi
      *
      * Check if master organisation IP lockdown is enabled
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAdminLockdownStatusWithHttpInfo(string $contentType = self::contentTypes['getAdminLockdownStatus'][0])
     {
@@ -3769,8 +3679,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'bool',
@@ -3778,8 +3687,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -3810,7 +3717,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -3821,10 +3727,10 @@ class SettingsApi
      *
      * Check if master organisation IP lockdown is enabled
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAdminLockdownStatusAsync(string $contentType = self::contentTypes['getAdminLockdownStatus'][0])
     {
@@ -3841,10 +3747,10 @@ class SettingsApi
      *
      * Check if master organisation IP lockdown is enabled
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAdminLockdownStatusAsyncWithHttpInfo(string $contentType = self::contentTypes['getAdminLockdownStatus'][0])
     {
@@ -3856,7 +3762,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -3867,7 +3773,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -3890,14 +3796,13 @@ class SettingsApi
     /**
      * Create request for operation 'getAdminLockdownStatus'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getAdminLockdownStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getAdminLockdownStatusRequest(string $contentType = self::contentTypes['getAdminLockdownStatus'][0])
     {
-
 
         $resourcePath = '/settings/orchd/admin-lockdown/status';
         $formParams = [];
@@ -3906,12 +3811,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3925,7 +3826,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -3933,7 +3834,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -3944,11 +3845,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -3964,9 +3865,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -3977,15 +3879,16 @@ class SettingsApi
      *
      * Get S3 object storage settings at platform level.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\BackupRemoteStorageS3
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\BackupRemoteStorageS3
      */
     public function getBackupRemoteStorageS3(string $contentType = self::contentTypes['getBackupRemoteStorageS3'][0])
     {
-        list($response) = $this->getBackupRemoteStorageS3WithHttpInfo($contentType);
+        [$response] = $this->getBackupRemoteStorageS3WithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -3994,11 +3897,11 @@ class SettingsApi
      *
      * Get S3 object storage settings at platform level.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\BackupRemoteStorageS3, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\BackupRemoteStorageS3, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBackupRemoteStorageS3WithHttpInfo(string $contentType = self::contentTypes['getBackupRemoteStorageS3'][0])
     {
@@ -4026,8 +3929,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\BackupRemoteStorageS3',
@@ -4035,8 +3937,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4067,7 +3967,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4078,10 +3977,10 @@ class SettingsApi
      *
      * Get S3 object storage settings at platform level.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBackupRemoteStorageS3Async(string $contentType = self::contentTypes['getBackupRemoteStorageS3'][0])
     {
@@ -4098,10 +3997,10 @@ class SettingsApi
      *
      * Get S3 object storage settings at platform level.
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getBackupRemoteStorageS3AsyncWithHttpInfo(string $contentType = self::contentTypes['getBackupRemoteStorageS3'][0])
     {
@@ -4113,7 +4012,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4124,7 +4023,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4147,14 +4046,13 @@ class SettingsApi
     /**
      * Create request for operation 'getBackupRemoteStorageS3'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getBackupRemoteStorageS3Request(string $contentType = self::contentTypes['getBackupRemoteStorageS3'][0])
     {
-
 
         $resourcePath = '/v2/settings/backup/remote_storage/s3';
         $formParams = [];
@@ -4163,12 +4061,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4182,7 +4076,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4190,7 +4084,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4201,11 +4095,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4221,9 +4115,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4234,15 +4129,16 @@ class SettingsApi
      *
      * Get the demo mode status of the orchd service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\DemoMode
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\DemoMode
      */
     public function getDemoMode(string $contentType = self::contentTypes['getDemoMode'][0])
     {
-        list($response) = $this->getDemoModeWithHttpInfo($contentType);
+        [$response] = $this->getDemoModeWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -4251,11 +4147,11 @@ class SettingsApi
      *
      * Get the demo mode status of the orchd service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DemoMode, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\DemoMode, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDemoModeWithHttpInfo(string $contentType = self::contentTypes['getDemoMode'][0])
     {
@@ -4283,8 +4179,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\DemoMode',
@@ -4292,8 +4187,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4324,7 +4217,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4335,10 +4227,10 @@ class SettingsApi
      *
      * Get the demo mode status of the orchd service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDemoModeAsync(string $contentType = self::contentTypes['getDemoMode'][0])
     {
@@ -4355,10 +4247,10 @@ class SettingsApi
      *
      * Get the demo mode status of the orchd service
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getDemoModeAsyncWithHttpInfo(string $contentType = self::contentTypes['getDemoMode'][0])
     {
@@ -4370,7 +4262,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4381,7 +4273,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4404,14 +4296,13 @@ class SettingsApi
     /**
      * Create request for operation 'getDemoMode'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getDemoMode'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getDemoModeRequest(string $contentType = self::contentTypes['getDemoMode'][0])
     {
-
 
         $resourcePath = '/v2/settings/demo_mode';
         $formParams = [];
@@ -4420,12 +4311,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4439,7 +4326,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4447,14 +4334,13 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4469,9 +4355,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4482,16 +4369,17 @@ class SettingsApi
      *
      * Get the value for a particular global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @return mixed
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return mixed
      */
     public function getGlobalServiceSetting($setting_kind, string $contentType = self::contentTypes['getGlobalServiceSetting'][0])
     {
-        list($response) = $this->getGlobalServiceSettingWithHttpInfo($setting_kind, $contentType);
+        [$response] = $this->getGlobalServiceSettingWithHttpInfo($setting_kind, $contentType);
+
         return $response;
     }
 
@@ -4500,12 +4388,12 @@ class SettingsApi
      *
      * Get the value for a particular global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @return array of mixed, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of mixed, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGlobalServiceSettingWithHttpInfo($setting_kind, string $contentType = self::contentTypes['getGlobalServiceSetting'][0])
     {
@@ -4533,8 +4421,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'mixed',
@@ -4542,8 +4429,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4574,7 +4459,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4585,11 +4469,11 @@ class SettingsApi
      *
      * Get the value for a particular global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getGlobalServiceSettingAsync($setting_kind, string $contentType = self::contentTypes['getGlobalServiceSetting'][0])
     {
@@ -4606,11 +4490,11 @@ class SettingsApi
      *
      * Get the value for a particular global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getGlobalServiceSettingAsyncWithHttpInfo($setting_kind, string $contentType = self::contentTypes['getGlobalServiceSetting'][0])
     {
@@ -4622,7 +4506,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4633,7 +4517,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4656,11 +4540,11 @@ class SettingsApi
     /**
      * Create request for operation 'getGlobalServiceSetting'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getGlobalServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getGlobalServiceSettingRequest($setting_kind, string $contentType = self::contentTypes['getGlobalServiceSetting'][0])
     {
@@ -4672,7 +4556,6 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/service/{setting_kind}';
         $formParams = [];
         $queryParams = [];
@@ -4680,20 +4563,17 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($setting_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_kind' . '}',
+                '{'.'setting_kind'.'}',
                 ObjectSerializer::toPathValue($setting_kind),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4707,7 +4587,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4715,7 +4595,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4726,11 +4606,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -4746,9 +4626,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -4759,15 +4640,16 @@ class SettingsApi
      *
      * Get the orchd log settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings
      */
     public function getOrchdLogSettings(string $contentType = self::contentTypes['getOrchdLogSettings'][0])
     {
-        list($response) = $this->getOrchdLogSettingsWithHttpInfo($contentType);
+        [$response] = $this->getOrchdLogSettingsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -4776,11 +4658,11 @@ class SettingsApi
      *
      * Get the orchd log settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrchdLogSettingsWithHttpInfo(string $contentType = self::contentTypes['getOrchdLogSettings'][0])
     {
@@ -4808,8 +4690,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings',
@@ -4817,8 +4698,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -4849,7 +4728,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -4860,10 +4738,10 @@ class SettingsApi
      *
      * Get the orchd log settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLogSettingsAsync(string $contentType = self::contentTypes['getOrchdLogSettings'][0])
     {
@@ -4880,10 +4758,10 @@ class SettingsApi
      *
      * Get the orchd log settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLogSettingsAsyncWithHttpInfo(string $contentType = self::contentTypes['getOrchdLogSettings'][0])
     {
@@ -4895,7 +4773,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -4906,7 +4784,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -4929,14 +4807,13 @@ class SettingsApi
     /**
      * Create request for operation 'getOrchdLogSettings'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLogSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOrchdLogSettingsRequest(string $contentType = self::contentTypes['getOrchdLogSettings'][0])
     {
-
 
         $resourcePath = '/settings/orchd/logs';
         $formParams = [];
@@ -4945,12 +4822,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4964,7 +4837,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -4972,7 +4845,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -4983,11 +4856,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5003,9 +4876,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5016,15 +4890,16 @@ class SettingsApi
      *
      * Get the orchd login policy email blacklist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList
      */
     public function getOrchdLoginPolicyEmailBlacklist(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailBlacklist'][0])
     {
-        list($response) = $this->getOrchdLoginPolicyEmailBlacklistWithHttpInfo($contentType);
+        [$response] = $this->getOrchdLoginPolicyEmailBlacklistWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -5033,11 +4908,11 @@ class SettingsApi
      *
      * Get the orchd login policy email blacklist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrchdLoginPolicyEmailBlacklistWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -5065,8 +4940,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList',
@@ -5074,8 +4948,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5106,7 +4978,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5117,10 +4988,10 @@ class SettingsApi
      *
      * Get the orchd login policy email blacklist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicyEmailBlacklistAsync(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -5137,10 +5008,10 @@ class SettingsApi
      *
      * Get the orchd login policy email blacklist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicyEmailBlacklistAsyncWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailBlacklist'][0])
     {
@@ -5152,7 +5023,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5163,7 +5034,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5186,14 +5057,13 @@ class SettingsApi
     /**
      * Create request for operation 'getOrchdLoginPolicyEmailBlacklist'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOrchdLoginPolicyEmailBlacklistRequest(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailBlacklist'][0])
     {
-
 
         $resourcePath = '/settings/orchd/login-policy/email-blacklist';
         $formParams = [];
@@ -5202,12 +5072,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5221,7 +5087,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5229,7 +5095,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5240,11 +5106,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5260,9 +5126,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5273,15 +5140,16 @@ class SettingsApi
      *
      * Get the orchd login policy email whitelist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList
      */
     public function getOrchdLoginPolicyEmailWhitelist(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailWhitelist'][0])
     {
-        list($response) = $this->getOrchdLoginPolicyEmailWhitelistWithHttpInfo($contentType);
+        [$response] = $this->getOrchdLoginPolicyEmailWhitelistWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -5290,11 +5158,11 @@ class SettingsApi
      *
      * Get the orchd login policy email whitelist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrchdLoginPolicyEmailWhitelistWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -5322,8 +5190,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyEmailList',
@@ -5331,8 +5198,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5363,7 +5228,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5374,10 +5238,10 @@ class SettingsApi
      *
      * Get the orchd login policy email whitelist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicyEmailWhitelistAsync(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -5394,10 +5258,10 @@ class SettingsApi
      *
      * Get the orchd login policy email whitelist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicyEmailWhitelistAsyncWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailWhitelist'][0])
     {
@@ -5409,7 +5273,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5420,7 +5284,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5443,14 +5307,13 @@ class SettingsApi
     /**
      * Create request for operation 'getOrchdLoginPolicyEmailWhitelist'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyEmailWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOrchdLoginPolicyEmailWhitelistRequest(string $contentType = self::contentTypes['getOrchdLoginPolicyEmailWhitelist'][0])
     {
-
 
         $resourcePath = '/settings/orchd/login-policy/email-whitelist';
         $formParams = [];
@@ -5459,12 +5322,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5478,7 +5337,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5486,7 +5345,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5497,11 +5356,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5517,9 +5376,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5530,15 +5390,16 @@ class SettingsApi
      *
      * Get the orchd login policy ip blacklist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList
      */
     public function getOrchdLoginPolicyIpBlacklist(string $contentType = self::contentTypes['getOrchdLoginPolicyIpBlacklist'][0])
     {
-        list($response) = $this->getOrchdLoginPolicyIpBlacklistWithHttpInfo($contentType);
+        [$response] = $this->getOrchdLoginPolicyIpBlacklistWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -5547,11 +5408,11 @@ class SettingsApi
      *
      * Get the orchd login policy ip blacklist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrchdLoginPolicyIpBlacklistWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -5579,8 +5440,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList',
@@ -5588,8 +5448,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5620,7 +5478,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5631,10 +5488,10 @@ class SettingsApi
      *
      * Get the orchd login policy ip blacklist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicyIpBlacklistAsync(string $contentType = self::contentTypes['getOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -5651,10 +5508,10 @@ class SettingsApi
      *
      * Get the orchd login policy ip blacklist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicyIpBlacklistAsyncWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicyIpBlacklist'][0])
     {
@@ -5666,7 +5523,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5677,7 +5534,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5700,14 +5557,13 @@ class SettingsApi
     /**
      * Create request for operation 'getOrchdLoginPolicyIpBlacklist'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpBlacklist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOrchdLoginPolicyIpBlacklistRequest(string $contentType = self::contentTypes['getOrchdLoginPolicyIpBlacklist'][0])
     {
-
 
         $resourcePath = '/settings/orchd/login-policy/ip-blacklist';
         $formParams = [];
@@ -5716,12 +5572,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5735,7 +5587,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -5743,7 +5595,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -5754,11 +5606,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -5774,9 +5626,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -5787,15 +5640,16 @@ class SettingsApi
      *
      * Get the orchd login policy ip whitelist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList
      */
     public function getOrchdLoginPolicyIpWhitelist(string $contentType = self::contentTypes['getOrchdLoginPolicyIpWhitelist'][0])
     {
-        list($response) = $this->getOrchdLoginPolicyIpWhitelistWithHttpInfo($contentType);
+        [$response] = $this->getOrchdLoginPolicyIpWhitelistWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -5804,11 +5658,11 @@ class SettingsApi
      *
      * Get the orchd login policy ip whitelist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrchdLoginPolicyIpWhitelistWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -5836,8 +5690,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicyIpList',
@@ -5845,8 +5698,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -5877,7 +5728,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -5888,10 +5738,10 @@ class SettingsApi
      *
      * Get the orchd login policy ip whitelist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicyIpWhitelistAsync(string $contentType = self::contentTypes['getOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -5908,10 +5758,10 @@ class SettingsApi
      *
      * Get the orchd login policy ip whitelist
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicyIpWhitelistAsyncWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicyIpWhitelist'][0])
     {
@@ -5923,7 +5773,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -5934,7 +5784,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -5957,14 +5807,13 @@ class SettingsApi
     /**
      * Create request for operation 'getOrchdLoginPolicyIpWhitelist'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicyIpWhitelist'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOrchdLoginPolicyIpWhitelistRequest(string $contentType = self::contentTypes['getOrchdLoginPolicyIpWhitelist'][0])
     {
-
 
         $resourcePath = '/settings/orchd/login-policy/ip-whitelist';
         $formParams = [];
@@ -5973,12 +5822,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5992,7 +5837,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6000,7 +5845,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6011,11 +5856,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6031,9 +5876,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6044,15 +5890,16 @@ class SettingsApi
      *
      * Get the orchd login policy settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings
      */
     public function getOrchdLoginPolicySettings(string $contentType = self::contentTypes['getOrchdLoginPolicySettings'][0])
     {
-        list($response) = $this->getOrchdLoginPolicySettingsWithHttpInfo($contentType);
+        [$response] = $this->getOrchdLoginPolicySettingsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -6061,11 +5908,11 @@ class SettingsApi
      *
      * Get the orchd login policy settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrchdLoginPolicySettingsWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicySettings'][0])
     {
@@ -6093,8 +5940,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\OrchdLoginPolicySettings',
@@ -6102,8 +5948,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6134,7 +5978,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6145,10 +5988,10 @@ class SettingsApi
      *
      * Get the orchd login policy settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicySettingsAsync(string $contentType = self::contentTypes['getOrchdLoginPolicySettings'][0])
     {
@@ -6165,10 +6008,10 @@ class SettingsApi
      *
      * Get the orchd login policy settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getOrchdLoginPolicySettingsAsyncWithHttpInfo(string $contentType = self::contentTypes['getOrchdLoginPolicySettings'][0])
     {
@@ -6180,7 +6023,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6191,7 +6034,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6214,14 +6057,13 @@ class SettingsApi
     /**
      * Create request for operation 'getOrchdLoginPolicySettings'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getOrchdLoginPolicySettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getOrchdLoginPolicySettingsRequest(string $contentType = self::contentTypes['getOrchdLoginPolicySettings'][0])
     {
-
 
         $resourcePath = '/settings/orchd/login-policy/settings';
         $formParams = [];
@@ -6230,12 +6072,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -6249,7 +6087,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6257,7 +6095,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6268,11 +6106,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6288,9 +6126,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6301,15 +6140,16 @@ class SettingsApi
      *
      * Get the platform level prohibited domains as a newline separated list
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @return string
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string
      */
     public function getProhibitedDomains(string $contentType = self::contentTypes['getProhibitedDomains'][0])
     {
-        list($response) = $this->getProhibitedDomainsWithHttpInfo($contentType);
+        [$response] = $this->getProhibitedDomainsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -6318,11 +6158,11 @@ class SettingsApi
      *
      * Get the platform level prohibited domains as a newline separated list
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProhibitedDomainsWithHttpInfo(string $contentType = self::contentTypes['getProhibitedDomains'][0])
     {
@@ -6350,8 +6190,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         'string',
@@ -6359,8 +6198,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6391,7 +6228,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6402,10 +6238,10 @@ class SettingsApi
      *
      * Get the platform level prohibited domains as a newline separated list
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getProhibitedDomainsAsync(string $contentType = self::contentTypes['getProhibitedDomains'][0])
     {
@@ -6422,10 +6258,10 @@ class SettingsApi
      *
      * Get the platform level prohibited domains as a newline separated list
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getProhibitedDomainsAsyncWithHttpInfo(string $contentType = self::contentTypes['getProhibitedDomains'][0])
     {
@@ -6437,7 +6273,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6448,7 +6284,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6471,14 +6307,13 @@ class SettingsApi
     /**
      * Create request for operation 'getProhibitedDomains'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getProhibitedDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getProhibitedDomainsRequest(string $contentType = self::contentTypes['getProhibitedDomains'][0])
     {
-
 
         $resourcePath = '/settings/orchd/prohibited_domains';
         $formParams = [];
@@ -6487,12 +6322,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -6506,7 +6337,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6514,7 +6345,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6525,11 +6356,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6545,9 +6376,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6558,16 +6390,17 @@ class SettingsApi
      *
      * Get the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Setting
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Setting
      */
     public function getSetting($name, string $contentType = self::contentTypes['getSetting'][0])
     {
-        list($response) = $this->getSettingWithHttpInfo($name, $contentType);
+        [$response] = $this->getSettingWithHttpInfo($name, $contentType);
+
         return $response;
     }
 
@@ -6576,12 +6409,12 @@ class SettingsApi
      *
      * Get the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Setting, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Setting, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSettingWithHttpInfo($name, string $contentType = self::contentTypes['getSetting'][0])
     {
@@ -6609,8 +6442,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Setting',
@@ -6618,8 +6450,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6650,7 +6480,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6661,11 +6490,11 @@ class SettingsApi
      *
      * Get the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSettingAsync($name, string $contentType = self::contentTypes['getSetting'][0])
     {
@@ -6682,11 +6511,11 @@ class SettingsApi
      *
      * Get the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSettingAsyncWithHttpInfo($name, string $contentType = self::contentTypes['getSetting'][0])
     {
@@ -6698,7 +6527,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6709,7 +6538,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -6732,11 +6561,11 @@ class SettingsApi
     /**
      * Create request for operation 'getSetting'
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSettingRequest($name, string $contentType = self::contentTypes['getSetting'][0])
     {
@@ -6748,7 +6577,6 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/{name}';
         $formParams = [];
         $queryParams = [];
@@ -6756,20 +6584,17 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -6783,7 +6608,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -6791,7 +6616,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -6802,11 +6627,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -6822,9 +6647,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -6835,15 +6661,16 @@ class SettingsApi
      *
      * Get all current settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing
      */
     public function getSettings(string $contentType = self::contentTypes['getSettings'][0])
     {
-        list($response) = $this->getSettingsWithHttpInfo($contentType);
+        [$response] = $this->getSettingsWithHttpInfo($contentType);
+
         return $response;
     }
 
@@ -6852,11 +6679,11 @@ class SettingsApi
      *
      * Get all current settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSettingsWithHttpInfo(string $contentType = self::contentTypes['getSettings'][0])
     {
@@ -6884,8 +6711,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\SettingsFullListing',
@@ -6893,8 +6719,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -6925,7 +6749,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -6936,10 +6759,10 @@ class SettingsApi
      *
      * Get all current settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSettingsAsync(string $contentType = self::contentTypes['getSettings'][0])
     {
@@ -6956,10 +6779,10 @@ class SettingsApi
      *
      * Get all current settings
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getSettingsAsyncWithHttpInfo(string $contentType = self::contentTypes['getSettings'][0])
     {
@@ -6971,7 +6794,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -6982,7 +6805,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7005,14 +6828,13 @@ class SettingsApi
     /**
      * Create request for operation 'getSettings'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getSettingsRequest(string $contentType = self::contentTypes['getSettings'][0])
     {
-
 
         $resourcePath = '/settings';
         $formParams = [];
@@ -7021,12 +6843,8 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7040,7 +6858,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7048,7 +6866,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7059,11 +6877,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7079,9 +6897,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7092,12 +6911,12 @@ class SettingsApi
      *
      * Set admin lockdown list as a whole
      *
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setAdminLockdownList($body, string $contentType = self::contentTypes['setAdminLockdownList'][0])
     {
@@ -7109,12 +6928,12 @@ class SettingsApi
      *
      * Set admin lockdown list as a whole
      *
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setAdminLockdownListWithHttpInfo($body, string $contentType = self::contentTypes['setAdminLockdownList'][0])
     {
@@ -7142,12 +6961,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -7158,11 +6975,11 @@ class SettingsApi
      *
      * Set admin lockdown list as a whole
      *
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setAdminLockdownListAsync($body, string $contentType = self::contentTypes['setAdminLockdownList'][0])
     {
@@ -7179,11 +6996,11 @@ class SettingsApi
      *
      * Set admin lockdown list as a whole
      *
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setAdminLockdownListAsyncWithHttpInfo($body, string $contentType = self::contentTypes['setAdminLockdownList'][0])
     {
@@ -7193,7 +7010,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -7216,11 +7033,11 @@ class SettingsApi
     /**
      * Create request for operation 'setAdminLockdownList'
      *
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownList'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setAdminLockdownListRequest($body, string $contentType = self::contentTypes['setAdminLockdownList'][0])
     {
@@ -7232,17 +7049,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/admin-lockdown/list';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -7253,7 +7065,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -7266,7 +7078,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7274,7 +7086,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7285,11 +7097,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7305,9 +7117,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7318,12 +7131,12 @@ class SettingsApi
      *
      * Set admin lockdown status
      *
-     * @param  bool $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @param  bool  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setAdminLockdownStatus($body, string $contentType = self::contentTypes['setAdminLockdownStatus'][0])
     {
@@ -7335,12 +7148,12 @@ class SettingsApi
      *
      * Set admin lockdown status
      *
-     * @param  bool $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @param  bool  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setAdminLockdownStatusWithHttpInfo($body, string $contentType = self::contentTypes['setAdminLockdownStatus'][0])
     {
@@ -7368,12 +7181,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -7384,11 +7195,11 @@ class SettingsApi
      *
      * Set admin lockdown status
      *
-     * @param  bool $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @param  bool  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setAdminLockdownStatusAsync($body, string $contentType = self::contentTypes['setAdminLockdownStatus'][0])
     {
@@ -7405,11 +7216,11 @@ class SettingsApi
      *
      * Set admin lockdown status
      *
-     * @param  bool $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @param  bool  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setAdminLockdownStatusAsyncWithHttpInfo($body, string $contentType = self::contentTypes['setAdminLockdownStatus'][0])
     {
@@ -7419,7 +7230,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -7442,11 +7253,11 @@ class SettingsApi
     /**
      * Create request for operation 'setAdminLockdownStatus'
      *
-     * @param  bool $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @param  bool  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setAdminLockdownStatus'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setAdminLockdownStatusRequest($body, string $contentType = self::contentTypes['setAdminLockdownStatus'][0])
     {
@@ -7458,17 +7269,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/admin-lockdown/status';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -7479,7 +7285,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -7492,7 +7298,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7500,7 +7306,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7511,11 +7317,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7531,9 +7337,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7544,18 +7351,19 @@ class SettingsApi
      *
      * Set a single global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  service_setting_value (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome
      */
     public function setGlobalServiceSetting($setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setGlobalServiceSetting'][0])
     {
-        list($response) = $this->setGlobalServiceSettingWithHttpInfo($setting_kind, $setting_key, $service_setting_value, $contentType);
+        [$response] = $this->setGlobalServiceSettingWithHttpInfo($setting_kind, $setting_key, $service_setting_value, $contentType);
+
         return $response;
     }
 
@@ -7564,14 +7372,14 @@ class SettingsApi
      *
      * Set a single global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\Outcome|\Vented\EnhanceApiLaravel\Client\Model\Outcome, HTTP status code, HTTP response headers (array of strings)
      */
     public function setGlobalServiceSettingWithHttpInfo($setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setGlobalServiceSetting'][0])
     {
@@ -7599,8 +7407,7 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\Outcome',
@@ -7614,8 +7421,6 @@ class SettingsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -7654,7 +7459,6 @@ class SettingsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -7665,13 +7469,13 @@ class SettingsApi
      *
      * Set a single global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setGlobalServiceSettingAsync($setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setGlobalServiceSetting'][0])
     {
@@ -7688,13 +7492,13 @@ class SettingsApi
      *
      * Set a single global service setting
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setGlobalServiceSettingAsyncWithHttpInfo($setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setGlobalServiceSetting'][0])
     {
@@ -7706,7 +7510,7 @@ class SettingsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -7717,7 +7521,7 @@ class SettingsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -7740,13 +7544,13 @@ class SettingsApi
     /**
      * Create request for operation 'setGlobalServiceSetting'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind $setting_kind The type of setting being applied (required)
-     * @param  string $setting_key A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue $service_setting_value (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\SettingKind  $setting_kind  The type of setting being applied (required)
+     * @param  string  $setting_key  A key for updating an existing setting, some known values are - hard_delete_after_secs - letsencrypt_enabled - org_websites_same_server - screenshot_driver_pool_size - screenshot_interval - sged_smtp - smtp_smart_host - website_backup - default_dns_ttl (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\ServiceSettingValue  $service_setting_value  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setGlobalServiceSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setGlobalServiceSettingRequest($setting_kind, $setting_key, $service_setting_value, string $contentType = self::contentTypes['setGlobalServiceSetting'][0])
     {
@@ -7772,7 +7576,6 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/service/{setting_kind}/{setting_key}';
         $formParams = [];
         $queryParams = [];
@@ -7780,12 +7583,10 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($setting_kind !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_kind' . '}',
+                '{'.'setting_kind'.'}',
                 ObjectSerializer::toPathValue($setting_kind),
                 $resourcePath
             );
@@ -7793,15 +7594,14 @@ class SettingsApi
         // path params
         if ($setting_key !== null) {
             $resourcePath = str_replace(
-                '{' . 'setting_key' . '}',
+                '{'.'setting_key'.'}',
                 ObjectSerializer::toPathValue($setting_key),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -7809,7 +7609,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($service_setting_value)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($service_setting_value));
             } else {
                 $httpBody = $service_setting_value;
@@ -7822,7 +7622,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -7830,7 +7630,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -7841,11 +7641,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -7861,9 +7661,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -7874,12 +7675,12 @@ class SettingsApi
      *
      * Set the orchd log settings
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings $orchd_log_settings orchd_log_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings  $orchd_log_settings  orchd_log_settings (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setOrchdLogSettings($orchd_log_settings, string $contentType = self::contentTypes['setOrchdLogSettings'][0])
     {
@@ -7891,12 +7692,12 @@ class SettingsApi
      *
      * Set the orchd log settings
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings $orchd_log_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings  $orchd_log_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setOrchdLogSettingsWithHttpInfo($orchd_log_settings, string $contentType = self::contentTypes['setOrchdLogSettings'][0])
     {
@@ -7924,12 +7725,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -7940,11 +7739,11 @@ class SettingsApi
      *
      * Set the orchd log settings
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings $orchd_log_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings  $orchd_log_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setOrchdLogSettingsAsync($orchd_log_settings, string $contentType = self::contentTypes['setOrchdLogSettings'][0])
     {
@@ -7961,11 +7760,11 @@ class SettingsApi
      *
      * Set the orchd log settings
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings $orchd_log_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings  $orchd_log_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setOrchdLogSettingsAsyncWithHttpInfo($orchd_log_settings, string $contentType = self::contentTypes['setOrchdLogSettings'][0])
     {
@@ -7975,7 +7774,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -7998,11 +7797,11 @@ class SettingsApi
     /**
      * Create request for operation 'setOrchdLogSettings'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings $orchd_log_settings (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\OrchdLogSettings  $orchd_log_settings  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setOrchdLogSettings'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setOrchdLogSettingsRequest($orchd_log_settings, string $contentType = self::contentTypes['setOrchdLogSettings'][0])
     {
@@ -8014,17 +7813,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/logs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -8035,7 +7829,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($orchd_log_settings)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orchd_log_settings));
             } else {
                 $httpBody = $orchd_log_settings;
@@ -8048,7 +7842,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8056,7 +7850,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8067,11 +7861,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8087,9 +7881,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8100,12 +7895,12 @@ class SettingsApi
      *
      * Set the platform level prohibited domains
      *
-     * @param  string $body body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $body  body (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function setProhibitedDomains($body, string $contentType = self::contentTypes['setProhibitedDomains'][0])
     {
@@ -8117,12 +7912,12 @@ class SettingsApi
      *
      * Set the platform level prohibited domains
      *
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function setProhibitedDomainsWithHttpInfo($body, string $contentType = self::contentTypes['setProhibitedDomains'][0])
     {
@@ -8150,12 +7945,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -8166,11 +7959,11 @@ class SettingsApi
      *
      * Set the platform level prohibited domains
      *
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setProhibitedDomainsAsync($body, string $contentType = self::contentTypes['setProhibitedDomains'][0])
     {
@@ -8187,11 +7980,11 @@ class SettingsApi
      *
      * Set the platform level prohibited domains
      *
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function setProhibitedDomainsAsyncWithHttpInfo($body, string $contentType = self::contentTypes['setProhibitedDomains'][0])
     {
@@ -8201,7 +7994,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -8224,11 +8017,11 @@ class SettingsApi
     /**
      * Create request for operation 'setProhibitedDomains'
      *
-     * @param  string $body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @param  string  $body  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['setProhibitedDomains'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function setProhibitedDomainsRequest($body, string $contentType = self::contentTypes['setProhibitedDomains'][0])
     {
@@ -8240,17 +8033,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/orchd/prohibited_domains';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -8261,7 +8049,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($body)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
@@ -8274,7 +8062,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8282,7 +8070,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8293,11 +8081,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8313,9 +8101,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8326,12 +8115,12 @@ class SettingsApi
      *
      * Update S3 object storage settings at platform level.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3 $update_backup_remote_storage_s3 update_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3  $update_backup_remote_storage_s3  update_backup_remote_storage_s3 (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateBackupRemoteStorageS3($update_backup_remote_storage_s3, string $contentType = self::contentTypes['updateBackupRemoteStorageS3'][0])
     {
@@ -8343,12 +8132,12 @@ class SettingsApi
      *
      * Update S3 object storage settings at platform level.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3 $update_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3  $update_backup_remote_storage_s3  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateBackupRemoteStorageS3WithHttpInfo($update_backup_remote_storage_s3, string $contentType = self::contentTypes['updateBackupRemoteStorageS3'][0])
     {
@@ -8376,12 +8165,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -8392,11 +8179,11 @@ class SettingsApi
      *
      * Update S3 object storage settings at platform level.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3 $update_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3  $update_backup_remote_storage_s3  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateBackupRemoteStorageS3Async($update_backup_remote_storage_s3, string $contentType = self::contentTypes['updateBackupRemoteStorageS3'][0])
     {
@@ -8413,11 +8200,11 @@ class SettingsApi
      *
      * Update S3 object storage settings at platform level.
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3 $update_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3  $update_backup_remote_storage_s3  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateBackupRemoteStorageS3AsyncWithHttpInfo($update_backup_remote_storage_s3, string $contentType = self::contentTypes['updateBackupRemoteStorageS3'][0])
     {
@@ -8427,7 +8214,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -8450,11 +8237,11 @@ class SettingsApi
     /**
      * Create request for operation 'updateBackupRemoteStorageS3'
      *
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3 $update_backup_remote_storage_s3 (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateBackupRemoteStorageS3  $update_backup_remote_storage_s3  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateBackupRemoteStorageS3'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateBackupRemoteStorageS3Request($update_backup_remote_storage_s3, string $contentType = self::contentTypes['updateBackupRemoteStorageS3'][0])
     {
@@ -8466,17 +8253,12 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/v2/settings/backup/remote_storage/s3';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-
-
-
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -8487,7 +8269,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($update_backup_remote_storage_s3)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_backup_remote_storage_s3));
             } else {
                 $httpBody = $update_backup_remote_storage_s3;
@@ -8500,7 +8282,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8508,7 +8290,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8519,11 +8301,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8539,9 +8321,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PATCH',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8552,13 +8335,13 @@ class SettingsApi
      *
      * Create or update the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest $update_setting_request update_setting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest  $update_setting_request  update_setting_request (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @return void
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return void
      */
     public function updateSetting($name, $update_setting_request, string $contentType = self::contentTypes['updateSetting'][0])
     {
@@ -8570,13 +8353,13 @@ class SettingsApi
      *
      * Create or update the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest $update_setting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest  $update_setting_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateSettingWithHttpInfo($name, $update_setting_request, string $contentType = self::contentTypes['updateSetting'][0])
     {
@@ -8604,12 +8387,10 @@ class SettingsApi
 
             $statusCode = $response->getStatusCode();
 
-
             return [null, $statusCode, $response->getHeaders()];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             }
-        
 
             throw $e;
         }
@@ -8620,12 +8401,12 @@ class SettingsApi
      *
      * Create or update the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest $update_setting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest  $update_setting_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateSettingAsync($name, $update_setting_request, string $contentType = self::contentTypes['updateSetting'][0])
     {
@@ -8642,12 +8423,12 @@ class SettingsApi
      *
      * Create or update the specified setting
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest $update_setting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest  $update_setting_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateSettingAsyncWithHttpInfo($name, $update_setting_request, string $contentType = self::contentTypes['updateSetting'][0])
     {
@@ -8657,7 +8438,7 @@ class SettingsApi
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -8680,12 +8461,12 @@ class SettingsApi
     /**
      * Create request for operation 'updateSetting'
      *
-     * @param  string $name The name of the resource. (required)
-     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest $update_setting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @param  string  $name  The name of the resource. (required)
+     * @param  \Vented\EnhanceApiLaravel\Client\Model\UpdateSettingRequest  $update_setting_request  (required)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['updateSetting'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function updateSettingRequest($name, $update_setting_request, string $contentType = self::contentTypes['updateSetting'][0])
     {
@@ -8704,7 +8485,6 @@ class SettingsApi
             );
         }
 
-
         $resourcePath = '/settings/{name}';
         $formParams = [];
         $queryParams = [];
@@ -8712,17 +8492,14 @@ class SettingsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
-                '{' . 'name' . '}',
+                '{'.'name'.'}',
                 ObjectSerializer::toPathValue($name),
                 $resourcePath
             );
         }
-
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -8733,7 +8510,7 @@ class SettingsApi
         // for model (json/xml)
         if (isset($update_setting_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
+                // if Content-Type contains "application/json", json_encode the body
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_setting_request));
             } else {
                 $httpBody = $update_setting_request;
@@ -8746,7 +8523,7 @@ class SettingsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -8754,7 +8531,7 @@ class SettingsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
@@ -8765,11 +8542,11 @@ class SettingsApi
         // this endpoint requires API key authentication
         $apiKey = $this->config->getApiKeyWithPrefix('id0');
         if ($apiKey !== null) {
-            
+
         }
         // this endpoint requires Bearer authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        if (! empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer '.$this->config->getAccessToken();
         }
 
         $defaultHeaders = [];
@@ -8785,9 +8562,10 @@ class SettingsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -8796,16 +8574,17 @@ class SettingsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -8818,7 +8597,7 @@ class SettingsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -8841,7 +8620,7 @@ class SettingsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

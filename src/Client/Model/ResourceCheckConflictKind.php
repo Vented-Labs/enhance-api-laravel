@@ -1,12 +1,14 @@
 <?php
+
 /**
  * ResourceCheckConflictKind
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * ResourceCheckConflictKind Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class ResourceCheckConflictKind
@@ -56,6 +58,7 @@ class ResourceCheckConflictKind
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -66,9 +69,7 @@ class ResourceCheckConflictKind
             self::FTP_USER,
             self::MAILBOX_FORWARDER,
             self::MAILBOX,
-            self::DOMAIN
+            self::DOMAIN,
         ];
     }
 }
-
-

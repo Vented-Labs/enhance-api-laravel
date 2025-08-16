@@ -1,12 +1,14 @@
 <?php
+
 /**
  * WebsiteServerDomains
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,69 +30,73 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * WebsiteServerDomains Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializable
+class WebsiteServerDomains implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'WebsiteServerDomains';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'app_server_domains' => 'string[]',
         'email_server_domains' => 'string[]',
-        'db_server_domains' => 'string[]'
+        'db_server_domains' => 'string[]',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'app_server_domains' => null,
         'email_server_domains' => null,
-        'db_server_domains' => null
+        'db_server_domains' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'app_server_domains' => false,
         'email_server_domains' => false,
-        'db_server_domains' => false
+        'db_server_domains' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -115,8 +121,6 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -126,7 +130,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -136,7 +140,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -145,9 +149,6 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -156,9 +157,6 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -174,7 +172,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $attributeMap = [
         'app_server_domains' => 'appServerDomains',
         'email_server_domains' => 'emailServerDomains',
-        'db_server_domains' => 'dbServerDomains'
+        'db_server_domains' => 'dbServerDomains',
     ];
 
     /**
@@ -185,7 +183,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $setters = [
         'app_server_domains' => 'setAppServerDomains',
         'email_server_domains' => 'setEmailServerDomains',
-        'db_server_domains' => 'setDbServerDomains'
+        'db_server_domains' => 'setDbServerDomains',
     ];
 
     /**
@@ -196,7 +194,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $getters = [
         'app_server_domains' => 'getAppServerDomains',
         'email_server_domains' => 'getEmailServerDomains',
-        'db_server_domains' => 'getDbServerDomains'
+        'db_server_domains' => 'getDbServerDomains',
     ];
 
     /**
@@ -240,7 +238,6 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -251,8 +248,8 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -262,14 +259,12 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -291,6 +286,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['app_server_domains'] === null) {
             $invalidProperties[] = "'app_server_domains' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -305,7 +301,6 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets app_server_domains
      *
@@ -319,8 +314,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets app_server_domains
      *
-     * @param string[] $app_server_domains app_server_domains
-     *
+     * @param  string[]  $app_server_domains  app_server_domains
      * @return self
      */
     public function setAppServerDomains($app_server_domains)
@@ -346,8 +340,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets email_server_domains
      *
-     * @param string[]|null $email_server_domains email_server_domains
-     *
+     * @param  string[]|null  $email_server_domains  email_server_domains
      * @return self
      */
     public function setEmailServerDomains($email_server_domains)
@@ -373,8 +366,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets db_server_domains
      *
-     * @param string[]|null $db_server_domains db_server_domains
-     *
+     * @param  string[]|null  $db_server_domains  db_server_domains
      * @return self
      */
     public function setDbServerDomains($db_server_domains)
@@ -386,12 +378,11 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -401,8 +392,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -414,10 +404,8 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -431,9 +419,7 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -442,15 +428,16 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -476,5 +463,3 @@ class WebsiteServerDomains implements ModelInterface, ArrayAccess, \JsonSerializ
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

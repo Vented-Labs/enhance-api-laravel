@@ -1,12 +1,14 @@
 <?php
+
 /**
  * OrchdLoginPolicySettings
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -28,35 +30,38 @@
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
 
-use \ArrayAccess;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
+use ArrayAccess;
+use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * OrchdLoginPolicySettings Class Doc Comment
  *
  * @category Class
+ *
  * @description Settings for orchd login policy
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
+ *
  * @implements \ArrayAccess<string, mixed>
  */
-class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSerializable
+class OrchdLoginPolicySettings implements \JsonSerializable, ArrayAccess, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'OrchdLoginPolicySettings';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'enabled' => 'bool',
         'email_quota' => 'int',
@@ -66,16 +71,18 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
         'ip_quota' => 'int',
         'ip_auto_block_enabled' => 'bool',
         'ip_auto_block_threshold' => 'int',
-        'ip_auto_block_duration' => 'int'
+        'ip_auto_block_duration' => 'int',
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     *
+     * @phpstan-var array<string, string|null>
+     *
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'enabled' => null,
         'email_quota' => null,
@@ -85,14 +92,14 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
         'ip_quota' => null,
         'ip_auto_block_enabled' => null,
         'ip_auto_block_threshold' => null,
-        'ip_auto_block_duration' => null
+        'ip_auto_block_duration' => null,
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var bool[]
+     */
     protected static array $openAPINullables = [
         'enabled' => false,
         'email_quota' => false,
@@ -102,14 +109,14 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
         'ip_quota' => false,
         'ip_auto_block_enabled' => false,
         'ip_auto_block_threshold' => false,
-        'ip_auto_block_duration' => false
+        'ip_auto_block_duration' => false,
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var bool[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -134,8 +141,6 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Array of nullable properties
-     *
-     * @return array
      */
     protected static function openAPINullables(): array
     {
@@ -145,7 +150,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Array of nullable field names deliberately set to null
      *
-     * @return boolean[]
+     * @return bool[]
      */
     private function getOpenAPINullablesSetToNull(): array
     {
@@ -155,7 +160,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Setter - Array of nullable field names deliberately set to null
      *
-     * @param boolean[] $openAPINullablesSetToNull
+     * @param  bool[]  $openAPINullablesSetToNull
      */
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
@@ -164,9 +169,6 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
      */
     public static function isNullable(string $property): bool
     {
@@ -175,9 +177,6 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
      */
     public function isNullableSetToNull(string $property): bool
     {
@@ -199,7 +198,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
         'ip_quota' => 'ipQuota',
         'ip_auto_block_enabled' => 'ipAutoBlockEnabled',
         'ip_auto_block_threshold' => 'ipAutoBlockThreshold',
-        'ip_auto_block_duration' => 'ipAutoBlockDuration'
+        'ip_auto_block_duration' => 'ipAutoBlockDuration',
     ];
 
     /**
@@ -216,7 +215,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
         'ip_quota' => 'setIpQuota',
         'ip_auto_block_enabled' => 'setIpAutoBlockEnabled',
         'ip_auto_block_threshold' => 'setIpAutoBlockThreshold',
-        'ip_auto_block_duration' => 'setIpAutoBlockDuration'
+        'ip_auto_block_duration' => 'setIpAutoBlockDuration',
     ];
 
     /**
@@ -233,7 +232,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
         'ip_quota' => 'getIpQuota',
         'ip_auto_block_enabled' => 'getIpAutoBlockEnabled',
         'ip_auto_block_threshold' => 'getIpAutoBlockThreshold',
-        'ip_auto_block_duration' => 'getIpAutoBlockDuration'
+        'ip_auto_block_duration' => 'getIpAutoBlockDuration',
     ];
 
     /**
@@ -277,7 +276,6 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
         return self::$openAPIModelName;
     }
 
-
     /**
      * Associative array for storing property values
      *
@@ -288,8 +286,8 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Constructor
      *
-     * @param mixed[]|null $data Associated array of property values
-     *                      initializing the model
+     * @param  mixed[]|null  $data  Associated array of property values
+     *                              initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -305,14 +303,12 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param  mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -331,19 +327,19 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['email_auto_block_threshold']) && ($this->container['email_auto_block_threshold'] < 1)) {
+        if (! is_null($this->container['email_auto_block_threshold']) && ($this->container['email_auto_block_threshold'] < 1)) {
             $invalidProperties[] = "invalid value for 'email_auto_block_threshold', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['email_auto_block_duration']) && ($this->container['email_auto_block_duration'] < 1)) {
+        if (! is_null($this->container['email_auto_block_duration']) && ($this->container['email_auto_block_duration'] < 1)) {
             $invalidProperties[] = "invalid value for 'email_auto_block_duration', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['ip_auto_block_threshold']) && ($this->container['ip_auto_block_threshold'] < 1)) {
+        if (! is_null($this->container['ip_auto_block_threshold']) && ($this->container['ip_auto_block_threshold'] < 1)) {
             $invalidProperties[] = "invalid value for 'ip_auto_block_threshold', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['ip_auto_block_duration']) && ($this->container['ip_auto_block_duration'] < 1)) {
+        if (! is_null($this->container['ip_auto_block_duration']) && ($this->container['ip_auto_block_duration'] < 1)) {
             $invalidProperties[] = "invalid value for 'ip_auto_block_duration', must be bigger than or equal to 1.";
         }
 
@@ -361,7 +357,6 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
      * Gets enabled
      *
@@ -375,8 +370,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets enabled
      *
-     * @param bool|null $enabled enabled
-     *
+     * @param  bool|null  $enabled  enabled
      * @return self
      */
     public function setEnabled($enabled)
@@ -402,8 +396,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets email_quota
      *
-     * @param int|null $email_quota email_quota
-     *
+     * @param  int|null  $email_quota  email_quota
      * @return self
      */
     public function setEmailQuota($email_quota)
@@ -429,8 +422,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets email_auto_block_enabled
      *
-     * @param bool|null $email_auto_block_enabled email_auto_block_enabled
-     *
+     * @param  bool|null  $email_auto_block_enabled  email_auto_block_enabled
      * @return self
      */
     public function setEmailAutoBlockEnabled($email_auto_block_enabled)
@@ -456,8 +448,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets email_auto_block_threshold
      *
-     * @param int|null $email_auto_block_threshold email_auto_block_threshold
-     *
+     * @param  int|null  $email_auto_block_threshold  email_auto_block_threshold
      * @return self
      */
     public function setEmailAutoBlockThreshold($email_auto_block_threshold)
@@ -488,8 +479,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets email_auto_block_duration
      *
-     * @param int|null $email_auto_block_duration email_auto_block_duration
-     *
+     * @param  int|null  $email_auto_block_duration  email_auto_block_duration
      * @return self
      */
     public function setEmailAutoBlockDuration($email_auto_block_duration)
@@ -520,8 +510,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets ip_quota
      *
-     * @param int|null $ip_quota ip_quota
-     *
+     * @param  int|null  $ip_quota  ip_quota
      * @return self
      */
     public function setIpQuota($ip_quota)
@@ -547,8 +536,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets ip_auto_block_enabled
      *
-     * @param bool|null $ip_auto_block_enabled ip_auto_block_enabled
-     *
+     * @param  bool|null  $ip_auto_block_enabled  ip_auto_block_enabled
      * @return self
      */
     public function setIpAutoBlockEnabled($ip_auto_block_enabled)
@@ -574,8 +562,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets ip_auto_block_threshold
      *
-     * @param int|null $ip_auto_block_threshold ip_auto_block_threshold
-     *
+     * @param  int|null  $ip_auto_block_threshold  ip_auto_block_threshold
      * @return self
      */
     public function setIpAutoBlockThreshold($ip_auto_block_threshold)
@@ -606,8 +593,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets ip_auto_block_duration
      *
-     * @param int|null $ip_auto_block_duration ip_auto_block_duration
-     *
+     * @param  int|null  $ip_auto_block_duration  ip_auto_block_duration
      * @return self
      */
     public function setIpAutoBlockDuration($ip_auto_block_duration)
@@ -624,12 +610,11 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @param  int  $offset  Offset
      */
     public function offsetExists($offset): bool
     {
@@ -639,8 +624,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
+     * @param  int  $offset  Offset
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
@@ -652,10 +636,8 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
+     * @param  int|null  $offset  Offset
+     * @param  mixed  $value  Value to be set
      */
     public function offsetSet($offset, $value): void
     {
@@ -669,9 +651,7 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
-     *
-     * @return void
+     * @param  int  $offset  Offset
      */
     public function offsetUnset($offset): void
     {
@@ -680,15 +660,16 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
+     *
      * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
      *
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     *               of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -714,5 +695,3 @@ class OrchdLoginPolicySettings implements ModelInterface, ArrayAccess, \JsonSeri
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

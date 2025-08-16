@@ -1,12 +1,14 @@
 <?php
+
 /**
  * RoleInstallationState
  *
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -27,14 +29,14 @@
  */
 
 namespace Vented\EnhanceApiLaravel\Client\Model;
-use \Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
 /**
  * RoleInstallationState Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class RoleInstallationState
@@ -50,6 +52,7 @@ class RoleInstallationState
 
     /**
      * Gets allowable values of the enum
+     *
      * @return string[]
      */
     public static function getAllowableEnumValues()
@@ -57,9 +60,7 @@ class RoleInstallationState
         return [
             self::ENABLED,
             self::DISABLED,
-            self::NOT_INSTALLED
+            self::NOT_INSTALLED,
         ];
     }
 }
-
-

@@ -1,11 +1,13 @@
 <?php
+
 /**
  * MetricsApi
  * PHP version 8.1
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 
@@ -38,7 +40,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Vented\EnhanceApiLaravel\Client\ApiException;
 use Vented\EnhanceApiLaravel\Client\Configuration;
-use Vented\EnhanceApiLaravel\Client\FormDataProcessor;
 use Vented\EnhanceApiLaravel\Client\HeaderSelector;
 use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
 
@@ -46,8 +47,9 @@ use Vented\EnhanceApiLaravel\Client\ObjectSerializer;
  * MetricsApi Class Doc Comment
  *
  * @category Class
- * @package  Vented\EnhanceApiLaravel\Client
+ *
  * @author   OpenAPI Generator team
+ *
  * @link     https://openapi-generator.tech
  */
 class MetricsApi
@@ -72,7 +74,7 @@ class MetricsApi
      */
     protected $hostIndex;
 
-    /** @var string[] $contentTypes **/
+    /** @var string[] * */
     public const contentTypes = [
         'getWebsiteMetrics' => [
             'application/json',
@@ -80,10 +82,7 @@ class MetricsApi
     ];
 
     /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
+     * @param  int  $hostIndex  (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
         ?ClientInterface $client = null,
@@ -91,16 +90,16 @@ class MetricsApi
         ?HeaderSelector $selector = null,
         int $hostIndex = 0
     ) {
-        $this->client = $client ?: new Client();
+        $this->client = $client ?: new Client;
         $this->config = $config ?: Configuration::getDefaultConfiguration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+        $this->headerSelector = $selector ?: new HeaderSelector;
         $this->hostIndex = $hostIndex;
     }
 
     /**
      * Set the host index
      *
-     * @param int $hostIndex Host index (required)
+     * @param  int  $hostIndex  Host index (required)
      */
     public function setHostIndex($hostIndex): void
     {
@@ -130,20 +129,21 @@ class MetricsApi
      *
      * Get website metrics
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing
      */
     public function getWebsiteMetrics($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
-        list($response) = $this->getWebsiteMetricsWithHttpInfo($org_id, $website_id, $start, $end, $granularity, $contentType);
+        [$response] = $this->getWebsiteMetricsWithHttpInfo($org_id, $website_id, $start, $end, $granularity, $contentType);
+
         return $response;
     }
 
@@ -152,16 +152,16 @@ class MetricsApi
      *
      * Get website metrics
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing, HTTP status code, HTTP response headers (array of strings)
      *
      * @throws \Vented\EnhanceApiLaravel\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebsiteMetricsWithHttpInfo($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
@@ -189,8 +189,7 @@ class MetricsApi
 
             $statusCode = $response->getStatusCode();
 
-
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
                         '\Vented\EnhanceApiLaravel\Client\Model\WebsiteMetricsFullListing',
@@ -198,8 +197,6 @@ class MetricsApi
                         $response,
                     );
             }
-
-            
 
             if ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
@@ -230,7 +227,6 @@ class MetricsApi
                     $e->setResponseObject($data);
                     throw $e;
             }
-        
 
             throw $e;
         }
@@ -241,15 +237,15 @@ class MetricsApi
      *
      * Get website metrics
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMetricsAsync($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
@@ -266,15 +262,15 @@ class MetricsApi
      *
      * Get website metrics
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return \GuzzleHttp\Promise\PromiseInterface
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getWebsiteMetricsAsyncWithHttpInfo($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
@@ -286,7 +282,7 @@ class MetricsApi
             ->then(
                 function ($response) use ($returnType) {
                     if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
+                        $content = $response->getBody(); // stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
                         if ($returnType !== 'string') {
@@ -297,7 +293,7 @@ class MetricsApi
                     return [
                         ObjectSerializer::deserialize($content, $returnType, []),
                         $response->getStatusCode(),
-                        $response->getHeaders()
+                        $response->getHeaders(),
                     ];
                 },
                 function ($exception) {
@@ -320,15 +316,15 @@ class MetricsApi
     /**
      * Create request for operation 'getWebsiteMetrics'
      *
-     * @param  string $org_id The id of the organization. (required)
-     * @param  string $website_id The id of the website. (required)
-     * @param  \DateTime|null $start Start datetime UTC. (optional)
-     * @param  \DateTime|null $end End datetime UTC. (optional)
-     * @param  string|null $granularity Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @param  string  $org_id  The id of the organization. (required)
+     * @param  string  $website_id  The id of the website. (required)
+     * @param  \DateTime|null  $start  Start datetime UTC. (optional)
+     * @param  \DateTime|null  $end  End datetime UTC. (optional)
+     * @param  string|null  $granularity  Takes one of &#x60;hour&#x60;, &#x60;day&#x60;, defaults to &#x60;day&#x60; (optional)
+     * @param  string  $contentType  The value for the Content-Type header. Check self::contentTypes['getWebsiteMetrics'] to see the possible values for this operation
+     * @return \GuzzleHttp\Psr7\Request
      *
      * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
      */
     public function getWebsiteMetricsRequest($org_id, $website_id, $start = null, $end = null, $granularity = null, string $contentType = self::contentTypes['getWebsiteMetrics'][0])
     {
@@ -346,10 +342,6 @@ class MetricsApi
                 'Missing the required parameter $website_id when calling getWebsiteMetrics'
             );
         }
-
-
-
-
 
         $resourcePath = '/orgs/{org_id}/websites/{website_id}/metrics';
         $formParams = [];
@@ -386,11 +378,10 @@ class MetricsApi
             false // required
         ) ?? []);
 
-
         // path params
         if ($org_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'org_id' . '}',
+                '{'.'org_id'.'}',
                 ObjectSerializer::toPathValue($org_id),
                 $resourcePath
             );
@@ -398,15 +389,14 @@ class MetricsApi
         // path params
         if ($website_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'website_id' . '}',
+                '{'.'website_id'.'}',
                 ObjectSerializer::toPathValue($website_id),
                 $resourcePath
             );
         }
 
-
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -420,7 +410,7 @@ class MetricsApi
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem
+                            'contents' => $formParamValueItem,
                         ];
                     }
                 }
@@ -428,14 +418,13 @@ class MetricsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
+                // if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
             } else {
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -450,9 +439,10 @@ class MetricsApi
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
+
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $operationHost.$resourcePath.($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -461,16 +451,17 @@ class MetricsApi
     /**
      * Create http client option
      *
-     * @throws \RuntimeException on file opening failure
      * @return array of http client options
+     *
+     * @throws \RuntimeException on file opening failure
      */
     protected function createHttpClientOption()
     {
         $options = [];
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            if (! $options[RequestOptions::DEBUG]) {
+                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
             }
         }
 
@@ -483,7 +474,7 @@ class MetricsApi
         ResponseInterface $response
     ): array {
         if ($dataType === '\SplFileObject') {
-            $content = $response->getBody(); //stream goes to serializer
+            $content = $response->getBody(); // stream goes to serializer
         } else {
             $content = (string) $response->getBody();
             if ($dataType !== 'string') {
@@ -506,7 +497,7 @@ class MetricsApi
         return [
             ObjectSerializer::deserialize($content, $dataType, []),
             $response->getStatusCode(),
-            $response->getHeaders()
+            $response->getHeaders(),
         ];
     }
 

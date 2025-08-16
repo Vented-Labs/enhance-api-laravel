@@ -2,4 +2,6 @@
 
 namespace Vented\EnhanceApiLaravel;
 
-class EnhanceApiLaravel {}
+class EnhanceApiLaravel {
+
+}

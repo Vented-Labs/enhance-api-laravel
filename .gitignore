@@ -2,6 +2,12 @@
 composer.lock
 /vendor
 
+# OpenAPI file
+spec.yaml
+
+# Generated Files
+/generated
+
 # Frontend Assets
 /node_modules
 

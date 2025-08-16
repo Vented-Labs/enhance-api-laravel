@@ -11,6 +11,6 @@ class Enhance extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Vented\EnhanceApiLaravel\Enhance::class;
+        return \Vented\EnhanceApiLaravel\Facades\Enhance::class;
     }
 }

@@ -4,7 +4,6 @@ namespace Vented\EnhanceApiLaravel;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Vented\EnhanceApiLaravel\Commands\EnhanceApiLaravelCommand;
 
 class EnhanceApiLaravelServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +16,6 @@ class EnhanceApiLaravelServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('enhance-api-laravel')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_enhance_api_laravel_table')
-            ->hasCommand(EnhanceApiLaravelCommand::class);
+            ->hasConfigFile('enhance');
     }
 }

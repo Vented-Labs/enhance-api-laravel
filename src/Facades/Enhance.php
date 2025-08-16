@@ -5,12 +5,12 @@ namespace Vented\EnhanceApiLaravel\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Vented\EnhanceApiLaravel\EnhanceApiLaravel
+ * @see \Vented\EnhanceApiLaravel\Enhance
  */
-class EnhanceApiLaravel extends Facade
+class Enhance extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Vented\EnhanceApiLaravel\EnhanceApiLaravel::class;
+        return \Vented\EnhanceApiLaravel\Enhance::class;
     }
 }

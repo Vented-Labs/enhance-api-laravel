@@ -1,12 +1,12 @@
 {
-    "name": "ventedlabs/enhance-api-laravel",
+    "name": "vented/enhance-api-laravel",
     "description": "An Enhance API SDK tailored for usage within Laravel",
     "keywords": [
         "Vented Labs",
         "laravel",
         "enhance-api-laravel"
     ],
-    "homepage": "https://github.com/ventedlabs/enhance-api-laravel",
+    "homepage": "https://github.com/vented-labs/enhance-api-laravel",
     "license": "MIT",
     "authors": [
         {

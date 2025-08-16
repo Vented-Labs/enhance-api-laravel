@@ -13,7 +13,7 @@ return [
 
     'base_url' => env('ENHANCE_API_URL', ''),
 
-    'token' => env('ENHANCE_API_TOKEN'),
+    'api_key' => env('ENHANCE_API_TOKEN'),
 
     'default_organization' => env('ENHANCE_API_ORGANIZATION', ''),
 
